@@ -2,6 +2,7 @@ baseURL: "https://thomjiji.github.io/"
 languageCode: "en-us"
 title: "thomjiji"
 theme: "PaperMod"
+publishDir: "docs"
 
 menu:
   main:
