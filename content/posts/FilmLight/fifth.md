@@ -1,13 +1,13 @@
 ---
 title: "Daylight 添加 ARRI Look Library & ALF-2 v5 DRT Family"
-date: 2023-01-28T18:43:16+08:00
+date: 2023-01-28
 draft: false
 cover:
     image: baselight.jpg
     alt: "This is a screenshot"
 ShowToc: true
 tags: ["Daylight", "FilmLight"]
-author: ["thomjiji"]
+author: ["thom"]
 ---
 
 # 操作步骤

@@ -2,9 +2,6 @@
 title: "Dolby Vision Profile 8.4 & Dolby Atmos"
 date: 2023-01-27T21:23:02+08:00
 draft: false
-cover:
-    image: Study_01_Mac.png
-    alt: "This is a screenshot"
 ShowToc: true
 tags: ["Dolby Vision"]
 categories: ["HDR"]

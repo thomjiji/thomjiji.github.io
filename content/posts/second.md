@@ -2,9 +2,6 @@
 title: "Use cat command to add text to file quickly"
 date: 2023-01-27T21:28:03+08:00
 draft: false
-cover:
-    image: Study_01_Mac.png
-    alt: "This is cosmic"
 tags: ["Linux"]
 ---
 

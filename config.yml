@@ -22,7 +22,7 @@ menu:
 params:
   # PaperMode Regular mode (Home-info mode)
   homeInfoParams:
-    Title: Hello, thomjiji here!
+    Title: Hi! I'm thomjiji
     Content: "Privacy | Cryptography | Filmmaking | Post-production | Linux"
 
   # PaperMod Profile mode
