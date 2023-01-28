@@ -5,7 +5,7 @@ draft: false
 cover:
     image: Study_01_Mac.png
     alt: "This is cosmic"
-tags: 
+tags: ["Linux"]
 ---
 
 ## Using `echo`
