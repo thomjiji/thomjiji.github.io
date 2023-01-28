@@ -22,8 +22,7 @@
       <pubDate>Sat, 28 Jan 2023 18:43:16 +0800</pubDate>
       
       <guid>https://thomjiji.github.io/posts/filmlight/fifth/</guid>
-      <description>Reference  ARRI Colour Workflow in Baselight ACES and Baselight  ARRI Look Library and ALF-2 v5 DRT Family Download
-操作步骤  把 ARRI Look Library 的文件包直接解压到这个路径，把里面的多个 cub 和 fllook 文件平摊在这个路径：/Library/Application Support/FilmLight/looks 把 ALF-2 v5 DRT Family 解压到这个路径，把里面的 cub 和 fltransform 平摊在这个路径：/Library/Application Support/FilmLight/etc/colourspaces 打开 Daylight，完成。  </description>
+      <description>操作步骤  把 ARRI Look Library 的文件包直接解压到这个路径，把里面的多个 cub 和 fllook 文件平摊在这个路径：/Library/Application Support/FilmLight/looks 把 ALF-2 v5 DRT Family 解压到这个路径，把里面的 cub 和 fltransform 平摊在这个路径：/Library/Application Support/FilmLight/etc/colourspaces 打开 Daylight，完成。  Reference  ARRI Colour Workflow in Baselight ACES and Baselight ARRI Look Library and ALF-2 v5 DRT Family Download  </description>
     </item>
     
     <item>
@@ -55,6 +54,15 @@ How to perform a secure erase using Magicion Software: https://www.pugetsystems.
       <description>Using echo touch file.md echo &amp;#34;hello&amp;#34; &amp;gt; file.md Using cat and standard redirect symbol &amp;gt; cat &amp;gt;&amp;gt; file.md This command creates an empty yet edited file as it prompts the user to create a text file and type in the file at the same time.
 If you don&amp;rsquo;t want to edit the file, simply press CTRL+C and it will simply exit and create an empty file.
 If you would like to add some text to the file, you can type in after this, like this:</description>
+    </item>
+    
+    <item>
+      <title>macOS add fish to $SHELL and set fish as default shell</title>
+      <link>https://thomjiji.github.io/posts/macos_add_fish/</link>
+      <pubDate>Thu, 26 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://thomjiji.github.io/posts/macos_add_fish/</guid>
+      <description>Solution Add fish to $SHELL and set as default  Add the shell to /etc/shells with:  $ echo &amp;#34;/opt/homebrew/bin/fish&amp;#34; | sudo tee -a /etc/shells Change default shell with:  chsh -s /opt/homebrew/bin/fish Modify $PATH with fish shell  在 iTerm2 当中使用 fish shell 作为默认 shell，需要把 $PATH 加入到 ~/.config/fish/fish_variables  set -U fish_user_paths /usr/local/bin $fish_user_paths Type this command in terminal: fish_add_path /opt/homebrew/bin. It will add /opt/homebrew/bin to the ~/.config/fish/fish_variables.  Other useful commands which $SHELL</description>
     </item>
     
   </channel>

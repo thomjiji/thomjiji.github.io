@@ -6,8 +6,8 @@ publishDir: "docs"
 
 menu:
   main:
-    - name: Posts
-      url: posts/
+    - name: Archives
+      url: archives/
       weight: 10
     - name: Search
       url: search/
@@ -18,16 +18,13 @@ menu:
     - name: Categories
       url: categories/
       weight: 40
-    - name: Archives
-      url: archives/
-      weight: 50
 
 params:
   defaultTheme: auto
   profileMode:
     enabled: true
     title: "thomjiji" # optional default will be site title
-    subtitle: "Privacy | Cryptography | Filmmaking | Linux"
+    subtitle: "Privacy | Cryptography | Filmmaking | Post-production | Linux"
     imageUrl: "Study_01_Mac.png" # optional
     imageTitle: "thom avator" # optional
     imageWidth: 120 # custom size

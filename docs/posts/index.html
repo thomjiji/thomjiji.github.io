@@ -122,8 +122,8 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://thomjiji.github.io/posts/" title="Posts">
-                    <span class="active">Posts</span>
+                <a href="https://thomjiji.github.io/archives/" title="Archives">
+                    <span>Archives</span>
                 </a>
             </li>
             <li>
@@ -139,11 +139,6 @@
             <li>
                 <a href="https://thomjiji.github.io/categories/" title="Categories">
                     <span>Categories</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://thomjiji.github.io/archives/" title="Archives">
-                    <span>Archives</span>
                 </a>
             </li>
         </ul>
@@ -178,8 +173,7 @@
     </h2>
   </header>
   <div class="entry-content">
-    <p>Reference  ARRI Colour Workflow in Baselight ACES and Baselight  ARRI Look Library and ALF-2 v5 DRT Family Download
-操作步骤  把 ARRI Look Library 的文件包直接解压到这个路径，把里面的多个 cub 和 fllook 文件平摊在这个路径：/Library/Application Support/FilmLight/looks 把 ALF-2 v5 DRT Family 解压到这个路径，把里面的 cub 和 fltransform 平摊在这个路径：/Library/Application Support/FilmLight/etc/colourspaces 打开 Daylight，完成。  </p>
+    <p>操作步骤  把 ARRI Look Library 的文件包直接解压到这个路径，把里面的多个 cub 和 fllook 文件平摊在这个路径：/Library/Application Support/FilmLight/looks 把 ALF-2 v5 DRT Family 解压到这个路径，把里面的 cub 和 fltransform 平摊在这个路径：/Library/Application Support/FilmLight/etc/colourspaces 打开 Daylight，完成。  Reference  ARRI Colour Workflow in Baselight ACES and Baselight ARRI Look Library and ALF-2 v5 DRT Family Download  </p>
   </div>
   <footer class="entry-footer"><span title='2023-01-28 18:43:16 +0800 HKT'>January 28, 2023</span>&nbsp;·&nbsp;thomjiji</footer>
   <a class="entry-link" aria-label="post link to Daylight 添加 ARRI Look Library &amp; ALF-2 v5 DRT Family" href="https://thomjiji.github.io/posts/filmlight/fifth/"></a>
@@ -227,6 +221,18 @@ If you would like to add some text to the file, you can type in after this, like
   </div>
   <footer class="entry-footer"><span title='2023-01-27 21:28:03 +0800 HKT'>January 27, 2023</span></footer>
   <a class="entry-link" aria-label="post link to Use cat command to add text to file quickly" href="https://thomjiji.github.io/posts/second/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>macOS add fish to $SHELL and set fish as default shell
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Solution Add fish to $SHELL and set as default  Add the shell to /etc/shells with:  $ echo &#34;/opt/homebrew/bin/fish&#34; | sudo tee -a /etc/shells Change default shell with:  chsh -s /opt/homebrew/bin/fish Modify $PATH with fish shell  在 iTerm2 当中使用 fish shell 作为默认 shell，需要把 $PATH 加入到 ~/.config/fish/fish_variables  set -U fish_user_paths /usr/local/bin $fish_user_paths Type this command in terminal: fish_add_path /opt/homebrew/bin. It will add /opt/homebrew/bin to the ~/.config/fish/fish_variables.  Other useful commands which $SHELL...</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-01-26 00:00:00 +0000 UTC'>January 26, 2023</span></footer>
+  <a class="entry-link" aria-label="post link to macOS add fish to $SHELL and set fish as default shell" href="https://thomjiji.github.io/posts/macos_add_fish/"></a>
 </article>
     </main>
     

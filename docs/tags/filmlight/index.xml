@@ -13,8 +13,7 @@
       <pubDate>Sat, 28 Jan 2023 18:43:16 +0800</pubDate>
       
       <guid>https://thomjiji.github.io/posts/filmlight/fifth/</guid>
-      <description>Reference  ARRI Colour Workflow in Baselight ACES and Baselight  ARRI Look Library and ALF-2 v5 DRT Family Download
-操作步骤  把 ARRI Look Library 的文件包直接解压到这个路径，把里面的多个 cub 和 fllook 文件平摊在这个路径：/Library/Application Support/FilmLight/looks 把 ALF-2 v5 DRT Family 解压到这个路径，把里面的 cub 和 fltransform 平摊在这个路径：/Library/Application Support/FilmLight/etc/colourspaces 打开 Daylight，完成。  </description>
+      <description>操作步骤  把 ARRI Look Library 的文件包直接解压到这个路径，把里面的多个 cub 和 fllook 文件平摊在这个路径：/Library/Application Support/FilmLight/looks 把 ALF-2 v5 DRT Family 解压到这个路径，把里面的 cub 和 fltransform 平摊在这个路径：/Library/Application Support/FilmLight/etc/colourspaces 打开 Daylight，完成。  Reference  ARRI Colour Workflow in Baselight ACES and Baselight ARRI Look Library and ALF-2 v5 DRT Family Download  </description>
     </item>
     
   </channel>
