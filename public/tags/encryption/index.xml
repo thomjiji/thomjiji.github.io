@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Encryption on thomjiji</title>
+    <link>https://thomjiji.github.io/tags/encryption/</link>
+    <description>Recent content in Encryption on thomjiji</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 27 Jan 2023 21:32:00 +0800</lastBuildDate><atom:link href="https://thomjiji.github.io/tags/encryption/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sanitize/Secure Erase SSD Drive Software</title>
+      <link>https://thomjiji.github.io/posts/2023/third/</link>
+      <pubDate>Fri, 27 Jan 2023 21:32:00 +0800</pubDate>
+      
+      <guid>https://thomjiji.github.io/posts/2023/third/</guid>
+      <description>Third-Party Software  Parted Magic SEDutil  Official Software Samsung T7 SSD support Secure Erase via Samsung Magicion Software (only Windows)
+How to perform a secure erase using Magicion Software: https://www.pugetsystems.com/support/guides/samsung-secure-erase-949/</description>
+    </item>
+    
+  </channel>
+</rss>

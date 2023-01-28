@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Dolby Vision Profile 8.4 &amp; Dolby Atmos | thomjiji</title>
+<meta name="keywords" content="Dolby Vision">
+<meta name="description" content="参考链接 关于上传杜比视界到平台（Bilibili or Vimeo）  How-To: Dolby Vision Encoding - Apple Compressor for Vimeo Dolby Vision for Vimeo FAQs Bilbili 技术发布的关于支持 HDR10 上传的文章 —— 2020 年 9 月  关于制作杜比全景声 Dolby Atmos  Dolby Atmos Using Blackmagic Design DaVinci Resolve Studio 哔哩哔哩（B 站）杜比全景声/杜比音效稿件制作指南 —— 以白菜的名义 EP05 杜比全景声家庭版的交付和编码封装 —— 以白菜的名义  关于上传 HDR10 &amp; HLG 到 Youtube  Upload High Dynamic Range (HDR) videos  Dolby Vision Basics  Dolby Vision Metadata Levels What are Dolby Vision Profiles?">
+<meta name="author" content="thom, jiji">
+<link rel="canonical" href="https://thomjiji.github.io/posts/2023/first/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.2bca7bfaa43cffcede2d79a3f0df2e0c6890fe5dcfee968d654371eda9ac7490.css" integrity="sha256-K8p7&#43;qQ8/87eLXmj8N8uDGiQ/l3P7paNZUNx7amsdJA=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://thomjiji.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://thomjiji.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://thomjiji.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://thomjiji.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://thomjiji.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Dolby Vision Profile 8.4 &amp; Dolby Atmos" />
+<meta property="og:description" content="参考链接 关于上传杜比视界到平台（Bilibili or Vimeo）  How-To: Dolby Vision Encoding - Apple Compressor for Vimeo Dolby Vision for Vimeo FAQs Bilbili 技术发布的关于支持 HDR10 上传的文章 —— 2020 年 9 月  关于制作杜比全景声 Dolby Atmos  Dolby Atmos Using Blackmagic Design DaVinci Resolve Studio 哔哩哔哩（B 站）杜比全景声/杜比音效稿件制作指南 —— 以白菜的名义 EP05 杜比全景声家庭版的交付和编码封装 —— 以白菜的名义  关于上传 HDR10 &amp; HLG 到 Youtube  Upload High Dynamic Range (HDR) videos  Dolby Vision Basics  Dolby Vision Metadata Levels What are Dolby Vision Profiles?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://thomjiji.github.io/posts/2023/first/" />
+<meta property="og:image" content="https://thomjiji.github.io/Study_01_Mac.png" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-01-27T21:23:02+08:00" />
+<meta property="article:modified_time" content="2023-01-27T21:23:02+08:00" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://thomjiji.github.io/Study_01_Mac.png" />
+<meta name="twitter:title" content="Dolby Vision Profile 8.4 &amp; Dolby Atmos"/>
+<meta name="twitter:description" content="参考链接 关于上传杜比视界到平台（Bilibili or Vimeo）  How-To: Dolby Vision Encoding - Apple Compressor for Vimeo Dolby Vision for Vimeo FAQs Bilbili 技术发布的关于支持 HDR10 上传的文章 —— 2020 年 9 月  关于制作杜比全景声 Dolby Atmos  Dolby Atmos Using Blackmagic Design DaVinci Resolve Studio 哔哩哔哩（B 站）杜比全景声/杜比音效稿件制作指南 —— 以白菜的名义 EP05 杜比全景声家庭版的交付和编码封装 —— 以白菜的名义  关于上传 HDR10 &amp; HLG 到 Youtube  Upload High Dynamic Range (HDR) videos  Dolby Vision Basics  Dolby Vision Metadata Levels What are Dolby Vision Profiles?"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://thomjiji.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Dolby Vision Profile 8.4 \u0026 Dolby Atmos",
+      "item": "https://thomjiji.github.io/posts/2023/first/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Dolby Vision Profile 8.4 \u0026 Dolby Atmos",
+  "name": "Dolby Vision Profile 8.4 \u0026 Dolby Atmos",
+  "description": "参考链接 关于上传杜比视界到平台（Bilibili or Vimeo）  How-To: Dolby Vision Encoding - Apple Compressor for Vimeo Dolby Vision for Vimeo FAQs Bilbili 技术发布的关于支持 HDR10 上传的文章 —— 2020 年 9 月  关于制作杜比全景声 Dolby Atmos  Dolby Atmos Using Blackmagic Design DaVinci Resolve Studio 哔哩哔哩（B 站）杜比全景声/杜比音效稿件制作指南 —— 以白菜的名义 EP05 杜比全景声家庭版的交付和编码封装 —— 以白菜的名义  关于上传 HDR10 \u0026amp; HLG 到 Youtube  Upload High Dynamic Range (HDR) videos  Dolby Vision Basics  Dolby Vision Metadata Levels What are Dolby Vision Profiles?",
+  "keywords": [
+    "Dolby Vision"
+  ],
+  "articleBody": "参考链接 关于上传杜比视界到平台（Bilibili or Vimeo）  How-To: Dolby Vision Encoding - Apple Compressor for Vimeo Dolby Vision for Vimeo FAQs Bilbili 技术发布的关于支持 HDR10 上传的文章 —— 2020 年 9 月  关于制作杜比全景声 Dolby Atmos  Dolby Atmos Using Blackmagic Design DaVinci Resolve Studio 哔哩哔哩（B 站）杜比全景声/杜比音效稿件制作指南 —— 以白菜的名义 EP05 杜比全景声家庭版的交付和编码封装 —— 以白菜的名义  关于上传 HDR10 \u0026 HLG 到 Youtube  Upload High Dynamic Range (HDR) videos  Dolby Vision Basics  Dolby Vision Metadata Levels What are Dolby Vision Profiles? What are the HEVC requirements for Dolby Vision encoding? HDR Monitor Consideration  Common Dolby Vision Delivery Specifications  iTunes Video and Audio Asset Guide 5.3.8  Some Topics What is Dolby Vision profile 8.4? Dolby Vision profiles describe the video codec and set of coding techniques used to encode a Dolby Vision video. Profile 8.4 is a Dolby Vision profile where the 10-bit HDR video essence is encoded using HEVC with a Hybrid Log Gamma (HLG) transfer function and is accompanied by dynamic Dolby Vision metadata. This is the format that is used when capturing HDR video on iPhone 12 or when exporting Dolby Vision video from Final Cut Pro or Compressor.\nProfile 8.4 is designed for direct distribution and playback on consumer devices (rather than, say, a mezzanine format optimized for OTT encoding). While there’s a growing range of consumer devices that support Dolby Vision playback, Profile 8.4 encodes are also built with a cross-compatible HLG base layer, so that if a device does not support Dolby Vision decoding, it can often decode just the HLG base layer, which will present a viewable picture, although decoding just the base layer—without any Dolby Vision metadata—does not take advantage of the sophisticated display mapping available in Dolby Vision displays.\nWhen Dolby Vision profile 8.4 files are played on Vimeo and on a Dolby Vision-capable device, the video player uses the Dolby Vision metadata to ensure that the content is mapped for the current display conditions.\nMaxFALL/MaxCLL Basic Background Info MaxFALL/MaxCLL is metadata required for HDR10 content.\nMaxFALL (Maximum Frame Average Light Level) indicates the maximum value of the frame average light level (in cd/m2 or nits) of the entire playback sequence. MaxFALL is calculated by averaging the decoded luminance values of all the pixels within a frame. MaxFALL is usually much lower than MaxCLL.\nMaxCLL (Maximum Content Light Level) indicates the maximum light level of any single pixel (in cd/m2 or nits) of the entire playback sequence. MaxCLL is usually measured off the final delivered content after mastering. If one uses the full light level of the HDR mastering display and adds a hard clip at its maximum value, MaxCLL would be equal to the peak luminance of the mastering monitor.\nMaxCLL/MaxFALL together forms static metadata as it uses the same values for the entire program, while Dolby Vision dynamic metadata changes on a shot by shot (or when required, frame by frame) basis.\nBoth HDR10 and Dolby Vision are based on the ST.2084 EOTF.\nDifferent consumer HDR displays have different peak luminance and contrast capabilities, and more than often these fall below the capabilities of the mastering monitors used in professional post production. Therefore in most cases, PQ encoded images will have to be scaled or mapped to match the capabilities of the target consumer display device. This scaling or mapping is controlled and managed by metadata.\nMaxFALL/MaxCLL Calculation MaxFALL/MaxCLL metadata is not required for a Dolby Vision deliverable, nevertheless, Dolby supports the effort to supply good and correct metadata to produce better end user entertainment experiences. MaxFALL/MaxCLL are not normally calculated as part of the Dolby Vision metadata creation process. They require a separate analysis that can be performed on systems like Colorfront Transkoder, MTI Cortex, etc.\nAlternatively, MaxFALL/MaxCLL metadata can be calculated using Dolby’s cm_analyze which is included in the Dolby Vision Professional Tools suite. Once these values are calculated, they can be added to an existing Dolby Vision XML as Level6 (L6) metadata so as to deliver both Dolby Vision as well as HDR10 metadata in a single metadata asset.\nHow do I create a Dolby Vision project in Blackmagic Design DaVinci Resolve? From an HDR sequence in Blackmagic Design Resolve, export to a mezzanine format (such as Apple ProRes 422 HQ) that supports PQ or HLG based HDR. Import this file into Apple Compressor and use a Dolby Vision 8.4 preset to transcode.\nDolby Atmos Master Formats: ADM BWF Source: Module 1.2 – Beyond Multichannel Audio\nThe Dolby Atmos Renderer records up to 128 inputs comprised of Bed and Object audio, OAMD as well as Binaural, Downmix, and Trim metadata, Input and Re-render configurations.\nThese are recorded to a Dolby Atmos Master File set (DAMF). This is the format native to the Dolby Atmos Renderer and is recorded as a three-file set comprised of:\n atmos — An XML file containing information about the Dolby Atmos presentation and index information about the other files in the file set. The .atmos file includes the number of inputs used as Beds or Objects, frame rate, file start, first frame of action, the number of elements used in spatial coding, downmix, and trim metadata. atmos.metadata — An XML file containing dynamic positional and size OAMD for each Object, along with binaural metadata settings. atmos.audio — A Core Audio Format (CAF) file of up to 128 tracks of interleaved audio.  The .atmos and .atmos.metadata files can be opened for inspection with a text editor. However, direct editing of these files is not recommended, as the file set can become corrupted.\nWhile a new master is always recorded as a DAMF, two other formats are used for distribution, for encoding, or further editing:\n ADM BWF — The Audio Definition Model Broadcast Wav Format (ADM BWF) is an alternative Dolby Atmos master format. With ADM BWF (sometimes referred to as ADM BWAV), all other information included in the .atmos and .atmos.metadata files is included in a data chunk in the header of the wav file. The audio payload itself is up to 128 tracks of interleaved audio. ADM has several advantages:  ADM BWF is a single file instead of three files in a folder, making it easy to interchange with other facilities. ADM BWF can be imported into DAWs. This allows all Bed and Object audio tracks to be recreated along with all the panning metadata. This allows for subsequent editing — language replacement, timing conformance, censorship edits, etc. — prior to remastering. ADM BWF can be encoded to Dolby True HD, Dolby Digital Plus JOC, and Dolby AC-4 IMS and is the primary deliverable to streaming operators and Blu-ray authoring.   IMF.IAB – Immersive Audio Bitstream is a mezzanine format for IMF (interoperability mastering format). IAB is considered a mezzanine format rather than a master format, as OAMD is quantized. IAB.mxf is used by third-party IMF packaging tools to create a delivery container for both Dolby Atmos and video (including Dolby Vision).  While the Dolby Atmos Renderer natively records in the .atmos format only, it can convert to and export ADM BWF and IAB.MXF. The entire file can be exported, or basic top/tail (specified range) edits can be performed.\nThe Dolby Atmos Renderer can also open ADM BWF and IAB.MXF files as master files for playback, QC, basic top/tail editing, conversion (between the two formats), and re-export. However, some restrictions apply with open ADM BWF and IAB.MXF. Punch-in and other metadata editing are not permitted with ADM BWF and IAB.MXF. Conversion to .atmos from ADM BWF and IAB.MXF is not permitted.\nThe Dolby Atmos Conversion Tool (DACT) is a companion application to the Dolby Atmos Renderer and is required to convert from ADM BWF and IAB.MXF to .atmos, perform format and frame-rate conversions, as well as perform complex editing operations on master files. The Dolby Atmos Conversion Tool is a free utility.\nWhat is HLS and DASH Source: Dolby Vision Encoding of Mezzanine Assets\nIn order to distribute content via OTT/VOD, all sources get encoded via a standard video encoder to compress and reduce the file size of the video content, followed by a packager that puts the encoded bitstream into streaming formats, like DASH or HLS.\nHLS – HTTP Live Streaming – a format developed by Apple splits a video file into small segments that are contained within a MPEG2 transport stream or MP4, hence the extension “.ts” or “.mp4”. HLS requires an H.264 (AVC) or H.265 (HEVC) codec and is currently the only format supported by iOS, iPadOS, tvOS and Apple’s Safari browser.\nDASH - Dynamic Adaptive Streaming over HTTP – also known as MPEG-DASH – splits a video file into small segments as well. Unlike HLS, DASH is codec agnostic. It supports H.264, H.265, VP9, and other codecs as well.\nBoth HLS and DASH use a separate manifest file that links to the segments (and/or other manifests). Such a manifest file is a simple text file that is understood by players supporting HLS and/or DASH.\nNotes 需要有这三个 metadata 才能被 Youtube 或 Bilibili 正确识别为 HDR10： Reference: HDR videos using PQ signaling should also contain information about the display it was mastered on (SMPTE ST 2086 mastering metadata). It should also have details about the brightness (CEA 861-3 MaxFALL and MaxCLL). If it’s missing, we use the values for the Sony BVM-X300 mastering display.\n Mastering display luminance Maximum Content Light Level (MaxCLL) Maximum Frame-Average Light Level (MaxFALL)  杜比视界 Profile 8.4 B 站投稿标准 Source 1: 【全球首家】杜比视界用户投稿功能上线啦！—— 哔哩哔哩创作中心 Source 2: 【攻略】杜比视界UGC视频制作和分享操作指南 —— 杜比 Dolby\n Bit Rate: 30000 kbps Resolution: 3840x2160 60FPS Bit Depth: 10bit Transfer Function: HLG Codec: HEVC (H.265) Dolby Vision Profile 8.4 Container: MP4, MOV, M4V  杜比全景声 B 站投稿标准  全景声音轨 音频编码格式 E-AC-3（Dolby Atmos） 音频声道数 6（5.1）或者 8（7.1） 音频采样率 48kHz 音频码率 320kbps 以上  其他 HDR10 要求的 static metadata 由 MaxFALL 和 MaxCLL 组成，杜比视界的 L1 metadata 只是计算出 min ava max 三个值，在达芬奇的 Dolby Vision 面板里进行。\nHDR10 和杜比视界都有元数据来控制影调的映射，在不同峰值亮度设备上的 Tone mapping。只是 HDR10 是所谓静态的元数据，而杜比视界是动态的。后者在 Tone mapping 的控制视界都有元数据来控制影调视界都有元数据来控制影调上更好。\n",
+  "wordCount" : "1626",
+  "inLanguage": "en",
+  "image":"https://thomjiji.github.io/Study_01_Mac.png","datePublished": "2023-01-27T21:23:02+08:00",
+  "dateModified": "2023-01-27T21:23:02+08:00",
+  "author":[{
+    "@type": "Person",
+    "name": "thom"
+  }, {
+    "@type": "Person",
+    "name": "jiji"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://thomjiji.github.io/posts/2023/first/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "thomjiji",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://thomjiji.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://thomjiji.github.io/" accesskey="h" title="thomjiji (Alt + H)">thomjiji</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://thomjiji.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://thomjiji.github.io/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://thomjiji.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://thomjiji.github.io/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://thomjiji.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://thomjiji.github.io/posts/">Posts</a></div>
+    <h1 class="post-title">
+      Dolby Vision Profile 8.4 &amp; Dolby Atmos
+    </h1>
+    <div class="post-meta"><span title='2023-01-27 21:23:02 +0800 HKT'>January 27, 2023</span>&nbsp;·&nbsp;thom, jiji
+
+</div>
+  </header> 
+<figure class="entry-cover"><img loading="lazy" src="https://thomjiji.github.io/Study_01_Mac.png" alt="This is a screenshot">
+        
+</figure><div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e5%8f%82%e8%80%83%e9%93%be%e6%8e%a5" aria-label="参考链接">参考链接</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#%e5%85%b3%e4%ba%8e%e4%b8%8a%e4%bc%a0%e6%9d%9c%e6%af%94%e8%a7%86%e7%95%8c%e5%88%b0%e5%b9%b3%e5%8f%b0bilibili-or-vimeo" aria-label="关于上传杜比视界到平台（Bilibili or Vimeo）">关于上传杜比视界到平台（Bilibili or Vimeo）</a></li>
+                <li>
+                    <a href="#%e5%85%b3%e4%ba%8e%e5%88%b6%e4%bd%9c%e6%9d%9c%e6%af%94%e5%85%a8%e6%99%af%e5%a3%b0-dolby-atmos" aria-label="关于制作杜比全景声 Dolby Atmos">关于制作杜比全景声 Dolby Atmos</a></li>
+                <li>
+                    <a href="#%e5%85%b3%e4%ba%8e%e4%b8%8a%e4%bc%a0-hdr10--hlg-%e5%88%b0-youtube" aria-label="关于上传 HDR10 &amp;amp; HLG 到 Youtube">关于上传 HDR10 &amp; HLG 到 Youtube</a></li>
+                <li>
+                    <a href="#dolby-vision-basics" aria-label="Dolby Vision Basics">Dolby Vision Basics</a></li>
+                <li>
+                    <a href="#common-dolby-vision-delivery-specifications" aria-label="Common Dolby Vision Delivery Specifications">Common Dolby Vision Delivery Specifications</a></li></ul>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#some-topics" aria-label="Some Topics">Some Topics</a><ul>
+                        
+                <li>
+                    <a href="#what-is-dolby-vision-profile-84" aria-label="What is Dolby Vision profile 8.4?">What is Dolby Vision profile 8.4?</a></li>
+                <li>
+                    <a href="#maxfallmaxcll-basichttpsprofessionalsupportdolbycomsarticlecalculation-of-maxfall-and-maxcll-metadatalanguageen_us" aria-label="MaxFALL/MaxCLL Basic"><a href="https://professionalsupport.dolby.com/s/article/Calculation-of-MaxFALL-and-MaxCLL-metadata?language=en_US">MaxFALL/MaxCLL Basic</a></a><ul>
+                        
+                <li>
+                    <a href="#background-info" aria-label="Background Info">Background Info</a></li>
+                <li>
+                    <a href="#maxfallmaxcll-calculation" aria-label="MaxFALL/MaxCLL Calculation">MaxFALL/MaxCLL Calculation</a></li></ul>
+                </li>
+                <li>
+                    <a href="#how-do-i-create-a-dolby-vision-project-in-blackmagic-design-davinci-resolve" aria-label="How do I create a Dolby Vision project in Blackmagic Design DaVinci Resolve?">How do I create a Dolby Vision project in Blackmagic Design DaVinci Resolve?</a><ul>
+                        
+                <li>
+                    <a href="#dolby-atmos-master-formats-adm-bwf" aria-label="Dolby Atmos Master Formats: ADM BWF">Dolby Atmos Master Formats: ADM BWF</a></li></ul>
+                </li>
+                <li>
+                    <a href="#what-is-hls-and-dash" aria-label="What is HLS and DASH">What is HLS and DASH</a></li></ul>
+                </li>
+                <li>
+                    <a href="#notes" aria-label="Notes">Notes</a><ul>
+                        
+                <li>
+                    <a href="#%e9%9c%80%e8%a6%81%e6%9c%89%e8%bf%99%e4%b8%89%e4%b8%aa-metadata-%e6%89%8d%e8%83%bd%e8%a2%ab-youtube-%e6%88%96-bilibili-%e6%ad%a3%e7%a1%ae%e8%af%86%e5%88%ab%e4%b8%ba-hdr10" aria-label="需要有这三个 metadata 才能被 Youtube 或 Bilibili 正确识别为 HDR10：">需要有这三个 metadata 才能被 Youtube 或 Bilibili 正确识别为 HDR10：</a></li>
+                <li>
+                    <a href="#%e6%9d%9c%e6%af%94%e8%a7%86%e7%95%8c-profile-84-b-%e7%ab%99%e6%8a%95%e7%a8%bf%e6%a0%87%e5%87%86" aria-label="杜比视界 Profile 8.4 B 站投稿标准">杜比视界 Profile 8.4 B 站投稿标准</a></li>
+                <li>
+                    <a href="#%e6%9d%9c%e6%af%94%e5%85%a8%e6%99%af%e5%a3%b0-b-%e7%ab%99%e6%8a%95%e7%a8%bf%e6%a0%87%e5%87%86" aria-label="杜比全景声 B 站投稿标准">杜比全景声 B 站投稿标准</a></li>
+                <li>
+                    <a href="#%e5%85%b6%e4%bb%96" aria-label="其他">其他</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="参考链接">参考链接<a hidden class="anchor" aria-hidden="true" href="#参考链接">#</a></h1>
+<h3 id="关于上传杜比视界到平台bilibili-or-vimeo">关于上传杜比视界到平台（Bilibili or Vimeo）<a hidden class="anchor" aria-hidden="true" href="#关于上传杜比视界到平台bilibili-or-vimeo">#</a></h3>
+<ul>
+<li><a href="https://professionalsupport.dolby.com/s/article/Dolby-Vision-encoding-Apple-Compressor?language=en_US#UsingInBuiltSettings">How-To: Dolby Vision Encoding - Apple Compressor for Vimeo</a></li>
+<li><a href="https://professionalsupport.dolby.com/s/article/Dolby-Vision-for-video-sharing-services-FAQs?language=en_US#_Toc82103519">Dolby Vision for Vimeo FAQs</a></li>
+<li><a href="https://www.bilibili.com/read/cv7791059">Bilbili 技术发布的关于支持 HDR10 上传的文章</a> —— 2020 年 9 月</li>
+</ul>
+<h3 id="关于制作杜比全景声-dolby-atmos">关于制作杜比全景声 Dolby Atmos<a hidden class="anchor" aria-hidden="true" href="#关于制作杜比全景声-dolby-atmos">#</a></h3>
+<ul>
+<li><a href="https://learning.dolby.com/hc/en-us/articles/360054574872-Module-11-3-Dolby-Atmos-Using-Blackmagic-Design-DaVinci-Resolve-Studio">Dolby Atmos Using Blackmagic Design DaVinci Resolve Studio</a></li>
+<li><a href="https://mp.weixin.qq.com/s/iuW9wztwPV9bvtVaDQxhLQ">哔哩哔哩（B 站）杜比全景声/杜比音效稿件制作指南</a> —— 以白菜的名义</li>
+<li><a href="https://www.bilibili.com/video/BV1AT4y1c7Um?share_source=copy_web">EP05 杜比全景声家庭版的交付和编码封装</a> —— 以白菜的名义</li>
+</ul>
+<h3 id="关于上传-hdr10--hlg-到-youtube">关于上传 HDR10 &amp; HLG 到 Youtube<a hidden class="anchor" aria-hidden="true" href="#关于上传-hdr10--hlg-到-youtube">#</a></h3>
+<ul>
+<li><a href="https://support.google.com/youtube/answer/7126552?hl=en#zippy=%2Chdr-metadata%2Chdr-video-file-encoding%2Cupload-requirements">Upload High Dynamic Range (HDR) videos</a></li>
+</ul>
+<h3 id="dolby-vision-basics">Dolby Vision Basics<a hidden class="anchor" aria-hidden="true" href="#dolby-vision-basics">#</a></h3>
+<ul>
+<li><a href="https://professionalsupport.dolby.com/s/article/Dolby-Vision-Metadata-Levels?language=en_US">Dolby Vision Metadata Levels</a></li>
+<li><a href="https://professionalsupport.dolby.com/s/article/What-is-Dolby-Vision-Profile?language=en_US">What are Dolby Vision Profiles?</a></li>
+<li><a href="https://professionalsupport.dolby.com/s/article/What-are-the-HEVC-requirements-for-Dolby-Vision-encoding?language=en_US">What are the HEVC requirements for Dolby Vision encoding?</a></li>
+<li><a href="https://professionalsupport.dolby.com/s/article/What-monitor-should-I-use-for-creating-Dolby-Vision?language=en_US">HDR Monitor Consideration</a></li>
+</ul>
+<h3 id="common-dolby-vision-delivery-specifications">Common Dolby Vision Delivery Specifications<a hidden class="anchor" aria-hidden="true" href="#common-dolby-vision-delivery-specifications">#</a></h3>
+<ul>
+<li><a href="https://help.apple.com/itc/videoaudioassetguide/en.lproj/static.html#itcae20df1c7">iTunes Video and Audio Asset Guide 5.3.8</a></li>
+</ul>
+<h1 id="some-topics">Some Topics<a hidden class="anchor" aria-hidden="true" href="#some-topics">#</a></h1>
+<h2 id="what-is-dolby-vision-profile-84">What is Dolby Vision profile 8.4?<a hidden class="anchor" aria-hidden="true" href="#what-is-dolby-vision-profile-84">#</a></h2>
+<p>Dolby Vision profiles describe the video codec and set of coding techniques used to encode a Dolby Vision video. Profile 8.4 is a Dolby Vision profile where the 10-bit HDR video essence is encoded using HEVC with a Hybrid Log Gamma (HLG) transfer function and is accompanied by dynamic Dolby Vision metadata. This is the format that is used when capturing HDR video on iPhone 12 or when exporting Dolby Vision video from Final Cut Pro or Compressor.</p>
+<p>Profile 8.4 is designed for direct distribution and playback on consumer devices (rather than, say, a mezzanine format optimized for OTT encoding). While there&rsquo;s a growing range of consumer devices that support Dolby Vision playback, Profile 8.4 encodes are also built with a cross-compatible HLG base layer, so that if a device does not support Dolby Vision decoding, it can often decode just the HLG base layer, which will present a viewable picture, although decoding just the base layer—without any Dolby Vision metadata—does not take advantage of the sophisticated display mapping available in Dolby Vision displays.</p>
+<p>When Dolby Vision profile 8.4 files are played on Vimeo and on a Dolby Vision-capable device, the video player uses the Dolby Vision metadata to ensure that the content is mapped for the current display conditions.</p>
+<h2 id="maxfallmaxcll-basichttpsprofessionalsupportdolbycomsarticlecalculation-of-maxfall-and-maxcll-metadatalanguageen_us"><a href="https://professionalsupport.dolby.com/s/article/Calculation-of-MaxFALL-and-MaxCLL-metadata?language=en_US">MaxFALL/MaxCLL Basic</a><a hidden class="anchor" aria-hidden="true" href="#maxfallmaxcll-basichttpsprofessionalsupportdolbycomsarticlecalculation-of-maxfall-and-maxcll-metadatalanguageen_us">#</a></h2>
+<h3 id="background-info">Background Info<a hidden class="anchor" aria-hidden="true" href="#background-info">#</a></h3>
+<p>MaxFALL/MaxCLL is metadata required for HDR10 content.</p>
+<p>MaxFALL (Maximum Frame Average Light Level) indicates the maximum value of the frame average light level (in cd/m2 or nits) of the entire playback sequence. MaxFALL is calculated by averaging the decoded luminance values of all the pixels within a frame. MaxFALL is usually much lower than MaxCLL.</p>
+<p>MaxCLL (Maximum Content Light Level) indicates the maximum light level of any single pixel (in cd/m2 or nits) of the entire playback sequence. MaxCLL is usually measured off the final delivered content after mastering. If one uses the full light level of the HDR mastering display and adds a hard clip at its maximum value, MaxCLL would be equal to the peak luminance of the mastering monitor.</p>
+<p><strong>MaxCLL/MaxFALL together forms static metadata</strong> as it uses the same values for the entire program, while Dolby Vision dynamic metadata changes on a shot by shot (or when required, frame by frame) basis.</p>
+<p>Both HDR10 and Dolby Vision are based on the ST.2084 EOTF.</p>
+<p>Different consumer HDR displays have different peak luminance and contrast capabilities, and more than often these fall below the capabilities of the mastering monitors used in professional post production. Therefore <em>in most cases, PQ encoded images will have to be scaled or mapped to match the capabilities of the target consumer display device. This scaling or mapping is controlled and managed by metadata</em>.</p>
+<h3 id="maxfallmaxcll-calculation">MaxFALL/MaxCLL Calculation<a hidden class="anchor" aria-hidden="true" href="#maxfallmaxcll-calculation">#</a></h3>
+<p><em>MaxFALL/MaxCLL metadata is not required for a Dolby Vision deliverable</em>, nevertheless, Dolby supports the effort to supply good and correct metadata to produce better end user entertainment experiences. MaxFALL/MaxCLL are not normally calculated as part of the Dolby Vision metadata creation process. They require a separate analysis that can be performed on systems like Colorfront Transkoder, MTI Cortex, etc.</p>
+<p>Alternatively, MaxFALL/MaxCLL metadata can be calculated using Dolby&rsquo;s cm_analyze which is included in the Dolby Vision Professional Tools suite. <strong>Once these values are calculated, they can be added to an existing Dolby Vision XML as Level6 (L6) metadata so as to deliver both Dolby Vision as well as HDR10 metadata in a single metadata asset.</strong></p>
+<h2 id="how-do-i-create-a-dolby-vision-project-in-blackmagic-design-davinci-resolve">How do I create a Dolby Vision project in Blackmagic Design DaVinci Resolve?<a hidden class="anchor" aria-hidden="true" href="#how-do-i-create-a-dolby-vision-project-in-blackmagic-design-davinci-resolve">#</a></h2>
+<p>From an HDR sequence in Blackmagic Design Resolve, export to a mezzanine format (such as Apple ProRes 422 HQ) that supports PQ or HLG based HDR. Import this file into Apple Compressor and use a Dolby Vision 8.4 preset to transcode.</p>
+<h3 id="dolby-atmos-master-formats-adm-bwf">Dolby Atmos Master Formats: ADM BWF<a hidden class="anchor" aria-hidden="true" href="#dolby-atmos-master-formats-adm-bwf">#</a></h3>
+<p>Source: <a href="https://learning.dolby.com/hc/en-us/articles/360052744252">Module 1.2 – Beyond Multichannel Audio</a></p>
+<p>The Dolby Atmos Renderer records up to 128 inputs comprised of Bed and Object audio, OAMD as well as Binaural, Downmix, and Trim metadata, Input and Re-render configurations.</p>
+<p>These are recorded to a Dolby Atmos Master File set (DAMF). This is the format native to the Dolby Atmos Renderer and is recorded as a three-file set comprised of:</p>
+<ul>
+<li><strong>atmos</strong> — An XML file containing information about the Dolby Atmos presentation and index information about the other files in the file set. The .atmos file includes the number of inputs used as Beds or Objects, frame rate, file start, first frame of action, the number of elements used in spatial coding, downmix, and trim metadata.</li>
+<li><strong>atmos.metadata</strong> — An XML file containing dynamic positional and size OAMD for each Object, along with binaural metadata settings.</li>
+<li><strong>atmos.audio</strong> — A Core Audio Format (CAF) file of up to 128 tracks of interleaved audio.</li>
+</ul>
+<p>The .atmos and .atmos.metadata files can be opened for inspection with a text editor. However, direct editing of these files is not recommended, as the file set can become corrupted.</p>
+<p>While a new master is always recorded as a DAMF, two other formats are used for distribution, for encoding, or further editing:</p>
+<ul>
+<li><strong>ADM BWF</strong> — The Audio Definition Model Broadcast Wav Format (ADM BWF) is an alternative Dolby Atmos master format. With ADM BWF (sometimes referred to as ADM BWAV), all other information included in the .atmos and .atmos.metadata files is included in a data chunk in the header of the wav file. The audio payload itself is up to 128 tracks of interleaved audio. ADM has several advantages:
+<ol>
+<li>ADM BWF is a single file instead of three files in a folder, making it easy to interchange with other facilities.</li>
+<li>ADM BWF can be imported into DAWs. This allows all Bed and Object audio tracks to be recreated along with all the panning metadata. This allows for subsequent editing — language replacement, timing conformance, censorship edits, etc. — prior to remastering.</li>
+<li>ADM BWF can be encoded to Dolby True HD, Dolby Digital Plus JOC, and Dolby AC-4 IMS and is the primary deliverable to streaming operators and Blu-ray authoring.</li>
+</ol>
+</li>
+<li><strong>IMF.IAB</strong> – Immersive Audio Bitstream is a mezzanine format for IMF (interoperability mastering format). IAB is considered a mezzanine format rather than a master format, as OAMD is quantized. IAB.mxf is used by third-party IMF packaging tools to create a delivery container for both Dolby Atmos and video (including Dolby Vision).</li>
+</ul>
+<p>While the Dolby Atmos Renderer natively records in the .atmos format only, it can convert to and export ADM BWF and IAB.MXF. The entire file can be exported, or basic top/tail (specified range) edits can be performed.</p>
+<p>The Dolby Atmos Renderer can also open ADM BWF and IAB.MXF files as master files for playback, QC, basic top/tail editing, conversion (between the two formats), and re-export. However, some restrictions apply with open ADM BWF and IAB.MXF. Punch-in and other metadata editing are not permitted with ADM BWF and IAB.MXF. Conversion to .atmos from ADM BWF and IAB.MXF is not permitted.</p>
+<p>The Dolby Atmos Conversion Tool (DACT) is a companion application to the Dolby Atmos Renderer and is required to convert from ADM BWF and IAB.MXF to .atmos, perform format and frame-rate conversions, as well as perform complex editing operations on master files. The Dolby Atmos Conversion Tool is a free utility.</p>
+<h2 id="what-is-hls-and-dash">What is HLS and DASH<a hidden class="anchor" aria-hidden="true" href="#what-is-hls-and-dash">#</a></h2>
+<p>Source: <a href="https://professionalsupport.dolby.com/s/article/Dolby-Vision-Encoding-of-mezzanine-assets?language=en_US">Dolby Vision Encoding of Mezzanine Assets</a></p>
+<p>In order to distribute content via OTT/VOD, all sources get encoded via a standard video encoder to compress and reduce the file size of the video content, followed by a packager that puts the encoded bitstream into streaming formats, like DASH or HLS.</p>
+<p>HLS – HTTP Live Streaming – a format developed by Apple splits a video file into small segments that are contained within a MPEG2 transport stream or MP4, hence the extension “.ts” or “.mp4”. HLS requires an H.264 (AVC) or H.265 (HEVC) codec and is currently the only format supported by iOS, iPadOS, tvOS and Apple’s Safari browser.</p>
+<p>DASH - Dynamic Adaptive Streaming over HTTP – also known as MPEG-DASH – splits a video file into small segments as well. Unlike HLS, DASH is codec agnostic. It supports H.264, H.265, VP9, and other codecs as well.</p>
+<p>Both HLS and DASH use a separate manifest file that links to the segments (and/or other manifests). Such a manifest file is a simple text file that is understood by players supporting HLS and/or DASH.</p>
+<h1 id="notes">Notes<a hidden class="anchor" aria-hidden="true" href="#notes">#</a></h1>
+<h2 id="需要有这三个-metadata-才能被-youtube-或-bilibili-正确识别为-hdr10">需要有这三个 metadata 才能被 Youtube 或 Bilibili 正确识别为 HDR10：<a hidden class="anchor" aria-hidden="true" href="#需要有这三个-metadata-才能被-youtube-或-bilibili-正确识别为-hdr10">#</a></h2>
+<p><a href="https://support.google.com/youtube/answer/7126552?hl=en#zippy=%2Chdr-metadata%2Chdr-video-file-encoding%2Cupload-requirements">Reference</a>: HDR videos using PQ signaling should also contain information about <em>the display it was mastered on</em> (SMPTE ST 2086 mastering metadata). It should also have details about the brightness (CEA 861-3 <em>MaxFALL and MaxCLL</em>). If it&rsquo;s missing, we use the values for the Sony BVM-X300 mastering display.</p>
+<ol>
+<li>Mastering display luminance</li>
+<li>Maximum Content Light Level (MaxCLL)</li>
+<li>Maximum Frame-Average Light Level (MaxFALL)</li>
+</ol>
+<h2 id="杜比视界-profile-84-b-站投稿标准">杜比视界 Profile 8.4 B 站投稿标准<a hidden class="anchor" aria-hidden="true" href="#杜比视界-profile-84-b-站投稿标准">#</a></h2>
+<p>Source 1: <a href="https://www.bilibili.com/read/cv12741112">【全球首家】杜比视界用户投稿功能上线啦！</a>—— 哔哩哔哩创作中心
+Source 2: <a href="https://www.bilibili.com/read/cv12752764">【攻略】杜比视界UGC视频制作和分享操作指南</a> —— 杜比 Dolby</p>
+<ul>
+<li>Bit Rate: 30000 kbps</li>
+<li>Resolution: 3840x2160 60FPS</li>
+<li>Bit Depth: 10bit</li>
+<li>Transfer Function: HLG</li>
+<li>Codec: HEVC (H.265)</li>
+<li>Dolby Vision Profile 8.4</li>
+<li>Container: MP4, MOV, M4V</li>
+</ul>
+<h2 id="杜比全景声-b-站投稿标准">杜比全景声 B 站投稿标准<a hidden class="anchor" aria-hidden="true" href="#杜比全景声-b-站投稿标准">#</a></h2>
+<ul>
+<li>全景声音轨</li>
+<li>音频编码格式 E-AC-3（Dolby Atmos）</li>
+<li>音频声道数 6（5.1）或者 8（7.1）</li>
+<li>音频采样率 48kHz</li>
+<li>音频码率 320kbps 以上</li>
+</ul>
+<h2 id="其他">其他<a hidden class="anchor" aria-hidden="true" href="#其他">#</a></h2>
+<p>HDR10 要求的 static metadata 由 MaxFALL 和 MaxCLL 组成，杜比视界的 L1 metadata 只是计算出 min ava max 三个值，在达芬奇的 Dolby Vision 面板里进行。</p>
+<p>HDR10 和杜比视界都有元数据来控制影调的映射，在不同峰值亮度设备上的 Tone mapping。只是 HDR10 是所谓静态的元数据，而杜比视界是动态的。后者在 Tone mapping 的控制视界都有元数据来控制影调视界都有元数据来控制影调上更好。</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://thomjiji.github.io/tags/dolby-vision/">Dolby Vision</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://thomjiji.github.io/">thomjiji</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

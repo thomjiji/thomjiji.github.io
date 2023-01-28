@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>thomjiji</title>
+    <link>https://thomjiji.github.io/</link>
+    <description>Recent content on thomjiji</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 27 Jan 2023 21:32:00 +0800</lastBuildDate><atom:link href="https://thomjiji.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sanitize/Secure Erase SSD Drive Software</title>
+      <link>https://thomjiji.github.io/posts/2023/third/</link>
+      <pubDate>Fri, 27 Jan 2023 21:32:00 +0800</pubDate>
+      
+      <guid>https://thomjiji.github.io/posts/2023/third/</guid>
+      <description>Third-Party Software  Parted Magic SEDutil  Official Software Samsung T7 SSD support Secure Erase via Samsung Magicion Software (only Windows)
+How to perform a secure erase using Magicion Software: https://www.pugetsystems.com/support/guides/samsung-secure-erase-949/</description>
+    </item>
+    
+    <item>
+      <title>Use cat command to add text to file quickly</title>
+      <link>https://thomjiji.github.io/posts/2023/second/</link>
+      <pubDate>Fri, 27 Jan 2023 21:28:03 +0800</pubDate>
+      
+      <guid>https://thomjiji.github.io/posts/2023/second/</guid>
+      <description>Using echo touch file.md echo &amp;#34;hello&amp;#34; &amp;gt; file.md Using cat and standard redirect symbol &amp;gt; cat &amp;gt;&amp;gt; file.md This command creates an empty yet edited file as it prompts the user to create a text file and type in the file at the same time.
+If you don&amp;rsquo;t want to edit the file, simply press CTRL+C and it will simply exit and create an empty file.
+If you would like to add some text to the file, you can type in after this, like this:</description>
+    </item>
+    
+    <item>
+      <title>Dolby Vision Profile 8.4 &amp; Dolby Atmos</title>
+      <link>https://thomjiji.github.io/posts/2023/first/</link>
+      <pubDate>Fri, 27 Jan 2023 21:23:02 +0800</pubDate>
+      
+      <guid>https://thomjiji.github.io/posts/2023/first/</guid>
+      <description>参考链接 关于上传杜比视界到平台（Bilibili or Vimeo）  How-To: Dolby Vision Encoding - Apple Compressor for Vimeo Dolby Vision for Vimeo FAQs Bilbili 技术发布的关于支持 HDR10 上传的文章 —— 2020 年 9 月  关于制作杜比全景声 Dolby Atmos  Dolby Atmos Using Blackmagic Design DaVinci Resolve Studio 哔哩哔哩（B 站）杜比全景声/杜比音效稿件制作指南 —— 以白菜的名义 EP05 杜比全景声家庭版的交付和编码封装 —— 以白菜的名义  关于上传 HDR10 &amp;amp; HLG 到 Youtube  Upload High Dynamic Range (HDR) videos  Dolby Vision Basics  Dolby Vision Metadata Levels What are Dolby Vision Profiles?</description>
+    </item>
+    
+    
+    
+  </channel>
+</rss>
