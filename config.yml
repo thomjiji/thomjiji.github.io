@@ -1,0 +1,51 @@
+baseURL: "https://thomjiji.github.io/"
+languageCode: "en-us"
+title: "thomjiji"
+theme: "PaperMod"
+
+menu:
+  main:
+    - name: Search
+      url: search/
+      weight: 5
+    - name: Categories
+      url: /categories/
+      weight: 10
+    - name: Tags
+      url: /tags/
+      weight: 20
+    - name: Archives
+      url: /archives/
+      weight: 30
+
+params:
+  defaultTheme: auto
+  profileMode:
+    enabled: true
+    title: "thomjiji" # optional default will be site title
+    subtitle: "Privacy | Cryptography | Filmmaking | Linux"
+    imageUrl: "Study_01_Mac.png" # optional
+    imageTitle: "<title of image as alt>" # optional
+    imageWidth: 120 # custom size
+    imageHeight: 120 # custom size
+    buttons:
+      - name: Archives
+        url: "/archives"
+      - name: Categories
+        url: "/categories"
+      - name: Github
+        url: "https://github.com/"
+  socialIcons: # optional
+    - name: mastodon
+      url: "https://alive.bar"
+    - name: twitter
+      url: "https://twitter.com"
+  showShareButtons: false
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # is necessary
