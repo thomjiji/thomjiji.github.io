@@ -8,7 +8,7 @@ cover:
 ShowToc: true
 tags: ["Dolby Vision"]
 categories: ["HDR"]
-author: ["thom", "jiji"]
+author: ["thom"]
 weight: 1
 ---
 

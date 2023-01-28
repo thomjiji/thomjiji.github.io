@@ -20,33 +20,47 @@ menu:
       weight: 40
 
 params:
-  defaultTheme: auto
-  profileMode:
-    enabled: true
-    title: "thomjiji" # optional default will be site title
-    subtitle: "Privacy | Cryptography | Filmmaking | Post-production | Linux"
-    imageUrl: "Study_01_Mac.png" # optional
-    imageTitle: "thom avator" # optional
-    imageWidth: 120 # custom size
-    imageHeight: 120 # custom size
-    buttons:
-      - name: Archives
-        url: "/archives"
-      - name: Categories
-        url: "/categories"
-      - name: Github
-        url: "https://github.com/"
+  # PaperMode Regular mode (Home-info mode)
+  homeInfoParams:
+    Title: Hello, thomjiji here!
+    Content: "Privacy | Cryptography | Filmmaking | Post-production | Linux"
+
+  # PaperMod Profile mode
+  # profileMode:
+  #   enabled: true
+  #   title: "thomjiji" # optional default will be site title
+  #   subtitle: "Privacy | Cryptography | Filmmaking | Post-production | Linux"
+  #   imageUrl: "Study_01_Mac.png" # optional
+  #   imageTitle: "thom avator" # optional
+  #   imageWidth: 120 # custom size
+  #   imageHeight: 120 # custom size
+  #   buttons:
+  #     - name: Archives
+  #       url: "/archives"
+  #     - name: Categories
+  #       url: "/categories"
+  #     - name: Github
+  #       url: "https://github.com/"
+
   socialIcons: # optional
     - name: mastodon
       url: "https://alive.bar"
     - name: twitter
       url: "https://twitter.com"
+
+  defaultTheme: auto
   showShareButtons: false
   ShowBreadCrumbs: true
+  ShowPostNavLinks: true
   ShowCodeCopyButtons: true
+
+  editPost:
+    URL: "https://github.com/thomjiji/thomjiji.github.io/tree/main/content/"
+    Text: "Suggest Changes" # edit text
+    appendFilePath: true # to append file path to Edit link
 
 outputs:
   home:
     - HTML
     - RSS
-    - JSON # is necessary
+    - JSON
