@@ -2,22 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://thomjiji.github.io/posts/first/</loc>
+    <lastmod>2023-01-27T21:23:02+08:00</lastmod>
+  </url><url>
+    <loc>https://thomjiji.github.io/tags/daylight/</loc>
+    <lastmod>2023-01-28T18:43:16+08:00</lastmod>
+  </url><url>
+    <loc>https://thomjiji.github.io/posts/filmlight/fifth/</loc>
+    <lastmod>2023-01-28T18:43:16+08:00</lastmod>
+  </url><url>
+    <loc>https://thomjiji.github.io/tags/filmlight/</loc>
+    <lastmod>2023-01-28T18:43:16+08:00</lastmod>
+  </url><url>
+    <loc>https://thomjiji.github.io/posts/</loc>
+    <lastmod>2023-01-28T18:43:16+08:00</lastmod>
+  </url><url>
+    <loc>https://thomjiji.github.io/tags/</loc>
+    <lastmod>2023-01-28T18:43:16+08:00</lastmod>
+  </url><url>
+    <loc>https://thomjiji.github.io/</loc>
+    <lastmod>2023-01-28T18:43:16+08:00</lastmod>
+  </url><url>
     <loc>https://thomjiji.github.io/tags/encryption/</loc>
     <lastmod>2023-01-27T21:32:00+08:00</lastmod>
   </url><url>
-    <loc>https://thomjiji.github.io/posts/</loc>
-    <lastmod>2023-01-27T21:32:00+08:00</lastmod>
-  </url><url>
-    <loc>https://thomjiji.github.io/posts/2023/third/</loc>
+    <loc>https://thomjiji.github.io/posts/third/</loc>
     <lastmod>2023-01-27T21:32:00+08:00</lastmod>
   </url><url>
     <loc>https://thomjiji.github.io/tags/secure-erase-se/</loc>
-    <lastmod>2023-01-27T21:32:00+08:00</lastmod>
-  </url><url>
-    <loc>https://thomjiji.github.io/tags/</loc>
-    <lastmod>2023-01-27T21:32:00+08:00</lastmod>
-  </url><url>
-    <loc>https://thomjiji.github.io/</loc>
     <lastmod>2023-01-27T21:32:00+08:00</lastmod>
   </url><url>
     <loc>https://thomjiji.github.io/tags/linux/</loc>
@@ -26,19 +38,16 @@
     <loc>https://thomjiji.github.io/tags/roam/</loc>
     <lastmod>2023-01-27T21:28:03+08:00</lastmod>
   </url><url>
-    <loc>https://thomjiji.github.io/posts/2023/fouth/</loc>
+    <loc>https://thomjiji.github.io/posts/fouth/</loc>
     <lastmod>2023-01-27T21:28:03+08:00</lastmod>
   </url><url>
-    <loc>https://thomjiji.github.io/posts/2023/second/</loc>
+    <loc>https://thomjiji.github.io/posts/second/</loc>
     <lastmod>2023-01-27T21:28:03+08:00</lastmod>
   </url><url>
     <loc>https://thomjiji.github.io/categories/</loc>
     <lastmod>2023-01-27T21:23:02+08:00</lastmod>
   </url><url>
     <loc>https://thomjiji.github.io/tags/dolby-vision/</loc>
-    <lastmod>2023-01-27T21:23:02+08:00</lastmod>
-  </url><url>
-    <loc>https://thomjiji.github.io/posts/2023/first/</loc>
     <lastmod>2023-01-27T21:23:02+08:00</lastmod>
   </url><url>
     <loc>https://thomjiji.github.io/categories/hdr/</loc>

@@ -6,18 +6,21 @@ publishDir: "docs"
 
 menu:
   main:
+    - name: Posts
+      url: posts/
+      weight: 10
     - name: Search
       url: search/
-      weight: 5
-    - name: Categories
-      url: /categories/
-      weight: 10
-    - name: Tags
-      url: /tags/
       weight: 20
-    - name: Archives
-      url: /archives/
+    - name: Tags
+      url: tags/
       weight: 30
+    - name: Categories
+      url: categories/
+      weight: 40
+    - name: Archives
+      url: archives/
+      weight: 50
 
 params:
   defaultTheme: auto
@@ -26,7 +29,7 @@ params:
     title: "thomjiji" # optional default will be site title
     subtitle: "Privacy | Cryptography | Filmmaking | Linux"
     imageUrl: "Study_01_Mac.png" # optional
-    imageTitle: "<title of image as alt>" # optional
+    imageTitle: "thom avator" # optional
     imageWidth: 120 # custom size
     imageHeight: 120 # custom size
     buttons:

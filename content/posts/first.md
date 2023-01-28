@@ -9,6 +9,7 @@ ShowToc: true
 tags: ["Dolby Vision"]
 categories: ["HDR"]
 author: ["thom", "jiji"]
+weight: 1
 ---
 
 # 参考链接
