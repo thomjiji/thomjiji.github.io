@@ -6,14 +6,23 @@
     <description>Recent content in Posts on thomjiji</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 28 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://thomjiji.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 29 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://thomjiji.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Dolby Vision Profile 8.4 &amp; Dolby Atmos</title>
       <link>https://thomjiji.github.io/posts/first/</link>
       <pubDate>Fri, 27 Jan 2023 21:23:02 +0800</pubDate>
       
       <guid>https://thomjiji.github.io/posts/first/</guid>
-      <description>参考链接 关于上传杜比视界到平台（Bilibili or Vimeo） How-To: Dolby Vision Encoding - Apple Compressor for Vimeo Dolby Vision for Vimeo FAQs Bilbili 技术发布的关于支持 HDR10 上传的文章 —— 2020 年 9 月 关于制作杜比全景声 Dolby Atmos Dolby Atmos Using Blackmagic Design DaVinci Resolve Studio 哔哩哔哩（B 站）杜比全景声/杜比音效稿件制作指南 —— 以白菜的名义 EP05 杜比全景声家庭版的交付和编码封装 —— 以白菜的名义 关于上传 HDR10 &amp;amp; HLG 到 Youtube Upload High Dynamic Range (HDR) videos Dolby Vision Basics Dolby Vision Metadata Levels What are Dolby Vision Profiles? What are the HEVC requirements for Dolby Vision encoding?</description>
+      <description>参考链接 关于上传杜比视界到平台（Bilibili or Vimeo）  How-To: Dolby Vision Encoding - Apple Compressor for Vimeo Dolby Vision for Vimeo FAQs Bilbili 技术发布的关于支持 HDR10 上传的文章 —— 2020 年 9 月  关于制作杜比全景声 Dolby Atmos  Dolby Atmos Using Blackmagic Design DaVinci Resolve Studio 哔哩哔哩（B 站）杜比全景声/杜比音效稿件制作指南 —— 以白菜的名义 EP05 杜比全景声家庭版的交付和编码封装 —— 以白菜的名义  关于上传 HDR10 &amp;amp; HLG 到 Youtube  Upload High Dynamic Range (HDR) videos  Dolby Vision Basics  Dolby Vision Metadata Levels What are Dolby Vision Profiles?</description>
+    </item>
+    
+    <item>
+      <title>mp4muxer &amp; mp4demuxer Basic Usage</title>
+      <link>https://thomjiji.github.io/posts/dolbyvision_dolbyatmos/</link>
+      <pubDate>Sun, 29 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://thomjiji.github.io/posts/dolbyvision_dolbyatmos/</guid>
+      <description>Installation  mp4muxer mp4demuxer  Commands  将 MP4 的音视频分离（脱壳 Demux）：  mp4demuxer --input-file input.mp4 --output-folder ~/Output 合并杜比视界 Profile 8.4 和杜比全景声双音轨：  mp4muxer -i input.h265 --input-video-frame-rate 25 --hvc1flag 0 --dv-bl-compatible-id 4 -i Stereo.aac -i Atmos.ec3 -o DolbyVision_Atmos.mp4 合并 SDR 视频和杜比全景声双音轨:  mp4muxer -i input.h264 --input-video-frame-rate 25 -i Stereo.aac -i Atmos.ec3 -o SDR&amp;amp;Atmos.mp4 </description>
     </item>
     
     <item>
@@ -22,7 +31,7 @@
       <pubDate>Sat, 28 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://thomjiji.github.io/posts/filmlight/fifth/</guid>
-      <description>操作步骤 把 ARRI Look Library 的文件包直接解压到这个路径，把里面的多个 cub 和 fllook 文件平摊在这个路径：/Library/Application Support/FilmLight/looks 把 ALF-2 v5 DRT Family 解压到这个路径，把里面的 cub 和 fltransform 平摊在这个路径：/Library/Application Support/FilmLight/etc/colourspaces 打开 Daylight，完成。 Reference ARRI Colour Workflow in Baselight ACES and Baselight ARRI Look Library and ALF-2 v5 DRT Family Download </description>
+      <description>操作步骤  把 ARRI Look Library 的文件包直接解压到这个路径，把里面的多个 cub 和 fllook 文件平摊在这个路径：/Library/Application Support/FilmLight/looks 把 ALF-2 v5 DRT Family 解压到这个路径，把里面的 cub 和 fltransform 平摊在这个路径：/Library/Application Support/FilmLight/etc/colourspaces 打开 Daylight，完成。  Reference  ARRI Colour Workflow in Baselight ACES and Baselight ARRI Look Library and ALF-2 v5 DRT Family Download  </description>
     </item>
     
     <item>
@@ -31,7 +40,7 @@
       <pubDate>Fri, 27 Jan 2023 21:32:00 +0800</pubDate>
       
       <guid>https://thomjiji.github.io/posts/third/</guid>
-      <description>Third-Party Software Parted Magic SEDutil Official Software Samsung T7 SSD support Secure Erase via Samsung Magicion Software (only Windows)
+      <description>Third-Party Software  Parted Magic SEDutil  Official Software Samsung T7 SSD support Secure Erase via Samsung Magicion Software (only Windows)
 How to perform a secure erase using Magicion Software: https://www.pugetsystems.com/support/guides/samsung-secure-erase-949/</description>
     </item>
     
@@ -42,7 +51,7 @@ How to perform a secure erase using Magicion Software: https://www.pugetsystems.
       
       <guid>https://thomjiji.github.io/posts/fouth/</guid>
       <description>Reference Blog: Discovering org roam
-一些随机的摘抄 A zettelkasten consists of many individual notes with ideas and other short pieces of information that are taken down as they occur or are acquired. The notes are numbered hierarchically, so that new notes may be inserted at the appropriate place, and contain metadata to allow the note-taker to associate notes with each other. For example, notes may contain tags that describe key aspects of the note, and they may reference other notes.</description>
+一些随机的摘抄  A zettelkasten consists of many individual notes with ideas and other short pieces of information that are taken down as they occur or are acquired. The notes are numbered hierarchically, so that new notes may be inserted at the appropriate place, and contain metadata to allow the note-taker to associate notes with each other. For example, notes may contain tags that describe key aspects of the note, and they may reference other notes.</description>
     </item>
     
     <item>
@@ -62,8 +71,7 @@ If you would like to add some text to the file, you can type in after this, like
       <pubDate>Thu, 26 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://thomjiji.github.io/posts/macos_add_fish/</guid>
-      <description>Solution Add fish to $SHELL and set as default Add the shell to /etc/shells with: $ echo &amp;#34;/opt/homebrew/bin/fish&amp;#34; | sudo tee -a /etc/shells Change default shell with: chsh -s /opt/homebrew/bin/fish Modify $PATH with fish shell 在 iTerm2 当中使用 fish shell 作为默认 shell，需要把 $PATH 加入到 ~/.config/fish/fish_variables set -U fish_user_paths /usr/local/bin $fish_user_paths Type this command in terminal: fish_add_path /opt/homebrew/bin. It will add /opt/homebrew/bin to the ~/.config/fish/fish_variables. Other useful commands which $SHELL
-echo $PATH</description>
+      <description>Solution Add fish to $SHELL and set as default  Add the shell to /etc/shells with:  $ echo &amp;#34;/opt/homebrew/bin/fish&amp;#34; | sudo tee -a /etc/shells Change default shell with:  chsh -s /opt/homebrew/bin/fish Modify $PATH with fish shell  在 iTerm2 当中使用 fish shell 作为默认 shell，需要把 $PATH 加入到 ~/.config/fish/fish_variables  set -U fish_user_paths /usr/local/bin $fish_user_paths Type this command in terminal: fish_add_path /opt/homebrew/bin. It will add /opt/homebrew/bin to the ~/.config/fish/fish_variables.  Other useful commands which $SHELL</description>
     </item>
     
     <item>
@@ -72,7 +80,7 @@ echo $PATH</description>
       <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://thomjiji.github.io/posts/filmlight/high-quality-h264-render/</guid>
-      <description> Params Rate Control: CRF based VBR Quantizer: Nominal Quantizer parameter: 18 Quantizer parameter: 18 </description>
+      <description>     Params  Rate Control: CRF based VBR Quantizer:  Nominal Quantizer parameter: 18 Quantizer parameter: 18    </description>
     </item>
     
   </channel>
