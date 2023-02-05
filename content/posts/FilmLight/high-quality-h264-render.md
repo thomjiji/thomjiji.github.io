@@ -13,6 +13,6 @@ categories: ["FilmLight"]
 # Params
 
 - Rate Control: CRF based VBR
-- Quantizer: 
-    - Nominal Quantizer parameter: **18**
-    - Quantizer parameter: **18**
+- Quantizer:
+  - Nominal Quantizer parameter: 18
+  - Quantizer parameter: 18

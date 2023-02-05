@@ -16,7 +16,7 @@ $ echo "/opt/homebrew/bin/fish" | sudo tee -a /etc/shells
 
 2. Change default shell with:
 
-```sh
+```fish
 chsh -s /opt/homebrew/bin/fish
 ```
 
@@ -24,7 +24,7 @@ chsh -s /opt/homebrew/bin/fish
 
 1. 在 iTerm2 当中使用 fish shell 作为默认 shell，需要把 `$PATH` 加入到 `~/.config/fish/fish_variables`
 
-```sh
+```fish
 set -U fish_user_paths /usr/local/bin $fish_user_paths
 ```
 

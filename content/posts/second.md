@@ -7,14 +7,14 @@ tags: ["Linux"]
 
 ## Using `echo`
 
-```bash
+```shell
 touch file.md
 echo "hello" > file.md
 ```
 
 ## Using `cat` and standard redirect symbol `>`
 
-```bash
+```shell
 cat >> file.md
 ```
 
@@ -24,7 +24,7 @@ If you don't want to edit the file, simply press `CTRL+C` and it will simply exi
 
 If you would like to add some text to the file, you can type in after this, like this:
 
-```bash
+```shell
 cat >> file.md
 This is some text in the file from command line.
 ```

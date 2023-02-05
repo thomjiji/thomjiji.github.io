@@ -12,6 +12,5 @@ tags: ["Secure Erase (SE)", "Encryption"]
 
 # Official Software
 
-Samsung T7 SSD support Secure Erase via [Samsung Magicion Software](https://semiconductor.samsung.com/consumer-storage/magician/) (only Windows)
-
-How to perform a secure erase using Magicion Software: [https://www.pugetsystems.com/support/guides/samsung-secure-erase-949/](https://www.pugetsystems.com/support/guides/samsung-secure-erase-949/)
+1. Samsung T7 SSD support Secure Erase via [Samsung Magicion Software](https://semiconductor.samsung.com/consumer-storage/magician/) (only Windows)
+2. [How to perform a secure erase using Magicion Software](https://www.pugetsystems.com/support/guides/samsung-secure-erase-949/) - Puget Systems
