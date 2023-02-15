@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>显示器校色笔记 | thomjiji</title>
+<meta name="keywords" content="calibration, DisplayCAL">
+<meta name="description" content="2022-12-30 阅读 DisplayCAL 官网 User Guide 在对显示器校色之前，必须预热至少 30 分钟。这一点在我最近的校准过程中可以明确体会到，比如：在调整显示器自身的 RGB 输出时，当你把红绿蓝三个通道终于调到一条线上之后，这时亮度不达标了。调节显示器的亮度以达到目标值，比如 100 nits 之后，RGB 那三个值又不在一条线上了。一方面跟显示器的素质有关，不能保证在亮度增减的同时保持 RGB 三个值的输出一致。另一方面也跟显示器预热有关，没到 30 分钟状态还不稳定。
+显示器校准的基本概念：Calibration 和 Profiling/Characterization。在使用 DisplayCAL 进行校准的时候，第一步就是通过显示器自身的调节按钮，比如显示器的 RGB 三通道值的输出，来与事先定义好的目标值匹配。调节显示器的亮度按钮使其达到比如 100 尼特；在色温选项里使用用户自定义的方式来调节 RGB 输出，使其达到比如 6500K 的色温（CCT）。这一步我们粗略的称之为校准 Calibration，需要人手动去调的。而第二步是软件自动实现的过程，叫做 Profiling，就是它会在屏幕上生成一系列色块，测量这些色块的值，与标准值进行匹配，然后生成一个 Profile (e.g. ICC profile) 给我们最终加载到系统上。Profiling 实际上并不改变颜色，它描述的是该显示器对各种颜色的响应，通常存储在一个 ICC 配置文件中。
+之前在用 i1 Display Pro 这个色度计搭配 DisplayCAL 软件来校色的时候，校出来的结果你很难相信它是准确的。很多时候都是偏红偏黄。这当然是由很多因素导致的，每个显示器的素质不同，甚至同一型号的两台显示器也会是不同的结果。显示器面板老化等等。但有一点是之前比较忽略的，就是这个色度计这个探头本身是不是准的。
+色度计（Colorimeter）也需要在硬件或软件上进行校准，以便从不同类型的显示器上获得正确的测量结果。色度计这个东西，一般是针对某一类或者某一个的显示设备，然后就专门用于那一类或那一个显示器的校准了，一般不用于其他显示器校准。因为当初是只针对那一个显示器做了色度计自身的硬件校准。如果色度计在最初，比如出厂前，没有针对某一类显示器做硬件校准。那么就需要使用光谱仪（Spectrometer）对那个显示器进行测量，计算出一个结果作为一个校准文件给搭配色度计使用的软件加载，这就是对色度计进行所谓的软件的校准。光谱仪（Spectrometer）据我所知非常昂贵，也不知道什么地方能搞到。但 DisplayCAL 官网有一个数据库，里面就有别人使用光谱仪针对 i1 Display Pro 和各种显示器、监视器的校准文件。我们直接拿到那个校准文件也能用。但毕竟是别人在他们自己的那个设备上测量的结果，跟我们手上的显示器可能还是有一定偏差（虽然是同一型号的显示器）。我们可以在 DisplayCAL 软件里很方便的加载这个校准文件。
+那么即便有了这个对与色度计自身进行校准的文件，我们使用 6500K 色温作为目标值校准出来的结果，你放一个纯白出来，比如开一个文件资源管理器，也很难说这就是一个纯白。当然白色这个概念，人眼对于白的感知就挺主观的，而且是可以适应它的。但是在正常办公室光照条件下，那个屏幕摆在那你一眼看过去就是感觉它偏黄，这能怎么办呢。使用 i1 Display Pro 对 MacBook Pro 的屏幕进行测量会发现，它的色温是 7000K 左右。我们都知道 Rec.">
+<meta name="author" content="">
+<link rel="canonical" href="https://thomjiji.github.io/posts/calibration/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.3d613ad91dd60a5445a6947c4f60c79fb0bf2077c11113d1fcbce35e0b84ee81.css" integrity="sha256-PWE62R3WClRFppR8T2DHn7C/IHfBERPR/LzjXguE7oE=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://thomjiji.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://thomjiji.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://thomjiji.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://thomjiji.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://thomjiji.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="显示器校色笔记" />
+<meta property="og:description" content="2022-12-30 阅读 DisplayCAL 官网 User Guide 在对显示器校色之前，必须预热至少 30 分钟。这一点在我最近的校准过程中可以明确体会到，比如：在调整显示器自身的 RGB 输出时，当你把红绿蓝三个通道终于调到一条线上之后，这时亮度不达标了。调节显示器的亮度以达到目标值，比如 100 nits 之后，RGB 那三个值又不在一条线上了。一方面跟显示器的素质有关，不能保证在亮度增减的同时保持 RGB 三个值的输出一致。另一方面也跟显示器预热有关，没到 30 分钟状态还不稳定。
+显示器校准的基本概念：Calibration 和 Profiling/Characterization。在使用 DisplayCAL 进行校准的时候，第一步就是通过显示器自身的调节按钮，比如显示器的 RGB 三通道值的输出，来与事先定义好的目标值匹配。调节显示器的亮度按钮使其达到比如 100 尼特；在色温选项里使用用户自定义的方式来调节 RGB 输出，使其达到比如 6500K 的色温（CCT）。这一步我们粗略的称之为校准 Calibration，需要人手动去调的。而第二步是软件自动实现的过程，叫做 Profiling，就是它会在屏幕上生成一系列色块，测量这些色块的值，与标准值进行匹配，然后生成一个 Profile (e.g. ICC profile) 给我们最终加载到系统上。Profiling 实际上并不改变颜色，它描述的是该显示器对各种颜色的响应，通常存储在一个 ICC 配置文件中。
+之前在用 i1 Display Pro 这个色度计搭配 DisplayCAL 软件来校色的时候，校出来的结果你很难相信它是准确的。很多时候都是偏红偏黄。这当然是由很多因素导致的，每个显示器的素质不同，甚至同一型号的两台显示器也会是不同的结果。显示器面板老化等等。但有一点是之前比较忽略的，就是这个色度计这个探头本身是不是准的。
+色度计（Colorimeter）也需要在硬件或软件上进行校准，以便从不同类型的显示器上获得正确的测量结果。色度计这个东西，一般是针对某一类或者某一个的显示设备，然后就专门用于那一类或那一个显示器的校准了，一般不用于其他显示器校准。因为当初是只针对那一个显示器做了色度计自身的硬件校准。如果色度计在最初，比如出厂前，没有针对某一类显示器做硬件校准。那么就需要使用光谱仪（Spectrometer）对那个显示器进行测量，计算出一个结果作为一个校准文件给搭配色度计使用的软件加载，这就是对色度计进行所谓的软件的校准。光谱仪（Spectrometer）据我所知非常昂贵，也不知道什么地方能搞到。但 DisplayCAL 官网有一个数据库，里面就有别人使用光谱仪针对 i1 Display Pro 和各种显示器、监视器的校准文件。我们直接拿到那个校准文件也能用。但毕竟是别人在他们自己的那个设备上测量的结果，跟我们手上的显示器可能还是有一定偏差（虽然是同一型号的显示器）。我们可以在 DisplayCAL 软件里很方便的加载这个校准文件。
+那么即便有了这个对与色度计自身进行校准的文件，我们使用 6500K 色温作为目标值校准出来的结果，你放一个纯白出来，比如开一个文件资源管理器，也很难说这就是一个纯白。当然白色这个概念，人眼对于白的感知就挺主观的，而且是可以适应它的。但是在正常办公室光照条件下，那个屏幕摆在那你一眼看过去就是感觉它偏黄，这能怎么办呢。使用 i1 Display Pro 对 MacBook Pro 的屏幕进行测量会发现，它的色温是 7000K 左右。我们都知道 Rec." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://thomjiji.github.io/posts/calibration/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-02-15T11:47:45+08:00" />
+<meta property="article:modified_time" content="2023-02-15T11:47:45+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="显示器校色笔记"/>
+<meta name="twitter:description" content="2022-12-30 阅读 DisplayCAL 官网 User Guide 在对显示器校色之前，必须预热至少 30 分钟。这一点在我最近的校准过程中可以明确体会到，比如：在调整显示器自身的 RGB 输出时，当你把红绿蓝三个通道终于调到一条线上之后，这时亮度不达标了。调节显示器的亮度以达到目标值，比如 100 nits 之后，RGB 那三个值又不在一条线上了。一方面跟显示器的素质有关，不能保证在亮度增减的同时保持 RGB 三个值的输出一致。另一方面也跟显示器预热有关，没到 30 分钟状态还不稳定。
+显示器校准的基本概念：Calibration 和 Profiling/Characterization。在使用 DisplayCAL 进行校准的时候，第一步就是通过显示器自身的调节按钮，比如显示器的 RGB 三通道值的输出，来与事先定义好的目标值匹配。调节显示器的亮度按钮使其达到比如 100 尼特；在色温选项里使用用户自定义的方式来调节 RGB 输出，使其达到比如 6500K 的色温（CCT）。这一步我们粗略的称之为校准 Calibration，需要人手动去调的。而第二步是软件自动实现的过程，叫做 Profiling，就是它会在屏幕上生成一系列色块，测量这些色块的值，与标准值进行匹配，然后生成一个 Profile (e.g. ICC profile) 给我们最终加载到系统上。Profiling 实际上并不改变颜色，它描述的是该显示器对各种颜色的响应，通常存储在一个 ICC 配置文件中。
+之前在用 i1 Display Pro 这个色度计搭配 DisplayCAL 软件来校色的时候，校出来的结果你很难相信它是准确的。很多时候都是偏红偏黄。这当然是由很多因素导致的，每个显示器的素质不同，甚至同一型号的两台显示器也会是不同的结果。显示器面板老化等等。但有一点是之前比较忽略的，就是这个色度计这个探头本身是不是准的。
+色度计（Colorimeter）也需要在硬件或软件上进行校准，以便从不同类型的显示器上获得正确的测量结果。色度计这个东西，一般是针对某一类或者某一个的显示设备，然后就专门用于那一类或那一个显示器的校准了，一般不用于其他显示器校准。因为当初是只针对那一个显示器做了色度计自身的硬件校准。如果色度计在最初，比如出厂前，没有针对某一类显示器做硬件校准。那么就需要使用光谱仪（Spectrometer）对那个显示器进行测量，计算出一个结果作为一个校准文件给搭配色度计使用的软件加载，这就是对色度计进行所谓的软件的校准。光谱仪（Spectrometer）据我所知非常昂贵，也不知道什么地方能搞到。但 DisplayCAL 官网有一个数据库，里面就有别人使用光谱仪针对 i1 Display Pro 和各种显示器、监视器的校准文件。我们直接拿到那个校准文件也能用。但毕竟是别人在他们自己的那个设备上测量的结果，跟我们手上的显示器可能还是有一定偏差（虽然是同一型号的显示器）。我们可以在 DisplayCAL 软件里很方便的加载这个校准文件。
+那么即便有了这个对与色度计自身进行校准的文件，我们使用 6500K 色温作为目标值校准出来的结果，你放一个纯白出来，比如开一个文件资源管理器，也很难说这就是一个纯白。当然白色这个概念，人眼对于白的感知就挺主观的，而且是可以适应它的。但是在正常办公室光照条件下，那个屏幕摆在那你一眼看过去就是感觉它偏黄，这能怎么办呢。使用 i1 Display Pro 对 MacBook Pro 的屏幕进行测量会发现，它的色温是 7000K 左右。我们都知道 Rec."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://thomjiji.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "显示器校色笔记",
+      "item": "https://thomjiji.github.io/posts/calibration/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "显示器校色笔记",
+  "name": "显示器校色笔记",
+  "description": "2022-12-30 阅读 DisplayCAL 官网 User Guide 在对显示器校色之前，必须预热至少 30 分钟。这一点在我最近的校准过程中可以明确体会到，比如：在调整显示器自身的 RGB 输出时，当你把红绿蓝三个通道终于调到一条线上之后，这时亮度不达标了。调节显示器的亮度以达到目标值，比如 100 nits 之后，RGB 那三个值又不在一条线上了。一方面跟显示器的素质有关，不能保证在亮度增减的同时保持 RGB 三个值的输出一致。另一方面也跟显示器预热有关，没到 30 分钟状态还不稳定。\n显示器校准的基本概念：Calibration 和 Profiling/Characterization。在使用 DisplayCAL 进行校准的时候，第一步就是通过显示器自身的调节按钮，比如显示器的 RGB 三通道值的输出，来与事先定义好的目标值匹配。调节显示器的亮度按钮使其达到比如 100 尼特；在色温选项里使用用户自定义的方式来调节 RGB 输出，使其达到比如 6500K 的色温（CCT）。这一步我们粗略的称之为校准 Calibration，需要人手动去调的。而第二步是软件自动实现的过程，叫做 Profiling，就是它会在屏幕上生成一系列色块，测量这些色块的值，与标准值进行匹配，然后生成一个 Profile (e.g. ICC profile) 给我们最终加载到系统上。Profiling 实际上并不改变颜色，它描述的是该显示器对各种颜色的响应，通常存储在一个 ICC 配置文件中。\n之前在用 i1 Display Pro 这个色度计搭配 DisplayCAL 软件来校色的时候，校出来的结果你很难相信它是准确的。很多时候都是偏红偏黄。这当然是由很多因素导致的，每个显示器的素质不同，甚至同一型号的两台显示器也会是不同的结果。显示器面板老化等等。但有一点是之前比较忽略的，就是这个色度计这个探头本身是不是准的。\n色度计（Colorimeter）也需要在硬件或软件上进行校准，以便从不同类型的显示器上获得正确的测量结果。色度计这个东西，一般是针对某一类或者某一个的显示设备，然后就专门用于那一类或那一个显示器的校准了，一般不用于其他显示器校准。因为当初是只针对那一个显示器做了色度计自身的硬件校准。如果色度计在最初，比如出厂前，没有针对某一类显示器做硬件校准。那么就需要使用光谱仪（Spectrometer）对那个显示器进行测量，计算出一个结果作为一个校准文件给搭配色度计使用的软件加载，这就是对色度计进行所谓的软件的校准。光谱仪（Spectrometer）据我所知非常昂贵，也不知道什么地方能搞到。但 DisplayCAL 官网有一个数据库，里面就有别人使用光谱仪针对 i1 Display Pro 和各种显示器、监视器的校准文件。我们直接拿到那个校准文件也能用。但毕竟是别人在他们自己的那个设备上测量的结果，跟我们手上的显示器可能还是有一定偏差（虽然是同一型号的显示器）。我们可以在 DisplayCAL 软件里很方便的加载这个校准文件。\n那么即便有了这个对与色度计自身进行校准的文件，我们使用 6500K 色温作为目标值校准出来的结果，你放一个纯白出来，比如开一个文件资源管理器，也很难说这就是一个纯白。当然白色这个概念，人眼对于白的感知就挺主观的，而且是可以适应它的。但是在正常办公室光照条件下，那个屏幕摆在那你一眼看过去就是感觉它偏黄，这能怎么办呢。使用 i1 Display Pro 对 MacBook Pro 的屏幕进行测量会发现，它的色温是 7000K 左右。我们都知道 Rec.",
+  "keywords": [
+    "calibration", "DisplayCAL"
+  ],
+  "articleBody": "2022-12-30 阅读 DisplayCAL 官网 User Guide 在对显示器校色之前，必须预热至少 30 分钟。这一点在我最近的校准过程中可以明确体会到，比如：在调整显示器自身的 RGB 输出时，当你把红绿蓝三个通道终于调到一条线上之后，这时亮度不达标了。调节显示器的亮度以达到目标值，比如 100 nits 之后，RGB 那三个值又不在一条线上了。一方面跟显示器的素质有关，不能保证在亮度增减的同时保持 RGB 三个值的输出一致。另一方面也跟显示器预热有关，没到 30 分钟状态还不稳定。\n显示器校准的基本概念：Calibration 和 Profiling/Characterization。在使用 DisplayCAL 进行校准的时候，第一步就是通过显示器自身的调节按钮，比如显示器的 RGB 三通道值的输出，来与事先定义好的目标值匹配。调节显示器的亮度按钮使其达到比如 100 尼特；在色温选项里使用用户自定义的方式来调节 RGB 输出，使其达到比如 6500K 的色温（CCT）。这一步我们粗略的称之为校准 Calibration，需要人手动去调的。而第二步是软件自动实现的过程，叫做 Profiling，就是它会在屏幕上生成一系列色块，测量这些色块的值，与标准值进行匹配，然后生成一个 Profile (e.g. ICC profile) 给我们最终加载到系统上。Profiling 实际上并不改变颜色，它描述的是该显示器对各种颜色的响应，通常存储在一个 ICC 配置文件中。\n之前在用 i1 Display Pro 这个色度计搭配 DisplayCAL 软件来校色的时候，校出来的结果你很难相信它是准确的。很多时候都是偏红偏黄。这当然是由很多因素导致的，每个显示器的素质不同，甚至同一型号的两台显示器也会是不同的结果。显示器面板老化等等。但有一点是之前比较忽略的，就是这个色度计这个探头本身是不是准的。\n色度计（Colorimeter）也需要在硬件或软件上进行校准，以便从不同类型的显示器上获得正确的测量结果。色度计这个东西，一般是针对某一类或者某一个的显示设备，然后就专门用于那一类或那一个显示器的校准了，一般不用于其他显示器校准。因为当初是只针对那一个显示器做了色度计自身的硬件校准。如果色度计在最初，比如出厂前，没有针对某一类显示器做硬件校准。那么就需要使用光谱仪（Spectrometer）对那个显示器进行测量，计算出一个结果作为一个校准文件给搭配色度计使用的软件加载，这就是对色度计进行所谓的软件的校准。光谱仪（Spectrometer）据我所知非常昂贵，也不知道什么地方能搞到。但 DisplayCAL 官网有一个数据库，里面就有别人使用光谱仪针对 i1 Display Pro 和各种显示器、监视器的校准文件。我们直接拿到那个校准文件也能用。但毕竟是别人在他们自己的那个设备上测量的结果，跟我们手上的显示器可能还是有一定偏差（虽然是同一型号的显示器）。我们可以在 DisplayCAL 软件里很方便的加载这个校准文件。\n那么即便有了这个对与色度计自身进行校准的文件，我们使用 6500K 色温作为目标值校准出来的结果，你放一个纯白出来，比如开一个文件资源管理器，也很难说这就是一个纯白。当然白色这个概念，人眼对于白的感知就挺主观的，而且是可以适应它的。但是在正常办公室光照条件下，那个屏幕摆在那你一眼看过去就是感觉它偏黄，这能怎么办呢。使用 i1 Display Pro 对 MacBook Pro 的屏幕进行测量会发现，它的色温是 7000K 左右。我们都知道 Rec.709 也好 sRGB 也好，白点都是 D65，也就是 6500K。为什么苹果 MBP 的屏幕是 7000K 的色温呢。我在我自己的 MBP 14 吋上，使用不同的显示预设（BT.709-BT.1886、sRGB、XDR-1600nits）测量出来的色温也都是 7000K 上下。我不知道是不是因为其实大多数用户，更偏好一个理论上更偏冷的屏幕（7000K），而不是一个标准的但肉眼看上去比较暖、比较黄的屏幕（6500K）。\n总之使用 7000K 的色温作为目标值，加载针对不同显示器的 i1 Display Pro 的校准文件，校准出来的结果是比较符合预期的。另外两个 Dell 的主副屏显示器，校准之前，两个屏幕有很明显的色差。使用 DisplayCAL 校准的时候，以 7000K 色温为目标值，先在显示器的 RGB 设置调节上，把 RGB 输出调到一条线上，然后点继续。等自动化的 Profiling 过程结束后，我们对比校准前和校准后，可以得到一个不错的匹配。副屏在校准之前，暗部区域比主屏要偏蓝偏青，然后感觉整个屏幕的饱和度都要比主屏高。校准之后有所改善。\n2023-02-10 BenQ SW 系列的硬件校色功能 BenQ 的 SW 系列相比于 PD 系列具有硬件校色功能，使用 BenQ 的软件 Palette Master Element 搭配 X-rite 的 i1 Display Pro 色度计可以让校色结果直接储存和加载到显示器本身，使用显示器自身芯片进行色彩校正。而不是像软件校色那样，校色结果储存在电脑，作用在显卡，然后将信号给到显示器。据明基 BenQ 所说，这种硬件校色的实现相比软件校色更优。一款显示器的好坏与否，除了它自身的素质之外，有方便的机制可以让我们对其进行定期的校色，也是很重要的衡量因素。因此 BenQ SW270C 和 SW271C 具有的硬件校色功能是一个加分项。\n安装 Palette Master Element 软件时，会要求用 USB Type-B 线把显示器和电脑连接，然后会自动安装 BenQ 的驱动。安装好之后的使用和校准都需要保持显示器和电脑的 USB 连接。校准的设置并不多，总的分为两块：校准和验证。校准菜单下可设置的选项也不多，白点（D65），RGB 三原色（我们选 sRGB），亮度（我们设置为 120 尼特），伽马（2.2），黑点（绝对零位）。然后点击下一步。BenQ SW270C 提供三个校准的槽位，我们可以选择将校准 LUT 加载在可选的「校准 1」里，然后就可以开始测量了。把 i1 Display Pro 的探头贴在显示器的正中央，让软件运行，进行校准。校准 LUT 会自动加载。最后是验证校准的结果，也是跑一遍色块，最后得到校准的结果。Delta E。GSJ-9 我这次的校准结果的平均 Delta E 是 0.45，最带 Delta E 是 0.76。光看这个结果，数字上是非常不错的。理论上 Delta E 小于 2，人眼就很难看出区别了。\nReference Calibration vs. Characterization - ArgyllCMS A note about colorimeters, displays and DisplayCAL - DisplayCAL Colorimeter Corrections Database - DisplayCAL BenQ Palette Master Element Software - BenQ Hardware vs. Software Calibration [Updated 2021] - BenQ ",
+  "wordCount" : "209",
+  "inLanguage": "en",
+  "datePublished": "2023-02-15T11:47:45+08:00",
+  "dateModified": "2023-02-15T11:47:45+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://thomjiji.github.io/posts/calibration/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "thomjiji",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://thomjiji.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://thomjiji.github.io/" accesskey="h" title="thomjiji (Alt + H)">thomjiji</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://thomjiji.github.io/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://thomjiji.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://thomjiji.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://thomjiji.github.io/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://thomjiji.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://thomjiji.github.io/posts/">Posts</a></div>
+    <h1 class="post-title">
+      显示器校色笔记
+    </h1>
+    <div class="post-meta"><span title='2023-02-15 11:47:45 +0800 CST'>2023-02-15</span>&nbsp;|&nbsp;<a href="https://github.com/thomjiji/thomjiji.github.io/tree/main/content//posts/calibration.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+  <div class="post-content"><h2 id="2022-12-30-阅读-displaycal-官网-user-guide">2022-12-30 阅读 DisplayCAL 官网 User Guide<a hidden class="anchor" aria-hidden="true" href="#2022-12-30-阅读-displaycal-官网-user-guide">#</a></h2>
+<p>在对显示器校色之前，必须预热至少 30 分钟。这一点在我最近的校准过程中可以明确体会到，比如：在调整显示器自身的 RGB 输出时，当你把红绿蓝三个通道终于调到一条线上之后，这时亮度不达标了。调节显示器的亮度以达到目标值，比如 100 nits 之后，RGB 那三个值又不在一条线上了。一方面跟显示器的素质有关，不能保证在亮度增减的同时保持 RGB 三个值的输出一致。另一方面也跟显示器预热有关，没到 30 分钟状态还不稳定。</p>
+<p>显示器校准的基本概念：Calibration 和 Profiling/Characterization。在使用 DisplayCAL 进行校准的时候，第一步就是通过显示器自身的调节按钮，比如显示器的 RGB 三通道值的输出，来与事先定义好的目标值匹配。调节显示器的亮度按钮使其达到比如 100 尼特；在色温选项里使用用户自定义的方式来调节 RGB 输出，使其达到比如 6500K 的色温（CCT）。这一步我们粗略的称之为校准 Calibration，需要人手动去调的。而第二步是软件自动实现的过程，叫做 Profiling，就是它会在屏幕上生成一系列色块，测量这些色块的值，与标准值进行匹配，然后生成一个 Profile (e.g. ICC profile) 给我们最终加载到系统上。<a href="https://www.argyllcms.com/doc/calvschar.html">Profiling 实际上并不改变颜色</a>，它描述的是该显示器对各种颜色的响应，通常存储在一个 ICC 配置文件中。</p>
+<p>之前在用 i1 Display Pro 这个色度计搭配 DisplayCAL 软件来校色的时候，校出来的结果你很难相信它是准确的。很多时候都是偏红偏黄。这当然是由很多因素导致的，每个显示器的素质不同，甚至同一型号的两台显示器也会是不同的结果。显示器面板老化等等。但有一点是之前比较忽略的，就是这个色度计这个探头本身是不是准的。</p>
+<p>色度计（Colorimeter）也需要<a href="https://displaycal.net/#colorimeter-corrections">在硬件或软件上进行校准</a>，以便从不同类型的显示器上获得正确的测量结果。色度计这个东西，一般是针对某一类或者某一个的显示设备，然后就专门用于那一类或那一个显示器的校准了，一般不用于其他显示器校准。因为当初是只针对那一个显示器做了色度计自身的硬件校准。如果色度计在最初，比如出厂前，没有针对某一类显示器做硬件校准。那么就需要使用光谱仪（Spectrometer）对那个显示器进行测量，计算出一个结果作为一个校准文件给搭配色度计使用的软件加载，这就是对色度计进行所谓的软件的校准。光谱仪（Spectrometer）据我所知非常昂贵，也不知道什么地方能搞到。但 DisplayCAL 官网有一个<a href="https://colorimetercorrections.displaycal.net/">数据库</a>，里面就有别人使用光谱仪针对 i1 Display Pro 和各种显示器、监视器的校准文件。我们直接拿到那个校准文件也能用。但毕竟是别人在他们自己的那个设备上测量的结果，跟我们手上的显示器可能还是有一定偏差（虽然是同一型号的显示器）。我们可以在 DisplayCAL 软件里很方便的加载这个校准文件。</p>
+<p>那么即便有了这个对与色度计自身进行校准的文件，我们使用 6500K 色温作为目标值校准出来的结果，你放一个纯白出来，比如开一个文件资源管理器，也很难说这就是一个纯白。当然白色这个概念，人眼对于白的感知就挺主观的，而且是可以适应它的。但是在正常办公室光照条件下，那个屏幕摆在那你一眼看过去就是感觉它偏黄，这能怎么办呢。使用 i1 Display Pro 对 MacBook Pro 的屏幕进行测量会发现，它的色温是 7000K 左右。我们都知道 Rec.709 也好 sRGB 也好，白点都是 D65，也就是 6500K。为什么苹果 MBP 的屏幕是 7000K 的色温呢。我在我自己的 MBP 14 吋上，使用不同的显示预设（BT.709-BT.1886、sRGB、XDR-1600nits）测量出来的色温也都是 7000K 上下。我不知道是不是因为其实大多数用户，更偏好一个理论上更偏冷的屏幕（7000K），而不是一个标准的但肉眼看上去比较暖、比较黄的屏幕（6500K）。</p>
+<p>总之使用 7000K 的色温作为目标值，加载针对不同显示器的 i1 Display Pro 的校准文件，校准出来的结果是比较符合预期的。另外两个 Dell 的主副屏显示器，校准之前，两个屏幕有很明显的色差。使用 DisplayCAL 校准的时候，以 7000K 色温为目标值，先在显示器的 RGB 设置调节上，把 RGB 输出调到一条线上，然后点继续。等自动化的 Profiling 过程结束后，我们对比校准前和校准后，可以得到一个不错的匹配。副屏在校准之前，暗部区域比主屏要偏蓝偏青，然后感觉整个屏幕的饱和度都要比主屏高。校准之后有所改善。</p>
+<h2 id="2023-02-10-benq-sw-系列的硬件校色功能">2023-02-10 BenQ SW 系列的硬件校色功能<a hidden class="anchor" aria-hidden="true" href="#2023-02-10-benq-sw-系列的硬件校色功能">#</a></h2>
+<p>BenQ 的 SW 系列相比于 PD 系列具有硬件校色功能，使用 BenQ 的软件 <a href="https://www.benq.com/en-us/monitor/software/palette-master-element.html">Palette Master Element</a> 搭配 X-rite 的 i1 Display Pro 色度计可以让校色结果直接储存和加载到显示器本身，使用显示器自身芯片进行色彩校正。而不是像软件校色那样，校色结果储存在电脑，作用在显卡，然后将信号给到显示器。据明基 BenQ 所说，这种硬件校色的实现相比软件校色<a href="https://www.benq.com/en-us/knowledge-center/knowledge/hardware-vs-software-calibration.html">更优</a>。一款显示器的好坏与否，除了它自身的素质之外，有方便的机制可以让我们对其进行定期的校色，也是很重要的衡量因素。因此 BenQ SW270C 和 SW271C 具有的硬件校色功能是一个加分项。</p>
+<p>安装 Palette Master Element 软件时，会要求用 USB Type-B 线把显示器和电脑连接，然后会自动安装 BenQ 的驱动。安装好之后的使用和校准都需要保持显示器和电脑的 USB 连接。校准的设置并不多，总的分为两块：校准和验证。校准菜单下可设置的选项也不多，白点（D65），RGB 三原色（我们选 sRGB），亮度（我们设置为 120 尼特），伽马（2.2），黑点（绝对零位）。然后点击下一步。BenQ SW270C 提供三个校准的槽位，我们可以选择将校准 LUT 加载在可选的「校准 1」里，然后就可以开始测量了。把 i1 Display Pro 的探头贴在显示器的正中央，让软件运行，进行校准。校准 LUT 会自动加载。最后是验证校准的结果，也是跑一遍色块，最后得到校准的结果。Delta E。GSJ-9 我这次的校准结果的平均 Delta E 是 0.45，最带 Delta E 是 0.76。光看这个结果，数字上是非常不错的。理论上 Delta E 小于 2，人眼就很难看出区别了。</p>
+<h2 id="reference">Reference<a hidden class="anchor" aria-hidden="true" href="#reference">#</a></h2>
+<ol>
+<li><a href="https://www.argyllcms.com/doc/calvschar.html">Calibration vs. Characterization</a> - ArgyllCMS</li>
+<li><a href="https://displaycal.net/#colorimeter-corrections">A note about colorimeters, displays and DisplayCAL</a> - DisplayCAL</li>
+<li><a href="https://colorimetercorrections.displaycal.net/">Colorimeter Corrections Database</a> - DisplayCAL</li>
+<li>BenQ <a href="https://www.benq.com/en-us/monitor/software/palette-master-element.html">Palette Master Element</a> Software - BenQ</li>
+<li><a href="https://www.benq.com/en-us/knowledge-center/knowledge/hardware-vs-software-calibration.html">Hardware vs. Software Calibration [Updated 2021]</a> - BenQ</li>
+</ol>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://thomjiji.github.io/tags/calibration/">calibration</a></li>
+      <li><a href="https://thomjiji.github.io/tags/displaycal/">DisplayCAL</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://thomjiji.github.io/posts/first/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Dolby Vision Profile 8.4 &amp; Dolby Atmos</span>
+  </a>
+  <a class="next" href="https://thomjiji.github.io/posts/dolbyvision_dolbyatmos/">
+    <span class="title">Next »</span>
+    <br>
+    <span>mp4muxer &amp; mp4demuxer Basic Usage</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://thomjiji.github.io/">thomjiji</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

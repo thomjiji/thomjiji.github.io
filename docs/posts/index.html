@@ -10,7 +10,7 @@
 <meta name="description" content="Posts - thomjiji">
 <meta name="author" content="">
 <link rel="canonical" href="https://thomjiji.github.io/posts/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.8d92834c148a8013a078035bf378823df81bd455860ea26d8d26bfda62b7b5db.css" integrity="sha256-jZKDTBSKgBOgeANb83iCPfgb1FWGDqJtjSa/2mK3tds=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.3d613ad91dd60a5445a6947c4f60c79fb0bf2077c11113d1fcbce35e0b84ee81.css" integrity="sha256-PWE62R3WClRFppR8T2DHn7C/IHfBERPR/LzjXguE7oE=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://thomjiji.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://thomjiji.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://thomjiji.github.io/favicon-32x32.png">
@@ -157,10 +157,26 @@
     </h2>
   </header>
   <div class="entry-content">
-    <p>参考链接 关于上传杜比视界到平台（Bilibili or Vimeo）  How-To: Dolby Vision Encoding - Apple Compressor for Vimeo Dolby Vision for Vimeo FAQs Bilbili 技术发布的关于支持 HDR10 上传的文章 —— 2020 年 9 月  关于制作杜比全景声 Dolby Atmos  Dolby Atmos Using Blackmagic Design DaVinci Resolve Studio 哔哩哔哩（B 站）杜比全景声/杜比音效稿件制作指南 —— 以白菜的名义 EP05 杜比全景声家庭版的交付和编码封装 —— 以白菜的名义  关于上传 HDR10 &amp; HLG 到 Youtube  Upload High Dynamic Range (HDR) videos  Dolby Vision Basics  Dolby Vision Metadata Levels What are Dolby Vision Profiles?...</p>
+    <p>参考链接 关于上传杜比视界到平台（Bilibili or Vimeo） How-To: Dolby Vision Encoding - Apple Compressor for Vimeo Dolby Vision for Vimeo FAQs Bilbili 技术发布的关于支持 HDR10 上传的文章 —— 2020 年 9 月 关于制作杜比全景声 Dolby Atmos Dolby Atmos Using Blackmagic Design DaVinci Resolve Studio 哔哩哔哩（B 站）杜比全景声/杜比音效稿件制作指南 —— 以白菜的名义 EP05 杜比全景声家庭版的交付和编码封装 —— 以白菜的名义 关于上传 HDR10 &amp; HLG 到 Youtube Upload High Dynamic Range (HDR) videos Dolby Vision Basics Dolby Vision Metadata Levels What are Dolby Vision Profiles? What are the HEVC requirements for Dolby Vision encoding?...</p>
   </div>
-  <footer class="entry-footer"><span title='2023-01-27 21:23:02 +0800 HKT'>2023-01-27</span>&nbsp;·&nbsp;thom</footer>
+  <footer class="entry-footer"><span title='2023-01-27 21:23:02 +0800 CST'>2023-01-27</span>&nbsp;·&nbsp;thom</footer>
   <a class="entry-link" aria-label="post link to Dolby Vision Profile 8.4 &amp; Dolby Atmos" href="https://thomjiji.github.io/posts/first/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>显示器校色笔记
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>2022-12-30 阅读 DisplayCAL 官网 User Guide 在对显示器校色之前，必须预热至少 30 分钟。这一点在我最近的校准过程中可以明确体会到，比如：在调整显示器自身的 RGB 输出时，当你把红绿蓝三个通道终于调到一条线上之后，这时亮度不达标了。调节显示器的亮度以达到目标值，比如 100 nits 之后，RGB 那三个值又不在一条线上了。一方面跟显示器的素质有关，不能保证在亮度增减的同时保持 RGB 三个值的输出一致。另一方面也跟显示器预热有关，没到 30 分钟状态还不稳定。
+显示器校准的基本概念：Calibration 和 Profiling/Characterization。在使用 DisplayCAL 进行校准的时候，第一步就是通过显示器自身的调节按钮，比如显示器的 RGB 三通道值的输出，来与事先定义好的目标值匹配。调节显示器的亮度按钮使其达到比如 100 尼特；在色温选项里使用用户自定义的方式来调节 RGB 输出，使其达到比如 6500K 的色温（CCT）。这一步我们粗略的称之为校准 Calibration，需要人手动去调的。而第二步是软件自动实现的过程，叫做 Profiling，就是它会在屏幕上生成一系列色块，测量这些色块的值，与标准值进行匹配，然后生成一个 Profile (e.g. ICC profile) 给我们最终加载到系统上。Profiling 实际上并不改变颜色，它描述的是该显示器对各种颜色的响应，通常存储在一个 ICC 配置文件中。
+之前在用 i1 Display Pro 这个色度计搭配 DisplayCAL 软件来校色的时候，校出来的结果你很难相信它是准确的。很多时候都是偏红偏黄。这当然是由很多因素导致的，每个显示器的素质不同，甚至同一型号的两台显示器也会是不同的结果。显示器面板老化等等。但有一点是之前比较忽略的，就是这个色度计这个探头本身是不是准的。
+色度计（Colorimeter）也需要在硬件或软件上进行校准，以便从不同类型的显示器上获得正确的测量结果。色度计这个东西，一般是针对某一类或者某一个的显示设备，然后就专门用于那一类或那一个显示器的校准了，一般不用于其他显示器校准。因为当初是只针对那一个显示器做了色度计自身的硬件校准。如果色度计在最初，比如出厂前，没有针对某一类显示器做硬件校准。那么就需要使用光谱仪（Spectrometer）对那个显示器进行测量，计算出一个结果作为一个校准文件给搭配色度计使用的软件加载，这就是对色度计进行所谓的软件的校准。光谱仪（Spectrometer）据我所知非常昂贵，也不知道什么地方能搞到。但 DisplayCAL 官网有一个数据库，里面就有别人使用光谱仪针对 i1 Display Pro 和各种显示器、监视器的校准文件。我们直接拿到那个校准文件也能用。但毕竟是别人在他们自己的那个设备上测量的结果，跟我们手上的显示器可能还是有一定偏差（虽然是同一型号的显示器）。我们可以在 DisplayCAL 软件里很方便的加载这个校准文件。
+那么即便有了这个对与色度计自身进行校准的文件，我们使用 6500K 色温作为目标值校准出来的结果，你放一个纯白出来，比如开一个文件资源管理器，也很难说这就是一个纯白。当然白色这个概念，人眼对于白的感知就挺主观的，而且是可以适应它的。但是在正常办公室光照条件下，那个屏幕摆在那你一眼看过去就是感觉它偏黄，这能怎么办呢。使用 i1 Display Pro 对 MacBook Pro 的屏幕进行测量会发现，它的色温是 7000K 左右。我们都知道 Rec....</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-02-15 11:47:45 +0800 CST'>2023-02-15</span></footer>
+  <a class="entry-link" aria-label="post link to 显示器校色笔记" href="https://thomjiji.github.io/posts/calibration/"></a>
 </article>
 
 <article class="post-entry"> 
@@ -169,7 +185,7 @@
     </h2>
   </header>
   <div class="entry-content">
-    <p>Installation  mp4muxer mp4demuxer  Commands  将 MP4 的音视频分离（脱壳 Demux）：  mp4demuxer --input-file input.mp4 --output-folder ~/Output 合并杜比视界 Profile 8.4 和杜比全景声双音轨：  mp4muxer -i input.h265 --input-video-frame-rate 25 --hvc1flag 0 --dv-bl-compatible-id 4 -i Stereo.aac -i Atmos.ec3 -o DolbyVision_Atmos.mp4 合并 SDR 视频和杜比全景声双音轨:  mp4muxer -i input.h264 --input-video-frame-rate 25 -i Stereo.aac -i Atmos.ec3 -o SDR&amp;Atmos.mp4 </p>
+    <p>Installation mp4muxer mp4demuxer Commands 将 MP4 的音视频分离（脱壳 Demux）： mp4demuxer --input-file input.mp4 --output-folder ~/Output 合并杜比视界 Profile 8.4 和杜比全景声双音轨： mp4muxer -i input.h265 --input-video-frame-rate 25 --hvc1flag 0 --dv-bl-compatible-id 4 -i Stereo.aac -i Atmos.ec3 -o DolbyVision_Atmos.mp4 合并 SDR 视频和杜比全景声双音轨: mp4muxer -i input.h264 --input-video-frame-rate 25 -i Stereo.aac -i Atmos.ec3 -o SDR&amp;Atmos.mp4 </p>
   </div>
   <footer class="entry-footer"><span title='2023-01-29 00:00:00 +0000 UTC'>2023-01-29</span></footer>
   <a class="entry-link" aria-label="post link to mp4muxer &amp; mp4demuxer Basic Usage" href="https://thomjiji.github.io/posts/dolbyvision_dolbyatmos/"></a>
@@ -183,7 +199,7 @@
     </h2>
   </header>
   <div class="entry-content">
-    <p>操作步骤  把 ARRI Look Library 的文件包直接解压到这个路径，把里面的多个 cub 和 fllook 文件平摊在这个路径：/Library/Application Support/FilmLight/looks 把 ALF-2 v5 DRT Family 解压到这个路径，把里面的 cub 和 fltransform 平摊在这个路径：/Library/Application Support/FilmLight/etc/colourspaces 打开 Daylight，完成。  Reference  ARRI Colour Workflow in Baselight ACES and Baselight ARRI Look Library and ALF-2 v5 DRT Family Download  </p>
+    <p>操作步骤 把 ARRI Look Library 的文件包直接解压到这个路径，把里面的多个 cub 和 fllook 文件平摊在这个路径：/Library/Application Support/FilmLight/looks 把 ALF-2 v5 DRT Family 解压到这个路径，把里面的 cub 和 fltransform 平摊在这个路径：/Library/Application Support/FilmLight/etc/colourspaces 打开 Daylight，完成。 Reference ARRI Colour Workflow in Baselight ACES and Baselight ARRI Look Library and ALF-2 v5 DRT Family Download </p>
   </div>
   <footer class="entry-footer"><span title='2023-01-28 00:00:00 +0000 UTC'>2023-01-28</span>&nbsp;·&nbsp;thom</footer>
   <a class="entry-link" aria-label="post link to Daylight 添加 ARRI Look Library &amp; ALF-2 v5 DRT Family" href="https://thomjiji.github.io/posts/filmlight/fifth/"></a>
@@ -195,9 +211,9 @@
     </h2>
   </header>
   <div class="entry-content">
-    <p>Third-Party Software  Parted Magic SEDutil  Official Software  Samsung T7 SSD support Secure Erase via Samsung Magicion Software (only Windows) How to perform a secure erase using Magicion Software - Puget Systems  </p>
+    <p>Third-Party Software Parted Magic SEDutil Official Software Samsung T7 SSD support Secure Erase via Samsung Magicion Software (only Windows) How to perform a secure erase using Magicion Software - Puget Systems </p>
   </div>
-  <footer class="entry-footer"><span title='2023-01-27 21:32:00 +0800 HKT'>2023-01-27</span></footer>
+  <footer class="entry-footer"><span title='2023-01-27 21:32:00 +0800 CST'>2023-01-27</span></footer>
   <a class="entry-link" aria-label="post link to Sanitize/Secure Erase SSD Drive Software" href="https://thomjiji.github.io/posts/third/"></a>
 </article>
 
@@ -208,9 +224,9 @@
   </header>
   <div class="entry-content">
     <p>Reference Blog: Discovering org roam
-一些随机的摘抄  A zettelkasten consists of many individual notes with ideas and other short pieces of information that are taken down as they occur or are acquired. The notes are numbered hierarchically, so that new notes may be inserted at the appropriate place, and contain metadata to allow the note-taker to associate notes with each other. For example, notes may contain tags that describe key aspects of the note, and they may reference other notes....</p>
+一些随机的摘抄 A zettelkasten consists of many individual notes with ideas and other short pieces of information that are taken down as they occur or are acquired. The notes are numbered hierarchically, so that new notes may be inserted at the appropriate place, and contain metadata to allow the note-taker to associate notes with each other. For example, notes may contain tags that describe key aspects of the note, and they may reference other notes....</p>
   </div>
-  <footer class="entry-footer"><span title='2023-01-27 21:28:03 +0800 HKT'>2023-01-27</span></footer>
+  <footer class="entry-footer"><span title='2023-01-27 21:28:03 +0800 CST'>2023-01-27</span></footer>
   <a class="entry-link" aria-label="post link to Roam &amp; Zettelkasten" href="https://thomjiji.github.io/posts/fouth/"></a>
 </article>
 
@@ -224,7 +240,7 @@
 If you don’t want to edit the file, simply press CTRL&#43;C and it will simply exit and create an empty file.
 If you would like to add some text to the file, you can type in after this, like this:...</p>
   </div>
-  <footer class="entry-footer"><span title='2023-01-27 21:28:03 +0800 HKT'>2023-01-27</span></footer>
+  <footer class="entry-footer"><span title='2023-01-27 21:28:03 +0800 CST'>2023-01-27</span></footer>
   <a class="entry-link" aria-label="post link to Use cat command to add text to file quickly" href="https://thomjiji.github.io/posts/second/"></a>
 </article>
 
@@ -234,7 +250,8 @@ If you would like to add some text to the file, you can type in after this, like
     </h2>
   </header>
   <div class="entry-content">
-    <p>Solution Add fish to $SHELL and set as default  Add the shell to /etc/shells with:  $ echo &#34;/opt/homebrew/bin/fish&#34; | sudo tee -a /etc/shells Change default shell with:  chsh -s /opt/homebrew/bin/fish Modify $PATH with fish shell  在 iTerm2 当中使用 fish shell 作为默认 shell，需要把 $PATH 加入到 ~/.config/fish/fish_variables  set -U fish_user_paths /usr/local/bin $fish_user_paths Type this command in terminal: fish_add_path /opt/homebrew/bin. It will add /opt/homebrew/bin to the ~/.config/fish/fish_variables.  Other useful commands which $SHELL...</p>
+    <p>Solution Add fish to $SHELL and set as default Add the shell to /etc/shells with: $ echo &#34;/opt/homebrew/bin/fish&#34; | sudo tee -a /etc/shells Change default shell with: chsh -s /opt/homebrew/bin/fish Modify $PATH with fish shell 在 iTerm2 当中使用 fish shell 作为默认 shell，需要把 $PATH 加入到 ~/.config/fish/fish_variables set -U fish_user_paths /usr/local/bin $fish_user_paths Type this command in terminal: fish_add_path /opt/homebrew/bin. It will add /opt/homebrew/bin to the ~/.config/fish/fish_variables. Other useful commands which $SHELL
+echo $PATH...</p>
   </div>
   <footer class="entry-footer"><span title='2023-01-26 00:00:00 +0000 UTC'>2023-01-26</span></footer>
   <a class="entry-link" aria-label="post link to macOS add fish to $SHELL and set fish as default shell" href="https://thomjiji.github.io/posts/macos_add_fish/"></a>
@@ -246,7 +263,7 @@ If you would like to add some text to the file, you can type in after this, like
     </h2>
   </header>
   <div class="entry-content">
-    <p>     Params  Rate Control: CRF based VBR Quantizer:  Nominal Quantizer parameter: 18 Quantizer parameter: 18    </p>
+    <p> Params Rate Control: CRF based VBR Quantizer: Nominal Quantizer parameter: 18 Quantizer parameter: 18 </p>
   </div>
   <footer class="entry-footer"><span title='2022-12-28 00:00:00 +0000 UTC'>2022-12-28</span></footer>
   <a class="entry-link" aria-label="post link to High Quality H.264 Render in Baselight" href="https://thomjiji.github.io/posts/filmlight/high-quality-h264-render/"></a>
