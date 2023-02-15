@@ -2,7 +2,7 @@
 title: "显示器校色笔记"
 date: 2023-02-15T11:47:45+08:00
 draft: false
-tags: ["calibration", "DisplayCAL"]
+tags: ["Calibration", "DisplayCAL"]
 ---
 
 ## 2022-12-30 阅读 DisplayCAL 官网 User Guide
