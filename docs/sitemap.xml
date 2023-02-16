@@ -2,9 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://thomjiji.github.io/posts/first/</loc>
-    <lastmod>2023-01-27T21:23:02+08:00</lastmod>
-  </url><url>
     <loc>https://thomjiji.github.io/tags/calibration/</loc>
     <lastmod>2023-02-15T11:47:45+08:00</lastmod>
   </url><url>
@@ -63,6 +60,9 @@
     <lastmod>2023-01-27T21:28:03+08:00</lastmod>
   </url><url>
     <loc>https://thomjiji.github.io/categories/</loc>
+    <lastmod>2023-01-27T21:23:02+08:00</lastmod>
+  </url><url>
+    <loc>https://thomjiji.github.io/posts/first/</loc>
     <lastmod>2023-01-27T21:23:02+08:00</lastmod>
   </url><url>
     <loc>https://thomjiji.github.io/categories/hdr/</loc>
