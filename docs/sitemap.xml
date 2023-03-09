@@ -2,20 +2,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://thomjiji.github.io/tags/calibration/</loc>
-    <lastmod>2023-02-15T11:47:45+08:00</lastmod>
-  </url><url>
-    <loc>https://thomjiji.github.io/tags/displaycal/</loc>
-    <lastmod>2023-02-15T11:47:45+08:00</lastmod>
+    <loc>https://thomjiji.github.io/posts/icc-profile/</loc>
+    <lastmod>2023-03-09T14:59:50+08:00</lastmod>
   </url><url>
     <loc>https://thomjiji.github.io/posts/</loc>
-    <lastmod>2023-02-15T11:47:45+08:00</lastmod>
-  </url><url>
-    <loc>https://thomjiji.github.io/tags/</loc>
-    <lastmod>2023-02-15T11:47:45+08:00</lastmod>
+    <lastmod>2023-03-09T14:59:50+08:00</lastmod>
   </url><url>
     <loc>https://thomjiji.github.io/</loc>
-    <lastmod>2023-02-15T11:47:45+08:00</lastmod>
+    <lastmod>2023-03-09T14:59:50+08:00</lastmod>
+  </url><url>
+    <loc>https://thomjiji.github.io/posts/vcgt_tag/</loc>
+    <lastmod>2023-03-09T14:28:29+08:00</lastmod>
+  </url><url>
+    <loc>https://thomjiji.github.io/tags/calibration/</loc>
+    <lastmod>2023-03-09T14:19:58+08:00</lastmod>
+  </url><url>
+    <loc>https://thomjiji.github.io/tags/displaycal/</loc>
+    <lastmod>2023-03-09T14:19:58+08:00</lastmod>
+  </url><url>
+    <loc>https://thomjiji.github.io/tags/icc-profile/</loc>
+    <lastmod>2023-03-09T14:19:58+08:00</lastmod>
+  </url><url>
+    <loc>https://thomjiji.github.io/tags/</loc>
+    <lastmod>2023-03-09T14:19:58+08:00</lastmod>
+  </url><url>
+    <loc>https://thomjiji.github.io/tags/video-card/</loc>
+    <lastmod>2023-03-09T14:19:58+08:00</lastmod>
+  </url><url>
+    <loc>https://thomjiji.github.io/posts/why-do-we-need-video-card/</loc>
+    <lastmod>2023-03-09T14:19:58+08:00</lastmod>
   </url><url>
     <loc>https://thomjiji.github.io/posts/%E6%98%BE%E7%A4%BA%E5%99%A8%E6%A0%A1%E8%89%B2%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2023-02-15T11:47:45+08:00</lastmod>

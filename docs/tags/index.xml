@@ -6,11 +6,11 @@
     <description>Recent content in Tags on thomjiji</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 15 Feb 2023 11:47:45 +0800</lastBuildDate><atom:link href="https://thomjiji.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Mar 2023 14:19:58 +0800</lastBuildDate><atom:link href="https://thomjiji.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Calibration</title>
       <link>https://thomjiji.github.io/tags/calibration/</link>
-      <pubDate>Wed, 15 Feb 2023 11:47:45 +0800</pubDate>
+      <pubDate>Thu, 09 Mar 2023 14:19:58 +0800</pubDate>
       
       <guid>https://thomjiji.github.io/tags/calibration/</guid>
       <description></description>
@@ -19,9 +19,27 @@
     <item>
       <title>DisplayCAL</title>
       <link>https://thomjiji.github.io/tags/displaycal/</link>
-      <pubDate>Wed, 15 Feb 2023 11:47:45 +0800</pubDate>
+      <pubDate>Thu, 09 Mar 2023 14:19:58 +0800</pubDate>
       
       <guid>https://thomjiji.github.io/tags/displaycal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ICC Profile</title>
+      <link>https://thomjiji.github.io/tags/icc-profile/</link>
+      <pubDate>Thu, 09 Mar 2023 14:19:58 +0800</pubDate>
+      
+      <guid>https://thomjiji.github.io/tags/icc-profile/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Video Card</title>
+      <link>https://thomjiji.github.io/tags/video-card/</link>
+      <pubDate>Thu, 09 Mar 2023 14:19:58 +0800</pubDate>
+      
+      <guid>https://thomjiji.github.io/tags/video-card/</guid>
       <description></description>
     </item>
     

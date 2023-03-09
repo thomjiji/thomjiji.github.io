@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>为什么要使用上屏卡 | thomjiji</title>
+<meta name="keywords" content="Calibration, DisplayCAL, ICC Profile, Video Card">
+<meta name="description" content="做高端校色软件 ColourSpace 的 LightIllusion 有篇文章 What&rsquo;s wrong with ICCs? 指出了 ICC profile 的一些问题。这非常关键，因为我们目前的校色流程就是基于 ICC profile 的。
+总的来说，ICC profile 能 work 的前提是软件本身支持它，软件是否是 ICC aware。通常来说 ICC aware 的软件有一个 CMM 色彩管理模块（Color Management Module）能够正确识别我们生成的 ICC profile，然后能够对图像做调整以达到「准确」的结果，实现校色的目的。先不说 ICC 这种方式本质上是对图像的调整，而不是对显示器本身的校正（后者是更好的方式，所谓硬件校准就是如此）。即使软件具有 CMM，准确度和性能还得看各个软件自身的优化。这就变成一件非常麻烦和复杂的事情。那些不是 ICC aware 的软件，看到的就做一个完全未经校准的画面。
+那对于 Adobe 全家桶来说，像 Ps、Lr 这种平面设计软件，它们是有 CMM 模块，叫作 ACE（Adobe Color Engine）。就是能够识别图像自带的 ICC profile，将其转换到 Ps 的工作色彩空间。那对于 Pr 来说，它也有被他们称为 DCM（Display Color Management）的东西，作为 Pr 内在的色彩管理方式，也是利用系统的 ICC profile 来进行工作的。
+DCM uses the ICC profile for your monitor to apply a colorimetric conversion from the sequence working color space (or media color space in the case of the source monitor) to the monitor color space.">
+<meta name="author" content="">
+<link rel="canonical" href="https://thomjiji.github.io/posts/why-do-we-need-video-card/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.52e5989002d59884b7cd4b8f9439600a84d5621e4f5d8b47a7493e3f41492862.css" integrity="sha256-UuWYkALVmIS3zUuPlDlgCoTVYh5PXYtHp0k&#43;P0FJKGI=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://thomjiji.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://thomjiji.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://thomjiji.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://thomjiji.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://thomjiji.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="为什么要使用上屏卡" />
+<meta property="og:description" content="做高端校色软件 ColourSpace 的 LightIllusion 有篇文章 What&rsquo;s wrong with ICCs? 指出了 ICC profile 的一些问题。这非常关键，因为我们目前的校色流程就是基于 ICC profile 的。
+总的来说，ICC profile 能 work 的前提是软件本身支持它，软件是否是 ICC aware。通常来说 ICC aware 的软件有一个 CMM 色彩管理模块（Color Management Module）能够正确识别我们生成的 ICC profile，然后能够对图像做调整以达到「准确」的结果，实现校色的目的。先不说 ICC 这种方式本质上是对图像的调整，而不是对显示器本身的校正（后者是更好的方式，所谓硬件校准就是如此）。即使软件具有 CMM，准确度和性能还得看各个软件自身的优化。这就变成一件非常麻烦和复杂的事情。那些不是 ICC aware 的软件，看到的就做一个完全未经校准的画面。
+那对于 Adobe 全家桶来说，像 Ps、Lr 这种平面设计软件，它们是有 CMM 模块，叫作 ACE（Adobe Color Engine）。就是能够识别图像自带的 ICC profile，将其转换到 Ps 的工作色彩空间。那对于 Pr 来说，它也有被他们称为 DCM（Display Color Management）的东西，作为 Pr 内在的色彩管理方式，也是利用系统的 ICC profile 来进行工作的。
+DCM uses the ICC profile for your monitor to apply a colorimetric conversion from the sequence working color space (or media color space in the case of the source monitor) to the monitor color space." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://thomjiji.github.io/posts/why-do-we-need-video-card/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-03-09T14:19:58+08:00" />
+<meta property="article:modified_time" content="2023-03-09T14:19:58+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="为什么要使用上屏卡"/>
+<meta name="twitter:description" content="做高端校色软件 ColourSpace 的 LightIllusion 有篇文章 What&rsquo;s wrong with ICCs? 指出了 ICC profile 的一些问题。这非常关键，因为我们目前的校色流程就是基于 ICC profile 的。
+总的来说，ICC profile 能 work 的前提是软件本身支持它，软件是否是 ICC aware。通常来说 ICC aware 的软件有一个 CMM 色彩管理模块（Color Management Module）能够正确识别我们生成的 ICC profile，然后能够对图像做调整以达到「准确」的结果，实现校色的目的。先不说 ICC 这种方式本质上是对图像的调整，而不是对显示器本身的校正（后者是更好的方式，所谓硬件校准就是如此）。即使软件具有 CMM，准确度和性能还得看各个软件自身的优化。这就变成一件非常麻烦和复杂的事情。那些不是 ICC aware 的软件，看到的就做一个完全未经校准的画面。
+那对于 Adobe 全家桶来说，像 Ps、Lr 这种平面设计软件，它们是有 CMM 模块，叫作 ACE（Adobe Color Engine）。就是能够识别图像自带的 ICC profile，将其转换到 Ps 的工作色彩空间。那对于 Pr 来说，它也有被他们称为 DCM（Display Color Management）的东西，作为 Pr 内在的色彩管理方式，也是利用系统的 ICC profile 来进行工作的。
+DCM uses the ICC profile for your monitor to apply a colorimetric conversion from the sequence working color space (or media color space in the case of the source monitor) to the monitor color space."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://thomjiji.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "为什么要使用上屏卡",
+      "item": "https://thomjiji.github.io/posts/why-do-we-need-video-card/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "为什么要使用上屏卡",
+  "name": "为什么要使用上屏卡",
+  "description": "做高端校色软件 ColourSpace 的 LightIllusion 有篇文章 What\u0026rsquo;s wrong with ICCs? 指出了 ICC profile 的一些问题。这非常关键，因为我们目前的校色流程就是基于 ICC profile 的。\n总的来说，ICC profile 能 work 的前提是软件本身支持它，软件是否是 ICC aware。通常来说 ICC aware 的软件有一个 CMM 色彩管理模块（Color Management Module）能够正确识别我们生成的 ICC profile，然后能够对图像做调整以达到「准确」的结果，实现校色的目的。先不说 ICC 这种方式本质上是对图像的调整，而不是对显示器本身的校正（后者是更好的方式，所谓硬件校准就是如此）。即使软件具有 CMM，准确度和性能还得看各个软件自身的优化。这就变成一件非常麻烦和复杂的事情。那些不是 ICC aware 的软件，看到的就做一个完全未经校准的画面。\n那对于 Adobe 全家桶来说，像 Ps、Lr 这种平面设计软件，它们是有 CMM 模块，叫作 ACE（Adobe Color Engine）。就是能够识别图像自带的 ICC profile，将其转换到 Ps 的工作色彩空间。那对于 Pr 来说，它也有被他们称为 DCM（Display Color Management）的东西，作为 Pr 内在的色彩管理方式，也是利用系统的 ICC profile 来进行工作的。\nDCM uses the ICC profile for your monitor to apply a colorimetric conversion from the sequence working color space (or media color space in the case of the source monitor) to the monitor color space.",
+  "keywords": [
+    "Calibration", "DisplayCAL", "ICC Profile", "Video Card"
+  ],
+  "articleBody": "做高端校色软件 ColourSpace 的 LightIllusion 有篇文章 What’s wrong with ICCs? 指出了 ICC profile 的一些问题。这非常关键，因为我们目前的校色流程就是基于 ICC profile 的。\n总的来说，ICC profile 能 work 的前提是软件本身支持它，软件是否是 ICC aware。通常来说 ICC aware 的软件有一个 CMM 色彩管理模块（Color Management Module）能够正确识别我们生成的 ICC profile，然后能够对图像做调整以达到「准确」的结果，实现校色的目的。先不说 ICC 这种方式本质上是对图像的调整，而不是对显示器本身的校正（后者是更好的方式，所谓硬件校准就是如此）。即使软件具有 CMM，准确度和性能还得看各个软件自身的优化。这就变成一件非常麻烦和复杂的事情。那些不是 ICC aware 的软件，看到的就做一个完全未经校准的画面。\n那对于 Adobe 全家桶来说，像 Ps、Lr 这种平面设计软件，它们是有 CMM 模块，叫作 ACE（Adobe Color Engine）。就是能够识别图像自带的 ICC profile，将其转换到 Ps 的工作色彩空间。那对于 Pr 来说，它也有被他们称为 DCM（Display Color Management）的东西，作为 Pr 内在的色彩管理方式，也是利用系统的 ICC profile 来进行工作的。\nDCM uses the ICC profile for your monitor to apply a colorimetric conversion from the sequence working color space (or media color space in the case of the source monitor) to the monitor color space. The profile is specified by the operating system. We generally recommended using the default profile that the system choses for your display. If your monitor has been professionally calibrated, use that profile. The default profile may have the name of your monitor or something generic like “Color LCD”. Using the specified display profile will ensure predictable colors across the system and in other apps like web browsers and email. DCM requires GPU Acceleration. GPU acceleration can be configured in Project Settings \u003e General \u003e Video Rendering and Playback. 1\nICC 主要还是平面设计领域的色彩管理方案，对于视频来说有很多局限性。虽然 ICC profile 是一种常见的色彩管理方式，但它并不是完美的，因为它只是对图像进行调整，而不是对显示器本身进行校正。使用上屏卡的一个最主要的原因就是绕过 ICC profile 乃至操作系统的整个色彩管理，更直接的获得一个干净的视频信号，而不去经过操作系统的色彩管理。而且对于监视器来说，一般需要是 SDI 接口，上屏卡也能满足这一点要求。\nReference New HDR Workflow in Premiere Pro - 2020 User Guide (PDF) ↩︎\n",
+  "wordCount" : "208",
+  "inLanguage": "en",
+  "datePublished": "2023-03-09T14:19:58+08:00",
+  "dateModified": "2023-03-09T14:19:58+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://thomjiji.github.io/posts/why-do-we-need-video-card/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "thomjiji",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://thomjiji.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://thomjiji.github.io/" accesskey="h" title="thomjiji (Alt + H)">thomjiji</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://thomjiji.github.io/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://thomjiji.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://thomjiji.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://thomjiji.github.io/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://thomjiji.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://thomjiji.github.io/posts/">Posts</a></div>
+    <h1 class="post-title">
+      为什么要使用上屏卡
+    </h1>
+    <div class="post-meta"><span title='2023-03-09 14:19:58 +0800 CST'>2023-03-09</span>&nbsp;|&nbsp;<a href="https://github.com/thomjiji/thomjiji.github.io/tree/main/content//posts/why-do-we-need-video-card.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+  <div class="post-content"><p>做高端校色软件 ColourSpace 的 LightIllusion 有篇文章 <a href="https://www.lightillusion.com/what_is_wrong_with_iccs.html">What&rsquo;s wrong with ICCs?</a> 指出了 ICC profile 的一些问题。这非常关键，因为我们目前的校色流程就是基于 ICC profile 的。</p>
+<p>总的来说，ICC profile 能 work 的前提是软件本身支持它，软件是否是 ICC aware。通常来说 ICC aware 的软件有一个 CMM 色彩管理模块（Color Management Module）能够正确识别我们生成的 ICC profile，然后能够对图像做调整以达到「准确」的结果，实现校色的目的。先不说 ICC 这种方式本质上是对图像的调整，而不是对显示器本身的校正（后者是更好的方式，所谓硬件校准就是如此）。即使软件具有 CMM，准确度和性能还得看各个软件自身的优化。这就变成一件非常麻烦和复杂的事情。那些不是 ICC aware 的软件，看到的就做一个完全未经校准的画面。</p>
+<p>那对于 Adobe 全家桶来说，像 Ps、Lr 这种平面设计软件，它们是有 CMM 模块，叫作 ACE（Adobe Color Engine）。就是能够识别图像自带的 ICC profile，将其转换到 Ps 的工作色彩空间。那对于 Pr 来说，它也有被他们称为 DCM（Display Color Management）的东西，作为 Pr 内在的色彩管理方式，也是利用系统的 ICC profile 来进行工作的。</p>
+<blockquote>
+<p>DCM uses the ICC profile for your monitor to apply a colorimetric conversion from the sequence working color space (or media color space in the case of the source monitor) to the monitor color space. The profile is specified by the operating system. We generally recommended using the default profile that the system choses for your display. If your monitor has been professionally calibrated, use that profile. The default profile may have the name of your monitor or something generic like “Color LCD”. Using the specified display profile will ensure predictable colors across the system and in other apps like web browsers and email. DCM requires GPU Acceleration. GPU acceleration can be configured in Project Settings &gt; General &gt; Video Rendering and Playback. <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+</blockquote>
+<p>ICC 主要还是平面设计领域的色彩管理方案，对于视频来说有很多局限性。虽然 ICC profile 是一种常见的色彩管理方式，但它并不是完美的，因为它只是对图像进行调整，而不是对显示器本身进行校正。使用上屏卡的一个最主要的原因就是绕过 ICC profile 乃至操作系统的整个色彩管理，更直接的获得一个干净的视频信号，而不去经过操作系统的色彩管理。而且对于监视器来说，一般需要是 SDI 接口，上屏卡也能满足这一点要求。</p>
+<h1 id="reference">Reference<a hidden class="anchor" aria-hidden="true" href="#reference">#</a></h1>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://wpmedia-lib.larryjordan.com/wp-content/uploads/2020/09/New-HDR-Workflow-in-Premiere-Pro-2020-User-Guide.pdf">New HDR Workflow in Premiere Pro - 2020 User Guide (PDF)</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://thomjiji.github.io/tags/calibration/">Calibration</a></li>
+      <li><a href="https://thomjiji.github.io/tags/displaycal/">DisplayCAL</a></li>
+      <li><a href="https://thomjiji.github.io/tags/icc-profile/">ICC Profile</a></li>
+      <li><a href="https://thomjiji.github.io/tags/video-card/">Video Card</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://thomjiji.github.io/posts/vcgt_tag/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>VCGT Tag</span>
+  </a>
+  <a class="next" href="https://thomjiji.github.io/posts/%E6%98%BE%E7%A4%BA%E5%99%A8%E6%A0%A1%E8%89%B2%E7%AC%94%E8%AE%B0/">
+    <span class="title">Next »</span>
+    <br>
+    <span>显示器校色笔记</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://thomjiji.github.io/">thomjiji</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
