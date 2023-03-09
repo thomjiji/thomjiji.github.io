@@ -12,8 +12,8 @@ author: ["thom"]
 
 # 操作步骤
 
-1. 把 ARRI Look Library 的文件包直接解压到这个路径，把里面的多个 `cub` 和 `fllook` 文件平摊在这个路径：`/Library/Application Support/FilmLight/looks`
-2. 把 ALF-2 v5 DRT Family 解压到这个路径，把里面的 `cub` 和 `fltransform` 平摊在这个路径：`/Library/Application Support/FilmLight/etc/colourspaces`
+1. 将 ARRI Look Library 的 zip 解压，把里面的多个 `cub` 和 `fllook` 文件平摊到这个路径：`/Library/Application Support/FilmLight/looks`
+2. 把 ALF-2 v5 DRT Family 的 zip 解压，把里面的 `cub` 和 `fltransform` 平摊在这个路径：`/Library/Application Support/FilmLight/etc/colourspaces`
 3. 打开 Daylight，完成。
 
 # Reference
