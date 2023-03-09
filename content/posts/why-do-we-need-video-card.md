@@ -1,7 +1,7 @@
 ---
 title: "为什么要使用上屏卡"
 date: 2023-03-09T14:19:58+08:00
-draft: true
+draft: false
 tags: ["Calibration", "DisplayCAL", "ICC Profile", "Video Card"]
 ---
 
