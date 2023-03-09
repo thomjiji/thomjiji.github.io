@@ -1,6 +1,5 @@
 # Publishing Process
 
-
 1. 在修改完内容、样式等随便什么东西之后，首先 commit：
 
 ```shell
@@ -17,4 +16,16 @@ hugo
 
 ```shell
 git commit -m "<> build"
+```
+
+# Serve localhost
+
+```shell
+hugo server -D
+```
+
+# Add new post
+
+```shell
+hugo new posts/new_post.md
 ```
