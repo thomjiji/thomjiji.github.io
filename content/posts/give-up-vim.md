@@ -1,7 +1,7 @@
 ---
 title: "Give Up Vim"
-date: 2023-07-09T12:46:17+08:00
-draft: true
+date: 2023-07-09
+draft: false
 ---
 
 ### 为什么从 Vim 切换回普通 Cursor
