@@ -1,0 +1,29 @@
+---
+title: "Give Up Vim"
+date: 2023-07-09T12:46:17+08:00
+draft: true
+---
+
+### 为什么从 Vim 切换回普通 Cursor
+
+Obsidian 用的就不是 Vim 模式。因为我需要在 Obsidian 输入中文，中文输入之下，Vim
+完全是不可用的状态。我也不想去折腾怎么让 Vim 的模态切换在中文输入下也可用（应该是有这样的解决方案的）。
+
+其他地方，各种输入框：浏览器、Raycast、ChatGPT，包括网页的全局搜索框（Cmd+F），都不是工作在 Vim
+的模式下（确实曾经也尝试过把浏览器也用 Vim keybind 来操作...）。而在这些场景下使用普通的
+Cursor 移动方式对我来说也已经非常熟练和习惯了。也觉得 `Cmd ←` 和 `Cmd →`
+回到行首行尾和 `Opt ←`, `Opt →` （上一个词/下一个词）蛮好用的。
+
+我对在 Insert mode 和 Normal mode 之间切换感到疲倦。使用 Normal cursor
+的话，就一个模式我想什么时候移动就什么时候移动。用 Vim 我还需要从 Insert mode
+切换出来。而且我使用的退出 Insert mode 的 keybind 是 `jk`，而不是 `Esc`。之前觉得 `Esc`
+在键盘的位置，还是会让手的 movement 太大。`jk` 直接就在 `hjkl`
+下，手臂不需要移动，非常方便。但现在觉得 `jk`
+都麻烦，尤其在模态之间切换频繁的话，一会儿就得 `jk` 来一下，非常繁琐——繁琐是因为模态的切换，而不是换个
+keybind 就能解决的。所以我选择不要这些模态。
+
+在 PyCharm 的 completion 之间选择 candidates，有时需要上下移动选择那个我想要的。之前想把它们
+bind 到 `hjkl` 上。但怎么都找不到办法，只有使用上下键。在 Vim 原教旨主义者看来很不 ok
+是吧，但我当时忍了下来。现在想为啥不直接换到 Normal keybind。(我知道是可以直接用 Emacs 的
+keybind `Ctrl n` 和 `Ctrl p`
+来上下选择)
