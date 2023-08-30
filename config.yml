@@ -23,7 +23,8 @@ params:
   # PaperMode Regular mode (Home-info mode)
   homeInfoParams:
     Title: Hi! I'm thomjiji
-    Content: "Privacy | Cryptography | Filmmaking | Post-production | Linux"
+    Content: "Filmmaking | Post-production | Imaging | Linux | Programming | AI"
+  # DateFormat: "January 2, 2006"
 
   # PaperMod Profile mode
   # profileMode:
@@ -43,6 +44,8 @@ params:
   #       url: "https://github.com/"
 
   socialIcons: # optional
+    - name: Bilibili
+      url: "https://space.bilibili.com/14932681"
     - name: mastodon
       url: "https://alive.bar"
     - name: twitter
