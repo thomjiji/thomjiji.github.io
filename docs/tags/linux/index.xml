@@ -6,13 +6,13 @@
     <description>Recent content in Linux on thomjiji</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 27 Jan 2023 21:28:03 +0800</lastBuildDate><atom:link href="https://thomjiji.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 27 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://thomjiji.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Use cat command to add text to file quickly</title>
-      <link>https://thomjiji.github.io/posts/use-cat-command-to-add-text-to-file-quickly/</link>
-      <pubDate>Fri, 27 Jan 2023 21:28:03 +0800</pubDate>
+      <link>https://thomjiji.github.io/posts/2023-01-27_use-cat-command-to-add-text-to-file-quickly/</link>
+      <pubDate>Fri, 27 Jan 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://thomjiji.github.io/posts/use-cat-command-to-add-text-to-file-quickly/</guid>
+      <guid>https://thomjiji.github.io/posts/2023-01-27_use-cat-command-to-add-text-to-file-quickly/</guid>
       <description>Using echo touch file.md echo &amp;#34;hello&amp;#34; &amp;gt; file.md Using cat and standard redirect symbol &amp;gt; cat &amp;gt;&amp;gt; file.md This command creates an empty yet edited file as it prompts the user to create a text file and type in the file at the same time.
 If you don&amp;rsquo;t want to edit the file, simply press CTRL+C and it will simply exit and create an empty file.
 If you would like to add some text to the file, you can type in after this, like this:</description>

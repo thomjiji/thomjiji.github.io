@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://thomjiji.github.io/posts/give-up-vim/</loc>
+    <loc>https://thomjiji.github.io/posts/2023-07-09_give-up-vim/</loc>
     <lastmod>2023-07-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thomjiji.github.io/posts/</loc>
@@ -11,35 +11,35 @@
     <loc>https://thomjiji.github.io/</loc>
     <lastmod>2023-07-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://thomjiji.github.io/posts/devonthink-%E4%B8%8A%E6%89%8B/</loc>
-    <lastmod>2023-03-09T15:23:46+08:00</lastmod>
-  </url><url>
-    <loc>https://thomjiji.github.io/posts/icc-profile/</loc>
-    <lastmod>2023-03-09T14:59:50+08:00</lastmod>
-  </url><url>
-    <loc>https://thomjiji.github.io/posts/vcgt_tag/</loc>
-    <lastmod>2023-03-09T14:28:29+08:00</lastmod>
-  </url><url>
     <loc>https://thomjiji.github.io/tags/calibration/</loc>
-    <lastmod>2023-03-09T14:19:58+08:00</lastmod>
+    <lastmod>2023-03-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thomjiji.github.io/posts/2023-03-09_devonthink_unboxing/</loc>
+    <lastmod>2023-03-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thomjiji.github.io/tags/displaycal/</loc>
-    <lastmod>2023-03-09T14:19:58+08:00</lastmod>
+    <lastmod>2023-03-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thomjiji.github.io/tags/icc-profile/</loc>
-    <lastmod>2023-03-09T14:19:58+08:00</lastmod>
+    <lastmod>2023-03-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thomjiji.github.io/posts/2023-03-09_icc-profile/</loc>
+    <lastmod>2023-03-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thomjiji.github.io/tags/</loc>
-    <lastmod>2023-03-09T14:19:58+08:00</lastmod>
+    <lastmod>2023-03-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thomjiji.github.io/posts/2023-03-09_vcgt_tag/</loc>
+    <lastmod>2023-03-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thomjiji.github.io/tags/video-card/</loc>
-    <lastmod>2023-03-09T14:19:58+08:00</lastmod>
+    <lastmod>2023-03-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://thomjiji.github.io/posts/why-do-we-need-video-card/</loc>
-    <lastmod>2023-03-09T14:19:58+08:00</lastmod>
+    <loc>https://thomjiji.github.io/posts/2023-03-09_why-do-we-need-video-card/</loc>
+    <lastmod>2023-03-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://thomjiji.github.io/posts/%E6%98%BE%E7%A4%BA%E5%99%A8%E6%A0%A1%E8%89%B2%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2023-02-15T11:47:45+08:00</lastmod>
+    <loc>https://thomjiji.github.io/posts/2023-02-15_%E6%98%BE%E7%A4%BA%E5%99%A8%E6%A0%A1%E8%89%B2%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2023-02-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thomjiji.github.io/tags/dolby-atmos/</loc>
     <lastmod>2023-01-29T00:00:00+00:00</lastmod>
@@ -47,49 +47,49 @@
     <loc>https://thomjiji.github.io/tags/dolby-vision/</loc>
     <lastmod>2023-01-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://thomjiji.github.io/posts/dolbyvision_dolbyatmos/</loc>
+    <loc>https://thomjiji.github.io/posts/2023-01-29_mp4muxer-mp4demuxer-basic-usage/</loc>
     <lastmod>2023-01-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thomjiji.github.io/tags/daylight/</loc>
     <lastmod>2023-01-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://thomjiji.github.io/posts/daylight-%E6%B7%BB%E5%8A%A0-arri-look-library-alf-2-v5-drt-family/</loc>
+    <loc>https://thomjiji.github.io/posts/2023-01-28_daylight-%E6%B7%BB%E5%8A%A0-arri-look-library-alf-2-v5-drt-family/</loc>
     <lastmod>2023-01-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thomjiji.github.io/tags/filmlight/</loc>
     <lastmod>2023-01-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://thomjiji.github.io/tags/encryption/</loc>
-    <lastmod>2023-01-27T21:32:00+08:00</lastmod>
-  </url><url>
-    <loc>https://thomjiji.github.io/posts/sanitize-secure-erase-ssd-drive-software/</loc>
-    <lastmod>2023-01-27T21:32:00+08:00</lastmod>
-  </url><url>
-    <loc>https://thomjiji.github.io/tags/secure-erase-se/</loc>
-    <lastmod>2023-01-27T21:32:00+08:00</lastmod>
-  </url><url>
-    <loc>https://thomjiji.github.io/tags/linux/</loc>
-    <lastmod>2023-01-27T21:28:03+08:00</lastmod>
-  </url><url>
-    <loc>https://thomjiji.github.io/tags/roam/</loc>
-    <lastmod>2023-01-27T21:28:03+08:00</lastmod>
-  </url><url>
-    <loc>https://thomjiji.github.io/posts/roam-zettelkasten/</loc>
-    <lastmod>2023-01-27T21:28:03+08:00</lastmod>
-  </url><url>
-    <loc>https://thomjiji.github.io/posts/use-cat-command-to-add-text-to-file-quickly/</loc>
-    <lastmod>2023-01-27T21:28:03+08:00</lastmod>
-  </url><url>
     <loc>https://thomjiji.github.io/categories/</loc>
-    <lastmod>2023-01-27T21:23:02+08:00</lastmod>
+    <lastmod>2023-01-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://thomjiji.github.io/posts/dolby-vision-profile-8.4-dolby-atmos/</loc>
-    <lastmod>2023-01-27T21:23:02+08:00</lastmod>
+    <loc>https://thomjiji.github.io/posts/2023-01-27_dolby-vision-profile-8.4-dolby-atmos/</loc>
+    <lastmod>2023-01-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thomjiji.github.io/tags/encryption/</loc>
+    <lastmod>2023-01-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thomjiji.github.io/categories/hdr/</loc>
-    <lastmod>2023-01-27T21:23:02+08:00</lastmod>
+    <lastmod>2023-01-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://thomjiji.github.io/posts/macos-add-fish-to-shell-and-set-fish-as-default-shell/</loc>
+    <loc>https://thomjiji.github.io/tags/linux/</loc>
+    <lastmod>2023-01-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thomjiji.github.io/tags/roam/</loc>
+    <lastmod>2023-01-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thomjiji.github.io/posts/2023-01-27_roam-zettelkasten/</loc>
+    <lastmod>2023-01-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thomjiji.github.io/posts/2023-01-27_sanitize-secure-erase-ssd-drive-software/</loc>
+    <lastmod>2023-01-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thomjiji.github.io/tags/secure-erase-se/</loc>
+    <lastmod>2023-01-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thomjiji.github.io/posts/2023-01-27_use-cat-command-to-add-text-to-file-quickly/</loc>
+    <lastmod>2023-01-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thomjiji.github.io/posts/2023-01-26_macos-add-fish-to-shell-and-set-fish-as-default-shell/</loc>
     <lastmod>2023-01-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thomjiji.github.io/tags/baselight/</loc>
@@ -98,7 +98,7 @@
     <loc>https://thomjiji.github.io/categories/filmlight/</loc>
     <lastmod>2022-12-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://thomjiji.github.io/posts/high-quality-h.264-render-in-baselight/</loc>
+    <loc>https://thomjiji.github.io/posts/2022-12-28_high-quality-h.264-render-in-baselight/</loc>
     <lastmod>2022-12-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thomjiji.github.io/archives/</loc>

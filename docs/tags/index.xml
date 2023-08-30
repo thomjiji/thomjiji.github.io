@@ -6,11 +6,11 @@
     <description>Recent content in Tags on thomjiji</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 09 Mar 2023 14:19:58 +0800</lastBuildDate><atom:link href="https://thomjiji.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://thomjiji.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Calibration</title>
       <link>https://thomjiji.github.io/tags/calibration/</link>
-      <pubDate>Thu, 09 Mar 2023 14:19:58 +0800</pubDate>
+      <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
       
       <guid>https://thomjiji.github.io/tags/calibration/</guid>
       <description></description>
@@ -19,7 +19,7 @@
     <item>
       <title>DisplayCAL</title>
       <link>https://thomjiji.github.io/tags/displaycal/</link>
-      <pubDate>Thu, 09 Mar 2023 14:19:58 +0800</pubDate>
+      <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
       
       <guid>https://thomjiji.github.io/tags/displaycal/</guid>
       <description></description>
@@ -28,7 +28,7 @@
     <item>
       <title>ICC Profile</title>
       <link>https://thomjiji.github.io/tags/icc-profile/</link>
-      <pubDate>Thu, 09 Mar 2023 14:19:58 +0800</pubDate>
+      <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
       
       <guid>https://thomjiji.github.io/tags/icc-profile/</guid>
       <description></description>
@@ -37,7 +37,7 @@
     <item>
       <title>Video Card</title>
       <link>https://thomjiji.github.io/tags/video-card/</link>
-      <pubDate>Thu, 09 Mar 2023 14:19:58 +0800</pubDate>
+      <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
       
       <guid>https://thomjiji.github.io/tags/video-card/</guid>
       <description></description>
@@ -82,25 +82,16 @@
     <item>
       <title>Encryption</title>
       <link>https://thomjiji.github.io/tags/encryption/</link>
-      <pubDate>Fri, 27 Jan 2023 21:32:00 +0800</pubDate>
+      <pubDate>Fri, 27 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://thomjiji.github.io/tags/encryption/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Secure Erase (SE)</title>
-      <link>https://thomjiji.github.io/tags/secure-erase-se/</link>
-      <pubDate>Fri, 27 Jan 2023 21:32:00 +0800</pubDate>
-      
-      <guid>https://thomjiji.github.io/tags/secure-erase-se/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Linux</title>
       <link>https://thomjiji.github.io/tags/linux/</link>
-      <pubDate>Fri, 27 Jan 2023 21:28:03 +0800</pubDate>
+      <pubDate>Fri, 27 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://thomjiji.github.io/tags/linux/</guid>
       <description></description>
@@ -109,9 +100,18 @@
     <item>
       <title>Roam</title>
       <link>https://thomjiji.github.io/tags/roam/</link>
-      <pubDate>Fri, 27 Jan 2023 21:28:03 +0800</pubDate>
+      <pubDate>Fri, 27 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://thomjiji.github.io/tags/roam/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Secure Erase (SE)</title>
+      <link>https://thomjiji.github.io/tags/secure-erase-se/</link>
+      <pubDate>Fri, 27 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://thomjiji.github.io/tags/secure-erase-se/</guid>
       <description></description>
     </item>
     
