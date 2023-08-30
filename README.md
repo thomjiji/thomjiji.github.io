@@ -1,23 +1,23 @@
 # Publishing Process
 
-1. After making any changes (such as adding new posts, adjusting styles, etc.),
-   first perform a commit.
+1. After making any changes (such as adding new posts, adjusting styles, etc.), first 
+   perform a commit.
 
    ```shell
    git commit -m ""
    ```
 
-2. Next, build the entire site with the new changes. The static site will be built into
-   the `public/` directory.
+1. Next, build the entire site with the new changes. The static site will be built into
+   the `docs/` directory (for the GitHub page). Hugo default is `public/`.
 
    ```shell
    hugo
    ```
 
-3. Finally, commit once more to upload the built static site to GitHub.
+2. Finally, commit once more to upload the built static site to GitHub.
 
    ```shell
-   git commit -m "<> build"
+   git commit -m "<message> build"
    ```
 
 # Serve localhost
