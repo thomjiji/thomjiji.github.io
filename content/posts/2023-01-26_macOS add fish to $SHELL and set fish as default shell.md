@@ -28,7 +28,7 @@ chsh -s /opt/homebrew/bin/fish
 set -U fish_user_paths /usr/local/bin $fish_user_paths
 ```
 
-2. Type this command in terminal: `fish_add_path /opt/homebrew/bin`. It will add `/opt/homebrew/bin` to the `~/.config/fish/fish_variables`.
+2. Enter this command in terminal: `fish_add_path /opt/homebrew/bin`. It will add `/opt/homebrew/bin` to the `~/.config/fish/fish_variables`.
 
 ## Other useful commands
 
@@ -36,7 +36,7 @@ set -U fish_user_paths /usr/local/bin $fish_user_paths
 
 `echo $PATH`
 
-Homebrew 下载的 Fish shell 的 path 在 `/opt/homebrew/bin/fish` 而不是像 [fish documentation](https://fishshell.com/docs/current/index.html#default-shell) 说的那样在 `/usr/local/bin/fish`。
+Homebrew 下载的 Fish shell 的 path 是 `/opt/homebrew/bin/fish` 而不是像 [fish documentation](https://fishshell.com/docs/current/index.html#default-shell) 说的那样在 `/usr/local/bin/fish`。
 
 # Reference
 

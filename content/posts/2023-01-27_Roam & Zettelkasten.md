@@ -1,6 +1,6 @@
 ---
 title: "Roam & Zettelkasten"
-date: 2023-01-27T21:28:03+08:00
+date: 2023-01-27
 draft: false
 ShowToc: true
 tags: ["Roam"]

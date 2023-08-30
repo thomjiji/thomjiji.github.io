@@ -1,6 +1,6 @@
 ---
 title: "VCGT Tag"
-date: 2023-03-09T14:28:29+08:00
+date: 2023-03-09
 draft: false
 ---
 

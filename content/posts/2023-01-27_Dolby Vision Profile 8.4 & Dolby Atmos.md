@@ -1,6 +1,6 @@
 ---
 title: "Dolby Vision Profile 8.4 & Dolby Atmos"
-date: 2023-01-27T21:23:02+08:00
+date: 2023-01-27
 draft: false
 ShowToc: true
 tags: ["Dolby Vision"]

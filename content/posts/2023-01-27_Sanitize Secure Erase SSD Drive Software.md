@@ -1,6 +1,6 @@
 ---
 title: "Sanitize/Secure Erase SSD Drive Software"
-date: 2023-01-27T21:32:00+08:00
+date: 2023-01-27
 draft: false
 tags: ["Secure Erase (SE)", "Encryption"]
 ---
