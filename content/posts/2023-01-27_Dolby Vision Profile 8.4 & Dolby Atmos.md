@@ -126,9 +126,6 @@ Both HLS and DASH use a separate manifest file that links to the segments (and/o
 
 ## 杜比视界 Profile 8.4 B 站投稿标准
 
-Source 1: [【全球首家】杜比视界用户投稿功能上线啦！](https://www.bilibili.com/read/cv12741112)—— 哔哩哔哩创作中心
-Source 2: [【攻略】杜比视界UGC视频制作和分享操作指南](https://www.bilibili.com/read/cv12752764) —— 杜比 Dolby
-
 - Bit Rate: 30000 kbps
 - Resolution: 3840x2160 60FPS
 - Bit Depth: 10bit
@@ -136,6 +133,11 @@ Source 2: [【攻略】杜比视界UGC视频制作和分享操作指南](https:/
 - Codec: HEVC (H.265)
 - Dolby Vision Profile 8.4
 - Container: MP4, MOV, M4V
+
+Reference:
+
+- [【全球首家】杜比视界用户投稿功能上线啦！](https://www.bilibili.com/read/cv12741112)——哔哩哔哩创作中心
+- [【攻略】杜比视界UGC视频制作和分享操作指南](https://www.bilibili.com/read/cv12752764)——杜比 Dolby
 
 ## 杜比全景声 B 站投稿标准
 

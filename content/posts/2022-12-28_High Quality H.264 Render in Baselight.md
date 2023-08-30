@@ -6,11 +6,14 @@ tags: ["FilmLight", "Baselight"]
 categories: ["FilmLight"]
 ---
 
-{{< youtube id="Vj5zy2q7O9U" >}}
+<!-- {{< youtube id="Vj5zy2q7O9U" >}} -->
 
 {{< vimeo 426967364 >}}
 
 # Params
+
+Start at [39:56](https://vimeo.com/426967364#t=2396s), Daniele was introduced the method
+ of high quality H.264 rendering in Baselight.
 
 - Rate Control: CRF based VBR
 - Quantizer:

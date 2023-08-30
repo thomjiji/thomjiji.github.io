@@ -5,7 +5,7 @@ draft: false
 tags: ["Calibration", "DisplayCAL", "ICC Profile", "Video Card"]
 ---
 
-做高端校色软件 ColourSpace 的 LightIllusion 有篇文章 [What's wrong with ICCs?](https://www.lightillusion.com/what_is_wrong_with_iccs.html) 指出了 ICC profile 的一些问题。这非常关键，因为我们目前的校色流程就是基于 ICC profile 的。
+做高端校色软件 ColourSpace 的 LightIllusion 有篇文章 [What's wrong with ICCs?](https://www.lightillusion.com/what_is_wrong_with_iccs.html) 指出了 ICC profile 的一些问题。
 
 总的来说，ICC profile 能 work 的前提是软件本身支持它，软件是否是 ICC aware。通常来说 ICC aware 的软件有一个 CMM 色彩管理模块（Color Management Module）能够正确识别我们生成的 ICC profile，然后能够对图像做调整以达到「准确」的结果，实现校色的目的。先不说 ICC 这种方式本质上是对图像的调整，而不是对显示器本身的校正（后者是更好的方式，所谓硬件校准就是如此）。即使软件具有 CMM，准确度和性能还得看各个软件自身的优化。这就变成一件非常麻烦和复杂的事情。那些不是 ICC aware 的软件，看到的就做一个完全未经校准的画面。
 
