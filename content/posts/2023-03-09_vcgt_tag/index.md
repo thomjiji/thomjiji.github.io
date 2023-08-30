@@ -8,7 +8,7 @@ draft: false
 
 DisplayCAL 生成的 ICC 配置文件中会包含一个叫作 VCGT（Video Card Gamma Table）的 tag，它实际是一个 1D LUT，包含对显示器的灰阶或白点的校正。然后操作系统需要把这个 VCGT Tag 加载到显卡输出信号上的有一个 Look Up Table 上，从而实现对显卡输出信号的校正。同时显卡的这个 Look Up Table 也是有精度限制的。
 
-![vcgt_in_icc](image/vcgt_in_icc.png)
+![vcgt_in_icc](image/img1_vcgt_in_icc.png)
 
 具体在使用 DisplayCAL 的时候，右键桌面右下角 DisplayCAL 的图标，就会看到有一个 Reset video card gamma table 的东西。在系统加载了 DisplayCAL 生成的 profile 的情况下，这时点一下 Reset video card gamma table 会发现整个桌面的反差，或者说 Gamma、灰阶变了，它把对于显卡的校正给重置掉了，回到了最初的状态。
 
