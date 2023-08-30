@@ -22,7 +22,8 @@
       <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://thomjiji.github.io/posts/2022-12-28_high-quality-h.264-render-in-baselight/</guid>
-      <description> Params Rate Control: CRF based VBR Quantizer: Nominal Quantizer parameter: 18 Quantizer parameter: 18 </description>
+      <description> Params Start at 39:56, Daniele was introduced the method of high quality H.264 rendering in Baselight.
+Rate Control: CRF based VBR Quantizer: Nominal Quantizer parameter: 18 Quantizer parameter: 18 </description>
     </item>
     
   </channel>
