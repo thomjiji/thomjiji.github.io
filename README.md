@@ -6,7 +6,7 @@
 git commit -m ""
 ```
 
-2. 然后 build 整个 site，生成在 docs 这个 dir 里（默认是 `public/`）。
+2. 然后 build 整个 site，生成在 `docs/` 这个 dir 里（默认是 `public/`）。
 
 ```shell
 hugo
