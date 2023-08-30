@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tags on thomjiji</title>
+    <link>https://thomjiji.github.io/tags/</link>
+    <description>Recent content in Tags on thomjiji</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 09 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://thomjiji.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vim</title>
+      <link>https://thomjiji.github.io/tags/vim/</link>
+      <pubDate>Sun, 09 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://thomjiji.github.io/tags/vim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Calibration</title>
+      <link>https://thomjiji.github.io/tags/calibration/</link>
+      <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://thomjiji.github.io/tags/calibration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DisplayCAL</title>
+      <link>https://thomjiji.github.io/tags/displaycal/</link>
+      <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://thomjiji.github.io/tags/displaycal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ICC Profile</title>
+      <link>https://thomjiji.github.io/tags/icc-profile/</link>
+      <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://thomjiji.github.io/tags/icc-profile/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Video Card</title>
+      <link>https://thomjiji.github.io/tags/video-card/</link>
+      <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://thomjiji.github.io/tags/video-card/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dolby Atmos</title>
+      <link>https://thomjiji.github.io/tags/dolby-atmos/</link>
+      <pubDate>Sun, 29 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://thomjiji.github.io/tags/dolby-atmos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dolby Vision</title>
+      <link>https://thomjiji.github.io/tags/dolby-vision/</link>
+      <pubDate>Sun, 29 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://thomjiji.github.io/tags/dolby-vision/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Daylight</title>
+      <link>https://thomjiji.github.io/tags/daylight/</link>
+      <pubDate>Sat, 28 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://thomjiji.github.io/tags/daylight/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>FilmLight</title>
+      <link>https://thomjiji.github.io/tags/filmlight/</link>
+      <pubDate>Sat, 28 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://thomjiji.github.io/tags/filmlight/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Encryption</title>
+      <link>https://thomjiji.github.io/tags/encryption/</link>
+      <pubDate>Fri, 27 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://thomjiji.github.io/tags/encryption/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://thomjiji.github.io/tags/linux/</link>
+      <pubDate>Fri, 27 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://thomjiji.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Roam</title>
+      <link>https://thomjiji.github.io/tags/roam/</link>
+      <pubDate>Fri, 27 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://thomjiji.github.io/tags/roam/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Secure Erase (SE)</title>
+      <link>https://thomjiji.github.io/tags/secure-erase-se/</link>
+      <pubDate>Fri, 27 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://thomjiji.github.io/tags/secure-erase-se/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Baselight</title>
+      <link>https://thomjiji.github.io/tags/baselight/</link>
+      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://thomjiji.github.io/tags/baselight/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
