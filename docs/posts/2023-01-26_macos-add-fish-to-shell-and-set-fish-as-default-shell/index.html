@@ -57,7 +57,8 @@ echo $PATH">
         }
 
     </style>
-</noscript><meta property="og:title" content="macOS add fish to $SHELL and set fish as default shell" />
+</noscript>
+<meta property="og:title" content="macOS add fish to $SHELL and set fish as default shell" />
 <meta property="og:description" content="Solution Add fish to $SHELL and set as default Add the shell to /etc/shells with: $ echo &#34;/opt/homebrew/bin/fish&#34; | sudo tee -a /etc/shells Change default shell with: chsh -s /opt/homebrew/bin/fish Modify $PATH with fish shell 在 iTerm2 当中使用 fish shell 作为默认 shell，需要把 $PATH 加入到 ~/.config/fish/fish_variables set -U fish_user_paths /usr/local/bin $fish_user_paths Enter this command in terminal: fish_add_path /opt/homebrew/bin. It will add /opt/homebrew/bin to the ~/.config/fish/fish_variables. Other useful commands which $SHELL
 echo $PATH" />
 <meta property="og:type" content="article" />
