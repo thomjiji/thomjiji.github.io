@@ -11,7 +11,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <link rel="canonical" href="https://thomjiji.github.io/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.52e5989002d59884b7cd4b8f9439600a84d5621e4f5d8b47a7493e3f41492862.css" integrity="sha256-UuWYkALVmIS3zUuPlDlgCoTVYh5PXYtHp0k&#43;P0FJKGI=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.2901db226d338aa72e7c92ed981e31c5883ed18f5d6e3c405517330369413f98.css" integrity="sha256-KQHbIm0ziqcufJLtmB4xxYg&#43;0Y9dbjxAVRczA2lBP5g=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://thomjiji.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://thomjiji.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://thomjiji.github.io/favicon-32x32.png">
@@ -242,7 +242,7 @@ Ok，下载安装了。这一大堆都是什么……噢看到有 Manual，还�
     <p>对普通显示器校色的时候，很难不碰到 ICC profile 这个东西。我们都知道这个名词，显示器的 ICC 文件，或许模糊的对它有一些概念。但它究竟是什么？原理如何。
 ICC profile 跟我们已经有很明确概念的 ACES，或者更广泛一些地讲：「现代的色彩管理流程」，是很相似的 idea。都有一个处于整个链路中间的非常大的色彩空间，大到足以容纳所有不同的输入、显示和输出设备的各种色域（sRGB、AdobeRGB、Rec.709 等等）1。这个色彩空间在 ICC 这个概念下叫作 PCS（Profile Connection Space）。ICC profile 通过定义设备源或目标色彩空间与 PCS 之间的映射来描述特定设备的色彩属性2。
 ICC 本身并不进行任何校准，它们只包含显示器关于色彩成像能力的数据。这些数据用于帮助可以识别 ICC profile 的软件（我们叫它 ICC aware 的软件）通过 CMM（色彩管理模块）对图像进行调整，以尝试纠正显示器的色偏来进行校准。ICC profile 完成的实际上是对图像的调整，而不是对显示器的校正。不同的软件使用不同的 CMM 的话，即使都采用同一个 ICC，最终出来的结果也可能不一样。
-Reference ICC Profile - IBM ↩︎
+ICC Profile - IBM ↩︎
 ICC profile - Wikipedia ↩︎</p>
   </div>
   <footer class="entry-footer"><span title='2023-03-09 00:00:00 +0000 UTC'>2023-03-09</span></footer>
@@ -306,7 +306,10 @@ Characterization (or profiling) is recording the way a device reproduces or r
 </article>
 
 <article class="post-entry"> 
-<figure class="entry-cover"><img loading="lazy" src="https://thomjiji.github.io/baselight.jpg" alt="The colorist is sitting in front of the mixing table and monitor, and this is an overhead view from above the back of the colorist&#39;s head that captures the entire mixing table, the monitor screen, and the interface of the coloring software.">
+<figure class="entry-cover">
+        <img loading="lazy" srcset="https://thomjiji.github.io/posts/2023-01-28_daylight-%E6%B7%BB%E5%8A%A0-arri-look-library-alf-2-v5-drt-family/image/baselight_huebbfad1edfa8e198fe68a27ac6a615ca_257884_360x0_resize_q75_box.jpg 360w ,https://thomjiji.github.io/posts/2023-01-28_daylight-%E6%B7%BB%E5%8A%A0-arri-look-library-alf-2-v5-drt-family/image/baselight_huebbfad1edfa8e198fe68a27ac6a615ca_257884_480x0_resize_q75_box.jpg 480w ,https://thomjiji.github.io/posts/2023-01-28_daylight-%E6%B7%BB%E5%8A%A0-arri-look-library-alf-2-v5-drt-family/image/baselight_huebbfad1edfa8e198fe68a27ac6a615ca_257884_720x0_resize_q75_box.jpg 720w ,https://thomjiji.github.io/posts/2023-01-28_daylight-%E6%B7%BB%E5%8A%A0-arri-look-library-alf-2-v5-drt-family/image/baselight_huebbfad1edfa8e198fe68a27ac6a615ca_257884_1080x0_resize_q75_box.jpg 1080w ,https://thomjiji.github.io/posts/2023-01-28_daylight-%E6%B7%BB%E5%8A%A0-arri-look-library-alf-2-v5-drt-family/image/baselight_huebbfad1edfa8e198fe68a27ac6a615ca_257884_1500x0_resize_q75_box.jpg 1500w ,https://thomjiji.github.io/posts/2023-01-28_daylight-%E6%B7%BB%E5%8A%A0-arri-look-library-alf-2-v5-drt-family/image/baselight.jpg 2400w" 
+            sizes="(min-width: 768px) 720px, 100vw" src="https://thomjiji.github.io/posts/2023-01-28_daylight-%E6%B7%BB%E5%8A%A0-arri-look-library-alf-2-v5-drt-family/image/baselight.jpg" alt="The colorist is sitting in front of the mixing table and monitor, and this is an overhead view from above the back of the colorist&#39;s head that captures the entire mixing table, the monitor screen, and the interface of the coloring software." 
+            width="2400" height="1350">
 </figure>
   <header class="entry-header">
     <h2>Daylight 添加 ARRI Look Library &amp; ALF-2 v5 DRT Family
