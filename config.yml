@@ -6,8 +6,8 @@ publishDir: "docs"
 
 menu:
   main:
-    - name: Archives
-      url: archives/
+    - name: Posts
+      url: posts/
       weight: 10
     - name: Search
       url: search/
@@ -15,8 +15,8 @@ menu:
     - name: Tags
       url: tags/
       weight: 30
-    - name: Categories
-      url: categories/
+    - name: About
+      url: about/
       weight: 40
 
 params:
