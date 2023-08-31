@@ -9,7 +9,7 @@ author: ["thom"]
 # weight: 1
 ---
 
-# 参考链接
+## 参考链接
 
 ### 关于上传杜比视界到平台（Bilibili or Vimeo）
 
@@ -38,9 +38,7 @@ author: ["thom"]
 
 - [iTunes Video and Audio Asset Guide 5.3.8](https://help.apple.com/itc/videoaudioassetguide/en.lproj/static.html#itcae20df1c7)
 
-# Some Topics
-
-## What is Dolby Vision profile 8.4?
+### What is Dolby Vision profile 8.4?
 
 Dolby Vision profiles describe the video codec and set of coding techniques used to encode a Dolby Vision video. Profile 8.4 is a Dolby Vision profile where the 10-bit HDR video essence is encoded using HEVC with a Hybrid Log Gamma (HLG) transfer function and is accompanied by dynamic Dolby Vision metadata. This is the format that is used when capturing HDR video on iPhone 12 or when exporting Dolby Vision video from Final Cut Pro or Compressor.
 
@@ -74,7 +72,7 @@ Alternatively, MaxFALL/MaxCLL metadata can be calculated using Dolby's cm_analyz
 
 From an HDR sequence in Blackmagic Design Resolve, export to a mezzanine format (such as Apple ProRes 422 HQ) that supports PQ or HLG based HDR. Import this file into Apple Compressor and use a Dolby Vision 8.4 preset to transcode.
 
-### Dolby Atmos Master Formats: ADM BWF
+## Dolby Atmos Master Formats: ADM BWF
 
 Source: [Module 1.2 – Beyond Multichannel Audio](https://learning.dolby.com/hc/en-us/articles/360052744252)
 
@@ -91,9 +89,11 @@ The .atmos and .atmos.metadata files can be opened for inspection with a text ed
 While a new master is always recorded as a DAMF, two other formats are used for distribution, for encoding, or further editing:
 
 - **ADM BWF** — The Audio Definition Model Broadcast Wav Format (ADM BWF) is an alternative Dolby Atmos master format. With ADM BWF (sometimes referred to as ADM BWAV), all other information included in the .atmos and .atmos.metadata files is included in a data chunk in the header of the wav file. The audio payload itself is up to 128 tracks of interleaved audio. ADM has several advantages:
+
     1. ADM BWF is a single file instead of three files in a folder, making it easy to interchange with other facilities.
     2. ADM BWF can be imported into DAWs. This allows all Bed and Object audio tracks to be recreated along with all the panning metadata. This allows for subsequent editing — language replacement, timing conformance, censorship edits, etc. — prior to remastering.
     3. ADM BWF can be encoded to Dolby True HD, Dolby Digital Plus JOC, and Dolby AC-4 IMS and is the primary deliverable to streaming operators and Blu-ray authoring.
+
 - **IMF.IAB** – Immersive Audio Bitstream is a mezzanine format for IMF (interoperability mastering format). IAB is considered a mezzanine format rather than a master format, as OAMD is quantized. IAB.mxf is used by third-party IMF packaging tools to create a delivery container for both Dolby Atmos and video (including Dolby Vision).
 
 While the Dolby Atmos Renderer natively records in the .atmos format only, it can convert to and export ADM BWF and IAB.MXF. The entire file can be exported, or basic top/tail (specified range) edits can be performed.
@@ -114,9 +114,7 @@ DASH - Dynamic Adaptive Streaming over HTTP – also known as MPEG-DASH – spli
 
 Both HLS and DASH use a separate manifest file that links to the segments (and/or other manifests). Such a manifest file is a simple text file that is understood by players supporting HLS and/or DASH.
 
-# Notes
-
-## 需要有这三个 metadata 才能被 Youtube 或 Bilibili 正确识别为 HDR10：
+## 需要有这三个 metadata 才能被 YouTube 或 Bilibili 正确识别为 HDR10：
 
 [Reference](https://support.google.com/youtube/answer/7126552?hl=en#zippy=%2Chdr-metadata%2Chdr-video-file-encoding%2Cupload-requirements): HDR videos using PQ signaling should also contain information about *the display it was mastered on* (SMPTE ST 2086 mastering metadata). It should also have details about the brightness (CEA 861-3 *MaxFALL and MaxCLL*). If it's missing, we use the values for the Sony BVM-X300 mastering display.
 
