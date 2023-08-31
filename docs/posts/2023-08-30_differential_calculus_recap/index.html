@@ -132,8 +132,8 @@ Function $f$ is continuous over the interval $[a, b]$. The value $d$ lies betwee
   "keywords": [
     
   ],
-  "articleBody": "Intermediate Value Theorem (IVT) If a function $f(x)$ is continuous on a closed interval $[a, b]$ and $k$ is any number between $f(a)$ and $f(b)$, then there is at least one number $c$ in the interval $[a, b]$ such that $f( c) = k$.\nThe intermediate value theorem has two conditions:\nFunction $f$ is continuous over the interval $[a, b]$. The value $d$ lies between $f(a)$ and $f(b)$ We must establish these two conditions to conclude that there is a value $c$ in the interval $[a, b]$ for which $g(x) = d$ (another way to phrase this conclusion is that the equation $g(x) = d$ has a solution where $a \u003c= x \u003c= b$).\nProperty of limits of composite functions If $u$ are functions such that $\\displaystyle\\lim_{x \\to c} u(x) = L$ and $\\displaystyle\\lim_{x \\to L} u(x) = u(L)$ (which means both limits exist and $u$ is continuous at $x = L$), then\n$$\\displaystyle\\lim_{x \\to c} u(u(x)) = u(\\lim_{x \\to c} u(x)) = u(L)$$\nDealing with composite function’s limits When dealing with composite exponential functions, we can let $y$ equals to that function, then take natural log on both sides:\nSteps Process 1 $y = (2x - 1)^\\frac{1}{x - 1}$ 2 $\\ln(y) = \\ln((2x - 1)^\\frac{1}{x - 1}) = \\frac{1}{x - 1} \\cdot \\ln(2x-1) = \\frac{\\ln(2x-1)}{x - 1}$ By doing this, we can bring the complex exponent in front.\nSqueeze Theorem The squeeze theorem tells us that if we have three function $f$, $g$, and $h$ such that…\n$g(x) \u003c= f(x) \u003c= h(x)$ for all $x$-values other than $x = c$ in an interval round $x = c$, and $\\displaystyle\\lim_{x \\to c} g(x) = \\lim_{x \\to c} h(x) = L$ Then we can conclude that $\\displaystyle\\lim_{x \\to c} f(x) = L$.\nDerivative of Function The derivative of function $f$ at the point where $x = a$ is defined by:\n$$f’(a) = \\lim_{{h \\to 0}} \\frac{{f(a + h) - f(a)}}{h}$$\nThe alternative form is:\n$$f’(a) = \\lim_{{x \\to a}} \\frac{{f(x) - f(a)}}{x - a}$$\nThe whole underlying idea of the formal definition of limits is to find the slope of the secant line between these two points, and then take the limit as $h$ approaches $0$. And the secant line is going to become a better and better approximation of the tangent line at $x$.\nUnder what conditions can a function be considered continuous? A function $f(x)$ is considered continuous at a point $x = a$ if the following conditions are all met:\nDefined: The function $f(x)$ is defined at $x = a$. Meaning you can substitute a into the function and get a real number.\nLimit Exists: The limit of the function as $x$ approaches $a$ exists. This means that as $x$ gets closer and closer to a from either direction, $f(x)$ approaches some specific value $L$.\nFunction Equals Limit: The value of the function at $a$ is equal to the limit of the function as $x$ approaches $a$. In other words, $f(a) = L$.\nThe function $f(x)$ is said to be continuous on an interval if it is continuous at every point in that interval. It is said to be continuous everywhere or simply continuous if it is continuous at every point over its entire domain.\nSo, Mathematically, A function $f(x)$ is continuous at $x = a$ if $\\lim_{{x \\to a}} f(x) = f(a)$\nOr more explicitly, it is continuous at $x = a$ if $\\lim_{{x \\to a^-}} f(x) = f(a) = \\lim_{{x \\to a^+}} f(x)$\nWhere $\\lim_{{x \\to a^-}} f(x)$ is the limit as $x$ approaches $a$ from the left, $f(a)$ is the function value at $a$, and $\\lim_{{x \\to a^+}} f(x)$ is the limit as $x$ approaches $a$ from the right.\nIf all three of these quantities are the same, then $f(x)$ is continuous at $x = a$.\nDifferentiability Implies Continuity There are three cases where a function is not differentiable:\nWherever the function isn’t continuous Wherever the graph of the function has a vertical tangent line Wherever the graph of the function has a sharp turn In order to be differentiable, you need to be continuous. You can’t have differentiable but not continuous. In order to be continuous, $\\displaystyle f(a) = \\lim_{{x \\to a}} f(x)$. Two one-sided limits exist, and are equal to $f(a)$. In order to be differentiable, $\\displaystyle \\lim_{{x \\to a}} \\frac{{f(x) - f(a)}}{x - a}$ needs to exist. If a function is differentiable then it’s also continuous. This property is very useful when working with functions, because if we know that a function is differentiable, we immediately know that it’s also continuous.\nDifferentiation Rules Rules Expression Constant rule $\\frac{d}{dx}(k) = 0$ Constant multiple rule $\\frac{d}{dx}[k \\cdot f(x)] = k \\cdot f’(x)$ Sum rule $\\frac{d}{dx}[f(x) + g(x)] = f’(x) + g’(x)$ Difference rule $\\frac{d}{dx}[f(x) - g(x)] = f’(x) - g’(x)$ Power Rule $\\frac{d}{dx} (x^n) = n x^{n-1}$ Product Rule $\\frac{d}{dx} [f(x) \\cdot g(x)] = \\frac{d}{dx}[f(x)] \\cdot g(x) + f(x) \\cdot \\frac{d}{dx}[g(x)]$ Quotient Rule $\\frac{d}{dx} \\left[\\frac{f(x)}{g(x)}\\right] = \\frac{\\frac{d}{dx} [f(x)] \\cdot g(x) -f(x) \\cdot \\frac{d}{dx}[g(x)]} {[g(x)]^2}$ Chain Rule If $g$ is differentiable at $x$ and $f$ is differentiable at $g(x)$, then the composite function $F = f \\circ g$ defined by $F(x) = f(g(x))$ is differentiable at $x$ and $F\\prime$ is given by the product\n$$ F\\prime[f(g(x))] = f\\prime(g(x)) \\cdot g\\prime(x) $$\nif $y = f(u)$ and $u = g(x)$ are both differentiable functions, then\n$$ \\frac{dy}{dx} = \\frac{dv}{du} \\cdot \\frac{du}{dx} $$\nDerivatives of the Trigonometric Functions Trigonometric Derivative sin $\\frac{d}{dx} [\\sin (x)] = \\cos(x)$ cos $\\frac{d}{dx} [\\cos (x)] = -\\sin(x)$ tan $\\frac{d}{dx} [\\tan (x)] = \\frac{d}{dx} \\left [\\frac{\\sin(x)}{\\cos(x)} \\right] = \\frac{1}{\\cos^2(x)} = \\sec^2(x)$ cot $\\frac{d}{dx} [\\cot (x)] = \\frac{d}{dx} \\left[\\frac{\\cos(x)}{\\sin(x)}\\right] = -\\frac{1} {\\sin^2(x)} = -\\csc^2(x)$ csc $\\frac{d}{dx} [\\csc (x)] = -\\frac{\\cos(x)}{\\sin^2(x)} = -\\csc(x) \\cdot \\cot(x)$ sec $\\frac{d}{dx} [\\sec (x)] = \\frac{\\sin(x)}{\\cos^2(x)} = \\sec(x) \\cdot \\tan(x)$ Two Special Trigonometric Limits $\\lim_{\\theta \\to 0} \\frac{\\sin \\theta}{\\theta} = 1$ $\\lim_{\\theta \\to 0} \\frac{\\cos \\theta - 1}{\\theta} = 0$ Derivative of $e$ $$ \\frac{d}{dx} e^x = e^x $$\nDerivative of $\\ln(x)$ $$ \\frac{d}{dx} [\\ln(x)] = \\frac{1}{x} $$\nComposite and combined functions A composite function is where we make the output from one function, such as $u$, the input for another function, such as $w$.\nWe can also combine functions using arithmetic operations, but such a combination is not considered a composite function.\nOur two functions appear to be $x-8$ and $e^x$, but neither of them takes the other as its input.\nDerivatives of Exponential Functions If $b$ is a constant, then\n$$ \\frac{d}{dx} (b^x) = \\ln(b) \\cdot b^x $$\nDerivatives of Logarithmic Functions If $a$ is a constant, $a \\neq 1$, then\n$$ \\frac{d}{dx} \\left[\\log_a(x)\\right] = \\frac{1}{\\ln(a) \\cdot x} $$\n$$ \\frac{d}{dx} \\left[\\ln(u(x)) \\right] = \\frac{u\\prime(x)}{u(x)} $$\nDerivative of Inverse Function Let’s say $f(x)$ and $g(x)$ are inverse function (and both are differentiable), so by definition, we have this equation:\n$$ f(g(x)) = x $$\nWe take derivative of both sides:\n$$ \\frac{d}{dx} f(g(x)) = \\frac{d}{dx} (x)$$\nUse chain rule to the left-hand side, right-hand side equals to 1. Finally, we get:\n$$ f’(x) = \\frac{1}{g’(f(x))} $$\nDerivative of Inverse Sine, Cosine, Tangent $$\\frac{d}{dx} \\left[\\sin^{-1}(x)\\right] = \\frac{1}{\\sqrt{1 - x^2}} $$\n$$\\frac{d}{dx} \\left[\\cos^{-1}(x)\\right] = -\\frac{1}{\\sqrt{1 - x^2}} $$\n$$\\frac{d}{dx} \\left[\\tan^{-1}(x)\\right] = \\frac{1}{1 + x^2} $$\nInterpret motion graph The direction of movement is indicated by the velocity’s sign:\nIf the velocity is positive, the object is moving forward. If the velocity is negative, the object is moving backward. If the velocity is zero, the object is not moving. The direction of the position graph indicates the direction of movement:\nIf the graph is increasing, the object is moving forward. If the graph is decreasing, the object is moving backward. If the graph is nether increasing not decreasing, the object is not moving. This happens at extremum points of the graph. Speed is the magnitude of velocity. When analyzing linear motion,\n$$ \\text{speed} = | \\text{velocity} | $$\nSo the object is speeding up whenever the absolute value of the velocity is increasing, and slowing down whenever the absolute value of the velocity is decreasing.\nWhen the velocity is zero, the object isn’t speeding up or slowing down.\nVelocity as a function of time is the derivative of position:\n$$ v(t) = x’(t) $$\nAcceleration as a function of time is the derivative of velocity, which is the second derivative of position:\n$$ a(t) = v’(t) = x’’(t) $$\nVelocity and Acceleration Velocity: The rate of change of displacement (位移) with respect to time. Acceleration: The instantaneous rate of change of velocity with respect to time. Velocity Acceleration Speed Positive Positive Increasing Negative Negative Increasing Positive Negative Decreasing Negative Positive Decreasing If the acceleration is positive, and velocity is positive, that means the magnitude of velocity is increasing, so that means the speed is increasing.\nIf the acceleration is negative, and the velocity is also negative, that also means the speed is increasing.\nBut the velocity and acceleration have different signs, that mean the speed is decreasing.\nRelated rates This is the core of our solution: by relating the quantities (i.e., $A$ and $r$) we were able to relate their rates (i.e., $A’$ and $r’$) through differentiation. This is why these problems are called “related rates”.\nFor example, what we know is $\\frac{dy}{dt}$ ($y’(t)$), what we are seeking for is $\\frac{dx}{dt}$ ($x’(t)$). So, if we can find the relationship between $y$ and $x$, then take derivative on them, we can find derivative of $x$ by solve for $\\frac{dx}{dt}$.\nLinear approximation But what they’re suggesting that we do is use this tangent line. If we know the equation of this tangent line here, we can say what the tangent line equals when x equals 1.9? When x equals 1.9, it equals that point over there. And then we could use that as our approximation.\nThe tangent line gives us a “best” linear approximation to the function $h$ near the point $x = 0$ (or $x = a$). If we were to graph the function $h$ and the line $y= 4x - 5$ together, the two would be very close together near $x = 0$ (or $x = a$), although they may diverge as we move away or zoom out from this point.\nL’Hôpital’s rule L’Hôpital’s rule states that for functions $f$ and $g$ which are differentiable on an open interval $I$ except possibly at a point $c$ contained in $I$, if $\\lim_{x \\to c} f(x) = \\lim_{x \\to c} g(x) = 0$ or $±\\infty$, and $g’(x) \\neq 0$ for all $x$ in $I$ with $x \\neq c$, and $\\lim_{x \\to c} \\frac{f’(x)}{g’(x)}$ exists, then\n$$ \\displaystyle \\lim _{x\\to c}{\\frac {f(x)}{g(x)}}=\\lim _{x\\to c}{\\frac {f’(x)}{g’(x)}} $$\nThe differentiation of the numerator and denominator often simplifies the quotient or converts it to a limit that can be evaluated directly.\nMean value theorem (MVT) The mean value theorem connects the average rate of change of a function to its derivative. It says that for any differentiable function $f$ and an interval $[a, b]$ (within the domain of $f$), there exists a number $c$ within $(a, b)$ such that $f’(c)$ is equal to the function’s average rate of change over $[a, b]$.\nGraphically, the theorem says that for any arc (弧线) between two endpoints, there’s a point at which the tangent the arc is parallel to the secant through its endpoints.\nFormal definition\nLet $f$ be a function that satisfies the following hypotheses:\n$f$ is continuous on the closed interval $[a, b]$. $f$ is differentiable on the open interval $(a, b)$. Then there is a number $c$ in $(a, b)$ such that\n$$ f’(c) = \\frac{f(b) - f(a)}{b - a} $$\nOr, equivalently,\n$$ f(b) - f(a) = f’(c)(b - a) $$\nThe mean value theorem has two conditions:\nFunction $g$ is differentiable over the open interval $(a, b)$ and continuous over the closed interval $[a, b]$. The average rate of change is equal to the slope of that point on the function. $f’( c) = \\frac{f(b) - f(a)}{b - a}$ Critical number A critical number of a function $f$ is a number $c$ in the domain of $f$ such that either $f’(c) = 0$ or $f’(c)$ does not exist.\nIntervals on which a function is increasing or decreasing $f’$’s status which means $f$ $f’ \u003e 0$ ($f’$ is positive) \u003c=\u003e $f$ is increasing $f’ \u003c 0$ ($f’$ is negative) \u003c=\u003e $f$ is decreasing The intervals where the derivative $f’$ is positive (i.e., above the $x$-axis) are the intervals where the function $f$ is increasing. The intervals where the derivative $f’$ is negative (i.e., below the $x$-axis) are the intervals where the function $f$ is decreasing. A function can only change its direction from increasing to decreasing and vice versa between its critical points and the points where the function itself is undefined.\nRelative extrema Local minimum is the point where $f’ = 0$ and $f’’ \u003e 0$ (means $f’$ is increasing). Local maximum is the point where $f’ = 0$ and $f’’ \u003c 0$ (means $f’$ is decreasing). We must not assume that any critical point is an extremum. Instead, we should check out critical points to see if the function is defined at those points and the derivative changes signs at those points. When we analyze increasing and decreasing intervals, we must look for all points where the derivative is equal to zero and all points where the function or its derivative is undefined. If you miss any of these points, you will probably end up with a wrong sign chart. Second Derivative Test Suppose $f(x)$ is a function of $x$ that is twice differentiable at a stationary point (minimum point, maximum point and inflection point) $x_0$, $f’(x_0) = 0$, then:\nIf $f’’(x_0) \u003e 0$ then $f$ has a local minimum at $x_0$. If $f’’(x_0) \u003c 0$ then $f$ has a local maximum at $x_0$. Absolute extrema An absolute maximum point is a point where the function obtains its greatest possible value. Similarly, an absolute minimum point is a point where the function obtains its least possible value.\nThese extreme values are obtained, either on a relative extremum point within the interval, or on the endpoints of the interval.\nExtreme value theorem If a function is continuous on a closed interval $[a,b]$, then the function must have a maximum and a minimum on the interval.\nFormal definition\nIf $f$ is continuous on a closed interval $[a, b]$, then $f$ attains an absolute maximum value $f(c)$ and an absolute minimum value $f(d)$ at some numbers $c$ and $d$ in $[a, b]$.\nConcavity Concave up if the $f’$ increases, concave down if $f’$ decreases.\nConcave up equivalent to $g’(x)$ is increasing =\u003e $g’’(x) \u003e 0$ Concave down equivalent to $g’(x)$ is decreasing =\u003e $g’’(x) \u003c 0$ Inflection point (拐点) Inflection points are points where the function changes concavity, i.e., from being “concave up” (the slope of the function - $f’$ is increasing) to “concave down” (the slope of the function - $f’$ is decreasing) or vice versa. They can be found by considering where the second derivative changes signs.\nInflection points will occur when the second derivative is either zero or undefined. Even if critical points are found, they can only be considered as candidates before actually testing them.\nFinding inflection points is similar to finding extreme points. Instead of looking for points where the derivative changes its sign, we are looking for points where the second derivative changes its sign.\n$f’$’s (relative) minimum or maximum point is possibly inflection point.\n",
-  "wordCount" : "2564",
+  "articleBody": "Intermediate Value Theorem (IVT) If a function $f(x)$ is continuous on a closed interval $[a, b]$ and $k$ is any number between $f(a)$ and $f(b)$, then there is at least one number $c$ in the interval $[a, b]$ such that $f( c) = k$.\nThe intermediate value theorem has two conditions:\nFunction $f$ is continuous over the interval $[a, b]$. The value $d$ lies between $f(a)$ and $f(b)$ We must establish these two conditions to conclude that there is a value $c$ in the interval $[a, b]$ for which $g(x) = d$ (another way to phrase this conclusion is that the equation $g(x) = d$ has a solution where $a \u003c= x \u003c= b$).\nProperty of limits of composite functions If $u$ are functions such that $\\displaystyle\\lim_{x \\to c} u(x) = L$ and $\\displaystyle\\lim_{x \\to L} u(x) = u(L)$ (which means both limits exist and $u$ is continuous at $x = L$), then\n$$\\displaystyle\\lim_{x \\to c} u(u(x)) = u(\\lim_{x \\to c} u(x)) = u(L)$$\nDealing with composite function’s limits When dealing with composite exponential functions, we can let $y$ equals to that function, then take natural log on both sides:\nSteps Process 1 $y = (2x - 1)^\\frac{1}{x - 1}$ 2 $\\ln(y) = \\ln((2x - 1)^\\frac{1}{x - 1}) = \\frac{1}{x - 1} \\cdot \\ln(2x-1) = \\frac{\\ln(2x-1)}{x - 1}$ By doing this, we can bring the complex exponent in front.\nSqueeze Theorem The squeeze theorem tells us that if we have three function $f$, $g$, and $h$ such that…\n$g(x) \u003c= f(x) \u003c= h(x)$ for all $x$-values other than $x = c$ in an interval round $x = c$, and $\\displaystyle\\lim_{x \\to c} g(x) = \\lim_{x \\to c} h(x) = L$ Then we can conclude that $\\displaystyle\\lim_{x \\to c} f(x) = L$.\nDerivative of Function The derivative of function $f$ at the point where $x = a$ is defined by:\n$$f\\prime(a) = \\lim_{{h \\to 0}} \\frac{{f(a + h) - f(a)}}{h}$$\nThe alternative form is:\n$$f\\prime(a) = \\lim_{{x \\to a}} \\frac{{f(x) - f(a)}}{x - a}$$\nThe whole underlying idea of the formal definition of limits is to find the slope of the secant line between these two points, and then take the limit as $h$ approaches $0$. And the secant line is going to become a better and better approximation of the tangent line at $x$.\nUnder what conditions can a function be considered continuous? A function $f(x)$ is considered continuous at a point $x = a$ if the following conditions are all met:\nDefined: The function $f(x)$ is defined at $x = a$. Meaning you can substitute a into the function and get a real number.\nLimit Exists: The limit of the function as $x$ approaches $a$ exists. This means that as $x$ gets closer and closer to a from either direction, $f(x)$ approaches some specific value $L$.\nFunction Equals Limit: The value of the function at $a$ is equal to the limit of the function as $x$ approaches $a$. In other words, $f(a) = L$.\nThe function $f(x)$ is said to be continuous on an interval if it is continuous at every point in that interval. It is said to be continuous everywhere or simply continuous if it is continuous at every point over its entire domain.\nSo, Mathematically, A function $f(x)$ is continuous at $x = a$ if $\\lim_{{x \\to a}} f(x) = f(a)$\nOr more explicitly, it is continuous at $x = a$ if $\\lim_{{x \\to a^-}} f(x) = f(a) = \\lim_{{x \\to a^+}} f(x)$\nWhere $\\lim_{{x \\to a^-}} f(x)$ is the limit as $x$ approaches $a$ from the left, $f(a)$ is the function value at $a$, and $\\lim_{{x \\to a^+}} f(x)$ is the limit as $x$ approaches $a$ from the right.\nIf all three of these quantities are the same, then $f(x)$ is continuous at $x = a$.\nDifferentiability Implies Continuity There are three cases where a function is not differentiable:\nWherever the function isn’t continuous Wherever the graph of the function has a vertical tangent line Wherever the graph of the function has a sharp turn In order to be differentiable, you need to be continuous. You can’t have differentiable but not continuous. In order to be continuous, $\\displaystyle f(a) = \\lim_{{x \\to a}} f(x)$. Two one-sided limits exist, and are equal to $f(a)$. In order to be differentiable, $\\displaystyle \\lim_{{x \\to a}} \\frac{{f(x) - f(a)}}{x - a}$ needs to exist. If a function is differentiable then it’s also continuous. This property is very useful when working with functions, because if we know that a function is differentiable, we immediately know that it’s also continuous.\nDifferentiation Rules Rules Expression Constant rule $\\frac{d}{dx}(k) = 0$ Constant multiple rule $\\frac{d}{dx}[k \\cdot f(x)] = k \\cdot f\\prime(x)$ Sum rule $\\frac{d}{dx}[f(x) + g(x)] = f\\prime(x) + g\\prime(x)$ Difference rule $\\frac{d}{dx}[f(x) - g(x)] = f\\prime(x) - g\\prime(x)$ Power Rule $\\frac{d}{dx} (x^n) = n x^{n-1}$ Product Rule $\\frac{d}{dx} [f(x) \\cdot g(x)] = \\frac{d}{dx}[f(x)] \\cdot g(x) + f(x) \\cdot \\frac{d}{dx}[g(x)]$ Quotient Rule $\\frac{d}{dx} \\left[\\frac{f(x)}{g(x)}\\right] = \\frac{\\frac{d}{dx} [f(x)] \\cdot g(x) -f(x) \\cdot \\frac{d}{dx}[g(x)]} {[g(x)]^2}$ Chain Rule If $g$ is differentiable at $x$ and $f$ is differentiable at $g(x)$, then the composite function $F = f \\circ g$ defined by $F(x) = f(g(x))$ is differentiable at $x$ and $F\\prime$ is given by the product\n$$ F\\prime[f(g(x))] = f\\prime(g(x)) \\cdot g\\prime(x) $$\nif $y = f(u)$ and $u = g(x)$ are both differentiable functions, then\n$$ \\frac{dy}{dx} = \\frac{dv}{du} \\cdot \\frac{du}{dx} $$\nDerivatives of the Trigonometric Functions Trigonometric Derivative sin $\\frac{d}{dx} [\\sin (x)] = \\cos(x)$ cos $\\frac{d}{dx} [\\cos (x)] = -\\sin(x)$ tan $\\frac{d}{dx} [\\tan (x)] = \\frac{d}{dx} \\left [\\frac{\\sin(x)}{\\cos(x)} \\right] = \\frac{1}{\\cos^2(x)} = \\sec^2(x)$ cot $\\frac{d}{dx} [\\cot (x)] = \\frac{d}{dx} \\left[\\frac{\\cos(x)}{\\sin(x)}\\right] = -\\frac{1} {\\sin^2(x)} = -\\csc^2(x)$ csc $\\frac{d}{dx} [\\csc (x)] = -\\frac{\\cos(x)}{\\sin^2(x)} = -\\csc(x) \\cdot \\cot(x)$ sec $\\frac{d}{dx} [\\sec (x)] = \\frac{\\sin(x)}{\\cos^2(x)} = \\sec(x) \\cdot \\tan(x)$ Two Special Trigonometric Limits $\\lim_{\\theta \\to 0} \\frac{\\sin \\theta}{\\theta} = 1$ $\\lim_{\\theta \\to 0} \\frac{\\cos \\theta - 1}{\\theta} = 0$ Derivative of $e$ $$ \\frac{d}{dx} e^x = e^x $$\nDerivative of $\\ln(x)$ $$ \\frac{d}{dx} [\\ln(x)] = \\frac{1}{x} $$\nComposite and combined functions A composite function is where we make the output from one function, such as $u$, the input for another function, such as $w$.\nWe can also combine functions using arithmetic operations, but such a combination is not considered a composite function.\nOur two functions appear to be $x-8$ and $e^x$, but neither of them takes the other as its input.\nDerivatives of Exponential Functions If $b$ is a constant, then\n$$ \\frac{d}{dx} (b^x) = \\ln(b) \\cdot b^x $$\nDerivatives of Logarithmic Functions If $a$ is a constant, $a \\neq 1$, then\n$$ \\frac{d}{dx} \\left[\\log_a(x)\\right] = \\frac{1}{\\ln(a) \\cdot x} $$\n$$ \\frac{d}{dx} \\left[\\ln(u(x)) \\right] = \\frac{u\\prime(x)}{u(x)} $$\nDerivative of Inverse Function Let’s say $f(x)$ and $g(x)$ are inverse function (and both are differentiable), so by definition, we have this equation:\n$$ f(g(x)) = x $$\nWe take derivative of both sides:\n$$ \\frac{d}{dx} f(g(x)) = \\frac{d}{dx} (x)$$\nUse chain rule to the left-hand side, right-hand side equals to 1. Finally, we get:\n$$ f\\prime(x) = \\frac{1}{g\\prime(f(x))} $$\nDerivative of Inverse Sine, Cosine, Tangent $$\\frac{d}{dx} \\left[\\sin^{-1}(x)\\right] = \\frac{1}{\\sqrt{1 - x^2}} $$\n$$\\frac{d}{dx} \\left[\\cos^{-1}(x)\\right] = -\\frac{1}{\\sqrt{1 - x^2}} $$\n$$\\frac{d}{dx} \\left[\\tan^{-1}(x)\\right] = \\frac{1}{1 + x^2} $$\nInterpret motion graph The direction of movement is indicated by the velocity’s sign:\nIf the velocity is positive, the object is moving forward. If the velocity is negative, the object is moving backward. If the velocity is zero, the object is not moving. The direction of the position graph indicates the direction of movement:\nIf the graph is increasing, the object is moving forward. If the graph is decreasing, the object is moving backward. If the graph is nether increasing not decreasing, the object is not moving. This happens at extremum points of the graph. Speed is the magnitude of velocity. When analyzing linear motion,\n$$ \\text{speed} = | \\text{velocity} | $$\nSo the object is speeding up whenever the absolute value of the velocity is increasing, and slowing down whenever the absolute value of the velocity is decreasing.\nWhen the velocity is zero, the object isn’t speeding up or slowing down.\nVelocity as a function of time is the derivative of position:\n$$ v(t) = x\\prime(t) $$\nAcceleration as a function of time is the derivative of velocity, which is the second derivative of position:\n$$ a(t) = v\\prime(t) = x\\prime\\prime(t) $$\nVelocity and Acceleration Velocity: The rate of change of displacement (位移) with respect to time. Acceleration: The instantaneous rate of change of velocity with respect to time. Velocity Acceleration Speed Positive Positive Increasing Negative Negative Increasing Positive Negative Decreasing Negative Positive Decreasing If the acceleration is positive, and velocity is positive, that means the magnitude of velocity is increasing, so that means the speed is increasing.\nIf the acceleration is negative, and the velocity is also negative, that also means the speed is increasing.\nBut the velocity and acceleration have different signs, that mean the speed is decreasing.\nRelated rates This is the core of our solution: by relating the quantities (i.e., $A$ and $r$) we were able to relate their rates (i.e., $A\\prime$ and $r\\prime$) through differentiation. This is why these problems are called “related rates”.\nFor example, what we know is $\\frac{dy}{dt}$ ($y\\prime(t)$), what we are seeking for is $\\frac{dx}{dt}$ ($x\\prime(t)$). So, if we can find the relationship between $y$ and $x$, then take derivative on them, we can find derivative of $x$ by solve for $\\frac{dx}{dt}$.\nLinear approximation But what they’re suggesting that we do is use this tangent line. If we know the equation of this tangent line here, we can say what the tangent line equals when x equals 1.9? When x equals 1.9, it equals that point over there. And then we could use that as our approximation.\nThe tangent line gives us a “best” linear approximation to the function $h$ near the point $x = 0$ (or $x = a$). If we were to graph the function $h$ and the line $y= 4x - 5$ together, the two would be very close together near $x = 0$ (or $x = a$), although they may diverge as we move away or zoom out from this point.\nL’Hôpital’s rule L’Hôpital’s rule states that for functions $f$ and $g$ which are differentiable on an open interval $I$ except possibly at a point $c$ contained in $I$, if $\\lim_{x \\to c} f(x) = \\lim_{x \\to c} g(x) = 0$ or $±\\infty$, and $g\\prime(x) \\neq 0$ for all $x$ in $I$ with $x \\neq c$, and $\\lim_{x \\to c} \\frac{f\\prime(x)}{g\\prime(x)}$ exists, then\n$$ \\displaystyle \\lim _{x\\to c}{\\frac {f(x)}{g(x)}}=\\lim _{x\\to c}{\\frac {f\\prime(x)} {g\\prime(x)}} $$\nThe differentiation of the numerator and denominator often simplifies the quotient or converts it to a limit that can be evaluated directly.\nMean value theorem (MVT) The mean value theorem connects the average rate of change of a function to its derivative. It says that for any differentiable function $f$ and an interval $[a, b]$ (within the domain of $f$), there exists a number $c$ within $(a, b)$ such that $f\\prime(c)$ is equal to the function’s average rate of change over $[a, b]$.\nGraphically, the theorem says that for any arc (弧线) between two endpoints, there’s a point at which the tangent the arc is parallel to the secant through its endpoints.\nFormal definition\nLet $f$ be a function that satisfies the following hypotheses:\n$f$ is continuous on the closed interval $[a, b]$. $f$ is differentiable on the open interval $(a, b)$. Then there is a number $c$ in $(a, b)$ such that\n$$ f\\prime(c) = \\frac{f(b) - f(a)}{b - a} $$\nOr, equivalently,\n$$ f(b) - f(a) = f\\prime(c)(b - a) $$\nThe mean value theorem has two conditions:\nFunction $g$ is differentiable over the open interval $(a, b)$ and continuous over the closed interval $[a, b]$. The average rate of change is equal to the slope of that point on the function. $f\\prime( c) = \\frac{f(b) - f(a)}{b - a}$ Critical number A critical number of a function $f$ is a number $c$ in the domain of $f$ such that either $f\\prime(c) = 0$ or $f\\prime(c)$ does not exist.\nIntervals on which a function is increasing or decreasing $f\\prime$’s status which means $f$ $f\\prime \u003e 0$ ($f\\prime$ is positive) \u003c=\u003e $f$ is increasing $f\\prime \u003c 0$ ($f\\prime$ is negative) \u003c=\u003e $f$ is decreasing The intervals where the derivative $f\\prime$ is positive (i.e., above the $x$-axis) are the intervals where the function $f$ is increasing. The intervals where the derivative $f\\prime$ is negative (i.e., below the $x$-axis) are the intervals where the function $f$ is decreasing. A function can only change its direction from increasing to decreasing and vice versa between its critical points and the points where the function itself is undefined.\nRelative extrema Local minimum is the point where $f\\prime = 0$ and $f\\prime\\prime \u003e 0$ (means $f\\prime$ is increasing). Local maximum is the point where $f\\prime = 0$ and $f\\prime\\prime \u003c 0$ (means $f\\prime$ is decreasing). We must not assume that any critical point is an extremum. Instead, we should check out critical points to see if the function is defined at those points and the derivative changes signs at those points. When we analyze increasing and decreasing intervals, we must look for all points where the derivative is equal to zero and all points where the function or its derivative is undefined. If you miss any of these points, you will probably end up with a wrong sign chart. Second Derivative Test Suppose $f(x)$ is a function of $x$ that is twice differentiable at a stationary point (minimum point, maximum point and inflection point) $x_0$, $f\\prime(x_0) = 0$, then:\nIf $f\\prime\\prime(x_0) \u003e 0$ then $f$ has a local minimum at $x_0$. If $f\\prime\\prime(x_0) \u003c 0$ then $f$ has a local maximum at $x_0$. Absolute extrema An absolute maximum point is a point where the function obtains its greatest possible value. Similarly, an absolute minimum point is a point where the function obtains its least possible value.\nThese extreme values are obtained, either on a relative extremum point within the interval, or on the endpoints of the interval.\nExtreme value theorem If a function is continuous on a closed interval $[a,b]$, then the function must have a maximum and a minimum on the interval.\nFormal definition\nIf $f$ is continuous on a closed interval $[a, b]$, then $f$ attains an absolute maximum value $f(c)$ and an absolute minimum value $f(d)$ at some numbers $c$ and $d$ in $[a, b]$.\nConcavity Concave up if the $f\\prime$ increases, concave down if $f\\prime$ decreases.\nConcave up equivalent to $g\\prime(x)$ is increasing =\u003e $g\\prime\\prime(x) \u003e 0$ Concave down equivalent to $g\\prime(x)$ is decreasing =\u003e $g\\prime\\prime(x) \u003c 0$ Inflection point (拐点) Inflection points are points where the function changes concavity, i.e., from being “concave up” (the slope of the function - $f\\prime$ is increasing) to “concave down” (the slope of the function - $f\\prime$ is decreasing) or vice versa. They can be found by considering where the second derivative changes signs.\nInflection points will occur when the second derivative is either zero or undefined. Even if critical points are found, they can only be considered as candidates before actually testing them.\nFinding inflection points is similar to finding extreme points. Instead of looking for points where the derivative changes its sign, we are looking for points where the second derivative changes its sign.\n$f\\prime$’s (relative) minimum or maximum point is possibly inflection point.\n",
+  "wordCount" : "2565",
   "inLanguage": "en",
   "datePublished": "2023-08-30T00:00:00Z",
   "dateModified": "2023-08-30T00:00:00Z",
@@ -278,9 +278,9 @@ $x = c$, and</li>
 <p>Then we can conclude that $\displaystyle\lim_{x \to c} f(x) = L$.</p>
 <h2 id="derivative-of-function">Derivative of Function<a hidden class="anchor" aria-hidden="true" href="#derivative-of-function">#</a></h2>
 <p>The derivative of function $f$ at the point where $x = a$ is defined by:</p>
-<p>$$f&rsquo;(a) = \lim_{{h \to 0}} \frac{{f(a + h) - f(a)}}{h}$$</p>
+<p>$$f\prime(a) = \lim_{{h \to 0}} \frac{{f(a + h) - f(a)}}{h}$$</p>
 <p>The alternative form is:</p>
-<p>$$f&rsquo;(a) = \lim_{{x \to a}} \frac{{f(x) - f(a)}}{x - a}$$</p>
+<p>$$f\prime(a) = \lim_{{x \to a}} \frac{{f(x) - f(a)}}{x - a}$$</p>
 <hr>
 <p>The whole underlying idea of the formal definition of limits is to find the slope of the
 secant line between these two points, and then take the limit as $h$ approaches $0$. And
@@ -349,15 +349,15 @@ immediately know that it&rsquo;s also continuous.</p>
 </tr>
 <tr>
 <td>Constant multiple rule</td>
-<td>$\frac{d}{dx}[k \cdot f(x)] = k \cdot f&rsquo;(x)$</td>
+<td>$\frac{d}{dx}[k \cdot f(x)] = k \cdot f\prime(x)$</td>
 </tr>
 <tr>
 <td>Sum rule</td>
-<td>$\frac{d}{dx}[f(x) + g(x)] = f&rsquo;(x) + g&rsquo;(x)$</td>
+<td>$\frac{d}{dx}[f(x) + g(x)] = f\prime(x) + g\prime(x)$</td>
 </tr>
 <tr>
 <td>Difference rule</td>
-<td>$\frac{d}{dx}[f(x) - g(x)] = f&rsquo;(x) - g&rsquo;(x)$</td>
+<td>$\frac{d}{dx}[f(x) - g(x)] = f\prime(x) - g\prime(x)$</td>
 </tr>
 <tr>
 <td>Power Rule</td>
@@ -459,7 +459,7 @@ definition, we have this equation:</p>
 <p>We take derivative of both sides:</p>
 <p>$$ \frac{d}{dx} f(g(x)) = \frac{d}{dx} (x)$$</p>
 <p>Use chain rule to the left-hand side, right-hand side equals to 1. Finally, we get:</p>
-<p>$$ f&rsquo;(x) = \frac{1}{g&rsquo;(f(x))} $$</p>
+<p>$$ f\prime(x) = \frac{1}{g\prime(f(x))} $$</p>
 <h2 id="derivative-of-inverse-sine-cosine-tangent">Derivative of Inverse Sine, Cosine, Tangent<a hidden class="anchor" aria-hidden="true" href="#derivative-of-inverse-sine-cosine-tangent">#</a></h2>
 <p>$$\frac{d}{dx} \left[\sin^{-1}(x)\right] = \frac{1}{\sqrt{1 - x^2}} $$</p>
 <p>$$\frac{d}{dx} \left[\cos^{-1}(x)\right] = -\frac{1}{\sqrt{1 - x^2}} $$</p>
@@ -485,10 +485,10 @@ and slowing down whenever the absolute value of the velocity is decreasing.</p>
 <p>When the velocity is zero, the object isn&rsquo;t speeding up or slowing down.</p>
 <hr>
 <p>Velocity as a function of time is the derivative of position:</p>
-<p>$$ v(t) = x&rsquo;(t) $$</p>
+<p>$$ v(t) = x\prime(t) $$</p>
 <p>Acceleration as a function of time is the derivative of velocity, which is the second
 derivative of position:</p>
-<p>$$ a(t) = v&rsquo;(t) = x&rsquo;&rsquo;(t) $$</p>
+<p>$$ a(t) = v\prime(t) = x\prime\prime(t) $$</p>
 <h3 id="velocity-and-acceleration">Velocity and Acceleration<a hidden class="anchor" aria-hidden="true" href="#velocity-and-acceleration">#</a></h3>
 <ul>
 <li>Velocity: The rate of change of <em>displacement</em> (位移) with respect to time.</li>
@@ -532,12 +532,13 @@ speed is increasing.</p>
 <p>But the velocity and acceleration have different signs, that mean the speed is
 decreasing.</p>
 <h2 id="related-rates">Related rates<a hidden class="anchor" aria-hidden="true" href="#related-rates">#</a></h2>
-<p>This is the core of our solution: by relating the quantities (i.e., $A$ and $r$) we
-were able to relate their rates (i.e., $A&rsquo;$ and $r&rsquo;$) through differentiation. This is
-why these problems are called &ldquo;related rates&rdquo;.</p>
-<p>For example, what we know is $\frac{dy}{dt}$ ($y&rsquo;(t)$), what we are seeking for is
-$\frac{dx}{dt}$ ($x&rsquo;(t)$). So, if we can find the relationship between $y$ and $x$, then
-take derivative on them, we can find derivative of $x$ by solve for $\frac{dx}{dt}$.</p>
+<p>This is the core of our solution: by relating the quantities (i.e., $A$ and $r$) we were
+able to relate their rates (i.e., $A\prime$ and $r\prime$) through differentiation. This
+is why these problems are called &ldquo;related rates&rdquo;.</p>
+<p>For example, what we know is $\frac{dy}{dt}$ ($y\prime(t)$), what we are seeking for is
+$\frac{dx}{dt}$ ($x\prime(t)$). So, if we can find the relationship between $y$ and $x$,
+then take derivative on them, we can find derivative of $x$ by solve for
+$\frac{dx}{dt}$.</p>
 <h2 id="linear-approximation">Linear approximation<a hidden class="anchor" aria-hidden="true" href="#linear-approximation">#</a></h2>
 <p>But what they&rsquo;re suggesting that we do is use this tangent line. If we know the
 equation of this tangent line here, we can say what the tangent line equals when x
@@ -550,18 +551,19 @@ they may diverge as we move away or zoom out from this point.</p>
 <h2 id="lhôpitals-rule">L&rsquo;Hôpital&rsquo;s rule<a hidden class="anchor" aria-hidden="true" href="#lhôpitals-rule">#</a></h2>
 <p>L&rsquo;Hôpital&rsquo;s rule states that for functions $f$ and $g$ which are differentiable on an
 open interval $I$ except possibly at a point $c$ contained in $I$, if $\lim_{x \to c}
-f(x) = \lim_{x \to c} g(x) = 0$ or $±\infty$, and $g&rsquo;(x) \neq 0$ for all $x$ in $I$ with
-$x \neq c$, and $\lim_{x \to c} \frac{f&rsquo;(x)}{g&rsquo;(x)}$ exists, then</p>
+f(x) = \lim_{x \to c} g(x) = 0$ or $±\infty$, and $g\prime(x) \neq 0$ for all $x$ in $I$
+with $x \neq c$, and $\lim_{x \to c} \frac{f\prime(x)}{g\prime(x)}$ exists, then</p>
 <p>$$
-\displaystyle \lim _{x\to c}{\frac {f(x)}{g(x)}}=\lim _{x\to c}{\frac {f&rsquo;(x)}{g&rsquo;(x)}}
+\displaystyle \lim _{x\to c}{\frac {f(x)}{g(x)}}=\lim _{x\to c}{\frac {f\prime(x)}
+{g\prime(x)}}
 $$</p>
 <p>The differentiation of the numerator and denominator often simplifies the quotient or
 converts it to a limit that can be evaluated directly.</p>
 <h2 id="mean-value-theorem-mvt">Mean value theorem (MVT)<a hidden class="anchor" aria-hidden="true" href="#mean-value-theorem-mvt">#</a></h2>
 <p>The mean value theorem connects the average rate of change of a function to its
 derivative. It says that for any differentiable function $f$ and an interval $[a, b]$
-(within the domain of $f$), there exists a number $c$ within $(a, b)$ such that $f&rsquo;(c)$
-is equal to the function&rsquo;s average rate of change over $[a, b]$.</p>
+(within the domain of $f$), there exists a number $c$ within $(a, b)$ such that
+$f\prime(c)$ is equal to the function&rsquo;s average rate of change over $[a, b]$.</p>
 <p>Graphically, the theorem says that for any arc (弧线) between two endpoints, there&rsquo;s a
 point at which the tangent the arc is parallel to the secant through its endpoints.</p>
 <blockquote>
@@ -572,54 +574,56 @@ point at which the tangent the arc is parallel to the secant through its endpoin
 <li>$f$ is differentiable on the open interval $(a, b)$.</li>
 </ol>
 <p>Then there is a number $c$ in $(a, b)$ such that</p>
-<p>$$ f&rsquo;(c) = \frac{f(b) - f(a)}{b - a} $$</p>
+<p>$$ f\prime(c) = \frac{f(b) - f(a)}{b - a} $$</p>
 <p>Or, equivalently,</p>
-<p>$$ f(b) - f(a) = f&rsquo;(c)(b - a) $$</p>
+<p>$$ f(b) - f(a) = f\prime(c)(b - a) $$</p>
 </blockquote>
 <p>The mean value theorem has two conditions:</p>
 <ol>
 <li>Function $g$ is <strong>differentiable</strong> over the open interval $(a, b)$ and <strong>continuous</strong>
 over the closed interval $[a, b]$.</li>
-<li>The average rate of change is equal to the slope of that point on the function. $f&rsquo;(
-c) = \frac{f(b) - f(a)}{b - a}$</li>
+<li>The average rate of change is equal to the slope of that point on the function.
+$f\prime( c) = \frac{f(b) - f(a)}{b - a}$</li>
 </ol>
 <h2 id="critical-number">Critical number<a hidden class="anchor" aria-hidden="true" href="#critical-number">#</a></h2>
 <p>A critical number of a function $f$ is a number $c$ in the domain of $f$ such that
-either $f&rsquo;(c) = 0$ or $f&rsquo;(c)$ does not exist.</p>
+either $f\prime(c) = 0$ or $f\prime(c)$ does not exist.</p>
 <h2 id="intervals-on-which-a-function-is-increasing-or-decreasing">Intervals on which a function is increasing or decreasing<a hidden class="anchor" aria-hidden="true" href="#intervals-on-which-a-function-is-increasing-or-decreasing">#</a></h2>
 <table>
 <thead>
 <tr>
-<th>$f&rsquo;$&rsquo;s status</th>
+<th>$f\prime$&rsquo;s status</th>
 <th style="text-align:center"></th>
 <th>which means $f$</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>$f&rsquo; &gt; 0$ ($f&rsquo;$ is positive)</td>
+<td>$f\prime &gt; 0$ ($f\prime$ is positive)</td>
 <td style="text-align:center">&lt;=&gt;</td>
 <td>$f$ is increasing</td>
 </tr>
 <tr>
-<td>$f&rsquo; &lt; 0$ ($f&rsquo;$ is negative)</td>
+<td>$f\prime &lt; 0$ ($f\prime$ is negative)</td>
 <td style="text-align:center">&lt;=&gt;</td>
 <td>$f$ is decreasing</td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li>The intervals where the derivative $f&rsquo;$ is positive (i.e., above the $x$-axis) are
-the intervals where the function $f$ is increasing.</li>
-<li>The intervals where the derivative $f&rsquo;$ is negative (i.e., below the $x$-axis) are
-the intervals where the function $f$ is decreasing.</li>
+<li>The intervals where the derivative $f\prime$ is positive (i.e., above the $x$-axis)
+are the intervals where the function $f$ is increasing.</li>
+<li>The intervals where the derivative $f\prime$ is negative (i.e., below the $x$-axis)
+are the intervals where the function $f$ is decreasing.</li>
 </ul>
 <p>A function can only change its direction from increasing to decreasing and vice versa
 between its critical points and the points where the function itself is undefined.</p>
 <h2 id="relative-extrema">Relative extrema<a hidden class="anchor" aria-hidden="true" href="#relative-extrema">#</a></h2>
 <ul>
-<li>Local minimum is the point where $f&rsquo; = 0$ and $f&rsquo;&rsquo; &gt; 0$ (means $f&rsquo;$ is increasing).</li>
-<li>Local maximum is the point where $f&rsquo; = 0$ and $f&rsquo;&rsquo; &lt; 0$ (means $f&rsquo;$ is decreasing).</li>
+<li>Local minimum is the point where $f\prime = 0$ and $f\prime\prime &gt; 0$ (means
+$f\prime$ is increasing).</li>
+<li>Local maximum is the point where $f\prime = 0$ and $f\prime\prime &lt; 0$ (means
+$f\prime$ is decreasing).</li>
 </ul>
 <ol>
 <li>We must not assume that any critical point is an extremum. Instead, we should check
@@ -632,10 +636,10 @@ with a wrong sign chart.</li>
 </ol>
 <h3 id="second-derivative-test">Second Derivative Test<a hidden class="anchor" aria-hidden="true" href="#second-derivative-test">#</a></h3>
 <p>Suppose $f(x)$ is a function of $x$ that is twice differentiable at a <em>stationary point</em>
-(minimum point, maximum point and inflection point) $x_0$, $f&rsquo;(x_0) = 0$, then:</p>
+(minimum point, maximum point and inflection point) $x_0$, $f\prime(x_0) = 0$, then:</p>
 <ol>
-<li>If $f&rsquo;&rsquo;(x_0) &gt; 0$ then $f$ has a local minimum at $x_0$.</li>
-<li>If $f&rsquo;&rsquo;(x_0) &lt; 0$ then $f$ has a local maximum at $x_0$.</li>
+<li>If $f\prime\prime(x_0) &gt; 0$ then $f$ has a local minimum at $x_0$.</li>
+<li>If $f\prime\prime(x_0) &lt; 0$ then $f$ has a local maximum at $x_0$.</li>
 </ol>
 <h2 id="absolute-extrema">Absolute extrema<a hidden class="anchor" aria-hidden="true" href="#absolute-extrema">#</a></h2>
 <p>An <strong>absolute maximum</strong> point is a point where the function obtains its greatest
@@ -653,7 +657,7 @@ maximum value $f(c)$ and an absolute minimum value $f(d)$ at some numbers $c$ an
 $d$ in $[a, b]$.</p>
 </blockquote>
 <h2 id="concavity">Concavity<a hidden class="anchor" aria-hidden="true" href="#concavity">#</a></h2>
-<p>Concave up if the $f&rsquo;$ increases, concave down if $f&rsquo;$ decreases.</p>
+<p>Concave up if the $f\prime$ increases, concave down if $f\prime$ decreases.</p>
 <table>
 <thead>
 <tr>
@@ -664,9 +668,9 @@ $d$ in $[a, b]$.</p>
 </thead>
 <tbody>
 <tr>
-<td>$g&rsquo;(x)$ is increasing</td>
+<td>$g\prime(x)$ is increasing</td>
 <td style="text-align:center">=&gt;</td>
-<td>$g&rsquo;&rsquo;(x) &gt; 0$</td>
+<td>$g\prime\prime(x) &gt; 0$</td>
 </tr>
 </tbody>
 </table>
@@ -680,24 +684,24 @@ $d$ in $[a, b]$.</p>
 </thead>
 <tbody>
 <tr>
-<td>$g&rsquo;(x)$ is decreasing</td>
+<td>$g\prime(x)$ is decreasing</td>
 <td style="text-align:center">=&gt;</td>
-<td>$g&rsquo;&rsquo;(x) &lt; 0$</td>
+<td>$g\prime\prime(x) &lt; 0$</td>
 </tr>
 </tbody>
 </table>
 <h2 id="inflection-point-拐点">Inflection point (拐点)<a hidden class="anchor" aria-hidden="true" href="#inflection-point-拐点">#</a></h2>
 <p>Inflection points are points where the function changes concavity, i.e., from being
-&ldquo;concave up&rdquo; (the slope of the function - $f&rsquo;$ is increasing) to &ldquo;concave down&rdquo; (the
-slope of the function - $f&rsquo;$ is decreasing) or vice versa. They can be found by
-considering where <strong>the second derivative changes signs</strong>.</p>
+&ldquo;concave up&rdquo; (the slope of the function - $f\prime$ is increasing) to &ldquo;concave down&rdquo;
+(the slope of the function - $f\prime$ is decreasing) or vice versa. They can be found
+by considering where <strong>the second derivative changes signs</strong>.</p>
 <p>Inflection points will occur when the second derivative is either zero or undefined.
 Even if critical points are found, they can only be considered as candidates before
 actually testing them.</p>
 <p>Finding inflection points is similar to finding extreme points. Instead of looking for
 points where the derivative changes its sign, we are looking for points where the
 <em>second derivative</em> changes its sign.</p>
-<p>$f&rsquo;$&rsquo;s (relative) minimum or maximum point is possibly inflection point.</p>
+<p>$f\prime$&rsquo;s (relative) minimum or maximum point is possibly inflection point.</p>
 
 
   </div>
