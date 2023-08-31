@@ -10,7 +10,5 @@ ICC profile 跟我们已经有很明确概念的 ACES，或者更广泛一些地
 
 ICC 本身并不进行任何校准，它们只包含显示器关于色彩成像能力的数据。这些数据用于帮助可以识别 ICC profile 的软件（我们叫它 ICC aware 的软件）通过 CMM（色彩管理模块）对图像进行调整，以尝试纠正显示器的色偏来进行校准。ICC profile 完成的实际上是对**图像的调整**，而不是对显示器的校正。不同的软件使用不同的 CMM 的话，即使都采用同一个 ICC，最终出来的结果也可能不一样。
 
-# Reference
-
 [^1]: [ICC Profile](https://www.ibm.com/docs/en/i/7.4?topic=management-icc-profiles) - IBM
 [^2]: [ICC profile](https://en.wikipedia.org/wiki/ICC_profile) - Wikipedia

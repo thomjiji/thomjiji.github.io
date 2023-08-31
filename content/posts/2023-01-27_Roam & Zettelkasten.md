@@ -6,11 +6,11 @@ ShowToc: true
 tags: ["Roam"]
 ---
 
-# Reference
+## Reference
 
 [Blog: Discovering org roam](https://www.lucacambiaghi.com/posts/discovering-org-roam.html)
 
-# 一些随机的摘抄
+## 一些随机的摘抄
 
 > A zettelkasten consists of many individual notes with ideas and other short pieces of information that are taken down as they occur or are acquired. The notes are numbered hierarchically, so that new notes may be inserted at the appropriate place, and contain metadata to allow the note-taker to associate notes with each other. For example, notes may contain tags that describe key aspects of the note, and they may reference other notes.
 
@@ -25,7 +25,7 @@ tags: ["Roam"]
 
 ---
 
-# Personal wiki should not have a hierarchy
+## Personal wiki should not have a hierarchy
 
 > notes should not have an hierarchy but structure should emerge spontaneously.
 

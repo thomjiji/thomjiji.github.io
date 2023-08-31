@@ -15,6 +15,4 @@ tags: ["Calibration", "DisplayCAL", "ICC Profile", "Video Card"]
 
 ICC 主要还是平面设计领域的色彩管理方案，对于视频来说有很多局限性。虽然 ICC profile 是一种常见的色彩管理方式，但它并不是完美的，因为它只是对图像进行调整，而不是对显示器本身进行校正。使用上屏卡的一个最主要的原因就是绕过 ICC profile 乃至操作系统的整个色彩管理，更直接的获得一个干净的视频信号，而不去经过操作系统的色彩管理。而且对于监视器来说，一般需要是 SDI 接口，上屏卡也能满足这一点要求。
 
-# Reference
-
 [^1]: [New HDR Workflow in Premiere Pro - 2020 User Guide (PDF)](https://wpmedia-lib.larryjordan.com/wp-content/uploads/2020/09/New-HDR-Workflow-in-Premiere-Pro-2020-User-Guide.pdf)

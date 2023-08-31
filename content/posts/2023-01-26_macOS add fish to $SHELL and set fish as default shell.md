@@ -4,8 +4,6 @@ date: 2023-01-26
 draft: false
 ---
 
-# Solution
-
 ### Add fish to $SHELL and set as default
 
 1. Add the shell to `/etc/shells` with:
@@ -38,7 +36,7 @@ set -U fish_user_paths /usr/local/bin $fish_user_paths
 
 Homebrew 下载的 Fish shell 的 path 是 `/opt/homebrew/bin/fish` 而不是像 [fish documentation](https://fishshell.com/docs/current/index.html#default-shell) 说的那样在 `/usr/local/bin/fish`。
 
-# Reference
+## Reference
 
 - [why i can't add fish to etc shells](<[https://unix.stackexchange.com/questions/454604/why-i-cant-add-fish-to-etc-shells](https://unix.stackexchange.com/questions/454604/why-i-cant-add-fish-to-etc-shells)>)
 - [fish documentation: set default shell](https://fishshell.com/docs/current/index.html#default-shell)
