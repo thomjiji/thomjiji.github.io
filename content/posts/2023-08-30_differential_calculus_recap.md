@@ -55,11 +55,11 @@ Then we can conclude that $\displaystyle\lim_{x \to c} f(x) = L$.
 
 The derivative of function $f$ at the point where $x = a$ is defined by:
 
-$$f'(a) = \lim_{{h \to 0}} \frac{{f(a + h) - f(a)}}{h}$$
+$$f\prime(a) = \lim_{{h \to 0}} \frac{{f(a + h) - f(a)}}{h}$$
 
 The alternative form is:
 
-$$f'(a) = \lim_{{x \to a}} \frac{{f(x) - f(a)}}{x - a}$$
+$$f\prime(a) = \lim_{{x \to a}} \frac{{f(x) - f(a)}}{x - a}$$
 
 ---
 
@@ -125,9 +125,9 @@ immediately know that it's also continuous.
 | Rules                  | Expression                                                                                                                      |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | Constant rule          | $\frac{d}{dx}(k) = 0$                                                                                                           |
-| Constant multiple rule | $\frac{d}{dx}[k \cdot f(x)] = k \cdot f'(x)$                                                                                    |
-| Sum rule               | $\frac{d}{dx}[f(x) + g(x)] = f'(x) + g'(x)$                                                                                     |
-| Difference rule        | $\frac{d}{dx}[f(x) - g(x)] = f'(x) - g'(x)$                                                                                     |
+| Constant multiple rule | $\frac{d}{dx}[k \cdot f(x)] = k \cdot f\prime(x)$                                                                               |
+| Sum rule               | $\frac{d}{dx}[f(x) + g(x)] = f\prime(x) + g\prime(x)$                                                                           |
+| Difference rule        | $\frac{d}{dx}[f(x) - g(x)] = f\prime(x) - g\prime(x)$                                                                           |
 | Power Rule             | $\frac{d}{dx} (x^n) = n x^{n-1}$                                                                                                |
 | Product Rule           | $\frac{d}{dx} [f(x) \cdot g(x)] = \frac{d}{dx}[f(x)] \cdot g(x) + f(x) \cdot \frac{d}{dx}[g(x)]$                                |
 | Quotient Rule          | $\frac{d}{dx} \left[\frac{f(x)}{g(x)}\right] = \frac{\frac{d}{dx} [f(x)] \cdot g(x) -f(x) \cdot \frac{d}{dx}[g(x)]} {[g(x)]^2}$ |
@@ -210,7 +210,7 @@ $$ \frac{d}{dx} f(g(x)) = \frac{d}{dx} (x)$$
 
 Use chain rule to the left-hand side, right-hand side equals to 1. Finally, we get:
 
-$$ f'(x) = \frac{1}{g'(f(x))} $$
+$$ f\prime(x) = \frac{1}{g\prime(f(x))} $$
 
 ## Derivative of Inverse Sine, Cosine, Tangent
 
@@ -248,12 +248,12 @@ When the velocity is zero, the object isn't speeding up or slowing down.
 
 Velocity as a function of time is the derivative of position:
 
-$$ v(t) = x'(t) $$
+$$ v(t) = x\prime(t) $$
 
 Acceleration as a function of time is the derivative of velocity, which is the second
 derivative of position:
 
-$$ a(t) = v'(t) = x''(t) $$
+$$ a(t) = v\prime(t) = x\prime\prime(t) $$
 
 ### Velocity and Acceleration
 
@@ -278,13 +278,14 @@ decreasing.
 
 ## Related rates
 
-This is the core of our solution: by relating the quantities (i.e., $A$ and $r$) we
-were able to relate their rates (i.e., $A'$ and $r'$) through differentiation. This is
-why these problems are called "related rates".
+This is the core of our solution: by relating the quantities (i.e., $A$ and $r$) we were
+able to relate their rates (i.e., $A\prime$ and $r\prime$) through differentiation. This
+is why these problems are called "related rates".
 
-For example, what we know is $\frac{dy}{dt}$ ($y'(t)$), what we are seeking for is
-$\frac{dx}{dt}$ ($x'(t)$). So, if we can find the relationship between $y$ and $x$, then
-take derivative on them, we can find derivative of $x$ by solve for $\frac{dx}{dt}$.
+For example, what we know is $\frac{dy}{dt}$ ($y\prime(t)$), what we are seeking for is
+$\frac{dx}{dt}$ ($x\prime(t)$). So, if we can find the relationship between $y$ and $x$,
+then take derivative on them, we can find derivative of $x$ by solve for
+$\frac{dx}{dt}$.
 
 ## Linear approximation
 
@@ -302,11 +303,12 @@ they may diverge as we move away or zoom out from this point.
 
 L'Hôpital's rule states that for functions $f$ and $g$ which are differentiable on an
 open interval $I$ except possibly at a point $c$ contained in $I$, if $\lim_{x \to c}
-f(x) = \lim_{x \to c} g(x) = 0$ or $±\infty$, and $g'(x) \neq 0$ for all $x$ in $I$ with
-$x \neq c$, and $\lim_{x \to c} \frac{f'(x)}{g'(x)}$ exists, then
+f(x) = \lim_{x \to c} g(x) = 0$ or $±\infty$, and $g\prime(x) \neq 0$ for all $x$ in $I$
+with $x \neq c$, and $\lim_{x \to c} \frac{f\prime(x)}{g\prime(x)}$ exists, then
 
 $$
-\displaystyle \lim _{x\to c}{\frac {f(x)}{g(x)}}=\lim _{x\to c}{\frac {f'(x)}{g'(x)}}
+\displaystyle \lim _{x\to c}{\frac {f(x)}{g(x)}}=\lim _{x\to c}{\frac {f\prime(x)}
+{g\prime(x)}}
 $$
 
 The differentiation of the numerator and denominator often simplifies the quotient or
@@ -316,8 +318,8 @@ converts it to a limit that can be evaluated directly.
 
 The mean value theorem connects the average rate of change of a function to its
 derivative. It says that for any differentiable function $f$ and an interval $[a, b]$
-(within the domain of $f$), there exists a number $c$ within $(a, b)$ such that $f'(c)$
-is equal to the function's average rate of change over $[a, b]$.
+(within the domain of $f$), there exists a number $c$ within $(a, b)$ such that
+$f\prime(c)$ is equal to the function's average rate of change over $[a, b]$.
 
 Graphically, the theorem says that for any arc (弧线) between two endpoints, there's a
 point at which the tangent the arc is parallel to the secant through its endpoints.
@@ -331,43 +333,45 @@ point at which the tangent the arc is parallel to the secant through its endpoin
 >
 > Then there is a number $c$ in $(a, b)$ such that
 >
-> $$ f'(c) = \frac{f(b) - f(a)}{b - a} $$
+> $$ f\prime(c) = \frac{f(b) - f(a)}{b - a} $$
 >
 > Or, equivalently,
 >
-> $$ f(b) - f(a) = f'(c)(b - a) $$
+> $$ f(b) - f(a) = f\prime(c)(b - a) $$
 
 The mean value theorem has two conditions:
 
 1. Function $g$ is **differentiable** over the open interval $(a, b)$ and **continuous**
    over the closed interval $[a, b]$.
-2. The average rate of change is equal to the slope of that point on the function. $f'(
-   c) = \frac{f(b) - f(a)}{b - a}$
+2. The average rate of change is equal to the slope of that point on the function.
+   $f\prime( c) = \frac{f(b) - f(a)}{b - a}$
 
 ## Critical number
 
 A critical number of a function $f$ is a number $c$ in the domain of $f$ such that
-either $f'(c) = 0$ or $f'(c)$ does not exist.
+either $f\prime(c) = 0$ or $f\prime(c)$ does not exist.
 
 ## Intervals on which a function is increasing or decreasing
 
-| $f'$'s status               |       | which means $f$   |
-| --------------------------- | :---: | ----------------- |
-| $f' > 0$ ($f'$ is positive) |  <=>  | $f$ is increasing |
-| $f' < 0$ ($f'$ is negative) |  <=>  | $f$ is decreasing |
+| $f\prime$'s status                    |       | which means $f$   |
+| ------------------------------------- | :---: | ----------------- |
+| $f\prime > 0$ ($f\prime$ is positive) |  <=>  | $f$ is increasing |
+| $f\prime < 0$ ($f\prime$ is negative) |  <=>  | $f$ is decreasing |
 
-- The intervals where the derivative $f'$ is positive (i.e., above the $x$-axis) are
-  the intervals where the function $f$ is increasing.
-- The intervals where the derivative $f'$ is negative (i.e., below the $x$-axis) are
-  the intervals where the function $f$ is decreasing.
+- The intervals where the derivative $f\prime$ is positive (i.e., above the $x$-axis)
+  are the intervals where the function $f$ is increasing.
+- The intervals where the derivative $f\prime$ is negative (i.e., below the $x$-axis)
+  are the intervals where the function $f$ is decreasing.
 
 A function can only change its direction from increasing to decreasing and vice versa
 between its critical points and the points where the function itself is undefined.
 
 ## Relative extrema
 
-- Local minimum is the point where $f' = 0$ and $f'' > 0$ (means $f'$ is increasing).
-- Local maximum is the point where $f' = 0$ and $f'' < 0$ (means $f'$ is decreasing).
+- Local minimum is the point where $f\prime = 0$ and $f\prime\prime > 0$ (means
+  $f\prime$ is increasing).
+- Local maximum is the point where $f\prime = 0$ and $f\prime\prime < 0$ (means
+  $f\prime$ is decreasing).
 
 1. We must not assume that any critical point is an extremum. Instead, we should check
    out critical points to see if the function is defined at those points and the
@@ -380,10 +384,10 @@ between its critical points and the points where the function itself is undefine
 ### Second Derivative Test
 
 Suppose $f(x)$ is a function of $x$ that is twice differentiable at a *stationary point*
-(minimum point, maximum point and inflection point) $x_0$, $f'(x_0) = 0$, then:
+(minimum point, maximum point and inflection point) $x_0$, $f\prime(x_0) = 0$, then:
 
-1. If $f''(x_0) > 0$ then $f$ has a local minimum at $x_0$.
-2. If $f''(x_0) < 0$ then $f$ has a local maximum at $x_0$.
+1. If $f\prime\prime(x_0) > 0$ then $f$ has a local minimum at $x_0$.
+2. If $f\prime\prime(x_0) < 0$ then $f$ has a local maximum at $x_0$.
 
 ## Absolute extrema
 
@@ -407,22 +411,22 @@ maximum and a minimum on the interval.
 
 ## Concavity
 
-Concave up if the $f'$ increases, concave down if $f'$ decreases.
+Concave up if the $f\prime$ increases, concave down if $f\prime$ decreases.
 
-| **Concave up**        | equivalent to |              |
-| --------------------- | :-----------: | ------------ |
-| $g'(x)$ is increasing |      =>       | $g''(x) > 0$ |
+| **Concave up**             | equivalent to |                        |
+| -------------------------- | :-----------: | ---------------------- |
+| $g\prime(x)$ is increasing |      =>       | $g\prime\prime(x) > 0$ |
 
-| **Concave down**      | equivalent to |              |
-| --------------------- | :-----------: | ------------ |
-| $g'(x)$ is decreasing |      =>       | $g''(x) < 0$ |
+| **Concave down**           | equivalent to |                        |
+| -------------------------- | :-----------: | ---------------------- |
+| $g\prime(x)$ is decreasing |      =>       | $g\prime\prime(x) < 0$ |
 
 ## Inflection point (拐点)
 
 Inflection points are points where the function changes concavity, i.e., from being
-"concave up" (the slope of the function - $f'$ is increasing) to "concave down" (the
-slope of the function - $f'$ is decreasing) or vice versa. They can be found by
-considering where **the second derivative changes signs**.
+"concave up" (the slope of the function - $f\prime$ is increasing) to "concave down"
+(the slope of the function - $f\prime$ is decreasing) or vice versa. They can be found
+by considering where **the second derivative changes signs**.
 
 Inflection points will occur when the second derivative is either zero or undefined.
 Even if critical points are found, they can only be considered as candidates before
@@ -432,4 +436,4 @@ Finding inflection points is similar to finding extreme points. Instead of looki
 points where the derivative changes its sign, we are looking for points where the
 *second derivative* changes its sign.
 
-$f'$'s (relative) minimum or maximum point is possibly inflection point.
+$f\prime$'s (relative) minimum or maximum point is possibly inflection point.
