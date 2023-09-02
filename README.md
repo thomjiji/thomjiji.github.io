@@ -40,3 +40,18 @@ rarely causes conflicts, it is better to run before rebuilding: `rm -rf public/`
 cautious!
 
 See this issue: ['hugo clean'](https://github.com/gohugoio/hugo/issues/2389)
+
+# About commits messages
+
+A commit message preceded by a ↓ means that this is a build commit, and this build
+includes all commits since the last ↓.
+
+```
+9449266 ↓ Add content to about page, Changed menu order build  <----|
+1cd1e90 Add content to about page, Changed menu order          <----|
+6a9577e ↓ Menu Archive => Posts                         <----|
+3505a41 Menu Archive => Posts                           <----|
+78aae05 ↓ ajust dolby vision posts heading weight build        <----|
+907c2c2 ajust dolby vision posts heading weight                     |
+177f1a6 Reduce page title size                                 <----|
+```
