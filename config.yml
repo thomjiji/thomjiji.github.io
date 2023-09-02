@@ -6,33 +6,34 @@ publishDir: "docs"
 
 menu:
   main:
-    - name: Posts
-      url: posts/
-      weight: 10
-    - name: Search
-      url: search/
-      weight: 20
-    - name: Tags
-      url: tags/
-      weight: 30
     - name: About
       url: about/
+      weight: 5
+    - name: Posts
+      url: posts/
+      weight: 20
+    - name: Search
+      url: search/
+      weight: 30
+    - name: Tags
+      url: tags/
       weight: 40
 
 params:
   # PaperMode Regular mode (Home-info mode)
   homeInfoParams:
     Title: Hi! I'm thomjiji
-    Content: "Filmmaking | Post-production | Imaging | Linux | Programming | AI"
+    Content: "This site is a mix of my portfolio, my learning journey, and what I'm up
+    to recently. It's where I show off my skills and projects and maybe brag a little ^ ^."
   # DateFormat: "January 2, 2006"
 
   # PaperMod Profile mode
   # profileMode:
   #   enabled: true
   #   title: "thomjiji" # optional default will be site title
-  #   subtitle: "Privacy | Cryptography | Filmmaking | Post-production | Linux"
-  #   imageUrl: "Study_01_Mac.png" # optional
-  #   imageTitle: "thom avator" # optional
+  #   subtitle: ""
+  #   imageUrl: "" # optional
+  #   imageTitle: "avator" # optional
   #   imageWidth: 120 # custom size
   #   imageHeight: 120 # custom size
   #   buttons:
@@ -44,11 +45,13 @@ params:
   #       url: "https://github.com/"
 
   socialIcons: # optional
+    - name: GitHub
+      url: "https://github.com/thomjiji"
     - name: Bilibili
       url: "https://space.bilibili.com/14932681"
-    - name: mastodon
+    - name: Mastodon
       url: "https://alive.bar"
-    - name: twitter
+    - name: Twitter
       url: "https://twitter.com"
 
   defaultTheme: auto
