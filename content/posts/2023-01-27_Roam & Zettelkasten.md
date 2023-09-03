@@ -2,13 +2,9 @@
 title: "Roam & Zettelkasten"
 date: 2023-01-27
 draft: false
-ShowToc: true
+ShowToc: false
 tags: ["Roam"]
 ---
-
-## Reference
-
-[Blog: Discovering org roam](https://www.lucacambiaghi.com/posts/discovering-org-roam.html)
 
 ## 一些随机的摘抄
 
@@ -38,3 +34,7 @@ tags: ["Roam"]
 也是先建立一个「中心化」的 node，在这个 node 里去索引其他与之关联的 node，像他在这里说的：在 `workflow.org` 这个文档里，每个标题和子标题将会被转为一个单独的 node，拥有一个属于它们自己的 page。自然而然地，在标题和子标题们就和 `workflow.org` 链接上了。但是是以 `workflow.org` 为中心，如果我们在 Graph View 里来看的话。
 
 > Hierarchy is teared apart and structure emerges spontaneously. Whenever I want to add a new note about `org`, I will just add a new node and refer to the `org` node, I don't need to care about which folder or file to write it in.
+
+## Reference
+
+[Blog: Discovering org roam](https://www.lucacambiaghi.com/posts/discovering-org-roam.html)

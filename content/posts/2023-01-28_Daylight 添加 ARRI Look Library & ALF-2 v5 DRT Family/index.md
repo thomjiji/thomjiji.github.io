@@ -5,7 +5,7 @@ draft: false
 cover:
     image: image/baselight.jpg
     alt: "The colorist is sitting in front of the mixing table and monitor, and this is an overhead view from above the back of the colorist's head that captures the entire mixing table, the monitor screen, and the interface of the coloring software."
-ShowToc: true
+ShowToc: false
 tags: ["Daylight", "FilmLight"]
 author: ["thom"]
 ---

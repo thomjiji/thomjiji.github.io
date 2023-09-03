@@ -20,6 +20,6 @@ Vim 我还需要从 Insert mode 切换出来。而且我使用的退出 Insert m
 都麻烦，尤其在模态之间切换频繁的话，一会儿就得 `jk` 来一下，非常繁琐——繁琐是因为模态的切换，而不是换个 keybind
 就能解决的。所以我选择不要这些模态。
 
-在 PyCharm 的 completion 之间选择 candidates，有时需要上下移动选择那个我想要的。之前想把它们 bind 到 `hjkl`
-上。但怎么都找不到办法，只有使用上下键。在 Vim 原教旨主义者看来很不 ok 是吧，但我当时忍了下来。现在想为啥不直接换到 Normal
-keybind。(我知道是可以直接用 Emacs 的 keybind `Ctrl n` 和 `Ctrl p` 来上下选择)
+在 PyCharm 的 Completion 之间选择 Candidates，有时需要上下移动选择那个我想要的。之前想把它们 bind 到 `hjkl`
+上，但怎么都找不到办法，只有使用上下键。在 Vim 原教旨主义者看来很不 ok 是吧，但我当时忍了下来。现在想既然如此，为啥不直接全换到 Normal
+keybind。我知道是可以直接用 Emacs 的 keybind `Ctrl n` 和 `Ctrl p` 来上下选择，但。

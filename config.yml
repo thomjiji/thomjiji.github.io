@@ -9,8 +9,8 @@ menu:
     - name: About
       url: about/
       weight: 5
-    - name: Posts
-      url: posts/
+    - name: Archives
+      url: archives/
       weight: 20
     - name: Search
       url: search/
@@ -23,8 +23,8 @@ params:
   # PaperMode Regular mode (Home-info mode)
   homeInfoParams:
     Title: Hi! I'm thomjiji
-    Content: "This site is a mix of my portfolio, my learning journey, and what I'm up
-    to recently. It's where I show off my skills and projects and maybe brag a little ^ ^."
+    Content: "This website is a mix of my portfolio, my learning journey, and what I'm up
+    to recently. It's where I show off my skills and projects and maybe brag a little ^^."
   # DateFormat: "January 2, 2006"
 
   # PaperMod Profile mode
