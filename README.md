@@ -34,9 +34,9 @@ hugo new posts/new_post.md
 
 # Clean up before rebuild
 
-Hugo will not automatically clean up static site in the `public/` directory for you, so
+Hugo will not automatically clean up static site in the `docs/` directory for you, so
 every time you rebuild, the new content will be mixed with the old content. Although it
-rarely causes conflicts, it is better to run before rebuilding: `rm -rf public/` — with 
+rarely causes conflicts, it is better to run before rebuilding: `rm -rf docs/*` — with 
 cautious!
 
 See this issue: ['hugo clean'](https://github.com/gohugoio/hugo/issues/2389)
