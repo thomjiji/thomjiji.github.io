@@ -6,7 +6,19 @@
     <description>Recent content on thomjiji</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 30 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://thomjiji.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 07 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://thomjiji.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Machine Learning Glossary</title>
+      <link>https://thomjiji.github.io/posts/2023-09-07_machine_learning_glossary/</link>
+      <pubDate>Thu, 07 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://thomjiji.github.io/posts/2023-09-07_machine_learning_glossary/</guid>
+      <description>activation function A function that enables neural networks to learn non-linear (complex) relationships between features and the label. Popupar activation functions include:
+ReLU Sigmoid Tanh backpropagation The algorithm that implements gradient descent in neural networks.
+Training a neural network involves many iterations of the following two-pass cycle:
+During the forward pass, the system processes a batch of examples to yild prediction(s). The system compares each prediction to each label value. The difference between the prediction and the lable value is the loss for that example.</description>
+    </item>
+    
     <item>
       <title>Calculus Recap</title>
       <link>https://thomjiji.github.io/posts/2023-08-30_differential_calculus_recap/</link>
