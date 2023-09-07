@@ -1,7 +1,7 @@
 ---
-title: "Machine learning glossary"
+title: "Machine Learning Glossary"
 date: 2023-09-07
-draft: true
+draft: false
 tags: ["Machine Learning"]
 ---
 
