@@ -1,10 +1,11 @@
 @font-face {
   font-family: 'Space Grotesk';
   src:
-    url("static/Space-Grotesk/SpaceGrotesk_wght.woff2") format('woff2');
+    url("static/Space-Grotesk/SpaceGrotesk_wght.woff2") format('woff2'),
+    url("static/Space-Grotesk/SpaceGrotesk-VariableFont_wght.ttf") format('ttf');
   font-weight: normal;
   font-style: normal;
-  font-display: swap; /* Add this line */
+  font-display: swap;
 }
 
 body {
