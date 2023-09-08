@@ -64,6 +64,7 @@ params:
   #   URL: "https://github.com/thomjiji/thomjiji.github.io/tree/main/content/"
   #   Text: "Suggest Changes" # edit text
   #   appendFilePath: true # to append file path to Edit link
+  googlefonts: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap'
 
 outputs:
   home:

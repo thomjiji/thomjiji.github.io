@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: 'Space Grotesk';
   src:
     url("static/Space-Grotesk/SpaceGrotesk_wght.woff2") format('woff2'),
@@ -15,25 +15,12 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-}
-
-/* 
-body {
-  font-family: 'IBM Plex Sans', 'Berkeley Mono', sans-serif;
-}
-
-code {
-  font-family: 'JetBrains Mono', 'Hack Nerd Font',  'Courier New', Courier, monospace;
-}
-
-h1 {
-  font-family: 'Space Grotesk';
-}; */
+} */
 
 body {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: "IBM Plex Sans", system-ui, -apple-system;
 }
 
 .title {
-  font-family: 'IBM-Plex-Sans', sans-serif;
+  font-family: "IBM-Plex-Sans", system-ui, -apple-system;
 }
