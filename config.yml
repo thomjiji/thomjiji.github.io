@@ -22,7 +22,7 @@ menu:
 params:
   # PaperMode Regular mode (Home-info mode)
   homeInfoParams:
-    Title: Hi! I'm thomjiji
+    Title: Hello, I'm thomjiji
     Content: "This website is a mix of my portfolio, my learning journey, and what I'm up
     to recently. It's where I show off my skills and projects and maybe brag a little ^^."
 
