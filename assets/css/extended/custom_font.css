@@ -17,8 +17,17 @@
   font-display: swap;
 } */
 
+/* body {
+  font-family: "Space Grotesk", "IBM Plex Sans", system-ui, -apple-system;
+} */
+
 body {
   font-family: "Space Grotesk", "IBM Plex Sans", system-ui, -apple-system;
+  /* font-size: 18px; */
+  font-size: 1rem;
+  line-height: 1.6;
+  word-break: break-word;
+  background: var(--theme);
 }
 
 .title {
