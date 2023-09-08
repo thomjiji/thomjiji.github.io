@@ -25,7 +25,6 @@ params:
     Title: Hi! I'm thomjiji
     Content: "This website is a mix of my portfolio, my learning journey, and what I'm up
     to recently. It's where I show off my skills and projects and maybe brag a little ^^."
-  # DateFormat: "January 2, 2006"
 
   # PaperMod Profile mode
   # profileMode:
@@ -55,11 +54,12 @@ params:
       url: "https://twitter.com"
 
   defaultTheme: auto
-  showShareButtons: false
+  showShareButtons: true
+  ShareButtons: ["twitter", "telegram", "reddit"]
   ShowBreadCrumbs: true
   ShowPostNavLinks: true
   ShowCodeCopyButtons: true
-
+  # DateFormat: "January 2, 2006"
   # editPost:
   #   URL: "https://github.com/thomjiji/thomjiji.github.io/tree/main/content/"
   #   Text: "Suggest Changes" # edit text
