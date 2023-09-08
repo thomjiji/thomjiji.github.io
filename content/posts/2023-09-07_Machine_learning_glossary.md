@@ -50,7 +50,7 @@ parameter.
 In general, any mathematical construct that processes input and returns output. Phrased
 differently, a model is the set of parameters and structure needed for a system to make
 predictions. In supervised machine learning, a model takes an example as input and
-infers a prediction as output. Wthin supervised machine learning, models differ
+infers a prediction as output. Within supervised machine learning, models differ
 somewhat. For example:
 
 - A linear regression model consists of a set of weights and a bias.
