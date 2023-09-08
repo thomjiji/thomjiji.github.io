@@ -5,6 +5,11 @@ draft: false
 tags: ["Machine Learning"]
 ---
 
+## Reference
+
+[Machine Learning Glossary - Google for
+Developers](https://developers.google.com/machine-learning/glossary)
+
 ## activation function
 
 A function that enables neural networks to learn non-linear (complex) relationships
@@ -61,3 +66,21 @@ You can save, restore, or make copies of a model.
 
 Unsupervised machine learning also generates models, typically a function that can map
 an input example to the most appropriate cluster.
+
+## embeddings
+
+An embedding is a relatively low-dimensional space into which you can translate
+high-dimensional vectors. Embeddings make it easier to do machine learning on large
+inputs like sparse vectors representing words. Ideally, an embedding captures some of
+the semantics of the input by placing semantically similar inputs close together in the
+embedding space. An embedding can be learned and reused across models.
+
+## Automatic Differentiation
+
+All modern deep learning frameworks take the differentiation work off of our plates by
+offering *automatic differentiation* (often shortened to *autograd*). As we pass data
+through each successive function, the framework build a *computational graph* that
+tracks how each value depends on others. To calculate derivatives, automatic
+differentiation works backwards through this graph applying the chain rule. The
+computational algorithm for applying the chain rule in this fashion is called
+*backpropagation*.
