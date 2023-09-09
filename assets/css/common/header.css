@@ -20,7 +20,7 @@
 
 .logo {
     flex-wrap: inherit;
-    /* font-family: "Hubot Sans", "IBM Plex Sans"; */
+    font-family: "Space Grotesk", system-ui, -apple-system;
 }
 
 .logo a {
@@ -56,6 +56,7 @@ body:not(.dark) #sun {
     word-break: keep-all;
     overflow-x: auto;
     white-space: nowrap;
+    font-family: "Space Grotesk", system-ui, -apple-system;
 }
 
 #menu li + li {

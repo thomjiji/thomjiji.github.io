@@ -6,6 +6,7 @@
 .post-title {
     margin-bottom: 2px;
     font-size: 40px;
+    font-family: "Space Grotesk";
 }
 
 .post-description {
@@ -41,6 +42,15 @@
 .post-content h5,
 .post-content h6 {
     margin: 24px 0 16px;
+}
+
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+    font-family: 'Space Grotesk', sans-serif, system-ui, -apple-system;
 }
 
 .post-content h1 {
