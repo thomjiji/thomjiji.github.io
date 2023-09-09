@@ -12,7 +12,7 @@
 Characterization (or profiling) is recording the way a device reproduces or responds to color. Typically the result is stored in a device ICC profile. Such a profile does not in itself modify color in any way.">
 <meta name="author" content="">
 <link rel="canonical" href="https://thomjiji.github.io/posts/2023-02-15_%E6%98%BE%E7%A4%BA%E5%99%A8%E6%A0%A1%E8%89%B2%E7%AC%94%E8%AE%B0/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.6dc1cd776a36fa26a6a34f722422381550f32eb2e81719f52368910cda1170ac.css" integrity="sha256-bcHNd2o2&#43;iamo09yJCI4FVDzLrLoFxn1I2iRDNoRcKw=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.68288a0031152614ff10248a60fd3a862969fe608203266fd883dcd2ed573a0b.css" integrity="sha256-aCiKADEVJhT/ECSKYP06hilp/mCCAyZv2IPc0u1XOgs=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://thomjiji.github.io/favicon.ico">
@@ -60,21 +60,21 @@ Characterization (or profiling) is recording the way a device reproduces or r
     </style>
 </noscript><!DOCTYPE html>
 <html lang="en">
+  <head>
+    <link rel="icon" href="https://thomjiji.github.io/powerpuff_girls_buttercup.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <link rel="icon" href="https://thomjiji.github.io/powerpuff_girls_buttercup.jpg" />
-  
-  
-   -->
-</head>
-
-<body>
-
-  
-
-</body>
-
-</html><meta property="og:title" content="显示器校色笔记" />
+  <body>
+    
+  </body>
+</html>
+<meta property="og:title" content="显示器校色笔记" />
 <meta property="og:description" content="DisplayCAL 官网 User Guide 在对显示器校色之前，必须预热至少 30 分钟。这一点在我最近的校准过程中可以明确体会到，比如：在调整显示器自身的 RGB 输出时，当你把红绿蓝三个通道终于调到一条线上之后，这时亮度不达标了。调节显示器的亮度以达到目标值，比如 100 nits 之后，RGB 那三个值又不在一条线上了。一方面跟显示器的素质有关，不能保证在亮度增减的同时保持 RGB 三个值的输出一致。另一方面也跟显示器预热有关，没到 30 分钟状态还不稳定。
 显示器校准的基本概念：Calibration 和 Profiling/Characterization。在使用 DisplayCAL 进行校准的时候，第一步就是通过显示器自身的调节按钮，比如显示器的 RGB 三通道值的输出，来与事先定义好的目标值匹配。调节显示器的亮度按钮使其达到比如 100 尼特；在色温选项里使用用户自定义的方式来调节 RGB 输出，使其达到比如 6500K 的色温（CCT）。这一步我们粗略的称之为校准 Calibration，需要人手动去调的。而第二步是软件自动实现的过程，叫做 Profiling，就是它会在屏幕上生成一系列色块，测量这些色块的值，与标准值进行匹配，然后生成一个 Profile (e.g. ICC profile) 给我们最终加载到系统上。Profiling 实际上并不改变颜色，它描述的是该显示器对各种颜色的响应，通常存储在一个 ICC 配置文件中。
 Characterization (or profiling) is recording the way a device reproduces or responds to color. Typically the result is stored in a device ICC profile. Such a profile does not in itself modify color in any way." />

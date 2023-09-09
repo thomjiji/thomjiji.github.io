@@ -13,7 +13,7 @@ DisplayCAL 生成的 ICC 配置文件中会包含一个叫作 VCGT（Video Card 
 再者就是我们还可以在 DisplayCAL 的 Tone curve 的设置中看到：如果不把 Tone curve 设为 “As measured” 的话，比如手动设为 Gamma 2.2。那 DisplayCAL 会做这么一件事情：在校准过程中，会通过一个 1D LUT 来校准（中和、补偿）显示器本身与这条纯粹的、Gamma 为 2.2 的指数曲线不相符的地方。如果设为 “As measured” 的话，则显示器的 grey scale 是怎么样就是怎么样，不做任何的校准和调整。">
 <meta name="author" content="">
 <link rel="canonical" href="https://thomjiji.github.io/posts/2023-03-09_vcgt_tag/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.6dc1cd776a36fa26a6a34f722422381550f32eb2e81719f52368910cda1170ac.css" integrity="sha256-bcHNd2o2&#43;iamo09yJCI4FVDzLrLoFxn1I2iRDNoRcKw=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.68288a0031152614ff10248a60fd3a862969fe608203266fd883dcd2ed573a0b.css" integrity="sha256-aCiKADEVJhT/ECSKYP06hilp/mCCAyZv2IPc0u1XOgs=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://thomjiji.github.io/favicon.ico">
@@ -61,21 +61,21 @@ DisplayCAL 生成的 ICC 配置文件中会包含一个叫作 VCGT（Video Card 
     </style>
 </noscript><!DOCTYPE html>
 <html lang="en">
+  <head>
+    <link rel="icon" href="https://thomjiji.github.io/powerpuff_girls_buttercup.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <link rel="icon" href="https://thomjiji.github.io/powerpuff_girls_buttercup.jpg" />
-  
-  
-   -->
-</head>
-
-<body>
-
-  
-
-</body>
-
-</html><meta property="og:title" content="VCGT Tag" />
+  <body>
+    
+  </body>
+</html>
+<meta property="og:title" content="VCGT Tag" />
 <meta property="og:description" content="之前我们知道，DisplayCAL 这种校色软件的工作原理：它会生成一个配置文件，在系统里加载，实际作用到显卡的输出信号上。更细节一点则是：
 DisplayCAL 生成的 ICC 配置文件中会包含一个叫作 VCGT（Video Card Gamma Table）的 tag，它实际是一个 1D LUT，包含对显示器的灰阶或白点的校正。然后操作系统需要把这个 VCGT Tag 加载到显卡输出信号上的有一个 Look Up Table 上，从而实现对显卡输出信号的校正。同时显卡的这个 Look Up Table 也是有精度限制的。
 具体在使用 DisplayCAL 的时候，右键桌面右下角 DisplayCAL 的图标，就会看到有一个 Reset video card gamma table 的东西。在系统加载了 DisplayCAL 生成的 profile 的情况下，这时点一下 Reset video card gamma table 会发现整个桌面的反差，或者说 Gamma、灰阶变了，它把对于显卡的校正给重置掉了，回到了最初的状态。
