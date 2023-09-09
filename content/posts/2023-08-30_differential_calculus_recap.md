@@ -132,7 +132,7 @@ immediately know that it's also continuous.
 | Product Rule           | $\frac{d}{dx} [f(x) \cdot g(x)] = \frac{d}{dx}[f(x)] \cdot g(x) + f(x) \cdot \frac{d}{dx}[g(x)]$                                |
 | Quotient Rule          | $\frac{d}{dx} \left[\frac{f(x)}{g(x)}\right] = \frac{\frac{d}{dx} [f(x)] \cdot g(x) -f(x) \cdot \frac{d}{dx}[g(x)]} {[g(x)]^2}$ |
 
-## Chain Rule
+## Chain Rule {#chain-rule}
 
 If $g$ is differentiable at $x$ and $f$ is differentiable at $g(x)$, then the composite
 function $F = f \circ g$ defined by $F(x) = f(g(x))$ is differentiable at $x$ and

@@ -82,5 +82,6 @@ offering *automatic differentiation* (often shortened to *autograd*). As we pass
 through each successive function, the framework build a *computational graph* that
 tracks how each value depends on others. To calculate derivatives, automatic
 differentiation works backwards through this graph applying the chain rule. The
-computational algorithm for applying the chain rule in this fashion is called
-*backpropagation*.
+computational algorithm for applying the [chain
+rule](/posts/2023-08-30_differential_calculus_recap/#chain-rule) in this fashion is
+called *backpropagation*.
