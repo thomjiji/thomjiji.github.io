@@ -197,6 +197,7 @@
     line-height: 1.5;
     background: var(--code-bg);
     border-radius: 2px;
+    font-family: "JetBrains Mono";
 }
 
 .post-content pre code {

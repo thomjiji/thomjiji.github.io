@@ -36,3 +36,11 @@
   font-weight: 200 900;
   font-stretch: 135%;
 }
+
+@font-face {
+  font-family: 'JetBrains-Mono';
+  font-style: normal;
+  font-weight: normal;
+  src: 
+    url('/static/jetbrains-mono/JetBrainsMono-Regular.woff2') format('woff2');
+}
