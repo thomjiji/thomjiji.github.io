@@ -10,7 +10,7 @@
 <meta name="description" content="Posts - thomjiji">
 <meta name="author" content="">
 <link rel="canonical" href="https://thomjiji.github.io/posts/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.b31d680efbe437defdea9eecf8f59f169ddafe780971351cda29f5827a04e8cb.css" integrity="sha256-sx1oDvvkN9796p7s&#43;PWfFp3a/ngJcTUc2in1gnoE6Ms=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.c06d4b0b2ca0ccac2d4dd9390454bbb9332dbad63847d419e1989ff32fa81a15.css" integrity="sha256-wG1LCyygzKwtTdk5BFS7uTMtutY4R9QZ4Zif8y&#43;oGhU=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://thomjiji.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://thomjiji.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://thomjiji.github.io/favicon-32x32.png">
@@ -240,8 +240,9 @@ If you would like to add some text to the file, you can type in after this, like
     </h2>
   </header>
   <div class="entry-content">
-    <p>Add fish to $SHELL and set as default Add the shell to /etc/shells with: $ echo &#34;/opt/homebrew/bin/fish&#34; | sudo tee -a /etc/shells Change default shell with: chsh -s /opt/homebrew/bin/fish Modify $PATH with fish shell 在 iTerm2 当中使用 fish shell 作为默认 shell，需要把 $PATH 加入到 ~/.config/fish/fish_variables set -U fish_user_paths /usr/local/bin $fish_user_paths Enter this command in terminal: fish_add_path /opt/homebrew/bin. It will add /opt/homebrew/bin to the ~/.config/fish/fish_variables. Other useful commands which $SHELL
-echo $PATH...</p>
+    <p>Add fish to $SHELL and set as default Add the shell to /etc/shells with: echo &#34;/opt/homebrew/bin/fish&#34; | sudo tee -a /etc/shells Change default shell with: chsh -s /opt/homebrew/bin/fish Modify $PATH with fish shell 在 iTerm2 当中使用 fish shell 作为默认 shell，需要把 $PATH 加入到 ~/.config/fish/fish_variables set -U fish_user_paths /usr/local/bin $fish_user_paths Enter this command in terminal: fish_add_path /opt/homebrew/bin. It will add /opt/homebrew/bin to the ~/.config/fish/fish_variables. Other useful commands which $SHELL
+echo $PATH
+Homebrew 下载的 Fish shell 的 path 是 /opt/homebrew/bin/fish 而不是像 fish documentation 说的那样在 /usr/local/bin/fish。...</p>
   </div>
   <footer class="entry-footer"><span title='2023-01-26 00:00:00 +0000 UTC'>2023-01-26</span></footer>
   <a class="entry-link" aria-label="post link to macOS add fish to $SHELL and set fish as default shell" href="https://thomjiji.github.io/posts/2023-01-26_macos-add-fish-to-shell-and-set-fish-as-default-shell/"></a>

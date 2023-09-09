@@ -176,8 +176,9 @@ If you would like to add some text to the file, you can type in after this, like
       <pubDate>Thu, 26 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://thomjiji.github.io/posts/2023-01-26_macos-add-fish-to-shell-and-set-fish-as-default-shell/</guid>
-      <description>Add fish to $SHELL and set as default Add the shell to /etc/shells with: $ echo &amp;#34;/opt/homebrew/bin/fish&amp;#34; | sudo tee -a /etc/shells Change default shell with: chsh -s /opt/homebrew/bin/fish Modify $PATH with fish shell 在 iTerm2 当中使用 fish shell 作为默认 shell，需要把 $PATH 加入到 ~/.config/fish/fish_variables set -U fish_user_paths /usr/local/bin $fish_user_paths Enter this command in terminal: fish_add_path /opt/homebrew/bin. It will add /opt/homebrew/bin to the ~/.config/fish/fish_variables. Other useful commands which $SHELL
-echo $PATH</description>
+      <description>Add fish to $SHELL and set as default Add the shell to /etc/shells with: echo &amp;#34;/opt/homebrew/bin/fish&amp;#34; | sudo tee -a /etc/shells Change default shell with: chsh -s /opt/homebrew/bin/fish Modify $PATH with fish shell 在 iTerm2 当中使用 fish shell 作为默认 shell，需要把 $PATH 加入到 ~/.config/fish/fish_variables set -U fish_user_paths /usr/local/bin $fish_user_paths Enter this command in terminal: fish_add_path /opt/homebrew/bin. It will add /opt/homebrew/bin to the ~/.config/fish/fish_variables. Other useful commands which $SHELL
+echo $PATH
+Homebrew 下载的 Fish shell 的 path 是 /opt/homebrew/bin/fish 而不是像 fish documentation 说的那样在 /usr/local/bin/fish。</description>
     </item>
     
     <item>

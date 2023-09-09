@@ -7,11 +7,12 @@
 <meta name="robots" content="index, follow">
 <title>macOS add fish to $SHELL and set fish as default shell | thomjiji</title>
 <meta name="keywords" content="">
-<meta name="description" content="Add fish to $SHELL and set as default Add the shell to /etc/shells with: $ echo &#34;/opt/homebrew/bin/fish&#34; | sudo tee -a /etc/shells Change default shell with: chsh -s /opt/homebrew/bin/fish Modify $PATH with fish shell 在 iTerm2 当中使用 fish shell 作为默认 shell，需要把 $PATH 加入到 ~/.config/fish/fish_variables set -U fish_user_paths /usr/local/bin $fish_user_paths Enter this command in terminal: fish_add_path /opt/homebrew/bin. It will add /opt/homebrew/bin to the ~/.config/fish/fish_variables. Other useful commands which $SHELL
-echo $PATH">
+<meta name="description" content="Add fish to $SHELL and set as default Add the shell to /etc/shells with: echo &#34;/opt/homebrew/bin/fish&#34; | sudo tee -a /etc/shells Change default shell with: chsh -s /opt/homebrew/bin/fish Modify $PATH with fish shell 在 iTerm2 当中使用 fish shell 作为默认 shell，需要把 $PATH 加入到 ~/.config/fish/fish_variables set -U fish_user_paths /usr/local/bin $fish_user_paths Enter this command in terminal: fish_add_path /opt/homebrew/bin. It will add /opt/homebrew/bin to the ~/.config/fish/fish_variables. Other useful commands which $SHELL
+echo $PATH
+Homebrew 下载的 Fish shell 的 path 是 /opt/homebrew/bin/fish 而不是像 fish documentation 说的那样在 /usr/local/bin/fish。">
 <meta name="author" content="">
 <link rel="canonical" href="https://thomjiji.github.io/posts/2023-01-26_macos-add-fish-to-shell-and-set-fish-as-default-shell/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.b31d680efbe437defdea9eecf8f59f169ddafe780971351cda29f5827a04e8cb.css" integrity="sha256-sx1oDvvkN9796p7s&#43;PWfFp3a/ngJcTUc2in1gnoE6Ms=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.c06d4b0b2ca0ccac2d4dd9390454bbb9332dbad63847d419e1989ff32fa81a15.css" integrity="sha256-wG1LCyygzKwtTdk5BFS7uTMtutY4R9QZ4Zif8y&#43;oGhU=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://thomjiji.github.io/favicon.ico">
@@ -74,8 +75,9 @@ echo $PATH">
   </body>
 </html>
 <meta property="og:title" content="macOS add fish to $SHELL and set fish as default shell" />
-<meta property="og:description" content="Add fish to $SHELL and set as default Add the shell to /etc/shells with: $ echo &#34;/opt/homebrew/bin/fish&#34; | sudo tee -a /etc/shells Change default shell with: chsh -s /opt/homebrew/bin/fish Modify $PATH with fish shell 在 iTerm2 当中使用 fish shell 作为默认 shell，需要把 $PATH 加入到 ~/.config/fish/fish_variables set -U fish_user_paths /usr/local/bin $fish_user_paths Enter this command in terminal: fish_add_path /opt/homebrew/bin. It will add /opt/homebrew/bin to the ~/.config/fish/fish_variables. Other useful commands which $SHELL
-echo $PATH" />
+<meta property="og:description" content="Add fish to $SHELL and set as default Add the shell to /etc/shells with: echo &#34;/opt/homebrew/bin/fish&#34; | sudo tee -a /etc/shells Change default shell with: chsh -s /opt/homebrew/bin/fish Modify $PATH with fish shell 在 iTerm2 当中使用 fish shell 作为默认 shell，需要把 $PATH 加入到 ~/.config/fish/fish_variables set -U fish_user_paths /usr/local/bin $fish_user_paths Enter this command in terminal: fish_add_path /opt/homebrew/bin. It will add /opt/homebrew/bin to the ~/.config/fish/fish_variables. Other useful commands which $SHELL
+echo $PATH
+Homebrew 下载的 Fish shell 的 path 是 /opt/homebrew/bin/fish 而不是像 fish documentation 说的那样在 /usr/local/bin/fish。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://thomjiji.github.io/posts/2023-01-26_macos-add-fish-to-shell-and-set-fish-as-default-shell/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-01-26T00:00:00+00:00" />
@@ -83,8 +85,9 @@ echo $PATH" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="macOS add fish to $SHELL and set fish as default shell"/>
-<meta name="twitter:description" content="Add fish to $SHELL and set as default Add the shell to /etc/shells with: $ echo &#34;/opt/homebrew/bin/fish&#34; | sudo tee -a /etc/shells Change default shell with: chsh -s /opt/homebrew/bin/fish Modify $PATH with fish shell 在 iTerm2 当中使用 fish shell 作为默认 shell，需要把 $PATH 加入到 ~/.config/fish/fish_variables set -U fish_user_paths /usr/local/bin $fish_user_paths Enter this command in terminal: fish_add_path /opt/homebrew/bin. It will add /opt/homebrew/bin to the ~/.config/fish/fish_variables. Other useful commands which $SHELL
-echo $PATH"/>
+<meta name="twitter:description" content="Add fish to $SHELL and set as default Add the shell to /etc/shells with: echo &#34;/opt/homebrew/bin/fish&#34; | sudo tee -a /etc/shells Change default shell with: chsh -s /opt/homebrew/bin/fish Modify $PATH with fish shell 在 iTerm2 当中使用 fish shell 作为默认 shell，需要把 $PATH 加入到 ~/.config/fish/fish_variables set -U fish_user_paths /usr/local/bin $fish_user_paths Enter this command in terminal: fish_add_path /opt/homebrew/bin. It will add /opt/homebrew/bin to the ~/.config/fish/fish_variables. Other useful commands which $SHELL
+echo $PATH
+Homebrew 下载的 Fish shell 的 path 是 /opt/homebrew/bin/fish 而不是像 fish documentation 说的那样在 /usr/local/bin/fish。"/>
 
 
 <script type="application/ld+json">
@@ -113,12 +116,12 @@ echo $PATH"/>
   "@type": "BlogPosting",
   "headline": "macOS add fish to $SHELL and set fish as default shell",
   "name": "macOS add fish to $SHELL and set fish as default shell",
-  "description": "Add fish to $SHELL and set as default Add the shell to /etc/shells with: $ echo \u0026#34;/opt/homebrew/bin/fish\u0026#34; | sudo tee -a /etc/shells Change default shell with: chsh -s /opt/homebrew/bin/fish Modify $PATH with fish shell 在 iTerm2 当中使用 fish shell 作为默认 shell，需要把 $PATH 加入到 ~/.config/fish/fish_variables set -U fish_user_paths /usr/local/bin $fish_user_paths Enter this command in terminal: fish_add_path /opt/homebrew/bin. It will add /opt/homebrew/bin to the ~/.config/fish/fish_variables. Other useful commands which $SHELL\necho $PATH",
+  "description": "Add fish to $SHELL and set as default Add the shell to /etc/shells with: echo \u0026#34;/opt/homebrew/bin/fish\u0026#34; | sudo tee -a /etc/shells Change default shell with: chsh -s /opt/homebrew/bin/fish Modify $PATH with fish shell 在 iTerm2 当中使用 fish shell 作为默认 shell，需要把 $PATH 加入到 ~/.config/fish/fish_variables set -U fish_user_paths /usr/local/bin $fish_user_paths Enter this command in terminal: fish_add_path /opt/homebrew/bin. It will add /opt/homebrew/bin to the ~/.config/fish/fish_variables. Other useful commands which $SHELL\necho $PATH\nHomebrew 下载的 Fish shell 的 path 是 /opt/homebrew/bin/fish 而不是像 fish documentation 说的那样在 /usr/local/bin/fish。",
   "keywords": [
     
   ],
-  "articleBody": "Add fish to $SHELL and set as default Add the shell to /etc/shells with: $ echo \"/opt/homebrew/bin/fish\" | sudo tee -a /etc/shells Change default shell with: chsh -s /opt/homebrew/bin/fish Modify $PATH with fish shell 在 iTerm2 当中使用 fish shell 作为默认 shell，需要把 $PATH 加入到 ~/.config/fish/fish_variables set -U fish_user_paths /usr/local/bin $fish_user_paths Enter this command in terminal: fish_add_path /opt/homebrew/bin. It will add /opt/homebrew/bin to the ~/.config/fish/fish_variables. Other useful commands which $SHELL\necho $PATH\nHomebrew 下载的 Fish shell 的 path 是 /opt/homebrew/bin/fish 而不是像 fish documentation 说的那样在 /usr/local/bin/fish。\nReference why i can’t add fish to etc shells fish documentation: set default shell fish documentation: fish_add_path StackOverflow: Modify PATH with fish shell ",
-  "wordCount" : "106",
+  "articleBody": "Add fish to $SHELL and set as default Add the shell to /etc/shells with: echo \"/opt/homebrew/bin/fish\" | sudo tee -a /etc/shells Change default shell with: chsh -s /opt/homebrew/bin/fish Modify $PATH with fish shell 在 iTerm2 当中使用 fish shell 作为默认 shell，需要把 $PATH 加入到 ~/.config/fish/fish_variables set -U fish_user_paths /usr/local/bin $fish_user_paths Enter this command in terminal: fish_add_path /opt/homebrew/bin. It will add /opt/homebrew/bin to the ~/.config/fish/fish_variables. Other useful commands which $SHELL\necho $PATH\nHomebrew 下载的 Fish shell 的 path 是 /opt/homebrew/bin/fish 而不是像 fish documentation 说的那样在 /usr/local/bin/fish。\nReference why i can’t add fish to etc shells fish documentation: set default shell fish documentation: fish_add_path StackOverflow: Modify PATH with fish shell ",
+  "wordCount" : "105",
   "inLanguage": "en",
   "datePublished": "2023-01-26T00:00:00Z",
   "dateModified": "2023-01-26T00:00:00Z",
@@ -217,7 +220,7 @@ echo $PATH"/>
 <ol>
 <li>Add the shell to <code>/etc/shells</code> with:</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ echo <span style="color:#e6db74">&#34;/opt/homebrew/bin/fish&#34;</span> | sudo tee -a /etc/shells
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;/opt/homebrew/bin/fish&#34;</span> | sudo tee -a /etc/shells
 </span></span></code></pre></div><ol start="2">
 <li>Change default shell with:</li>
 </ol>
