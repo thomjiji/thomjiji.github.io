@@ -1,5 +1,5 @@
 ---
-title: "Unsafe Rust (code block style test)"
+title: "Unsafe Rust"
 date: 2023-09-09
 draft: false
 ---
