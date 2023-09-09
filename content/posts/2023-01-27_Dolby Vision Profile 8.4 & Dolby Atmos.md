@@ -23,7 +23,7 @@ author: ["thom"]
 - [哔哩哔哩（B 站）杜比全景声/杜比音效稿件制作指南](https://mp.weixin.qq.com/s/iuW9wztwPV9bvtVaDQxhLQ) —— 以白菜的名义
 - [EP05 杜比全景声家庭版的交付和编码封装](https://www.bilibili.com/video/BV1AT4y1c7Um?share_source=copy_web) —— 以白菜的名义
 
-### 关于上传 HDR10 & HLG 到 Youtube
+### 关于上传 HDR10 & HLG 到 YouTube
 
 - [Upload High Dynamic Range (HDR) videos](https://support.google.com/youtube/answer/7126552?hl=en#zippy=%2Chdr-metadata%2Chdr-video-file-encoding%2Cupload-requirements)
 
