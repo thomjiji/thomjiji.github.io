@@ -9,7 +9,7 @@ draft: false
 1. Add the shell to `/etc/shells` with:
 
 ```bash
-$ echo "/opt/homebrew/bin/fish" | sudo tee -a /etc/shells
+echo "/opt/homebrew/bin/fish" | sudo tee -a /etc/shells
 ```
 
 2. Change default shell with:
