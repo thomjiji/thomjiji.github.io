@@ -37,16 +37,16 @@ Unlike references and smart pointer, raw pointers:
 We can create raw pointers in safe code, but we need to dereference a raw pointer to
 access the data in unsafe block:
 
-```rust
-    let mut num = 5;
+```rust {linenos=true}
+let mut num = 5;
 
-    let r1 = &num as *const i32;
-    let r2 = &mut num as *mut i32;
+let r1 = &num as *const i32;
+let r2 = &mut num as *mut i32;
 
-    unsafe {
-        println!("r1 is: {}", *r1);
-        println!("r2 is: {}", *r2);
-    }
+unsafe {
+    println!("r1 is: {}", *r1);
+    println!("r2 is: {}", *r2);
+}
 ```
 
 Creating a pointer does no harm; it’s only when we try to access the value that it
@@ -60,7 +60,7 @@ race.
 
 *Global variables*, in Rust, it's *static variables*.
 
-```rust
+```rust {linenos=true}
 static HELLO_WORLD: &str = "HELLO WORLD";
 
 fn main() {
