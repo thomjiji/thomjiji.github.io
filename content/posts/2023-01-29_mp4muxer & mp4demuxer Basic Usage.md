@@ -21,11 +21,23 @@ mp4demuxer --input-file input.mp4 --output-folder ~/Output
 2. 合并杜比视界 Profile 8.4 和杜比全景声双音轨：
 
 ```shell
-mp4muxer -i input.h265 --input-video-frame-rate 25 --hvc1flag 0 --dv-bl-compatible-id 4 -i Stereo.aac -i Atmos.ec3 -o DolbyVision_Atmos.mp4
+mp4muxer \
+    -i input.h265 \
+    --input-video-frame-rate 25 \
+    --hvc1flag 0 \
+    --dv-bl-compatible-id 4 \
+    -i Stereo.aac \
+    -i Atmos.ec3 \
+    -o DolbyVision_DolbyAtmos.mp4
 ```
 
 3. 合并 SDR 视频和杜比全景声双音轨:
 
 ```shell
-mp4muxer -i input.h264 --input-video-frame-rate 25 -i Stereo.aac -i Atmos.ec3 -o SDR&Atmos.mp4
+mp4muxer \
+    -i input.h264 \
+    --input-video-frame-rate 25 \
+    -i Stereo.aac \
+    -i Atmos.ec3 \
+    -o SDR_DolbyAtmos.mp4
 ```
