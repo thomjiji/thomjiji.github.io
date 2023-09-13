@@ -5,7 +5,7 @@ url: "/about"
 summary: about me
 ---
 
-## Lanugage
+## Language
 
 Python, Rust
 
