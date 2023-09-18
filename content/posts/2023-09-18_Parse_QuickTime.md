@@ -8,14 +8,16 @@ tags: ["Atom", "QuickTime", "NCLC Tag"]
 Apple Developer Documentation:
 - [Storing and sharing media with QuickTime files](https://developer.apple.com/documentation/quicktime-file-format/storing_and_sharing_media_with_quicktime_files)
 	- [Color parameter atom ('colr') - A required extension for uncompressed Y´CbCr data formats.](https://developer.apple.com/documentation/quicktime-file-format/color_parameter_atom)
+
+Other resources:
 - [Apple ProRes - MultiMedia Wiki](https://wiki.multimedia.cx/index.php/Apple_ProRes)
 - [QuickTime Tags - ExifTool](https://exiftool.org/TagNames/QuickTime.html)
 
 Implementation:
 - [metacolor.editor](https://github.com/piersdeseilligny/metacolor.editor) - C#
-- qtff-parameter-editor by BBC - C++
-- AMCDXVideoPatcherCLI - Close source
-- qtfile_pp - C++
+- [qtff-parameter-editor](https://github.com/bbc/qtff-parameter-editor/tree/master) by BBC - C++
+- [AMCDXVideoPatcherCLI](https://mogurenko.com/) - Close source
+[qtfile_pp](https://github.com/da8eat/qtfile_pp) AMCDXVideoPatcherCLI 作者的开源 parser（想必 AMCDXVideoPatcherCLI 的具体实现能够从这里看出一些端倪）- C++
 
 ---
 
