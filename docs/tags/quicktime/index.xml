@@ -14,9 +14,9 @@
       
       <guid>https://thomjiji.github.io/posts/2023-09-18_parse_quicktime/</guid>
       <description>Apple Developer Documentation:
-Storing and sharing media with QuickTime files Color parameter atom (&amp;lsquo;colr&amp;rsquo;) - A required extension for uncompressed Y´CbCr data formats. Apple ProRes - MultiMedia Wiki QuickTime Tags - ExifTool Implementation:
-metacolor.editor - C# qtff-parameter-editor by BBC - C++ AMCDXVideoPatcherCLI - Close source qtfile_pp - C++ 这么些处理 nclc tag 的实现，都是用 C++ 写的。其实 Rust 也能做这些 low-level 的事情，对吗？只是这门语言比较新，暂时还没有人用它来做这个事而已。那么我能不能来做呢？用 Rust 写一个 parse mov file 的实现。
-这需要对 low-level 底层的东西有所了解是吗？我这方面又不太行。但这无疑是一个机会和切入点，就像 Asahi Lina 说的她最开始入门 low-level 编程也是为了要 hack 任天堂的一个什么掌机。我需要写一个 parse QuickTime file 的 Rust 的实现。这也能放进我的简历当中。</description>
+Storing and sharing media with QuickTime files Color parameter atom (&amp;lsquo;colr&amp;rsquo;) - A required extension for uncompressed Y´CbCr data formats. Other resources:
+Apple ProRes - MultiMedia Wiki QuickTime Tags - ExifTool Implementation:
+metacolor.editor - C# qtff-parameter-editor by BBC - C++ AMCDXVideoPatcherCLI - Close source qtfile_pp AMCDXVideoPatcherCLI 作者的开源 parser（想必 AMCDXVideoPatcherCLI 的具体实现能够从这里看出一些端倪）- C++ 这么些处理 nclc tag 的实现，都是用 C++ 写的。其实 Rust 也能做这些 low-level 的事情，对吗？只是这门语言比较新，暂时还没有人用它来做这个事而已。那么我能不能来做呢？用 Rust 写一个 parse mov file 的实现。</description>
     </item>
     
   </channel>
