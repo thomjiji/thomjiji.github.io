@@ -2,11 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://thomjiji.github.io/tags/atom/</loc>
+    <lastmod>2023-09-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thomjiji.github.io/tags/nclc-tag/</loc>
+    <lastmod>2023-09-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thomjiji.github.io/posts/2023-09-18_parse_quicktime/</loc>
+    <lastmod>2023-09-18T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://thomjiji.github.io/posts/</loc>
-    <lastmod>2023-09-09T00:00:00+00:00</lastmod>
+    <lastmod>2023-09-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thomjiji.github.io/tags/quicktime/</loc>
+    <lastmod>2023-09-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thomjiji.github.io/tags/</loc>
+    <lastmod>2023-09-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thomjiji.github.io/</loc>
-    <lastmod>2023-09-09T00:00:00+00:00</lastmod>
+    <lastmod>2023-09-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thomjiji.github.io/posts/2023-09-09_unsafe_rust/</loc>
     <lastmod>2023-09-09T00:00:00+00:00</lastmod>
@@ -15,9 +30,6 @@
     <lastmod>2023-09-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thomjiji.github.io/posts/2023-09-07_machine_learning_glossary/</loc>
-    <lastmod>2023-09-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://thomjiji.github.io/tags/</loc>
     <lastmod>2023-09-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thomjiji.github.io/posts/2023-08-30_differential_calculus_recap/</loc>
