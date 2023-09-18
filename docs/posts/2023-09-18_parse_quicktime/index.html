@@ -8,9 +8,10 @@
 <title>Parse QuickTime | thomjiji</title>
 <meta name="keywords" content="Atom, QuickTime, NCLC Tag">
 <meta name="description" content="Apple Developer Documentation:
-Storing and sharing media with QuickTime files Color parameter atom (&lsquo;colr&rsquo;) - A required extension for uncompressed Y´CbCr data formats. Other resources:
+Storing and sharing media with QuickTime files Color parameter atom (&lsquo;colr&rsquo;) Other resources:
 Apple ProRes - MultiMedia Wiki QuickTime Tags - ExifTool Implementation:
-metacolor.editor - C# qtff-parameter-editor by BBC - C&#43;&#43; AMCDXVideoPatcherCLI - Close source qtfile_pp AMCDXVideoPatcherCLI 作者的开源 parser（想必 AMCDXVideoPatcherCLI 的具体实现能够从这里看出一些端倪）- C&#43;&#43; 这么些处理 nclc tag 的实现，都是用 C&#43;&#43; 写的。其实 Rust 也能做这些 low-level 的事情，对吗？只是这门语言比较新，暂时还没有人用它来做这个事而已。那么我能不能来做呢？用 Rust 写一个 parse mov file 的实现。">
+metacolor.editor - C# qtff-parameter-editor by BBC - C&#43;&#43; AMCDXVideoPatcherCLI - Close source qtfile_pp AMCDXVideoPatcherCLI 作者的开源 parser（想必 AMCDXVideoPatcherCLI 的具体实现能够从这里看出一些端倪）- C&#43;&#43; Inspection tools:
+hexdump -vC fq MP4Box.js - a file inspection tool mp4analyser 这么些处理 atom (包括 NCLC tag) 的实现，都是用 C&#43;&#43; 写的。其实 Rust 也能做这些 low-level 的事情，对吗？只是这门语言比较新，暂时还没有人用它来做这个事而已。那么我能不能来做呢？用 Rust 写一个 parse mov file 的实现。其实已经有了：dryv——这两天就在更新。">
 <meta name="author" content="">
 <link rel="canonical" href="https://thomjiji.github.io/posts/2023-09-18_parse_quicktime/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.57c68d19935d5784bb11e77893f0093fc918ba0d53eb47e83b30c2e4de7e548a.css" integrity="sha256-V8aNGZNdV4S7Eed4k/AJP8kYug1T60foOzDC5N5&#43;VIo=" rel="preload stylesheet" as="style">
@@ -77,9 +78,10 @@ metacolor.editor - C# qtff-parameter-editor by BBC - C&#43;&#43; AMCDXVideoPatch
 </html>
 <meta property="og:title" content="Parse QuickTime" />
 <meta property="og:description" content="Apple Developer Documentation:
-Storing and sharing media with QuickTime files Color parameter atom (&lsquo;colr&rsquo;) - A required extension for uncompressed Y´CbCr data formats. Other resources:
+Storing and sharing media with QuickTime files Color parameter atom (&lsquo;colr&rsquo;) Other resources:
 Apple ProRes - MultiMedia Wiki QuickTime Tags - ExifTool Implementation:
-metacolor.editor - C# qtff-parameter-editor by BBC - C&#43;&#43; AMCDXVideoPatcherCLI - Close source qtfile_pp AMCDXVideoPatcherCLI 作者的开源 parser（想必 AMCDXVideoPatcherCLI 的具体实现能够从这里看出一些端倪）- C&#43;&#43; 这么些处理 nclc tag 的实现，都是用 C&#43;&#43; 写的。其实 Rust 也能做这些 low-level 的事情，对吗？只是这门语言比较新，暂时还没有人用它来做这个事而已。那么我能不能来做呢？用 Rust 写一个 parse mov file 的实现。" />
+metacolor.editor - C# qtff-parameter-editor by BBC - C&#43;&#43; AMCDXVideoPatcherCLI - Close source qtfile_pp AMCDXVideoPatcherCLI 作者的开源 parser（想必 AMCDXVideoPatcherCLI 的具体实现能够从这里看出一些端倪）- C&#43;&#43; Inspection tools:
+hexdump -vC fq MP4Box.js - a file inspection tool mp4analyser 这么些处理 atom (包括 NCLC tag) 的实现，都是用 C&#43;&#43; 写的。其实 Rust 也能做这些 low-level 的事情，对吗？只是这门语言比较新，暂时还没有人用它来做这个事而已。那么我能不能来做呢？用 Rust 写一个 parse mov file 的实现。其实已经有了：dryv——这两天就在更新。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://thomjiji.github.io/posts/2023-09-18_parse_quicktime/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-09-18T00:00:00+00:00" />
@@ -88,9 +90,10 @@ metacolor.editor - C# qtff-parameter-editor by BBC - C&#43;&#43; AMCDXVideoPatch
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Parse QuickTime"/>
 <meta name="twitter:description" content="Apple Developer Documentation:
-Storing and sharing media with QuickTime files Color parameter atom (&lsquo;colr&rsquo;) - A required extension for uncompressed Y´CbCr data formats. Other resources:
+Storing and sharing media with QuickTime files Color parameter atom (&lsquo;colr&rsquo;) Other resources:
 Apple ProRes - MultiMedia Wiki QuickTime Tags - ExifTool Implementation:
-metacolor.editor - C# qtff-parameter-editor by BBC - C&#43;&#43; AMCDXVideoPatcherCLI - Close source qtfile_pp AMCDXVideoPatcherCLI 作者的开源 parser（想必 AMCDXVideoPatcherCLI 的具体实现能够从这里看出一些端倪）- C&#43;&#43; 这么些处理 nclc tag 的实现，都是用 C&#43;&#43; 写的。其实 Rust 也能做这些 low-level 的事情，对吗？只是这门语言比较新，暂时还没有人用它来做这个事而已。那么我能不能来做呢？用 Rust 写一个 parse mov file 的实现。"/>
+metacolor.editor - C# qtff-parameter-editor by BBC - C&#43;&#43; AMCDXVideoPatcherCLI - Close source qtfile_pp AMCDXVideoPatcherCLI 作者的开源 parser（想必 AMCDXVideoPatcherCLI 的具体实现能够从这里看出一些端倪）- C&#43;&#43; Inspection tools:
+hexdump -vC fq MP4Box.js - a file inspection tool mp4analyser 这么些处理 atom (包括 NCLC tag) 的实现，都是用 C&#43;&#43; 写的。其实 Rust 也能做这些 low-level 的事情，对吗？只是这门语言比较新，暂时还没有人用它来做这个事而已。那么我能不能来做呢？用 Rust 写一个 parse mov file 的实现。其实已经有了：dryv——这两天就在更新。"/>
 
 
 <script type="application/ld+json">
@@ -119,12 +122,12 @@ metacolor.editor - C# qtff-parameter-editor by BBC - C&#43;&#43; AMCDXVideoPatch
   "@type": "BlogPosting",
   "headline": "Parse QuickTime",
   "name": "Parse QuickTime",
-  "description": "Apple Developer Documentation:\nStoring and sharing media with QuickTime files Color parameter atom (\u0026lsquo;colr\u0026rsquo;) - A required extension for uncompressed Y´CbCr data formats. Other resources:\nApple ProRes - MultiMedia Wiki QuickTime Tags - ExifTool Implementation:\nmetacolor.editor - C# qtff-parameter-editor by BBC - C++ AMCDXVideoPatcherCLI - Close source qtfile_pp AMCDXVideoPatcherCLI 作者的开源 parser（想必 AMCDXVideoPatcherCLI 的具体实现能够从这里看出一些端倪）- C++ 这么些处理 nclc tag 的实现，都是用 C++ 写的。其实 Rust 也能做这些 low-level 的事情，对吗？只是这门语言比较新，暂时还没有人用它来做这个事而已。那么我能不能来做呢？用 Rust 写一个 parse mov file 的实现。",
+  "description": "Apple Developer Documentation:\nStoring and sharing media with QuickTime files Color parameter atom (\u0026lsquo;colr\u0026rsquo;) Other resources:\nApple ProRes - MultiMedia Wiki QuickTime Tags - ExifTool Implementation:\nmetacolor.editor - C# qtff-parameter-editor by BBC - C++ AMCDXVideoPatcherCLI - Close source qtfile_pp AMCDXVideoPatcherCLI 作者的开源 parser（想必 AMCDXVideoPatcherCLI 的具体实现能够从这里看出一些端倪）- C++ Inspection tools:\nhexdump -vC fq MP4Box.js - a file inspection tool mp4analyser 这么些处理 atom (包括 NCLC tag) 的实现，都是用 C++ 写的。其实 Rust 也能做这些 low-level 的事情，对吗？只是这门语言比较新，暂时还没有人用它来做这个事而已。那么我能不能来做呢？用 Rust 写一个 parse mov file 的实现。其实已经有了：dryv——这两天就在更新。",
   "keywords": [
     "Atom", "QuickTime", "NCLC Tag"
   ],
-  "articleBody": "Apple Developer Documentation:\nStoring and sharing media with QuickTime files Color parameter atom (‘colr’) - A required extension for uncompressed Y´CbCr data formats. Other resources:\nApple ProRes - MultiMedia Wiki QuickTime Tags - ExifTool Implementation:\nmetacolor.editor - C# qtff-parameter-editor by BBC - C++ AMCDXVideoPatcherCLI - Close source qtfile_pp AMCDXVideoPatcherCLI 作者的开源 parser（想必 AMCDXVideoPatcherCLI 的具体实现能够从这里看出一些端倪）- C++ 这么些处理 nclc tag 的实现，都是用 C++ 写的。其实 Rust 也能做这些 low-level 的事情，对吗？只是这门语言比较新，暂时还没有人用它来做这个事而已。那么我能不能来做呢？用 Rust 写一个 parse mov file 的实现。\n这需要对 low-level 底层的东西有所了解是吗？我这方面又不太行。但这无疑是一个机会和切入点，就像 Asahi Lina 说的她最开始入门 low-level 编程也是为了要 hack 任天堂的一个什么掌机。我需要写一个 parse QuickTime file 的 Rust 的实现。这也能放进我的简历当中。\n进一步的说，其他的一些元数据，比如时码、卷号，这些在 DIT 工作当中会碰到的需要对其做一些操作的元数据。现有的达芬奇、Pomfort 之流没有提供类似的功能，或者需要你进入到一整个流程当中，才能实现对某个文件修改元数据的需求。我可以做一个 goto 的锋利小工具。目前市面上有 qtchange，但它卖的挺贵，25 欧还是多少。\n",
-  "wordCount" : "94",
+  "articleBody": "Apple Developer Documentation:\nStoring and sharing media with QuickTime files Color parameter atom (‘colr’) Other resources:\nApple ProRes - MultiMedia Wiki QuickTime Tags - ExifTool Implementation:\nmetacolor.editor - C# qtff-parameter-editor by BBC - C++ AMCDXVideoPatcherCLI - Close source qtfile_pp AMCDXVideoPatcherCLI 作者的开源 parser（想必 AMCDXVideoPatcherCLI 的具体实现能够从这里看出一些端倪）- C++ Inspection tools:\nhexdump -vC fq MP4Box.js - a file inspection tool mp4analyser 这么些处理 atom (包括 NCLC tag) 的实现，都是用 C++ 写的。其实 Rust 也能做这些 low-level 的事情，对吗？只是这门语言比较新，暂时还没有人用它来做这个事而已。那么我能不能来做呢？用 Rust 写一个 parse mov file 的实现。其实已经有了：dryv——这两天就在更新。\n这需要对 low-level 底层的东西有所了解是吗？底层的东西我又不太会。但这无疑是一个机会和切入点，就像 Asahi Lina 说的她最开始入门 low-level 编程也是为了要 hack 任天堂的一个什么掌机。我需要写一个 parse QuickTime file 的 Rust 的实现，实现出来一定挺酷。\n进一步的说，其他的一些元数据，比如时码、卷号，这些在 DIT 工作当中会碰到的需要对其做一些操作的元数据。现有的达芬奇、Pomfort 之流没有提供类似的功能，或者需要你进入到一整个流程当中，才能实现对某个文件修改元数据的需求。我可以做一个 goto 的锋利小工具。目前市面上有 QTChange，但它卖的挺贵，29.95 欧。上面提到的 AMCDXVideoPatcher 的 GUI 好像连卷名也能修改。就真的好想知道具体是怎么办到的，可惜它没有公开源码，不过相比 QTChange 这个免费还要啥自行车。\n",
+  "wordCount" : "105",
   "inLanguage": "en",
   "datePublished": "2023-09-18T00:00:00Z",
   "dateModified": "2023-09-18T00:00:00Z",
@@ -223,7 +226,7 @@ metacolor.editor - C# qtff-parameter-editor by BBC - C&#43;&#43; AMCDXVideoPatch
 <ul>
 <li><a href="https://developer.apple.com/documentation/quicktime-file-format/storing_and_sharing_media_with_quicktime_files">Storing and sharing media with QuickTime files</a>
 <ul>
-<li><a href="https://developer.apple.com/documentation/quicktime-file-format/color_parameter_atom">Color parameter atom (&lsquo;colr&rsquo;) - A required extension for uncompressed Y´CbCr data formats.</a></li>
+<li><a href="https://developer.apple.com/documentation/quicktime-file-format/color_parameter_atom">Color parameter atom (&lsquo;colr&rsquo;)</a></li>
 </ul>
 </li>
 </ul>
@@ -236,13 +239,20 @@ metacolor.editor - C# qtff-parameter-editor by BBC - C&#43;&#43; AMCDXVideoPatch
 <ul>
 <li><a href="https://github.com/piersdeseilligny/metacolor.editor">metacolor.editor</a> - C#</li>
 <li><a href="https://github.com/bbc/qtff-parameter-editor/tree/master">qtff-parameter-editor</a> by BBC - C++</li>
-<li><a href="https://mogurenko.com/">AMCDXVideoPatcherCLI</a> - Close source
-<a href="https://github.com/da8eat/qtfile_pp">qtfile_pp</a> AMCDXVideoPatcherCLI 作者的开源 parser（想必 AMCDXVideoPatcherCLI 的具体实现能够从这里看出一些端倪）- C++</li>
+<li><a href="https://mogurenko.com/">AMCDXVideoPatcherCLI</a> - Close source</li>
+<li><a href="https://github.com/da8eat/qtfile_pp">qtfile_pp</a> AMCDXVideoPatcherCLI 作者的开源 parser（想必 AMCDXVideoPatcherCLI 的具体实现能够从这里看出一些端倪）- C++</li>
+</ul>
+<p>Inspection tools:</p>
+<ul>
+<li>hexdump -vC</li>
+<li><a href="https://github.com/wader/fq">fq</a></li>
+<li><a href="https://gpac.github.io/mp4box.js/test/filereader.html">MP4Box.js</a> - a file inspection tool</li>
+<li><a href="https://github.com/essential61/mp4analyser">mp4analyser</a></li>
 </ul>
 <hr>
-<p>这么些处理 nclc tag 的实现，都是用 C++ 写的。其实 Rust 也能做这些 low-level 的事情，对吗？只是这门语言比较新，暂时还没有人用它来做这个事而已。那么我能不能来做呢？用 Rust 写一个 parse mov file 的实现。</p>
-<p>这需要对 low-level 底层的东西有所了解是吗？我这方面又不太行。但这无疑是一个机会和切入点，就像 Asahi Lina 说的她最开始入门 low-level 编程也是为了要 hack 任天堂的一个什么掌机。我需要写一个 parse QuickTime file 的 Rust 的实现。这也能放进我的简历当中。</p>
-<p>进一步的说，其他的一些元数据，比如时码、卷号，这些在 DIT 工作当中会碰到的需要对其做一些操作的元数据。现有的达芬奇、Pomfort 之流没有提供类似的功能，或者需要你进入到一整个流程当中，才能实现对某个文件修改元数据的需求。我可以做一个 goto 的锋利小工具。目前市面上有 qtchange，但它卖的挺贵，25 欧还是多少。</p>
+<p>这么些处理 atom (包括 NCLC tag) 的实现，都是用 C++ 写的。其实 Rust 也能做这些 low-level 的事情，对吗？只是这门语言比较新，暂时还没有人用它来做这个事而已。那么我能不能来做呢？用 Rust 写一个 parse mov file 的实现。其实已经有了：<a href="https://github.com/Stuff7/dryv">dryv</a>——这两天就在更新。</p>
+<p>这需要对 low-level 底层的东西有所了解是吗？底层的东西我又不太会。但这无疑是一个机会和切入点，就像 Asahi Lina 说的她最开始入门 low-level 编程也是为了要 hack 任天堂的一个什么掌机。我需要写一个 parse QuickTime file 的 Rust 的实现，实现出来一定挺酷。</p>
+<p>进一步的说，其他的一些元数据，比如时码、卷号，这些在 DIT 工作当中会碰到的需要对其做一些操作的元数据。现有的达芬奇、Pomfort 之流没有提供类似的功能，或者需要你进入到一整个流程当中，才能实现对某个文件修改元数据的需求。我可以做一个 goto 的锋利小工具。目前市面上有 <a href="https://www.videotoolshed.com/handcrafted-timecode-tools/qtchange/">QTChange</a>，但它卖的挺贵，29.95 欧。上面提到的 <a href="https://mogurenko.com/">AMCDXVideoPatcher</a> 的 GUI 好像连卷名也能修改。就真的好想知道具体是怎么办到的，可惜它没有公开源码，不过相比 QTChange 这个免费还要啥自行车。</p>
 
 
   </div>
