@@ -55,7 +55,7 @@ params:
 
   defaultTheme: auto
   showShareButtons: true
-  ShareButtons: ["twitter", "telegram", "reddit"]
+  ShareButtons: [ "twitter", "telegram", "reddit" ]
   ShowBreadCrumbs: true
   ShowPostNavLinks: true
   ShowCodeCopyButtons: true
