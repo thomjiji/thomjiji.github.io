@@ -14,7 +14,7 @@ draft: false
 - => What comes out of the preprocessor is called **translation unit**.
 - The translation unit is then compiled by the compiler.
 
-```
+```text
 +--------+      +---------------------+        +-------------------+       +-----------------+
 | .cpp   |  =>  | Preprocessor        |   =>   | Translation  Unit |  =>   | Compiled output |
 | file   |      |                     |        |                   |       | (object code)   |
@@ -36,7 +36,7 @@ draft: false
 Preprocessor directives (often just called directives) are instructions that start with a `#` symbol and end with a
 newline (NOT a semicolon).
 
-## `#include`
+## #include
 
 When you #include a file, the preprocessor replaces the #include directive with the contents of the included file.
 The included contents are then preprocessed recursively.
@@ -98,6 +98,6 @@ int main()
 }
 ```
 
-## The scope of `#define`s
+## The scope of #define
 
 Directives are only valid from the point of definition to the end of the file in which they are defined.
