@@ -5,15 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>ICC Profile | thomjiji</title>
+<title>C&#43;&#43; Preprocessor | thomjiji</title>
 <meta name="keywords" content="">
-<meta name="description" content="对普通显示器校色的时候，很难不碰到 ICC profile 这个东西。我们都知道这个名词，显示器的 ICC 文件，或许模糊的对它有一些概念。但它究竟是什么？原理如何。
-ICC profile 跟我们已经有很明确概念的 ACES，或者更广泛一些地讲：「现代的色彩管理流程」，是很相似的 idea。都有一个处于整个链路中间的非常大的色彩空间，大到足以容纳所有不同的输入、显示和输出设备的各种色域（sRGB、AdobeRGB、Rec.709 等等）1。这个色彩空间在 ICC 这个概念下叫作 PCS（Profile Connection Space）。ICC profile 通过定义设备源或目标色彩空间与 PCS 之间的映射来描述特定设备的色彩属性2。
-ICC 本身并不进行任何校准，它们只包含显示器关于色彩成像能力的数据。这些数据用于帮助可以识别 ICC profile 的软件（我们叫它 ICC aware 的软件）通过 CMM（色彩管理模块）对图像进行调整，以尝试纠正显示器的色偏来进行校准。ICC profile 完成的实际上是对图像的调整，而不是对显示器的校正。不同的软件使用不同的 CMM 的话，即使都采用同一个 ICC，最终出来的结果也可能不一样。
-ICC Profile - IBM&#160;&#x21a9;&#xfe0e;
-ICC profile - Wikipedia&#160;&#x21a9;&#xfe0e;">
+<meta name="description" content="preprocessor .cpp file =&gt; preprocessor: Make change to the text of the code file, but not actually to the original code file, rather temporarily in-memory or using temporary files. Uninteresting things: strip out comments, ensures each code file ends in a newline. One important role: process#include directives. =&gt; What comes out of the preprocessor is called translation unit. The translation unit is then compiled by the compiler. &#43;--------&#43; &#43;---------------------&#43; &#43;-------------------&#43; &#43;-----------------&#43; | .">
 <meta name="author" content="">
-<link rel="canonical" href="https://thomjiji.github.io/posts/2023-03-09_icc-profile/">
+<link rel="canonical" href="https://thomjiji.github.io/posts/2023-09-21_c&#43;&#43;_preprocessor/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.57c68d19935d5784bb11e77893f0093fc918ba0d53eb47e83b30c2e4de7e548a.css" integrity="sha256-V8aNGZNdV4S7Eed4k/AJP8kYug1T60foOzDC5N5&#43;VIo=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
     onload="hljs.initHighlightingOnLoad();"></script>
@@ -76,24 +72,16 @@ ICC profile - Wikipedia&#160;&#x21a9;&#xfe0e;">
     
   </body>
 </html>
-<meta property="og:title" content="ICC Profile" />
-<meta property="og:description" content="对普通显示器校色的时候，很难不碰到 ICC profile 这个东西。我们都知道这个名词，显示器的 ICC 文件，或许模糊的对它有一些概念。但它究竟是什么？原理如何。
-ICC profile 跟我们已经有很明确概念的 ACES，或者更广泛一些地讲：「现代的色彩管理流程」，是很相似的 idea。都有一个处于整个链路中间的非常大的色彩空间，大到足以容纳所有不同的输入、显示和输出设备的各种色域（sRGB、AdobeRGB、Rec.709 等等）1。这个色彩空间在 ICC 这个概念下叫作 PCS（Profile Connection Space）。ICC profile 通过定义设备源或目标色彩空间与 PCS 之间的映射来描述特定设备的色彩属性2。
-ICC 本身并不进行任何校准，它们只包含显示器关于色彩成像能力的数据。这些数据用于帮助可以识别 ICC profile 的软件（我们叫它 ICC aware 的软件）通过 CMM（色彩管理模块）对图像进行调整，以尝试纠正显示器的色偏来进行校准。ICC profile 完成的实际上是对图像的调整，而不是对显示器的校正。不同的软件使用不同的 CMM 的话，即使都采用同一个 ICC，最终出来的结果也可能不一样。
-ICC Profile - IBM&#160;&#x21a9;&#xfe0e;
-ICC profile - Wikipedia&#160;&#x21a9;&#xfe0e;" />
+<meta property="og:title" content="C&#43;&#43; Preprocessor" />
+<meta property="og:description" content="preprocessor .cpp file =&gt; preprocessor: Make change to the text of the code file, but not actually to the original code file, rather temporarily in-memory or using temporary files. Uninteresting things: strip out comments, ensures each code file ends in a newline. One important role: process#include directives. =&gt; What comes out of the preprocessor is called translation unit. The translation unit is then compiled by the compiler. &#43;--------&#43; &#43;---------------------&#43; &#43;-------------------&#43; &#43;-----------------&#43; | ." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://thomjiji.github.io/posts/2023-03-09_icc-profile/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-03-09T00:00:00+00:00" />
-<meta property="article:modified_time" content="2023-03-09T00:00:00+00:00" />
+<meta property="og:url" content="https://thomjiji.github.io/posts/2023-09-21_c&#43;&#43;_preprocessor/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-09-21T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-09-21T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="ICC Profile"/>
-<meta name="twitter:description" content="对普通显示器校色的时候，很难不碰到 ICC profile 这个东西。我们都知道这个名词，显示器的 ICC 文件，或许模糊的对它有一些概念。但它究竟是什么？原理如何。
-ICC profile 跟我们已经有很明确概念的 ACES，或者更广泛一些地讲：「现代的色彩管理流程」，是很相似的 idea。都有一个处于整个链路中间的非常大的色彩空间，大到足以容纳所有不同的输入、显示和输出设备的各种色域（sRGB、AdobeRGB、Rec.709 等等）1。这个色彩空间在 ICC 这个概念下叫作 PCS（Profile Connection Space）。ICC profile 通过定义设备源或目标色彩空间与 PCS 之间的映射来描述特定设备的色彩属性2。
-ICC 本身并不进行任何校准，它们只包含显示器关于色彩成像能力的数据。这些数据用于帮助可以识别 ICC profile 的软件（我们叫它 ICC aware 的软件）通过 CMM（色彩管理模块）对图像进行调整，以尝试纠正显示器的色偏来进行校准。ICC profile 完成的实际上是对图像的调整，而不是对显示器的校正。不同的软件使用不同的 CMM 的话，即使都采用同一个 ICC，最终出来的结果也可能不一样。
-ICC Profile - IBM&#160;&#x21a9;&#xfe0e;
-ICC profile - Wikipedia&#160;&#x21a9;&#xfe0e;"/>
+<meta name="twitter:title" content="C&#43;&#43; Preprocessor"/>
+<meta name="twitter:description" content="preprocessor .cpp file =&gt; preprocessor: Make change to the text of the code file, but not actually to the original code file, rather temporarily in-memory or using temporary files. Uninteresting things: strip out comments, ensures each code file ends in a newline. One important role: process#include directives. =&gt; What comes out of the preprocessor is called translation unit. The translation unit is then compiled by the compiler. &#43;--------&#43; &#43;---------------------&#43; &#43;-------------------&#43; &#43;-----------------&#43; | ."/>
 
 
 <script type="application/ld+json">
@@ -110,8 +98,8 @@ ICC profile - Wikipedia&#160;&#x21a9;&#xfe0e;"/>
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "ICC Profile",
-      "item": "https://thomjiji.github.io/posts/2023-03-09_icc-profile/"
+      "name": "C++ Preprocessor",
+      "item": "https://thomjiji.github.io/posts/2023-09-21_c++_preprocessor/"
     }
   ]
 }
@@ -120,20 +108,20 @@ ICC profile - Wikipedia&#160;&#x21a9;&#xfe0e;"/>
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "ICC Profile",
-  "name": "ICC Profile",
-  "description": "对普通显示器校色的时候，很难不碰到 ICC profile 这个东西。我们都知道这个名词，显示器的 ICC 文件，或许模糊的对它有一些概念。但它究竟是什么？原理如何。\nICC profile 跟我们已经有很明确概念的 ACES，或者更广泛一些地讲：「现代的色彩管理流程」，是很相似的 idea。都有一个处于整个链路中间的非常大的色彩空间，大到足以容纳所有不同的输入、显示和输出设备的各种色域（sRGB、AdobeRGB、Rec.709 等等）1。这个色彩空间在 ICC 这个概念下叫作 PCS（Profile Connection Space）。ICC profile 通过定义设备源或目标色彩空间与 PCS 之间的映射来描述特定设备的色彩属性2。\nICC 本身并不进行任何校准，它们只包含显示器关于色彩成像能力的数据。这些数据用于帮助可以识别 ICC profile 的软件（我们叫它 ICC aware 的软件）通过 CMM（色彩管理模块）对图像进行调整，以尝试纠正显示器的色偏来进行校准。ICC profile 完成的实际上是对图像的调整，而不是对显示器的校正。不同的软件使用不同的 CMM 的话，即使都采用同一个 ICC，最终出来的结果也可能不一样。\nICC Profile - IBM\u0026#160;\u0026#x21a9;\u0026#xfe0e;\nICC profile - Wikipedia\u0026#160;\u0026#x21a9;\u0026#xfe0e;",
+  "headline": "C++ Preprocessor",
+  "name": "C\u002b\u002b Preprocessor",
+  "description": "preprocessor .cpp file =\u0026gt; preprocessor: Make change to the text of the code file, but not actually to the original code file, rather temporarily in-memory or using temporary files. Uninteresting things: strip out comments, ensures each code file ends in a newline. One important role: process#include directives. =\u0026gt; What comes out of the preprocessor is called translation unit. The translation unit is then compiled by the compiler. +--------+ +---------------------+ +-------------------+ +-----------------+ | .",
   "keywords": [
     
   ],
-  "articleBody": "对普通显示器校色的时候，很难不碰到 ICC profile 这个东西。我们都知道这个名词，显示器的 ICC 文件，或许模糊的对它有一些概念。但它究竟是什么？原理如何。\nICC profile 跟我们已经有很明确概念的 ACES，或者更广泛一些地讲：「现代的色彩管理流程」，是很相似的 idea。都有一个处于整个链路中间的非常大的色彩空间，大到足以容纳所有不同的输入、显示和输出设备的各种色域（sRGB、AdobeRGB、Rec.709 等等）1。这个色彩空间在 ICC 这个概念下叫作 PCS（Profile Connection Space）。ICC profile 通过定义设备源或目标色彩空间与 PCS 之间的映射来描述特定设备的色彩属性2。\nICC 本身并不进行任何校准，它们只包含显示器关于色彩成像能力的数据。这些数据用于帮助可以识别 ICC profile 的软件（我们叫它 ICC aware 的软件）通过 CMM（色彩管理模块）对图像进行调整，以尝试纠正显示器的色偏来进行校准。ICC profile 完成的实际上是对图像的调整，而不是对显示器的校正。不同的软件使用不同的 CMM 的话，即使都采用同一个 ICC，最终出来的结果也可能不一样。\nICC Profile - IBM ↩︎\nICC profile - Wikipedia ↩︎\n",
-  "wordCount" : "43",
+  "articleBody": "preprocessor .cpp file =\u003e preprocessor: Make change to the text of the code file, but not actually to the original code file, rather temporarily in-memory or using temporary files. Uninteresting things: strip out comments, ensures each code file ends in a newline. One important role: process#include directives. =\u003e What comes out of the preprocessor is called translation unit. The translation unit is then compiled by the compiler. +--------+ +---------------------+ +-------------------+ +-----------------+ | .cpp | =\u003e | Preprocessor | =\u003e | Translation Unit | =\u003e | Compiled output | | file | | | | | | (object code) | +--------+ +---------------------+ +-------------------+ +-----------------+ | /----\u003e |#include files | \u003c\\ | | | / |Macro expansion | \\ | | | / |Remove comments | \\ | | | / |Add line-breaks | \\ | | | / |etc. | \\ | | +-- Original file +--Processes the file +--Output from +--Binary code resulted with directives preprocessor from compilation (processed code) The entire process of preprocessing, compiling and linking is called translation.\npreprocessor directives Preprocessor directives (often just called directives) are instructions that start with a # symbol and end with a newline (NOT a semicolon).\n#include When you #include a file, the preprocessor replaces the #include directive with the contents of the included file. The included contents are then preprocessed recursively.\nMacro defines In C++, a macro is a rule that defines how input text is converted into replacement output text.\nObject-like macros Function-like macros Object-like macros:\n#define identifier #define identifier substitution_text Object-like macros (with substitution text) When the preprocessor encounters this directive, any further occurrence of the identifier is replaced by substitution_text.\nObject-like macros (without substitution text) #define USE_YEN Any further occurrence of the identifier is removed and replaced by nothing.\nIt seems pretty useless, but the common use of it is below.\nConditional compilation The conditional compilation preprocessor directives allow you to specify under what conditions something will or won’t compile.\n#ifdef ifndef endif #include #define PRINT_JOE int main() { #ifdef PRINT_JOE std::cout \u003c\u003c \"Joe\\n\"; // will be compiled since PRINT_JOE is defined #endif #ifdef PRINT_BOB std::cout \u003c\u003c \"Bob\\n\"; // will be excluded since PRINT_BOB is not defined #endif return 0; } The scope of #defines Directives are only valid from the point of definition to the end of the file in which they are defined.\n",
+  "wordCount" : "389",
   "inLanguage": "en",
-  "datePublished": "2023-03-09T00:00:00Z",
-  "dateModified": "2023-03-09T00:00:00Z",
+  "datePublished": "2023-09-21T00:00:00Z",
+  "dateModified": "2023-09-21T00:00:00Z",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://thomjiji.github.io/posts/2023-03-09_icc-profile/"
+    "@id": "https://thomjiji.github.io/posts/2023-09-21_c++_preprocessor/"
   },
   "publisher": {
     "@type": "Organization",
@@ -216,26 +204,88 @@ ICC profile - Wikipedia&#160;&#x21a9;&#xfe0e;"/>
   <header class="post-header">
     <div class="breadcrumbs"><a href="https://thomjiji.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://thomjiji.github.io/posts/">Posts</a></div>
     <h1 class="post-title">
-      ICC Profile
+      C&#43;&#43; Preprocessor
     </h1>
-    <div class="post-meta"><span title='2023-03-09 00:00:00 +0000 UTC'>2023-03-09</span>&nbsp;|&nbsp;<a href="https://github.com/thomjiji/thomjiji.github.io/tree/main/content//posts/2023-03-09_icc-profile.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+    <div class="post-meta"><span title='2023-09-21 00:00:00 +0000 UTC'>2023-09-21</span>&nbsp;|&nbsp;<a href="https://github.com/thomjiji/thomjiji.github.io/tree/main/content//posts/2023-09-21_C&#43;&#43;_Preprocessor.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
 
 </div>
   </header> 
-  <div class="post-content"><p>对普通显示器校色的时候，很难不碰到 <a href="https://www.google.com/search?q=ICC%20profile" target="_blank" >ICC profile</a> 这个东西。我们都知道这个名词，显示器的 ICC 文件，或许模糊的对它有一些概念。但它究竟是什么？原理如何。</p>
-<p>ICC profile 跟我们已经有很明确概念的 ACES，或者更广泛一些地讲：「现代的色彩管理流程」，是很相似的 idea。都有一个处于整个链路中间的非常大的色彩空间，大到足以容纳所有不同的输入、显示和输出设备的各种色域（sRGB、AdobeRGB、Rec.709 等等）<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>。这个色彩空间在 ICC 这个概念下叫作 PCS（Profile Connection Space）。ICC profile 通过定义设备源或目标色彩空间与 PCS 之间的<strong>映射</strong>来描述特定设备的色彩属性<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>。</p>
-<p>ICC 本身并不进行任何校准，它们只包含显示器关于色彩成像能力的数据。这些数据用于帮助可以识别 ICC profile 的软件（我们叫它 ICC aware 的软件）通过 CMM（色彩管理模块）对图像进行调整，以尝试纠正显示器的色偏来进行校准。ICC profile 完成的实际上是对<strong>图像的调整</strong>，而不是对显示器的校正。不同的软件使用不同的 CMM 的话，即使都采用同一个 ICC，最终出来的结果也可能不一样。</p>
-<div class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn:1">
-<p><a href="https://www.ibm.com/docs/en/i/7.4?topic=management-icc-profiles" target="_blank" >ICC Profile</a> - IBM&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+  <div class="post-content"><h2 id="preprocessor">preprocessor<a hidden class="anchor" aria-hidden="true" href="#preprocessor">#</a></h2>
+<ul>
+<li>.cpp file =&gt; preprocessor:
+<ul>
+<li>Make change to the text of the code file, but not actually to the original code file, rather temporarily in-memory
+or using temporary files.</li>
+<li>Uninteresting things: strip out comments, ensures each code file ends in a newline.</li>
+<li>One important role: <strong>process<code>#include</code> directives</strong>.</li>
+</ul>
 </li>
-<li id="fn:2">
-<p><a href="https://en.wikipedia.org/wiki/ICC_profile" target="_blank" >ICC profile</a> - Wikipedia&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</div>
+<li>=&gt; What comes out of the preprocessor is called <strong>translation unit</strong>.</li>
+<li>The translation unit is then compiled by the compiler.</li>
+</ul>
+<pre tabindex="0"><code>+--------+      +---------------------+        +-------------------+       +-----------------+
+| .cpp   |  =&gt;  | Preprocessor        |   =&gt;   | Translation  Unit |  =&gt;   | Compiled output |
+| file   |      |                     |        |                   |       | (object code)   |
++--------+      +---------------------+        +-------------------+       +-----------------+
+   |          /----&gt; |#include files  | &lt;\                     |                            |
+   |         /       |Macro expansion |   \                    |                            |
+   |        /        |Remove comments |    \                   |                            |
+   |       /         |Add line-breaks |     \                  |                            |
+   |      /          |etc.            |      \                 |                            |
+   +-- Original file +--Processes the file   +--Output from      +--Binary code resulted 
+                         with directives         preprocessor        from compilation
+                                                (processed code)                                                           
+</code></pre><blockquote>
+<p>The entire process of preprocessing, compiling and linking is called <strong>translation</strong>.</p>
+</blockquote>
+<h2 id="preprocessor-directives">preprocessor directives<a hidden class="anchor" aria-hidden="true" href="#preprocessor-directives">#</a></h2>
+<p>Preprocessor directives (often just called directives) are instructions that start with a <code>#</code> symbol and end with a
+newline (NOT a semicolon).</p>
+<h2 id="include"><code>#include</code><a hidden class="anchor" aria-hidden="true" href="#include">#</a></h2>
+<p>When you #include a file, the preprocessor replaces the #include directive with the contents of the included file.
+The included contents are then preprocessed recursively.</p>
+<h2 id="macro-defines">Macro defines<a hidden class="anchor" aria-hidden="true" href="#macro-defines">#</a></h2>
+<p>In C++, a macro is a rule that defines how input text is converted into replacement output text.</p>
+<ul>
+<li>Object-like macros</li>
+<li>Function-like macros</li>
+</ul>
+<p>Object-like macros:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#define identifier
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define identifier substitution_text
+</span></span></span></code></pre></div><h3 id="object-like-macros-with-substitution-text">Object-like macros (with substitution text)<a hidden class="anchor" aria-hidden="true" href="#object-like-macros-with-substitution-text">#</a></h3>
+<p>When the preprocessor encounters this directive, any further occurrence of the identifier is replaced by
+substitution_text.</p>
+<h3 id="object-like-macros-without-substitution-text">Object-like macros (without substitution text)<a hidden class="anchor" aria-hidden="true" href="#object-like-macros-without-substitution-text">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#define USE_YEN
+</span></span></span></code></pre></div><p>Any further occurrence of the identifier is removed and replaced by <strong>nothing</strong>.</p>
+<p>It seems pretty useless, but the common use of it is <strong>below</strong>.</p>
+<h2 id="conditional-compilation">Conditional compilation<a hidden class="anchor" aria-hidden="true" href="#conditional-compilation">#</a></h2>
+<p>The conditional compilation preprocessor directives allow you to specify under what conditions something will or won’t
+compile.</p>
+<ul>
+<li><code>#ifdef</code></li>
+<li><code>ifndef</code></li>
+<li><code>endif</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define PRINT_JOE
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#ifdef PRINT_JOE
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Joe</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>; <span style="color:#75715e">// will be compiled since PRINT_JOE is defined
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#endif
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#ifdef PRINT_BOB
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Bob</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>; <span style="color:#75715e">// will be excluded since PRINT_BOB is not defined
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#endif
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="the-scope-of-defines">The scope of <code>#define</code>s<a hidden class="anchor" aria-hidden="true" href="#the-scope-of-defines">#</a></h2>
+<p>Directives are only valid from the point of definition to the end of the file in which they are defined.</p>
 
 
   </div>
@@ -244,36 +294,31 @@ ICC profile - Wikipedia&#160;&#x21a9;&#xfe0e;"/>
     <ul class="post-tags">
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://thomjiji.github.io/posts/2023-03-09_devonthink_unboxing/">
-    <span class="title">« Prev</span>
-    <br>
-    <span>DEVONthink 上手</span>
-  </a>
-  <a class="next" href="https://thomjiji.github.io/posts/2023-03-09_vcgt_tag/">
+  <a class="next" href="https://thomjiji.github.io/posts/2023-09-18_parse_quicktime/">
     <span class="title">Next »</span>
     <br>
-    <span>VCGT Tag</span>
+    <span>Parse QuickTime</span>
   </a>
 </nav>
 
 
 <div class="share-buttons">
-    <a target="_blank" rel="noopener noreferrer" aria-label="share ICC Profile on twitter"
-        href="https://twitter.com/intent/tweet/?text=ICC%20Profile&amp;url=https%3a%2f%2fthomjiji.github.io%2fposts%2f2023-03-09_icc-profile%2f&amp;hashtags=">
+    <a target="_blank" rel="noopener noreferrer" aria-label="share C&#43;&#43; Preprocessor on twitter"
+        href="https://twitter.com/intent/tweet/?text=C%2b%2b%20Preprocessor&amp;url=https%3a%2f%2fthomjiji.github.io%2fposts%2f2023-09-21_c%2b%2b_preprocessor%2f&amp;hashtags=">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-253.927,424.544c135.939,0 210.268,-112.643 210.268,-210.268c0,-3.218 0,-6.437 -0.153,-9.502c14.406,-10.421 26.973,-23.448 36.935,-38.314c-13.18,5.824 -27.433,9.809 -42.452,11.648c15.326,-9.196 26.973,-23.602 32.49,-40.92c-14.252,8.429 -30.038,14.56 -46.896,17.931c-13.487,-14.406 -32.644,-23.295 -53.946,-23.295c-40.767,0 -73.87,33.104 -73.87,73.87c0,5.824 0.613,11.494 1.992,16.858c-61.456,-3.065 -115.862,-32.49 -152.337,-77.241c-6.284,10.881 -9.962,23.601 -9.962,37.088c0,25.594 13.027,48.276 32.95,61.456c-12.107,-0.307 -23.448,-3.678 -33.41,-9.196l0,0.92c0,35.862 25.441,65.594 59.311,72.49c-6.13,1.686 -12.72,2.606 -19.464,2.606c-4.751,0 -9.348,-0.46 -13.946,-1.38c9.349,29.426 36.628,50.728 68.965,51.341c-25.287,19.771 -57.164,31.571 -91.8,31.571c-5.977,0 -11.801,-0.306 -17.625,-1.073c32.337,21.15 71.264,33.41 112.95,33.41Z" />
         </svg>
     </a>
-    <a target="_blank" rel="noopener noreferrer" aria-label="share ICC Profile on reddit"
-        href="https://reddit.com/submit?url=https%3a%2f%2fthomjiji.github.io%2fposts%2f2023-03-09_icc-profile%2f&title=ICC%20Profile">
+    <a target="_blank" rel="noopener noreferrer" aria-label="share C&#43;&#43; Preprocessor on reddit"
+        href="https://reddit.com/submit?url=https%3a%2f%2fthomjiji.github.io%2fposts%2f2023-09-21_c%2b%2b_preprocessor%2f&title=C%2b%2b%20Preprocessor">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
         </svg>
     </a>
-    <a target="_blank" rel="noopener noreferrer" aria-label="share ICC Profile on telegram"
-        href="https://telegram.me/share/url?text=ICC%20Profile&amp;url=https%3a%2f%2fthomjiji.github.io%2fposts%2f2023-03-09_icc-profile%2f">
+    <a target="_blank" rel="noopener noreferrer" aria-label="share C&#43;&#43; Preprocessor on telegram"
+        href="https://telegram.me/share/url?text=C%2b%2b%20Preprocessor&amp;url=https%3a%2f%2fthomjiji.github.io%2fposts%2f2023-09-21_c%2b%2b_preprocessor%2f">
         <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
             <path
                 d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
