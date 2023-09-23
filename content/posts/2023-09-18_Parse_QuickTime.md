@@ -35,6 +35,10 @@ Inspection tools:
 
 ---
 
+我导出两个片段，一个是 1-1-1，一个 1-2-1。除此之外其他一切都一样。最后使用 hexdump 查看两个文件的字节数 bytes 大小，发现相差 12 bytes，而 gama atom 恰好就是 12 btyes。差的就是这个 gama atom。
+
+---
+
 Decode ProRes: [RDD 36:2015 - SMPTE Registered Disclosure Doc - Apple ProRes Bitstream Syntax and Decoding Process](https://ieeexplore.ieee.org/document/7438722)。这个标准专门讲解了如何 decode ProRes 的 stream。而且，不能只修改 mov 这个 container 的 colr atom，还要修改 ProRes header 里的 Primaries, Transfer Function and Matrix 信息：
 
 > In addition to the colour information carried within the Color Atom, information regarding the transfer function, colour matrix and primaries are also stored within the frame header information of the ProRes elementary stream, alongside other parameters, such as frame rate, spatial resolution and chroma format. This header is repeated throughout the bitstream. Full details of the header layout can be found in the [SMPTE specification](http://ieeexplore.ieee.org/document/7438722/).
