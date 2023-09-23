@@ -2,7 +2,7 @@
 title: "Parse QuickTime"
 date: 2023-09-18
 draft: false
-tags: ["Atom", "QuickTime", "NCLC Tag"]
+tags: ["Atom", "QuickTime", "NCLC Tag", "ProRes"]
 ---
 
 Apple Developer Documentation:
@@ -32,3 +32,11 @@ Inspection tools:
 这需要对 low-level 底层的东西有所了解是吗？底层的东西我又不太会。但这无疑是一个机会和切入点，就像 Asahi Lina 说的她最开始入门 low-level 编程也是为了要 hack 任天堂的一个什么掌机。我需要写一个 parse QuickTime file 的 Rust 的实现，实现出来一定挺酷。
 
 进一步的说，其他的一些元数据，比如时码、卷号，这些在 DIT 工作当中会碰到的需要对其做一些操作的元数据。现有的达芬奇、Pomfort 之流没有提供类似的功能，或者需要你进入到一整个流程当中，才能实现对某个文件修改元数据的需求。我可以做一个 goto 的锋利小工具。目前市面上有 [QTChange](https://www.videotoolshed.com/handcrafted-timecode-tools/qtchange/)，但它卖的挺贵，29.95 欧。上面提到的 [AMCDXVideoPatcher](https://mogurenko.com/) 的 GUI 好像连卷名也能修改。就真的好想知道具体是怎么办到的，可惜它没有公开源码，不过相比 QTChange 这个免费还要啥自行车。
+
+---
+
+Decode ProRes: [RDD 36:2015 - SMPTE Registered Disclosure Doc - Apple ProRes Bitstream Syntax and Decoding Process](https://ieeexplore.ieee.org/document/7438722)。这个标准专门讲解了如何 decode ProRes 的 stream。而且，不能只修改 mov 这个 container 的 colr atom，还要修改 ProRes header 里的 Primaries, Transfer Function and Matrix 信息：
+
+> In addition to the colour information carried within the Color Atom, information regarding the transfer function, colour matrix and primaries are also stored within the frame header information of the ProRes elementary stream, alongside other parameters, such as frame rate, spatial resolution and chroma format. This header is repeated throughout the bitstream. Full details of the header layout can be found in the [SMPTE specification](http://ieeexplore.ieee.org/document/7438722/).
+
+A lot of work to do...

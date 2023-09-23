@@ -2,6 +2,7 @@
 title: "C++ Preprocessor"
 date: 2023-09-21
 draft: false
+tags: ["C++"]
 ---
 
 ## preprocessor
