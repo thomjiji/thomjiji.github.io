@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>C&#43;&#43; Preprocessor | thomjiji</title>
-<meta name="keywords" content="">
+<meta name="keywords" content="C&#43;&#43;">
 <meta name="description" content="preprocessor .cpp file =&gt; preprocessor: Make change to the text of the code file, but not actually to the original code file, rather temporarily in-memory or using temporary files. Uninteresting things: strip out comments, ensures each code file ends in a newline. One important role: process#include directives. =&gt; What comes out of the preprocessor is called translation unit. The translation unit is then compiled by the compiler. &#43;--------&#43; &#43;---------------------&#43; &#43;-------------------&#43; &#43;-----------------&#43; | .">
 <meta name="author" content="">
 <link rel="canonical" href="https://thomjiji.github.io/posts/2023-09-21_c&#43;&#43;_preprocessor/">
@@ -112,7 +112,7 @@
   "name": "C\u002b\u002b Preprocessor",
   "description": "preprocessor .cpp file =\u0026gt; preprocessor: Make change to the text of the code file, but not actually to the original code file, rather temporarily in-memory or using temporary files. Uninteresting things: strip out comments, ensures each code file ends in a newline. One important role: process#include directives. =\u0026gt; What comes out of the preprocessor is called translation unit. The translation unit is then compiled by the compiler. +--------+ +---------------------+ +-------------------+ +-----------------+ | .",
   "keywords": [
-    
+    "C++"
   ],
   "articleBody": "preprocessor .cpp file =\u003e preprocessor: Make change to the text of the code file, but not actually to the original code file, rather temporarily in-memory or using temporary files. Uninteresting things: strip out comments, ensures each code file ends in a newline. One important role: process#include directives. =\u003e What comes out of the preprocessor is called translation unit. The translation unit is then compiled by the compiler. +--------+ +---------------------+ +-------------------+ +-----------------+ | .cpp | =\u003e | Preprocessor | =\u003e | Translation Unit | =\u003e | Compiled output | | file | | | | | | (object code) | +--------+ +---------------------+ +-------------------+ +-----------------+ | /----\u003e |#include files | \u003c\\ | | | / |Macro expansion | \\ | | | / |Remove comments | \\ | | | / |Add line-breaks | \\ | | | / |etc. | \\ | | +-- Original file +--Processes the file +--Output from +--Binary code resulted with directives preprocessor from compilation (processed code) The entire process of preprocessing, compiling and linking is called translation.\npreprocessor directives Preprocessor directives (often just called directives) are instructions that start with a # symbol and end with a newline (NOT a semicolon).\n#include When you #include a file, the preprocessor replaces the #include directive with the contents of the included file. The included contents are then preprocessed recursively.\nMacro defines In C++, a macro is a rule that defines how input text is converted into replacement output text.\nObject-like macros Function-like macros Object-like macros:\n#define identifier #define identifier substitution_text Object-like macros (with substitution text) When the preprocessor encounters this directive, any further occurrence of the identifier is replaced by substitution_text.\nObject-like macros (without substitution text) #define USE_YEN Any further occurrence of the identifier is removed and replaced by nothing.\nIt seems pretty useless, but the common use of it is below.\nConditional compilation The conditional compilation preprocessor directives allow you to specify under what conditions something will or won’t compile.\n#ifdef ifndef endif #include #define PRINT_JOE int main() { #ifdef PRINT_JOE std::cout \u003c\u003c \"Joe\\n\"; // will be compiled since PRINT_JOE is defined #endif #ifdef PRINT_BOB std::cout \u003c\u003c \"Bob\\n\"; // will be excluded since PRINT_BOB is not defined #endif return 0; } The scope of #define Directives are only valid from the point of definition to the end of the file in which they are defined.\n",
   "wordCount" : "389",
@@ -292,6 +292,7 @@ compile.</p>
 
   <footer class="post-footer">
     <ul class="post-tags">
+      <li><a href="https://thomjiji.github.io/tags/c&#43;&#43;/">C&#43;&#43;</a></li>
     </ul>
 <nav class="paginav">
   <a class="next" href="https://thomjiji.github.io/posts/2023-09-18_parse_quicktime/">
@@ -304,7 +305,7 @@ compile.</p>
 
 <div class="share-buttons">
     <a target="_blank" rel="noopener noreferrer" aria-label="share C&#43;&#43; Preprocessor on twitter"
-        href="https://twitter.com/intent/tweet/?text=C%2b%2b%20Preprocessor&amp;url=https%3a%2f%2fthomjiji.github.io%2fposts%2f2023-09-21_c%2b%2b_preprocessor%2f&amp;hashtags=">
+        href="https://twitter.com/intent/tweet/?text=C%2b%2b%20Preprocessor&amp;url=https%3a%2f%2fthomjiji.github.io%2fposts%2f2023-09-21_c%2b%2b_preprocessor%2f&amp;hashtags=C%2b%2b">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-253.927,424.544c135.939,0 210.268,-112.643 210.268,-210.268c0,-3.218 0,-6.437 -0.153,-9.502c14.406,-10.421 26.973,-23.448 36.935,-38.314c-13.18,5.824 -27.433,9.809 -42.452,11.648c15.326,-9.196 26.973,-23.602 32.49,-40.92c-14.252,8.429 -30.038,14.56 -46.896,17.931c-13.487,-14.406 -32.644,-23.295 -53.946,-23.295c-40.767,0 -73.87,33.104 -73.87,73.87c0,5.824 0.613,11.494 1.992,16.858c-61.456,-3.065 -115.862,-32.49 -152.337,-77.241c-6.284,10.881 -9.962,23.601 -9.962,37.088c0,25.594 13.027,48.276 32.95,61.456c-12.107,-0.307 -23.448,-3.678 -33.41,-9.196l0,0.92c0,35.862 25.441,65.594 59.311,72.49c-6.13,1.686 -12.72,2.606 -19.464,2.606c-4.751,0 -9.348,-0.46 -13.946,-1.38c9.349,29.426 36.628,50.728 68.965,51.341c-25.287,19.771 -57.164,31.571 -91.8,31.571c-5.977,0 -11.801,-0.306 -17.625,-1.073c32.337,21.15 71.264,33.41 112.95,33.41Z" />

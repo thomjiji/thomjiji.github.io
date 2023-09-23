@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>Parse QuickTime | thomjiji</title>
-<meta name="keywords" content="Atom, QuickTime, NCLC Tag">
+<meta name="keywords" content="Atom, QuickTime, NCLC Tag, ProRes">
 <meta name="description" content="Apple Developer Documentation:
 Storing and sharing media with QuickTime files Color parameter atom (&lsquo;colr&rsquo;) Other resources:
 Apple ProRes - MultiMedia Wiki QuickTime Tags - ExifTool Implementation:
@@ -124,10 +124,10 @@ hexdump -vC fq MP4Box.js - a file inspection tool mp4analyser 这么些处理 at
   "name": "Parse QuickTime",
   "description": "Apple Developer Documentation:\nStoring and sharing media with QuickTime files Color parameter atom (\u0026lsquo;colr\u0026rsquo;) Other resources:\nApple ProRes - MultiMedia Wiki QuickTime Tags - ExifTool Implementation:\nmetacolor.editor - C# qtff-parameter-editor by BBC - C++ AMCDXVideoPatcherCLI - Close source qtfile_pp AMCDXVideoPatcherCLI 作者的开源 parser（想必 AMCDXVideoPatcherCLI 的具体实现能够从这里看出一些端倪）- C++ Inspection tools:\nhexdump -vC fq MP4Box.js - a file inspection tool mp4analyser 这么些处理 atom (包括 NCLC tag) 的实现，都是用 C++ 写的。其实 Rust 也能做这些 low-level 的事情，对吗？只是这门语言比较新，暂时还没有人用它来做这个事而已。那么我能不能来做呢？用 Rust 写一个 parse mov file 的实现。其实已经有了：dryv——这两天就在更新。",
   "keywords": [
-    "Atom", "QuickTime", "NCLC Tag"
+    "Atom", "QuickTime", "NCLC Tag", "ProRes"
   ],
-  "articleBody": "Apple Developer Documentation:\nStoring and sharing media with QuickTime files Color parameter atom (‘colr’) Other resources:\nApple ProRes - MultiMedia Wiki QuickTime Tags - ExifTool Implementation:\nmetacolor.editor - C# qtff-parameter-editor by BBC - C++ AMCDXVideoPatcherCLI - Close source qtfile_pp AMCDXVideoPatcherCLI 作者的开源 parser（想必 AMCDXVideoPatcherCLI 的具体实现能够从这里看出一些端倪）- C++ Inspection tools:\nhexdump -vC fq MP4Box.js - a file inspection tool mp4analyser 这么些处理 atom (包括 NCLC tag) 的实现，都是用 C++ 写的。其实 Rust 也能做这些 low-level 的事情，对吗？只是这门语言比较新，暂时还没有人用它来做这个事而已。那么我能不能来做呢？用 Rust 写一个 parse mov file 的实现。其实已经有了：dryv——这两天就在更新。\n这需要对 low-level 底层的东西有所了解是吗？底层的东西我又不太会。但这无疑是一个机会和切入点，就像 Asahi Lina 说的她最开始入门 low-level 编程也是为了要 hack 任天堂的一个什么掌机。我需要写一个 parse QuickTime file 的 Rust 的实现，实现出来一定挺酷。\n进一步的说，其他的一些元数据，比如时码、卷号，这些在 DIT 工作当中会碰到的需要对其做一些操作的元数据。现有的达芬奇、Pomfort 之流没有提供类似的功能，或者需要你进入到一整个流程当中，才能实现对某个文件修改元数据的需求。我可以做一个 goto 的锋利小工具。目前市面上有 QTChange，但它卖的挺贵，29.95 欧。上面提到的 AMCDXVideoPatcher 的 GUI 好像连卷名也能修改。就真的好想知道具体是怎么办到的，可惜它没有公开源码，不过相比 QTChange 这个免费还要啥自行车。\n",
-  "wordCount" : "105",
+  "articleBody": "Apple Developer Documentation:\nStoring and sharing media with QuickTime files Color parameter atom (‘colr’) Other resources:\nApple ProRes - MultiMedia Wiki QuickTime Tags - ExifTool Implementation:\nmetacolor.editor - C# qtff-parameter-editor by BBC - C++ AMCDXVideoPatcherCLI - Close source qtfile_pp AMCDXVideoPatcherCLI 作者的开源 parser（想必 AMCDXVideoPatcherCLI 的具体实现能够从这里看出一些端倪）- C++ Inspection tools:\nhexdump -vC fq MP4Box.js - a file inspection tool mp4analyser 这么些处理 atom (包括 NCLC tag) 的实现，都是用 C++ 写的。其实 Rust 也能做这些 low-level 的事情，对吗？只是这门语言比较新，暂时还没有人用它来做这个事而已。那么我能不能来做呢？用 Rust 写一个 parse mov file 的实现。其实已经有了：dryv——这两天就在更新。\n这需要对 low-level 底层的东西有所了解是吗？底层的东西我又不太会。但这无疑是一个机会和切入点，就像 Asahi Lina 说的她最开始入门 low-level 编程也是为了要 hack 任天堂的一个什么掌机。我需要写一个 parse QuickTime file 的 Rust 的实现，实现出来一定挺酷。\n进一步的说，其他的一些元数据，比如时码、卷号，这些在 DIT 工作当中会碰到的需要对其做一些操作的元数据。现有的达芬奇、Pomfort 之流没有提供类似的功能，或者需要你进入到一整个流程当中，才能实现对某个文件修改元数据的需求。我可以做一个 goto 的锋利小工具。目前市面上有 QTChange，但它卖的挺贵，29.95 欧。上面提到的 AMCDXVideoPatcher 的 GUI 好像连卷名也能修改。就真的好想知道具体是怎么办到的，可惜它没有公开源码，不过相比 QTChange 这个免费还要啥自行车。\nDecode ProRes: RDD 36:2015 - SMPTE Registered Disclosure Doc - Apple ProRes Bitstream Syntax and Decoding Process。这个标准专门讲解了如何 decode ProRes 的 stream。而且，不能只修改 mov 这个 container 的 colr atom，还要修改 ProRes header 里的 Primaries, Transfer Function and Matrix 信息：\nIn addition to the colour information carried within the Color Atom, information regarding the transfer function, colour matrix and primaries are also stored within the frame header information of the ProRes elementary stream, alongside other parameters, such as frame rate, spatial resolution and chroma format. This header is repeated throughout the bitstream. Full details of the header layout can be found in the SMPTE specification.\nA lot of work to do…\n",
+  "wordCount" : "212",
   "inLanguage": "en",
   "datePublished": "2023-09-18T00:00:00Z",
   "dateModified": "2023-09-18T00:00:00Z",
@@ -253,6 +253,12 @@ hexdump -vC fq MP4Box.js - a file inspection tool mp4analyser 这么些处理 at
 <p>这么些处理 atom (包括 NCLC tag) 的实现，都是用 C++ 写的。其实 Rust 也能做这些 low-level 的事情，对吗？只是这门语言比较新，暂时还没有人用它来做这个事而已。那么我能不能来做呢？用 Rust 写一个 parse mov file 的实现。其实已经有了：<a href="https://github.com/Stuff7/dryv" target="_blank" >dryv</a>——这两天就在更新。</p>
 <p>这需要对 low-level 底层的东西有所了解是吗？底层的东西我又不太会。但这无疑是一个机会和切入点，就像 Asahi Lina 说的她最开始入门 low-level 编程也是为了要 hack 任天堂的一个什么掌机。我需要写一个 parse QuickTime file 的 Rust 的实现，实现出来一定挺酷。</p>
 <p>进一步的说，其他的一些元数据，比如时码、卷号，这些在 DIT 工作当中会碰到的需要对其做一些操作的元数据。现有的达芬奇、Pomfort 之流没有提供类似的功能，或者需要你进入到一整个流程当中，才能实现对某个文件修改元数据的需求。我可以做一个 goto 的锋利小工具。目前市面上有 <a href="https://www.videotoolshed.com/handcrafted-timecode-tools/qtchange/" target="_blank" >QTChange</a>，但它卖的挺贵，29.95 欧。上面提到的 <a href="https://mogurenko.com/" target="_blank" >AMCDXVideoPatcher</a> 的 GUI 好像连卷名也能修改。就真的好想知道具体是怎么办到的，可惜它没有公开源码，不过相比 QTChange 这个免费还要啥自行车。</p>
+<hr>
+<p>Decode ProRes: <a href="https://ieeexplore.ieee.org/document/7438722" target="_blank" >RDD 36:2015 - SMPTE Registered Disclosure Doc - Apple ProRes Bitstream Syntax and Decoding Process</a>。这个标准专门讲解了如何 decode ProRes 的 stream。而且，不能只修改 mov 这个 container 的 colr atom，还要修改 ProRes header 里的 Primaries, Transfer Function and Matrix 信息：</p>
+<blockquote>
+<p>In addition to the colour information carried within the Color Atom, information regarding the transfer function, colour matrix and primaries are also stored within the frame header information of the ProRes elementary stream, alongside other parameters, such as frame rate, spatial resolution and chroma format. This header is repeated throughout the bitstream. Full details of the header layout can be found in the <a href="http://ieeexplore.ieee.org/document/7438722/" target="_blank" >SMPTE specification</a>.</p>
+</blockquote>
+<p>A lot of work to do&hellip;</p>
 
 
   </div>
@@ -262,6 +268,7 @@ hexdump -vC fq MP4Box.js - a file inspection tool mp4analyser 这么些处理 at
       <li><a href="https://thomjiji.github.io/tags/atom/">Atom</a></li>
       <li><a href="https://thomjiji.github.io/tags/quicktime/">QuickTime</a></li>
       <li><a href="https://thomjiji.github.io/tags/nclc-tag/">NCLC Tag</a></li>
+      <li><a href="https://thomjiji.github.io/tags/prores/">ProRes</a></li>
     </ul>
 <nav class="paginav">
   <a class="prev" href="https://thomjiji.github.io/posts/2023-09-21_c&#43;&#43;_preprocessor/">
@@ -279,7 +286,7 @@ hexdump -vC fq MP4Box.js - a file inspection tool mp4analyser 这么些处理 at
 
 <div class="share-buttons">
     <a target="_blank" rel="noopener noreferrer" aria-label="share Parse QuickTime on twitter"
-        href="https://twitter.com/intent/tweet/?text=Parse%20QuickTime&amp;url=https%3a%2f%2fthomjiji.github.io%2fposts%2f2023-09-18_parse_quicktime%2f&amp;hashtags=Atom%2cQuickTime%2cNCLCTag">
+        href="https://twitter.com/intent/tweet/?text=Parse%20QuickTime&amp;url=https%3a%2f%2fthomjiji.github.io%2fposts%2f2023-09-18_parse_quicktime%2f&amp;hashtags=Atom%2cQuickTime%2cNCLCTag%2cProRes">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-253.927,424.544c135.939,0 210.268,-112.643 210.268,-210.268c0,-3.218 0,-6.437 -0.153,-9.502c14.406,-10.421 26.973,-23.448 36.935,-38.314c-13.18,5.824 -27.433,9.809 -42.452,11.648c15.326,-9.196 26.973,-23.602 32.49,-40.92c-14.252,8.429 -30.038,14.56 -46.896,17.931c-13.487,-14.406 -32.644,-23.295 -53.946,-23.295c-40.767,0 -73.87,33.104 -73.87,73.87c0,5.824 0.613,11.494 1.992,16.858c-61.456,-3.065 -115.862,-32.49 -152.337,-77.241c-6.284,10.881 -9.962,23.601 -9.962,37.088c0,25.594 13.027,48.276 32.95,61.456c-12.107,-0.307 -23.448,-3.678 -33.41,-9.196l0,0.92c0,35.862 25.441,65.594 59.311,72.49c-6.13,1.686 -12.72,2.606 -19.464,2.606c-4.751,0 -9.348,-0.46 -13.946,-1.38c9.349,29.426 36.628,50.728 68.965,51.341c-25.287,19.771 -57.164,31.571 -91.8,31.571c-5.977,0 -11.801,-0.306 -17.625,-1.073c32.337,21.15 71.264,33.41 112.95,33.41Z" />
