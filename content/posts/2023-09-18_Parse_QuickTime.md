@@ -44,3 +44,9 @@ Decode ProRes: [RDD 36:2015 - SMPTE Registered Disclosure Doc - Apple ProRes Bit
 > In addition to the colour information carried within the Color Atom, information regarding the transfer function, colour matrix and primaries are also stored within the frame header information of the ProRes elementary stream, alongside other parameters, such as frame rate, spatial resolution and chroma format. This header is repeated throughout the bitstream. Full details of the header layout can be found in the [SMPTE specification](http://ieeexplore.ieee.org/document/7438722/).
 
 A lot of work to do...
+
+---
+
+这里有两个 colr_atom-ish 的地方，一个是 MOV file format 本身的 colr atom。一个是 ProRes 编码的每一帧的 header（ProRes header），也有一个 colr_atom-ish 的东西：也是由 color primaries、transfer characteristic 和 matrix coefficients 组成。所以，如果想要实现修改 NCLC tag，不仅需要修改 colr atom（MOV file 里的），还要修改每一帧的那三个东西。
+
+It looks like: 只有 Transfer characteristics 是 Unspecified 的状态，gama atom 才会起作用。如果 Transfer characteristics 是有值的，比如 BT.709，那么即使有 gama atom，比如使用 Mediainfo 查看 Gamma 为 2.4，也是不起作用的。ColorSync utility 仍然只会以 Transfer characteristics 为准，而忽略 gama atom。确实像之前听到别人所说，gama atom 像是 Apple 提供的一个后门，一个给影视软件对输出文件做正确 NCLC tagging 的后门。
