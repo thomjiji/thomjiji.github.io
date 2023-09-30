@@ -50,3 +50,9 @@ A lot of work to do...
 这里有两个 colr_atom-ish 的地方，一个是 MOV file format 本身的 colr atom。一个是 ProRes 编码的每一帧的 header（ProRes header），也有一个 colr_atom-ish 的东西：也是由 color primaries、transfer characteristic 和 matrix coefficients 组成。所以，如果想要实现修改 NCLC tag，不仅需要修改 colr atom（MOV file 里的），还要修改每一帧的那三个东西。
 
 It looks like: 只有 Transfer characteristics 是 Unspecified 的状态，gama atom 才会起作用。如果 Transfer characteristics 是有值的，比如 BT.709，那么即使有 gama atom，比如使用 Mediainfo 查看 Gamma 为 2.4，也是不起作用的。ColorSync utility 仍然只会以 Transfer characteristics 为准，而忽略 gama atom。确实像之前听到别人所说，gama atom 像是 Apple 提供的一个后门，一个给影视软件对输出文件做正确 NCLC tagging 的后门。
+
+---
+
+今天（2023-09-30）实现了 overwrite colr atom，search 的算法还是用的之前的，因为之前的算法虽然的 debug build 下非常慢，但只要换到有优化的 release build 之后就非常快了（其实也不算非常快，只能说还算可以接受）。所以就先用着，继续实现后面的功能。
+
+gama atom 这个东西的 FourCC (four character code) 是 `67 61 6d 61`。具体的值紧随其后，比如 `00 02 66 66` — Gamma 2.4，`00 02 33 33` — Gamma 2.2。如果要修改 Gamma 值，直接 overwrite 这 4 个 byte 就行了。QuickTime File Format 一个 [2001 的 PDF 文档](https://developer.apple.com/standards/qtff-2001.pdf)也说明 gama atom 是个 32-bit 的 number，也就是占 4 个 byte。如果需要去掉 gama atom，那么将那 4 个 byte 用 `00 00 00 00` overwrite 掉即可。这样的话，当我们需要把 1-2-1 转换到 1-1-1 的时候，首先修改 atom，然后去掉 gama atom。去掉 gama atom 的方法算是找到了。但是问题是如何添加上 gama atom，这可能才是我们想要的。目前没找到合适的方法让 gama atom 无中生有，添加一个 gama atom 到整个 file stream。难道要 shift 所有其他 bytes？
