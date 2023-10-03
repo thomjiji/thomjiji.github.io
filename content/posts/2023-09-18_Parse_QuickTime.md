@@ -6,8 +6,9 @@ tags: ["Atom", "QuickTime", "NCLC Tag", "ProRes"]
 ---
 
 Apple Developer Documentation:
-- [Storing and sharing media with QuickTime files](https://developer.apple.com/documentation/quicktime-file-format/storing_and_sharing_media_with_quicktime_files)
+- [Storing and sharing media with QuickTime files](https://developer.apple.com/documentation/quicktime-file-format)
 	- [Color parameter atom ('colr')](https://developer.apple.com/documentation/quicktime-file-format/color_parameter_atom)
+- [Uncompressed Y´CbCr Video in QuickTime Files](https://developer.apple.com/library/archive/technotes/tn2162/_index.html#//apple_ref/doc/uid/DTS40013070-CH1-TNTAG9) — Documentation Archive
 
 Other resources:
 - [Apple ProRes - MultiMedia Wiki](https://wiki.multimedia.cx/index.php/Apple_ProRes)
@@ -35,7 +36,7 @@ Inspection tools:
 
 ---
 
-我导出两个片段，一个是 1-1-1，一个 1-2-1。除此之外其他一切都一样。最后使用 hexdump 查看两个文件的字节数 bytes 大小，发现相差 12 bytes，而 gama atom 恰好就是 12 btyes。差的就是这个 gama atom。
+我导出两个片段，一个 1-1-1，一个 1-2-1。除此之外其他一切都一样。最后使用 hexdump 查看两个文件的字节数 bytes 大小，发现相差 12 bytes，而 gama atom 恰好就是 12 btyes。差的就是这个 gama atom。
 
 ---
 
@@ -47,7 +48,7 @@ A lot of work to do...
 
 ---
 
-这里有两个 colr_atom-ish 的地方，一个是 MOV file format 本身的 colr atom。一个是 ProRes 编码的每一帧的 header（ProRes header），也有一个 colr_atom-ish 的东西：也是由 color primaries、transfer characteristic 和 matrix coefficients 组成。所以，如果想要实现修改 NCLC tag，不仅需要修改 colr atom（MOV file 里的），还要修改每一帧的那三个东西。
+这里有两个 colr_atom-ish 的地方，一个是 MOV file format 本身的 colr atom。一个是 ProRes 编码的每一帧的 header（ProRes header），也有一个 colr_atom-ish 的东西：也是由 color primaries、transfer characteristic 和 matrix coefficients 组成。所以，如果想要实现修改 NCLC tag，不仅需要修改 colr atom（MOV file 里的），还要修改每一帧的那三个东西。MOV file format 的 colr atom 三个 tag 占 2 bytes（u16），ProRes frame 的三个 tag 只占 1 byte（u8）。
 
 It looks like: 只有 Transfer characteristics 是 Unspecified 的状态，gama atom 才会起作用。如果 Transfer characteristics 是有值的，比如 BT.709，那么即使有 gama atom，比如使用 Mediainfo 查看 Gamma 为 2.4，也是不起作用的。ColorSync utility 仍然只会以 Transfer characteristics 为准，而忽略 gama atom。确实像之前听到别人所说，gama atom 像是 Apple 提供的一个后门，一个给影视软件对输出文件做正确 NCLC tagging 的后门。
 
@@ -56,3 +57,54 @@ It looks like: 只有 Transfer characteristics 是 Unspecified 的状态，gama 
 今天（2023-09-30）实现了 overwrite colr atom，search 的算法还是用的之前的，因为之前的算法虽然的 debug build 下非常慢，但只要换到有优化的 release build 之后就非常快了（其实也不算非常快，只能说还算可以接受）。所以就先用着，继续实现后面的功能。
 
 gama atom 这个东西的 FourCC (four character code) 是 `67 61 6d 61`。具体的值紧随其后，比如 `00 02 66 66` — Gamma 2.4，`00 02 33 33` — Gamma 2.2。如果要修改 Gamma 值，直接 overwrite 这 4 个 byte 就行了。QuickTime File Format 一个 [2001 的 PDF 文档](https://developer.apple.com/standards/qtff-2001.pdf)也说明 gama atom 是个 32-bit 的 number，也就是占 4 个 byte。如果需要去掉 gama atom，那么将那 4 个 byte 用 `00 00 00 00` overwrite 掉即可。这样的话，当我们需要把 1-2-1 转换到 1-1-1 的时候，首先修改 atom，然后去掉 gama atom。去掉 gama atom 的方法算是找到了。但是问题是如何添加上 gama atom，这可能才是我们想要的。目前没找到合适的方法让 gama atom 无中生有，添加一个 gama atom 到整个 file stream。难道要 shift 所有其他 bytes？
+
+---
+
+做 byte search 的话，会 match 到 两个 gama atom 的 pattern。更奇怪的是，对于 1-1-1 的文件，它没有 gama atom，但也能 match 到 gama atom 的那个 pattern：
+
+```sh
+~/Desktop ❯ grep "gama" 1-1-1_20mins_hex.txt
+05861500  17 c5 96 57 02 3c 67 61  6d 61 ff 71 4d 86 fc e4  |...W.<gama.qM...|
+```
+
+但需要文件的时长够长。比如只有几秒的，就只有一个正常的 gama atom。会不会出现两个 gama atom 的 pattern，取决于这个 prores 文件的时长多长，我测试过 5 分钟没有，10 分钟开始有，20 分钟也有。
+
+| File name          | Numbers of gama  | Notes                               |
+|--------------------|------------------|-------------------------------------|
+| `1-1-1_10mins.mov` | one gama pattern | It's not supposed to have!          |
+| `1-1-1_20mins.mov` | one gama pattern | It's not supposed to have!          |
+| `1-2-1_10mins.mov` | two gama pattern | It should has one, but we found two | 
+| `1-2-1_20mins.mov` | two gama pattern | It should has one, but we found two | 
+
+---
+
+### icpf
+
+frame:
+- frame_size: u(32)
+- frame_identifier: f(32)
+- frame_header:
+	- frame_header_size: u(16)
+	- **reserved**
+	- bitstream_version: u(8)
+	- encoder_identifier: f(32)
+	- horizontal_size: u(16)
+	- vertical_size: u(16)
+	- chroma_format: u(2)
+	- **reserved**
+- picture:
+	- ...
+
+```
+00000020  6d 64 61 74 00 01 51 80  00 09 68 00 69 63 70 66  |mdat..Q...h.icpf|  
+00000030  00 94 00 00 61 70 6c 30  07 80 04 38 80 00 01 02  |....apl0...8....|  
+00000040  01 30 00 03 04 04 05 05  06 07 07 09 04 04 05 06  |.0..............|  
+```
+
+Frame size is 4 bytes before the icpf.  In this case, it's `00 09 68 00`.
+Frame header size is 4 bytes after the icpf. In this case, it's `00 94 00 00`.
+After frame header size, it's "encoder_identifier": in this case, it's `61 70 6c 30`.
+
+`(next) pos = previous (frame_size + pos)`
+
+`current (pos + frame_size) = next (pos)`
