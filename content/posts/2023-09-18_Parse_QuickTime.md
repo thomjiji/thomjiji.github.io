@@ -56,7 +56,7 @@ It looks like: 只有 Transfer characteristics 是 Unspecified 的状态，gama 
 
 今天（2023-09-30）实现了 overwrite colr atom，search 的算法还是用的之前的，因为之前的算法虽然的 debug build 下非常慢，但只要换到有优化的 release build 之后就非常快了（其实也不算非常快，只能说还算可以接受）。所以就先用着，继续实现后面的功能。
 
-gama atom 这个东西的 FourCC (four character code) 是 `67 61 6d 61`。具体的值紧随其后，比如 `00 02 66 66` — Gamma 2.4，`00 02 33 33` — Gamma 2.2。如果要修改 Gamma 值，直接 overwrite 这 4 个 byte 就行了。QuickTime File Format 一个 [2001 的 PDF 文档](https://developer.apple.com/standards/qtff-2001.pdf)也说明 gama atom 是个 32-bit 的 number，也就是占 4 个 byte。如果需要去掉 gama atom，那么将那 4 个 byte 用 `00 00 00 00` overwrite 掉即可。这样的话，当我们需要把 1-2-1 转换到 1-1-1 的时候，首先修改 atom，然后去掉 gama atom。去掉 gama atom 的方法算是找到了。但是问题是如何添加上 gama atom，这可能才是我们想要的。目前没找到合适的方法让 gama atom 无中生有，添加一个 gama atom 到整个 file stream。难道要 shift 所有其他 bytes？
+gama atom 这个东西的 FourCC (four character code) 是 `67 61 6d 61`。具体的值紧随其后，比如 `00 02 66 66` — Gamma 2.4，`00 02 33 33` — Gamma 2.2。如果要修改 Gamma 值，直接 overwrite 这 4 个 byte 就行了。QuickTime File Format 一个 [2001 的 PDF 文档](https://developer.apple.com/standards/qtff-2001.pdf)也说明 gama atom 是个 32-bit 的 [fixed-point number](http://www.sunshine2k.de/articles/coding/fp/sunfp.html#ch3)，也就是占 4 个 byte。如果需要去掉 gama atom，那么将那 4 个 byte 用 `00 00 00 00` overwrite 掉即可。这样的话，当我们需要把 1-2-1 转换到 1-1-1 的时候，首先修改 atom，然后去掉 gama atom。去掉 gama atom 的方法算是找到了。但是问题是如何添加上 gama atom，这可能才是我们想要的。目前没找到合适的方法让 gama atom 无中生有，添加一个 gama atom 到整个 file stream。难道要 shift 所有其他 bytes？
 
 ---
 
@@ -73,8 +73,8 @@ gama atom 这个东西的 FourCC (four character code) 是 `67 61 6d 61`。具�
 |--------------------|------------------|-------------------------------------|
 | `1-1-1_10mins.mov` | one gama pattern | It's not supposed to have!          |
 | `1-1-1_20mins.mov` | one gama pattern | It's not supposed to have!          |
-| `1-2-1_10mins.mov` | two gama pattern | It should has one, but we found two | 
-| `1-2-1_20mins.mov` | two gama pattern | It should has one, but we found two | 
+| `1-2-1_10mins.mov` | two gama pattern | It should has one, but we found two |
+| `1-2-1_20mins.mov` | two gama pattern | It should has one, but we found two |
 
 ---
 
@@ -96,9 +96,9 @@ frame:
 	- ...
 
 ```
-00000020  6d 64 61 74 00 01 51 80  00 09 68 00 69 63 70 66  |mdat..Q...h.icpf|  
-00000030  00 94 00 00 61 70 6c 30  07 80 04 38 80 00 01 02  |....apl0...8....|  
-00000040  01 30 00 03 04 04 05 05  06 07 07 09 04 04 05 06  |.0..............|  
+00000020  6d 64 61 74 00 01 51 80  00 09 68 00 69 63 70 66  |mdat..Q...h.icpf|
+00000030  00 94 00 00 61 70 6c 30  07 80 04 38 80 00 01 02  |....apl0...8....|
+00000040  01 30 00 03 04 04 05 05  06 07 07 09 04 04 05 06  |.0..............|
 ```
 
 Frame size is 4 bytes before the icpf.  In this case, it's `00 09 68 00`.
@@ -108,3 +108,18 @@ After frame header size, it's "encoder_identifier": in this case, it's `61 70 6c
 `(next) pos = previous (frame_size + pos)`
 
 `current (pos + frame_size) = next (pos)`
+
+---
+
+修改 gama atom 值的功能实现了以后，我把一个 1-2-1 的 MOV 视频的 Gamma 值从 2.4 改成了 1.96。然后将其与 1-1-1 的MOV 视频对比，可以发现画面的反差一模一样。
+
+---
+
+Assimilate SCRATCH 的 Rec.709 Gamma 2.4 render 的行为是正常的，在 Output Settings > Data Format 中选择：
+
+- Color: Rec709
+- EOTF: Gamma 2.4
+
+这样渲染出来的 ProRes MOV 文件的 tagging 为 1-2-1 Gamma 2.4。
+
+SCRATCH 中，你也可以选择把文件特别的 tag 成 Gamma 2.2 或者 2.6 都可以，有 2.2 和 2.6 的选项。对于 atom_modifier 来说，你可以用它把你 1-2-1 文件的 Gamma 设置成任何值（讲道理除了 2.4、2.2、2.6 你也不需要其他值了），甚至负数。
