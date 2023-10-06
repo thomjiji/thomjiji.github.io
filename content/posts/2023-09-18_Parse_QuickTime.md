@@ -70,7 +70,7 @@ gama atom 这个东西的 FourCC (four character code) 是 `67 61 6d 61`。具�
 但需要文件的时长够长。比如只有几秒的，就只有一个正常的 gama atom。会不会出现两个 gama atom 的 pattern，取决于这个 prores 文件的时长多长，我测试过 5 分钟没有，10 分钟开始有，20 分钟也有。
 
 | File name          | Numbers of gama  | Notes                               |
-|--------------------|------------------|-------------------------------------|
+| ------------------ | ---------------- | ----------------------------------- |
 | `1-1-1_10mins.mov` | one gama pattern | It's not supposed to have!          |
 | `1-1-1_20mins.mov` | one gama pattern | It's not supposed to have!          |
 | `1-2-1_10mins.mov` | two gama pattern | It should has one, but we found two |
@@ -123,3 +123,9 @@ Assimilate SCRATCH 的 Rec.709 Gamma 2.4 render 的行为是正常的，在 Outp
 这样渲染出来的 ProRes MOV 文件的 tagging 为 1-2-1 Gamma 2.4。
 
 SCRATCH 中，你也可以选择把文件特别的 tag 成 Gamma 2.2 或者 2.6 都可以，有 2.2 和 2.6 的选项。对于 atom_modifier 来说，你可以用它把你 1-2-1 文件的 Gamma 设置成任何值（讲道理除了 2.4、2.2、2.6 你也不需要其他值了），甚至负数。
+
+---
+
+AMCDXVideoPatcher 可以在原文件根本没有 gama atom 的情况下，添加一个 gama atom，然后设定相应的 Gamma 值（它的 GUI 好像有 bug，只能设定 1.8 的 Gamma 值，那个输入框无法输入其他值）。我对比了使用它添加 gama atom 之前和之后，文件的状态。发现：添加完 gama atom 之后，gama atom 之后的 atoms 的 offset 全部 shift 了 12 bytes。Maybe 确实像我前几天所说：
+
+> 难道要 shift 所有其他 bytes？
