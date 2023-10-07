@@ -50,7 +50,7 @@ A lot of work to do...
 
 这里有两个 colr_atom-ish 的地方，一个是 MOV file format 本身的 colr atom。一个是 ProRes 编码的每一帧的 header（ProRes header），也有一个 colr_atom-ish 的东西：也是由 color primaries、transfer characteristic 和 matrix coefficients 组成。所以，如果想要实现修改 NCLC tag，不仅需要修改 colr atom（MOV file 里的），还要修改每一帧的那三个东西。MOV file format 的 colr atom 三个 tag 占 2 bytes（u16），ProRes frame 的三个 tag 只占 1 byte（u8）。
 
-It looks like: 只有 Transfer characteristics 是 Unspecified 的状态，gama atom 才会起作用。如果 Transfer characteristics 是有值的，比如 BT.709，那么即使有 gama atom，比如使用 Mediainfo 查看 Gamma 为 2.4，也是不起作用的。ColorSync utility 仍然只会以 Transfer characteristics 为准，而忽略 gama atom。确实像之前听到别人所说，gama atom 像是 Apple 提供的一个后门，一个给影视软件对输出文件做正确 NCLC tagging 的后门。
+It looks like: 只有 Transfer characteristics 是 Unspecified 的状态，gama atom 才会起作用。如果 Transfer characteristics 是有值的，比如 BT.709，那么即使有 gama atom，比如使用 Mediainfo 查看 Gamma 为 2.4，也是不起作用的。ColorSync utility 仍然只会以 Transfer characteristics 为准，而忽略 gama atom。确实像之前听到别人所说，gama atom 像是 Apple 提供的一个后门，一个给影视软件对输出文件做“正确” NCLC tagging 的后门（实际上是一个 [workaround](https://liftgammagain.com/forum/index.php?threads/colorsync-compatibility-flame-2021.16005/)）。
 
 ---
 
@@ -129,3 +129,81 @@ SCRATCH 中，你也可以选择把文件特别的 tag 成 Gamma 2.2 或者 2.6 
 AMCDXVideoPatcher 可以在原文件根本没有 gama atom 的情况下，添加一个 gama atom，然后设定相应的 Gamma 值（它的 GUI 好像有 bug，只能设定 1.8 的 Gamma 值，那个输入框无法输入其他值）。我对比了使用它添加 gama atom 之前和之后，文件的状态。发现：添加完 gama atom 之后，gama atom 之后的 atoms 的 offset 全部 shift 了 12 bytes。Maybe 确实像我前几天所说：
 
 > 难道要 shift 所有其他 bytes？
+
+---
+
+colr atom, gama atom are located in...here!
+### Sample table atom ("stbl"):
+
+> The sample table atom contains all the time and data indexing of the media samples in a track. Using tables, it is possible to locate samples in time, determine their type, and determine their size, container, and offset into that container.
+
+"stbl" 本身有两个属性：
+
+- Size: 4 bytes
+- Type: "stbl", 4 bytes
+
+剩下就是很多其它的 child atoms 了，相当于都在 "stbl" 之下。其中就有 "stsd":
+
+"stbl":
+- "stsd": Sample description atom
+- "stts": Time-to-sample atom
+- "ctts": Composition offset atom
+- "cslg": Composition shift least greatest atom
+- "stss": Sync sample atom
+- "stps": Partial sync sample atom
+- "stsc": Sample-to-chunk atom
+- "stsz": Sample size atom
+- "stco": Chunk offset atom
+- "sdtp": Sample dependency flags atom
+- "stsh": Shadow sync atom
+
+### Sample description atom ("stsd"):
+
+"stsd" layout:
+
+- Size: 4 bytes
+- Type: "stsd", 4 bytes
+- Version: 1 bytes
+- Flags: 3 bytes
+- Number of entries: 4 bytes
+- **Sample description table**: variable
+
+**Sample description table** 一般来说又由以下几个部分组成:
+
+General structure of sample description:
+
+- ... (continued from above bullets)
+	- Sample description size
+	- Data format
+	- Reserved
+	- Data reference index
+
+但更常见的是除了这四个 field 之外还有其他 specific to the **media type** 的 field。比如有我们关心的 **Video** sample description ("stsd")，它有一些 additional 的 fields。
+
+- ... (continued from above bullets)
+	- Version
+	- Revision level
+	- Vendor
+	- Temporal quality
+	- Spatial quality
+	- Width
+	- Height
+	- Horizontal resolution
+	- Vertical resolution
+	- Data size
+	- Frame count
+	- Compressor name
+	- Depth
+	- Color table ID
+
+除此之外，还有一个叫做 Video sample description extension 的东西，如果它存在 present，那么上面的 bullet points 又会增加几个。这时 colr atom, gama atom 出现了：
+
+- ... (continued from above bullets)
+	- avcC
+	- colr
+	- gama
+	- pasp
+	- clap
+	- ...
+
+你会发现，这些其实是一些 atom（相当于 stbl 的 child atom? I guess.），而上面那些是一些类似 fields 的东西。没错，它们都在 Sample description tale 之下。这就是 colr atom, gama atom 的 location。
