@@ -4,24 +4,33 @@ date: 2023-09-18
 draft: false
 tags: ["Atom", "QuickTime", "NCLC Tag", "ProRes"]
 ---
-Apple Developer Documentation:
+
+### Apple Developer Documentation
+
 - [Storing and sharing media with QuickTime files](https://developer.apple.com/documentation/quicktime-file-format)
 	- [Color parameter atom ('colr')](https://developer.apple.com/documentation/quicktime-file-format/color_parameter_atom)
 - [Uncompressed Y´CbCr Video in QuickTime Files](https://developer.apple.com/library/archive/technotes/tn2162/_index.html#//apple_ref/doc/uid/DTS40013070-CH1-TNTAG9) — Documentation Archive
 
-Other resources:
+### Other resources
+
 - [Apple ProRes - MultiMedia Wiki](https://wiki.multimedia.cx/index.php/Apple_ProRes)
 - [QuickTime Tags - ExifTool](https://exiftool.org/TagNames/QuickTime.html)
 - [MPEG-4 files - Atomic Parsley](https://atomicparsley.sourceforge.net/mpeg-4files.html)
 - [MP4RA - Official Registration Authority for the ISOBMFF family of standards](https://mp4ra.org/)
 
-Implementation:
-- [metacolor.editor](https://github.com/piersdeseilligny/metacolor.editor) - C#
-- [qtff-parameter-editor](https://github.com/bbc/qtff-parameter-editor/tree/master) by BBC - C++
-- [AMCDXVideoPatcherCLI](https://mogurenko.com/) - Close source
-- [qtfile_pp](https://github.com/da8eat/qtfile_pp) AMCDXVideoPatcherCLI 作者的开源 parser（想必 AMCDXVideoPatcherCLI 的具体实现能够从这里看出一些端倪）- C++
+### Implementations/tools
 
-Inspection tools:
+| Implementations                                                                   | Language | Notes                                                                                                     |
+| --------------------------------------------------------------------------------- | -------- | --------------------------------------------------------------------------------------------------------- |
+| [metacolor.editor](https://github.com/piersdeseilligny/metacolor.editor)          | C#       | Simple Implementation, can only change NCLC tags. Provide GUI                                             |
+| [qtff-parameter-editor](https://github.com/bbc/qtff-parameter-editor/tree/master) | C++      | Good implementation, can only change NCLC tags. CLI.                                                      |
+| [AMCDXVideoPatcherCLI](https://mogurenko.com/)                                    | C++      | Close source. Can modify colr atom, add gama atom (but value of gamma can't not be changed — seems a bug) |
+| [qtfile_pp](https://github.com/da8eat/qtfile_pp)                                  | C++      | AMCDXVideoPatcherCLI 作者的开源 parser，想必 AMCDXVideoPatcherCLI 的具体实现能够从这里看出一些端倪        |
+| [dryv](https://github.com/Stuff7/dryv)                                            | Rust     | No docs                                                                                                   |
+| [bento4](https://github.com/axiomatic-systems/Bento4)                             | C++      | 最完善                                                                                                    |
+
+### Inspection tools
+
 - hexdump -vC
 - [fq](https://github.com/wader/fq)
 - [MP4Box.js](https://gpac.github.io/mp4box.js/test/filereader.html) - a file inspection tool
@@ -29,7 +38,7 @@ Inspection tools:
 
 ---
 
-这么些处理 atom (包括 NCLC tag) 的实现，都是用 C++ 写的。其实 Rust 也能做这些 low-level 的事情，对吗？只是这门语言比较新，暂时还没有人用它来做这个事而已。那么我能不能来做呢？用 Rust 写一个 parse MOV file format 的实现。其实已经有了：[dryv](https://github.com/Stuff7/dryv)——这两天就在更新。
+这么些处理 atom (包括 NCLC tag) 的比较成熟的 implementation，大多都是用 C++ 写的。其实 Rust 也能做这些 low-level 的事情，对吗？只是这门语言比较新，暂时还没有人用它来做这个事而已。那么我能不能来做呢？用 Rust 写一个 parse MOV file format 的实现。
 
 这需要对 low-level 底层的东西有足够的了解是吗？底层的东西我又不太会。但这无疑是一个机会和切入点，就像 Asahi Lina 在她的哪一个 stream 说的，她最开始入门 low-level 编程也是为了要 hack 任天堂的一个什么掌机。我需要写一个 parse QuickTime file 的 Rust 的实现，实现出来一定挺酷。
 
@@ -70,10 +79,10 @@ $ grep "gama" 1-1-1_20mins_hex.txt
 
 但需要文件的时长够长。比如只有几秒的，就只有一个正常的 gama atom。会不会出现两个 gama atom 的 pattern，取决于这个 prores 文件的时长多长，我测试过 5 分钟没有，10 分钟开始有，20 分钟也有。
 
-| File name | Numbers of gama | Notes |
-| -- | -- | -- |
-| `1-1-1_10mins.mov` | one gama pattern | It's not supposed to have! |
-| `1-1-1_20mins.mov` | one gama pattern | It's not supposed to have! |
+| File name          | Numbers of gama  | Notes                               |
+| ------------------ | ---------------- | ----------------------------------- |
+| `1-1-1_10mins.mov` | one gama pattern | It's not supposed to have!          |
+| `1-1-1_20mins.mov` | one gama pattern | It's not supposed to have!          |
 | `1-2-1_10mins.mov` | two gama pattern | It should has one, but we found two |
 | `1-2-1_20mins.mov` | two gama pattern | It should has one, but we found two |
 
@@ -247,7 +256,7 @@ mdat: s=    263696 (0x00040610), o=        28 (0x0000001c)
 moov: s=      1544 (0x00000608), o=    263724 (0x0004062c)
 ```
 
-> The most important part of an MPEG-4 file is the mdat atom - **its where the actual raw information for the file is stored**. ^[https://atomicparsley.sourceforge.net/mpeg-4files.html]
+> The most important part of an MPEG-4 file is the mdat atom - **its where the actual raw information for the file is stored**. — [atomic parsley](https://atomicparsley.sourceforge.net/mpeg-4files.html#:~:text=The%20most%20important%20part%20of%20an%20MPEG%2D4%20file%20is%20the%20mdat%20atom%20%2D%20its%20where%20the%20actual%20raw%20information%20for%20the%20file%20is%20stored.)
 
 这是实际上文件的 raw data 的所在地。
 
@@ -261,7 +270,7 @@ Movie atom:
 
 一个 MOV file 的所谓 metadata，全都储存在 movie atom ("moov") 里。
 
-> Sample data for the movie, such as audio or video samples, are referenced in the movie atom, but are not contained in it. ^[https://developer.apple.com/documentation/quicktime-file-format/movie_atoms]
+> Sample data for the movie, such as audio or video samples, are referenced in the movie atom, but are not contained in it. — [QuickTime File Format > Movie Atoms - Apple Developer Documentation](https://developer.apple.com/documentation/quicktime-file-format/movie_atoms)
 
 QuickTime File Format 把 media file 实际的数据储存在一个个 Sample 里，Sample 进而又组成一个个 Chunk，实现更高效的数据 access。Sample 的 data 不实际储存在 movie atom 里，像上面说的，movie atom 只储存 **meta**data。
 
@@ -271,11 +280,11 @@ User data atoms — "udta":
 
 可以把生成这个 mov file 的软件的名字包含进去，
 
-| List entry type | Description |
-|---|---|
-|...|...|
-|`'©swr'`|Name and version number of the software (or hardware) that generated this movie|
-|...|...|
+| List entry type | Description                                                                     |
+| --------------- | ------------------------------------------------------------------------------- |
+| ...             | ...                                                                             |
+| `'©swr'`        | Name and version number of the software (or hardware) that generated this movie |
+| ...             | ...                                                                             |
 
 比如：
 
@@ -298,6 +307,40 @@ User data atoms — "udta":
 
 ---
 
-> Because the first field in any atom contains its size, including any contained atoms, it is easy to skip to the end of an unknown atom type and continue parsing the file. [^1].
+> Because the first field in any atom contains its size, including any contained atoms, it is easy to skip to the end of an unknown atom type and continue parsing the file. — [QuickTime File Format > QuickTime Movie File — Apple Developer Documentation](https://developer.apple.com/documentation/quicktime-file-format/quicktime_movie_files#:~:text=Because%20the%20first%20field%20in%20any%20atom%20contains%20its%20size%2C%20including%20any%20contained%20atoms%2C%20it%20is%20easy%20to%20skip%20to%20the%20end%20of%20an%20unknown%20atom%20type%20and%20continue%20parsing%20the%20file)
 
-[^1]:  [QuickTime Movie File](https://developer.apple.com/documentation/quicktime-file-format/quicktime_movie_files#:~:text=Because%20the%20first%20field%20in%20any%20atom%20contains%20its%20size%2C%20including%20any%20contained%20atoms%2C%20it%20is%20easy%20to%20skip%20to%20the%20end%20of%20an%20unknown%20atom%20type%20and%20continue%20parsing%20the%20file)
+---
+
+[alfg/mp4-rust: MP4 reader + writer library in Rust!](https://github.com/alfg/mp4-rust)
+
+这个项目值得贡献一下。目前的状态还是比较初级，有很多 atom/box 都没支持。
+
+说到底 [fq](https://github.dev/wader/fq) 这个用 Go 写的 parser 才是牛啊。[mp4-rust](https://github.com/alfg/mp4-rust) 不支持的 atom/box 我都是通过 fq parsing 出来发现的。目前我所知的 atom/box，fq 都是支持的。那么可以给 mp4-rust 贡献一下的点在于，给它添加我最需要的 colr atom 和 gama atom 的支持。这也是我最开始关注这个项目的原因。但现在发现还需要给它添加 parse ProRes 编码家族的支持，就像 Ian Jun 给它[添加 avc1 编码支持](https://github.com/alfg/mp4-rust/commit/0df82aec5f4ee636d1fbb71bb043430ed2d83005)一样（添加一个 avc1 box）。avc1 是 H.264 的 Codec ID，它之下有一个 avcc configuration atom/box。
+
+说到 parser ISOBMFF，项目其实蛮多的。MediaInfo 也是其中之一，也是 canonical 的 implementation，是类似工具在实现效果上的参考，fq 也一样（这样来看 fq 这个工具写挺好的）。
+
+---
+
+这个 [pull request](https://github.com/axiomatic-systems/Bento4/pull/694)（目前还未被合并）给 [Bento4](https://github.com/axiomatic-systems/Bento4) 添加了 colr, gama, pasp, fiel atom 的支持。然后利用 Bento4 现有的工具，特别是这个 [mp4edit](https://github.com/axiomatic-systems/Bento4/tree/master/Source/C%2B%2B/Apps/Mp4Edit) 已经可以完全实现修改 colr atom 和添加 gama atom 了。到此为止，我最初的需求被这个工具解决了。
+
+插入 gama atom：
+
+```sh
+./mp4edit \
+	--insert \
+	"moov/trak/mdia/minf/stbl/stsd/apcn":gama_atom_2.4.bin \
+	input.mov \
+	output.mov
+```
+
+修改 colr atom：
+
+```sh
+echo -n -e '\x00\x00\x00\x12colrnclc\x00\x09\x00\x10\x00\x09\x0a' > colr.bin
+
+./mp4edit \
+	--replace \
+	"moov/trak/mdia/minf/stbl/stsd/apcn/colr":colr.bin \
+	input.mov \
+	output.mov
+```
