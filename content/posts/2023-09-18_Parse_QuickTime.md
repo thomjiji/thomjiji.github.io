@@ -12,6 +12,8 @@ Apple Developer Documentation:
 Other resources:
 - [Apple ProRes - MultiMedia Wiki](https://wiki.multimedia.cx/index.php/Apple_ProRes)
 - [QuickTime Tags - ExifTool](https://exiftool.org/TagNames/QuickTime.html)
+- [MPEG-4 files - Atomic Parsley](https://atomicparsley.sourceforge.net/mpeg-4files.html)
+- [MP4RA - Official Registration Authority for the ISOBMFF family of standards](https://mp4ra.org/)
 
 Implementation:
 - [metacolor.editor](https://github.com/piersdeseilligny/metacolor.editor) - C#
@@ -232,3 +234,70 @@ General structure of sample description:
 How to create/insert a new atom? This article explains how to create and insert a new atom using the CoreMedia library in Swift:
 
 [Create new atoms and insert them in a QT atom container.](https://developer.apple.com/documentation/quicktime-file-format/creating_new_atoms) — Apple Developer Documentation
+
+---
+
+"mdat":
+
+我们经常会发现一到 mdat 这个 atom，parser 就会跳过这么多 byte。
+
+```sh
+mdat: s=    263696 (0x00040610), o=        28 (0x0000001c)
+  ...skipped 263688 bytes
+moov: s=      1544 (0x00000608), o=    263724 (0x0004062c)
+```
+
+> The most important part of an MPEG-4 file is the mdat atom - **its where the actual raw information for the file is stored**. ^[https://atomicparsley.sourceforge.net/mpeg-4files.html]
+
+这是实际上文件的 raw data 的所在地。
+
+ProRes 每一帧 的 frame size 都可以在 "stsz" 找到。
+
+---
+
+Movie atom:
+
+> Only metadata is stored in a movie atom.
+
+一个 MOV file 的所谓 metadata，全都储存在 movie atom ("moov") 里。
+
+> Sample data for the movie, such as audio or video samples, are referenced in the movie atom, but are not contained in it. ^[https://developer.apple.com/documentation/quicktime-file-format/movie_atoms]
+
+QuickTime File Format 把 media file 实际的数据储存在一个个 Sample 里，Sample 进而又组成一个个 Chunk，实现更高效的数据 access。Sample 的 data 不实际储存在 movie atom 里，像上面说的，movie atom 只储存 **meta**data。
+
+---
+
+User data atoms — "udta":
+
+可以把生成这个 mov file 的软件的名字包含进去，
+
+| List entry type | Description |
+|---|---|
+|...|...|
+|`'©swr'`|Name and version number of the software (or hardware) that generated this movie|
+|...|...|
+
+比如：
+
+```sh
+          |                                               |                |        [3]{}: box
+0x11a37b70|                                       00 00 00|             ...|          size: 60
+0x11a37b80|3c                                             |<               |
+0x11a37b80|   75 64 74 61                                 | udta           |          type: "udta" (User-data)
+          |                                               |                |          boxes[0:1]:
+          |                                               |                |            [0]{}: box
+0x11a37b80|               00 00 00 34                     |     ...4       |              size: 52
+0x11a37b80|                           a9 73 77 72         |         .swr   |              type: "©swr" (Encoder)
+0x11a37b80|                                       00 28   |             .( |              length: 40
+0x11a37b80|                                             55|               U|              language: "und"
+0x11a37b90|c4                                             |.               |
+0x11a37b90|   42 6c 61 63 6b 6d 61 67 69 63 20 44 65 73 69| Blackmagic Desi|              value: "Blackmagic Design DaVinci Resolve Studio"
+0x11a37ba0|67 6e 20 44 61 56 69 6e 63 69 20 52 65 73 6f 6c|gn DaVinci Resol|
+0x11a37bb0|76 65 20 53 74 75 64 69 6f                     |ve Studio       |
+```
+
+---
+
+> Because the first field in any atom contains its size, including any contained atoms, it is easy to skip to the end of an unknown atom type and continue parsing the file. [^1].
+
+[^1]:  [QuickTime Movie File](https://developer.apple.com/documentation/quicktime-file-format/quicktime_movie_files#:~:text=Because%20the%20first%20field%20in%20any%20atom%20contains%20its%20size%2C%20including%20any%20contained%20atoms%2C%20it%20is%20easy%20to%20skip%20to%20the%20end%20of%20an%20unknown%20atom%20type%20and%20continue%20parsing%20the%20file)
