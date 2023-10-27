@@ -24,9 +24,8 @@
       <guid>https://thomjiji.github.io/posts/2023-09-18_parse_quicktime/</guid>
       <description>Apple Developer Documentation:
 Storing and sharing media with QuickTime files Color parameter atom (&amp;lsquo;colr&amp;rsquo;) Uncompressed Y´CbCr Video in QuickTime Files — Documentation Archive Other resources:
-Apple ProRes - MultiMedia Wiki QuickTime Tags - ExifTool Implementation:
-metacolor.editor - C# qtff-parameter-editor by BBC - C++ AMCDXVideoPatcherCLI - Close source qtfile_pp AMCDXVideoPatcherCLI 作者的开源 parser（想必 AMCDXVideoPatcherCLI 的具体实现能够从这里看出一些端倪）- C++ Inspection tools:
-hexdump -vC fq MP4Box.js - a file inspection tool mp4analyser 这么些处理 atom (包括 NCLC tag) 的实现，都是用 C++ 写的。其实 Rust 也能做这些 low-level 的事情，对吗？只是这门语言比较新，暂时还没有人用它来做这个事而已。那么我能不能来做呢？用 Rust 写一个 parse MOV file format 的实现。其实已经有了：dryv——这两天就在更新。</description>
+Apple ProRes - MultiMedia Wiki QuickTime Tags - ExifTool MPEG-4 files - Atomic Parsley MP4RA - Official Registration Authority for the ISOBMFF family of standards Implementation:
+metacolor.editor - C# qtff-parameter-editor by BBC - C++ AMCDXVideoPatcherCLI - Close source qtfile_pp AMCDXVideoPatcherCLI 作者的开源 parser（想必 AMCDXVideoPatcherCLI 的具体实现能够从这里看出一些端倪）- C++ Inspection tools:</description>
     </item>
     
     <item>

@@ -9,9 +9,8 @@
 <meta name="keywords" content="Atom, QuickTime, NCLC Tag, ProRes">
 <meta name="description" content="Apple Developer Documentation:
 Storing and sharing media with QuickTime files Color parameter atom (&lsquo;colr&rsquo;) Uncompressed Y´CbCr Video in QuickTime Files — Documentation Archive Other resources:
-Apple ProRes - MultiMedia Wiki QuickTime Tags - ExifTool Implementation:
-metacolor.editor - C# qtff-parameter-editor by BBC - C&#43;&#43; AMCDXVideoPatcherCLI - Close source qtfile_pp AMCDXVideoPatcherCLI 作者的开源 parser（想必 AMCDXVideoPatcherCLI 的具体实现能够从这里看出一些端倪）- C&#43;&#43; Inspection tools:
-hexdump -vC fq MP4Box.js - a file inspection tool mp4analyser 这么些处理 atom (包括 NCLC tag) 的实现，都是用 C&#43;&#43; 写的。其实 Rust 也能做这些 low-level 的事情，对吗？只是这门语言比较新，暂时还没有人用它来做这个事而已。那么我能不能来做呢？用 Rust 写一个 parse MOV file format 的实现。其实已经有了：dryv——这两天就在更新。">
+Apple ProRes - MultiMedia Wiki QuickTime Tags - ExifTool MPEG-4 files - Atomic Parsley MP4RA - Official Registration Authority for the ISOBMFF family of standards Implementation:
+metacolor.editor - C# qtff-parameter-editor by BBC - C&#43;&#43; AMCDXVideoPatcherCLI - Close source qtfile_pp AMCDXVideoPatcherCLI 作者的开源 parser（想必 AMCDXVideoPatcherCLI 的具体实现能够从这里看出一些端倪）- C&#43;&#43; Inspection tools:">
 <meta name="author" content="">
 <link rel="canonical" href="https://thomjiji.github.io/posts/2023-09-18_parse_quicktime/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.0de810a9b2ddbae2489e84928ee1c55fa77451f7bd4d04b8390359ba7a5fd025.css" integrity="sha256-DegQqbLduuJInoSSjuHFX6d0Ufe9TQS4OQNZunpf0CU=" rel="preload stylesheet" as="style">
@@ -79,9 +78,8 @@ hexdump -vC fq MP4Box.js - a file inspection tool mp4analyser 这么些处理 at
 <meta property="og:title" content="Parse QuickTime" />
 <meta property="og:description" content="Apple Developer Documentation:
 Storing and sharing media with QuickTime files Color parameter atom (&lsquo;colr&rsquo;) Uncompressed Y´CbCr Video in QuickTime Files — Documentation Archive Other resources:
-Apple ProRes - MultiMedia Wiki QuickTime Tags - ExifTool Implementation:
-metacolor.editor - C# qtff-parameter-editor by BBC - C&#43;&#43; AMCDXVideoPatcherCLI - Close source qtfile_pp AMCDXVideoPatcherCLI 作者的开源 parser（想必 AMCDXVideoPatcherCLI 的具体实现能够从这里看出一些端倪）- C&#43;&#43; Inspection tools:
-hexdump -vC fq MP4Box.js - a file inspection tool mp4analyser 这么些处理 atom (包括 NCLC tag) 的实现，都是用 C&#43;&#43; 写的。其实 Rust 也能做这些 low-level 的事情，对吗？只是这门语言比较新，暂时还没有人用它来做这个事而已。那么我能不能来做呢？用 Rust 写一个 parse MOV file format 的实现。其实已经有了：dryv——这两天就在更新。" />
+Apple ProRes - MultiMedia Wiki QuickTime Tags - ExifTool MPEG-4 files - Atomic Parsley MP4RA - Official Registration Authority for the ISOBMFF family of standards Implementation:
+metacolor.editor - C# qtff-parameter-editor by BBC - C&#43;&#43; AMCDXVideoPatcherCLI - Close source qtfile_pp AMCDXVideoPatcherCLI 作者的开源 parser（想必 AMCDXVideoPatcherCLI 的具体实现能够从这里看出一些端倪）- C&#43;&#43; Inspection tools:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://thomjiji.github.io/posts/2023-09-18_parse_quicktime/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-09-18T00:00:00+00:00" />
@@ -91,9 +89,8 @@ hexdump -vC fq MP4Box.js - a file inspection tool mp4analyser 这么些处理 at
 <meta name="twitter:title" content="Parse QuickTime"/>
 <meta name="twitter:description" content="Apple Developer Documentation:
 Storing and sharing media with QuickTime files Color parameter atom (&lsquo;colr&rsquo;) Uncompressed Y´CbCr Video in QuickTime Files — Documentation Archive Other resources:
-Apple ProRes - MultiMedia Wiki QuickTime Tags - ExifTool Implementation:
-metacolor.editor - C# qtff-parameter-editor by BBC - C&#43;&#43; AMCDXVideoPatcherCLI - Close source qtfile_pp AMCDXVideoPatcherCLI 作者的开源 parser（想必 AMCDXVideoPatcherCLI 的具体实现能够从这里看出一些端倪）- C&#43;&#43; Inspection tools:
-hexdump -vC fq MP4Box.js - a file inspection tool mp4analyser 这么些处理 atom (包括 NCLC tag) 的实现，都是用 C&#43;&#43; 写的。其实 Rust 也能做这些 low-level 的事情，对吗？只是这门语言比较新，暂时还没有人用它来做这个事而已。那么我能不能来做呢？用 Rust 写一个 parse MOV file format 的实现。其实已经有了：dryv——这两天就在更新。"/>
+Apple ProRes - MultiMedia Wiki QuickTime Tags - ExifTool MPEG-4 files - Atomic Parsley MP4RA - Official Registration Authority for the ISOBMFF family of standards Implementation:
+metacolor.editor - C# qtff-parameter-editor by BBC - C&#43;&#43; AMCDXVideoPatcherCLI - Close source qtfile_pp AMCDXVideoPatcherCLI 作者的开源 parser（想必 AMCDXVideoPatcherCLI 的具体实现能够从这里看出一些端倪）- C&#43;&#43; Inspection tools:"/>
 
 
 <script type="application/ld+json">
@@ -122,12 +119,12 @@ hexdump -vC fq MP4Box.js - a file inspection tool mp4analyser 这么些处理 at
   "@type": "BlogPosting",
   "headline": "Parse QuickTime",
   "name": "Parse QuickTime",
-  "description": "Apple Developer Documentation:\nStoring and sharing media with QuickTime files Color parameter atom (\u0026lsquo;colr\u0026rsquo;) Uncompressed Y´CbCr Video in QuickTime Files — Documentation Archive Other resources:\nApple ProRes - MultiMedia Wiki QuickTime Tags - ExifTool Implementation:\nmetacolor.editor - C# qtff-parameter-editor by BBC - C++ AMCDXVideoPatcherCLI - Close source qtfile_pp AMCDXVideoPatcherCLI 作者的开源 parser（想必 AMCDXVideoPatcherCLI 的具体实现能够从这里看出一些端倪）- C++ Inspection tools:\nhexdump -vC fq MP4Box.js - a file inspection tool mp4analyser 这么些处理 atom (包括 NCLC tag) 的实现，都是用 C++ 写的。其实 Rust 也能做这些 low-level 的事情，对吗？只是这门语言比较新，暂时还没有人用它来做这个事而已。那么我能不能来做呢？用 Rust 写一个 parse MOV file format 的实现。其实已经有了：dryv——这两天就在更新。",
+  "description": "Apple Developer Documentation:\nStoring and sharing media with QuickTime files Color parameter atom (\u0026lsquo;colr\u0026rsquo;) Uncompressed Y´CbCr Video in QuickTime Files — Documentation Archive Other resources:\nApple ProRes - MultiMedia Wiki QuickTime Tags - ExifTool MPEG-4 files - Atomic Parsley MP4RA - Official Registration Authority for the ISOBMFF family of standards Implementation:\nmetacolor.editor - C# qtff-parameter-editor by BBC - C++ AMCDXVideoPatcherCLI - Close source qtfile_pp AMCDXVideoPatcherCLI 作者的开源 parser（想必 AMCDXVideoPatcherCLI 的具体实现能够从这里看出一些端倪）- C++ Inspection tools:",
   "keywords": [
     "Atom", "QuickTime", "NCLC Tag", "ProRes"
   ],
-  "articleBody": "Apple Developer Documentation:\nStoring and sharing media with QuickTime files Color parameter atom (‘colr’) Uncompressed Y´CbCr Video in QuickTime Files — Documentation Archive Other resources:\nApple ProRes - MultiMedia Wiki QuickTime Tags - ExifTool Implementation:\nmetacolor.editor - C# qtff-parameter-editor by BBC - C++ AMCDXVideoPatcherCLI - Close source qtfile_pp AMCDXVideoPatcherCLI 作者的开源 parser（想必 AMCDXVideoPatcherCLI 的具体实现能够从这里看出一些端倪）- C++ Inspection tools:\nhexdump -vC fq MP4Box.js - a file inspection tool mp4analyser 这么些处理 atom (包括 NCLC tag) 的实现，都是用 C++ 写的。其实 Rust 也能做这些 low-level 的事情，对吗？只是这门语言比较新，暂时还没有人用它来做这个事而已。那么我能不能来做呢？用 Rust 写一个 parse MOV file format 的实现。其实已经有了：dryv——这两天就在更新。\n这需要对 low-level 底层的东西有足够的了解是吗？底层的东西我又不太会。但这无疑是一个机会和切入点，就像 Asahi Lina 在她的哪一个 stream 说的，她最开始入门 low-level 编程也是为了要 hack 任天堂的一个什么掌机。我需要写一个 parse QuickTime file 的 Rust 的实现，实现出来一定挺酷。\n进一步的说，其他的一些元数据，比如时码、卷号，这些在 DIT 工作当中会碰到的需要对其做一些操作的元数据。现有的达芬奇、Pomfort 之流没有提供类似的功能，或者需要你进入到一整个流程当中，才能实现对某个文件修改元数据的需求。我可以做一个 goto 的锋利小工具。目前市面上有 QTchange，但它卖的挺贵，29.95 欧。上面提到的 AMCDXVideoPatcher 的 GUI 好像连卷名也能修改。就真的好想知道具体是怎么办到的，可惜它没有公开源码，不过相比 QTchange 这个免费还要啥自行车。\n我导出两个片段，一个 1-1-1，一个 1-2-1。除此之外其他一切都一样。最后使用 hexdump 查看两个文件的字节数 bytes 大小，发现相差 12 bytes，而 gama atom 恰好就是 12 bytes。差的就是这个 gama atom。\nDecode ProRes: RDD 36:2015 - SMPTE Registered Disclosure Doc - Apple ProRes Bitstream Syntax and Decoding Process。这个标准专门讲解了如何 decode ProRes 的 file stream。而且，不能只修改 mov 这个 container 的 colr atom，还要修改 ProRes header 里的 Primaries, Transfer Function and Matrix 信息：\nIn addition to the colour information carried within the Color Atom, information regarding the transfer function, colour matrix and primaries are also stored within the frame header information of the ProRes elementary stream, alongside other parameters, such as frame rate, spatial resolution and chroma format. This header is repeated throughout the bitstream. Full details of the header layout can be found in the SMPTE specification.\nA lot of work to do…\n这里有两个 colr_atom-ish 的地方，一个是 MOV file format 本身的 colr atom，一个是 ProRes 编码的每一帧的 header（ProRes header）：也是由 color primaries、transfer characteristic 和 matrix coefficients 组成。所以，如果想要实现修改 NCLC tag，不仅需要修改 colr atom（MOV file format 里的），还要修改每一帧的那三个东西。MOV file format 的 colr atom 三个 tag 各占 2 bytes（u16），ProRes frame 的三个 tag 每个只占 1 byte（u8）。\nIt looks like: 只有 Transfer characteristics 是 Unspecified 的状态，gama atom 才会起作用。如果 Transfer characteristics 是有值的，比如 BT.709，那么即使有 gama atom，比如使用 Mediainfo 查看 Gamma 为 2.4，也是不起作用的。ColorSync utility 仍然只会以 Transfer characteristics 为准，而忽略 gama atom。确实像之前听到别人所说，gama atom 像是 Apple 提供的一个后门，一个 hacking ColorSync 的迂回办法。\n今天（2023-09-30）实现了 overwriting colr atom，search 的算法还是用的之前的，因为之前的算法虽然的 debug build 下非常慢，但只要换到有优化的 release build 之后就非常快了（其实也不算非常快，只能说还算可以接受）。所以就先用着，继续实现后面的功能。\ngama atom 这个东西的 FourCC (four character code) 是 67 61 6d 61。具体的值紧随其后，比如 00 02 66 66 — Gamma 2.4，00 02 33 33 — Gamma 2.2。如果要修改 Gamma 值，直接 overwrite 这 4 个 byte 就行了。QuickTime File Format 一个 2001 的 PDF 文档也说明 gama atom 是个 32-bit 的 fixed-point number，也就是占 4 个 byte。如果需要去掉 gama atom，那么将那 4 个 byte 用 00 00 00 00 overwrite 掉即可。这样的话，当我们需要把 1-2-1 转换到 1-1-1 的时候，首先修改 atom，然后去掉 gama atom。去掉 gama atom 的方法算是找到了。但是问题是如何添加上 gama atom，这可能才是我们想要的。目前没找到合适的方法让 gama atom 无中生有，添加一个 gama atom 到整个 file stream。难道要 shift 所有其他 bytes？\n做 byte search 的话，会 match 到 两个 gama atom 的 pattern。更奇怪的是，对于 1-1-1 的文件，它没有 gama atom，但也能 match 到 gama atom 的那个 pattern：\n$ grep \"gama\" 1-1-1_20mins_hex.txt 05861500 17 c5 96 57 02 3c 67 61 6d 61 ff 71 4d 86 fc e4 |...W.",
-  "wordCount" : "1126",
+  "articleBody": "Apple Developer Documentation:\nStoring and sharing media with QuickTime files Color parameter atom (‘colr’) Uncompressed Y´CbCr Video in QuickTime Files — Documentation Archive Other resources:\nApple ProRes - MultiMedia Wiki QuickTime Tags - ExifTool MPEG-4 files - Atomic Parsley MP4RA - Official Registration Authority for the ISOBMFF family of standards Implementation:\nmetacolor.editor - C# qtff-parameter-editor by BBC - C++ AMCDXVideoPatcherCLI - Close source qtfile_pp AMCDXVideoPatcherCLI 作者的开源 parser（想必 AMCDXVideoPatcherCLI 的具体实现能够从这里看出一些端倪）- C++ Inspection tools:\nhexdump -vC fq MP4Box.js - a file inspection tool mp4analyser 这么些处理 atom (包括 NCLC tag) 的实现，都是用 C++ 写的。其实 Rust 也能做这些 low-level 的事情，对吗？只是这门语言比较新，暂时还没有人用它来做这个事而已。那么我能不能来做呢？用 Rust 写一个 parse MOV file format 的实现。其实已经有了：dryv——这两天就在更新。\n这需要对 low-level 底层的东西有足够的了解是吗？底层的东西我又不太会。但这无疑是一个机会和切入点，就像 Asahi Lina 在她的哪一个 stream 说的，她最开始入门 low-level 编程也是为了要 hack 任天堂的一个什么掌机。我需要写一个 parse QuickTime file 的 Rust 的实现，实现出来一定挺酷。\n进一步的说，其他的一些元数据，比如时码、卷号，这些在 DIT 工作当中会碰到的需要对其做一些操作的元数据。现有的达芬奇、Pomfort 之流没有提供类似的功能，或者需要你进入到一整个流程当中，才能实现对某个文件修改元数据的需求。我可以做一个 goto 的锋利小工具。目前市面上有 QTchange，但它卖的挺贵，29.95 欧。上面提到的 AMCDXVideoPatcher 的 GUI 好像连卷名也能修改。就真的好想知道具体是怎么办到的，可惜它没有公开源码，不过相比 QTchange 这个免费还要啥自行车。\n我导出两个片段，一个 1-1-1，一个 1-2-1。除此之外其他一切都一样。最后使用 hexdump 查看两个文件的字节数 bytes 大小，发现相差 12 bytes，而 gama atom 恰好就是 12 bytes。差的就是这个 gama atom。\nDecode ProRes: RDD 36:2015 - SMPTE Registered Disclosure Doc - Apple ProRes Bitstream Syntax and Decoding Process。这个标准专门讲解了如何 decode ProRes 的 file stream。而且，不能只修改 mov 这个 container 的 colr atom，还要修改 ProRes header 里的 Primaries, Transfer Function and Matrix 信息：\nIn addition to the colour information carried within the Color Atom, information regarding the transfer function, colour matrix and primaries are also stored within the frame header information of the ProRes elementary stream, alongside other parameters, such as frame rate, spatial resolution and chroma format. This header is repeated throughout the bitstream. Full details of the header layout can be found in the SMPTE specification.\nA lot of work to do…\n这里有两个 colr_atom-ish 的地方，一个是 MOV file format 本身的 colr atom，一个是 ProRes 编码的每一帧的 header（ProRes header）：也是由 color primaries、transfer characteristic 和 matrix coefficients 组成。所以，如果想要实现修改 NCLC tag，不仅需要修改 colr atom（MOV file format 里的），还要修改每一帧的那三个东西。MOV file format 的 colr atom 三个 tag 各占 2 bytes（u16），ProRes frame 的三个 tag 每个只占 1 byte（u8）。\nIt looks like: 只有 Transfer characteristics 是 Unspecified 的状态，gama atom 才会起作用。如果 Transfer characteristics 是有值的，比如 BT.709，那么即使有 gama atom，比如使用 Mediainfo 查看 Gamma 为 2.4，也是不起作用的。ColorSync utility 仍然只会以 Transfer characteristics 为准，而忽略 gama atom。确实像之前听到别人所说，gama atom 像是 Apple 提供的一个后门，一个 hacking ColorSync 的迂回办法。\n今天（2023-09-30）实现了 overwriting colr atom，search 的算法还是用的之前的，因为之前的算法虽然的 debug build 下非常慢，但只要换到有优化的 release build 之后就非常快了（其实也不算非常快，只能说还算可以接受）。所以就先用着，继续实现后面的功能。\ngama atom 这个东西的 FourCC (four character code) 是 67 61 6d 61。具体的值紧随其后，比如 00 02 66 66 — Gamma 2.4，00 02 33 33 — Gamma 2.2。如果要修改 Gamma 值，直接 overwrite 这 4 个 byte 就行了。QuickTime File Format 一个 2001 的 PDF 文档也说明 gama atom 是个 32-bit 的 fixed-point number，也就是占 4 个 byte。如果需要去掉 gama atom，那么将那 4 个 byte 用 00 00 00 00 overwrite 掉即可。这样的话，当我们需要把 1-2-1 转换到 1-1-1 的时候，首先修改 atom，然后去掉 gama atom。去掉 gama atom 的方法算是找到了。但是问题是如何添加上 gama atom，这可能才是我们想要的。目前没找到合适的方法让 gama atom 无中生有，添加一个 gama atom 到整个 file stream。难道要 shift 所有其他 bytes？\n做 byte search 的话，会 match 到 两个 gama atom 的 pattern。更奇怪的是，对于 1-1-1 的文件，它没有 gama atom，但也能 match 到 gama atom 的那个 pattern：\n$ grep \"gama\" 1-1-1_20mins_hex.txt 05861500 17 c5 96 57 02 3c 67 61 6d 61 ff 71 4d 86 fc e4 |...W.",
+  "wordCount" : "1461",
   "inLanguage": "en",
   "datePublished": "2023-09-18T00:00:00Z",
   "dateModified": "2023-09-18T00:00:00Z",
@@ -235,6 +232,8 @@ hexdump -vC fq MP4Box.js - a file inspection tool mp4analyser 这么些处理 at
 <ul>
 <li><a href="https://wiki.multimedia.cx/index.php/Apple_ProRes" target="_blank" >Apple ProRes - MultiMedia Wiki</a></li>
 <li><a href="https://exiftool.org/TagNames/QuickTime.html" target="_blank" >QuickTime Tags - ExifTool</a></li>
+<li><a href="https://atomicparsley.sourceforge.net/mpeg-4files.html" target="_blank" >MPEG-4 files - Atomic Parsley</a></li>
+<li><a href="https://mp4ra.org/" target="_blank" >MP4RA - Official Registration Authority for the ISOBMFF family of standards</a></li>
 </ul>
 <p>Implementation:</p>
 <ul>
@@ -462,6 +461,79 @@ After frame header size, it&rsquo;s &ldquo;encoder_identifier&rdquo;: in this ca
 <hr>
 <p>How to create/insert a new atom? This article explains how to create and insert a new atom using the CoreMedia library in Swift:</p>
 <p><a href="https://developer.apple.com/documentation/quicktime-file-format/creating_new_atoms" target="_blank" >Create new atoms and insert them in a QT atom container.</a> — Apple Developer Documentation</p>
+<hr>
+<p>&ldquo;mdat&rdquo;:</p>
+<p>我们经常会发现一到 mdat 这个 atom，parser 就会跳过这么多 byte。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mdat: s<span style="color:#f92672">=</span>    <span style="color:#ae81ff">263696</span> <span style="color:#f92672">(</span>0x00040610<span style="color:#f92672">)</span>, o<span style="color:#f92672">=</span>        <span style="color:#ae81ff">28</span> <span style="color:#f92672">(</span>0x0000001c<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  ...skipped <span style="color:#ae81ff">263688</span> bytes
+</span></span><span style="display:flex;"><span>moov: s<span style="color:#f92672">=</span>      <span style="color:#ae81ff">1544</span> <span style="color:#f92672">(</span>0x00000608<span style="color:#f92672">)</span>, o<span style="color:#f92672">=</span>    <span style="color:#ae81ff">263724</span> <span style="color:#f92672">(</span>0x0004062c<span style="color:#f92672">)</span>
+</span></span></code></pre></div><blockquote>
+<p>The most important part of an MPEG-4 file is the mdat atom - <strong>its where the actual raw information for the file is stored</strong>. ^[https://atomicparsley.sourceforge.net/mpeg-4files.html]</p>
+</blockquote>
+<p>这是实际上文件的 raw data 的所在地。</p>
+<p>ProRes 每一帧 的 frame size 都可以在 &ldquo;stsz&rdquo; 找到。</p>
+<hr>
+<p>Movie atom:</p>
+<blockquote>
+<p>Only metadata is stored in a movie atom.</p>
+</blockquote>
+<p>一个 MOV file 的所谓 metadata，全都储存在 movie atom (&ldquo;moov&rdquo;) 里。</p>
+<blockquote>
+<p>Sample data for the movie, such as audio or video samples, are referenced in the movie atom, but are not contained in it. ^[https://developer.apple.com/documentation/quicktime-file-format/movie_atoms]</p>
+</blockquote>
+<p>QuickTime File Format 把 media file 实际的数据储存在一个个 Sample 里，Sample 进而又组成一个个 Chunk，实现更高效的数据 access。Sample 的 data 不实际储存在 movie atom 里，像上面说的，movie atom 只储存 <strong>meta</strong>data。</p>
+<hr>
+<p>User data atoms — &ldquo;udta&rdquo;:</p>
+<p>可以把生成这个 mov file 的软件的名字包含进去，</p>
+<table>
+<thead>
+<tr>
+<th>List entry type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&hellip;</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td><code>'©swr'</code></td>
+<td>Name and version number of the software (or hardware) that generated this movie</td>
+</tr>
+<tr>
+<td>&hellip;</td>
+<td>&hellip;</td>
+</tr>
+</tbody>
+</table>
+<p>比如：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>          |                                               |                |        <span style="color:#f92672">[</span>3<span style="color:#f92672">]{}</span>: box
+</span></span><span style="display:flex;"><span>0x11a37b70|                                       <span style="color:#ae81ff">00</span> <span style="color:#ae81ff">00</span> 00|             ...|          size: <span style="color:#ae81ff">60</span>
+</span></span><span style="display:flex;"><span>0x11a37b80|3c                                             |&lt;               |
+</span></span><span style="display:flex;"><span>0x11a37b80|   <span style="color:#ae81ff">75</span> <span style="color:#ae81ff">64</span> <span style="color:#ae81ff">74</span> <span style="color:#ae81ff">61</span>                                 | udta           |          type: <span style="color:#e6db74">&#34;udta&#34;</span> <span style="color:#f92672">(</span>User-data<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>          |                                               |                |          boxes<span style="color:#f92672">[</span>0:1<span style="color:#f92672">]</span>:
+</span></span><span style="display:flex;"><span>          |                                               |                |            <span style="color:#f92672">[</span>0<span style="color:#f92672">]{}</span>: box
+</span></span><span style="display:flex;"><span>0x11a37b80|               <span style="color:#ae81ff">00</span> <span style="color:#ae81ff">00</span> <span style="color:#ae81ff">00</span> <span style="color:#ae81ff">34</span>                     |     ...4       |              size: <span style="color:#ae81ff">52</span>
+</span></span><span style="display:flex;"><span>0x11a37b80|                           a9 <span style="color:#ae81ff">73</span> <span style="color:#ae81ff">77</span> <span style="color:#ae81ff">72</span>         |         .swr   |              type: <span style="color:#e6db74">&#34;©swr&#34;</span> <span style="color:#f92672">(</span>Encoder<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>0x11a37b80|                                       <span style="color:#ae81ff">00</span> <span style="color:#ae81ff">28</span>   |             .<span style="color:#f92672">(</span> |              length: <span style="color:#ae81ff">40</span>
+</span></span><span style="display:flex;"><span>0x11a37b80|                                             55|               U|              language: <span style="color:#e6db74">&#34;und&#34;</span>
+</span></span><span style="display:flex;"><span>0x11a37b90|c4                                             |.               |
+</span></span><span style="display:flex;"><span>0x11a37b90|   <span style="color:#ae81ff">42</span> 6c <span style="color:#ae81ff">61</span> <span style="color:#ae81ff">63</span> 6b 6d <span style="color:#ae81ff">61</span> <span style="color:#ae81ff">67</span> <span style="color:#ae81ff">69</span> <span style="color:#ae81ff">63</span> <span style="color:#ae81ff">20</span> <span style="color:#ae81ff">44</span> <span style="color:#ae81ff">65</span> <span style="color:#ae81ff">73</span> 69| Blackmagic Desi|              value: <span style="color:#e6db74">&#34;Blackmagic Design DaVinci Resolve Studio&#34;</span>
+</span></span><span style="display:flex;"><span>0x11a37ba0|<span style="color:#ae81ff">67</span> 6e <span style="color:#ae81ff">20</span> <span style="color:#ae81ff">44</span> <span style="color:#ae81ff">61</span> <span style="color:#ae81ff">56</span> <span style="color:#ae81ff">69</span> 6e <span style="color:#ae81ff">63</span> <span style="color:#ae81ff">69</span> <span style="color:#ae81ff">20</span> <span style="color:#ae81ff">52</span> <span style="color:#ae81ff">65</span> <span style="color:#ae81ff">73</span> 6f 6c|gn DaVinci Resol|
+</span></span><span style="display:flex;"><span>0x11a37bb0|<span style="color:#ae81ff">76</span> <span style="color:#ae81ff">65</span> <span style="color:#ae81ff">20</span> <span style="color:#ae81ff">53</span> <span style="color:#ae81ff">74</span> <span style="color:#ae81ff">75</span> <span style="color:#ae81ff">64</span> <span style="color:#ae81ff">69</span> 6f                     |ve Studio       |
+</span></span></code></pre></div><hr>
+<blockquote>
+<p>Because the first field in any atom contains its size, including any contained atoms, it is easy to skip to the end of an unknown atom type and continue parsing the file. <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.</p>
+</blockquote>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://developer.apple.com/documentation/quicktime-file-format/quicktime_movie_files#:~:text=Because%20the%20first%20field%20in%20any%20atom%20contains%20its%20size%2C%20including%20any%20contained%20atoms%2C%20it%20is%20easy%20to%20skip%20to%20the%20end%20of%20an%20unknown%20atom%20type%20and%20continue%20parsing%20the%20file" target="_blank" >QuickTime Movie File</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
 
 
   </div>
