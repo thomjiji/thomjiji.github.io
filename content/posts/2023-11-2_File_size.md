@@ -1,7 +1,7 @@
 ---
 title: "File size"
 date: 2023-11-01
-draft: true
+draft: false
 ---
 
 ## Reference

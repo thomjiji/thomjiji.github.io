@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>File size | thomjiji</title>
+<meta name="keywords" content="">
+<meta name="description" content="Reference Binary and Decimal Prefixes - Articles Binary prefix Decimal and Binary Prefixes – Blocks and Files du invocation (GNU Coreutils 9.4) Notes du * 输出的其实不是文件大小，而是所谓 block size。
+$ du * 5568	1-2-1_2frames_ap4h.mov 8040	1-2-1_2frames_ap4x.mov 3928	1-2-1_2frames_apch.mov 2152	1-2-1_2frames_apcn.mov 688	1-2-1_2frames_apco.mov 1592	1-2-1_2frames_apcs.mov 我们使用 exa 这个 ls 的替代品，用 exa -lh -b -S 这个命令得到这样的输出：
+$ exa -lh -b -S Permissions Size Blocks User Date Modified Name .rw-r--r--@ 2.7Mi 5568 thom 27 Oct 17:32 1-2-1_2frames_ap4h.">
+<meta name="author" content="">
+<link rel="canonical" href="https://thomjiji.github.io/posts/2023-11-2_file_size/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.0de810a9b2ddbae2489e84928ee1c55fa77451f7bd4d04b8390359ba7a5fd025.css" integrity="sha256-DegQqbLduuJInoSSjuHFX6d0Ufe9TQS4OQNZunpf0CU=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://thomjiji.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://thomjiji.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://thomjiji.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://thomjiji.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://thomjiji.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" href="https://thomjiji.github.io/powerpuff_girls_buttercup.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    
+  </body>
+</html>
+<meta property="og:title" content="File size" />
+<meta property="og:description" content="Reference Binary and Decimal Prefixes - Articles Binary prefix Decimal and Binary Prefixes – Blocks and Files du invocation (GNU Coreutils 9.4) Notes du * 输出的其实不是文件大小，而是所谓 block size。
+$ du * 5568	1-2-1_2frames_ap4h.mov 8040	1-2-1_2frames_ap4x.mov 3928	1-2-1_2frames_apch.mov 2152	1-2-1_2frames_apcn.mov 688	1-2-1_2frames_apco.mov 1592	1-2-1_2frames_apcs.mov 我们使用 exa 这个 ls 的替代品，用 exa -lh -b -S 这个命令得到这样的输出：
+$ exa -lh -b -S Permissions Size Blocks User Date Modified Name .rw-r--r--@ 2.7Mi 5568 thom 27 Oct 17:32 1-2-1_2frames_ap4h." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://thomjiji.github.io/posts/2023-11-2_file_size/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-11-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-11-01T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="File size"/>
+<meta name="twitter:description" content="Reference Binary and Decimal Prefixes - Articles Binary prefix Decimal and Binary Prefixes – Blocks and Files du invocation (GNU Coreutils 9.4) Notes du * 输出的其实不是文件大小，而是所谓 block size。
+$ du * 5568	1-2-1_2frames_ap4h.mov 8040	1-2-1_2frames_ap4x.mov 3928	1-2-1_2frames_apch.mov 2152	1-2-1_2frames_apcn.mov 688	1-2-1_2frames_apco.mov 1592	1-2-1_2frames_apcs.mov 我们使用 exa 这个 ls 的替代品，用 exa -lh -b -S 这个命令得到这样的输出：
+$ exa -lh -b -S Permissions Size Blocks User Date Modified Name .rw-r--r--@ 2.7Mi 5568 thom 27 Oct 17:32 1-2-1_2frames_ap4h."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://thomjiji.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "File size",
+      "item": "https://thomjiji.github.io/posts/2023-11-2_file_size/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "File size",
+  "name": "File size",
+  "description": "Reference Binary and Decimal Prefixes - Articles Binary prefix Decimal and Binary Prefixes – Blocks and Files du invocation (GNU Coreutils 9.4) Notes du * 输出的其实不是文件大小，而是所谓 block size。\n$ du * 5568\t1-2-1_2frames_ap4h.mov 8040\t1-2-1_2frames_ap4x.mov 3928\t1-2-1_2frames_apch.mov 2152\t1-2-1_2frames_apcn.mov 688\t1-2-1_2frames_apco.mov 1592\t1-2-1_2frames_apcs.mov 我们使用 exa 这个 ls 的替代品，用 exa -lh -b -S 这个命令得到这样的输出：\n$ exa -lh -b -S Permissions Size Blocks User Date Modified Name .rw-r--r--@ 2.7Mi 5568 thom 27 Oct 17:32 1-2-1_2frames_ap4h.",
+  "keywords": [
+    
+  ],
+  "articleBody": "Reference Binary and Decimal Prefixes - Articles Binary prefix Decimal and Binary Prefixes – Blocks and Files du invocation (GNU Coreutils 9.4) Notes du * 输出的其实不是文件大小，而是所谓 block size。\n$ du * 5568\t1-2-1_2frames_ap4h.mov 8040\t1-2-1_2frames_ap4x.mov 3928\t1-2-1_2frames_apch.mov 2152\t1-2-1_2frames_apcn.mov 688\t1-2-1_2frames_apco.mov 1592\t1-2-1_2frames_apcs.mov 我们使用 exa 这个 ls 的替代品，用 exa -lh -b -S 这个命令得到这样的输出：\n$ exa -lh -b -S Permissions Size Blocks User Date Modified Name .rw-r--r--@ 2.7Mi 5568 thom 27 Oct 17:32 1-2-1_2frames_ap4h.mov .rw-r--r--@ 3.9Mi 8040 thom 27 Oct 17:32 1-2-1_2frames_ap4x.mov .rw-r--r--@ 1.9Mi 3928 thom 27 Oct 17:32 1-2-1_2frames_apch.mov .rw-r--r--@ 1.0Mi 2152 thom 27 Oct 17:32 1-2-1_2frames_apcn.mov .rw-r--r--@ 342Ki 688 thom 27 Oct 17:32 1-2-1_2frames_apco.mov .rw-r--r--@ 793Ki 1592 thom 27 Oct 17:32 1-2-1_2frames_apcs.mov -l: Display extended file metadata as a table. -h: Add a header row to each column. -b: List file sizes with binary prefixes. --binary. -S: List each file’s number of file system blocks. 可以看到 Blocks 那一栏跟 du * 的输出是一样的。-S 的 flag 的作用也正是列出 file system blocks。\n要使用 du -k * 才勉强接近 Finder 显示出的文件大小（但仍然差很远，请接着看下去）。\n使用 du -k * 会得到以下的输出：\n$ du -k * 2784\t1-2-1_2frames_ap4h.mov 4020\t1-2-1_2frames_ap4x.mov 1964\t1-2-1_2frames_apch.mov 1076\t1-2-1_2frames_apcn.mov 344\t1-2-1_2frames_apco.mov 796\t1-2-1_2frames_apcs.mov -k: Display block counts in 1024-byte (1 kiB) blocks. 首先这里输出的数字是 KiB，不是 bytes。\n你需要把它们乘以 1024，比如：2784 * 1024 = 2850816，才得到 bytes 也就是字节数。然后使用 Finder 查看相同文件得到字节数是 2849756，很接近了。但是 2850816 - 2849756 = 1060，仍然相差了 1060，这又是怎么回事呢？\nexa -lh -B -S 得到与 Finder 匹配的字节数 bytes，其中 -B 的意思是 List file sizes in bytes, without any prefixes：\nexa -lh -b -S 得到二进制下的 MiB：2.8Mi。\nexa -lh -S 不 pass -b 或 -B 的 flag 得到与 Finder 匹配的 MB：2.8M。但有可能由于四舍五入位数的不同而导致比如 Finder 显示 64.6MB，这里显示 65M。\nexa -lh -b -S: binary prefix exa -lh -B -S: bytes exa -l: exa default to decimal prefix with this command. du 输出的是 block size。什么是 block size 呢，就是文件系统 file system 实际分配给这个文件的空间。而其他命令比如说 exa -lh -b -S 输出的结果是所谓 apparent size（表面上的大小），就是这个文件从表面上看应该是这么大（从表面上看应该占据了这么多的空间）。也就是说，一个文件的 metadata 里显示的这个文件的大小（表面上的大小 apparent size），“我这个文件要占据这么些空间”，与实际上文件系统分配 allocate 给它的空间可以是不同的，是两码事。为什么呢？因为有一种文件叫做 sparse file 的存在。就是你说你要占据这么多的空间，但实际上你拿这么多空间来存储的都是 0，使用 dd if=/dev/null of=big bs=1 count=0 seek=2G 命令可以生成一个 apparent size 是 2GiB，实际上文件系统分配给它的空间是 0 的文件。因为这个 command 实际上没有写入任何数据到那个文件当中去。\nmacOS 自带的 du 命令的行为实在是太奇怪了，要么 flags 跟 GNU 的 du 不一样，非得自己改一下，改个别的名，比如 GNU du 要显示 apparent size 的话，pass --apparent-size flag：du --apparent-size --block-size 1 *；macOS du 要显示 apparent size，pass -A flag。但最关键的来了，这个 -A 它不 work！\n对于 macOS du 来说，du -A -B 1 * 对应着 GNU du 的 du --apparent-size --block-size 1 *。是吧，就功能上来说，-A 对应 --apparent-size，-B 对应 --block-size。这边 GNU du 的 du --apparent-size --block-size 1 * 输出结果为：\n64606136\tA100_001_20231023.mov 118636627\tA100_002_20231023.mov 99361921\tA100_003_20231023.mov 但 macOS du 的 du -A -B 1 * 输出结果为：\n126184\tA100_001_20231023.mov 231713\tA100_002_20231023.mov 194067\tA100_003_20231023.mov 它输出的仍然是 disk usage 而不是 apparent size，而且输出的这个数字还是 block size 为 512 bytes 下的 block count，而不是我 pass 给它的 1，要求它输出 block size 为 1 bytes 下的 block count，也就是所有的 bytes（bytes 就是它二者相乘得到的：block size * block count = total bytes）。相当于这两个 flag 都不 work。\n认为 GNU du 输出的那三个数字是对的的原因，是与其他命令交叉比对得到的结果：diskus -b A100_002_20231023.mov, exa -lh -B -S。\n所以咱直接不用 macOS 自带的 du 了，可以 brew install coreutils，里面就有纯正的原生的 du，告别 macOS 魔改过的 du。\nblocks (the number of block) * block size (the size of each block, for example 512 bytes) = total bytes\n到最后，记住这几个 command 就可以了：\ndu --si *: --si like -h (human readable), but use powers of 1000 not 1024 du -b *: -b equivalent to --apparent-size --block-size=1. exa -lh -B -S: -l: Display extended file metadata as a table. -h: Add a header row to each column. -B: List file sizes in bytes, without any prefixes. -S: List each file’s number of file system blocks. Use block size 512 bytes actually. diskus: diskus -b --size-format binary NINJAV_S001_S001_T001.MOV diskus -b --size-format decimal NINJAV_S001_S001_T001.MOV 查看所在的盘的文件系统的 block size：stat -f %k .\n",
+  "wordCount" : "569",
+  "inLanguage": "en",
+  "datePublished": "2023-11-01T00:00:00Z",
+  "dateModified": "2023-11-01T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://thomjiji.github.io/posts/2023-11-2_file_size/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "thomjiji",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://thomjiji.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://thomjiji.github.io/" accesskey="h" title="thomjiji (Alt + H)">thomjiji</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://thomjiji.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://thomjiji.github.io/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://thomjiji.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://thomjiji.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://thomjiji.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://thomjiji.github.io/posts/">Posts</a></div>
+    <h1 class="post-title">
+      File size
+    </h1>
+    <div class="post-meta"><span title='2023-11-01 00:00:00 +0000 UTC'>2023-11-01</span>&nbsp;|&nbsp;<a href="https://github.com/thomjiji/thomjiji.github.io/tree/main/content//posts/2023-11-2_File_size.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+  <div class="post-content"><h2 id="reference">Reference<a hidden class="anchor" aria-hidden="true" href="#reference">#</a></h2>
+<ul>
+<li><a href="http://wolfprojects.altervista.org/articles/binary-and-decimal-prefixes/#:~:text=The%20decimal%20prefixes%20are%3A%20k,is%20used%20to%20indicate%20bytes." target="_blank" >Binary and Decimal Prefixes - Articles</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Binary_prefix#Comparison_of_binary_and_decimal_prefixes" target="_blank" >Binary prefix</a></li>
+<li><a href="https://blocksandfiles.com/2022/04/23/decimal-and-binary-prefixes/" target="_blank" >Decimal and Binary Prefixes – Blocks and Files</a></li>
+<li><a href="https://www.gnu.org/software/coreutils/manual/html_node/du-invocation.html" target="_blank" >du invocation (GNU Coreutils 9.4)</a></li>
+</ul>
+<h2 id="notes">Notes<a hidden class="anchor" aria-hidden="true" href="#notes">#</a></h2>
+<p><code>du *</code> 输出的其实不是文件大小，而是所谓 block size。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ du *
+</span></span><span style="display:flex;"><span>5568	1-2-1_2frames_ap4h.mov
+</span></span><span style="display:flex;"><span>8040	1-2-1_2frames_ap4x.mov
+</span></span><span style="display:flex;"><span>3928	1-2-1_2frames_apch.mov
+</span></span><span style="display:flex;"><span>2152	1-2-1_2frames_apcn.mov
+</span></span><span style="display:flex;"><span>688	    1-2-1_2frames_apco.mov
+</span></span><span style="display:flex;"><span>1592	1-2-1_2frames_apcs.mov
+</span></span></code></pre></div><p>我们使用 exa 这个 ls 的替代品，用 <code>exa -lh -b -S</code> 这个命令得到这样的输出：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ exa -lh -b -S
+</span></span><span style="display:flex;"><span>Permissions  Size Blocks User Date Modified Name
+</span></span><span style="display:flex;"><span>.rw-r--r--@ 2.7Mi   <span style="color:#ae81ff">5568</span> thom <span style="color:#ae81ff">27</span> Oct 17:32  1-2-1_2frames_ap4h.mov
+</span></span><span style="display:flex;"><span>.rw-r--r--@ 3.9Mi   <span style="color:#ae81ff">8040</span> thom <span style="color:#ae81ff">27</span> Oct 17:32  1-2-1_2frames_ap4x.mov
+</span></span><span style="display:flex;"><span>.rw-r--r--@ 1.9Mi   <span style="color:#ae81ff">3928</span> thom <span style="color:#ae81ff">27</span> Oct 17:32  1-2-1_2frames_apch.mov
+</span></span><span style="display:flex;"><span>.rw-r--r--@ 1.0Mi   <span style="color:#ae81ff">2152</span> thom <span style="color:#ae81ff">27</span> Oct 17:32  1-2-1_2frames_apcn.mov
+</span></span><span style="display:flex;"><span>.rw-r--r--@ 342Ki    <span style="color:#ae81ff">688</span> thom <span style="color:#ae81ff">27</span> Oct 17:32  1-2-1_2frames_apco.mov
+</span></span><span style="display:flex;"><span>.rw-r--r--@ 793Ki   <span style="color:#ae81ff">1592</span> thom <span style="color:#ae81ff">27</span> Oct 17:32  1-2-1_2frames_apcs.mov
+</span></span></code></pre></div><ul>
+<li><code>-l</code>: Display extended file metadata as a table.</li>
+<li><code>-h</code>: Add a header row to each column.</li>
+<li><code>-b</code>: List file sizes with binary prefixes. <code>--binary</code>.</li>
+<li><code>-S</code>: List each file’s number of file system blocks.</li>
+</ul>
+<p>可以看到 Blocks 那一栏跟 <code>du *</code> 的输出是一样的。<code>-S</code> 的 flag 的作用也正是列出 file system blocks。</p>
+<hr>
+<p>要使用 <code>du -k *</code> 才勉强接近 Finder 显示出的文件大小（但仍然差很远，请接着看下去）。</p>
+<p>使用 <code>du -k *</code> 会得到以下的输出：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ du -k *
+</span></span><span style="display:flex;"><span>2784	1-2-1_2frames_ap4h.mov
+</span></span><span style="display:flex;"><span>4020	1-2-1_2frames_ap4x.mov
+</span></span><span style="display:flex;"><span>1964	1-2-1_2frames_apch.mov
+</span></span><span style="display:flex;"><span>1076	1-2-1_2frames_apcn.mov
+</span></span><span style="display:flex;"><span>344	    1-2-1_2frames_apco.mov
+</span></span><span style="display:flex;"><span>796	    1-2-1_2frames_apcs.mov
+</span></span></code></pre></div><ul>
+<li><code>-k</code>: Display block counts in 1024-byte (1 kiB) blocks.</li>
+</ul>
+<p>首先这里输出的数字是 KiB，不是 bytes。</p>
+<p>你需要把它们乘以 1024，比如：2784 * 1024 = 2850816，才得到 bytes 也就是字节数。然后使用 Finder 查看相同文件得到字节数是 2849756，很接近了。但是 2850816 - 2849756 = 1060，仍然相差了 1060，这又是怎么回事呢？</p>
+<hr>
+<p><code>exa -lh -B -S</code> 得到与 Finder 匹配的字节数 bytes，其中 <code>-B</code> 的意思是 List file sizes in bytes, without any prefixes：</p>
+<p><code>exa -lh -b -S</code> 得到二进制下的 MiB：<code>2.8Mi</code>。</p>
+<p><code>exa -lh -S</code> 不 pass <code>-b</code> 或 <code>-B</code> 的 flag 得到与 Finder 匹配的 MB：<code>2.8M</code>。但有可能由于四舍五入位数的不同而导致比如 Finder 显示 64.6MB，这里显示 65M。</p>
+<blockquote>
+<ul>
+<li><code>exa -lh -b -S</code>: binary prefix</li>
+<li><code>exa -lh -B -S</code>: bytes</li>
+<li><code>exa -l</code>: exa default to decimal prefix with this command.</li>
+</ul>
+</blockquote>
+<hr>
+<p>du 输出的是 block size。什么是 block size 呢，就是文件系统 file system 实际分配给这个文件的空间。而其他命令比如说 <code>exa -lh -b -S</code> 输出的结果是所谓 apparent size（表面上的大小），就是这个文件从表面上看应该是这么大（从表面上看应该占据了这么多的空间）。也就是说，一个文件的 metadata 里显示的这个文件的大小（表面上的大小 apparent size），“我这个文件要占据这么些空间”，与实际上文件系统分配 allocate 给它的空间可以是不同的，是两码事。为什么呢？因为有一种文件叫做 sparse file 的存在。就是你说你要占据这么多的空间，但实际上你拿这么多空间来存储的都是 0，使用 <code>dd if=/dev/null of=big bs=1 count=0 seek=2G</code> 命令可以生成一个 apparent size 是 2GiB，实际上文件系统分配给它的空间是 0 的文件。因为这个 command 实际上没有写入任何数据到那个文件当中去。</p>
+<hr>
+<p>macOS 自带的 du 命令的行为实在是太奇怪了，要么 flags 跟 GNU 的 du 不一样，非得自己改一下，改个别的名，比如 GNU du 要显示 apparent size 的话，pass <code>--apparent-size</code> flag：<code>du --apparent-size --block-size 1 *</code>；macOS du 要显示 apparent size，pass <code>-A</code> flag。但最关键的来了，这个 <code>-A</code> 它不 work！</p>
+<p>对于 macOS du 来说，<code>du -A -B 1 *</code> 对应着 GNU du 的 <code>du --apparent-size --block-size 1 *</code>。是吧，就功能上来说，<code>-A</code> 对应 <code>--apparent-size</code>，<code>-B</code> 对应 <code>--block-size</code>。这边 GNU du 的 <code>du --apparent-size --block-size 1 *</code> 输出结果为：</p>
+<pre tabindex="0"><code>64606136	A100_001_20231023.mov
+118636627	A100_002_20231023.mov
+99361921	A100_003_20231023.mov
+</code></pre><p>但 macOS du 的 <code>du -A -B 1 *</code> 输出结果为：</p>
+<pre tabindex="0"><code>126184	A100_001_20231023.mov
+231713	A100_002_20231023.mov
+194067	A100_003_20231023.mov
+</code></pre><p>它输出的仍然是 disk usage 而不是 apparent size，而且输出的这个数字还是 block size 为 512 bytes 下的 block count，而不是我 pass 给它的 1，要求它输出 block size 为 1 bytes 下的 block count，也就是所有的 bytes（bytes 就是它二者相乘得到的：block size * block count = total bytes）。相当于这两个 flag 都不 work。</p>
+<p>认为 GNU du 输出的那三个数字是对的的原因，是与其他命令交叉比对得到的结果：<code>diskus -b A100_002_20231023.mov</code>, <code>exa -lh -B -S</code>。</p>
+<p>所以咱直接不用 macOS 自带的 du 了，可以 <a href="https://apple.stackexchange.com/a/69332" target="_blank" >brew install coreutils</a>，里面就有纯正的原生的 du，告别 macOS 魔改过的 du。</p>
+<hr>
+<p>blocks (the number of block) * block size (the size of each block, for example 512 bytes) = total bytes</p>
+<hr>
+<p>到最后，记住这几个 command 就可以了：</p>
+<ul>
+<li><code>du --si *</code>: <code>--si</code> like <code>-h</code> (human readable), but use powers of 1000 not 1024</li>
+<li><code>du -b *</code>: <code>-b</code> equivalent to <code>--apparent-size --block-size=1</code>.</li>
+<li><code>exa -lh -B -S</code>:
+<ul>
+<li><code>-l</code>: Display extended file metadata as a table.</li>
+<li><code>-h</code>: Add a header row to each column.</li>
+<li><code>-B</code>: List file sizes in bytes, without any prefixes.</li>
+<li><code>-S</code>: List each file’s number of file system blocks. Use block size 512 bytes actually.</li>
+</ul>
+</li>
+<li><code>diskus</code>:
+<ul>
+<li><code>diskus -b --size-format binary NINJAV_S001_S001_T001.MOV</code></li>
+<li><code>diskus -b --size-format decimal NINJAV_S001_S001_T001.MOV</code></li>
+</ul>
+</li>
+</ul>
+<p>查看所在的盘的文件系统的 block size：<code>stat -f %k .</code></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://thomjiji.github.io/posts/2023-09-21_c&#43;&#43;_preprocessor/">
+    <span class="title">Next »</span>
+    <br>
+    <span>C&#43;&#43; Preprocessor</span>
+  </a>
+</nav>
+
+
+<div class="share-buttons">
+    <a target="_blank" rel="noopener noreferrer" aria-label="share File size on twitter"
+        href="https://twitter.com/intent/tweet/?text=File%20size&amp;url=https%3a%2f%2fthomjiji.github.io%2fposts%2f2023-11-2_file_size%2f&amp;hashtags=">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-253.927,424.544c135.939,0 210.268,-112.643 210.268,-210.268c0,-3.218 0,-6.437 -0.153,-9.502c14.406,-10.421 26.973,-23.448 36.935,-38.314c-13.18,5.824 -27.433,9.809 -42.452,11.648c15.326,-9.196 26.973,-23.602 32.49,-40.92c-14.252,8.429 -30.038,14.56 -46.896,17.931c-13.487,-14.406 -32.644,-23.295 -53.946,-23.295c-40.767,0 -73.87,33.104 -73.87,73.87c0,5.824 0.613,11.494 1.992,16.858c-61.456,-3.065 -115.862,-32.49 -152.337,-77.241c-6.284,10.881 -9.962,23.601 -9.962,37.088c0,25.594 13.027,48.276 32.95,61.456c-12.107,-0.307 -23.448,-3.678 -33.41,-9.196l0,0.92c0,35.862 25.441,65.594 59.311,72.49c-6.13,1.686 -12.72,2.606 -19.464,2.606c-4.751,0 -9.348,-0.46 -13.946,-1.38c9.349,29.426 36.628,50.728 68.965,51.341c-25.287,19.771 -57.164,31.571 -91.8,31.571c-5.977,0 -11.801,-0.306 -17.625,-1.073c32.337,21.15 71.264,33.41 112.95,33.41Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share File size on reddit"
+        href="https://reddit.com/submit?url=https%3a%2f%2fthomjiji.github.io%2fposts%2f2023-11-2_file_size%2f&title=File%20size">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share File size on telegram"
+        href="https://telegram.me/share/url?text=File%20size&amp;url=https%3a%2f%2fthomjiji.github.io%2fposts%2f2023-11-2_file_size%2f">
+        <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+        </svg>
+    </a>
+</div>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://thomjiji.github.io/">thomjiji</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
