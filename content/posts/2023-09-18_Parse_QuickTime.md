@@ -5,6 +5,7 @@ draft: false
 tags: ["Atom", "QuickTime", "NCLC Tag", "ProRes"]
 ---
 
+#colr #nclc #atom #qtff
 ### Apple Developer Documentation
 
 - [Storing and sharing media with QuickTime files](https://developer.apple.com/documentation/quicktime-file-format)
@@ -22,7 +23,7 @@ tags: ["Atom", "QuickTime", "NCLC Tag", "ProRes"]
 
 | Implementations                                                                   | Language | Notes                                                                                                     |
 | --------------------------------------------------------------------------------- | -------- | --------------------------------------------------------------------------------------------------------- |
-| [metacolor.editor](https://github.com/piersdeseilligny/metacolor.editor)          | C#       | Simple Implementation, can only change NCLC tags. Provide GUI                                             |
+| [metacolor.editor](https://github.com/piersdeseilligny/metacolor.editor)          | C#       | Simple Implementation, can only change NCLC tags. Provide GUI.                                            |
 | [qtff-parameter-editor](https://github.com/bbc/qtff-parameter-editor/tree/master) | C++      | Good implementation, can only change NCLC tags. CLI.                                                      |
 | [AMCDXVideoPatcherCLI](https://mogurenko.com/)                                    | C++      | Close source. Can modify colr atom, add gama atom (but value of gamma can't not be changed — seems a bug) |
 | [qtfile_pp](https://github.com/da8eat/qtfile_pp)                                  | C++      | AMCDXVideoPatcherCLI 作者的开源 parser，想必 AMCDXVideoPatcherCLI 的具体实现能够从这里看出一些端倪        |
@@ -36,9 +37,9 @@ tags: ["Atom", "QuickTime", "NCLC Tag", "ProRes"]
 - [MP4Box.js](https://gpac.github.io/mp4box.js/test/filereader.html) - a file inspection tool
 - [mp4analyser](https://github.com/essential61/mp4analyser)
 
----
+### Notes
 
-这么些处理 atom (包括 NCLC tag) 的比较成熟的 implementation，大多都是用 C++ 写的。其实 Rust 也能做这些 low-level 的事情，对吗？只是这门语言比较新，暂时还没有人用它来做这个事而已。那么我能不能来做呢？用 Rust 写一个 parse MOV file format 的实现。
+这么些处理 atom (包括 NCLC tag) 的实现，都是用 C++ 写的。其实 Rust 也能做这些 low-level 的事情，对吗？只是这门语言比较新，暂时还没有人用它来做这个事而已。那么我能不能来做呢？用 Rust 写一个 parse MOV file format 的实现。其实已经有了：[dryv](https://github.com/Stuff7/dryv)——这两天就在更新。
 
 这需要对 low-level 底层的东西有足够的了解是吗？底层的东西我又不太会。但这无疑是一个机会和切入点，就像 Asahi Lina 在她的哪一个 stream 说的，她最开始入门 low-level 编程也是为了要 hack 任天堂的一个什么掌机。我需要写一个 parse QuickTime file 的 Rust 的实现，实现出来一定挺酷。
 
@@ -257,7 +258,6 @@ moov: s=      1544 (0x00000608), o=    263724 (0x0004062c)
 ```
 
 > The most important part of an MPEG-4 file is the mdat atom - **its where the actual raw information for the file is stored**. — [atomic parsley](https://atomicparsley.sourceforge.net/mpeg-4files.html#:~:text=The%20most%20important%20part%20of%20an%20MPEG%2D4%20file%20is%20the%20mdat%20atom%20%2D%20its%20where%20the%20actual%20raw%20information%20for%20the%20file%20is%20stored.)
-
 这是实际上文件的 raw data 的所在地。
 
 ProRes 每一帧 的 frame size 都可以在 "stsz" 找到。
@@ -321,7 +321,7 @@ User data atoms — "udta":
 
 ---
 
-这个 [pull request](https://github.com/axiomatic-systems/Bento4/pull/694)（目前还未被合并）给 [Bento4](https://github.com/axiomatic-systems/Bento4) 添加了 colr, gama, pasp, fiel atom 的支持。然后利用 Bento4 现有的工具，特别是这个 [mp4edit](https://github.com/axiomatic-systems/Bento4/tree/master/Source/C%2B%2B/Apps/Mp4Edit) 已经可以完全实现修改 colr atom 和添加 gama atom 了。到此为止，我最初的需求被这个工具解决了。
+这个 [pull request](https://github.com/axiomatic-systems/Bento4/pull/694)（目前还未被合并）给 [Bento4](https://github.com/axiomatic-systems/Bento4) 添加了 colr, gama, pasp, fiel atom 的支持。然后利用 Bento4 现有的工具，特别是这个 [mp4edit](https://github.com/axiomatic-systems/Bento4/tree/master/Source/C%2B%2B/Apps/Mp4Edit)已经可以完全实现修改 colr atom 和添加 gama atom 了。到此为止，我最初的需求被这个工具解决了。
 
 插入 gama atom：
 
@@ -344,3 +344,28 @@ echo -n -e '\x00\x00\x00\x12colrnclc\x00\x09\x00\x10\x00\x09\x0a' > colr.bin
 	input.mov \
 	output.mov
 ```
+
+---
+
+tmcd atom 包含卷名信息，给没有卷名的 MOV 添加卷名，使用：
+
+```sh
+./mp4edit \
+    --replace \
+    "moov/trak[1]/mdia/minf/stbl/stsd/tmcd":../atoms/tmcd_atom_addedReelNum.bin \
+    ../test_footages/no_reel_number/1-1-1_10frames.mov \
+    ../test_footages/no_reel_number/1-1-1_10frames_replacedTmcdAtom.mov
+```
+
+原理是替换掉 tmcd 这个 atom：使用带有卷名信息的 tmcd atom .bin 文件替换掉原始文件中的 tmcd atom。
+
+目前卷名还是 hardcoded 在那个 bin 文件里，需要通过 programming 的方式实时生成相应的不同卷名的 .bin file。
+
+所以到目前为止只是验证了使用 mp4edit 来修改、添加卷名的可行性。
+
+---
+
+Can I compile Rust code together with a binary C++ file?
+
+1. Call mp4edit executable in Rust code.
+2. Build a GUI using egui library.
