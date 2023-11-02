@@ -88,7 +88,7 @@
 
 .post-content a code {
     margin: auto 0;
-    border-radius: 0;
+    border-radius: var(--radius);
     box-shadow: 0 -1px 0 var(--primary) inset;
 }
 
@@ -207,8 +207,8 @@
     /* font-size: 0.78em; */
     line-height: 1.5;
     background: var(--code-bg);
-    border-radius: 2px;
     font-family: "JetBrains Mono";
+    border-radius: 2px;
 }
 
 .post-content pre code {
@@ -217,7 +217,6 @@
     padding: 10px;
     color: rgb(213, 213, 214);
     background: var(--hljs-bg) !important;
-    border-radius: var(--radius);
     overflow-x: auto;
     word-break: break-all;
 }
