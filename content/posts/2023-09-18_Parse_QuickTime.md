@@ -5,7 +5,6 @@ draft: false
 tags: ["Atom", "QuickTime", "NCLC Tag", "ProRes"]
 ---
 
-#colr #nclc #atom #qtff
 ### Apple Developer Documentation
 
 - [Storing and sharing media with QuickTime files](https://developer.apple.com/documentation/quicktime-file-format)
