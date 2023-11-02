@@ -5,6 +5,8 @@ draft: false
 tags: ["C++"]
 ---
 
+**Excerpted from [learncpp.com](https://www.learncpp.com/cpp-tutorial/introduction-to-the-preprocessor/) as my personal notes.**
+
 ## preprocessor
 
 - .cpp file => preprocessor:
@@ -25,9 +27,9 @@ tags: ["C++"]
    |        /        |Remove comments |    \                   |                            |
    |       /         |Add line-breaks |     \                  |                            |
    |      /          |etc.            |      \                 |                            |
-   +-- Original file +--Processes the file   +--Output from      +--Binary code resulted 
+   +-- Original file +--Processes the file   +--Output from      +--Binary code resulted
                          with directives         preprocessor        from compilation
-                                                (processed code)                                                           
+                                                (processed code)
 ```
 
 > The entire process of preprocessing, compiling and linking is called **translation**.
