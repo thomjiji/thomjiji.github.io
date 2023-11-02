@@ -220,16 +220,16 @@ Homebrew 下载的 Fish shell 的 path 是 /opt/homebrew/bin/fish 而不是像 f
 <ol>
 <li>Add the shell to <code>/etc/shells</code> with:</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;/opt/homebrew/bin/fish&#34;</span> | sudo tee -a /etc/shells
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#ef8383">echo</span> <span style="color:#63c381">&#34;/opt/homebrew/bin/fish&#34;</span> | sudo tee -a /etc/shells
 </span></span></code></pre></div><ol start="2">
 <li>Change default shell with:</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fish" data-lang="fish"><span style="display:flex;"><span><span style="color:#a6e22e">chsh</span> <span style="color:#a6e22e">-s</span> /opt/homebrew/bin/fish
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fish" data-lang="fish"><span style="display:flex;"><span><span style="color:#00b1f7">chsh</span> <span style="color:#b3d23c">-s</span> /opt/homebrew/bin/<span style="color:#ef8383">fish</span>
 </span></span></code></pre></div><h3 id="modify-path-with-fish-shell">Modify <code>$PATH</code> with fish shell<a hidden class="anchor" aria-hidden="true" href="#modify-path-with-fish-shell">#</a></h3>
 <ol>
 <li>在 iTerm2 当中使用 fish shell 作为默认 shell，需要把 <code>$PATH</code> 加入到 <code>~/.config/fish/fish_variables</code></li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fish" data-lang="fish"><span style="display:flex;"><span><span style="color:#66d9ef">set</span> <span style="color:#a6e22e">-U</span> fish_user_paths /usr/local/bin $fish_user_paths
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fish" data-lang="fish"><span style="display:flex;"><span><span style="color:#c678dd">set</span> <span style="color:#b3d23c">-U</span> <span style="color:#dcaeea">fish_user_paths</span> /usr/local/bin <span style="color:#dcaeea">$fish_user_paths</span>
 </span></span></code></pre></div><ol start="2">
 <li>Enter this command in terminal: <code>fish_add_path /opt/homebrew/bin</code>. It will add <code>/opt/homebrew/bin</code> to the <code>~/.config/fish/fish_variables</code>.</li>
 </ol>
