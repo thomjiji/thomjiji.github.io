@@ -11,8 +11,8 @@
 $ du * 5568	1-2-1_2frames_ap4h.mov 8040	1-2-1_2frames_ap4x.mov 3928	1-2-1_2frames_apch.mov 2152	1-2-1_2frames_apcn.mov 688	1-2-1_2frames_apco.mov 1592	1-2-1_2frames_apcs.mov 我们使用 exa 这个 ls 的替代品，用 exa -lh -b -S 这个命令得到这样的输出：
 $ exa -lh -b -S Permissions Size Blocks User Date Modified Name .rw-r--r--@ 2.7Mi 5568 thom 27 Oct 17:32 1-2-1_2frames_ap4h.">
 <meta name="author" content="">
-<link rel="canonical" href="https://thomjiji.github.io/posts/2023-11-2_file_size/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.0de810a9b2ddbae2489e84928ee1c55fa77451f7bd4d04b8390359ba7a5fd025.css" integrity="sha256-DegQqbLduuJInoSSjuHFX6d0Ufe9TQS4OQNZunpf0CU=" rel="preload stylesheet" as="style">
+<link rel="canonical" href="https://thomjiji.github.io/posts/2023-11-02_file_size/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.00e2f82a72086e73423f37b42e82af84366d8ce1ea2bc35639d583b7fef0bf78.css" integrity="sha256-AOL4KnIIbnNCPze0LoKvhDZtjOHqK8NWOdWDt/7wv3g=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://thomjiji.github.io/favicon.ico">
@@ -79,7 +79,7 @@ $ exa -lh -b -S Permissions Size Blocks User Date Modified Name .rw-r--r--@ 2.7M
 $ du * 5568	1-2-1_2frames_ap4h.mov 8040	1-2-1_2frames_ap4x.mov 3928	1-2-1_2frames_apch.mov 2152	1-2-1_2frames_apcn.mov 688	1-2-1_2frames_apco.mov 1592	1-2-1_2frames_apcs.mov 我们使用 exa 这个 ls 的替代品，用 exa -lh -b -S 这个命令得到这样的输出：
 $ exa -lh -b -S Permissions Size Blocks User Date Modified Name .rw-r--r--@ 2.7Mi 5568 thom 27 Oct 17:32 1-2-1_2frames_ap4h." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://thomjiji.github.io/posts/2023-11-2_file_size/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://thomjiji.github.io/posts/2023-11-02_file_size/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-11-01T00:00:00+00:00" />
 <meta property="article:modified_time" content="2023-11-01T00:00:00+00:00" />
 
@@ -105,7 +105,7 @@ $ exa -lh -b -S Permissions Size Blocks User Date Modified Name .rw-r--r--@ 2.7M
       "@type": "ListItem",
       "position":  2 ,
       "name": "File size",
-      "item": "https://thomjiji.github.io/posts/2023-11-2_file_size/"
+      "item": "https://thomjiji.github.io/posts/2023-11-02_file_size/"
     }
   ]
 }
@@ -120,14 +120,14 @@ $ exa -lh -b -S Permissions Size Blocks User Date Modified Name .rw-r--r--@ 2.7M
   "keywords": [
     
   ],
-  "articleBody": "Reference Binary and Decimal Prefixes - Articles Binary prefix Decimal and Binary Prefixes – Blocks and Files du invocation (GNU Coreutils 9.4) Notes du * 输出的其实不是文件大小，而是所谓 block size。\n$ du * 5568\t1-2-1_2frames_ap4h.mov 8040\t1-2-1_2frames_ap4x.mov 3928\t1-2-1_2frames_apch.mov 2152\t1-2-1_2frames_apcn.mov 688\t1-2-1_2frames_apco.mov 1592\t1-2-1_2frames_apcs.mov 我们使用 exa 这个 ls 的替代品，用 exa -lh -b -S 这个命令得到这样的输出：\n$ exa -lh -b -S Permissions Size Blocks User Date Modified Name .rw-r--r--@ 2.7Mi 5568 thom 27 Oct 17:32 1-2-1_2frames_ap4h.mov .rw-r--r--@ 3.9Mi 8040 thom 27 Oct 17:32 1-2-1_2frames_ap4x.mov .rw-r--r--@ 1.9Mi 3928 thom 27 Oct 17:32 1-2-1_2frames_apch.mov .rw-r--r--@ 1.0Mi 2152 thom 27 Oct 17:32 1-2-1_2frames_apcn.mov .rw-r--r--@ 342Ki 688 thom 27 Oct 17:32 1-2-1_2frames_apco.mov .rw-r--r--@ 793Ki 1592 thom 27 Oct 17:32 1-2-1_2frames_apcs.mov -l: Display extended file metadata as a table. -h: Add a header row to each column. -b: List file sizes with binary prefixes. --binary. -S: List each file’s number of file system blocks. 可以看到 Blocks 那一栏跟 du * 的输出是一样的。-S 的 flag 的作用也正是列出 file system blocks。\n要使用 du -k * 才勉强接近 Finder 显示出的文件大小（但仍然差很远，请接着看下去）。\n使用 du -k * 会得到以下的输出：\n$ du -k * 2784\t1-2-1_2frames_ap4h.mov 4020\t1-2-1_2frames_ap4x.mov 1964\t1-2-1_2frames_apch.mov 1076\t1-2-1_2frames_apcn.mov 344\t1-2-1_2frames_apco.mov 796\t1-2-1_2frames_apcs.mov -k: Display block counts in 1024-byte (1 kiB) blocks. 首先这里输出的数字是 KiB，不是 bytes。\n你需要把它们乘以 1024，比如：2784 * 1024 = 2850816，才得到 bytes 也就是字节数。然后使用 Finder 查看相同文件得到字节数是 2849756，很接近了。但是 2850816 - 2849756 = 1060，仍然相差了 1060，这又是怎么回事呢？\nexa -lh -B -S 得到与 Finder 匹配的字节数 bytes，其中 -B 的意思是 List file sizes in bytes, without any prefixes：\nexa -lh -b -S 得到二进制下的 MiB：2.8Mi。\nexa -lh -S 不 pass -b 或 -B 的 flag 得到与 Finder 匹配的 MB：2.8M。但有可能由于四舍五入位数的不同而导致比如 Finder 显示 64.6MB，这里显示 65M。\nexa -lh -b -S: binary prefix exa -lh -B -S: bytes exa -l: exa default to decimal prefix with this command. du 输出的是 block size。什么是 block size 呢，就是文件系统 file system 实际分配给这个文件的空间。而其他命令比如说 exa -lh -b -S 输出的结果是所谓 apparent size（表面上的大小），就是这个文件从表面上看应该是这么大（从表面上看应该占据了这么多的空间）。也就是说，一个文件的 metadata 里显示的这个文件的大小（表面上的大小 apparent size），“我这个文件要占据这么些空间”，与实际上文件系统分配 allocate 给它的空间可以是不同的，是两码事。为什么呢？因为有一种文件叫做 sparse file 的存在。就是你说你要占据这么多的空间，但实际上你拿这么多空间来存储的都是 0，使用 dd if=/dev/null of=big bs=1 count=0 seek=2G 命令可以生成一个 apparent size 是 2GiB，实际上文件系统分配给它的空间是 0 的文件。因为这个 command 实际上没有写入任何数据到那个文件当中去。\nmacOS 自带的 du 命令的行为实在是太奇怪了，要么 flags 跟 GNU 的 du 不一样，非得自己改一下，改个别的名，比如 GNU du 要显示 apparent size 的话，pass --apparent-size flag：du --apparent-size --block-size 1 *；macOS du 要显示 apparent size，pass -A flag。但最关键的来了，这个 -A 它不 work！\n对于 macOS du 来说，du -A -B 1 * 对应着 GNU du 的 du --apparent-size --block-size 1 *。是吧，就功能上来说，-A 对应 --apparent-size，-B 对应 --block-size。这边 GNU du 的 du --apparent-size --block-size 1 * 输出结果为：\n64606136\tA100_001_20231023.mov 118636627\tA100_002_20231023.mov 99361921\tA100_003_20231023.mov 但 macOS du 的 du -A -B 1 * 输出结果为：\n126184\tA100_001_20231023.mov 231713\tA100_002_20231023.mov 194067\tA100_003_20231023.mov 它输出的仍然是 disk usage 而不是 apparent size，而且输出的这个数字还是 block size 为 512 bytes 下的 block count，而不是我 pass 给它的 1，要求它输出 block size 为 1 bytes 下的 block count，也就是所有的 bytes（bytes 就是它二者相乘得到的：block size * block count = total bytes）。相当于这两个 flag 都不 work。\n认为 GNU du 输出的那三个数字是对的的原因，是与其他命令交叉比对得到的结果：diskus -b A100_002_20231023.mov, exa -lh -B -S。\n所以咱直接不用 macOS 自带的 du 了，可以 brew install coreutils，里面就有纯正的原生的 du，告别 macOS 魔改过的 du。\nblocks (the number of block) * block size (the size of each block, for example 512 bytes) = total bytes\n到最后，记住这几个 command 就可以了：\ndu --si *: --si like -h (human readable), but use powers of 1000 not 1024 du -b *: -b equivalent to --apparent-size --block-size=1. exa -lh -B -S: -l: Display extended file metadata as a table. -h: Add a header row to each column. -B: List file sizes in bytes, without any prefixes. -S: List each file’s number of file system blocks. Use block size 512 bytes actually. diskus: diskus -b --size-format binary NINJAV_S001_S001_T001.MOV diskus -b --size-format decimal NINJAV_S001_S001_T001.MOV 查看所在的盘的文件系统的 block size：stat -f %k .\n",
-  "wordCount" : "569",
+  "articleBody": "Reference Binary and Decimal Prefixes - Articles Binary prefix Decimal and Binary Prefixes – Blocks and Files du invocation (GNU Coreutils 9.4) Notes du * 输出的其实不是文件大小，而是所谓 block size。\n$ du * 5568\t1-2-1_2frames_ap4h.mov 8040\t1-2-1_2frames_ap4x.mov 3928\t1-2-1_2frames_apch.mov 2152\t1-2-1_2frames_apcn.mov 688\t1-2-1_2frames_apco.mov 1592\t1-2-1_2frames_apcs.mov 我们使用 exa 这个 ls 的替代品，用 exa -lh -b -S 这个命令得到这样的输出：\n$ exa -lh -b -S Permissions Size Blocks User Date Modified Name .rw-r--r--@ 2.7Mi 5568 thom 27 Oct 17:32 1-2-1_2frames_ap4h.mov .rw-r--r--@ 3.9Mi 8040 thom 27 Oct 17:32 1-2-1_2frames_ap4x.mov .rw-r--r--@ 1.9Mi 3928 thom 27 Oct 17:32 1-2-1_2frames_apch.mov .rw-r--r--@ 1.0Mi 2152 thom 27 Oct 17:32 1-2-1_2frames_apcn.mov .rw-r--r--@ 342Ki 688 thom 27 Oct 17:32 1-2-1_2frames_apco.mov .rw-r--r--@ 793Ki 1592 thom 27 Oct 17:32 1-2-1_2frames_apcs.mov -l: Display extended file metadata as a table. -h: Add a header row to each column. -b: List file sizes with binary prefixes. --binary. -S: List each file’s number of file system blocks. 可以看到 Blocks 那一栏跟 du * 的输出是一样的。-S 的 flag 的作用也正是列出 file system blocks。\n要使用 du -k * 才勉强接近 Finder 显示出的文件大小（但仍然差很远，请接着看下去）。\n使用 du -k * 会得到以下的输出：\n$ du -k * 2784\t1-2-1_2frames_ap4h.mov 4020\t1-2-1_2frames_ap4x.mov 1964\t1-2-1_2frames_apch.mov 1076\t1-2-1_2frames_apcn.mov 344\t1-2-1_2frames_apco.mov 796\t1-2-1_2frames_apcs.mov -k: Display block counts in 1024-byte (1 kiB) blocks. 首先这里输出的数字是 KiB，不是 bytes。\n你需要把它们乘以 1024，比如：2784 * 1024 = 2850816，才得到 bytes 也就是字节数。然后使用 Finder 查看相同文件得到字节数是 2849756，很接近了。但是 2850816 - 2849756 = 1060，仍然相差了 1060，这又是怎么回事呢？\nexa -lh -B -S 得到与 Finder 匹配的字节数 bytes，其中 -B 的意思是 List file sizes in bytes, without any prefixes：\nexa -lh -b -S 得到二进制下的 MiB：2.8Mi。\nexa -lh -S 不 pass -b 或 -B 的 flag 得到与 Finder 匹配的 MB：2.8M。但有可能由于四舍五入位数的不同而导致比如 Finder 显示 64.6MB，这里显示 65M。\nexa -lh -b -S: binary prefix exa -lh -B -S: bytes exa -l: exa default to decimal prefix with this command. du 输出的是 block size。什么是 block size 呢，就是文件系统 file system 实际分配给这个文件的空间。而其他命令比如说 exa -lh -b -S 输出的结果是所谓 apparent size（表面上的大小），就是这个文件从表面上看应该是这么大（从表面上看应该占据了这么多的空间）。也就是说，一个文件的 metadata 里显示的这个文件的大小（表面上的大小 apparent size），“我这个文件要占据这么些空间”，与实际上文件系统分配 allocate 给它的空间可以是不同的，是两码事。为什么呢？因为有一种文件叫做 sparse file 的存在。就是你说你要占据这么多的空间，但实际上你拿这么多空间来存储的都是 0，使用 dd if=/dev/null of=big bs=1 count=0 seek=2G 命令可以生成一个 apparent size 是 2GiB，实际上文件系统分配给它的空间是 0 的文件。因为这个 command 实际上没有写入任何数据到那个文件当中去。\nmacOS 自带的 du 命令的行为实在是太奇怪了，要么 flags 跟 GNU 的 du 不一样，非得自己改一下，改个别的名，比如 GNU du 要显示 apparent size 的话，pass --apparent-size flag：du --apparent-size --block-size 1 *；macOS du 要显示 apparent size，pass -A flag。但最关键的来了，这个 -A 它不 work！\n对于 macOS du 来说，du -A -B 1 * 对应着 GNU du 的 du --apparent-size --block-size 1 *。是吧，就功能上来说，-A 对应 --apparent-size，-B 对应 --block-size。这边 GNU du 的 du --apparent-size --block-size 1 * 输出结果为：\n64606136\tA100_001_20231023.mov 118636627\tA100_002_20231023.mov 99361921\tA100_003_20231023.mov 但 macOS du 的 du -A -B 1 * 输出结果为：\n126184\tA100_001_20231023.mov 231713\tA100_002_20231023.mov 194067\tA100_003_20231023.mov 它输出的仍然是 disk usage 而不是 apparent size，而且输出的这个数字还是 block size 为 512 bytes 下的 block count，而不是我 pass 给它的 1，要求它输出 block size 为 1 bytes 下的 block count，也就是所有的 bytes（bytes 就是它二者相乘得到的：block size * block count = total bytes）。相当于这两个 flag 都不 work。\n认为 GNU du 输出的那三个数字是对的的原因，是与其他命令交叉比对得到的结果：diskus -b A100_002_20231023.mov, exa -lh -B -S。\n所以咱直接不用 macOS 自带的 du 了，可以 brew install coreutils，里面就有纯正的原生的 du，告别 macOS 魔改过的 du。\nblocks (the number of block) * block size (the size of each block, for example 512 bytes) = total bytes\n到最后，记住这几个 command 就可以了：\ndu --si *: --si like -h (human readable), but use powers of 1000 not 1024 du -b *: -b equivalent to --apparent-size --block-size=1. exa -lh -B -S: -l: Display extended file metadata as a table. -h: Add a header row to each column. -B: List file sizes in bytes, without any prefixes. -S: List each file’s number of file system blocks. Use block size 512 bytes actually. diskus: diskus -b --size-format binary NINJAV_S001_S001_T001.MOV diskus -b --size-format decimal NINJAV_S001_S001_T001.MOV 查看所在的盘的文件系统的 block size：stat -f %k .\ngdu -sh --block-size 1 : disk usage gdu -sh -b : apparent size\ndiskus 为了与 du 的行为匹配，默认使用 disk usage。要查看文件的 apparent size，pass -b flag：\n$ diskus -b 64.61 MB (64,606,136 bytes) $ diskus 64.61 MB (64,606,208 bytes) gdu 默认的 block size 是 1024，du 默认是 512。所以当不 pass 任何 flag 给到它们两个命令时：\n$ du A100_001_20231023.mov 126184\tA100_001_20231023.mov $ gdu A100_001_20231023.mov 63092\tA100_001_20231023.mov 这里显示的数字是 block count 的意思。有这么多 block，在分别以 block size 为 512 和 1024 bytes 的情况下。du 输出的数字 126184 的意思是：这里有 126184 个 512 bytes 大小的 block。gdu 输出的数字 63092 的意思是：这里有 63092 个 1024 bytes 大小的 block。所以最终的 bytes 字节数：\n126184 * 512 = 64606208 bytes 63092 * 1024 = 64606208 bytes 这里都是 disk usage。\n",
+  "wordCount" : "677",
   "inLanguage": "en",
   "datePublished": "2023-11-01T00:00:00Z",
   "dateModified": "2023-11-01T00:00:00Z",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://thomjiji.github.io/posts/2023-11-2_file_size/"
+    "@id": "https://thomjiji.github.io/posts/2023-11-02_file_size/"
   },
   "publisher": {
     "@type": "Organization",
@@ -212,7 +212,7 @@ $ exa -lh -b -S Permissions Size Blocks User Date Modified Name .rw-r--r--@ 2.7M
     <h1 class="post-title">
       File size
     </h1>
-    <div class="post-meta"><span title='2023-11-01 00:00:00 +0000 UTC'>2023-11-01</span>&nbsp;|&nbsp;<a href="https://github.com/thomjiji/thomjiji.github.io/tree/main/content//posts/2023-11-2_File_size.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+    <div class="post-meta"><span title='2023-11-01 00:00:00 +0000 UTC'>2023-11-01</span>&nbsp;|&nbsp;<a href="https://github.com/thomjiji/thomjiji.github.io/tree/main/content//posts/2023-11-02_File_size.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
 
 </div>
   </header> 
@@ -312,6 +312,27 @@ $ exa -lh -b -S Permissions Size Blocks User Date Modified Name .rw-r--r--@ 2.7M
 </li>
 </ul>
 <p>查看所在的盘的文件系统的 block size：<code>stat -f %k .</code></p>
+<hr>
+<p><code>gdu -sh --block-size 1 &lt;file&gt;</code>: disk usage
+<code>gdu -sh -b &lt;file&gt;</code>: apparent size</p>
+<p>diskus 为了与 du 的行为匹配，默认使用 disk usage。要查看文件的 apparent size，pass <code>-b</code> flag：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ diskus -b &lt;file&gt;
+</span></span><span style="display:flex;"><span>64.61 MB <span style="color:#f92672">(</span>64,606,136 bytes<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ diskus &lt;file&gt;
+</span></span><span style="display:flex;"><span>64.61 MB <span style="color:#f92672">(</span>64,606,208 bytes<span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>gdu 默认的 block size 是 1024，du 默认是 512。所以当不 pass 任何 flag 给到它们两个命令时：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ du A100_001_20231023.mov
+</span></span><span style="display:flex;"><span>126184	A100_001_20231023.mov
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ gdu A100_001_20231023.mov
+</span></span><span style="display:flex;"><span>63092	A100_001_20231023.mov
+</span></span></code></pre></div><p>这里显示的数字是 block count 的意思。有这么多 block，在分别以 block size 为 512 和 1024 bytes 的情况下。du 输出的数字 126184 的意思是：这里有 126184 个 512 bytes 大小的 block。gdu 输出的数字 63092 的意思是：这里有 63092 个 1024 bytes 大小的 block。所以最终的 bytes 字节数：</p>
+<ul>
+<li>126184 * 512 = 64606208 bytes</li>
+<li>63092 * 1024 = 64606208 bytes</li>
+</ul>
+<p>这里都是 disk usage。</p>
 
 
   </div>
@@ -330,21 +351,21 @@ $ exa -lh -b -S Permissions Size Blocks User Date Modified Name .rw-r--r--@ 2.7M
 
 <div class="share-buttons">
     <a target="_blank" rel="noopener noreferrer" aria-label="share File size on twitter"
-        href="https://twitter.com/intent/tweet/?text=File%20size&amp;url=https%3a%2f%2fthomjiji.github.io%2fposts%2f2023-11-2_file_size%2f&amp;hashtags=">
+        href="https://twitter.com/intent/tweet/?text=File%20size&amp;url=https%3a%2f%2fthomjiji.github.io%2fposts%2f2023-11-02_file_size%2f&amp;hashtags=">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-253.927,424.544c135.939,0 210.268,-112.643 210.268,-210.268c0,-3.218 0,-6.437 -0.153,-9.502c14.406,-10.421 26.973,-23.448 36.935,-38.314c-13.18,5.824 -27.433,9.809 -42.452,11.648c15.326,-9.196 26.973,-23.602 32.49,-40.92c-14.252,8.429 -30.038,14.56 -46.896,17.931c-13.487,-14.406 -32.644,-23.295 -53.946,-23.295c-40.767,0 -73.87,33.104 -73.87,73.87c0,5.824 0.613,11.494 1.992,16.858c-61.456,-3.065 -115.862,-32.49 -152.337,-77.241c-6.284,10.881 -9.962,23.601 -9.962,37.088c0,25.594 13.027,48.276 32.95,61.456c-12.107,-0.307 -23.448,-3.678 -33.41,-9.196l0,0.92c0,35.862 25.441,65.594 59.311,72.49c-6.13,1.686 -12.72,2.606 -19.464,2.606c-4.751,0 -9.348,-0.46 -13.946,-1.38c9.349,29.426 36.628,50.728 68.965,51.341c-25.287,19.771 -57.164,31.571 -91.8,31.571c-5.977,0 -11.801,-0.306 -17.625,-1.073c32.337,21.15 71.264,33.41 112.95,33.41Z" />
         </svg>
     </a>
     <a target="_blank" rel="noopener noreferrer" aria-label="share File size on reddit"
-        href="https://reddit.com/submit?url=https%3a%2f%2fthomjiji.github.io%2fposts%2f2023-11-2_file_size%2f&title=File%20size">
+        href="https://reddit.com/submit?url=https%3a%2f%2fthomjiji.github.io%2fposts%2f2023-11-02_file_size%2f&title=File%20size">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
         </svg>
     </a>
     <a target="_blank" rel="noopener noreferrer" aria-label="share File size on telegram"
-        href="https://telegram.me/share/url?text=File%20size&amp;url=https%3a%2f%2fthomjiji.github.io%2fposts%2f2023-11-2_file_size%2f">
+        href="https://telegram.me/share/url?text=File%20size&amp;url=https%3a%2f%2fthomjiji.github.io%2fposts%2f2023-11-02_file_size%2f">
         <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
             <path
                 d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />

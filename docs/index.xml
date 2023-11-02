@@ -9,10 +9,10 @@
     <lastBuildDate>Wed, 01 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://thomjiji.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>File size</title>
-      <link>https://thomjiji.github.io/posts/2023-11-2_file_size/</link>
+      <link>https://thomjiji.github.io/posts/2023-11-02_file_size/</link>
       <pubDate>Wed, 01 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://thomjiji.github.io/posts/2023-11-2_file_size/</guid>
+      <guid>https://thomjiji.github.io/posts/2023-11-02_file_size/</guid>
       <description>Reference Binary and Decimal Prefixes - Articles Binary prefix Decimal and Binary Prefixes – Blocks and Files du invocation (GNU Coreutils 9.4) Notes du * 输出的其实不是文件大小，而是所谓 block size。
 $ du * 5568	1-2-1_2frames_ap4h.mov 8040	1-2-1_2frames_ap4x.mov 3928	1-2-1_2frames_apch.mov 2152	1-2-1_2frames_apcn.mov 688	1-2-1_2frames_apco.mov 1592	1-2-1_2frames_apcs.mov 我们使用 exa 这个 ls 的替代品，用 exa -lh -b -S 这个命令得到这样的输出：
 $ exa -lh -b -S Permissions Size Blocks User Date Modified Name .rw-r--r--@ 2.7Mi 5568 thom 27 Oct 17:32 1-2-1_2frames_ap4h.</description>
