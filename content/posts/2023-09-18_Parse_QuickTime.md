@@ -320,7 +320,7 @@ User data atoms — "udta":
 
 ---
 
-这个 [pull request](https://github.com/axiomatic-systems/Bento4/pull/694)（目前还未被合并）给 [Bento4](https://github.com/axiomatic-systems/Bento4) 添加了 colr, gama, pasp, fiel atom 的支持。然后利用 Bento4 现有的工具，特别是这个 [mp4edit](https://github.com/axiomatic-systems/Bento4/tree/master/Source/C%2B%2B/Apps/Mp4Edit)已经可以完全实现修改 colr atom 和添加 gama atom 了。到此为止，我最初的需求被这个工具解决了。
+这个 [pull request](https://github.com/axiomatic-systems/Bento4/pull/694)（目前还未被合并）给 [Bento4](https://github.com/axiomatic-systems/Bento4) 添加了 colr, gama, pasp, fiel atom 的支持。然后利用 Bento4 现有的工具，特别是这个 [mp4edit](https://github.com/axiomatic-systems/Bento4/tree/master/Source/C%2B%2B/Apps/Mp4Edit) 已经可以完全实现修改 colr atom 和添加 gama atom 了。到此为止，我最初的需求被这个工具解决了。
 
 插入 gama atom：
 
