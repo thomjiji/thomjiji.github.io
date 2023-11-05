@@ -70,7 +70,7 @@ gama atom 这个东西的 FourCC (four character code) 是 `67 61 6d 61`。具�
 
 ---
 
-做 byte search 的话，会 match 到 两个 gama atom 的 pattern。更奇怪的是，对于 1-1-1 的文件，它没有 gama atom，但也能 match 到 gama atom 的那个 pattern：
+做 byte search 的话，会 match 到两个 gama atom 的 pattern。更奇怪的是，对于 1-1-1 的文件，它没有 gama atom，但也能 match 到 gama atom 的那个 pattern：
 
 ```sh
 $ grep "gama" 1-1-1_20mins_hex.txt
@@ -79,12 +79,12 @@ $ grep "gama" 1-1-1_20mins_hex.txt
 
 但需要文件的时长够长。比如只有几秒的，就只有一个正常的 gama atom。会不会出现两个 gama atom 的 pattern，取决于这个 prores 文件的时长多长，我测试过 5 分钟没有，10 分钟开始有，20 分钟也有。
 
-| File name          | Numbers of gama  | Notes                               |
-| ------------------ | ---------------- | ----------------------------------- |
-| `1-1-1_10mins.mov` | one gama pattern | It's not supposed to have!          |
-| `1-1-1_20mins.mov` | one gama pattern | It's not supposed to have!          |
-| `1-2-1_10mins.mov` | two gama pattern | It should has one, but we found two |
-| `1-2-1_20mins.mov` | two gama pattern | It should has one, but we found two |
+| File name          | Numbers of gama  | Notes                            |
+| ------------------ | ---------------- | -------------------------------- |
+| `1-1-1_10mins.mov` | one gama pattern | It's not supposed to have!       |
+| `1-1-1_20mins.mov` | one gama pattern | It's not supposed to have!       |
+| `1-2-1_10mins.mov` | two gama pattern | Expected one, found two instead. |
+| `1-2-1_20mins.mov` | two gama pattern | Expected one, found two instead. |
 
 ---
 
@@ -111,9 +111,7 @@ frame:
 00000040  01 30 00 03 04 04 05 05  06 07 07 09 04 04 05 06  |.0..............|
 ```
 
-Frame size is 4 bytes before the icpf.  In this case, it's `00 09 68 00`.
-Frame header size is 4 bytes after the icpf. In this case, it's `00 94 00 00`.
-After frame header size, it's "encoder_identifier": in this case, it's `61 70 6c 30`.
+The frame size of 4 bytes before the icpf is `00 09 68 00`. The frame header size of 4 bytes after the icpf is `00 94 00 00`. Following the frame header is the encoder_identifier, which here is `61 70 6c 30`.
 
 `(next) pos = previous (frame_size + pos)`
 
@@ -121,7 +119,7 @@ After frame header size, it's "encoder_identifier": in this case, it's `61 70 6c
 
 ---
 
-修改 gama atom 值的功能实现了以后，我把一个 1-2-1 的 MOV 视频的 Gamma 值从 2.4 改成 1.96。然后将其与 1-1-1 的 MOV 视频对比，可以发现画面整个一模一样。
+修改 gama atom 值的功能实现了以后，我把一个 1-2-1 的 MOV 视频的 Gamma 值从 2.4 改成 1.96。然后将其与 1-1-1 的 MOV 视频对比（都是用 QuickTime 播放器打开），可以发现画面整个一模一样。
 
 ---
 
@@ -257,6 +255,7 @@ moov: s=      1544 (0x00000608), o=    263724 (0x0004062c)
 ```
 
 > The most important part of an MPEG-4 file is the mdat atom - **its where the actual raw information for the file is stored**. — [atomic parsley](https://atomicparsley.sourceforge.net/mpeg-4files.html#:~:text=The%20most%20important%20part%20of%20an%20MPEG%2D4%20file%20is%20the%20mdat%20atom%20%2D%20its%20where%20the%20actual%20raw%20information%20for%20the%20file%20is%20stored.)
+
 这是实际上文件的 raw data 的所在地。
 
 ProRes 每一帧 的 frame size 都可以在 "stsz" 找到。
