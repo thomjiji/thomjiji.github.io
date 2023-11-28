@@ -5,18 +5,9 @@ draft: false
 tags: ["GPG", "Cryptography"]
 ---
 
-Reference:
-
-- [How to enable SSH access using a GPG key for authentication](https://opensource.com/article/19/4/gpg-subkeys-ssh): Entry point for this topic/technique.
-- [GPG - SSH setup](https://gist.github.com/mcattarinussi/834fc4b641ff4572018d0c665e5a94d3): more comprehensive.
-- [SSH key - Arch Wiki](shttps://wiki.archlinux.org/title/SSH_keys)
-- [GnuPG - Arch Wiki](https://wiki.archlinux.org/title/GnuPG)
-
----
-
 Useful commands:
 
-- `gpg --export-ssh-key <uid>`: Retrieve public key part of GPG/ (for) SSH (authentication) key.
+- `gpg --export-ssh-key <uid>`: Retrieve public key part of GPG/~~(used for)~~SSH key.
 - `ssh-add --apple-use-keychain`
 - `killall ssh-agent`
 - `gpg --export --armor 3921648AF0ADA1F6`
@@ -92,3 +83,12 @@ Knowledge:
 > When you run `ssh-add`, it communicates with the authentication agent (whether it's `ssh-agent` or `gpg-agent` acting as an SSH agent) via the specified socket, and that's what the `SSH_AUTH_SOCK` environment variable is used for.
 
 > The `gpgconf --list-dirs agent-ssh-socket` command is used to display the directory where the GnuPG (GPG) agent's UNIX domain socket for SSH operations is located.
+
+---
+
+Reference:
+
+- [How to enable SSH access using a GPG key for authentication](https://opensource.com/article/19/4/gpg-subkeys-ssh): Entry point for this topic/technique.
+- [GPG - SSH setup](https://gist.github.com/mcattarinussi/834fc4b641ff4572018d0c665e5a94d3): more comprehensive.
+- [SSH key - Arch Wiki](shttps://wiki.archlinux.org/title/SSH_keys)
+- [GnuPG - Arch Wiki](https://wiki.archlinux.org/title/GnuPG)
