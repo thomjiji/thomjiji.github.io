@@ -12,7 +12,7 @@ How to enable SSH access using a GPG key for authentication: Entry point for thi
 gpg --export-ssh-key &lt;uid&gt;: Retrieve public key part of GPG/ (for) SSH (authentication) key. ssh-add --apple-use-keychain killall ssh-agent gpg --export --armor 3921648AF0ADA1F6 gpg -K --keyid-format long --with-keygrip gpgconf --launch gpg-agent: Launch gpg-agent manually. ps aux | grep &lt;gpg-agent|ssh-agent&gt;: Check if gpg-agent/ssh-agent is running.">
 <meta name="author" content="">
 <link rel="canonical" href="https://thomjiji.github.io/posts/2023-11-28_gpg_for_ssh_auth/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.9a1e99e355352b83d4be4f8f5f135bd8a42fde2922cf5f0265fd11e96c6dc247.css" integrity="sha256-mh6Z41U1K4PUvk&#43;PXxNb2KQv3ikiz18CZf0R6Wxtwkc=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b04d7c9c62d920af2be03c812f2b5be690c0278b96abe695c3590e5e250a2ed9.css" integrity="sha256-sE18nGLZIK8r4DyBLytb5pDAJ4uWq&#43;aVw1kOXiUKLtk=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://thomjiji.github.io/favicon.ico">
@@ -65,7 +65,7 @@ gpg --export-ssh-key &lt;uid&gt;: Retrieve public key part of GPG/ (for) SSH (au
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
   </head>
