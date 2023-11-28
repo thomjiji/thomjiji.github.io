@@ -2,7 +2,7 @@
 <html lang="en" dir="auto">
 
 <head>
-	<meta name="generator" content="Hugo 0.119.0"><meta charset="utf-8">
+	<meta name="generator" content="Hugo 0.101.0" /><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
@@ -213,6 +213,35 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>Enable SSH access using a GPG key for authentication
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Reference:
+How to enable SSH access using a GPG key for authentication: Entry point for this topic/technique. GPG - SSH setup: more comprehensive. SSH key - Arch Wiki GnuPG - Arch Wiki Useful commands:
+gpg --export-ssh-key &lt;uid&gt;: Retrieve public key part of GPG/~~(used for)~~SSH key. ssh-add --apple-use-keychain killall ssh-agent gpg --export --armor 3921648AF0ADA1F6 gpg -K --keyid-format long --with-keygrip gpgconf --launch gpg-agent: Launch gpg-agent manually. ps aux | grep &lt;gpg-agent|ssh-agent&gt;: Check if gpg-agent/ssh-agent is running....</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-11-28 00:00:00 +0000 UTC'>2023-11-28</span></footer>
+  <a class="entry-link" aria-label="post link to Enable SSH access using a GPG key for authentication" href="https://thomjiji.github.io/posts/2023-11-28_gpg_for_ssh_auth/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>SSH notes
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Reference https://infosec.mozilla.org/guidelines/openssh https://wiki.archlinux.org/title/OpenSSH 生成一个 SSH key 最简单的生成一个 ssh key 的方法：ssh-keygen -C &#34;my ssh key&#34;
+-c: comment. Provides a comment for this key. 较常用的生成一个 ssh key 的方法（自定义 key 的类型/算法）：ssh-keygen -t ed25519 -C &#34;my ssh key&#34;
+-t: Specify the type of the key to create. The possible values are “dsa”, “ecdsa”, “ecdsa-sk”, “ed25519”, “ed25519-sk”, or “rsa”.. Public Key Access:
+A user creates a pair of public and private keys, and installs the public key in his $HOME/....</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-11-28 00:00:00 +0000 UTC'>2023-11-28</span></footer>
+  <a class="entry-link" aria-label="post link to SSH notes" href="https://thomjiji.github.io/posts/2023-11-28_ssh_notes/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>File size
     </h2>
   </header>
@@ -322,37 +351,6 @@ Ok，下载安装了。这一大堆都是什么……噢看到有 Manual，还�
   </div>
   <footer class="entry-footer"><span title='2023-03-09 00:00:00 +0000 UTC'>2023-03-09</span></footer>
   <a class="entry-link" aria-label="post link to DEVONthink 上手" href="https://thomjiji.github.io/posts/2023-03-09_devonthink_unboxing/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>ICC Profile
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>对普通显示器校色的时候，很难不碰到 ICC profile 这个东西。我们都知道这个名词，显示器的 ICC 文件，或许模糊的对它有一些概念。但它究竟是什么？原理如何。
-ICC profile 跟我们已经有很明确概念的 ACES，或者更广泛一些地讲：「现代的色彩管理流程」，是很相似的 idea。都有一个处于整个链路中间的非常大的色彩空间，大到足以容纳所有不同的输入、显示和输出设备的各种色域（sRGB、AdobeRGB、Rec.709 等等）1。这个色彩空间在 ICC 这个概念下叫作 PCS（Profile Connection Space）。ICC profile 通过定义设备源或目标色彩空间与 PCS 之间的映射来描述特定设备的色彩属性2。
-ICC 本身并不进行任何校准，它们只包含显示器关于色彩成像能力的数据。这些数据用于帮助可以识别 ICC profile 的软件（我们叫它 ICC aware 的软件）通过 CMM（色彩管理模块）对图像进行调整，以尝试纠正显示器的色偏来进行校准。ICC profile 完成的实际上是对图像的调整，而不是对显示器的校正。不同的软件使用不同的 CMM 的话，即使都采用同一个 ICC，最终出来的结果也可能不一样。
-ICC Profile - IBM ↩︎
-ICC profile - Wikipedia ↩︎</p>
-  </div>
-  <footer class="entry-footer"><span title='2023-03-09 00:00:00 +0000 UTC'>2023-03-09</span></footer>
-  <a class="entry-link" aria-label="post link to ICC Profile" href="https://thomjiji.github.io/posts/2023-03-09_icc-profile/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>VCGT Tag
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>之前我们知道，DisplayCAL 这种校色软件的工作原理：它会生成一个配置文件，在系统里加载，实际作用到显卡的输出信号上。更细节一点则是：
-DisplayCAL 生成的 ICC 配置文件中会包含一个叫作 VCGT（Video Card Gamma Table）的 tag，它实际是一个 1D LUT，包含对显示器的灰阶或白点的校正。然后操作系统需要把这个 VCGT Tag 加载到显卡输出信号上的有一个 Look Up Table 上，从而实现对显卡输出信号的校正。同时显卡的这个 Look Up Table 也是有精度限制的。
-具体在使用 DisplayCAL 的时候，右键桌面右下角 DisplayCAL 的图标，就会看到有一个 Reset video card gamma table 的东西。在系统加载了 DisplayCAL 生成的 profile 的情况下，这时点一下 Reset video card gamma table 会发现整个桌面的反差，或者说 Gamma、灰阶变了，它把对于显卡的校正给重置掉了，回到了最初的状态。
-再者就是我们还可以在 DisplayCAL 的 Tone curve 的设置中看到：如果不把 Tone curve 设为 “As measured” 的话，比如手动设为 Gamma 2.2。那 DisplayCAL 会做这么一件事情：在校准过程中，会通过一个 1D LUT 来校准（中和、补偿）显示器本身与这条纯粹的、Gamma 为 2.2 的指数曲线不相符的地方。如果设为 “As measured” 的话，则显示器的 grey scale 是怎么样就是怎么样，不做任何的校准和调整。...</p>
-  </div>
-  <footer class="entry-footer"><span title='2023-03-09 00:00:00 +0000 UTC'>2023-03-09</span></footer>
-  <a class="entry-link" aria-label="post link to VCGT Tag" href="https://thomjiji.github.io/posts/2023-03-09_vcgt_tag/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

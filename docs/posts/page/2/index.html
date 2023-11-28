@@ -169,6 +169,37 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>ICC Profile
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>对普通显示器校色的时候，很难不碰到 ICC profile 这个东西。我们都知道这个名词，显示器的 ICC 文件，或许模糊的对它有一些概念。但它究竟是什么？原理如何。
+ICC profile 跟我们已经有很明确概念的 ACES，或者更广泛一些地讲：「现代的色彩管理流程」，是很相似的 idea。都有一个处于整个链路中间的非常大的色彩空间，大到足以容纳所有不同的输入、显示和输出设备的各种色域（sRGB、AdobeRGB、Rec.709 等等）1。这个色彩空间在 ICC 这个概念下叫作 PCS（Profile Connection Space）。ICC profile 通过定义设备源或目标色彩空间与 PCS 之间的映射来描述特定设备的色彩属性2。
+ICC 本身并不进行任何校准，它们只包含显示器关于色彩成像能力的数据。这些数据用于帮助可以识别 ICC profile 的软件（我们叫它 ICC aware 的软件）通过 CMM（色彩管理模块）对图像进行调整，以尝试纠正显示器的色偏来进行校准。ICC profile 完成的实际上是对图像的调整，而不是对显示器的校正。不同的软件使用不同的 CMM 的话，即使都采用同一个 ICC，最终出来的结果也可能不一样。
+ICC Profile - IBM ↩︎
+ICC profile - Wikipedia ↩︎</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-03-09 00:00:00 +0000 UTC'>2023-03-09</span></footer>
+  <a class="entry-link" aria-label="post link to ICC Profile" href="https://thomjiji.github.io/posts/2023-03-09_icc-profile/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>VCGT Tag
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>之前我们知道，DisplayCAL 这种校色软件的工作原理：它会生成一个配置文件，在系统里加载，实际作用到显卡的输出信号上。更细节一点则是：
+DisplayCAL 生成的 ICC 配置文件中会包含一个叫作 VCGT（Video Card Gamma Table）的 tag，它实际是一个 1D LUT，包含对显示器的灰阶或白点的校正。然后操作系统需要把这个 VCGT Tag 加载到显卡输出信号上的有一个 Look Up Table 上，从而实现对显卡输出信号的校正。同时显卡的这个 Look Up Table 也是有精度限制的。
+具体在使用 DisplayCAL 的时候，右键桌面右下角 DisplayCAL 的图标，就会看到有一个 Reset video card gamma table 的东西。在系统加载了 DisplayCAL 生成的 profile 的情况下，这时点一下 Reset video card gamma table 会发现整个桌面的反差，或者说 Gamma、灰阶变了，它把对于显卡的校正给重置掉了，回到了最初的状态。
+再者就是我们还可以在 DisplayCAL 的 Tone curve 的设置中看到：如果不把 Tone curve 设为 “As measured” 的话，比如手动设为 Gamma 2.2。那 DisplayCAL 会做这么一件事情：在校准过程中，会通过一个 1D LUT 来校准（中和、补偿）显示器本身与这条纯粹的、Gamma 为 2.2 的指数曲线不相符的地方。如果设为 “As measured” 的话，则显示器的 grey scale 是怎么样就是怎么样，不做任何的校准和调整。...</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-03-09 00:00:00 +0000 UTC'>2023-03-09</span></footer>
+  <a class="entry-link" aria-label="post link to VCGT Tag" href="https://thomjiji.github.io/posts/2023-03-09_vcgt_tag/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>为什么要使用上屏卡
     </h2>
   </header>
@@ -274,37 +305,12 @@ If you would like to add some text to the file, you can type in after this, like
   <footer class="entry-footer"><span title='2023-01-27 00:00:00 +0000 UTC'>2023-01-27</span></footer>
   <a class="entry-link" aria-label="post link to Use cat command to add text to file quickly" href="https://thomjiji.github.io/posts/2023-01-27_use-cat-command-to-add-text-to-file-quickly/"></a>
 </article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>macOS add fish to $SHELL and set fish as default shell
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Add fish to $SHELL and set as default Add the shell to /etc/shells with: echo &#34;/opt/homebrew/bin/fish&#34; | sudo tee -a /etc/shells Change default shell with: chsh -s /opt/homebrew/bin/fish Modify $PATH with fish shell 在 iTerm2 当中使用 fish shell 作为默认 shell，需要把 $PATH 加入到 ~/.config/fish/fish_variables set -U fish_user_paths /usr/local/bin $fish_user_paths Enter this command in terminal: fish_add_path /opt/homebrew/bin. It will add /opt/homebrew/bin to the ~/.config/fish/fish_variables. Other useful commands which $SHELL
-echo $PATH
-Homebrew 下载的 Fish shell 的 path 是 /opt/homebrew/bin/fish 而不是像 fish documentation 说的那样在 /usr/local/bin/fish。...</p>
-  </div>
-  <footer class="entry-footer"><span title='2023-01-26 00:00:00 +0000 UTC'>2023-01-26</span></footer>
-  <a class="entry-link" aria-label="post link to macOS add fish to $SHELL and set fish as default shell" href="https://thomjiji.github.io/posts/2023-01-26_macos-add-fish-to-shell-and-set-fish-as-default-shell/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>High Quality H.264 Render in Baselight
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p> Params Start at 39:56, Daniele introduced the method for rendering high quality H.264 in Baselight. Here is the key parameters:
-Rate Control: CRF based VBR Quantizer: Nominal Quantizer parameter: 18 Quantizer parameter: 18 </p>
-  </div>
-  <footer class="entry-footer"><span title='2022-12-28 00:00:00 +0000 UTC'>2022-12-28</span></footer>
-  <a class="entry-link" aria-label="post link to High Quality H.264 Render in Baselight" href="https://thomjiji.github.io/posts/2022-12-28_high-quality-h.264-render-in-baselight/"></a>
-</article>
 <footer class="page-footer">
   <nav class="pagination">
     <a class="prev" href="https://thomjiji.github.io/posts/">
       «&nbsp;Prev&nbsp;
+    </a>
+    <a class="next" href="https://thomjiji.github.io/posts/page/3/">Next&nbsp;&nbsp;»
     </a>
   </nav>
 </footer>
