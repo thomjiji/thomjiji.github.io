@@ -269,7 +269,7 @@ A user creates a pair of public and private keys, and installs the public key in
 <hr>
 <p>SSH authentication methods (Authentication methods are tried in the order specified below):</p>
 <ol>
-<li>Host-based authentication: Host-based authentication works as follows: If the machine the user logs in from is listed in /etc/hosts.equiv or /etc/ssh/shosts.equiv on the remote machine, the user is non-root and the user names are the same on both sides, or if the files ~/.rhosts or ~/.shosts exist in the user&rsquo;s home directory on the remote machine and contain a line containing the name of the client machine and the name of the user on that machine, the user is considered for login.</li>
+<li>Host-based authentication: Host-based authentication works as follows: If the machine the user logs in from is listed in <code>/etc/hosts.equiv</code> or <code>/etc/ssh/shosts.equiv</code> on the remote machine, the user is non-root and the user names are the same on both sides, or if the files <code>~/.rhosts</code> or <code>~/.shosts</code> exist in the user&rsquo;s home directory on the remote machine and contain a line containing the name of the client machine and the name of the user on that machine, the user is considered for login.</li>
 <li>Public key authentication</li>
 <li>Keyboard-interactive authentication: The server sends an arbitrary &ldquo;challenge&rdquo; text and prompts for a response, possibly multiple times.</li>
 <li>Password authentication</li>
