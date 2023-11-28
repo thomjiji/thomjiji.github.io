@@ -2,13 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://thomjiji.github.io/tags/cryptography/</loc>
+    <lastmod>2023-11-28T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://thomjiji.github.io/posts/2023-11-28_gpg_for_ssh_auth/</loc>
+    <lastmod>2023-11-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thomjiji.github.io/tags/gpg/</loc>
     <lastmod>2023-11-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thomjiji.github.io/posts/</loc>
     <lastmod>2023-11-28T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://thomjiji.github.io/tags/ssh/</loc>
+    <lastmod>2023-11-28T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://thomjiji.github.io/posts/2023-11-28_ssh_notes/</loc>
+    <lastmod>2023-11-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thomjiji.github.io/tags/</loc>
     <lastmod>2023-11-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thomjiji.github.io/</loc>
@@ -21,9 +33,6 @@
     <lastmod>2023-09-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thomjiji.github.io/posts/2023-09-21_c&#43;&#43;_preprocessor/</loc>
-    <lastmod>2023-09-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://thomjiji.github.io/tags/</loc>
     <lastmod>2023-09-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thomjiji.github.io/tags/atom/</loc>

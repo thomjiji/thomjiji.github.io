@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>GPG on thomjiji</title>
+    <link>https://thomjiji.github.io/tags/gpg/</link>
+    <description>Recent content in GPG on thomjiji</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 28 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://thomjiji.github.io/tags/gpg/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Enable SSH access using a GPG key for authentication</title>
+      <link>https://thomjiji.github.io/posts/2023-11-28_gpg_for_ssh_auth/</link>
+      <pubDate>Tue, 28 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://thomjiji.github.io/posts/2023-11-28_gpg_for_ssh_auth/</guid>
+      <description>Reference:
+How to enable SSH access using a GPG key for authentication: Entry point for this topic/technique. GPG - SSH setup: more comprehensive. SSH key - Arch Wiki GnuPG - Arch Wiki Useful commands:
+gpg --export-ssh-key &amp;lt;uid&amp;gt;: Retrieve public key part of GPG/ (for) SSH (authentication) key. ssh-add --apple-use-keychain killall ssh-agent gpg --export --armor 3921648AF0ADA1F6 gpg -K --keyid-format long --with-keygrip gpgconf --launch gpg-agent: Launch gpg-agent manually. ps aux | grep &amp;lt;gpg-agent|ssh-agent&amp;gt;: Check if gpg-agent/ssh-agent is running.</description>
+    </item>
+    
+  </channel>
+</rss>
