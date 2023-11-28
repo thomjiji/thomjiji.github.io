@@ -15,7 +15,7 @@ Reference:
 
 Useful commands:
 
-- `gpg --export-ssh-key <uid>`: Retrieve public key part of GPG/~~(used for)~~SSH key.
+- `gpg --export-ssh-key <uid>`: Retrieve public key part of GPG/ (for) SSH (authentication) key.
 - `ssh-add --apple-use-keychain`
 - `killall ssh-agent`
 - `gpg --export --armor 3921648AF0ADA1F6`
