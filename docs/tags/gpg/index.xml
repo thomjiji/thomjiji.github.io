@@ -13,9 +13,8 @@
       <pubDate>Tue, 28 Nov 2023 00:00:00 +0000</pubDate>
       
       <guid>https://thomjiji.github.io/posts/2023-11-28_gpg_for_ssh_auth/</guid>
-      <description>Reference:
-How to enable SSH access using a GPG key for authentication: Entry point for this topic/technique. GPG - SSH setup: more comprehensive. SSH key - Arch Wiki GnuPG - Arch Wiki Useful commands:
-gpg --export-ssh-key &amp;lt;uid&amp;gt;: Retrieve public key part of GPG/ (for) SSH (authentication) key. ssh-add --apple-use-keychain killall ssh-agent gpg --export --armor 3921648AF0ADA1F6 gpg -K --keyid-format long --with-keygrip gpgconf --launch gpg-agent: Launch gpg-agent manually. ps aux | grep &amp;lt;gpg-agent|ssh-agent&amp;gt;: Check if gpg-agent/ssh-agent is running.</description>
+      <description>Useful commands:
+gpg --export-ssh-key &amp;lt;uid&amp;gt;: Retrieve public key part of GPG/~~(used for)~~SSH key. ssh-add --apple-use-keychain killall ssh-agent gpg --export --armor 3921648AF0ADA1F6 gpg -K --keyid-format long --with-keygrip gpgconf --launch gpg-agent: Launch gpg-agent manually. ps aux | grep &amp;lt;gpg-agent|ssh-agent&amp;gt;: Check if gpg-agent/ssh-agent is running. set -x SSH_AUTH_SOCK $(gpgconf --list-dirs agent-ssh-socket): Tell SSH how to access gpg-agent by setting environment variable SSH_AUTH_SOCK. ssh-add -L: Get SSH key fingerprint. gpgconf --kill gpg-agent ssh-agent -k: Kill the current running ssh-agent.</description>
     </item>
     
   </channel>

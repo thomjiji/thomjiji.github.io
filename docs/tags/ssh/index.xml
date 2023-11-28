@@ -13,7 +13,7 @@
       <pubDate>Tue, 28 Nov 2023 00:00:00 +0000</pubDate>
       
       <guid>https://thomjiji.github.io/posts/2023-11-28_ssh_notes/</guid>
-      <description>Reference https://infosec.mozilla.org/guidelines/openssh https://wiki.archlinux.org/title/OpenSSH 生成一个 SSH key 最简单的生成一个 ssh key 的方法：ssh-keygen -C &amp;quot;my ssh key&amp;quot;
+      <description>生成一个 SSH key 最简单的生成一个 ssh key 的方法：ssh-keygen -C &amp;quot;my ssh key&amp;quot;
 -c: comment. Provides a comment for this key. 较常用的生成一个 ssh key 的方法（自定义 key 的类型/算法）：ssh-keygen -t ed25519 -C &amp;quot;my ssh key&amp;quot;
 -t: Specify the type of the key to create. The possible values are “dsa”, “ecdsa”, “ecdsa-sk”, “ed25519”, “ed25519-sk”, or “rsa”.. Public Key Access:
 A user creates a pair of public and private keys, and installs the public key in his $HOME/.</description>

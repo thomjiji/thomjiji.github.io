@@ -158,9 +158,8 @@
     </h2>
   </header>
   <div class="entry-content">
-    <p>Reference:
-How to enable SSH access using a GPG key for authentication: Entry point for this topic/technique. GPG - SSH setup: more comprehensive. SSH key - Arch Wiki GnuPG - Arch Wiki Useful commands:
-gpg --export-ssh-key &lt;uid&gt;: Retrieve public key part of GPG/ (for) SSH (authentication) key. ssh-add --apple-use-keychain killall ssh-agent gpg --export --armor 3921648AF0ADA1F6 gpg -K --keyid-format long --with-keygrip gpgconf --launch gpg-agent: Launch gpg-agent manually. ps aux | grep &lt;gpg-agent|ssh-agent&gt;: Check if gpg-agent/ssh-agent is running....</p>
+    <p>Useful commands:
+gpg --export-ssh-key &lt;uid&gt;: Retrieve public key part of GPG/~~(used for)~~SSH key. ssh-add --apple-use-keychain killall ssh-agent gpg --export --armor 3921648AF0ADA1F6 gpg -K --keyid-format long --with-keygrip gpgconf --launch gpg-agent: Launch gpg-agent manually. ps aux | grep &lt;gpg-agent|ssh-agent&gt;: Check if gpg-agent/ssh-agent is running. set -x SSH_AUTH_SOCK $(gpgconf --list-dirs agent-ssh-socket): Tell SSH how to access gpg-agent by setting environment variable SSH_AUTH_SOCK. ssh-add -L: Get SSH key fingerprint. gpgconf --kill gpg-agent ssh-agent -k: Kill the current running ssh-agent....</p>
   </div>
   <footer class="entry-footer"><span title='2023-11-28 00:00:00 +0000 UTC'>2023-11-28</span></footer>
   <a class="entry-link" aria-label="post link to Enable SSH access using a GPG key for authentication" href="https://thomjiji.github.io/posts/2023-11-28_gpg_for_ssh_auth/"></a>
