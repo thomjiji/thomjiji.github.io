@@ -2,6 +2,7 @@
 title: "Enable SSH access using a GPG key for authentication"
 date: 2023-11-28
 draft: false
+tags: ["GPG", "Cryptography"]
 ---
 
 Reference:
