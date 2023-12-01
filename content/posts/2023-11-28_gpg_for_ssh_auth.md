@@ -92,3 +92,4 @@ Reference:
 - [GPG - SSH setup](https://gist.github.com/mcattarinussi/834fc4b641ff4572018d0c665e5a94d3): more comprehensive.
 - [SSH key - Arch Wiki](shttps://wiki.archlinux.org/title/SSH_keys)
 - [GnuPG - Arch Wiki](https://wiki.archlinux.org/title/GnuPG)
+- [OpenSSH - Arch Wiki](https://wiki.archlinux.org/title/OpenSSH)
