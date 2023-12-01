@@ -213,20 +213,20 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>btrfs and btrbk, snapshot and backup<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>
+    <h2>btrfs and btrbk<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>
     </h2>
   </header>
   <div class="entry-content">
     <p>/etc/btrbk/btrbk.conf config file:
-volume / snapshot_dir btrbk_snapshots subvolume home incremental strict volume /: Base path within a btrfs filesystem containing the subvolumes to be backuped (usually the mount-point of a btrfs filesystem mounted with subvolid=5 option). In this case, we use the existing root directory — which is already a btrfs filesystem (by default on Fedora). btrbk refer this / (next to volume) as “”. snapshot_dir btrbk_snapshots: btrbk_snapshots is relative to the volume set above, which in this case the / (root directory)....</p>
+volume / snapshot_dir btrbk_snapshots subvolume home incremental strict volume /: Base path within a btrfs filesystem containing the subvolumes to be backuped (usually the mount-point of a btrfs filesystem mounted with subvolid=5 option). In this case, we use the existing root directory — which is already a btrfs filesystem (by default on Fedora). btrbk refer this / (next to volume) as “&lt;volume-directory&gt;”. snapshot_dir btrbk_snapshots: btrbk_snapshots is relative to the volume set above, which in this case the / (root directory)....</p>
   </div>
   <footer class="entry-footer"><span title='2023-12-01 00:00:00 +0000 UTC'>2023-12-01</span></footer>
-  <a class="entry-link" aria-label="post link to btrfs and btrbk, snapshot and backup" href="https://thomjiji.github.io/posts/2023-12-01_btrbk/"></a>
+  <a class="entry-link" aria-label="post link to btrfs and btrbk" href="https://thomjiji.github.io/posts/2023-12-01_btrbk/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>Enable SSH access using a GPG key for authentication
+    <h2>GPG key for SSH authentication
     </h2>
   </header>
   <div class="entry-content">
@@ -234,7 +234,7 @@ volume / snapshot_dir btrbk_snapshots subvolume home incremental strict volume /
 gpg --export-ssh-key &lt;uid&gt;: Retrieve public key part of GPG/~~(used for)~~SSH key. ssh-add --apple-use-keychain killall ssh-agent gpg --export --armor 3921648AF0ADA1F6 gpg -K --keyid-format long --with-keygrip gpgconf --launch gpg-agent: Launch gpg-agent manually. ps aux | grep &lt;gpg-agent|ssh-agent&gt;: Check if gpg-agent/ssh-agent is running. set -x SSH_AUTH_SOCK $(gpgconf --list-dirs agent-ssh-socket): Tell SSH how to access gpg-agent by setting environment variable SSH_AUTH_SOCK. ssh-add -L: Get SSH key fingerprint. gpgconf --kill gpg-agent ssh-agent -k: Kill the current running ssh-agent....</p>
   </div>
   <footer class="entry-footer"><span title='2023-11-28 00:00:00 +0000 UTC'>2023-11-28</span></footer>
-  <a class="entry-link" aria-label="post link to Enable SSH access using a GPG key for authentication" href="https://thomjiji.github.io/posts/2023-11-28_gpg_for_ssh_auth/"></a>
+  <a class="entry-link" aria-label="post link to GPG key for SSH authentication" href="https://thomjiji.github.io/posts/2023-11-28_gpg_for_ssh_auth/"></a>
 </article>
 
 <article class="post-entry"> 

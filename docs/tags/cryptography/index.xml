@@ -8,7 +8,7 @@
     <language>en-us</language>
     <lastBuildDate>Tue, 28 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://thomjiji.github.io/tags/cryptography/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Enable SSH access using a GPG key for authentication</title>
+      <title>GPG key for SSH authentication</title>
       <link>https://thomjiji.github.io/posts/2023-11-28_gpg_for_ssh_auth/</link>
       <pubDate>Tue, 28 Nov 2023 00:00:00 +0000</pubDate>
       
