@@ -212,7 +212,8 @@
 
 .post-content pre code {
     display: block;
-    margin: auto 0;
+    /* margin: auto 0; */
+    margin-bottom: var(--content-gap);
     padding: 10px;
     color: rgb(213, 213, 214);
     background: var(--hljs-bg) !important;
