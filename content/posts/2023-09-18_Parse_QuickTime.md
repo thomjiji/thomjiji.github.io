@@ -3,6 +3,7 @@ title: "Parse QuickTime"
 date: 2023-09-18
 draft: false
 tags: ["Atom", "QuickTime", "NCLC Tag", "ProRes"]
+slug: parse-quicktime
 ---
 
 ### Apple Developer Documentation
@@ -254,7 +255,7 @@ mdat: s=    263696 (0x00040610), o=        28 (0x0000001c)
 moov: s=      1544 (0x00000608), o=    263724 (0x0004062c)
 ```
 
-> The most important part of an MPEG-4 file is the mdat atom - **its where the actual raw information for the file is stored**. — [atomic parsley](https://atomicparsley.sourceforge.net/mpeg-4files.html#:~:text=The%20most%20important%20part%20of%20an%20MPEG%2D4%20file%20is%20the%20mdat%20atom%20%2D%20its%20where%20the%20actual%20raw%20information%20for%20the%20file%20is%20stored.)
+> The most important part of an MPEG-4 file is the mdat atom - **its where the actual raw information for the file is stored**. — [atomic parsley](https://atomicparsley.sourceforge.net/mpeg-4files.html)
 
 这是实际上文件的 raw data 的所在地。
 

@@ -3,9 +3,10 @@ title: "C++ Preprocessor"
 date: 2023-09-21
 draft: false
 tags: ["C++"]
+slug: c++-preprocessor
 ---
 
-**Excerpted from [learncpp.com](https://www.learncpp.com/cpp-tutorial/introduction-to-the-preprocessor/) as my personal notes.**
+**Excerpted from [learncpp.com](https://www.learncpp.com/cpp-tutorial/introduction-to-the-preprocessor/)**
 
 ## preprocessor
 

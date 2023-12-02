@@ -1,12 +1,11 @@
 ---
 title: "Dolby Vision Profile 8.4 & Dolby Atmos"
 date: 2023-01-27
-draft: false
+draft: true
 ShowToc: true
 tags: ["Dolby Vision"]
 categories: ["HDR"]
 author: ["thom"]
-# weight: 1
 ---
 
 ## 参考链接

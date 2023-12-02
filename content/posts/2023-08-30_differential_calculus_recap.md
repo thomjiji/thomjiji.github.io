@@ -3,6 +3,8 @@ title: "Calculus Recap"
 date: 2023-08-30
 draft: false
 math: true
+tags: ["calculus", "math"]
+slug: calculus-recap
 ---
 
 ## Intermediate Value Theorem (IVT)
@@ -87,14 +89,14 @@ The function $f(x)$ is said to be continuous on an interval if it is continuous 
 every point in that interval. It is said to be continuous everywhere or simply
 continuous if it is continuous at every point over its entire domain.
 
-So, Mathematically, A function $f(x)$ is continuous at $x = a$ if 
+So, Mathematically, A function $f(x)$ is continuous at $x = a$ if
 $\lim_{{x \to a}} f(x) = f(a)$
 
-Or more explicitly, it is continuous at $x = a$ if 
+Or more explicitly, it is continuous at $x = a$ if
 $\lim_{{x \to a^-}} f(x) = f(a) = \lim_{{x \to a^+}} f(x)$
 
-Where $\lim_{{x \to a^-}} f(x)$ is the limit as $x$ approaches $a$ from the left, $f(a)$ 
-is the function value at $a$, and $\lim_{{x \to a^+}} f(x)$ is the limit as $x$ 
+Where $\lim_{{x \to a^-}} f(x)$ is the limit as $x$ approaches $a$ from the left, $f(a)$
+is the function value at $a$, and $\lim_{{x \to a^+}} f(x)$ is the limit as $x$
 approaches $a$ from the right.
 
 If all three of these quantities are the same, then $f(x)$ is continuous at $x = a$.

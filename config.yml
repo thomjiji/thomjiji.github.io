@@ -72,6 +72,9 @@ outputs:
     - RSS
     - JSON
 
+assets:
+  disableHLJS: true
+
 markup:
   highlight:
     anchorLineNos: false

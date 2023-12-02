@@ -8,6 +8,7 @@ cover:
 ShowToc: false
 tags: ["Daylight", "FilmLight"]
 author: ["thom"]
+slug: daylight-add-arri-look-library
 ---
 
 ## 操作步骤

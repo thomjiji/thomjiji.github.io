@@ -2,6 +2,8 @@
 title: "VCGT Tag"
 date: 2023-03-09
 draft: false
+tags: ["Calibration", "Color Management"]
+slug: vcgt-tag
 ---
 
 之前我们知道，DisplayCAL 这种校色软件的工作原理：它会生成一个配置文件，在系统里加载，实际作用到显卡的输出信号上。更细节一点则是：

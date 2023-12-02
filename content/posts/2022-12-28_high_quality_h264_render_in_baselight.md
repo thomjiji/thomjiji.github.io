@@ -3,7 +3,7 @@ title: "High Quality H.264 Render in Baselight"
 date: 2022-12-28
 draft: false
 tags: ["FilmLight", "Baselight"]
-categories: ["FilmLight"]
+slug: hight-quality-h264-render-in-baselight
 ---
 
 <!-- {{< youtube id="Vj5zy2q7O9U" >}} -->

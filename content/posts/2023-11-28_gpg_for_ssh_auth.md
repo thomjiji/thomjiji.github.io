@@ -3,6 +3,9 @@ title: "GPG key for SSH authentication"
 date: 2023-11-28
 draft: false
 tags: ["GPG", "Cryptography"]
+slug: gpg-for-ssh-authentication
+description: ""
+summary: "How to use GPG key for SSH authentication?"
 ---
 
 Useful commands:

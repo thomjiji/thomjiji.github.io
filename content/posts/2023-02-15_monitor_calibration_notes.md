@@ -2,7 +2,8 @@
 title: "显示器校色笔记"
 date: 2023-02-15
 draft: false
-tags: ["Calibration", "DisplayCAL"]
+tags: ["Calibration", "DisplayCAL", "Color Management"]
+slug: monitor-calibration-notes
 ---
 
 ## DisplayCAL 官网 User Guide
