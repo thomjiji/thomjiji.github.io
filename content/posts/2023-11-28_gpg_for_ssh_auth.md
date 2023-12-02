@@ -5,12 +5,12 @@ draft: false
 tags: ["GPG", "Cryptography"]
 slug: gpg-for-ssh-authentication
 description: ""
-summary: "How to use GPG key for SSH authentication?"
+summary: "Using GPG key for ssh authentication reduces the effort involved in managing SSH keys, which is the main reason I want to learn this technique. GPG key for all (not just one GPG key possibly)."
 ---
 
 Useful commands:
 
-- `gpg --export-ssh-key <uid>`: Retrieve public key part of GPG/~~(used for)~~SSH key.
+- `gpg --export-ssh-key <uid>`: Retrieve public key part of GPG/(used for) SSH (authentication) key.
 - `ssh-add --apple-use-keychain`
 - `killall ssh-agent`
 - `gpg --export --armor 3921648AF0ADA1F6`
