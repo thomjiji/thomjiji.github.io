@@ -9,74 +9,61 @@
     <lastBuildDate>Fri, 01 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://thomjiji.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>btrfs and btrbk</title>
-      <link>https://thomjiji.github.io/posts/2023-12-01_btrbk/</link>
+      <link>https://thomjiji.github.io/posts/btrfs-and-btrbk/</link>
       <pubDate>Fri, 01 Dec 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://thomjiji.github.io/posts/2023-12-01_btrbk/</guid>
+      <guid>https://thomjiji.github.io/posts/btrfs-and-btrbk/</guid>
       <description>/etc/btrbk/btrbk.conf config file:
-volume / snapshot_dir btrbk_snapshots subvolume home incremental strict volume /: Base path within a btrfs filesystem containing the subvolumes to be backuped (usually the mount-point of a btrfs filesystem mounted with subvolid=5 option). In this case, we use the existing root directory — which is already a btrfs filesystem (by default on Fedora). btrbk refer this / (next to volume) as &amp;ldquo;&amp;lt;volume-directory&amp;gt;&amp;rdquo;. snapshot_dir btrbk_snapshots: btrbk_snapshots is relative to the volume set above, which in this case the / (root directory).</description>
+volume / snapshot_dir btrbk_snapshots subvolume home incremental strict Key points:
+volume /: Base path within a btrfs filesystem containing the subvolumes to be backuped (usually the mount-point of a btrfs filesystem mounted with subvolid=5 option). In this case, we use the existing root directory — which is already a btrfs filesystem (by default on Fedora). btrbk refer this / (next to volume) as &amp;ldquo;&amp;lt;volume-directory&amp;gt;&amp;rdquo;. snapshot_dir btrbk_snapshots: btrbk_snapshots is relative to the volume set above, which in this case the / (root directory).</description>
     </item>
     
     <item>
       <title>GPG key for SSH authentication</title>
-      <link>https://thomjiji.github.io/posts/2023-11-28_gpg_for_ssh_auth/</link>
+      <link>https://thomjiji.github.io/posts/gpg-for-ssh-authentication/</link>
       <pubDate>Tue, 28 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://thomjiji.github.io/posts/2023-11-28_gpg_for_ssh_auth/</guid>
-      <description>Useful commands:
-gpg --export-ssh-key &amp;lt;uid&amp;gt;: Retrieve public key part of GPG/~~(used for)~~SSH key. ssh-add --apple-use-keychain killall ssh-agent gpg --export --armor 3921648AF0ADA1F6 gpg -K --keyid-format long --with-keygrip gpgconf --launch gpg-agent: Launch gpg-agent manually. ps aux | grep &amp;lt;gpg-agent|ssh-agent&amp;gt;: Check if gpg-agent/ssh-agent is running. set -x SSH_AUTH_SOCK $(gpgconf --list-dirs agent-ssh-socket): Tell SSH how to access gpg-agent by setting environment variable SSH_AUTH_SOCK. ssh-add -L: Get SSH key fingerprint. gpgconf --kill gpg-agent ssh-agent -k: Kill the current running ssh-agent.</description>
+      <guid>https://thomjiji.github.io/posts/gpg-for-ssh-authentication/</guid>
+      <description>How to use GPG key for SSH authentication?</description>
     </item>
     
     <item>
       <title>SSH notes</title>
-      <link>https://thomjiji.github.io/posts/2023-11-28_ssh_notes/</link>
+      <link>https://thomjiji.github.io/posts/ssh-notes/</link>
       <pubDate>Tue, 28 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://thomjiji.github.io/posts/2023-11-28_ssh_notes/</guid>
-      <description>生成一个 SSH key 最简单的生成一个 ssh key 的方法：ssh-keygen -C &amp;quot;my ssh key&amp;quot;
--c: comment. Provides a comment for this key. 较常用的生成一个 ssh key 的方法（自定义 key 的类型/算法）：ssh-keygen -t ed25519 -C &amp;quot;my ssh key&amp;quot;
--t: Specify the type of the key to create. The possible values are “dsa”, “ecdsa”, “ecdsa-sk”, “ed25519”, “ed25519-sk”, or “rsa”.. Public Key Access:
-A user creates a pair of public and private keys, and installs the public key in his $HOME/.</description>
+      <guid>https://thomjiji.github.io/posts/ssh-notes/</guid>
+      <description>生成一个 SSH key 最简单的生成一个 ssh key 的方法：ssh-keygen -C &amp;quot;my ssh key&amp;quot; -c: comment. Provides a comment for this key. 较常用的生成一个 ssh key 的方法（自定义 key 的类型/算法）：ss</description>
     </item>
     
     <item>
       <title>File size</title>
-      <link>https://thomjiji.github.io/posts/2023-11-02_file_size/</link>
+      <link>https://thomjiji.github.io/posts/file-size/</link>
       <pubDate>Wed, 01 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://thomjiji.github.io/posts/2023-11-02_file_size/</guid>
-      <description>Reference Binary and Decimal Prefixes - Wolfprojects Binary prefix - Wikipedia Decimal and Binary Prefixes - Blocks and Files du invocation (GNU Coreutils 9.4) Notes du * 输出的其实不是我们通常理解上的文件大小，而是所谓 block size（block count 可能更准确）。而且，它显示的是 disk usage，也就是这个文件占了多大的硬盘容量，或者说文件系统实际分配了多少空间给到这个文件。而不是，这个文件，它本身有多大。这个区别比较关键，后面会有更多的说明。
+      <guid>https://thomjiji.github.io/posts/file-size/</guid>
+      <description>Notes du * 输出的其实不是我们通常理解上的文件大小，而是所谓 block size（block count 可能更准确）。而且，它显示的是 disk usage，也就是这个文件占了多大的硬盘容量，或者说文件系统实际分配了多少空间给到这个文件。而不是，这个文件，它本身有多大。这个区别比较关键，后面会有更多的说明。
 $ du * 5568	1-2-1_2frames_ap4h.mov 8040	1-2-1_2frames_ap4x.mov 3928	1-2-1_2frames_apch.mov 2152	1-2-1_2frames_apcn.mov 688	1-2-1_2frames_apco.mov 1592	1-2-1_2frames_apcs.mov 我们使用 exa 这个 ls 的替代，用 exa -lh -b -S 这个命令得到这样的输出：
-$ exa -lh -b -S Permissions Size Blocks User Date Modified Name .</description>
+$ exa -lh -b -S Permissions Size Blocks User Date Modified Name .rw-r--r--@ 2.7Mi 5568 thom 27 Oct 17:32 1-2-1_2frames_ap4h.mov .rw-r--r--@ 3.9Mi 8040 thom 27 Oct 17:32 1-2-1_2frames_ap4x.mov .rw-r--r--@ 1.9Mi 3928 thom 27 Oct 17:32 1-2-1_2frames_apch.</description>
     </item>
     
     <item>
       <title>C&#43;&#43; Preprocessor</title>
-      <link>https://thomjiji.github.io/posts/2023-09-21_c&#43;&#43;_preprocessor/</link>
+      <link>https://thomjiji.github.io/posts/c&#43;&#43;-preprocessor/</link>
       <pubDate>Thu, 21 Sep 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://thomjiji.github.io/posts/2023-09-21_c&#43;&#43;_preprocessor/</guid>
-      <description>Excerpted from learncpp.com as my personal notes.
-preprocessor .cpp file =&amp;gt; preprocessor: Make change to the text of the code file, but not actually to the original code file, rather temporarily in-memory or using temporary files. Uninteresting things: strip out comments, ensures each code file ends in a newline. One important role: process#include directives. =&amp;gt; What comes out of the preprocessor is called translation unit. The translation unit is then compiled by the compiler.</description>
+      <guid>https://thomjiji.github.io/posts/c&#43;&#43;-preprocessor/</guid>
+      <description>Excerpted from learncpp.com
+preprocessor .cpp file =&amp;gt; preprocessor: Make change to the text of the code file, but not actually to the original code file, rather temporarily in-memory or using temporary files. Uninteresting things: strip out comments, ensures each code file ends in a newline. One important role: process#include directives. =&amp;gt; What comes out of the preprocessor is called translation unit. The translation unit is then compiled by the compiler. +--------+ +---------------------+ +-------------------+ +-----------------+ | .</description>
     </item>
     
     <item>
       <title>Parse QuickTime</title>
-      <link>https://thomjiji.github.io/posts/2023-09-18_parse_quicktime/</link>
+      <link>https://thomjiji.github.io/posts/parse-quicktime/</link>
       <pubDate>Mon, 18 Sep 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://thomjiji.github.io/posts/2023-09-18_parse_quicktime/</guid>
+      <guid>https://thomjiji.github.io/posts/parse-quicktime/</guid>
       <description>Apple Developer Documentation Storing and sharing media with QuickTime files Color parameter atom (&amp;lsquo;colr&amp;rsquo;) Uncompressed Y´CbCr Video in QuickTime Files — Documentation Archive Other resources Apple ProRes - MultiMedia Wiki QuickTime Tags - ExifTool MPEG-4 files - Atomic Parsley MP4RA - Official Registration Authority for the ISOBMFF family of standards Implementations/tools Implementations Language Notes metacolor.editor C# Simple Implementation, can only change NCLC tags. Provide GUI. qtff-parameter-editor C++ Good implementation, can only change NCLC tags.</description>
-    </item>
-    
-    <item>
-      <title>Unsafe Rust</title>
-      <link>https://thomjiji.github.io/posts/2023-09-09_unsafe_rust/</link>
-      <pubDate>Sat, 09 Sep 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://thomjiji.github.io/posts/2023-09-09_unsafe_rust/</guid>
-      <description>You can take five actions in unsafe Rust that you can&amp;rsquo;t in safe Rust, which we call unsafe superpowers.
-Dereference a raw pointer Call an unsafe function or method Access or modify a mutable static variable Implement an unsafe trait Access fields of unions. unsafe doesn&amp;rsquo;t turn off the borrow checker or disable any other of Rust&amp;rsquo;s safety checks: if you use a reference in unsafe code, it will still be checked.</description>
     </item>
     
     <item>
@@ -94,10 +81,10 @@ During the forward pass, the system processes a batch of examples to yild predic
     
     <item>
       <title>Calculus Recap</title>
-      <link>https://thomjiji.github.io/posts/2023-08-30_differential_calculus_recap/</link>
+      <link>https://thomjiji.github.io/posts/calculus-recap/</link>
       <pubDate>Wed, 30 Aug 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://thomjiji.github.io/posts/2023-08-30_differential_calculus_recap/</guid>
+      <guid>https://thomjiji.github.io/posts/calculus-recap/</guid>
       <description>Intermediate Value Theorem (IVT) If a function $f(x)$ is continuous on a closed interval $[a, b]$ and $k$ is any number between $f(a)$ and $f(b)$, then there is at least one number $c$ in the interval $[a, b]$ such that $f( c) = k$.
 The intermediate value theorem has two conditions:
 Function $f$ is continuous over the interval $[a, b]$. The value $d$ lies between $f(a)$ and $f(b)$ We must establish these two conditions to conclude that there is a value $c$ in the interval $[a, b]$ for which $g(x) = d$ (another way to phrase this conclusion is that the equation $g(x) = d$ has a solution where $a &amp;lt;= x &amp;lt;= b$).</description>
@@ -105,10 +92,10 @@ Function $f$ is continuous over the interval $[a, b]$. The value $d$ lies betwee
     
     <item>
       <title>Give Up Vim</title>
-      <link>https://thomjiji.github.io/posts/2023-07-09_give-up-vim/</link>
+      <link>https://thomjiji.github.io/posts/2023-07-09_give_up_vim/</link>
       <pubDate>Sun, 09 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://thomjiji.github.io/posts/2023-07-09_give-up-vim/</guid>
+      <guid>https://thomjiji.github.io/posts/2023-07-09_give_up_vim/</guid>
       <description>为什么从 Vim 切换回普通 Cursor Obsidian 用的就不是 Vim 模式。因为我需要在 Obsidian 输入中文，中文输入之下，Vim 完全是不可用的状态。我也不想去折腾怎么让 Vim 的模态切换在中文输入下也可用（应该是有这样的解决方案的）。
 其他地方，各种输入框：浏览器、Raycast、ChatGPT，包括网页的全局搜索框（Cmd+F），都不是工作在 Vim 的模式下（确实曾经也尝试过把浏览器也用 Vim keybind 来操作&amp;hellip;）。而在这些场景下使用普通的 Cursor 移动方式对我来说也已经非常熟练和习惯了。也觉得 Cmd ← 和 Cmd → 回到行首行尾和 Opt ←, Opt → （上一个词/下一个词）蛮好用的。
 我对在 Insert mode 和 Normal mode 之间切换感到疲倦。使用 Normal cursor 的话，就一个模式我想什么时候移动就什么时候移动。用 Vim 我还需要从 Insert mode 切换出来。而且我使用的退出 Insert mode 的 keybind 是 jk，而不是 Esc。之前觉得 Esc 在键盘的位置，还是会让手的 movement 太大。jk 直接就在 hjkl 下，手臂不需要移动，非常方便。但现在觉得 jk 都麻烦，尤其在模态之间切换频繁的话，一会儿就得 jk 来一下，非常繁琐——繁琐是因为模态的切换，而不是换个 keybind 就能解决的。所以我选择不要这些模态。
@@ -130,10 +117,10 @@ Ok，下载安装了。这一大堆都是什么……噢看到有 Manual，还�
     
     <item>
       <title>ICC Profile</title>
-      <link>https://thomjiji.github.io/posts/2023-03-09_icc-profile/</link>
+      <link>https://thomjiji.github.io/posts/2023-03-09_icc_profile/</link>
       <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://thomjiji.github.io/posts/2023-03-09_icc-profile/</guid>
+      <guid>https://thomjiji.github.io/posts/2023-03-09_icc_profile/</guid>
       <description>对普通显示器校色的时候，很难不碰到 ICC profile 这个东西。我们都知道这个名词，显示器的 ICC 文件，或许模糊的对它有一些概念。但它究竟是什么？原理如何。
 ICC profile 跟我们已经有很明确概念的 ACES，或者更广泛一些地讲：「现代的色彩管理流程」，是很相似的 idea。都有一个处于整个链路中间的非常大的色彩空间，大到足以容纳所有不同的输入、显示和输出设备的各种色域（sRGB、AdobeRGB、Rec.709 等等）1。这个色彩空间在 ICC 这个概念下叫作 PCS（Profile Connection Space）。ICC profile 通过定义设备源或目标色彩空间与 PCS 之间的映射来描述特定设备的色彩属性2。
 ICC 本身并不进行任何校准，它们只包含显示器关于色彩成像能力的数据。这些数据用于帮助可以识别 ICC profile 的软件（我们叫它 ICC aware 的软件）通过 CMM（色彩管理模块）对图像进行调整，以尝试纠正显示器的色偏来进行校准。ICC profile 完成的实际上是对图像的调整，而不是对显示器的校正。不同的软件使用不同的 CMM 的话，即使都采用同一个 ICC，最终出来的结果也可能不一样。
@@ -143,10 +130,10 @@ ICC profile - Wikipedia&amp;#160;&amp;#x21a9;&amp;#xfe0e;</description>
     
     <item>
       <title>VCGT Tag</title>
-      <link>https://thomjiji.github.io/posts/2023-03-09_vcgt_tag/</link>
+      <link>https://thomjiji.github.io/posts/vcgt-tag/</link>
       <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://thomjiji.github.io/posts/2023-03-09_vcgt_tag/</guid>
+      <guid>https://thomjiji.github.io/posts/vcgt-tag/</guid>
       <description>之前我们知道，DisplayCAL 这种校色软件的工作原理：它会生成一个配置文件，在系统里加载，实际作用到显卡的输出信号上。更细节一点则是：
 DisplayCAL 生成的 ICC 配置文件中会包含一个叫作 VCGT（Video Card Gamma Table）的 tag，它实际是一个 1D LUT，包含对显示器的灰阶或白点的校正。然后操作系统需要把这个 VCGT Tag 加载到显卡输出信号上的有一个 Look Up Table 上，从而实现对显卡输出信号的校正。同时显卡的这个 Look Up Table 也是有精度限制的。
 具体在使用 DisplayCAL 的时候，右键桌面右下角 DisplayCAL 的图标，就会看到有一个 Reset video card gamma table 的东西。在系统加载了 DisplayCAL 生成的 profile 的情况下，这时点一下 Reset video card gamma table 会发现整个桌面的反差，或者说 Gamma、灰阶变了，它把对于显卡的校正给重置掉了，回到了最初的状态。
@@ -154,11 +141,11 @@ DisplayCAL 生成的 ICC 配置文件中会包含一个叫作 VCGT（Video Card 
     </item>
     
     <item>
-      <title>为什么要使用上屏卡</title>
-      <link>https://thomjiji.github.io/posts/2023-03-09_why-do-we-need-video-card/</link>
+      <title>为什么使用上屏卡</title>
+      <link>https://thomjiji.github.io/posts/2023-03-09_why_do_we_need_video_card/</link>
       <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://thomjiji.github.io/posts/2023-03-09_why-do-we-need-video-card/</guid>
+      <guid>https://thomjiji.github.io/posts/2023-03-09_why_do_we_need_video_card/</guid>
       <description>做高端校色软件 ColourSpace 的 LightIllusion 有篇文章 What&amp;rsquo;s wrong with ICCs? 指出了 ICC profile 的一些问题。
 总的来说，ICC profile 能 work 的前提是软件本身支持它，软件是否是 ICC aware。通常来说 ICC aware 的软件有一个 CMM 色彩管理模块（Color Management Module）能够正确识别我们生成的 ICC profile，然后能够对图像做调整以达到「准确」的结果，实现校色的目的。先不说 ICC 这种方式本质上是对图像的调整，而不是对显示器本身的校正（后者是更好的方式，所谓硬件校准就是如此）。即使软件具有 CMM，准确度和性能还得看各个软件自身的优化。这就变成一件非常麻烦和复杂的事情。那些不是 ICC aware 的软件，看到的就做一个完全未经校准的画面。
 那对于 Adobe 全家桶来说，像 Ps、Lr 这种平面设计软件，它们是有 CMM 模块，叫作 ACE（Adobe Color Engine）。就是能够识别图像自带的 ICC profile，将其转换到 Ps 的工作色彩空间。那对于 Pr 来说，它也有被他们称为 DCM（Display Color Management）的东西，作为 Pr 内在的色彩管理方式，也是利用系统的 ICC profile 来进行工作的。
@@ -167,10 +154,10 @@ DCM uses the ICC profile for your monitor to apply a colorimetric conversion fro
     
     <item>
       <title>显示器校色笔记</title>
-      <link>https://thomjiji.github.io/posts/2023-02-15_%E6%98%BE%E7%A4%BA%E5%99%A8%E6%A0%A1%E8%89%B2%E7%AC%94%E8%AE%B0/</link>
+      <link>https://thomjiji.github.io/posts/monitor-calibration-notes/</link>
       <pubDate>Wed, 15 Feb 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://thomjiji.github.io/posts/2023-02-15_%E6%98%BE%E7%A4%BA%E5%99%A8%E6%A0%A1%E8%89%B2%E7%AC%94%E8%AE%B0/</guid>
+      <guid>https://thomjiji.github.io/posts/monitor-calibration-notes/</guid>
       <description>DisplayCAL 官网 User Guide 在对显示器校色之前，必须预热至少 30 分钟。这一点在我最近的校准过程中可以明确体会到，比如：在调整显示器自身的 RGB 输出时，当你把红绿蓝三个通道终于调到一条线上之后，这时亮度不达标了。调节显示器的亮度以达到目标值，比如 100 nits 之后，RGB 那三个值又不在一条线上了。一方面跟显示器的素质有关，不能保证在亮度增减的同时保持 RGB 三个值的输出一致。另一方面也跟显示器预热有关，没到 30 分钟状态还不稳定。
 显示器校准的基本概念：Calibration 和 Profiling/Characterization。在使用 DisplayCAL 进行校准的时候，第一步就是通过显示器自身的调节按钮，比如显示器的 RGB 三通道值的输出，来与事先定义好的目标值匹配。调节显示器的亮度按钮使其达到比如 100 尼特；在色温选项里使用用户自定义的方式来调节 RGB 输出，使其达到比如 6500K 的色温（CCT）。这一步我们粗略的称之为校准 Calibration，需要人手动去调的。而第二步是软件自动实现的过程，叫做 Profiling，就是它会在屏幕上生成一系列色块，测量这些色块的值，与标准值进行匹配，然后生成一个 Profile (e.g. ICC profile) 给我们最终加载到系统上。Profiling 实际上并不改变颜色，它描述的是该显示器对各种颜色的响应，通常存储在一个 ICC 配置文件中。
 Characterization (or profiling) is recording the way a device reproduces or responds to color. Typically the result is stored in a device ICC profile. Such a profile does not in itself modify color in any way.</description>
@@ -178,77 +165,28 @@ Characterization (or profiling) is recording the way a device reproduces or r
     
     <item>
       <title>mp4muxer &amp; mp4demuxer Basic Usage</title>
-      <link>https://thomjiji.github.io/posts/2023-01-29_mp4muxer-mp4demuxer-basic-usage/</link>
+      <link>https://thomjiji.github.io/posts/2023-01-29_mp4muxer__mp4demuxer_basic_usage/</link>
       <pubDate>Sun, 29 Jan 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://thomjiji.github.io/posts/2023-01-29_mp4muxer-mp4demuxer-basic-usage/</guid>
+      <guid>https://thomjiji.github.io/posts/2023-01-29_mp4muxer__mp4demuxer_basic_usage/</guid>
       <description>Installation mp4muxer mp4demuxer Commands 将 MP4 的音视频分离（脱壳 Demux）： mp4demuxer --input-file input.mp4 --output-folder ~/Output 合并杜比视界 Profile 8.4 和杜比全景声双音轨： mp4muxer \ -i input.h265 \ --input-video-frame-rate 25 \ --hvc1flag 0 \ --dv-bl-compatible-id 4 \ -i Stereo.aac \ -i Atmos.ec3 \ -o DolbyVision_DolbyAtmos.mp4 合并 SDR 视频和杜比全景声双音轨: mp4muxer \ -i input.h264 \ --input-video-frame-rate 25 \ -i Stereo.aac \ -i Atmos.ec3 \ -o SDR_DolbyAtmos.mp4 </description>
     </item>
     
     <item>
       <title>Daylight 添加 ARRI Look Library &amp; ALF-2 v5 DRT Family</title>
-      <link>https://thomjiji.github.io/posts/2023-01-28_daylight-%E6%B7%BB%E5%8A%A0-arri-look-library-alf-2-v5-drt-family/</link>
+      <link>https://thomjiji.github.io/posts/daylight-add-arri-look-library/</link>
       <pubDate>Sat, 28 Jan 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://thomjiji.github.io/posts/2023-01-28_daylight-%E6%B7%BB%E5%8A%A0-arri-look-library-alf-2-v5-drt-family/</guid>
+      <guid>https://thomjiji.github.io/posts/daylight-add-arri-look-library/</guid>
       <description>操作步骤 将 ARRI Look Library 的 zip 解压，把里面的多个 cub 和 fllook 文件平摊到这个路径：/Library/Application Support/FilmLight/looks 将 ALF-2 v5 DRT Family 的 zip 解压，把里面的 cub 和 fltransform 平摊在这个路径：/Library/Application Support/FilmLight/etc/colourspaces 打开 Daylight，完成。 Reference ARRI Colour Workflow in Baselight ACES and Baselight ARRI Look Library and ALF-2 v5 DRT Family Download </description>
     </item>
     
     <item>
-      <title>Dolby Vision Profile 8.4 &amp; Dolby Atmos</title>
-      <link>https://thomjiji.github.io/posts/2023-01-27_dolby-vision-profile-8.4-dolby-atmos/</link>
-      <pubDate>Fri, 27 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://thomjiji.github.io/posts/2023-01-27_dolby-vision-profile-8.4-dolby-atmos/</guid>
-      <description>参考链接 关于上传杜比视界到平台（Bilibili or Vimeo） How-To: Dolby Vision Encoding - Apple Compressor for Vimeo Dolby Vision for Vimeo FAQs Bilbili 技术发布的关于支持 HDR10 上传的文章 —— 2020 年 9 月 关于制作杜比全景声 Dolby Atmos Dolby Atmos Using Blackmagic Design DaVinci Resolve Studio 哔哩哔哩（B 站）杜比全景声/杜比音效稿件制作指南 —— 以白菜的名义 EP05 杜比全景声家庭版的交付和编码封装 —— 以白菜的名义 关于上传 HDR10 &amp;amp; HLG 到 YouTube Upload High Dynamic Range (HDR) videos Dolby Vision Basics Dolby Vision Metadata Levels What are Dolby Vision Profiles? What are the HEVC requirements for Dolby Vision encoding?</description>
-    </item>
-    
-    <item>
-      <title>Roam &amp; Zettelkasten</title>
-      <link>https://thomjiji.github.io/posts/2023-01-27_roam-zettelkasten/</link>
-      <pubDate>Fri, 27 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://thomjiji.github.io/posts/2023-01-27_roam-zettelkasten/</guid>
-      <description>一些随机的摘抄 A zettelkasten consists of many individual notes with ideas and other short pieces of information that are taken down as they occur or are acquired. The notes are numbered hierarchically, so that new notes may be inserted at the appropriate place, and contain metadata to allow the note-taker to associate notes with each other. For example, notes may contain tags that describe key aspects of the note, and they may reference other notes.</description>
-    </item>
-    
-    <item>
-      <title>Sanitize/Secure Erase SSD Drive Software</title>
-      <link>https://thomjiji.github.io/posts/2023-01-27_sanitize-secure-erase-ssd-drive-software/</link>
-      <pubDate>Fri, 27 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://thomjiji.github.io/posts/2023-01-27_sanitize-secure-erase-ssd-drive-software/</guid>
-      <description>Third-Party Software Parted Magic SEDutil Official Software Samsung T7 SSD support Secure Erase via Samsung Magicion Software (only Windows) How to perform a secure erase using Magicion Software - Puget Systems </description>
-    </item>
-    
-    <item>
-      <title>Use cat command to add text to file quickly</title>
-      <link>https://thomjiji.github.io/posts/2023-01-27_use-cat-command-to-add-text-to-file-quickly/</link>
-      <pubDate>Fri, 27 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://thomjiji.github.io/posts/2023-01-27_use-cat-command-to-add-text-to-file-quickly/</guid>
-      <description>Using echo touch file.md echo &amp;#34;hello&amp;#34; &amp;gt; file.md Using cat and standard redirect symbol &amp;gt; cat &amp;gt;&amp;gt; file.md This command creates an empty yet edited file as it prompts the user to create a text file and type in the file at the same time.
-If you don&amp;rsquo;t want to edit the file, simply press CTRL+C and it will simply exit and create an empty file.
-If you would like to add some text to the file, you can type in after this, like this:</description>
-    </item>
-    
-    <item>
-      <title>macOS add fish to $SHELL and set fish as default shell</title>
-      <link>https://thomjiji.github.io/posts/2023-01-26_macos-add-fish-to-shell-and-set-fish-as-default-shell/</link>
-      <pubDate>Thu, 26 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://thomjiji.github.io/posts/2023-01-26_macos-add-fish-to-shell-and-set-fish-as-default-shell/</guid>
-      <description>Add fish to $SHELL and set as default Add the shell to /etc/shells with: echo &amp;#34;/opt/homebrew/bin/fish&amp;#34; | sudo tee -a /etc/shells Change default shell with: chsh -s /opt/homebrew/bin/fish Modify $PATH with fish shell 在 iTerm2 当中使用 fish shell 作为默认 shell，需要把 $PATH 加入到 ~/.config/fish/fish_variables set -U fish_user_paths /usr/local/bin $fish_user_paths Enter this command in terminal: fish_add_path /opt/homebrew/bin. It will add /opt/homebrew/bin to the ~/.config/fish/fish_variables. Other useful commands which $SHELL
-echo $PATH
-Homebrew 下载的 Fish shell 的 path 是 /opt/homebrew/bin/fish 而不是像 fish documentation 说的那样在 /usr/local/bin/fish。</description>
-    </item>
-    
-    <item>
       <title>High Quality H.264 Render in Baselight</title>
-      <link>https://thomjiji.github.io/posts/2022-12-28_high-quality-h.264-render-in-baselight/</link>
+      <link>https://thomjiji.github.io/posts/hight-quality-h264-render-in-baselight/</link>
       <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://thomjiji.github.io/posts/2022-12-28_high-quality-h.264-render-in-baselight/</guid>
+      <guid>https://thomjiji.github.io/posts/hight-quality-h264-render-in-baselight/</guid>
       <description> Params Start at 39:56, Daniele introduced the method for rendering high quality H.264 in Baselight. Here is the key parameters:
 Rate Control: CRF based VBR Quantizer: Nominal Quantizer parameter: 18 Quantizer parameter: 18 </description>
     </item>

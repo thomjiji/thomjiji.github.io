@@ -6,7 +6,43 @@
     <description>Recent content in Tags on thomjiji</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://thomjiji.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://thomjiji.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>backup</title>
+      <link>https://thomjiji.github.io/tags/backup/</link>
+      <pubDate>Fri, 01 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://thomjiji.github.io/tags/backup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>btrbk</title>
+      <link>https://thomjiji.github.io/tags/btrbk/</link>
+      <pubDate>Fri, 01 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://thomjiji.github.io/tags/btrbk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>btrfs</title>
+      <link>https://thomjiji.github.io/tags/btrfs/</link>
+      <pubDate>Fri, 01 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://thomjiji.github.io/tags/btrfs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>snapshot</title>
+      <link>https://thomjiji.github.io/tags/snapshot/</link>
+      <pubDate>Fri, 01 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://thomjiji.github.io/tags/snapshot/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Cryptography</title>
       <link>https://thomjiji.github.io/tags/cryptography/</link>
@@ -31,6 +67,15 @@
       <pubDate>Tue, 28 Nov 2023 00:00:00 +0000</pubDate>
       
       <guid>https://thomjiji.github.io/tags/ssh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>du</title>
+      <link>https://thomjiji.github.io/tags/du/</link>
+      <pubDate>Wed, 01 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://thomjiji.github.io/tags/du/</guid>
       <description></description>
     </item>
     
@@ -89,6 +134,24 @@
     </item>
     
     <item>
+      <title>calculus</title>
+      <link>https://thomjiji.github.io/tags/calculus/</link>
+      <pubDate>Wed, 30 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://thomjiji.github.io/tags/calculus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>math</title>
+      <link>https://thomjiji.github.io/tags/math/</link>
+      <pubDate>Wed, 30 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://thomjiji.github.io/tags/math/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Vim</title>
       <link>https://thomjiji.github.io/tags/vim/</link>
       <pubDate>Sun, 09 Jul 2023 00:00:00 +0000</pubDate>
@@ -103,6 +166,15 @@
       <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
       
       <guid>https://thomjiji.github.io/tags/calibration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Color Management</title>
+      <link>https://thomjiji.github.io/tags/color-management/</link>
+      <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://thomjiji.github.io/tags/color-management/</guid>
       <description></description>
     </item>
     
@@ -166,42 +238,6 @@
       <pubDate>Sat, 28 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://thomjiji.github.io/tags/filmlight/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Encryption</title>
-      <link>https://thomjiji.github.io/tags/encryption/</link>
-      <pubDate>Fri, 27 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://thomjiji.github.io/tags/encryption/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://thomjiji.github.io/tags/linux/</link>
-      <pubDate>Fri, 27 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://thomjiji.github.io/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Roam</title>
-      <link>https://thomjiji.github.io/tags/roam/</link>
-      <pubDate>Fri, 27 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://thomjiji.github.io/tags/roam/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Secure Erase (SE)</title>
-      <link>https://thomjiji.github.io/tags/secure-erase-se/</link>
-      <pubDate>Fri, 27 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://thomjiji.github.io/tags/secure-erase-se/</guid>
       <description></description>
     </item>
     

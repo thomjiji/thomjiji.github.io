@@ -9,10 +9,10 @@
     <lastBuildDate>Sun, 29 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://thomjiji.github.io/tags/dolby-atmos/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>mp4muxer &amp; mp4demuxer Basic Usage</title>
-      <link>https://thomjiji.github.io/posts/2023-01-29_mp4muxer-mp4demuxer-basic-usage/</link>
+      <link>https://thomjiji.github.io/posts/2023-01-29_mp4muxer__mp4demuxer_basic_usage/</link>
       <pubDate>Sun, 29 Jan 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://thomjiji.github.io/posts/2023-01-29_mp4muxer-mp4demuxer-basic-usage/</guid>
+      <guid>https://thomjiji.github.io/posts/2023-01-29_mp4muxer__mp4demuxer_basic_usage/</guid>
       <description>Installation mp4muxer mp4demuxer Commands 将 MP4 的音视频分离（脱壳 Demux）： mp4demuxer --input-file input.mp4 --output-folder ~/Output 合并杜比视界 Profile 8.4 和杜比全景声双音轨： mp4muxer \ -i input.h265 \ --input-video-frame-rate 25 \ --hvc1flag 0 \ --dv-bl-compatible-id 4 \ -i Stereo.aac \ -i Atmos.ec3 \ -o DolbyVision_DolbyAtmos.mp4 合并 SDR 视频和杜比全景声双音轨: mp4muxer \ -i input.h264 \ --input-video-frame-rate 25 \ -i Stereo.aac \ -i Atmos.ec3 \ -o SDR_DolbyAtmos.mp4 </description>
     </item>
     

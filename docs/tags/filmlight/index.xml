@@ -9,19 +9,19 @@
     <lastBuildDate>Sat, 28 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://thomjiji.github.io/tags/filmlight/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Daylight 添加 ARRI Look Library &amp; ALF-2 v5 DRT Family</title>
-      <link>https://thomjiji.github.io/posts/2023-01-28_daylight-%E6%B7%BB%E5%8A%A0-arri-look-library-alf-2-v5-drt-family/</link>
+      <link>https://thomjiji.github.io/posts/daylight-add-arri-look-library/</link>
       <pubDate>Sat, 28 Jan 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://thomjiji.github.io/posts/2023-01-28_daylight-%E6%B7%BB%E5%8A%A0-arri-look-library-alf-2-v5-drt-family/</guid>
+      <guid>https://thomjiji.github.io/posts/daylight-add-arri-look-library/</guid>
       <description>操作步骤 将 ARRI Look Library 的 zip 解压，把里面的多个 cub 和 fllook 文件平摊到这个路径：/Library/Application Support/FilmLight/looks 将 ALF-2 v5 DRT Family 的 zip 解压，把里面的 cub 和 fltransform 平摊在这个路径：/Library/Application Support/FilmLight/etc/colourspaces 打开 Daylight，完成。 Reference ARRI Colour Workflow in Baselight ACES and Baselight ARRI Look Library and ALF-2 v5 DRT Family Download </description>
     </item>
     
     <item>
       <title>High Quality H.264 Render in Baselight</title>
-      <link>https://thomjiji.github.io/posts/2022-12-28_high-quality-h.264-render-in-baselight/</link>
+      <link>https://thomjiji.github.io/posts/hight-quality-h264-render-in-baselight/</link>
       <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://thomjiji.github.io/posts/2022-12-28_high-quality-h.264-render-in-baselight/</guid>
+      <guid>https://thomjiji.github.io/posts/hight-quality-h264-render-in-baselight/</guid>
       <description> Params Start at 39:56, Daniele introduced the method for rendering high quality H.264 in Baselight. Here is the key parameters:
 Rate Control: CRF based VBR Quantizer: Nominal Quantizer parameter: 18 Quantizer parameter: 18 </description>
     </item>
