@@ -9,10 +9,10 @@
     <lastBuildDate>Thu, 09 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://thomjiji.github.io/tags/displaycal/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>为什么使用上屏卡</title>
-      <link>https://thomjiji.github.io/posts/2023-03-09_why_do_we_need_video_card/</link>
+      <link>https://thomjiji.github.io/posts/2023/03/why-do-we-need-video-card/</link>
       <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://thomjiji.github.io/posts/2023-03-09_why_do_we_need_video_card/</guid>
+      <guid>https://thomjiji.github.io/posts/2023/03/why-do-we-need-video-card/</guid>
       <description>做高端校色软件 ColourSpace 的 LightIllusion 有篇文章 What&amp;rsquo;s wrong with ICCs? 指出了 ICC profile 的一些问题。
 总的来说，ICC profile 能 work 的前提是软件本身支持它，软件是否是 ICC aware。通常来说 ICC aware 的软件有一个 CMM 色彩管理模块（Color Management Module）能够正确识别我们生成的 ICC profile，然后能够对图像做调整以达到「准确」的结果，实现校色的目的。先不说 ICC 这种方式本质上是对图像的调整，而不是对显示器本身的校正（后者是更好的方式，所谓硬件校准就是如此）。即使软件具有 CMM，准确度和性能还得看各个软件自身的优化。这就变成一件非常麻烦和复杂的事情。那些不是 ICC aware 的软件，看到的就做一个完全未经校准的画面。
 那对于 Adobe 全家桶来说，像 Ps、Lr 这种平面设计软件，它们是有 CMM 模块，叫作 ACE（Adobe Color Engine）。就是能够识别图像自带的 ICC profile，将其转换到 Ps 的工作色彩空间。那对于 Pr 来说，它也有被他们称为 DCM（Display Color Management）的东西，作为 Pr 内在的色彩管理方式，也是利用系统的 ICC profile 来进行工作的。
@@ -21,10 +21,10 @@ DCM uses the ICC profile for your monitor to apply a colorimetric conversion fro
     
     <item>
       <title>显示器校色笔记</title>
-      <link>https://thomjiji.github.io/posts/monitor-calibration-notes/</link>
+      <link>https://thomjiji.github.io/posts/2023/02/monitor-calibration-notes/</link>
       <pubDate>Wed, 15 Feb 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://thomjiji.github.io/posts/monitor-calibration-notes/</guid>
+      <guid>https://thomjiji.github.io/posts/2023/02/monitor-calibration-notes/</guid>
       <description>DisplayCAL 官网 User Guide 在对显示器校色之前，必须预热至少 30 分钟。这一点在我最近的校准过程中可以明确体会到，比如：在调整显示器自身的 RGB 输出时，当你把红绿蓝三个通道终于调到一条线上之后，这时亮度不达标了。调节显示器的亮度以达到目标值，比如 100 nits 之后，RGB 那三个值又不在一条线上了。一方面跟显示器的素质有关，不能保证在亮度增减的同时保持 RGB 三个值的输出一致。另一方面也跟显示器预热有关，没到 30 分钟状态还不稳定。
 显示器校准的基本概念：Calibration 和 Profiling/Characterization。在使用 DisplayCAL 进行校准的时候，第一步就是通过显示器自身的调节按钮，比如显示器的 RGB 三通道值的输出，来与事先定义好的目标值匹配。调节显示器的亮度按钮使其达到比如 100 尼特；在色温选项里使用用户自定义的方式来调节 RGB 输出，使其达到比如 6500K 的色温（CCT）。这一步我们粗略的称之为校准 Calibration，需要人手动去调的。而第二步是软件自动实现的过程，叫做 Profiling，就是它会在屏幕上生成一系列色块，测量这些色块的值，与标准值进行匹配，然后生成一个 Profile (e.g. ICC profile) 给我们最终加载到系统上。Profiling 实际上并不改变颜色，它描述的是该显示器对各种颜色的响应，通常存储在一个 ICC 配置文件中。
 Characterization (or profiling) is recording the way a device reproduces or responds to color. Typically the result is stored in a device ICC profile. Such a profile does not in itself modify color in any way.</description>
