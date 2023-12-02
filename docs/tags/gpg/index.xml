@@ -13,7 +13,7 @@
       <pubDate>Tue, 28 Nov 2023 00:00:00 +0000</pubDate>
       
       <guid>https://thomjiji.github.io/posts/2023/11/gpg-for-ssh-authentication/</guid>
-      <description>How to use GPG key for SSH authentication?</description>
+      <description>Using GPG key for ssh authentication reduces the effort involved in managing SSH keys, which is the main reason I want to learn this technique. GPG key for all (not just one GPG key possibly).</description>
     </item>
     
   </channel>
