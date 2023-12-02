@@ -2,6 +2,7 @@
 title: "ICC Profile"
 date: 2023-03-09
 draft: false
+slug: icc-profile
 ---
 
 对普通显示器校色的时候，很难不碰到 [ICC profile](https://www.google.com/search?q=ICC%20profile) 这个东西。我们都知道这个名词，显示器的 ICC 文件，或许模糊的对它有一些概念。但它究竟是什么？原理如何。

@@ -2,6 +2,7 @@
 title: "DEVONthink 上手"
 date: 2023-03-09
 draft: false
+slug: devonthink-unboxing
 ---
 
 我主要用 DEVONthink 来管理我的 PDF 文档。那事情最初呢，是因为我想找一个 PDF 阅读器。首先考虑的自然是 PDF Expert，然后是 Adobe Acrobat Reader。PDF Expert 我以前在 Mac 上试用过，功能很简单，就是一个纯粹的 PDF 阅读器，可以标注划线啥的，能满足我基本需要。但它是订阅制，每年 79.9 刀，也不便宜。况且我也不太喜欢订阅制。想着数码荔枝有没有代理 PDF Expert 在国内的销售？这样兴许能便宜好多。但没有。Adobe Acrobat Reader 呢，下载玩了一下，印象不怎么好。再加上我对 Adobe 的软件都不怎么喜欢，印象都不怎么好（Creative Cloud 那一大坨东西啊……看着就头疼），这个 Acrobat 也赶紧卸载了。

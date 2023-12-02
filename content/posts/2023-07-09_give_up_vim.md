@@ -3,6 +3,7 @@ title: "Give Up Vim"
 date: 2023-07-09
 draft: false
 tags: ["Vim"]
+slug: give-up-vim
 ---
 
 ### 为什么从 Vim 切换回普通 Cursor

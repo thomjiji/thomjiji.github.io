@@ -3,6 +3,7 @@ title: "mp4muxer & mp4demuxer Basic Usage"
 date: 2023-01-29
 draft: false
 tags: ["Dolby Vision", "Dolby Atmos"]
+slug: mp4muxer-mp4demuxer-basic-usage
 ---
 
 ## **Installation**

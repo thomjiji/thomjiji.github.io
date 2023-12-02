@@ -3,6 +3,7 @@ title: "Machine Learning Glossary"
 date: 2023-09-07
 draft: false
 tags: ["Machine Learning"]
+slug: machine-learning-glossary
 ---
 
 ## Reference

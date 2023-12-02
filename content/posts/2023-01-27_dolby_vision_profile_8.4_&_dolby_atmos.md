@@ -6,6 +6,7 @@ ShowToc: true
 tags: ["Dolby Vision"]
 categories: ["HDR"]
 author: ["thom"]
+slug: dolby-vision-profile-8.4-dolby-atomos
 ---
 
 ## 参考链接

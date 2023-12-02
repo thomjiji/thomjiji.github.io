@@ -3,6 +3,7 @@ title: "为什么使用上屏卡"
 date: 2023-03-09
 draft: false
 tags: ["Calibration", "DisplayCAL", "ICC Profile", "Video Card"]
+slug: why-do-we-need-video-card
 ---
 
 做高端校色软件 ColourSpace 的 LightIllusion 有篇文章 [What's wrong with ICCs?](https://www.lightillusion.com/what_is_wrong_with_iccs.html) 指出了 ICC profile 的一些问题。

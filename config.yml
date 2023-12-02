@@ -23,8 +23,7 @@ params:
   # PaperMode Regular mode (Home-info mode)
   homeInfoParams:
     Title: Hello, I'm thomjiji
-    Content: "This website is a mix of my portfolio, my learning journey, and what I'm up
-    to recently. It's where I show off my skills and projects and maybe brag a little ^^."
+    Content: "This website is a mix of my blog, my learning journey, and what I'm up to recently ^^."
 
   # PaperMod Profile mode
   # profileMode:
@@ -55,7 +54,7 @@ params:
 
   defaultTheme: auto
   showShareButtons: true
-  ShareButtons: [ "twitter", "telegram", "reddit" ]
+  ShareButtons: ["twitter", "telegram", "reddit"]
   ShowBreadCrumbs: true
   ShowPostNavLinks: true
   ShowCodeCopyButtons: true
@@ -90,3 +89,6 @@ markup:
     noHl: false
     style: doom-one
     tabWidth: 4
+
+permalinks:
+  posts: /posts/:year/:month/:slug/
