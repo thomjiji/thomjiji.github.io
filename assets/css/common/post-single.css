@@ -201,10 +201,9 @@
 }
 
 .post-content code {
-    margin: auto 2px;
-    padding: 1px 6px;
+    margin: auto 0px;
+    padding: 1px 5px;
     font-size: 0.9rem;
-    /* font-size: 0.78em; */
     line-height: 1.5;
     background: var(--code-bg);
     font-family: "JetBrains Mono";
