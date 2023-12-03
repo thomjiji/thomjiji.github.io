@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>sshfs | thomjiji</title>
+<meta name="keywords" content="ssh, sshfs">
+<meta name="description" content="How to mount remote machine&rsquo;s directory on current host? 这个问题最初源于我想要用 Kate 来编辑一个位于 macOS 上的配置文件。我正常 ssh in 到 macOS，cd 到那个 directory，然后输出 kate &lt;file&gt; 试图打开那个文件进行编辑。这时候发现没有 kate 这个命令，噢，因为我在 macOS 的环境下，当然没有 kate 了。但这是个问题，难不成我只能使用 vi 来编辑 remote 的文件？我看 Asahi Lina 在开发的时候，都是非常顺畅的用 Kate 打开她身边各个 Mac machine 里的项目、文件，编辑来编辑去。一定有什么方法可以办到。
+Mount at user directory (under $HOME). This command works:
+sshfs mbp:/Users/thom/ ~/Desktop/remote-filesystem/
+It will not block current terminal, and the mounted filesystem will be accessible at ~/Desktop/remote-filesystem/. Unmonut this via fusermount -u remote-filesystem or sudo umount remote-filesystem.">
+<meta name="author" content="">
+<link rel="canonical" href="https://thomjiji.github.io/posts/2023/12/sshfs/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.2f2d3afa935ec561acc23c3baed6bc6340d7b46850ffc60029a9f11e99b33603.css" integrity="sha256-Ly06&#43;pNexWGswjw7rta8Y0DXtGhQ/8YAKanxHpmzNgM=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://thomjiji.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://thomjiji.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://thomjiji.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://thomjiji.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://thomjiji.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" href="https://thomjiji.github.io/powerpuff_girls_buttercup.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    
+  </body>
+</html>
+<meta property="og:title" content="sshfs" />
+<meta property="og:description" content="How to mount remote machine&rsquo;s directory on current host? 这个问题最初源于我想要用 Kate 来编辑一个位于 macOS 上的配置文件。我正常 ssh in 到 macOS，cd 到那个 directory，然后输出 kate &lt;file&gt; 试图打开那个文件进行编辑。这时候发现没有 kate 这个命令，噢，因为我在 macOS 的环境下，当然没有 kate 了。但这是个问题，难不成我只能使用 vi 来编辑 remote 的文件？我看 Asahi Lina 在开发的时候，都是非常顺畅的用 Kate 打开她身边各个 Mac machine 里的项目、文件，编辑来编辑去。一定有什么方法可以办到。
+Mount at user directory (under $HOME). This command works:
+sshfs mbp:/Users/thom/ ~/Desktop/remote-filesystem/
+It will not block current terminal, and the mounted filesystem will be accessible at ~/Desktop/remote-filesystem/. Unmonut this via fusermount -u remote-filesystem or sudo umount remote-filesystem." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://thomjiji.github.io/posts/2023/12/sshfs/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-12-03T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-12-03T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="sshfs"/>
+<meta name="twitter:description" content="How to mount remote machine&rsquo;s directory on current host? 这个问题最初源于我想要用 Kate 来编辑一个位于 macOS 上的配置文件。我正常 ssh in 到 macOS，cd 到那个 directory，然后输出 kate &lt;file&gt; 试图打开那个文件进行编辑。这时候发现没有 kate 这个命令，噢，因为我在 macOS 的环境下，当然没有 kate 了。但这是个问题，难不成我只能使用 vi 来编辑 remote 的文件？我看 Asahi Lina 在开发的时候，都是非常顺畅的用 Kate 打开她身边各个 Mac machine 里的项目、文件，编辑来编辑去。一定有什么方法可以办到。
+Mount at user directory (under $HOME). This command works:
+sshfs mbp:/Users/thom/ ~/Desktop/remote-filesystem/
+It will not block current terminal, and the mounted filesystem will be accessible at ~/Desktop/remote-filesystem/. Unmonut this via fusermount -u remote-filesystem or sudo umount remote-filesystem."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://thomjiji.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "sshfs",
+      "item": "https://thomjiji.github.io/posts/2023/12/sshfs/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "sshfs",
+  "name": "sshfs",
+  "description": "How to mount remote machine\u0026rsquo;s directory on current host? 这个问题最初源于我想要用 Kate 来编辑一个位于 macOS 上的配置文件。我正常 ssh in 到 macOS，cd 到那个 directory，然后输出 kate \u0026lt;file\u0026gt; 试图打开那个文件进行编辑。这时候发现没有 kate 这个命令，噢，因为我在 macOS 的环境下，当然没有 kate 了。但这是个问题，难不成我只能使用 vi 来编辑 remote 的文件？我看 Asahi Lina 在开发的时候，都是非常顺畅的用 Kate 打开她身边各个 Mac machine 里的项目、文件，编辑来编辑去。一定有什么方法可以办到。\nMount at user directory (under $HOME). This command works:\nsshfs mbp:/Users/thom/ ~/Desktop/remote-filesystem/\nIt will not block current terminal, and the mounted filesystem will be accessible at ~/Desktop/remote-filesystem/. Unmonut this via fusermount -u remote-filesystem or sudo umount remote-filesystem.",
+  "keywords": [
+    "ssh", "sshfs"
+  ],
+  "articleBody": "How to mount remote machine’s directory on current host? 这个问题最初源于我想要用 Kate 来编辑一个位于 macOS 上的配置文件。我正常 ssh in 到 macOS，cd 到那个 directory，然后输出 kate 试图打开那个文件进行编辑。这时候发现没有 kate 这个命令，噢，因为我在 macOS 的环境下，当然没有 kate 了。但这是个问题，难不成我只能使用 vi 来编辑 remote 的文件？我看 Asahi Lina 在开发的时候，都是非常顺畅的用 Kate 打开她身边各个 Mac machine 里的项目、文件，编辑来编辑去。一定有什么方法可以办到。\nMount at user directory (under $HOME). This command works:\nsshfs mbp:/Users/thom/ ~/Desktop/remote-filesystem/\nIt will not block current terminal, and the mounted filesystem will be accessible at ~/Desktop/remote-filesystem/. Unmonut this via fusermount -u remote-filesystem or sudo umount remote-filesystem.\nAfter mounting, the user and group for directory ~/Desktop/remote-filesystem will become 501 and games, here is the explaination of this from Claude.ai:\nThe user and group IDs you are seeing (501 and games) correspond to the user and primary group ownership of the mounted Mac directory on the Linux side.\nOn macOS, each user is assigned a UID (user ID) and GID (group ID). The first user created gets UID/GID 501 by default. And the primary group for users is normally the staff group, which has the GID of 20.\nHowever, when you mount the Mac directory onto your Linux system using SSHFS, it does not map the macOS user and group names to Linux users and groups. Instead, it just exposes the raw numeric IDs from macOS.\nSo the user ID 501 and group ID games (which is probably 20) simply represent the macOS owner and group of the mounted directory. The names are shown as the numeric values since your Linux system does not have equivalently named users or groups defined.\nThis is expected behavior with SSHFS. The ownership stays the same numerically, but the names do not map over. Everything should still work properly, but you just see the raw IDs instead of translated names in the Linux listing.\nsshfs mbp:/Users/thom/ ~/Desktop/remote-filesystem/ -d\nIf add -d flag, it will print debug info, which will consequently block current trminal. It will print something like this:\n$ sshfs mbp:/Users/thom/Desktop/ ~/Desktop/remote-filesystem/ -d SSHFS version 3.7.3 executing \u003c-x\u003e \u003c-a\u003e \u003c-oClearAllForwardings=yes\u003e \u003c-2\u003e \u003c-s\u003e Server version: 3 Extension: posix-rename@openssh.com \u003c1\u003e Extension: statvfs@openssh.com \u003c2\u003e Extension: fstatvfs@openssh.com \u003c2\u003e Extension: hardlink@openssh.com \u003c1\u003e Extension: fsync@openssh.com \u003c1\u003e Extension: lsetstat@openssh.com \u003c1\u003e Extension: limits@openssh.com \u003c1\u003e Extension: expand-path@openssh.com \u003c1\u003e Extension: copy-data \u003c1\u003e Extension: home-directory \u003c1\u003e Extension: users-groups-by-id@openssh.com \u003c1\u003e [00001] EXTENDED [00002] EXTENDED [00001] EXTENDED_REPLY 97bytes (5ms) [00002] EXTENDED_REPLY 97bytes (5ms) [00003] LSTAT [00003] ATTRS 41bytes (87ms) [00004] LSTAT [00004] STATUS 33bytes (8ms) [00005] LSTAT [00005] STATUS 33bytes (4ms) [00006] LSTAT [00006] STATUS 33bytes (5ms) [00007] OPENDIR [00007] HANDLE 17bytes (33ms) You can still use fusermount -u remote-filesystem and sudo umount remote-filesystem to unmount it, once you unmount it, the debug info printing will stop:\n... [00015] LSTAT [00015] STATUS 33bytes (5ms) sent: 15 messages, 485 bytes received: 15 messages, 1613 bytes rtt min/max/avg: 4ms/106ms/16ms num connect: 1 Additionally, you can pass -v to it: sshfs mbp:/Users/thom/ ~/Desktop/remote-filesystem/ -d -v. According to man sftp, the effect of -v is:\n-v Raise logging level. This option is also passed to ssh.\nLet’s further look at the man page of ssh man ssh:\n-v Verbose mode. Causes ssh to print debugging messages about its progress. This is helpful in debugging connection, authentication, and configuration problems. Multiple -v options increase the verbosity. The maximum is 3.\nBut anyway, it is doubtful whether this flag is effective in this case.\nMount at /mnt This command also works (without sudo):\nsshfs mbp:/Users/thom/ /mnt/remote-filesystem/\n但是即便我没有给 allow_other 的 flag 给它：-o allow_other，在 mount point 我还是可以作为一个普通 user cd 进去：cd /mnt/remote-filesystem。\n仍然，/mnt/remote-filesystem 的 user 和 group 为 501 和 games。\nSome reference man page deserve to be further investigate:\nman sshfs man sftp man mount.fuse man fusermount ",
+  "wordCount" : "596",
+  "inLanguage": "en",
+  "datePublished": "2023-12-03T00:00:00Z",
+  "dateModified": "2023-12-03T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://thomjiji.github.io/posts/2023/12/sshfs/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "thomjiji",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://thomjiji.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://thomjiji.github.io/" accesskey="h" title="thomjiji (Alt + H)">thomjiji</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://thomjiji.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://thomjiji.github.io/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://thomjiji.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://thomjiji.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://thomjiji.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://thomjiji.github.io/posts/">Posts</a></div>
+    <h1 class="post-title">
+      sshfs<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>
+    </h1>
+    <div class="post-meta"><span title='2023-12-03 00:00:00 +0000 UTC'>2023-12-03</span>&nbsp;|&nbsp;<a href="https://github.com/thomjiji/thomjiji.github.io/tree/main/content//posts/2023-12-03_sshfs.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+  <div class="post-content"><h1 id="how-to-mount-remote-machines-directory-on-current-host">How to mount remote machine&rsquo;s directory on current host?<a hidden class="anchor" aria-hidden="true" href="#how-to-mount-remote-machines-directory-on-current-host">#</a></h1>
+<p>这个问题最初源于我想要用 Kate 来编辑一个位于 macOS 上的配置文件。我正常 ssh in 到 macOS，cd 到那个 directory，然后输出 <code>kate &lt;file&gt;</code> 试图打开那个文件进行编辑。这时候发现没有 kate 这个命令，噢，因为我在 macOS 的环境下，当然没有 kate 了。但这是个问题，难不成我只能使用 vi 来编辑 remote 的文件？我看 Asahi Lina 在开发的时候，都是非常顺畅的用 Kate 打开她身边各个 Mac machine 里的项目、文件，编辑来编辑去。一定有什么方法可以办到。</p>
+<h3 id="mount-at-user-directory-under-home">Mount at user directory (under <code>$HOME</code>).<a hidden class="anchor" aria-hidden="true" href="#mount-at-user-directory-under-home">#</a></h3>
+<p>This command works:</p>
+<p><code>sshfs mbp:/Users/thom/ ~/Desktop/remote-filesystem/</code></p>
+<p>It will not block current terminal, and the mounted filesystem will be accessible at <code>~/Desktop/remote-filesystem/</code>. Unmonut this via <code>fusermount -u remote-filesystem</code> or <code>sudo umount remote-filesystem</code>.</p>
+<p>After mounting, the user and group for directory <code>~/Desktop/remote-filesystem</code> will become <code>501</code> and <code>games</code>, here is the explaination of this from Claude.ai:</p>
+<blockquote>
+<p>The user and group IDs you are seeing (501 and games) correspond to the user and primary group ownership of the mounted Mac directory on the Linux side.</p>
+<p>On macOS, each user is assigned a UID (user ID) and GID (group ID). The first user created gets UID/GID 501 by default. And the primary group for users is normally the staff group, which has the GID of 20.</p>
+<p>However, when you mount the Mac directory onto your Linux system using SSHFS, it does not map the macOS user and group names to Linux users and groups. Instead, it just exposes the raw numeric IDs from macOS.</p>
+<p>So the user ID 501 and group ID games (which is probably 20) simply represent the macOS owner and group of the mounted directory. The names are shown as the numeric values since your Linux system does not have equivalently named users or groups defined.</p>
+<p>This is expected behavior with SSHFS. The ownership stays the same numerically, but the names do not map over. Everything should still work properly, but you just see the raw IDs instead of translated names in the Linux listing.</p>
+</blockquote>
+<hr>
+<p><code>sshfs mbp:/Users/thom/ ~/Desktop/remote-filesystem/ -d</code></p>
+<p>If add <code>-d</code> flag, it will print debug info, which will consequently block current trminal. It will print something like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ sshfs mbp:/Users/thom/Desktop/ ~/Desktop/remote-filesystem/ -d
+</span></span><span style="display:flex;"><span>SSHFS version 3.7.3
+</span></span><span style="display:flex;"><span>executing &lt;ssh&gt; &lt;-x&gt; &lt;-a&gt; &lt;-oClearAllForwardings<span style="color:#c7bf54">=</span>yes&gt; &lt;-2&gt; &lt;mbp&gt; &lt;-s&gt; &lt;sftp&gt;
+</span></span><span style="display:flex;"><span>Server version: <span style="color:#d19a66">3</span>
+</span></span><span style="display:flex;"><span>Extension: posix-rename@openssh.com &lt;1&gt;
+</span></span><span style="display:flex;"><span>Extension: statvfs@openssh.com &lt;2&gt;
+</span></span><span style="display:flex;"><span>Extension: fstatvfs@openssh.com &lt;2&gt;
+</span></span><span style="display:flex;"><span>Extension: hardlink@openssh.com &lt;1&gt;
+</span></span><span style="display:flex;"><span>Extension: fsync@openssh.com &lt;1&gt;
+</span></span><span style="display:flex;"><span>Extension: lsetstat@openssh.com &lt;1&gt;
+</span></span><span style="display:flex;"><span>Extension: limits@openssh.com &lt;1&gt;
+</span></span><span style="display:flex;"><span>Extension: expand-path@openssh.com &lt;1&gt;
+</span></span><span style="display:flex;"><span>Extension: copy-data &lt;1&gt;
+</span></span><span style="display:flex;"><span>Extension: home-directory &lt;1&gt;
+</span></span><span style="display:flex;"><span>Extension: users-groups-by-id@openssh.com &lt;1&gt;
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">[</span>00001<span style="color:#c7bf54">]</span> EXTENDED
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">[</span>00002<span style="color:#c7bf54">]</span> EXTENDED
+</span></span><span style="display:flex;"><span>  <span style="color:#c7bf54">[</span>00001<span style="color:#c7bf54">]</span> EXTENDED_REPLY       97bytes <span style="color:#c7bf54">(</span>5ms<span style="color:#c7bf54">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c7bf54">[</span>00002<span style="color:#c7bf54">]</span> EXTENDED_REPLY       97bytes <span style="color:#c7bf54">(</span>5ms<span style="color:#c7bf54">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">[</span>00003<span style="color:#c7bf54">]</span> LSTAT
+</span></span><span style="display:flex;"><span>  <span style="color:#c7bf54">[</span>00003<span style="color:#c7bf54">]</span>          ATTRS       41bytes <span style="color:#c7bf54">(</span>87ms<span style="color:#c7bf54">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">[</span>00004<span style="color:#c7bf54">]</span> LSTAT
+</span></span><span style="display:flex;"><span>  <span style="color:#c7bf54">[</span>00004<span style="color:#c7bf54">]</span>         STATUS       33bytes <span style="color:#c7bf54">(</span>8ms<span style="color:#c7bf54">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">[</span>00005<span style="color:#c7bf54">]</span> LSTAT
+</span></span><span style="display:flex;"><span>  <span style="color:#c7bf54">[</span>00005<span style="color:#c7bf54">]</span>         STATUS       33bytes <span style="color:#c7bf54">(</span>4ms<span style="color:#c7bf54">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">[</span>00006<span style="color:#c7bf54">]</span> LSTAT
+</span></span><span style="display:flex;"><span>  <span style="color:#c7bf54">[</span>00006<span style="color:#c7bf54">]</span>         STATUS       33bytes <span style="color:#c7bf54">(</span>5ms<span style="color:#c7bf54">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">[</span>00007<span style="color:#c7bf54">]</span> OPENDIR
+</span></span><span style="display:flex;"><span>  <span style="color:#c7bf54">[</span>00007<span style="color:#c7bf54">]</span>         HANDLE       17bytes <span style="color:#c7bf54">(</span>33ms<span style="color:#c7bf54">)</span>
+</span></span></code></pre></div><p>You can still use <code>fusermount -u remote-filesystem</code> and <code>sudo umount remote-filesystem</code> to unmount it, once you unmount it, the debug info printing will stop:</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">[</span>00015<span style="color:#c7bf54">]</span> LSTAT
+</span></span><span style="display:flex;"><span>  <span style="color:#c7bf54">[</span>00015<span style="color:#c7bf54">]</span>         STATUS       33bytes <span style="color:#c7bf54">(</span>5ms<span style="color:#c7bf54">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sent:               <span style="color:#d19a66">15</span> messages, <span style="color:#d19a66">485</span> bytes
+</span></span><span style="display:flex;"><span>received:           <span style="color:#d19a66">15</span> messages, <span style="color:#d19a66">1613</span> bytes
+</span></span><span style="display:flex;"><span>rtt min/max/avg:    4ms/106ms/16ms
+</span></span><span style="display:flex;"><span>num connect:        <span style="color:#d19a66">1</span>
+</span></span></code></pre></div><p>Additionally, you can pass <code>-v</code> to it: <code>sshfs mbp:/Users/thom/ ~/Desktop/remote-filesystem/ -d -v</code>. According to <code>man sftp</code>, the effect of <code>-v</code> is:</p>
+<blockquote>
+<p>-v      Raise logging level.  This option is also passed to ssh.</p>
+</blockquote>
+<p>Let&rsquo;s further look at the man page of ssh <code>man ssh</code>:</p>
+<blockquote>
+<p>-v      Verbose mode.  Causes ssh to print debugging messages about its progress.  This is helpful in debugging connection, authentication, and configuration problems.  Multiple -v options increase the verbosity.  The maximum is 3.</p>
+</blockquote>
+<p>But anyway, it is doubtful whether this flag is effective in this case.</p>
+<h3 id="mount-at-mnt">Mount at <code>/mnt</code><a hidden class="anchor" aria-hidden="true" href="#mount-at-mnt">#</a></h3>
+<p>This command also works (without <code>sudo</code>):</p>
+<p><code>sshfs mbp:/Users/thom/ /mnt/remote-filesystem/</code></p>
+<p>但是即便我没有给 allow_other 的 flag 给它：<code>-o allow_other</code>，在 mount point 我还是可以作为一个普通 user cd 进去：<code>cd /mnt/remote-filesystem</code>。</p>
+<p>仍然，<code>/mnt/remote-filesystem</code> 的 user 和 group 为 501 和 games。</p>
+<hr>
+<p>Some reference man page deserve to be further investigate:</p>
+<ul>
+<li><code>man sshfs</code></li>
+<li><code>man sftp</code></li>
+<li><code>man mount.fuse</code></li>
+<li><code>man fusermount</code></li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://thomjiji.github.io/tags/ssh/">SSH</a></li>
+      <li><a href="https://thomjiji.github.io/tags/sshfs/">sshfs</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://thomjiji.github.io/posts/2023/12/gpg-agent-does-not-work-anyway/">
+    <span class="title">Next »</span>
+    <br>
+    <span>gpg-agent doesn&#39;t work anyway!</span>
+  </a>
+</nav>
+
+
+<div class="share-buttons">
+    <a target="_blank" rel="noopener noreferrer" aria-label="share sshfs on twitter"
+        href="https://twitter.com/intent/tweet/?text=sshfs&amp;url=https%3a%2f%2fthomjiji.github.io%2fposts%2f2023%2f12%2fsshfs%2f&amp;hashtags=ssh%2csshfs">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-253.927,424.544c135.939,0 210.268,-112.643 210.268,-210.268c0,-3.218 0,-6.437 -0.153,-9.502c14.406,-10.421 26.973,-23.448 36.935,-38.314c-13.18,5.824 -27.433,9.809 -42.452,11.648c15.326,-9.196 26.973,-23.602 32.49,-40.92c-14.252,8.429 -30.038,14.56 -46.896,17.931c-13.487,-14.406 -32.644,-23.295 -53.946,-23.295c-40.767,0 -73.87,33.104 -73.87,73.87c0,5.824 0.613,11.494 1.992,16.858c-61.456,-3.065 -115.862,-32.49 -152.337,-77.241c-6.284,10.881 -9.962,23.601 -9.962,37.088c0,25.594 13.027,48.276 32.95,61.456c-12.107,-0.307 -23.448,-3.678 -33.41,-9.196l0,0.92c0,35.862 25.441,65.594 59.311,72.49c-6.13,1.686 -12.72,2.606 -19.464,2.606c-4.751,0 -9.348,-0.46 -13.946,-1.38c9.349,29.426 36.628,50.728 68.965,51.341c-25.287,19.771 -57.164,31.571 -91.8,31.571c-5.977,0 -11.801,-0.306 -17.625,-1.073c32.337,21.15 71.264,33.41 112.95,33.41Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share sshfs on reddit"
+        href="https://reddit.com/submit?url=https%3a%2f%2fthomjiji.github.io%2fposts%2f2023%2f12%2fsshfs%2f&title=sshfs">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share sshfs on telegram"
+        href="https://telegram.me/share/url?text=sshfs&amp;url=https%3a%2f%2fthomjiji.github.io%2fposts%2f2023%2f12%2fsshfs%2f">
+        <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+        </svg>
+    </a>
+</div>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://thomjiji.github.io/">thomjiji</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>SSH on thomjiji</title>
-    <link>https://thomjiji.github.io/tags/ssh/</link>
-    <description>Recent content in SSH on thomjiji</description>
+    <title>sshfs on thomjiji</title>
+    <link>https://thomjiji.github.io/tags/sshfs/</link>
+    <description>Recent content in sshfs on thomjiji</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 03 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://thomjiji.github.io/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 03 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://thomjiji.github.io/tags/sshfs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>sshfs</title>
       <link>https://thomjiji.github.io/posts/2023/12/sshfs/</link>
@@ -17,24 +17,6 @@
 Mount at user directory (under $HOME). This command works:
 sshfs mbp:/Users/thom/ ~/Desktop/remote-filesystem/
 It will not block current terminal, and the mounted filesystem will be accessible at ~/Desktop/remote-filesystem/. Unmonut this via fusermount -u remote-filesystem or sudo umount remote-filesystem.</description>
-    </item>
-    
-    <item>
-      <title>gpg-agent doesn&#39;t work anyway!</title>
-      <link>https://thomjiji.github.io/posts/2023/12/gpg-agent-does-not-work-anyway/</link>
-      <pubDate>Sat, 02 Dec 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://thomjiji.github.io/posts/2023/12/gpg-agent-does-not-work-anyway/</guid>
-      <description>Solved by this command: gpg-connect-agent updatestartuptty /bye &amp;gt;/dev/null</description>
-    </item>
-    
-    <item>
-      <title>SSH notes</title>
-      <link>https://thomjiji.github.io/posts/2023/11/ssh-notes/</link>
-      <pubDate>Tue, 28 Nov 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://thomjiji.github.io/posts/2023/11/ssh-notes/</guid>
-      <description>生成一个 SSH key 最简单的生成一个 ssh key 的方法：ssh-keygen -C &amp;quot;my ssh key&amp;quot; -c: comment. Provides a comment for this key. 较常用的生成一个 ssh key 的方法（自定义 key 的类型/算法）：ss</description>
     </item>
     
   </channel>
