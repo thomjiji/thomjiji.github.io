@@ -58,15 +58,15 @@ How to setup GPG for SSH authentication:
 $ gpg -K --keyid-format long --with-keygrip
 sec   rsa2048 2019-03-21 [SC] [expires: 2021-03-20]
       96F33EA7F4E0F7051D75FC208715AF32191DB135
-      Keygrip = 90E08830BC1AAD225E657AD4FBE638B3D8E50C9E
-uid           [ultimate] Brian Exelbierd
+      Keygrip = P68H43D8SEHZ45P9PJYX9VEQP3EPAK30SCGY6I17
+uid           [ultimate] Brian Rebort
 ssb   rsa2048 2019-03-21 [E] [expires: 2021-03-20]
-      Keygrip = 5FA04ABEBFBC5089E50EDEB43198B4895BCA2136
+      Keygrip = VUJ6OZ29NSGI1EIH373GKR90N0EMNOH1XWMHXO9C
 ssb   rsa2048 2019-03-21 [A]
-      Keygrip = 7710BA0643CC022B92544181FF2EAC2A290CDC0E
+      Keygrip = 5U368R3PTB3E88LWW6PWMU6TG61C4GIYIAF68S3P
 ```
 
-3. Take a note of the newly created subkey's keygrip, then: `cat 7710BA0643CC022B92544181FF2EAC2A290CDC0E >> ~/.gnupg/sshcontrol`.
+3. Take a note of the newly created subkey's keygrip, then: `cat 5U368R3PTB3E88LWW6PWMU6TG61C4GIYIAF68S3P >> ~/.gnupg/sshcontrol`.
 4. Lastly, change the environment variable `SSH_AUTH_SOCK` to the socket GPG agent setup for SSH communication: `set -x SSH_AUTH_SOCK $(gpgconf --list-dirs agent-ssh-socket)`.
 
 ---
@@ -93,6 +93,6 @@ Reference:
 
 - [How to enable SSH access using a GPG key for authentication](https://opensource.com/article/19/4/gpg-subkeys-ssh): Entry point for this topic/technique.
 - [GPG - SSH setup](https://gist.github.com/mcattarinussi/834fc4b641ff4572018d0c665e5a94d3): more comprehensive.
-- [SSH key - Arch Wiki](shttps://wiki.archlinux.org/title/SSH_keys)
+- [SSH key - Arch Wiki](https://wiki.archlinux.org/title/SSH_keys)
 - [GnuPG - Arch Wiki](https://wiki.archlinux.org/title/GnuPG)
 - [OpenSSH - Arch Wiki](https://wiki.archlinux.org/title/OpenSSH)
