@@ -17,10 +17,10 @@ volume /
 
 Key points:
 
-- `volume /`: Base path within a btrfs filesystem containing the subvolumes to be backuped (usually the mount-point of a btrfs filesystem mounted with `subvolid=5` option). In this case, we use the existing root directory — which is already a btrfs filesystem (by default on Fedora). btrbk refer this `/` (next to `volume`) as "\<volume-directory\>".
-- `snapshot_dir btrbk_snapshots`: `btrbk_snapshots` is relative to the `volume` set above, which in this case the `/` (root directory). So the full path of `btrbk_snapshots` will be `/btrbk_snapshots`, which located just under the root directory. It's like the "destination" of backup operation.
-- `subvolume home`: `home` is also relative to `/` which set above. It's the "source" of backup operation. There are also a `target` field can be set, but it's optional. The `target` is where the "backup" subvolumes to be created (refer to the man page of `btrbk.conf` via `man btrbk.conf`), while the `snapshot_dir` is where "snapshot" to be stored.
-- `incremental strict`: which means "non-incremental (initial) backups are never created" (refer to the man page of `btrbk.conf` via `man btrbk.conf`).
+- `volume /`: "Base path within a btrfs filesystem containing the subvolumes to be backuped (usually the mount-point of a btrfs filesystem mounted with `subvolid=5` option)." In this case, we use the existing root directory — which is already a btrfs filesystem (by default on Fedora). btrbk refer this `/` (next to `volume`) as "\<volume-directory\>".
+- `snapshot_dir btrbk_snapshots`: `btrbk_snapshots` is relative to the `volume` set above, which in this case the `/` (root directory). So the full path of `btrbk_snapshots` will be `/btrbk_snapshots`, which located just under the root directory. It's like the "destination" of snapshots.
+- `subvolume home`: `home` is also relative to `/` which set above. It's the "source" of snapshots. There are also a `target` field can be set: `target /mnt/btrbk_backup`, but it's optional. The `target` is where the "backup" subvolumes to be created (refer to the man page of `btrbk.conf` via `man btrbk.conf`), while the `snapshot_dir` is where "snapshot" to be stored.
+- `incremental strict`: which means "non-incremental (initial) backups are never created" (`man btrbk.conf`).
 
 ---
 
