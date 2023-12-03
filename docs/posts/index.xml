@@ -24,7 +24,7 @@
       <guid>https://thomjiji.github.io/posts/2023/12/btrfs-and-btrbk/</guid>
       <description>/etc/btrbk/btrbk.conf config file:
 volume / snapshot_dir btrbk_snapshots subvolume home incremental strict Key points:
-volume /: Base path within a btrfs filesystem containing the subvolumes to be backuped (usually the mount-point of a btrfs filesystem mounted with subvolid=5 option). In this case, we use the existing root directory — which is already a btrfs filesystem (by default on Fedora). btrbk refer this / (next to volume) as &amp;ldquo;&amp;lt;volume-directory&amp;gt;&amp;rdquo;. snapshot_dir btrbk_snapshots: btrbk_snapshots is relative to the volume set above, which in this case the / (root directory).</description>
+volume /: &amp;ldquo;Base path within a btrfs filesystem containing the subvolumes to be backuped (usually the mount-point of a btrfs filesystem mounted with subvolid=5 option).&amp;rdquo; In this case, we use the existing root directory — which is already a btrfs filesystem (by default on Fedora). btrbk refer this / (next to volume) as &amp;ldquo;&amp;lt;volume-directory&amp;gt;&amp;rdquo;. snapshot_dir btrbk_snapshots: btrbk_snapshots is relative to the volume set above, which in this case the / (root directory).</description>
     </item>
     
     <item>
