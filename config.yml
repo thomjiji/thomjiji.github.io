@@ -24,6 +24,7 @@ params:
   homeInfoParams:
     Title: Hello, I'm thomjiji
     Content: "This website is a mix of my blog, my learning journey, and what I'm up to recently ^^."
+  ShowReadingTime: true
 
   # PaperMod Profile mode
   # profileMode:
@@ -63,7 +64,6 @@ params:
     URL: "https://github.com/thomjiji/thomjiji.github.io/tree/main/content/"
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
-  # googlefonts: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap'
 
 outputs:
   home:
