@@ -24,7 +24,6 @@ params:
   homeInfoParams:
     Title: Hello, I'm thomjiji
     Content: "This website is a mix of my blog, my learning journey, and what I'm up to recently ^^."
-  ShowReadingTime: true
 
   # PaperMod Profile mode
   profileMode:
@@ -59,6 +58,7 @@ params:
   ShowBreadCrumbs: true
   ShowPostNavLinks: true
   ShowCodeCopyButtons: true
+  ShowReadingTime: true
   editPost:
     URL: "https://github.com/thomjiji/thomjiji.github.io/tree/main/content/"
     Text: "Suggest Changes" # edit text
