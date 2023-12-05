@@ -178,7 +178,7 @@
 总的来说，KDE 底部栏的层级是这样的：
 Panel: Application Launcher Pager Task Manager System tray Digital clock Peak at Desktop 你其实想把 Konsole 和 Firefox pin 到这里:...</p>
   </div>
-  <footer class="entry-footer"><span title='2023-12-04 00:00:00 +0000 UTC'>2023-12-04</span></footer>
+  <footer class="entry-footer"><span title='2023-12-04 00:00:00 +0000 UTC'>2023-12-04</span>&nbsp;·&nbsp;1 min</footer>
   <a class="entry-link" aria-label="post link to Pin apps to KDE Panel, not KDE Task Manager" href="https://thomjiji.github.io/posts/2023/12/pin-apps-to-kde-panel/"></a>
 </article>
 
@@ -192,7 +192,7 @@ Panel: Application Launcher Pager Task Manager System tray Digital clock Peak at
 原来就有 sshfs 这个命令，可以把 remote 的 directory mount 到当前的 localhost 上。然后就可以正常在 local 的环境下，cd 到那个 mount point，用 local 的编辑器，不管是 Kate、VS Code 也好，vi/vim 也可以，来编辑文件等等。所有的操作都是在 remote 上，即使表面看起来像是我在一个 local 的文件夹下编辑一个 local 的文件。
 Using sshfs mount remote directory at $USER directories (under $HOME)....</p>
   </div>
-  <footer class="entry-footer"><span title='2023-12-03 00:00:00 +0000 UTC'>2023-12-03</span></footer>
+  <footer class="entry-footer"><span title='2023-12-03 00:00:00 +0000 UTC'>2023-12-03</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;thom</footer>
   <a class="entry-link" aria-label="post link to sshfs" href="https://thomjiji.github.io/posts/2023/12/sshfs/"></a>
 </article>
 
@@ -204,7 +204,7 @@ Using sshfs mount remote directory at $USER directories (under $HOME)....</p>
   <div class="entry-content">
     <p>Solved by this command: gpg-connect-agent updatestartuptty /bye &gt;/dev/null</p>
   </div>
-  <footer class="entry-footer"><span title='2023-12-02 00:00:00 +0000 UTC'>2023-12-02</span></footer>
+  <footer class="entry-footer"><span title='2023-12-02 00:00:00 +0000 UTC'>2023-12-02</span>&nbsp;·&nbsp;2 min</footer>
   <a class="entry-link" aria-label="post link to gpg-agent doesn&#39;t work anyway!" href="https://thomjiji.github.io/posts/2023/12/gpg-agent-does-not-work-anyway/"></a>
 </article>
 
@@ -218,7 +218,7 @@ Using sshfs mount remote directory at $USER directories (under $HOME)....</p>
 volume / snapshot_dir btrbk_snapshots subvolume home incremental strict Key points:
 volume /: “Base path within a btrfs filesystem containing the subvolumes to be backuped (usually the mount-point of a btrfs filesystem mounted with subvolid=5 option).” In this case, we use the existing root directory — which is already a btrfs filesystem (by default on Fedora). btrbk refer this / (next to volume) as “&lt;volume-directory&gt;”. snapshot_dir btrbk_snapshots: btrbk_snapshots is relative to the volume set above, which in this case the / (root directory)....</p>
   </div>
-  <footer class="entry-footer"><span title='2023-12-01 00:00:00 +0000 UTC'>2023-12-01</span></footer>
+  <footer class="entry-footer"><span title='2023-12-01 00:00:00 +0000 UTC'>2023-12-01</span>&nbsp;·&nbsp;2 min</footer>
   <a class="entry-link" aria-label="post link to btrfs and btrbk" href="https://thomjiji.github.io/posts/2023/12/btrfs-and-btrbk/"></a>
 </article>
 
@@ -230,7 +230,7 @@ volume /: “Base path within a btrfs filesystem containing the subvolumes to be
   <div class="entry-content">
     <p>Using GPG key for ssh authentication reduces the effort involved in managing SSH keys, which is the main reason I want to learn this technique. GPG key for all (not just one GPG key possibly).</p>
   </div>
-  <footer class="entry-footer"><span title='2023-11-28 00:00:00 +0000 UTC'>2023-11-28</span></footer>
+  <footer class="entry-footer"><span title='2023-11-28 00:00:00 +0000 UTC'>2023-11-28</span>&nbsp;·&nbsp;3 min</footer>
   <a class="entry-link" aria-label="post link to GPG key for SSH authentication" href="https://thomjiji.github.io/posts/2023/11/gpg-for-ssh-authentication/"></a>
 </article>
 
@@ -242,7 +242,7 @@ volume /: “Base path within a btrfs filesystem containing the subvolumes to be
   <div class="entry-content">
     <p>生成一个 SSH key 最简单的生成一个 ssh key 的方法：ssh-keygen -C &#34;my ssh key&#34; -c: comment. Provides a comment for this key. 较常用的生成一个 ssh key 的方法（自定义 key 的类型/算法）：ss...</p>
   </div>
-  <footer class="entry-footer"><span title='2023-11-28 00:00:00 +0000 UTC'>2023-11-28</span></footer>
+  <footer class="entry-footer"><span title='2023-11-28 00:00:00 +0000 UTC'>2023-11-28</span>&nbsp;·&nbsp;2 min</footer>
   <a class="entry-link" aria-label="post link to SSH notes" href="https://thomjiji.github.io/posts/2023/11/ssh-notes/"></a>
 </article>
 
@@ -256,7 +256,7 @@ volume /: “Base path within a btrfs filesystem containing the subvolumes to be
 $ du * 5568	1-2-1_2frames_ap4h.mov 8040	1-2-1_2frames_ap4x.mov 3928	1-2-1_2frames_apch.mov 2152	1-2-1_2frames_apcn.mov 688	1-2-1_2frames_apco.mov 1592	1-2-1_2frames_apcs.mov 我们使用 exa 这个 ls 的替代，用 exa -lh -b -S 这个命令得到这样的输出：
 $ exa -lh -b -S Permissions Size Blocks User Date Modified Name .rw-r--r--@ 2.7Mi 5568 thom 27 Oct 17:32 1-2-1_2frames_ap4h.mov .rw-r--r--@ 3.9Mi 8040 thom 27 Oct 17:32 1-2-1_2frames_ap4x.mov .rw-r--r--@ 1.9Mi 3928 thom 27 Oct 17:32 1-2-1_2frames_apch....</p>
   </div>
-  <footer class="entry-footer"><span title='2023-11-01 00:00:00 +0000 UTC'>2023-11-01</span></footer>
+  <footer class="entry-footer"><span title='2023-11-01 00:00:00 +0000 UTC'>2023-11-01</span>&nbsp;·&nbsp;4 min</footer>
   <a class="entry-link" aria-label="post link to File size" href="https://thomjiji.github.io/posts/2023/11/file-size/"></a>
 </article>
 
@@ -269,7 +269,7 @@ $ exa -lh -b -S Permissions Size Blocks User Date Modified Name .rw-r--r--@ 2.7M
     <p>Excerpted from learncpp.com
 preprocessor .cpp file =&gt; preprocessor: Make change to the text of the code file, but not actually to the original code file, rather temporarily in-memory or using temporary files. Uninteresting things: strip out comments, ensures each code file ends in a newline. One important role: process#include directives. =&gt; What comes out of the preprocessor is called translation unit. The translation unit is then compiled by the compiler. &#43;--------&#43; &#43;---------------------&#43; &#43;-------------------&#43; &#43;-----------------&#43; | ....</p>
   </div>
-  <footer class="entry-footer"><span title='2023-09-21 00:00:00 +0000 UTC'>2023-09-21</span></footer>
+  <footer class="entry-footer"><span title='2023-09-21 00:00:00 +0000 UTC'>2023-09-21</span>&nbsp;·&nbsp;2 min</footer>
   <a class="entry-link" aria-label="post link to C&#43;&#43; Preprocessor" href="https://thomjiji.github.io/posts/2023/09/cpp-preprocessor/"></a>
 </article>
 
@@ -281,7 +281,7 @@ preprocessor .cpp file =&gt; preprocessor: Make change to the text of the code f
   <div class="entry-content">
     <p>Apple Developer Documentation Storing and sharing media with QuickTime files Color parameter atom (‘colr’) Uncompressed Y´CbCr Video in QuickTime Files — Documentation Archive Other resources Apple ProRes - MultiMedia Wiki QuickTime Tags - ExifTool MPEG-4 files - Atomic Parsley MP4RA - Official Registration Authority for the ISOBMFF family of standards Implementations/tools Implementations Language Notes metacolor.editor C# Simple Implementation, can only change NCLC tags. Provide GUI. qtff-parameter-editor C&#43;&#43; Good implementation, can only change NCLC tags....</p>
   </div>
-  <footer class="entry-footer"><span title='2023-09-18 00:00:00 +0000 UTC'>2023-09-18</span></footer>
+  <footer class="entry-footer"><span title='2023-09-18 00:00:00 +0000 UTC'>2023-09-18</span>&nbsp;·&nbsp;8 min</footer>
   <a class="entry-link" aria-label="post link to Parse QuickTime" href="https://thomjiji.github.io/posts/2023/09/parse-quicktime/"></a>
 </article>
 
@@ -297,7 +297,7 @@ ReLU Sigmoid Tanh backpropagation The algorithm that implements gradient descent
 Training a neural network involves many iterations of the following two-pass cycle:
 During the forward pass, the system processes a batch of examples to yild prediction(s). The system compares each prediction to each label value....</p>
   </div>
-  <footer class="entry-footer"><span title='2023-09-07 00:00:00 +0000 UTC'>2023-09-07</span></footer>
+  <footer class="entry-footer"><span title='2023-09-07 00:00:00 +0000 UTC'>2023-09-07</span>&nbsp;·&nbsp;3 min</footer>
   <a class="entry-link" aria-label="post link to Machine Learning Glossary" href="https://thomjiji.github.io/posts/2023/09/machine-learning-glossary/"></a>
 </article>
 <footer class="page-footer">
