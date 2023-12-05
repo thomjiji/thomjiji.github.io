@@ -4,20 +4,79 @@ title: "thomjiji"
 theme: "PaperMod"
 publishDir: "docs"
 
-menu:
-  main:
-    - name: About
-      url: about/
-      weight: 5
-    - name: Archives
-      url: archives/
-      weight: 20
-    - name: Search
-      url: search/
-      weight: 30
-    - name: Tags
-      url: tags/
-      weight: 40
+DefaultContentLanguage: "en"
+defaultContentLanguageInSubdir: false
+
+# menu:
+#   main:
+#     - name: About
+#       url: about/
+#       weight: 5
+#     - name: Archives
+#       url: archives/
+#       weight: 20
+#     - name: Search
+#       url: search/
+#       weight: 30
+#     - name: Tags
+#       url: tags/
+#       weight: 40
+
+languages:
+  en:
+    languageCode: en-US
+    languageName: "English"
+    contentDir: content/en
+    titile: "thomjiji"
+    weight: 1
+    taxonomies:
+      # categories: categories
+      tag: tags
+      # series: series
+    homeInfoParams:
+      Title: Hello, I'm thomjiji
+      Content: "This website is a mix of my blog, my learning journey, and what I'm up to recently ^^."
+    menu:
+      main:
+        - name: About
+          url: about/
+          weight: 5
+        - name: Archives
+          url: archives/
+          weight: 20
+        - name: Search
+          url: search/
+          weight: 30
+        - name: Tags
+          url: tags/
+          weight: 40
+  中文:
+    languageName: "Chinese"
+    languageCode: zh-CN
+    languageAltTitle: Chinese
+    contentDir: content/cn
+    titile: "thomjiji"
+    weight: 2
+    taxonomies:
+      tag: tags
+      series: series
+    homeInfoParams:
+      Title: "你好👋，我是黄二只"
+      Content: "这个网站主要作为我的 Blog，和一些零散的笔记。你可以从下面的社交链接找到我。"
+    menu:
+      main:
+        - name: 关于
+          url: about/
+          weight: 5
+        - name: 存档
+          url: archives/
+          weight: 20
+        - name: 搜索
+          url: search/
+          weight: 30
+        - name: 标签
+          url: tags/
+          weight: 40
 
 params:
   # PaperMode Regular mode (Home-info mode)
@@ -39,7 +98,7 @@ params:
         url: "/archives"
       - name: Tags
         url: "/tags"
-      - name: Github
+      - name: GitHub
         url: "https://github.com/"
 
   socialIcons: # optional
