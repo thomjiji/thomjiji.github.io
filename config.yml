@@ -62,7 +62,7 @@ languages:
       series: series
     homeInfoParams:
       Title: "你好👋，我是黄二只"
-      Content: "这个网站主要作为我的 Blog，和一些零散的笔记。你可以从下面的社交链接找到我。"
+      Content: "这个网站主要作为我的 Blog，和一些零散的笔记。"
     menu:
       main:
         - name: 关于
