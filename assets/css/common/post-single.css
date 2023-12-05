@@ -83,6 +83,15 @@
 .toc a:hover {
     box-shadow: 0 1px 0;
     box-decoration-break: clone;
+    /* https://julian.digital url style */
+    /* background-color: #DDD3A5;
+    border-radius: 2px 2px 2px 2px;
+    padding: 1px 5px;
+    text-decoration: none;
+    text-decoration-line: none;
+    text-decoration-style: solid;
+    text-decoration-color: currentcolor;
+    text-decoration-thickness: auto; */
     -webkit-box-decoration-break: clone;
 }
 
