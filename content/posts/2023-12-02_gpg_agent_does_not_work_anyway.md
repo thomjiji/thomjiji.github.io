@@ -9,7 +9,11 @@ summary: "Solved by this command: gpg-connect-agent updatestartuptty /bye >/dev/
 
 ### TL;TR
 
-Solved by this command: `gpg-connect-agent updatestartuptty /bye >/dev/null`.
+Solved by this command:
+
+```sh
+gpg-connect-agent updatestartuptty /bye >/dev/null
+```
 
 https://superuser.com/q/1631020/1865466
 
@@ -23,7 +27,7 @@ sign_and_send_pubkey: signing failed for ED25519 "(none)" from agent: agent refu
 
 因为我用的是 GPG key 来做 SSH 的 authentication，第一时间就是重启 gpg-agent：
 
-```
+```sh
 gpgconf --kill gpg-agent
 gpgconf --launch gpg-agent
 ```
@@ -32,7 +36,7 @@ gpgconf --launch gpg-agent
 
 一时间都有点怀疑人生，这几天学 SSH，补习 GPG，是不是还是对它们的工作原理存在一些什么误解，哪个步骤没设置对。在出问题之前，其实我还是在看关于 `.ssh`、`.gnupg` 文件夹自身的权限问题，应该把它们设置成什么权限，总的来说就是：
 
-```
+```sh
 chmod 700 .ssh
 chmod 600 .ssh/*
 ```
