@@ -19,7 +19,7 @@ https://superuser.com/q/1631020/1865466
 
 ### 事发经过
 
-Holy shit!!! 就在刚刚解决了一个实在令人头疼的问题。MBP 的 SSH 突然坏了，一直报这个错：
+Damn! 就在刚刚解决了一个实在令人头疼的问题。MBP 的 SSH 突然坏了，一直报这个错：
 
 ```
 sign_and_send_pubkey: signing failed for ED25519 "(none)" from agent: agent refused operation

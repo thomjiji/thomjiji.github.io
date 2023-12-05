@@ -42,9 +42,10 @@ btrbk.conf 的 target 就是 backup 存放的地方，而 snapshot_dir 顾名思
 
 References:
 
-- [Working with Btrfs – General Concepts — Fedora Magazine](https://fedoramagazine.org/working-with-btrfs-general-concepts/)
-- [Working with Btrfs – Subvolumes — Fedora Magazine](https://fedoramagazine.org/working-with-btrfs-subvolumes/)
-- [Working with Btrfs – Snapshots — Fedora Magazine](https://fedoramagazine.org/working-with-btrfs-snapshots/)
-- [Working with Btrfs – Compression — Fedora Magazine](https://fedoramagazine.org/working-with-btrfs-compression/)
-- [Incremental backups with Btrfs snapshots — Fedora Magazine](https://fedoramagazine.org/btrfs-snapshots-backup-incremental/)
-- [Recover your files from Btrfs snapshots — Fedora Magazine](https://fedoramagazine.org/recover-your-files-from-btrfs-snapshots/)
+- Fedora Magazine
+  - [Working with Btrfs – General Concepts](https://fedoramagazine.org/working-with-btrfs-general-concepts/)
+  - [Working with Btrfs – Subvolumes](https://fedoramagazine.org/working-with-btrfs-subvolumes/)
+  - [Working with Btrfs – Snapshots](https://fedoramagazine.org/working-with-btrfs-snapshots/)
+  - [Working with Btrfs – Compression](https://fedoramagazine.org/working-with-btrfs-compression/)
+  - [Incremental backups with Btrfs snapshots](https://fedoramagazine.org/btrfs-snapshots-backup-incremental/)
+  - [Recover your files from Btrfs snapshots](https://fedoramagazine.org/recover-your-files-from-btrfs-snapshots/)
