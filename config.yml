@@ -61,7 +61,7 @@ languages:
       tag: tags
       series: series
     homeInfoParams:
-      Title: "你好👋，我是黄二只"
+      Title: "👋 我是黄二只"
       Content: "这个网站主要作为我的 Blog，和一些零散的笔记。"
     menu:
       main:
@@ -117,7 +117,7 @@ params:
   ShowBreadCrumbs: true
   ShowPostNavLinks: true
   ShowCodeCopyButtons: true
-  ShowReadingTime: true
+  ShowReadingTime: false
   editPost:
     URL: "https://github.com/thomjiji/thomjiji.github.io/tree/main/content/"
     Text: "Suggest Changes" # edit text
@@ -149,4 +149,4 @@ markup:
     tabWidth: 4
 
 permalinks:
-  posts: /posts/:year/:month/:slug/
+  posts: /blogs/:year/:month/:slug/
