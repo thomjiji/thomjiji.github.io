@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>GPG key for SSH authentication | thomjiji</title>
+<meta name="keywords" content="GPG, Cryptography">
+<meta name="description" content="Using GPG key for ssh authentication reduces the effort involved in managing SSH keys, which is the main reason I want to learn this technique. GPG key for all (not just one GPG key possibly).">
+<meta name="author" content="">
+<link rel="canonical" href="https://thomjiji.github.io/blogs/2023/11/gpg-for-ssh-authentication/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a5da57d5cc59f8453156f5a1d2bb9431273afdb9fb7818fe5d85da8005a742ea.css" integrity="sha256-pdpX1cxZ&#43;EUxVvWh0ruUMSc6/bn7eBj&#43;XYXagAWnQuo=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://thomjiji.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://thomjiji.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://thomjiji.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://thomjiji.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://thomjiji.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://thomjiji.github.io/blogs/2023/11/gpg-for-ssh-authentication/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+  </head>
+
+  <body>
+    
+  </body>
+</html>
+<meta property="og:title" content="GPG key for SSH authentication" />
+<meta property="og:description" content="Using GPG key for ssh authentication reduces the effort involved in managing SSH keys, which is the main reason I want to learn this technique. GPG key for all (not just one GPG key possibly)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://thomjiji.github.io/blogs/2023/11/gpg-for-ssh-authentication/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-11-28T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-11-28T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="GPG key for SSH authentication"/>
+<meta name="twitter:description" content="Using GPG key for ssh authentication reduces the effort involved in managing SSH keys, which is the main reason I want to learn this technique. GPG key for all (not just one GPG key possibly)."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://thomjiji.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "GPG key for SSH authentication",
+      "item": "https://thomjiji.github.io/blogs/2023/11/gpg-for-ssh-authentication/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "GPG key for SSH authentication",
+  "name": "GPG key for SSH authentication",
+  "description": "Using GPG key for ssh authentication reduces the effort involved in managing SSH keys, which is the main reason I want to learn this technique. GPG key for all (not just one GPG key possibly).",
+  "keywords": [
+    "GPG", "Cryptography"
+  ],
+  "articleBody": "Useful commands:\ngpg --export-ssh-key : Retrieve public key part of GPG/(used for) SSH (authentication) key. ssh-add --apple-use-keychain killall ssh-agent gpg --export --armor 3921648AF0ADA1F6 gpg -K --keyid-format long --with-keygrip gpgconf --launch gpg-agent: Launch gpg-agent manually. ps aux | grep : Check if gpg-agent/ssh-agent is running. set -x SSH_AUTH_SOCK $(gpgconf --list-dirs agent-ssh-socket): Tell SSH how to access gpg-agent by setting environment variable SSH_AUTH_SOCK. ssh-add -L: Get SSH key fingerprint. gpgconf --kill gpg-agent ssh-agent -k: Kill the current running ssh-agent. Configure SSH to use GPG agent for authentication:\necho $SSH_AUTH_SOCK: Check current SSH_AUTH_SOCK, it may look like /private/tmp/com.apple.launchd.BhS0P6FUJX/Listeners on Mac. set -x SSH_AUTH_SOCK $(gpgconf --list-dirs agent-ssh-socket): Change that environment variable (SSH_AUTH_SOCK) to tell SSH how to access gpg-agent. Rerun echo $SSH_AUTH_SOCK, it should output: /Users/thom/.gnupg/S.gpg-agent.ssh gpgconf --launch gpg-agent: Now, launch gpg-agent. If it’s not working (when we check by using ssh -T git@github.com failed), kill the current running gpg-agent: gpgconf --kill gpg-agent. Try gpg-agent --daemon/gpgconf --launch gpg-agent instead. OR use reload agent command: gpg-connect-agent reloadagent /bye. (Reference) ssh-add -L: Use this command to check current identities. You can see it’s activated. It should output something like: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILPHzucXNBTMScAYA84tNcCs53L2WmveAVOZDuEP3x8p (none) This ⬆️ can be retrieved via gpg --export-ssh-key . Retrieve SSH Key passphrase from Apple Keychain and add it to the ssh-agent for SSH authentication:\nssh-add -L: Check current ssh-agent authentication state. ssh-add --apple-use-keychain: Add SSH private key to the ssh-agent using passphrase stored in the keychain. ssh -T git@github.com: Test connection. Done. How to setup GPG for SSH authentication:\nEdit ~/.gnupg/gpg-agent.conf file, echo \"enable-ssh-support\" \u003e\u003e ~/.gnupg/gpg-agent.conf. Create a subkey for authentication only, after creations, your keyring should look like this: $ gpg -K --keyid-format long --with-keygrip sec rsa2048 2019-03-21 [SC] [expires: 2021-03-20] 96F33EA7F4E0F7051D75FC208715AF32191DB135 Keygrip = P68H43D8SEHZ45P9PJYX9VEQP3EPAK30SCGY6I17 uid [ultimate] Brian Rebort ssb rsa2048 2019-03-21 [E] [expires: 2021-03-20] Keygrip = VUJ6OZ29NSGI1EIH373GKR90N0EMNOH1XWMHXO9C ssb rsa2048 2019-03-21 [A] Keygrip = 5U368R3PTB3E88LWW6PWMU6TG61C4GIYIAF68S3P Take a note of the newly created subkey’s keygrip, then: cat 5U368R3PTB3E88LWW6PWMU6TG61C4GIYIAF68S3P \u003e\u003e ~/.gnupg/sshcontrol. Lastly, change the environment variable SSH_AUTH_SOCK to the socket GPG agent setup for SSH communication: set -x SSH_AUTH_SOCK $(gpgconf --list-dirs agent-ssh-socket). How to setup SSH Key for SSH authentication:\nConnect with SSH | Checking for existing SSH keys Knowledge:\n$SSH_AUTH_SOCK contains the path of the unix file socket that the agent uses for communication with other processes. This is essential for ssh-add.\n$SSH_AUTH_SOCK : Identifies the path of a UNIX-domain socket used to communicate with the agent.\nWhen you run ssh-add, it communicates with the authentication agent (whether it’s ssh-agent or gpg-agent acting as an SSH agent) via the specified socket, and that’s what the SSH_AUTH_SOCK environment variable is used for.\nThe gpgconf --list-dirs agent-ssh-socket command is used to display the directory where the GnuPG (GPG) agent’s UNIX domain socket for SSH operations is located.\nReference:\nHow to enable SSH access using a GPG key for authentication: Entry point for this topic/technique. GPG - SSH setup: more comprehensive. SSH key - Arch Wiki GnuPG - Arch Wiki OpenSSH - Arch Wiki ",
+  "wordCount" : "488",
+  "inLanguage": "en",
+  "datePublished": "2023-11-28T00:00:00Z",
+  "dateModified": "2023-11-28T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://thomjiji.github.io/blogs/2023/11/gpg-for-ssh-authentication/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "thomjiji",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://thomjiji.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://thomjiji.github.io/" accesskey="h" title="thomjiji (Alt + H)">thomjiji</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                    <li>
+                        <a href="https://thomjiji.github.io/%E4%B8%AD%E6%96%87/" title="Chinese"
+                            aria-label="Chinese">中文</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://thomjiji.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://thomjiji.github.io/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://thomjiji.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://thomjiji.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://thomjiji.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://thomjiji.github.io/posts/">Posts</a></div>
+    <h1 class="post-title">
+      GPG key for SSH authentication
+    </h1>
+    <div class="post-meta"><span title='2023-11-28 00:00:00 +0000 UTC'>2023-11-28</span>&nbsp;|&nbsp;<a href="https://github.com/thomjiji/thomjiji.github.io/tree/main/content//posts/2023-11-28_gpg_for_ssh_auth.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+  <div class="post-content"><p>Useful commands:</p>
+<ul>
+<li><code>gpg --export-ssh-key &lt;uid&gt;</code>: Retrieve public key part of GPG/(used for) SSH (authentication) key.</li>
+<li><code>ssh-add --apple-use-keychain</code></li>
+<li><code>killall ssh-agent</code></li>
+<li><code>gpg --export --armor 3921648AF0ADA1F6</code></li>
+<li><code>gpg -K --keyid-format long --with-keygrip</code></li>
+<li><code>gpgconf --launch gpg-agent</code>: Launch gpg-agent manually.</li>
+<li><code>ps aux | grep &lt;gpg-agent|ssh-agent&gt;</code>: Check if gpg-agent/ssh-agent is running.</li>
+<li><code>set -x SSH_AUTH_SOCK $(gpgconf --list-dirs agent-ssh-socket)</code>: Tell SSH how to access gpg-agent by setting environment variable <code>SSH_AUTH_SOCK</code>.</li>
+<li><code>ssh-add -L</code>: Get SSH key fingerprint.</li>
+<li><code>gpgconf --kill gpg-agent</code></li>
+<li><code>ssh-agent -k</code>: Kill the current running ssh-agent.</li>
+</ul>
+<hr>
+<p>Configure SSH to use GPG agent for authentication:</p>
+<ol start="0">
+<li><code>echo $SSH_AUTH_SOCK</code>: Check current <code>SSH_AUTH_SOCK</code>, it may look like <code>/private/tmp/com.apple.launchd.BhS0P6FUJX/Listeners</code> on Mac.</li>
+<li><code>set -x SSH_AUTH_SOCK $(gpgconf --list-dirs agent-ssh-socket)</code>: Change that environment variable (<code>SSH_AUTH_SOCK</code>) to tell SSH how to access gpg-agent.
+<ul>
+<li>Rerun <code>echo $SSH_AUTH_SOCK</code>, it should output:
+<ul>
+<li><code>/Users/thom/.gnupg/S.gpg-agent.ssh</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>gpgconf --launch gpg-agent</code>: Now, launch gpg-agent.
+<ul>
+<li>If it&rsquo;s not working (when we check by using <code>ssh -T git@github.com</code> failed), kill the current running gpg-agent: <code>gpgconf --kill gpg-agent</code>. Try <code>gpg-agent --daemon</code>/<code>gpgconf --launch gpg-agent</code> instead.</li>
+<li><strong>OR</strong> use reload agent command: <code>gpg-connect-agent reloadagent /bye</code>. (<a href="https://wiki.archlinux.org/title/GnuPG#Reload_the_agent" target="_blank" >Reference</a>)</li>
+</ul>
+</li>
+<li><code>ssh-add -L</code>: Use this command to check current identities. You can see it&rsquo;s activated.
+<ul>
+<li>It should output something like:
+<ul>
+<li><code>ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILPHzucXNBTMScAYA84tNcCs53L2WmveAVOZDuEP3x8p (none)</code></li>
+<li>This ⬆️ can be retrieved via <code>gpg --export-ssh-key &lt;uid&gt;</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p>Retrieve SSH Key passphrase from Apple Keychain and add it to the ssh-agent for SSH authentication:</p>
+<ol start="0">
+<li><code>ssh-add -L</code>: Check current ssh-agent authentication state.</li>
+<li><code>ssh-add --apple-use-keychain</code>: Add SSH private key to the ssh-agent using passphrase stored in the keychain.</li>
+<li><code>ssh -T git@github.com</code>: Test connection.</li>
+<li>Done.</li>
+</ol>
+<hr>
+<p>How to setup GPG for SSH authentication:</p>
+<ol>
+<li>Edit <code>~/.gnupg/gpg-agent.conf</code> file, <code>echo &quot;enable-ssh-support&quot; &gt;&gt; ~/.gnupg/gpg-agent.conf</code>.</li>
+<li>Create a subkey for authentication only, after creations, your keyring should look like this:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>$ gpg -K --keyid-format long --with-keygrip
+</span></span><span style="display:flex;"><span>sec   rsa2048 2019-03-21 [SC] [expires: 2021-03-20]
+</span></span><span style="display:flex;"><span>      96F33EA7F4E0F7051D75FC208715AF32191DB135
+</span></span><span style="display:flex;"><span>      Keygrip = P68H43D8SEHZ45P9PJYX9VEQP3EPAK30SCGY6I17
+</span></span><span style="display:flex;"><span>uid           [ultimate] Brian Rebort
+</span></span><span style="display:flex;"><span>ssb   rsa2048 2019-03-21 [E] [expires: 2021-03-20]
+</span></span><span style="display:flex;"><span>      Keygrip = VUJ6OZ29NSGI1EIH373GKR90N0EMNOH1XWMHXO9C
+</span></span><span style="display:flex;"><span>ssb   rsa2048 2019-03-21 [A]
+</span></span><span style="display:flex;"><span>      Keygrip = 5U368R3PTB3E88LWW6PWMU6TG61C4GIYIAF68S3P
+</span></span></code></pre></div><ol start="3">
+<li>Take a note of the newly created subkey&rsquo;s keygrip, then: <code>cat 5U368R3PTB3E88LWW6PWMU6TG61C4GIYIAF68S3P &gt;&gt; ~/.gnupg/sshcontrol</code>.</li>
+<li>Lastly, change the environment variable <code>SSH_AUTH_SOCK</code> to the socket GPG agent setup for SSH communication: <code>set -x SSH_AUTH_SOCK $(gpgconf --list-dirs agent-ssh-socket)</code>.</li>
+</ol>
+<hr>
+<p>How to setup SSH Key for SSH authentication:</p>
+<ul>
+<li><a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys" target="_blank" >Connect with SSH | Checking for existing SSH keys</a></li>
+</ul>
+<hr>
+<p>Knowledge:</p>
+<blockquote>
+<p><code>$SSH_AUTH_SOCK</code> contains the path of the unix file socket that the agent uses for communication with other processes. This <em>is</em> essential for <code>ssh-add</code>.</p>
+</blockquote>
+<blockquote>
+<p><code>$SSH_AUTH_SOCK</code> : Identifies the path of a UNIX-domain socket used to communicate with the agent.</p>
+</blockquote>
+<blockquote>
+<p>When you run <code>ssh-add</code>, it communicates with the authentication agent (whether it&rsquo;s <code>ssh-agent</code> or <code>gpg-agent</code> acting as an SSH agent) via the specified socket, and that&rsquo;s what the <code>SSH_AUTH_SOCK</code> environment variable is used for.</p>
+</blockquote>
+<blockquote>
+<p>The <code>gpgconf --list-dirs agent-ssh-socket</code> command is used to display the directory where the GnuPG (GPG) agent&rsquo;s UNIX domain socket for SSH operations is located.</p>
+</blockquote>
+<hr>
+<p>Reference:</p>
+<ul>
+<li><a href="https://opensource.com/article/19/4/gpg-subkeys-ssh" target="_blank" >How to enable SSH access using a GPG key for authentication</a>: Entry point for this topic/technique.</li>
+<li><a href="https://gist.github.com/mcattarinussi/834fc4b641ff4572018d0c665e5a94d3" target="_blank" >GPG - SSH setup</a>: more comprehensive.</li>
+<li><a href="https://wiki.archlinux.org/title/SSH_keys" target="_blank" >SSH key - Arch Wiki</a></li>
+<li><a href="https://wiki.archlinux.org/title/GnuPG" target="_blank" >GnuPG - Arch Wiki</a></li>
+<li><a href="https://wiki.archlinux.org/title/OpenSSH" target="_blank" >OpenSSH - Arch Wiki</a></li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://thomjiji.github.io/tags/gpg/">GPG</a></li>
+      <li><a href="https://thomjiji.github.io/tags/cryptography/">Cryptography</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://thomjiji.github.io/blogs/2023/12/btrfs-and-btrbk/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>btrfs and btrbk</span>
+  </a>
+  <a class="next" href="https://thomjiji.github.io/blogs/2023/11/ssh-notes/">
+    <span class="title">Next »</span>
+    <br>
+    <span>SSH notes</span>
+  </a>
+</nav>
+
+
+<div class="share-buttons">
+    <a target="_blank" rel="noopener noreferrer" aria-label="share GPG key for SSH authentication on x"
+        href="https://x.com/intent/tweet/?text=GPG%20key%20for%20SSH%20authentication&amp;url=https%3a%2f%2fthomjiji.github.io%2fblogs%2f2023%2f11%2fgpg-for-ssh-authentication%2f&amp;hashtags=GPG%2cCryptography">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z"/>
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share GPG key for SSH authentication on reddit"
+        href="https://reddit.com/submit?url=https%3a%2f%2fthomjiji.github.io%2fblogs%2f2023%2f11%2fgpg-for-ssh-authentication%2f&title=GPG%20key%20for%20SSH%20authentication">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share GPG key for SSH authentication on telegram"
+        href="https://telegram.me/share/url?text=GPG%20key%20for%20SSH%20authentication&amp;url=https%3a%2f%2fthomjiji.github.io%2fblogs%2f2023%2f11%2fgpg-for-ssh-authentication%2f">
+        <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+        </svg>
+    </a>
+</div>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://thomjiji.github.io/">thomjiji</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

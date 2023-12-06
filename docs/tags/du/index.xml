@@ -9,10 +9,10 @@
     <lastBuildDate>Wed, 01 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://thomjiji.github.io/tags/du/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>File size</title>
-      <link>https://thomjiji.github.io/posts/2023/11/file-size/</link>
+      <link>https://thomjiji.github.io/blogs/2023/11/file-size/</link>
       <pubDate>Wed, 01 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://thomjiji.github.io/posts/2023/11/file-size/</guid>
+      <guid>https://thomjiji.github.io/blogs/2023/11/file-size/</guid>
       <description>Notes du * 输出的其实不是我们通常理解上的文件大小，而是所谓 block size（block count 可能更准确）。而且，它显示的是 disk usage，也就是这个文件占了多大的硬盘容量，或者说文件系统实际分配了多少空间给到这个文件。而不是，这个文件，它本身有多大。这个区别比较关键，后面会有更多的说明。
 $ du * 5568	1-2-1_2frames_ap4h.mov 8040	1-2-1_2frames_ap4x.mov 3928	1-2-1_2frames_apch.mov 2152	1-2-1_2frames_apcn.mov 688	1-2-1_2frames_apco.mov 1592	1-2-1_2frames_apcs.mov 我们使用 exa 这个 ls 的替代，用 exa -lh -b -S 这个命令得到这样的输出：
 $ exa -lh -b -S Permissions Size Blocks User Date Modified Name .rw-r--r--@ 2.7Mi 5568 thom 27 Oct 17:32 1-2-1_2frames_ap4h.mov .rw-r--r--@ 3.9Mi 8040 thom 27 Oct 17:32 1-2-1_2frames_ap4x.mov .rw-r--r--@ 1.9Mi 3928 thom 27 Oct 17:32 1-2-1_2frames_apch.</description>

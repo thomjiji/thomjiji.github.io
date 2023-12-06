@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 04 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://thomjiji.github.io/tags/kde/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Pin apps to KDE Panel, not KDE Task Manager</title>
-      <link>https://thomjiji.github.io/posts/2023/12/pin-apps-to-kde-panel/</link>
+      <link>https://thomjiji.github.io/blogs/2023/12/pin-apps-to-kde-panel/</link>
       <pubDate>Mon, 04 Dec 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://thomjiji.github.io/posts/2023/12/pin-apps-to-kde-panel/</guid>
+      <guid>https://thomjiji.github.io/blogs/2023/12/pin-apps-to-kde-panel/</guid>
       <description>比如你想把 Konsole 和 Firefox 这些最最常用的 app pin 到底部的 bar/dock 上（实际上 KDE 叫它 Panel），最直观的，你下意识的右键 Task Manager 上已经打开的 app，这里有一个“Pin to Task Manager”的选项，勾选上它。但这好像不是你想要的，因为你发现即使 pin 上去了，只要你打开那个 app 的一个 instance，那个刚刚被你 pin 上去的 app 就又不见了。这似乎不是你期待中的“pin”。这时你想要打开那个 app 的第二个 instance，就没法去到老地方，你最初 pin 它的那个地方打开。得找到现在的正在运行的那个 instance 所在的 Task Manager 的地方，右键 &amp;gt; &amp;ldquo;Open a New Window&amp;rdquo;。
 其实，你刚刚 pin 上去的那个地方，是 Task Manager 的区域。Task Manager 外层还有一个区域，叫作 Panel。你应该，或者说你其实想把它 pin 到 Panel 上。这样不管你开几个 instance，那个 app 的图标还是在那，当你想开第 n+1 的 instance 的时候，还是去那个 pin 的地方点一下就行了。
 总的来说，KDE 底部栏的层级是这样的：

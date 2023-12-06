@@ -9,10 +9,10 @@
     <lastBuildDate>Thu, 09 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://thomjiji.github.io/tags/video-card/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>为什么使用上屏卡</title>
-      <link>https://thomjiji.github.io/posts/2023/03/why-do-we-need-video-card/</link>
+      <link>https://thomjiji.github.io/blogs/2023/03/why-do-we-need-video-card/</link>
       <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://thomjiji.github.io/posts/2023/03/why-do-we-need-video-card/</guid>
+      <guid>https://thomjiji.github.io/blogs/2023/03/why-do-we-need-video-card/</guid>
       <description>做高端校色软件 ColourSpace 的 LightIllusion 有篇文章 What&amp;rsquo;s wrong with ICCs? 指出了 ICC profile 的一些问题。
 总的来说，ICC profile 能 work 的前提是软件本身支持它，软件是否是 ICC aware。通常来说 ICC aware 的软件有一个 CMM 色彩管理模块（Color Management Module）能够正确识别我们生成的 ICC profile，然后能够对图像做调整以达到「准确」的结果，实现校色的目的。先不说 ICC 这种方式本质上是对图像的调整，而不是对显示器本身的校正（后者是更好的方式，所谓硬件校准就是如此）。即使软件具有 CMM，准确度和性能还得看各个软件自身的优化。这就变成一件非常麻烦和复杂的事情。那些不是 ICC aware 的软件，看到的就做一个完全未经校准的画面。
 那对于 Adobe 全家桶来说，像 Ps、Lr 这种平面设计软件，它们是有 CMM 模块，叫作 ACE（Adobe Color Engine）。就是能够识别图像自带的 ICC profile，将其转换到 Ps 的工作色彩空间。那对于 Pr 来说，它也有被他们称为 DCM（Display Color Management）的东西，作为 Pr 内在的色彩管理方式，也是利用系统的 ICC profile 来进行工作的。

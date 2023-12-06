@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <link rel="canonical" href="https://thomjiji.github.io/tags/calibration/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.2f2d3afa935ec561acc23c3baed6bc6340d7b46850ffc60029a9f11e99b33603.css" integrity="sha256-Ly06&#43;pNexWGswjw7rta8Y0DXtGhQ/8YAKanxHpmzNgM=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a5da57d5cc59f8453156f5a1d2bb9431273afdb9fb7818fe5d85da8005a742ea.css" integrity="sha256-pdpX1cxZ&#43;EUxVvWh0ruUMSc6/bn7eBj&#43;XYXagAWnQuo=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://thomjiji.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://thomjiji.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://thomjiji.github.io/favicon-32x32.png">
@@ -59,13 +59,7 @@
 </noscript><!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="icon" href="https://thomjiji.github.io/powerpuff_girls_buttercup.jpg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Space+Grotesk:wght@300;400;500;600;700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
-      rel="stylesheet"
-    />
+    
   </head>
 
   <body>
@@ -170,8 +164,8 @@ DisplayCAL 生成的 ICC 配置文件中会包含一个叫作 VCGT（Video Card 
 具体在使用 DisplayCAL 的时候，右键桌面右下角 DisplayCAL 的图标，就会看到有一个 Reset video card gamma table 的东西。在系统加载了 DisplayCAL 生成的 profile 的情况下，这时点一下 Reset video card gamma table 会发现整个桌面的反差，或者说 Gamma、灰阶变了，它把对于显卡的校正给重置掉了，回到了最初的状态。
 再者就是我们还可以在 DisplayCAL 的 Tone curve 的设置中看到：如果不把 Tone curve 设为 “As measured” 的话，比如手动设为 Gamma 2.2。那 DisplayCAL 会做这么一件事情：在校准过程中，会通过一个 1D LUT 来校准（中和、补偿）显示器本身与这条纯粹的、Gamma 为 2.2 的指数曲线不相符的地方。如果设为 “As measured” 的话，则显示器的 grey scale 是怎么样就是怎么样，不做任何的校准和调整。...</p>
   </div>
-  <footer class="entry-footer"><span title='2023-03-09 00:00:00 +0000 UTC'>2023-03-09</span>&nbsp;·&nbsp;1 min</footer>
-  <a class="entry-link" aria-label="post link to VCGT Tag" href="https://thomjiji.github.io/posts/2023/03/vcgt-tag/"></a>
+  <footer class="entry-footer"><span title='2023-03-09 00:00:00 +0000 UTC'>2023-03-09</span></footer>
+  <a class="entry-link" aria-label="post link to VCGT Tag" href="https://thomjiji.github.io/blogs/2023/03/vcgt-tag/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -185,8 +179,8 @@ DisplayCAL 生成的 ICC 配置文件中会包含一个叫作 VCGT（Video Card 
 那对于 Adobe 全家桶来说，像 Ps、Lr 这种平面设计软件，它们是有 CMM 模块，叫作 ACE（Adobe Color Engine）。就是能够识别图像自带的 ICC profile，将其转换到 Ps 的工作色彩空间。那对于 Pr 来说，它也有被他们称为 DCM（Display Color Management）的东西，作为 Pr 内在的色彩管理方式，也是利用系统的 ICC profile 来进行工作的。
 DCM uses the ICC profile for your monitor to apply a colorimetric conversion from the sequence working color space (or media color space in the case of the source monitor) to the monitor color space....</p>
   </div>
-  <footer class="entry-footer"><span title='2023-03-09 00:00:00 +0000 UTC'>2023-03-09</span>&nbsp;·&nbsp;1 min</footer>
-  <a class="entry-link" aria-label="post link to 为什么使用上屏卡" href="https://thomjiji.github.io/posts/2023/03/why-do-we-need-video-card/"></a>
+  <footer class="entry-footer"><span title='2023-03-09 00:00:00 +0000 UTC'>2023-03-09</span></footer>
+  <a class="entry-link" aria-label="post link to 为什么使用上屏卡" href="https://thomjiji.github.io/blogs/2023/03/why-do-we-need-video-card/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -199,8 +193,8 @@ DCM uses the ICC profile for your monitor to apply a colorimetric conversion fro
 显示器校准的基本概念：Calibration 和 Profiling/Characterization。在使用 DisplayCAL 进行校准的时候，第一步就是通过显示器自身的调节按钮，比如显示器的 RGB 三通道值的输出，来与事先定义好的目标值匹配。调节显示器的亮度按钮使其达到比如 100 尼特；在色温选项里使用用户自定义的方式来调节 RGB 输出，使其达到比如 6500K 的色温（CCT）。这一步我们粗略的称之为校准 Calibration，需要人手动去调的。而第二步是软件自动实现的过程，叫做 Profiling，就是它会在屏幕上生成一系列色块，测量这些色块的值，与标准值进行匹配，然后生成一个 Profile (e.g. ICC profile) 给我们最终加载到系统上。Profiling 实际上并不改变颜色，它描述的是该显示器对各种颜色的响应，通常存储在一个 ICC 配置文件中。
 Characterization (or profiling) is recording the way a device reproduces or responds to color. Typically the result is stored in a device ICC profile. Such a profile does not in itself modify color in any way....</p>
   </div>
-  <footer class="entry-footer"><span title='2023-02-15 00:00:00 +0000 UTC'>2023-02-15</span>&nbsp;·&nbsp;2 min</footer>
-  <a class="entry-link" aria-label="post link to 显示器校色笔记" href="https://thomjiji.github.io/posts/2023/02/monitor-calibration-notes/"></a>
+  <footer class="entry-footer"><span title='2023-02-15 00:00:00 +0000 UTC'>2023-02-15</span></footer>
+  <a class="entry-link" aria-label="post link to 显示器校色笔记" href="https://thomjiji.github.io/blogs/2023/02/monitor-calibration-notes/"></a>
 </article>
     </main>
     
