@@ -27,15 +27,16 @@ languages:
     languageCode: en-US
     languageName: "English"
     contentDir: content/en
-    titile: "thomjiji"
     weight: 1
     taxonomies:
       # categories: categories
       tag: tags
       # series: series
-    homeInfoParams:
-      Title: Hello, I'm thomjiji
-      Content: "This website is a mix of my blog, my learning journey, and what I'm up to recently ^^."
+    params:
+      titile: "thomjiji"
+      homeInfoParams:
+        Title: Hello, I'm thomjiji
+        Content: "This website is a mix of my blog, my learning journey, and what I'm up to recently ^^."
     menu:
       main:
         - name: About
@@ -53,16 +54,17 @@ languages:
   中文:
     languageName: "Chinese"
     languageCode: zh-CN
-    languageAltTitle: Chinese
     contentDir: content/cn
-    titile: "thomjiji"
     weight: 2
     taxonomies:
       tag: tags
       series: series
-    homeInfoParams:
-      Title: "👋 我是黄二只"
-      Content: "这个网站主要作为我的 Blog，和一些零散的笔记。"
+    params:
+      titile: "thomjiji"
+      languageAltTitle: Chinese
+      homeInfoParams:
+        Title: "👋 我是黄二只"
+        Content: "这个网站主要作为我的 Blog，和一些零散的笔记。"
     menu:
       main:
         - name: 关于
@@ -79,11 +81,6 @@ languages:
           weight: 40
 
 params:
-  # PaperMode Regular mode (Home-info mode)
-  homeInfoParams:
-    Title: Hello, I'm thomjiji
-    Content: "This website is a mix of my blog, my learning journey, and what I'm up to recently ^^."
-
   # PaperMod Profile mode
   profileMode:
     enabled: false
