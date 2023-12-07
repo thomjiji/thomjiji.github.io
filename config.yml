@@ -63,7 +63,7 @@ languages:
       titile: "thomjiji"
       languageAltTitle: Chinese
       homeInfoParams:
-        Title: "👋 我是黄二只"
+        Title: "👋 hi!"
         Content: "这个网站主要作为我的 Blog，和一些零散的笔记。"
     menu:
       main:
