@@ -13,7 +13,9 @@
       <pubDate>Sun, 03 Dec 2023 00:00:00 +0000</pubDate>
       
       <guid>https://thomjiji.github.io/%E4%B8%AD%E6%96%87/blogs/2023/12/sshfs/</guid>
-      <description>test</description>
+      <description>How to mount remote machine&amp;rsquo;s directory on current host? 这个问题最初起源于我想要用 Kate 来编辑一个位于 macOS 上的配置文件。我正常 ssh in 到 macOS，cd 到那个 directory，然后输入 kate &amp;lt;file&amp;gt; 试图打开那个文件进行编辑的时候，发现欸？没有 kate 这个命令。噢，因为我是在 macOS 的环境下啊，当然没有 kate 了。但这是个问题，难不成我只能使用 vi 来编辑 remote 的文件？我看 Asahi Lina 在开发的时候，都是非常顺畅的用 Kate 打开她身边各个 Mac machine 里的项目、文件，编辑来编辑去。一定有什么方法可以办到。
+原来就有 sshfs 这个命令，可以把 remote 的 directory mount 到当前的 localhost 上。然后就可以正常在 local 的环境下，cd 到那个 mount point，用 local 的编辑器，不管是 Kate、VS Code 也好，vi/vim 也可以，来编辑文件等等。所有的操作都是在 remote 上，即使表面看起来像是我在一个 local 的文件夹下编辑一个 local 的文件。
+Using sshfs mount remote directory at $USER directories (under $HOME).</description>
     </item>
     
     <item>
