@@ -177,135 +177,20 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>Use native file picker on KDE Plasma<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>
+    <h2>High Quality H.264 Render in Baselight
     </h2>
   </header>
   <div class="entry-content">
-    <p>For Firefox Starting with version 64, Firefox can optionally use XDG Desktop Portals to handle various desktop features, such as opening a file picker, or handling MIME types. — Arch Wiki | Firefox | XDG Desktop Portal integration
-Type about:config in Firefox address bar. Search widget.use-xdg-desktop-portal.file-picker, set it to 1. 0 – Never 1 – Always 2 – Auto (typically depends on whether Firefox is run from within Flatpak or whether the GDK_DEBUG=portals environment is set) Done....</p>
+    <p> Params Start at 39:56, Daniele introduced the method for rendering high quality H.264 in Baselight. Here is the key parameters:
+Rate Control: CRF based VBR Quantizer: Nominal Quantizer parameter: 18 Quantizer parameter: 18 </p>
   </div>
-  <footer class="entry-footer"><span title='2023-12-09 00:00:00 +0000 UTC'>2023-12-09</span></footer>
-  <a class="entry-link" aria-label="post link to Use native file picker on KDE Plasma" href="https://thomjiji.github.io/blogs/2023/12/use-native-file-picker-on-kde/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Pin apps to KDE Panel, not KDE Task Manager
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>比如你想把 Konsole 和 Firefox 这些最最常用的 app pin 到底部的 bar/dock 上（实际上 KDE 叫它 Panel），最直观的，你下意识的右键 Task Manager 上已经打开的 app，这里有一个“Pin to Task Manager”的选项，勾选上它。但这好像不是你想要的，因为你发现即使 pin 上去了，只要你打开那个 app 的一个 instance，那个刚刚被你 pin 上去的 app 就又不见了。这似乎不是你期待中的“pin”。这时你想要打开那个 app 的第二个 instance，就没法去到老地方，你最初 pin 它的那个地方打开。得找到现在的正在运行的那个 instance 所在的 Task Manager 的地方，右键 &gt; “Open a New Window”。
-其实，你刚刚 pin 上去的那个地方，是 Task Manager 的区域。Task Manager 外层还有一个区域，叫作 Panel。你应该，或者说你其实想把它 pin 到 Panel 上。这样不管你开几个 instance，那个 app 的图标还是在那，当你想开第 n&#43;1 的 instance 的时候，还是去那个 pin 的地方点一下就行了。
-总的来说，KDE 底部栏的层级是这样的：
-Panel: Application Launcher Pager Task Manager System tray Digital clock Peak at Desktop 你其实想把 Konsole 和 Firefox pin 到这里:...</p>
-  </div>
-  <footer class="entry-footer"><span title='2023-12-04 00:00:00 +0000 UTC'>2023-12-04</span></footer>
-  <a class="entry-link" aria-label="post link to Pin apps to KDE Panel, not KDE Task Manager" href="https://thomjiji.github.io/blogs/2023/12/pin-apps-to-kde-panel/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>sshfs<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>How to mount remote machine’s directory on current host? This question originally came up when I wanted to use Kate to edit a configuration file on macOS. I normally ssh into macOS, cd to that directory, and then type kate &lt;file&gt; to try opening the file for editing. But huh? There’s no kate command. Oh right, because I’m in the macOS environment, of course there’s no kate! But this is a problem - am I restricted to only using vi to edit remote files?...</p>
-  </div>
-  <footer class="entry-footer"><span title='2023-12-03 00:00:00 +0000 UTC'>2023-12-03</span>&nbsp;·&nbsp;thom</footer>
-  <a class="entry-link" aria-label="post link to sshfs" href="https://thomjiji.github.io/blogs/2023/12/sshfs/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>gpg-agent doesn&#39;t work anyway!<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Solved by this command: gpg-connect-agent updatestartuptty /bye &gt;/dev/null</p>
-  </div>
-  <footer class="entry-footer"><span title='2023-12-02 00:00:00 +0000 UTC'>2023-12-02</span></footer>
-  <a class="entry-link" aria-label="post link to gpg-agent doesn&#39;t work anyway!" href="https://thomjiji.github.io/blogs/2023/12/gpg-agent-does-not-work-anyway/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>btrfs and btrbk
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>/etc/btrbk/btrbk.conf config file:
-volume / snapshot_dir btrbk_snapshots subvolume home incremental strict Key points:
-volume /: “Base path within a btrfs filesystem containing the subvolumes to be backuped (usually the mount-point of a btrfs filesystem mounted with subvolid=5 option).” In this case, we use the existing root directory — which is already a btrfs filesystem (by default on Fedora). btrbk refer this / (next to volume) as “&lt;volume-directory&gt;”. snapshot_dir btrbk_snapshots: btrbk_snapshots is relative to the volume set above, which in this case the / (root directory)....</p>
-  </div>
-  <footer class="entry-footer"><span title='2023-12-01 00:00:00 +0000 UTC'>2023-12-01</span></footer>
-  <a class="entry-link" aria-label="post link to btrfs and btrbk" href="https://thomjiji.github.io/blogs/2023/12/btrfs-and-btrbk/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>GPG key for SSH authentication
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Using GPG key for ssh authentication reduces the effort involved in managing SSH keys, which is the main reason I want to learn this technique. GPG key for all (not just one GPG key possibly).</p>
-  </div>
-  <footer class="entry-footer"><span title='2023-11-28 00:00:00 +0000 UTC'>2023-11-28</span></footer>
-  <a class="entry-link" aria-label="post link to GPG key for SSH authentication" href="https://thomjiji.github.io/blogs/2023/11/gpg-for-ssh-authentication/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>SSH notes
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>SSH 是一个我之前就想尝试使用的工具，当时只有对它的一个很简单的印象，就是可以通过它安全的访问另外一台电脑——的 Terminal。当然对它的具体...</p>
-  </div>
-  <footer class="entry-footer"><span title='2023-11-28 00:00:00 +0000 UTC'>2023-11-28</span></footer>
-  <a class="entry-link" aria-label="post link to SSH notes" href="https://thomjiji.github.io/blogs/2023/11/ssh-notes/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>File size
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Notes du * 输出的其实不是我们通常理解上的文件大小，而是所谓 block size（block count 可能更准确）。而且，它显示的是 disk usage，也就是这个文件占了多大的硬盘容量，或者说文件系统实际分配了多少空间给到这个文件。而不是，这个文件，它本身有多大。这个区别比较关键，后面会有更多的说明。
-$ du * 5568	1-2-1_2frames_ap4h.mov 8040	1-2-1_2frames_ap4x.mov 3928	1-2-1_2frames_apch.mov 2152	1-2-1_2frames_apcn.mov 688	1-2-1_2frames_apco.mov 1592	1-2-1_2frames_apcs.mov 我们使用 exa 这个 ls 的替代，用 exa -lh -b -S 这个命令得到这样的输出：
-$ exa -lh -b -S Permissions Size Blocks User Date Modified Name .rw-r--r--@ 2.7Mi 5568 thom 27 Oct 17:32 1-2-1_2frames_ap4h.mov .rw-r--r--@ 3.9Mi 8040 thom 27 Oct 17:32 1-2-1_2frames_ap4x.mov .rw-r--r--@ 1.9Mi 3928 thom 27 Oct 17:32 1-2-1_2frames_apch....</p>
-  </div>
-  <footer class="entry-footer"><span title='2023-11-01 00:00:00 +0000 UTC'>2023-11-01</span></footer>
-  <a class="entry-link" aria-label="post link to File size" href="https://thomjiji.github.io/blogs/2023/11/file-size/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>C&#43;&#43; Preprocessor
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Excerpted from learncpp.com
-preprocessor .cpp file =&gt; preprocessor: Make change to the text of the code file, but not actually to the original code file, rather temporarily in-memory or using temporary files. Uninteresting things: strip out comments, ensures each code file ends in a newline. One important role: process#include directives. =&gt; What comes out of the preprocessor is called translation unit. The translation unit is then compiled by the compiler. &#43;--------&#43; &#43;---------------------&#43; &#43;-------------------&#43; &#43;-----------------&#43; | ....</p>
-  </div>
-  <footer class="entry-footer"><span title='2023-09-21 00:00:00 +0000 UTC'>2023-09-21</span></footer>
-  <a class="entry-link" aria-label="post link to C&#43;&#43; Preprocessor" href="https://thomjiji.github.io/blogs/2023/09/cpp-preprocessor/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Parse QuickTime
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Apple Developer Documentation Storing and sharing media with QuickTime files Color parameter atom (‘colr’) Uncompressed Y´CbCr Video in QuickTime Files — Documentation Archive Other resources Apple ProRes - MultiMedia Wiki QuickTime Tags - ExifTool MPEG-4 files - Atomic Parsley MP4RA - Official Registration Authority for the ISOBMFF family of standards Implementations/tools Implementations Language Notes metacolor.editor C# Simple Implementation, can only change NCLC tags. Provide GUI. qtff-parameter-editor C&#43;&#43; Good implementation, can only change NCLC tags....</p>
-  </div>
-  <footer class="entry-footer"><span title='2023-09-18 00:00:00 +0000 UTC'>2023-09-18</span></footer>
-  <a class="entry-link" aria-label="post link to Parse QuickTime" href="https://thomjiji.github.io/blogs/2023/09/parse-quicktime/"></a>
+  <footer class="entry-footer"><span title='2022-12-28 00:00:00 +0000 UTC'>2022-12-28</span></footer>
+  <a class="entry-link" aria-label="post link to High Quality H.264 Render in Baselight" href="https://thomjiji.github.io/blogs/2022/12/hight-quality-h264-render-in-baselight/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
-    <a class="next" href="https://thomjiji.github.io/posts/page/2/">Next&nbsp;&nbsp;»
+    <a class="prev" href="https://thomjiji.github.io/posts/page/2/">
+      «&nbsp;Prev&nbsp;
     </a>
   </nav>
 </footer>

@@ -2,14 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://thomjiji.github.io/tags/kde/</loc>
-    <lastmod>2023-12-04T00:00:00+00:00</lastmod>
+    <loc>https://thomjiji.github.io/tags/firefox/</loc>
+    <lastmod>2023-12-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://thomjiji.github.io/blogs/2023/12/pin-apps-to-kde-panel/</loc>
-    <lastmod>2023-12-04T00:00:00+00:00</lastmod>
+    <loc>https://thomjiji.github.io/tags/kde/</loc>
+    <lastmod>2023-12-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thomjiji.github.io/posts/</loc>
-    <lastmod>2023-12-04T00:00:00+00:00</lastmod>
+    <lastmod>2023-12-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="中文"
@@ -22,7 +22,7 @@
                 />
   </url><url>
     <loc>https://thomjiji.github.io/tags/</loc>
-    <lastmod>2023-12-04T00:00:00+00:00</lastmod>
+    <lastmod>2023-12-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="中文"
@@ -35,7 +35,7 @@
                 />
   </url><url>
     <loc>https://thomjiji.github.io/</loc>
-    <lastmod>2023-12-04T00:00:00+00:00</lastmod>
+    <lastmod>2023-12-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="中文"
@@ -46,6 +46,15 @@
                 hreflang="en"
                 href="https://thomjiji.github.io/"
                 />
+  </url><url>
+    <loc>https://thomjiji.github.io/blogs/2023/12/use-native-file-picker-on-kde/</loc>
+    <lastmod>2023-12-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thomjiji.github.io/tags/vs-code/</loc>
+    <lastmod>2023-12-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thomjiji.github.io/blogs/2023/12/pin-apps-to-kde-panel/</loc>
+    <lastmod>2023-12-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thomjiji.github.io/tags/ssh/</loc>
     <lastmod>2023-12-03T00:00:00+00:00</lastmod>

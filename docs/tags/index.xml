@@ -6,13 +6,31 @@
     <description>Recent content in Tags on thomjiji</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Mon, 04 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://thomjiji.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://thomjiji.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Firefox</title>
+      <link>https://thomjiji.github.io/tags/firefox/</link>
+      <pubDate>Sat, 09 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://thomjiji.github.io/tags/firefox/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>KDE</title>
       <link>https://thomjiji.github.io/tags/kde/</link>
-      <pubDate>Mon, 04 Dec 2023 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 09 Dec 2023 00:00:00 +0000</pubDate>
       
       <guid>https://thomjiji.github.io/tags/kde/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VS Code</title>
+      <link>https://thomjiji.github.io/tags/vs-code/</link>
+      <pubDate>Sat, 09 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://thomjiji.github.io/tags/vs-code/</guid>
       <description></description>
     </item>
     
