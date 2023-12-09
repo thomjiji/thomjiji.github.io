@@ -52,6 +52,7 @@ languages:
           url: tags/
           weight: 40
   中文:
+    disable: false
     languageName: "Chinese"
     languageCode: zh-CN
     contentDir: content/cn
@@ -63,7 +64,7 @@ languages:
       titile: "thomjiji"
       languageAltTitle: Chinese
       homeInfoParams:
-        Title: "👋 hi!"
+        Title: "👋 Hi!"
         Content: "这个网站主要作为我的 Blog，和一些零散的笔记。"
     menu:
       main:
