@@ -52,7 +52,6 @@ languages:
           url: tags/
           weight: 40
   中文:
-    disable: false
     languageName: "Chinese"
     languageCode: zh-CN
     contentDir: content/cn
@@ -61,6 +60,7 @@ languages:
       tag: tags
       series: series
     params:
+      disable: false
       titile: "thomjiji"
       languageAltTitle: Chinese
       homeInfoParams:
