@@ -2,7 +2,7 @@
 <html lang="en" dir="auto">
 
 <head>
-	<meta name="generator" content="Hugo 0.111.3"><meta charset="utf-8">
+	<meta name="generator" content="Hugo 0.119.0"><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
@@ -11,7 +11,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <link rel="canonical" href="https://thomjiji.github.io/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.c8457fb7221f9d892f53a021a8ce45ac3a6ad3536699979105f02a018cc5a9ef.css" integrity="sha256-yEV/tyIfnYkvU6AhqM5FrDpq01NmmZeRBfAqAYzFqe8=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.13dddc73127e5034586087cc9c859a5b6cea75656e76c4a1185d42968912883e.css" integrity="sha256-E93ccxJ&#43;UDRYYIfMnIWaW2zqdWVudsShGF1ClokSiD4=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://thomjiji.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://thomjiji.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://thomjiji.github.io/favicon-32x32.png">
@@ -221,6 +221,23 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>Use mouse wheel to scroll less in iTerm2
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>在 iTerm2 中使用 less command 有一个奇怪的点：你不能用鼠标来滚动页面。只能使用 Vim 的 keybinding Ctrl&#43;d 和 Ctrl&#43;u 来上下翻页。而且当你比如在查看一个 command 的 man page 时，因为 man page 默认是使用 less 来打开的，你查看完某个 man page 按 q 退出，然后使用鼠标滚轮往上面滚一下，滚到上面一屏，你会发现你的 Terminal 变得很乱，有很多刚刚你查看的那个 man page 的残留。
+我的需求总结来说就是：
+能够在 less 里使用鼠标滚轮来翻页，滚动。 退出 less 之后不要有残留。 其实，这里有一个概念叫作 alternate screen。你用 less 打开查看一个什么文件的时候进入的就是一个 alternative sceen，按 q 退出就是退出那个 alternate screen，回到这个 main screen（这个是我瞎取的）。
+iTerm2 里也有这方面的设置，设置一下就行了。
+首先这里有一个设置在 Session &gt; Terminal State &gt; Alternate Screen。这个设置我暂时没搞懂具体效果是什么，而真正起作用的也不是这个设置，只是它有点相关。
+然后最重要的是这个设置，需要打开：Preferences &gt; Advanced &gt; Mouse &gt; Scroll wheel sends arrow keys when in alternate screen mode，把它改成 Yes。...</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-12-17 00:00:00 +0000 UTC'>2023-12-17</span></footer>
+  <a class="entry-link" aria-label="post link to Use mouse wheel to scroll less in iTerm2" href="https://thomjiji.github.io/blogs/2023/12/use-mouse-wheel-to-scroll-less-in-iterm2/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>Use native file picker on KDE Plasma
     </h2>
   </header>
@@ -334,18 +351,6 @@ preprocessor .cpp file =&gt; preprocessor: Make change to the text of the code f
   </div>
   <footer class="entry-footer"><span title='2023-09-21 00:00:00 +0000 UTC'>2023-09-21</span></footer>
   <a class="entry-link" aria-label="post link to C&#43;&#43; Preprocessor" href="https://thomjiji.github.io/blogs/2023/09/cpp-preprocessor/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Parse QuickTime
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Apple Developer Documentation Storing and sharing media with QuickTime files Color parameter atom (‘colr’) Uncompressed Y´CbCr Video in QuickTime Files — Documentation Archive Other resources Apple ProRes - MultiMedia Wiki QuickTime Tags - ExifTool MPEG-4 files - Atomic Parsley MP4RA - Official Registration Authority for the ISOBMFF family of standards Implementations/tools Implementations Language Notes metacolor.editor C# Simple Implementation, can only change NCLC tags. Provide GUI. qtff-parameter-editor C&#43;&#43; Good implementation, can only change NCLC tags....</p>
-  </div>
-  <footer class="entry-footer"><span title='2023-09-18 00:00:00 +0000 UTC'>2023-09-18</span></footer>
-  <a class="entry-link" aria-label="post link to Parse QuickTime" href="https://thomjiji.github.io/blogs/2023/09/parse-quicktime/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
