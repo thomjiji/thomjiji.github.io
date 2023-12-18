@@ -13,7 +13,9 @@ slug: use-mouse-wheel-to-scroll-less-in-iterm2
 1. 能够在 less 里使用鼠标滚轮来翻页，滚动。
 2. 退出 less 之后不要有残留。
 
-其实，这里有一个概念叫作 alternate screen。你用 less 打开查看一个什么文件的时候进入的就是一个 alternative sceen，按 `q` 退出就是退出那个 alternate screen，回到这个 main screen（这个是我瞎取的）。
+其实，这里有一个概念叫作 [alternate screen](https://superuser.com/a/321233)。你用 less 打开查看一个什么文件的时候进入的就是一个 alternate sceen，按 `q` 退出就是退出那个 alternate screen，回到 normal screen。Alternate screen 就是一个单独的 buffer，独立于当前 terminal 的。
+
+> When activated, the current screen is saved and replaced with the alternate screen.[^1]
 
 iTerm2 里也有这方面的设置，设置一下就行了。
 
@@ -27,8 +29,8 @@ iTerm2 里也有这方面的设置，设置一下就行了。
 
 完成。
 
----
-
 Reference:
 
 - https://stackoverflow.com/questions/14437979/iterm2-scroll-less-output-with-mouse
+
+[^1]: [xterm man page | Other Features](https://linux.die.net/man/1/xterm)
