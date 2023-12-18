@@ -83,15 +83,6 @@
 .toc a:hover {
     box-shadow: 0 1px 0;
     box-decoration-break: clone;
-    /* https://julian.digital url style */
-    /* background-color: #DDD3A5;
-    border-radius: 2px 2px 2px 2px;
-    padding: 1px 5px;
-    text-decoration: none;
-    text-decoration-line: none;
-    text-decoration-style: solid;
-    text-decoration-color: currentcolor;
-    text-decoration-thickness: auto; */
     -webkit-box-decoration-break: clone;
 }
 
@@ -212,7 +203,7 @@
 .post-content code {
     margin: auto 0px;
     padding: 1px 5px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     line-height: 1.5;
     background: var(--code-bg);
     font-family: "JetBrains Mono";
@@ -221,11 +212,11 @@
 
 .post-content pre code {
     display: block;
-    /* margin: auto 0; */
     margin-bottom: var(--content-gap);
     padding: 10px;
     color: rgb(213, 213, 214);
     background: var(--hljs-bg) !important;
+    border-radius: var(--radius);
     overflow-x: auto;
     word-break: break-all;
 }
@@ -316,6 +307,16 @@
     margin-top: 56px;
 }
 
+.post-footer>* {
+    margin-bottom: 10px;
+}
+
+.post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
 .post-tags li {
     display: inline-block;
     margin-inline-end: 3px;
@@ -346,15 +347,16 @@
 }
 
 .share-buttons {
-    margin: 14px 0;
-    padding-inline-start: var(--radius);
+    padding: 10px;
     display: flex;
     justify-content: center;
     overflow-x: auto;
+    gap: 10px;
 }
 
+.share-buttons li,
 .share-buttons a {
-    margin-top: 10px;
+    display: inline-flex;
 }
 
 .share-buttons a:not(:last-of-type) {
