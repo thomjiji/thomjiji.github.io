@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>math on thomjiji</title>
     <link>https://thomjiji.github.io/tags/math/</link>
     <description>Recent content in math on thomjiji</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Wed, 30 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://thomjiji.github.io/tags/math/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 30 Aug 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://thomjiji.github.io/tags/math/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Calculus Recap</title>
       <link>https://thomjiji.github.io/blogs/2023/08/calculus-recap/</link>
       <pubDate>Wed, 30 Aug 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/blogs/2023/08/calculus-recap/</guid>
       <description>Intermediate Value Theorem (IVT) If a function $f(x)$ is continuous on a closed interval $[a, b]$ and $k$ is any number between $f(a)$ and $f(b)$, then there is at least one number $c$ in the interval $[a, b]$ such that $f( c) = k$.
 The intermediate value theorem has two conditions:
 Function $f$ is continuous over the interval $[a, b]$. The value $d$ lies between $f(a)$ and $f(b)$ We must establish these two conditions to conclude that there is a value $c$ in the interval $[a, b]$ for which $g(x) = d$ (another way to phrase this conclusion is that the equation $g(x) = d$ has a solution where $a &amp;lt;= x &amp;lt;= b$).</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,299 +1,236 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on thomjiji</title>
     <link>https://thomjiji.github.io/tags/</link>
     <description>Recent content in Tags on thomjiji</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 17 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://thomjiji.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://thomjiji.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>iTerm2</title>
       <link>https://thomjiji.github.io/tags/iterm2/</link>
       <pubDate>Sun, 17 Dec 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/tags/iterm2/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Firefox</title>
       <link>https://thomjiji.github.io/tags/firefox/</link>
       <pubDate>Sat, 09 Dec 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/tags/firefox/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>KDE</title>
       <link>https://thomjiji.github.io/tags/kde/</link>
       <pubDate>Sat, 09 Dec 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/tags/kde/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>VS Code</title>
       <link>https://thomjiji.github.io/tags/vs-code/</link>
       <pubDate>Sat, 09 Dec 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/tags/vs-code/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>SSH</title>
       <link>https://thomjiji.github.io/tags/ssh/</link>
       <pubDate>Sun, 03 Dec 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/tags/ssh/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>sshfs</title>
       <link>https://thomjiji.github.io/tags/sshfs/</link>
       <pubDate>Sun, 03 Dec 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/tags/sshfs/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>GPG</title>
       <link>https://thomjiji.github.io/tags/gpg/</link>
       <pubDate>Sat, 02 Dec 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/tags/gpg/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>backup</title>
       <link>https://thomjiji.github.io/tags/backup/</link>
       <pubDate>Fri, 01 Dec 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/tags/backup/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>btrbk</title>
       <link>https://thomjiji.github.io/tags/btrbk/</link>
       <pubDate>Fri, 01 Dec 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/tags/btrbk/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>btrfs</title>
       <link>https://thomjiji.github.io/tags/btrfs/</link>
       <pubDate>Fri, 01 Dec 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/tags/btrfs/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>snapshot</title>
       <link>https://thomjiji.github.io/tags/snapshot/</link>
       <pubDate>Fri, 01 Dec 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/tags/snapshot/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Cryptography</title>
       <link>https://thomjiji.github.io/tags/cryptography/</link>
       <pubDate>Tue, 28 Nov 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/tags/cryptography/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>du</title>
       <link>https://thomjiji.github.io/tags/du/</link>
       <pubDate>Wed, 01 Nov 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/tags/du/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>C&#43;&#43;</title>
       <link>https://thomjiji.github.io/tags/c&#43;&#43;/</link>
       <pubDate>Thu, 21 Sep 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/tags/c&#43;&#43;/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Atom</title>
       <link>https://thomjiji.github.io/tags/atom/</link>
       <pubDate>Mon, 18 Sep 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/tags/atom/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>NCLC Tag</title>
       <link>https://thomjiji.github.io/tags/nclc-tag/</link>
       <pubDate>Mon, 18 Sep 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/tags/nclc-tag/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>ProRes</title>
       <link>https://thomjiji.github.io/tags/prores/</link>
       <pubDate>Mon, 18 Sep 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/tags/prores/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>QuickTime</title>
       <link>https://thomjiji.github.io/tags/quicktime/</link>
       <pubDate>Mon, 18 Sep 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/tags/quicktime/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Machine Learning</title>
       <link>https://thomjiji.github.io/tags/machine-learning/</link>
       <pubDate>Thu, 07 Sep 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/tags/machine-learning/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Calculus</title>
       <link>https://thomjiji.github.io/tags/calculus/</link>
       <pubDate>Wed, 30 Aug 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/tags/calculus/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>math</title>
       <link>https://thomjiji.github.io/tags/math/</link>
       <pubDate>Wed, 30 Aug 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/tags/math/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Vim</title>
       <link>https://thomjiji.github.io/tags/vim/</link>
       <pubDate>Sun, 09 Jul 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/tags/vim/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Calibration</title>
       <link>https://thomjiji.github.io/tags/calibration/</link>
       <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/tags/calibration/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Color Management</title>
       <link>https://thomjiji.github.io/tags/color-management/</link>
       <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/tags/color-management/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>DisplayCAL</title>
       <link>https://thomjiji.github.io/tags/displaycal/</link>
       <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/tags/displaycal/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>ICC Profile</title>
       <link>https://thomjiji.github.io/tags/icc-profile/</link>
       <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/tags/icc-profile/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Video Card</title>
       <link>https://thomjiji.github.io/tags/video-card/</link>
       <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/tags/video-card/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Dolby Atmos</title>
       <link>https://thomjiji.github.io/tags/dolby-atmos/</link>
       <pubDate>Sun, 29 Jan 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/tags/dolby-atmos/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Dolby Vision</title>
       <link>https://thomjiji.github.io/tags/dolby-vision/</link>
       <pubDate>Sun, 29 Jan 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/tags/dolby-vision/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Daylight</title>
       <link>https://thomjiji.github.io/tags/daylight/</link>
       <pubDate>Sat, 28 Jan 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/tags/daylight/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>FilmLight</title>
       <link>https://thomjiji.github.io/tags/filmlight/</link>
       <pubDate>Sat, 28 Jan 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/tags/filmlight/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Baselight</title>
       <link>https://thomjiji.github.io/tags/baselight/</link>
       <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/tags/baselight/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

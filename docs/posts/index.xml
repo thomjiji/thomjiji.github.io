@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on thomjiji</title>
     <link>https://thomjiji.github.io/posts/</link>
     <description>Recent content in Posts on thomjiji</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 17 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://thomjiji.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://thomjiji.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Use mouse wheel to scroll less in iTerm2</title>
       <link>https://thomjiji.github.io/blogs/2023/12/use-mouse-wheel-to-scroll-less-in-iterm2/</link>
       <pubDate>Sun, 17 Dec 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/blogs/2023/12/use-mouse-wheel-to-scroll-less-in-iterm2/</guid>
       <description>在 iTerm2 中使用 less command 有一个奇怪的点：你不能用鼠标来滚动页面。只能使用 Vim 的 keybinding Ctrl+d 和 Ctrl+u 来上下翻页。而且当你比如在查看一个 command 的 man page 时，因为 man page 默认是使用 less 来打开的，你查看完某个 man page 按 q 退出，然后使用鼠标滚轮往上面滚一下，滚到上面一屏，你会发现你的 Terminal 变得很乱，有很多刚刚你查看的那个 man page 的残留。
 我的需求总结来说就是：
@@ -20,111 +20,89 @@ iTerm2 里也有这方面的设置，设置一下就行了。
 首先这里有一个设置在 Session &amp;gt; Terminal State &amp;gt; Alternate Screen。这个设置我暂时没搞懂具体效果是什么，而真正起作用的也不是这个设置，只是它有点相关。
 然后最重要的是这个设置，需要打开：Preferences &amp;gt; Advanced &amp;gt; Mouse &amp;gt; Scroll wheel sends arrow keys when in alternate screen mode，把它改成 Yes。</description>
     </item>
-    
     <item>
       <title>Use native file picker on KDE Plasma</title>
       <link>https://thomjiji.github.io/blogs/2023/12/use-native-file-picker-on-kde/</link>
       <pubDate>Sat, 09 Dec 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/blogs/2023/12/use-native-file-picker-on-kde/</guid>
       <description>For Firefox Starting with version 64, Firefox can optionally use XDG Desktop Portals to handle various desktop features, such as opening a file picker, or handling MIME types. — Arch Wiki | Firefox | XDG Desktop Portal integration
 Type about:config in Firefox address bar. Search widget.use-xdg-desktop-portal.file-picker, set it to 1. 0 – Never 1 – Always 2 – Auto (typically depends on whether Firefox is run from within Flatpak or whether the GDK_DEBUG=portals environment is set) Done.</description>
     </item>
-    
     <item>
       <title>Pin apps to KDE Panel, not KDE Task Manager</title>
       <link>https://thomjiji.github.io/blogs/2023/12/pin-apps-to-kde-panel/</link>
       <pubDate>Mon, 04 Dec 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/blogs/2023/12/pin-apps-to-kde-panel/</guid>
       <description>比如你想把 Konsole 和 Firefox 这些最最常用的 app pin 到底部的 bar/dock 上（实际上 KDE 叫它 Panel），最直观的，你下意识的右键 Task Manager 上已经打开的 app，这里有一个“Pin to Task Manager”的选项，勾选上它。但这好像不是你想要的，因为你发现即使 pin 上去了，只要你打开那个 app 的一个 instance，那个刚刚被你 pin 上去的 app 就又不见了。这似乎不是你期待中的“pin”。这时你想要打开那个 app 的第二个 instance，就没法去到老地方，你最初 pin 它的那个地方打开。得找到现在的正在运行的那个 instance 所在的 Task Manager 的地方，右键 &amp;gt; &amp;ldquo;Open a New Window&amp;rdquo;。
 其实，你刚刚 pin 上去的那个地方，是 Task Manager 的区域。Task Manager 外层还有一个区域，叫作 Panel。你应该，或者说你其实想把它 pin 到 Panel 上。这样不管你开几个 instance，那个 app 的图标还是在那，当你想开第 n+1 的 instance 的时候，还是去那个 pin 的地方点一下就行了。
 总的来说，KDE 底部栏的层级是这样的：
 Panel: Application Launcher Pager Task Manager System tray Digital clock Peak at Desktop 你其实想把 Konsole 和 Firefox pin 到这里:</description>
     </item>
-    
     <item>
       <title>sshfs</title>
       <link>https://thomjiji.github.io/blogs/2023/12/sshfs/</link>
       <pubDate>Sun, 03 Dec 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/blogs/2023/12/sshfs/</guid>
       <description>How to mount remote machine&amp;rsquo;s directory on current host? This question originally came up when I wanted to use Kate to edit a configuration file on macOS. I normally ssh into macOS, cd to that directory, and then type kate &amp;lt;file&amp;gt; to try opening the file for editing. But huh? There&amp;rsquo;s no kate command. Oh right, because I&amp;rsquo;m in the macOS environment, of course there&amp;rsquo;s no kate! But this is a problem - am I restricted to only using vi to edit remote files?</description>
     </item>
-    
     <item>
       <title>gpg-agent doesn&#39;t work anyway!</title>
       <link>https://thomjiji.github.io/blogs/2023/12/gpg-agent-does-not-work-anyway/</link>
       <pubDate>Sat, 02 Dec 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/blogs/2023/12/gpg-agent-does-not-work-anyway/</guid>
       <description>Solved by this command: gpg-connect-agent updatestartuptty /bye &amp;gt;/dev/null</description>
     </item>
-    
     <item>
       <title>btrfs and btrbk</title>
       <link>https://thomjiji.github.io/blogs/2023/12/btrfs-and-btrbk/</link>
       <pubDate>Fri, 01 Dec 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/blogs/2023/12/btrfs-and-btrbk/</guid>
       <description>/etc/btrbk/btrbk.conf config file:
 volume / snapshot_dir btrbk_snapshots subvolume home incremental strict Key points:
 volume /: &amp;ldquo;Base path within a btrfs filesystem containing the subvolumes to be backuped (usually the mount-point of a btrfs filesystem mounted with subvolid=5 option).&amp;rdquo; In this case, we use the existing root directory — which is already a btrfs filesystem (by default on Fedora). btrbk refer this / (next to volume) as &amp;ldquo;&amp;lt;volume-directory&amp;gt;&amp;rdquo;. snapshot_dir btrbk_snapshots: btrbk_snapshots is relative to the volume set above, which in this case the / (root directory).</description>
     </item>
-    
     <item>
       <title>GPG key for SSH authentication</title>
       <link>https://thomjiji.github.io/blogs/2023/11/gpg-for-ssh-authentication/</link>
       <pubDate>Tue, 28 Nov 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/blogs/2023/11/gpg-for-ssh-authentication/</guid>
       <description>Using GPG key for ssh authentication reduces the effort involved in managing SSH keys, which is the main reason I want to learn this technique. GPG key for all (not just one GPG key possibly).</description>
     </item>
-    
     <item>
       <title>SSH notes</title>
       <link>https://thomjiji.github.io/blogs/2023/11/ssh-notes/</link>
       <pubDate>Tue, 28 Nov 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/blogs/2023/11/ssh-notes/</guid>
       <description>SSH 是一个我之前就想尝试使用的工具，当时只有对它的一个很简单的印象，就是可以通过它安全的访问另外一台电脑——的 Terminal。当然对它的具体</description>
     </item>
-    
     <item>
       <title>File size</title>
       <link>https://thomjiji.github.io/blogs/2023/11/file-size/</link>
       <pubDate>Wed, 01 Nov 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/blogs/2023/11/file-size/</guid>
       <description>Notes du * 输出的其实不是我们通常理解上的文件大小，而是所谓 block size（block count 可能更准确）。而且，它显示的是 disk usage，也就是这个文件占了多大的硬盘容量，或者说文件系统实际分配了多少空间给到这个文件。而不是，这个文件，它本身有多大。这个区别比较关键，后面会有更多的说明。
 $ du * 5568	1-2-1_2frames_ap4h.mov 8040	1-2-1_2frames_ap4x.mov 3928	1-2-1_2frames_apch.mov 2152	1-2-1_2frames_apcn.mov 688	1-2-1_2frames_apco.mov 1592	1-2-1_2frames_apcs.mov 我们使用 exa 这个 ls 的替代，用 exa -lh -b -S 这个命令得到这样的输出：
 $ exa -lh -b -S Permissions Size Blocks User Date Modified Name .rw-r--r--@ 2.7Mi 5568 thom 27 Oct 17:32 1-2-1_2frames_ap4h.mov .rw-r--r--@ 3.9Mi 8040 thom 27 Oct 17:32 1-2-1_2frames_ap4x.mov .rw-r--r--@ 1.9Mi 3928 thom 27 Oct 17:32 1-2-1_2frames_apch.</description>
     </item>
-    
     <item>
       <title>C&#43;&#43; Preprocessor</title>
       <link>https://thomjiji.github.io/blogs/2023/09/cpp-preprocessor/</link>
       <pubDate>Thu, 21 Sep 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/blogs/2023/09/cpp-preprocessor/</guid>
       <description>Excerpted from learncpp.com
 preprocessor .cpp file =&amp;gt; preprocessor: Make change to the text of the code file, but not actually to the original code file, rather temporarily in-memory or using temporary files. Uninteresting things: strip out comments, ensures each code file ends in a newline. One important role: process#include directives. =&amp;gt; What comes out of the preprocessor is called translation unit. The translation unit is then compiled by the compiler. +--------+ +---------------------+ +-------------------+ +-----------------+ | .</description>
     </item>
-    
     <item>
       <title>Parse QuickTime</title>
       <link>https://thomjiji.github.io/blogs/2023/09/parse-quicktime/</link>
       <pubDate>Mon, 18 Sep 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/blogs/2023/09/parse-quicktime/</guid>
       <description>Apple Developer Documentation Storing and sharing media with QuickTime files Color parameter atom (&amp;lsquo;colr&amp;rsquo;) Uncompressed Y´CbCr Video in QuickTime Files — Documentation Archive Other resources Apple ProRes - MultiMedia Wiki QuickTime Tags - ExifTool MPEG-4 files - Atomic Parsley MP4RA - Official Registration Authority for the ISOBMFF family of standards Implementations/tools Implementations Language Notes metacolor.editor C# Simple Implementation, can only change NCLC tags. Provide GUI. qtff-parameter-editor C++ Good implementation, can only change NCLC tags.</description>
     </item>
-    
     <item>
       <title>Machine Learning Glossary</title>
       <link>https://thomjiji.github.io/blogs/2023/09/machine-learning-glossary/</link>
       <pubDate>Thu, 07 Sep 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/blogs/2023/09/machine-learning-glossary/</guid>
       <description>Reference Machine Learning Glossary - Google for Developers
 activation function A function that enables neural networks to learn non-linear (complex) relationships between features and the label. Popupar activation functions include:
@@ -132,35 +110,29 @@ ReLU Sigmoid Tanh backpropagation The algorithm that implements gradient descent
 Training a neural network involves many iterations of the following two-pass cycle:
 During the forward pass, the system processes a batch of examples to yild prediction(s). The system compares each prediction to each label value.</description>
     </item>
-    
     <item>
       <title>Calculus Recap</title>
       <link>https://thomjiji.github.io/blogs/2023/08/calculus-recap/</link>
       <pubDate>Wed, 30 Aug 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/blogs/2023/08/calculus-recap/</guid>
       <description>Intermediate Value Theorem (IVT) If a function $f(x)$ is continuous on a closed interval $[a, b]$ and $k$ is any number between $f(a)$ and $f(b)$, then there is at least one number $c$ in the interval $[a, b]$ such that $f( c) = k$.
 The intermediate value theorem has two conditions:
 Function $f$ is continuous over the interval $[a, b]$. The value $d$ lies between $f(a)$ and $f(b)$ We must establish these two conditions to conclude that there is a value $c$ in the interval $[a, b]$ for which $g(x) = d$ (another way to phrase this conclusion is that the equation $g(x) = d$ has a solution where $a &amp;lt;= x &amp;lt;= b$).</description>
     </item>
-    
     <item>
       <title>Give Up Vim</title>
       <link>https://thomjiji.github.io/blogs/2023/07/give-up-vim/</link>
       <pubDate>Sun, 09 Jul 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/blogs/2023/07/give-up-vim/</guid>
       <description>为什么从 Vim 切换回普通 Cursor Obsidian 用的就不是 Vim 模式。因为我需要在 Obsidian 输入中文，中文输入之下，Vim 完全是不可用的状态。我也不想去折腾怎么让 Vim 的模态切换在中文输入下也可用（应该是有这样的解决方案的）。
 其他地方，各种输入框：浏览器、Raycast、ChatGPT，包括网页的全局搜索框（Cmd+F），都不是工作在 Vim 的模式下（确实曾经也尝试过把浏览器也用 Vim keybind 来操作&amp;hellip;）。而在这些场景下使用普通的 Cursor 移动方式对我来说也已经非常熟练和习惯了。也觉得 Cmd ← 和 Cmd → 回到行首行尾和 Opt ←, Opt → （上一个词/下一个词）蛮好用的。
 我对在 Insert mode 和 Normal mode 之间切换感到疲倦。使用 Normal cursor 的话，就一个模式我想什么时候移动就什么时候移动。用 Vim 我还需要从 Insert mode 切换出来。而且我使用的退出 Insert mode 的 keybind 是 jk，而不是 Esc。之前觉得 Esc 在键盘的位置，还是会让手的 movement 太大。jk 直接就在 hjkl 下，手臂不需要移动，非常方便。但现在觉得 jk 都麻烦，尤其在模态之间切换频繁的话，一会儿就得 jk 来一下，非常繁琐——繁琐是因为模态的切换，而不是换个 keybind 就能解决的。所以我选择不要这些模态。
 在 PyCharm 的 Completion 之间选择 Candidates，有时需要上下移动选择那个我想要的。之前想把它们 bind 到 hjkl 上，但怎么都找不到办法，只有使用上下键。在 Vim 原教旨主义者看来很不 ok 是吧，但我当时忍了下来。现在想既然如此，为啥不直接全换到 Normal keybind。我知道是可以直接用 Emacs 的 keybind Ctrl n 和 Ctrl p 来上下选择，但。</description>
     </item>
-    
     <item>
       <title>DEVONthink 上手</title>
       <link>https://thomjiji.github.io/blogs/2023/03/devonthink-unboxing/</link>
       <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/blogs/2023/03/devonthink-unboxing/</guid>
       <description>我主要用 DEVONthink 来管理我的 PDF 文档。那事情最初呢，是因为我想找一个 PDF 阅读器。首先考虑的自然是 PDF Expert，然后是 Adobe Acrobat Reader。PDF Expert 我以前在 Mac 上试用过，功能很简单，就是一个纯粹的 PDF 阅读器，可以标注划线啥的，能满足我基本需要。但它是订阅制，每年 79.9 刀，也不便宜。况且我也不太喜欢订阅制。想着数码荔枝有没有代理 PDF Expert 在国内的销售？这样兴许能便宜好多。但没有。Adobe Acrobat Reader 呢，下载玩了一下，印象不怎么好。再加上我对 Adobe 的软件都不怎么喜欢，印象都不怎么好（Creative Cloud 那一大坨东西啊……看着就头疼），这个 Acrobat 也赶紧卸载了。
 那么回过来一想，PDF 阅读器，macOS 自带的不能用吗？我也试了下，作为正经的主力的 PDF 阅读器，我还是别为难自己了。人那个系统自带的 Preview 啊，苹果一贯的所谓简洁设计，我要用的功能找半天也找不到（还是没有？不知道）。我还是放自己一马吧。
@@ -168,12 +140,10 @@ DEVONthink，这个软件呢，以前就有所耳闻。估计还是 2016、2017 
 Ok，下载安装了。这一大堆都是什么……噢看到有 Manual，还是一本…书？有提供 PDF 版本，EPUB 版本。这软件这么复杂的吗？当然我对这个复杂度也有预期，毕竟「终极知识管理工具」。那么先用起来吧。
 噢它是 Database 的概念。建一个 Database，所有的东西都存到这个 Database 里，存完后 Database 之外的副本就可以删掉了。然后 DEVONthink 软件在这个 Database 里做所有的扫描和索引，从而让你可以在里面全局搜索，不止搜文档名，搜索文档的内容都行。</description>
     </item>
-    
     <item>
       <title>ICC Profile</title>
       <link>https://thomjiji.github.io/blogs/2023/03/icc-profile/</link>
       <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/blogs/2023/03/icc-profile/</guid>
       <description>对普通显示器校色的时候，很难不碰到 ICC profile 这个东西。我们都知道这个名词，显示器的 ICC 文件，或许模糊的对它有一些概念。但它究竟是什么？原理如何。
 ICC profile 跟我们已经有很明确概念的 ACES，或者更广泛一些地讲：「现代的色彩管理流程」，是很相似的 idea。都有一个处于整个链路中间的非常大的色彩空间，大到足以容纳所有不同的输入、显示和输出设备的各种色域（sRGB、AdobeRGB、Rec.709 等等）1。这个色彩空间在 ICC 这个概念下叫作 PCS（Profile Connection Space）。ICC profile 通过定义设备源或目标色彩空间与 PCS 之间的映射来描述特定设备的色彩属性2。
@@ -181,69 +151,56 @@ ICC 本身并不进行任何校准，它们只包含显示器关于色彩成像�
 ICC Profile - IBM&amp;#160;&amp;#x21a9;&amp;#xfe0e;
 ICC profile - Wikipedia&amp;#160;&amp;#x21a9;&amp;#xfe0e;</description>
     </item>
-    
     <item>
       <title>VCGT Tag</title>
       <link>https://thomjiji.github.io/blogs/2023/03/vcgt-tag/</link>
       <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/blogs/2023/03/vcgt-tag/</guid>
       <description>之前我们知道，DisplayCAL 这种校色软件的工作原理：它会生成一个配置文件，在系统里加载，实际作用到显卡的输出信号上。更细节一点则是：
 DisplayCAL 生成的 ICC 配置文件中会包含一个叫作 VCGT（Video Card Gamma Table）的 tag，它实际是一个 1D LUT，包含对显示器的灰阶或白点的校正。然后操作系统需要把这个 VCGT Tag 加载到显卡输出信号上的有一个 Look Up Table 上，从而实现对显卡输出信号的校正。同时显卡的这个 Look Up Table 也是有精度限制的。
 具体在使用 DisplayCAL 的时候，右键桌面右下角 DisplayCAL 的图标，就会看到有一个 Reset video card gamma table 的东西。在系统加载了 DisplayCAL 生成的 profile 的情况下，这时点一下 Reset video card gamma table 会发现整个桌面的反差，或者说 Gamma、灰阶变了，它把对于显卡的校正给重置掉了，回到了最初的状态。
 再者就是我们还可以在 DisplayCAL 的 Tone curve 的设置中看到：如果不把 Tone curve 设为 “As measured” 的话，比如手动设为 Gamma 2.2。那 DisplayCAL 会做这么一件事情：在校准过程中，会通过一个 1D LUT 来校准（中和、补偿）显示器本身与这条纯粹的、Gamma 为 2.2 的指数曲线不相符的地方。如果设为 “As measured” 的话，则显示器的 grey scale 是怎么样就是怎么样，不做任何的校准和调整。</description>
     </item>
-    
     <item>
       <title>为什么使用上屏卡</title>
       <link>https://thomjiji.github.io/blogs/2023/03/why-do-we-need-video-card/</link>
       <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/blogs/2023/03/why-do-we-need-video-card/</guid>
       <description>做高端校色软件 ColourSpace 的 LightIllusion 有篇文章 What&amp;rsquo;s wrong with ICCs? 指出了 ICC profile 的一些问题。
 总的来说，ICC profile 能 work 的前提是软件本身支持它，软件是否是 ICC aware。通常来说 ICC aware 的软件有一个 CMM 色彩管理模块（Color Management Module）能够正确识别我们生成的 ICC profile，然后能够对图像做调整以达到「准确」的结果，实现校色的目的。先不说 ICC 这种方式本质上是对图像的调整，而不是对显示器本身的校正（后者是更好的方式，所谓硬件校准就是如此）。即使软件具有 CMM，准确度和性能还得看各个软件自身的优化。这就变成一件非常麻烦和复杂的事情。那些不是 ICC aware 的软件，看到的就做一个完全未经校准的画面。
 那对于 Adobe 全家桶来说，像 Ps、Lr 这种平面设计软件，它们是有 CMM 模块，叫作 ACE（Adobe Color Engine）。就是能够识别图像自带的 ICC profile，将其转换到 Ps 的工作色彩空间。那对于 Pr 来说，它也有被他们称为 DCM（Display Color Management）的东西，作为 Pr 内在的色彩管理方式，也是利用系统的 ICC profile 来进行工作的。
 DCM uses the ICC profile for your monitor to apply a colorimetric conversion from the sequence working color space (or media color space in the case of the source monitor) to the monitor color space.</description>
     </item>
-    
     <item>
       <title>显示器校色笔记</title>
       <link>https://thomjiji.github.io/blogs/2023/02/monitor-calibration-notes/</link>
       <pubDate>Wed, 15 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/blogs/2023/02/monitor-calibration-notes/</guid>
       <description>DisplayCAL 官网 User Guide 在对显示器校色之前，必须预热至少 30 分钟。这一点在我最近的校准过程中可以明确体会到，比如：在调整显示器自身的 RGB 输出时，当你把红绿蓝三个通道终于调到一条线上之后，这时亮度不达标了。调节显示器的亮度以达到目标值，比如 100 nits 之后，RGB 那三个值又不在一条线上了。一方面跟显示器的素质有关，不能保证在亮度增减的同时保持 RGB 三个值的输出一致。另一方面也跟显示器预热有关，没到 30 分钟状态还不稳定。
 显示器校准的基本概念：Calibration 和 Profiling/Characterization。在使用 DisplayCAL 进行校准的时候，第一步就是通过显示器自身的调节按钮，比如显示器的 RGB 三通道值的输出，来与事先定义好的目标值匹配。调节显示器的亮度按钮使其达到比如 100 尼特；在色温选项里使用用户自定义的方式来调节 RGB 输出，使其达到比如 6500K 的色温（CCT）。这一步我们粗略的称之为校准 Calibration，需要人手动去调的。而第二步是软件自动实现的过程，叫做 Profiling，就是它会在屏幕上生成一系列色块，测量这些色块的值，与标准值进行匹配，然后生成一个 Profile (e.g. ICC profile) 给我们最终加载到系统上。Profiling 实际上并不改变颜色，它描述的是该显示器对各种颜色的响应，通常存储在一个 ICC 配置文件中。
 Characterization (or profiling) is recording the way a device reproduces or responds to color. Typically the result is stored in a device ICC profile. Such a profile does not in itself modify color in any way.</description>
     </item>
-    
     <item>
       <title>mp4muxer &amp; mp4demuxer Basic Usage</title>
       <link>https://thomjiji.github.io/blogs/2023/01/mp4muxer-mp4demuxer-basic-usage/</link>
       <pubDate>Sun, 29 Jan 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/blogs/2023/01/mp4muxer-mp4demuxer-basic-usage/</guid>
       <description>Installation mp4muxer mp4demuxer Commands 将 MP4 的音视频分离（脱壳 Demux）： mp4demuxer --input-file input.mp4 --output-folder ~/Output 合并杜比视界 Profile 8.4 和杜比全景声双音轨： mp4muxer \ -i input.h265 \ --input-video-frame-rate 25 \ --hvc1flag 0 \ --dv-bl-compatible-id 4 \ -i Stereo.aac \ -i Atmos.ec3 \ -o DolbyVision_DolbyAtmos.mp4 合并 SDR 视频和杜比全景声双音轨: mp4muxer \ -i input.h264 \ --input-video-frame-rate 25 \ -i Stereo.aac \ -i Atmos.ec3 \ -o SDR_DolbyAtmos.mp4 </description>
     </item>
-    
     <item>
       <title>Daylight 添加 ARRI Look Library &amp; ALF-2 v5 DRT Family</title>
       <link>https://thomjiji.github.io/blogs/2023/01/daylight-add-arri-look-library/</link>
       <pubDate>Sat, 28 Jan 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/blogs/2023/01/daylight-add-arri-look-library/</guid>
       <description>操作步骤 将 ARRI Look Library 的 zip 解压，把里面的多个 cub 和 fllook 文件平摊到这个路径：/Library/Application Support/FilmLight/looks 将 ALF-2 v5 DRT Family 的 zip 解压，把里面的 cub 和 fltransform 平摊在这个路径：/Library/Application Support/FilmLight/etc/colourspaces 打开 Daylight，完成。 Reference ARRI Colour Workflow in Baselight ACES and Baselight ARRI Look Library and ALF-2 v5 DRT Family Download </description>
     </item>
-    
     <item>
       <title>High Quality H.264 Render in Baselight</title>
       <link>https://thomjiji.github.io/blogs/2022/12/hight-quality-h264-render-in-baselight/</link>
       <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/blogs/2022/12/hight-quality-h264-render-in-baselight/</guid>
       <description> Params Start at 39:56, Daniele introduced the method for rendering high quality H.264 in Baselight. Here is the key parameters:
 Rate Control: CRF based VBR Quantizer: Nominal Quantizer parameter: 18 Quantizer parameter: 18 </description>
     </item>
-    
   </channel>
 </rss>

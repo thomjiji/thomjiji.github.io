@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>C&#43;&#43; on thomjiji</title>
     <link>https://thomjiji.github.io/tags/c&#43;&#43;/</link>
     <description>Recent content in C&#43;&#43; on thomjiji</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 21 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://thomjiji.github.io/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 21 Sep 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://thomjiji.github.io/tags/c++/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>C&#43;&#43; Preprocessor</title>
       <link>https://thomjiji.github.io/blogs/2023/09/cpp-preprocessor/</link>
       <pubDate>Thu, 21 Sep 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://thomjiji.github.io/blogs/2023/09/cpp-preprocessor/</guid>
       <description>Excerpted from learncpp.com
 preprocessor .cpp file =&amp;gt; preprocessor: Make change to the text of the code file, but not actually to the original code file, rather temporarily in-memory or using temporary files. Uninteresting things: strip out comments, ensures each code file ends in a newline. One important role: process#include directives. =&amp;gt; What comes out of the preprocessor is called translation unit. The translation unit is then compiled by the compiler. +--------+ +---------------------+ +-------------------+ +-----------------+ | .</description>
     </item>
-    
   </channel>
 </rss>
