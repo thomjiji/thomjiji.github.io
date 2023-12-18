@@ -113,6 +113,12 @@
     margin-top: 5px;
 }
 
+/*
+ * Ajust margin-bottom in nested lists
+ * https://github.com/adityatelange/hugo-PaperMod/pull/1284
+ */
+.post-content li ol,
+.post-content li ul,
 .post-content li p {
     margin-bottom: 0;
 }
