@@ -18,21 +18,6 @@ slug: cpp-preprocessor
 - => What comes out of the preprocessor is called **translation unit**.
 - The translation unit is then compiled by the compiler.
 
-```text
-+--------+      +---------------------+        +-------------------+       +-----------------+
-| .cpp   |  =>  | Preprocessor        |   =>   | Translation  Unit |  =>   | Compiled output |
-| file   |      |                     |        |                   |       | (object code)   |
-+--------+      +---------------------+        +-------------------+       +-----------------+
-   |          /----> |#include files  | <\                     |                            |
-   |         /       |Macro expansion |   \                    |                            |
-   |        /        |Remove comments |    \                   |                            |
-   |       /         |Add line-breaks |     \                  |                            |
-   |      /          |etc.            |      \                 |                            |
-   +-- Original file +--Processes the file   +--Output from      +--Binary code resulted
-                         with directives         preprocessor        from compilation
-                                                (processed code)
-```
-
 > The entire process of preprocessing, compiling and linking is called **translation**.
 
 ## preprocessor directives
