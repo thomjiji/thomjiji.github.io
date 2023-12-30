@@ -17,5 +17,8 @@ tags: ["Asahi Linux", "Rime"]
     ```
 
 4. Open Input Method Selector > Use fcitx5 > Log out.
-5. Clone [雾凇拼音](https://github.com/iDvel/rime-ice) repo into `~/.local/share/fcitx5/`, rename it to `rime`: `mv rime-ice rime`.
+5. Clone [雾凇拼音](https://github.com/iDvel/rime-ice) repo into `~/.local/share/fcitx5/`, rename it to `rime`:
+    ```
+    $ mv rime-ice rime
+    ```
 6. Restart fcitx5 in the lower right corner of your Desktop.
