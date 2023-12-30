@@ -225,6 +225,23 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>Setup Rime on Fedora Asahi Remix
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Install fcitx5 and fcitx5-rime via sudo dnf install fcitx5-rime fcitx5.
+Go to System Setting &gt; Input Devices &gt; Virtual Keyboard, select “Fcitx 5”.
+Edit environment file via: sudo vi /etc/environment.
+Add the following content, reference: INPUT_METHOD=fcitx XMODIFIERS=@im=fcitx Open Input Method Selector &gt; Use fcitx5 &gt; Log out.
+Clone 雾凇拼音 repo into ~/.local/share/fcitx5/, rename it to rime: mv rime-ice rime.
+Restart fcitx5 in the lower right corner of your Desktop.</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-12-30 00:00:00 +0000 UTC'>2023-12-30</span></footer>
+  <a class="entry-link" aria-label="post link to Setup Rime on Fedora Asahi Remix" href="https://thomjiji.github.io/blogs/2023/12/setup-rime-on-fedora-asahi/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>Use mouse wheel to scroll less in iTerm2
     </h2>
   </header>
@@ -340,19 +357,6 @@ $ exa -lh -b -S Permissions Size Blocks User Date Modified Name .rw-r--r--@ 2.7M
   </div>
   <footer class="entry-footer"><span title='2023-11-01 00:00:00 +0000 UTC'>2023-11-01</span></footer>
   <a class="entry-link" aria-label="post link to File size" href="https://thomjiji.github.io/blogs/2023/11/file-size/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>C&#43;&#43; Preprocessor
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Excerpted from learncpp.com
-preprocessor .cpp file =&gt; preprocessor: Make change to the text of the code file, but not actually to the original code file, rather temporarily in-memory or using temporary files. Uninteresting things: strip out comments, ensures each code file ends in a newline. One important role: process#include directives. =&gt; What comes out of the preprocessor is called translation unit. The translation unit is then compiled by the compiler. The entire process of preprocessing, compiling and linking is called translation....</p>
-  </div>
-  <footer class="entry-footer"><span title='2023-09-21 00:00:00 +0000 UTC'>2023-09-21</span></footer>
-  <a class="entry-link" aria-label="post link to C&#43;&#43; Preprocessor" href="https://thomjiji.github.io/blogs/2023/09/cpp-preprocessor/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

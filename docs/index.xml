@@ -6,8 +6,20 @@
     <description>Recent content on thomjiji</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 17 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 30 Dec 2023 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://thomjiji.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setup Rime on Fedora Asahi Remix</title>
+      <link>https://thomjiji.github.io/blogs/2023/12/setup-rime-on-fedora-asahi/</link>
+      <pubDate>Sat, 30 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://thomjiji.github.io/blogs/2023/12/setup-rime-on-fedora-asahi/</guid>
+      <description>Install fcitx5 and fcitx5-rime via sudo dnf install fcitx5-rime fcitx5.
+Go to System Setting &amp;gt; Input Devices &amp;gt; Virtual Keyboard, select “Fcitx 5”.
+Edit environment file via: sudo vi /etc/environment.
+Add the following content, reference: INPUT_METHOD=fcitx XMODIFIERS=@im=fcitx Open Input Method Selector &amp;gt; Use fcitx5 &amp;gt; Log out.
+Clone 雾凇拼音 repo into ~/.local/share/fcitx5/, rename it to rime: mv rime-ice rime.
+Restart fcitx5 in the lower right corner of your Desktop.</description>
+    </item>
     <item>
       <title>Use mouse wheel to scroll less in iTerm2</title>
       <link>https://thomjiji.github.io/blogs/2023/12/use-mouse-wheel-to-scroll-less-in-iterm2/</link>

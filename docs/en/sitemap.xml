@@ -2,14 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://thomjiji.github.io/tags/iterm2/</loc>
-    <lastmod>2023-12-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://thomjiji.github.io/tags/less/</loc>
-    <lastmod>2023-12-17T00:00:00+00:00</lastmod>
+    <loc>https://thomjiji.github.io/tags/asahi-linux/</loc>
+    <lastmod>2023-12-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thomjiji.github.io/posts/</loc>
-    <lastmod>2023-12-17T00:00:00+00:00</lastmod>
+    <lastmod>2023-12-30T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -21,8 +18,14 @@
                 href="https://thomjiji.github.io/posts/"
                 />
   </url><url>
+    <loc>https://thomjiji.github.io/tags/rime/</loc>
+    <lastmod>2023-12-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thomjiji.github.io/blogs/2023/12/setup-rime-on-fedora-asahi/</loc>
+    <lastmod>2023-12-30T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://thomjiji.github.io/tags/</loc>
-    <lastmod>2023-12-17T00:00:00+00:00</lastmod>
+    <lastmod>2023-12-30T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -35,7 +38,7 @@
                 />
   </url><url>
     <loc>https://thomjiji.github.io/</loc>
-    <lastmod>2023-12-17T00:00:00+00:00</lastmod>
+    <lastmod>2023-12-30T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -46,6 +49,12 @@
                 hreflang="en-US"
                 href="https://thomjiji.github.io/"
                 />
+  </url><url>
+    <loc>https://thomjiji.github.io/tags/iterm2/</loc>
+    <lastmod>2023-12-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thomjiji.github.io/tags/less/</loc>
+    <lastmod>2023-12-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thomjiji.github.io/blogs/2023/12/use-mouse-wheel-to-scroll-less-in-iterm2/</loc>
     <lastmod>2023-12-17T00:00:00+00:00</lastmod>
