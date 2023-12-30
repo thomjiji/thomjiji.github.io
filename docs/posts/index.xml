@@ -17,8 +17,8 @@
 Go to System Setting &amp;gt; Input Devices &amp;gt; Virtual Keyboard, select “Fcitx 5”.
 Edit environment file via: sudo vi /etc/environment.
 Add the following content, reference: INPUT_METHOD=fcitx XMODIFIERS=@im=fcitx Open Input Method Selector &amp;gt; Use fcitx5 &amp;gt; Log out.
-Clone 雾凇拼音 repo into ~/.local/share/fcitx5/, rename it to rime: mv rime-ice rime.
-Restart fcitx5 in the lower right corner of your Desktop.</description>
+Clone 雾凇拼音 repo into ~/.local/share/fcitx5/, rename it to rime:
+$ mv rime-ice rime Restart fcitx5 in the lower right corner of your Desktop.</description>
     </item>
     <item>
       <title>Use mouse wheel to scroll less in iTerm2</title>
