@@ -32,7 +32,7 @@ Method 2:
 1. Search for Visual Studio Code.
 1. Right click > Edit Application...
 1. In the popup window, choose Application tab.
-1. Fill the "Enviroment variable" field: `GTK_USE_PORTIAL=1`.
+1. Fill the "Environment variable" field: `GTK_USE_PORTIAL=1`.
 
 But it's not working on my machine. So I actually use method 1.
 
