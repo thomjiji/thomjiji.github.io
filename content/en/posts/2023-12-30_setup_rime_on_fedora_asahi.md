@@ -11,10 +11,10 @@ tags: ["Asahi Linux", "Rime"]
 3. Edit environment file via: `sudo vi /etc/environment`.
     1. Add the following content, [reference](https://fcitx-im.org/wiki/Using_Fcitx_5_on_Wayland#KDE_Plasma):
 
-    ```
-    INPUT_METHOD=fcitx
-    XMODIFIERS=@im=fcitx
-    ```
+        ```
+        INPUT_METHOD=fcitx
+        XMODIFIERS=@im=fcitx
+        ```
 
 4. Open Input Method Selector > Use fcitx5 > Log out.
 5. Clone [雾凇拼音](https://github.com/iDvel/rime-ice) repo into `~/.local/share/fcitx5/`, rename it to `rime`:
