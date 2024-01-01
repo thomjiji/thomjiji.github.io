@@ -118,7 +118,7 @@ Type about:config in Firefox address bar. Search widget.use-xdg-desktop-portal.f
   "keywords": [
     "KDE", "Firefox", "VS Code"
   ],
-  "articleBody": "For Firefox Starting with version 64, Firefox can optionally use XDG Desktop Portals to handle various desktop features, such as opening a file picker, or handling MIME types. — Arch Wiki | Firefox | XDG Desktop Portal integration\nType about:config in Firefox address bar. Search widget.use-xdg-desktop-portal.file-picker, set it to 1. 0 – Never 1 – Always 2 – Auto (typically depends on whether Firefox is run from within Flatpak or whether the GDK_DEBUG=portals environment is set) Done. For VS Code These two environment variables: GTK_USE_PORTAL=1, GDK_DEBUG=portals.\nMethod 1:\nSet environment variable GTK_USE_PORTIAL=1. Add it to your Fish shell (or other shells you use) alias: alias code \"GTK_USE_PORTAL=1 code\" Method 2:\nPress Meta key to open Application Launcher. Search for Visual Studio Code. Right click \u003e Edit Application… In the popup window, choose Application tab. Fill the “Enviroment variable” field: GTK_USE_PORTIAL=1. But it’s not working on my machine. So I actually use method 1.\nReference:\nWhy are there two file openers in KDE? — Reddit ",
+  "articleBody": "For Firefox Starting with version 64, Firefox can optionally use XDG Desktop Portals to handle various desktop features, such as opening a file picker, or handling MIME types. — Arch Wiki | Firefox | XDG Desktop Portal integration\nType about:config in Firefox address bar. Search widget.use-xdg-desktop-portal.file-picker, set it to 1. 0 – Never 1 – Always 2 – Auto (typically depends on whether Firefox is run from within Flatpak or whether the GDK_DEBUG=portals environment is set) Done. For VS Code These two environment variables: GTK_USE_PORTAL=1, GDK_DEBUG=portals.\nMethod 1:\nSet environment variable GTK_USE_PORTIAL=1. Add it to your Fish shell (or other shells you use) alias: alias code \"GTK_USE_PORTAL=1 code\" Method 2:\nPress Meta key to open Application Launcher. Search for Visual Studio Code. Right click \u003e Edit Application… In the popup window, choose Application tab. Fill the “Environment variable” field: GTK_USE_PORTIAL=1. But it’s not working on my machine. So I actually use method 1.\nReference:\nWhy are there two file openers in KDE? — Reddit ",
   "wordCount" : "164",
   "inLanguage": "en",
   "datePublished": "2023-12-09T00:00:00Z",
@@ -248,7 +248,7 @@ Type about:config in Firefox address bar. Search widget.use-xdg-desktop-portal.f
 <li>Search for Visual Studio Code.</li>
 <li>Right click &gt; Edit Application&hellip;</li>
 <li>In the popup window, choose Application tab.</li>
-<li>Fill the &ldquo;Enviroment variable&rdquo; field: <code>GTK_USE_PORTIAL=1</code>.</li>
+<li>Fill the &ldquo;Environment variable&rdquo; field: <code>GTK_USE_PORTIAL=1</code>.</li>
 </ol>
 <p>But it&rsquo;s not working on my machine. So I actually use method 1.</p>
 <hr>
