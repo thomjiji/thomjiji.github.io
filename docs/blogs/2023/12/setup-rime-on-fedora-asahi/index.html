@@ -10,7 +10,8 @@
 <meta name="description" content="Install fcitx5 and fcitx5-rime via sudo dnf install fcitx5-rime fcitx5.
 Go to System Setting &gt; Input Devices &gt; Virtual Keyboard, select “Fcitx 5”.
 Edit environment file via: sudo vi /etc/environment.
-Add the following content, reference: INPUT_METHOD=fcitx XMODIFIERS=@im=fcitx Open Input Method Selector &gt; Use fcitx5 &gt; Log out.
+Add the following content, reference:
+INPUT_METHOD=fcitx XMODIFIERS=@im=fcitx Open Input Method Selector &gt; Use fcitx5 &gt; Log out.
 Clone 雾凇拼音 repo into ~/.local/share/fcitx5/, rename it to rime:
 $ mv rime-ice rime Restart fcitx5 in the lower right corner of your Desktop.">
 <meta name="author" content="">
@@ -82,7 +83,8 @@ $ mv rime-ice rime Restart fcitx5 in the lower right corner of your Desktop.">
 <meta property="og:description" content="Install fcitx5 and fcitx5-rime via sudo dnf install fcitx5-rime fcitx5.
 Go to System Setting &gt; Input Devices &gt; Virtual Keyboard, select “Fcitx 5”.
 Edit environment file via: sudo vi /etc/environment.
-Add the following content, reference: INPUT_METHOD=fcitx XMODIFIERS=@im=fcitx Open Input Method Selector &gt; Use fcitx5 &gt; Log out.
+Add the following content, reference:
+INPUT_METHOD=fcitx XMODIFIERS=@im=fcitx Open Input Method Selector &gt; Use fcitx5 &gt; Log out.
 Clone 雾凇拼音 repo into ~/.local/share/fcitx5/, rename it to rime:
 $ mv rime-ice rime Restart fcitx5 in the lower right corner of your Desktop." />
 <meta property="og:type" content="article" />
@@ -95,7 +97,8 @@ $ mv rime-ice rime Restart fcitx5 in the lower right corner of your Desktop." />
 <meta name="twitter:description" content="Install fcitx5 and fcitx5-rime via sudo dnf install fcitx5-rime fcitx5.
 Go to System Setting &gt; Input Devices &gt; Virtual Keyboard, select “Fcitx 5”.
 Edit environment file via: sudo vi /etc/environment.
-Add the following content, reference: INPUT_METHOD=fcitx XMODIFIERS=@im=fcitx Open Input Method Selector &gt; Use fcitx5 &gt; Log out.
+Add the following content, reference:
+INPUT_METHOD=fcitx XMODIFIERS=@im=fcitx Open Input Method Selector &gt; Use fcitx5 &gt; Log out.
 Clone 雾凇拼音 repo into ~/.local/share/fcitx5/, rename it to rime:
 $ mv rime-ice rime Restart fcitx5 in the lower right corner of your Desktop."/>
 
@@ -126,11 +129,11 @@ $ mv rime-ice rime Restart fcitx5 in the lower right corner of your Desktop."/>
   "@type": "BlogPosting",
   "headline": "Setup Rime on Fedora Asahi Remix",
   "name": "Setup Rime on Fedora Asahi Remix",
-  "description": "Install fcitx5 and fcitx5-rime via sudo dnf install fcitx5-rime fcitx5.\nGo to System Setting \u0026gt; Input Devices \u0026gt; Virtual Keyboard, select “Fcitx 5”.\nEdit environment file via: sudo vi /etc/environment.\nAdd the following content, reference: INPUT_METHOD=fcitx XMODIFIERS=@im=fcitx Open Input Method Selector \u0026gt; Use fcitx5 \u0026gt; Log out.\nClone 雾凇拼音 repo into ~/.local/share/fcitx5/, rename it to rime:\n$ mv rime-ice rime Restart fcitx5 in the lower right corner of your Desktop.",
+  "description": "Install fcitx5 and fcitx5-rime via sudo dnf install fcitx5-rime fcitx5.\nGo to System Setting \u0026gt; Input Devices \u0026gt; Virtual Keyboard, select “Fcitx 5”.\nEdit environment file via: sudo vi /etc/environment.\nAdd the following content, reference:\nINPUT_METHOD=fcitx XMODIFIERS=@im=fcitx Open Input Method Selector \u0026gt; Use fcitx5 \u0026gt; Log out.\nClone 雾凇拼音 repo into ~/.local/share/fcitx5/, rename it to rime:\n$ mv rime-ice rime Restart fcitx5 in the lower right corner of your Desktop.",
   "keywords": [
     "Asahi Linux", "Rime"
   ],
-  "articleBody": " Install fcitx5 and fcitx5-rime via sudo dnf install fcitx5-rime fcitx5.\nGo to System Setting \u003e Input Devices \u003e Virtual Keyboard, select “Fcitx 5”.\nEdit environment file via: sudo vi /etc/environment.\nAdd the following content, reference: INPUT_METHOD=fcitx XMODIFIERS=@im=fcitx Open Input Method Selector \u003e Use fcitx5 \u003e Log out.\nClone 雾凇拼音 repo into ~/.local/share/fcitx5/, rename it to rime:\n$ mv rime-ice rime Restart fcitx5 in the lower right corner of your Desktop.\n",
+  "articleBody": " Install fcitx5 and fcitx5-rime via sudo dnf install fcitx5-rime fcitx5.\nGo to System Setting \u003e Input Devices \u003e Virtual Keyboard, select “Fcitx 5”.\nEdit environment file via: sudo vi /etc/environment.\nAdd the following content, reference:\nINPUT_METHOD=fcitx XMODIFIERS=@im=fcitx Open Input Method Selector \u003e Use fcitx5 \u003e Log out.\nClone 雾凇拼音 repo into ~/.local/share/fcitx5/, rename it to rime:\n$ mv rime-ice rime Restart fcitx5 in the lower right corner of your Desktop.\n",
   "wordCount" : "70",
   "inLanguage": "en",
   "datePublished": "2023-12-30T00:00:00Z",
@@ -242,11 +245,13 @@ $ mv rime-ice rime Restart fcitx5 in the lower right corner of your Desktop."/>
 <li>
 <p>Edit environment file via: <code>sudo vi /etc/environment</code>.</p>
 <ol>
-<li>Add the following content, <a href="https://fcitx-im.org/wiki/Using_Fcitx_5_on_Wayland#KDE_Plasma" target="_blank" >reference</a>:</li>
-</ol>
+<li>
+<p>Add the following content, <a href="https://fcitx-im.org/wiki/Using_Fcitx_5_on_Wayland#KDE_Plasma" target="_blank" >reference</a>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>INPUT_METHOD=fcitx
 </span></span><span style="display:flex;"><span>XMODIFIERS=@im=fcitx
 </span></span></code></pre></div></li>
+</ol>
+</li>
 <li>
 <p>Open Input Method Selector &gt; Use fcitx5 &gt; Log out.</p>
 </li>
@@ -311,7 +316,7 @@ $ mv rime-ice rime Restart fcitx5 in the lower right corner of your Desktop."/>
     </main>
     
 <footer class="footer">
-    <span>&copy; 2023 <a href="https://thomjiji.github.io/">thomjiji</a></span>
+    <span>&copy; 2024 <a href="https://thomjiji.github.io/">thomjiji</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
