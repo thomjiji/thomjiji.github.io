@@ -18,7 +18,7 @@
 }
 
 .archive-month-header {
-    margin: 25px 0;
+    margin: 10px 0;
     width: 200px;
     font-family: "Space Grotesk";
 }
@@ -34,7 +34,7 @@
 .archive-entry {
     position: relative;
     padding: 5px;
-    margin: 10px 0;
+    /* margin: 10px 0; */
 }
 
 .archive-entry-title {
