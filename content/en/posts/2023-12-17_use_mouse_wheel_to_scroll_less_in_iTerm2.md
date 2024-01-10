@@ -31,6 +31,6 @@ iTerm2 里也有这方面的设置，设置一下就行了。
 
 Reference:
 
-- https://stackoverflow.com/questions/14437979/iterm2-scroll-less-output-with-mouse
+- [iTerm2 – scroll less output with mouse](https://stackoverflow.com/questions/14437979/iterm2-scroll-less-output-with-mouse) - StackOverflow
 
 [^1]: [xterm man page | Other Features](https://linux.die.net/man/1/xterm)
