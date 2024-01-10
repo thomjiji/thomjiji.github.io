@@ -124,8 +124,8 @@ When activated, the current screen is saved and replaced with the alternate scre
   "keywords": [
     "iTerm2", "less"
   ],
-  "articleBody": "在 iTerm2 中使用 less command 有一个奇怪的点：你不能用鼠标来滚动页面。只能使用 Vim 的 keybinding Ctrl+d 和 Ctrl+u 来上下翻页。而且当你比如在查看一个 command 的 man page 时，因为 man page 默认是使用 less 来打开的，你查看完某个 man page 按 q 退出，然后使用鼠标滚轮往上面滚一下，滚到上面一屏，你会发现你的 Terminal 变得很乱，有很多刚刚你查看的那个 man page 的残留。\n我的需求总结来说就是：\n能够在 less 里使用鼠标滚轮来翻页，滚动。 退出 less 之后不要有残留。 其实，这里有一个概念叫作 alternate screen。你用 less 打开查看一个什么文件的时候进入的就是一个 alternate sceen，按 q 退出就是退出那个 alternate screen，回到 normal screen。Alternate screen 就是一个单独的 buffer，独立于当前 terminal 的。\nWhen activated, the current screen is saved and replaced with the alternate screen.1\niTerm2 里也有这方面的设置，设置一下就行了。\n首先这里有一个设置在 Session \u003e Terminal State \u003e Alternate Screen。这个设置我暂时没搞懂具体效果是什么，而真正起作用的也不是这个设置，只是它有点相关。\n然后最重要的是这个设置，需要打开：Preferences \u003e Advanced \u003e Mouse \u003e Scroll wheel sends arrow keys when in alternate screen mode，把它改成 Yes。\n这时你会发现可以正常在 less 里用鼠标滚轮滚动了。\n但是退出 less 仍然会看到有残留，这时去：Profiles \u003e 选中你当前的 profile \u003e Terminal \u003e Scrollback Buffer \u003e Save lines to scrollback in alternate screen mode，把它取消勾选。\n完成。\nReference:\nhttps://stackoverflow.com/questions/14437979/iterm2-scroll-less-output-with-mouse xterm man page | Other Features ↩︎\n",
-  "wordCount" : "130",
+  "articleBody": "在 iTerm2 中使用 less command 有一个奇怪的点：你不能用鼠标来滚动页面。只能使用 Vim 的 keybinding Ctrl+d 和 Ctrl+u 来上下翻页。而且当你比如在查看一个 command 的 man page 时，因为 man page 默认是使用 less 来打开的，你查看完某个 man page 按 q 退出，然后使用鼠标滚轮往上面滚一下，滚到上面一屏，你会发现你的 Terminal 变得很乱，有很多刚刚你查看的那个 man page 的残留。\n我的需求总结来说就是：\n能够在 less 里使用鼠标滚轮来翻页，滚动。 退出 less 之后不要有残留。 其实，这里有一个概念叫作 alternate screen。你用 less 打开查看一个什么文件的时候进入的就是一个 alternate sceen，按 q 退出就是退出那个 alternate screen，回到 normal screen。Alternate screen 就是一个单独的 buffer，独立于当前 terminal 的。\nWhen activated, the current screen is saved and replaced with the alternate screen.1\niTerm2 里也有这方面的设置，设置一下就行了。\n首先这里有一个设置在 Session \u003e Terminal State \u003e Alternate Screen。这个设置我暂时没搞懂具体效果是什么，而真正起作用的也不是这个设置，只是它有点相关。\n然后最重要的是这个设置，需要打开：Preferences \u003e Advanced \u003e Mouse \u003e Scroll wheel sends arrow keys when in alternate screen mode，把它改成 Yes。\n这时你会发现可以正常在 less 里用鼠标滚轮滚动了。\n但是退出 less 仍然会看到有残留，这时去：Profiles \u003e 选中你当前的 profile \u003e Terminal \u003e Scrollback Buffer \u003e Save lines to scrollback in alternate screen mode，把它取消勾选。\n完成。\nReference:\niTerm2 – scroll less output with mouse - StackOverflow xterm man page | Other Features ↩︎\n",
+  "wordCount" : "138",
   "inLanguage": "en",
   "datePublished": "2023-12-17T00:00:00Z",
   "dateModified": "2023-12-17T00:00:00Z",
@@ -244,7 +244,7 @@ When activated, the current screen is saved and replaced with the alternate scre
 <p>完成。</p>
 <p>Reference:</p>
 <ul>
-<li><a href="https://stackoverflow.com/questions/14437979/iterm2-scroll-less-output-with-mouse" target="_blank" >https://stackoverflow.com/questions/14437979/iterm2-scroll-less-output-with-mouse</a></li>
+<li><a href="https://stackoverflow.com/questions/14437979/iterm2-scroll-less-output-with-mouse" target="_blank" >iTerm2 – scroll less output with mouse</a> - StackOverflow</li>
 </ul>
 <div class="footnotes" role="doc-endnotes">
 <hr>
