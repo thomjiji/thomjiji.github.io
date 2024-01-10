@@ -1,5 +1,5 @@
 ---
-title: "Parse QuickTime"
+title: "Parse QuickTime File Format"
 date: 2023-09-18
 draft: false
 tags: ["Atom", "QuickTime", "NCLC Tag", "ProRes"]
