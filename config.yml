@@ -65,7 +65,7 @@ languages:
       languageAltTitle: Chinese
       homeInfoParams:
         Title: "👋 Hi!"
-        Content: "这个网站主要作为我的 Blog，和一些零散的笔记。"
+        Content: ""
     menu:
       main:
         - name: 关于
