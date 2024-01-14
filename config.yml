@@ -34,6 +34,8 @@ languages:
       # series: series
     params:
       titile: "thomjiji"
+      cover:
+        linkFullImages: true
       homeInfoParams:
         Title: Hello, I'm thomjiji
         Content: "This website is a mix of my blog, my learning journey, and what I'm up to recently ^^."
