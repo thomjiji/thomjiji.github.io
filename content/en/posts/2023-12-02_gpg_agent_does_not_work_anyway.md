@@ -1,7 +1,7 @@
 ---
 title: "gpg-agent doesn't work anyway!"
 date: 2023-12-02
-draft: true
+draft: false
 tags: ["GPG", "SSH"]
 slug: gpg-agent-does-not-work-anyway
 summary: "Solved by this command: gpg-connect-agent updatestartuptty /bye >/dev/null"
