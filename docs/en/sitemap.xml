@@ -2,14 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://thomjiji.github.io/tags/asahi-linux/</loc>
-    <lastmod>2023-12-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://thomjiji.github.io/tags/fedora/</loc>
-    <lastmod>2023-12-30T00:00:00+00:00</lastmod>
+    <loc>https://thomjiji.github.io/blogs/2024/01/2024-taiwan-election/</loc>
+    <lastmod>2024-01-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thomjiji.github.io/posts/</loc>
-    <lastmod>2023-12-30T00:00:00+00:00</lastmod>
+    <lastmod>2024-01-14T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -20,6 +17,28 @@
                 hreflang="en-US"
                 href="https://thomjiji.github.io/posts/"
                 />
+  </url><url>
+    <loc>https://thomjiji.github.io/</loc>
+    <lastmod>2024-01-14T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://thomjiji.github.io/%E4%B8%AD%E6%96%87/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="https://thomjiji.github.io/"
+                />
+  </url><url>
+    <loc>https://thomjiji.github.io/blogs/2024/01/use-default-settings-as-possible/</loc>
+    <lastmod>2024-01-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thomjiji.github.io/tags/asahi-linux/</loc>
+    <lastmod>2023-12-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thomjiji.github.io/tags/fedora/</loc>
+    <lastmod>2023-12-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thomjiji.github.io/tags/rime/</loc>
     <lastmod>2023-12-30T00:00:00+00:00</lastmod>
@@ -38,19 +57,6 @@
                 rel="alternate"
                 hreflang="en-US"
                 href="https://thomjiji.github.io/tags/"
-                />
-  </url><url>
-    <loc>https://thomjiji.github.io/</loc>
-    <lastmod>2023-12-30T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://thomjiji.github.io/%E4%B8%AD%E6%96%87/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-US"
-                href="https://thomjiji.github.io/"
                 />
   </url><url>
     <loc>https://thomjiji.github.io/tags/iterm2/</loc>
