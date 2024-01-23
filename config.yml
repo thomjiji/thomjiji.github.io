@@ -53,35 +53,35 @@ languages:
         - name: Tags
           url: tags/
           weight: 40
-  中文:
-    languageName: "Chinese"
-    languageCode: zh-CN
-    contentDir: content/cn
-    weight: 2
-    taxonomies:
-      tag: tags
-      series: series
-    params:
-      disable: false
-      titile: "thomjiji"
-      languageAltTitle: Chinese
-      homeInfoParams:
-        Title: "👋 Hi!"
-        Content: ""
-    menu:
-      main:
-        - name: 关于
-          url: about/
-          weight: 5
-        - name: 存档
-          url: archives/
-          weight: 20
-        - name: 搜索
-          url: search/
-          weight: 30
-        - name: 标签
-          url: tags/
-          weight: 40
+  # 中文:
+  #   languageName: "Chinese"
+  #   languageCode: zh-CN
+  #   contentDir: content/cn
+  #   weight: 2
+  #   taxonomies:
+  #     tag: tags
+  #     series: series
+  #   params:
+  #     disable: true
+  #     titile: "thomjiji"
+  #     languageAltTitle: Chinese
+  #     homeInfoParams:
+  #       Title: "👋 Hi!"
+  #       Content: ""
+  #   menu:
+  #     main:
+  #       - name: 关于
+  #         url: about/
+  #         weight: 5
+  #       - name: 存档
+  #         url: archives/
+  #         weight: 20
+  #       - name: 搜索
+  #         url: search/
+  #         weight: 30
+  #       - name: 标签
+  #         url: tags/
+  #         weight: 40
 
 params:
   # PaperMod Profile mode
@@ -112,16 +112,16 @@ params:
       url: "https://twitter.com"
 
   defaultTheme: auto
-  showShareButtons: true
+  showShareButtons: false
   ShareButtons: ["twitter", "telegram", "reddit"]
   ShowBreadCrumbs: true
   ShowPostNavLinks: true
   ShowCodeCopyButtons: true
   ShowReadingTime: false
-  editPost:
-    URL: "https://github.com/thomjiji/thomjiji.github.io/tree/main/content/"
-    Text: "Suggest Changes" # edit text
-    appendFilePath: true # to append file path to Edit link
+  # editPost:
+  #   URL: "https://github.com/thomjiji/thomjiji.github.io/tree/main/content/"
+  #   Text: "Suggest Changes" # edit text
+  #   appendFilePath: true # to append file path to Edit link
 
 outputs:
   home:
