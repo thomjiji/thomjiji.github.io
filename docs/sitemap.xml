@@ -2,25 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://thomjiji.github.io/tags/baselight/</loc>
+    <lastmod>2024-03-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thomjiji.github.io/blogs/2024/03/best-practice-for-grading-stack-in-baselight/</loc>
+    <lastmod>2024-03-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thomjiji.github.io/tags/filmlight/</loc>
+    <lastmod>2024-03-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thomjiji.github.io/posts/</loc>
+    <lastmod>2024-03-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thomjiji.github.io/tags/</loc>
+    <lastmod>2024-03-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thomjiji.github.io/</loc>
+    <lastmod>2024-03-31T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://thomjiji.github.io/tags/asahi-linux/</loc>
     <lastmod>2023-12-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thomjiji.github.io/tags/fedora/</loc>
     <lastmod>2023-12-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://thomjiji.github.io/posts/</loc>
-    <lastmod>2023-12-30T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://thomjiji.github.io/tags/rime/</loc>
     <lastmod>2023-12-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thomjiji.github.io/blogs/2023/12/setup-rime-on-fedora-asahi/</loc>
-    <lastmod>2023-12-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://thomjiji.github.io/tags/</loc>
-    <lastmod>2023-12-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://thomjiji.github.io/</loc>
     <lastmod>2023-12-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thomjiji.github.io/tags/iterm2/</loc>
@@ -181,12 +190,6 @@
   </url><url>
     <loc>https://thomjiji.github.io/blogs/2023/01/daylight-add-arri-look-library/</loc>
     <lastmod>2023-01-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://thomjiji.github.io/tags/filmlight/</loc>
-    <lastmod>2023-01-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://thomjiji.github.io/tags/baselight/</loc>
-    <lastmod>2022-12-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thomjiji.github.io/blogs/2022/12/hight-quality-h264-render-in-baselight/</loc>
     <lastmod>2022-12-28T00:00:00+00:00</lastmod>
