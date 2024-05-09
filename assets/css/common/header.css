@@ -20,7 +20,7 @@
 
 .logo {
     flex-wrap: inherit;
-    font-family: "Space Grotesk", system-ui, -apple-system;
+    font-family: system-ui, -apple-system;
 }
 
 .logo a {
