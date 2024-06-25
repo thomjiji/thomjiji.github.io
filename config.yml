@@ -1,5 +1,5 @@
 baseURL: "https://thomjiji.github.io/"
-languageCode: "en-us"
+languageCode: "en-US"
 title: "thomjiji"
 theme: "PaperMod"
 publishDir: "docs"
@@ -26,7 +26,7 @@ languages:
   en:
     languageCode: en-US
     languageName: "English"
-    contentDir: content/en
+    contentDir: content/
     weight: 1
     taxonomies:
       # categories: categories
