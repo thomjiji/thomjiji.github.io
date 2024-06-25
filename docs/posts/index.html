@@ -169,6 +169,20 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>Create dummy directories using Rsync
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Use rsync to create dummy dirs:
+rsync -avPih --include &#39;*/&#39; --exclude &#39;*&#39; videos/ ~/Desktop/videos-dummy/ Here’s a breakdown of the command:
+-avPih: These flags stand for: -a: Archive mode, which preserves permissions, timestamps, symbolic links, etc. -v: Verbose, which provides detailed output. -P: Combines –progress and –partial, showing progress during transfer and allowing for partial transfers to be resumed. -i: Output a change-summary for all updates. -h: Output numbers in a human-readable format....</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-06-25 00:00:00 +0000 UTC'>2024-06-25</span></footer>
+  <a class="entry-link" aria-label="post link to Create dummy directories using Rsync" href="https://thomjiji.github.io/blogs/2024/06/create-dummy-directories-using-rsync/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>Best practice for grading stack in Baselight
     </h2>
   </header>
@@ -289,18 +303,6 @@ volume /: “Base path within a btrfs filesystem containing the subvolumes to be
   </div>
   <footer class="entry-footer"><span title='2023-11-28 00:00:00 +0000 UTC'>2023-11-28</span></footer>
   <a class="entry-link" aria-label="post link to GPG key for SSH authentication" href="https://thomjiji.github.io/blogs/2023/11/gpg-for-ssh-authentication/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>SSH notes
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>SSH 是一个我之前就想尝试使用的工具，当时只有对它的一个很简单的印象，就是可以通过它安全的访问另外一台电脑——的 Terminal。当然对它的具体...</p>
-  </div>
-  <footer class="entry-footer"><span title='2023-11-28 00:00:00 +0000 UTC'>2023-11-28</span></footer>
-  <a class="entry-link" aria-label="post link to SSH notes" href="https://thomjiji.github.io/blogs/2023/11/ssh-notes/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

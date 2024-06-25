@@ -5,12 +5,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Best practice for grading stack in Baselight | thomjiji</title>
-<meta name="keywords" content="FilmLight, Baselight">
-<meta name="description" content="Colour Online: Developing Digital Images &gt; Best Practice Stack
-Start at 59:04:">
+<title>Create dummy directories using Rsync | thomjiji</title>
+<meta name="keywords" content="">
+<meta name="description" content="Use rsync to create dummy dirs:
+rsync -avPih --include &#39;*/&#39; --exclude &#39;*&#39; videos/ ~/Desktop/videos-dummy/ Here’s a breakdown of the command:
+-avPih: These flags stand for: -a: Archive mode, which preserves permissions, timestamps, symbolic links, etc. -v: Verbose, which provides detailed output. -P: Combines &ndash;progress and &ndash;partial, showing progress during transfer and allowing for partial transfers to be resumed. -i: Output a change-summary for all updates. -h: Output numbers in a human-readable format.">
 <meta name="author" content="">
-<link rel="canonical" href="https://thomjiji.github.io/blogs/2024/03/best-practice-for-grading-stack-in-baselight/">
+<link rel="canonical" href="https://thomjiji.github.io/blogs/2024/06/create-dummy-directories-using-rsync/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.abac88b1892f851424de7bb7eb527485d53b03497b3a837be655e89fd63216ca.css" integrity="sha256-q6yIsYkvhRQk3nu361J0hdU7A0l7OoN75lXon9YyFso=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
     onload="hljs.initHighlightingOnLoad();"></script>
@@ -73,18 +74,20 @@ Start at 59:04:">
     
   </body>
 </html>
-<meta property="og:title" content="Best practice for grading stack in Baselight" />
-<meta property="og:description" content="Colour Online: Developing Digital Images &gt; Best Practice Stack
-Start at 59:04:" />
+<meta property="og:title" content="Create dummy directories using Rsync" />
+<meta property="og:description" content="Use rsync to create dummy dirs:
+rsync -avPih --include &#39;*/&#39; --exclude &#39;*&#39; videos/ ~/Desktop/videos-dummy/ Here’s a breakdown of the command:
+-avPih: These flags stand for: -a: Archive mode, which preserves permissions, timestamps, symbolic links, etc. -v: Verbose, which provides detailed output. -P: Combines &ndash;progress and &ndash;partial, showing progress during transfer and allowing for partial transfers to be resumed. -i: Output a change-summary for all updates. -h: Output numbers in a human-readable format." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://thomjiji.github.io/blogs/2024/03/best-practice-for-grading-stack-in-baselight/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2024-03-31T00:00:00+00:00" />
-<meta property="article:modified_time" content="2024-03-31T00:00:00+00:00" />
+<meta property="og:url" content="https://thomjiji.github.io/blogs/2024/06/create-dummy-directories-using-rsync/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-06-25T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-06-25T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Best practice for grading stack in Baselight"/>
-<meta name="twitter:description" content="Colour Online: Developing Digital Images &gt; Best Practice Stack
-Start at 59:04:"/>
+<meta name="twitter:title" content="Create dummy directories using Rsync"/>
+<meta name="twitter:description" content="Use rsync to create dummy dirs:
+rsync -avPih --include &#39;*/&#39; --exclude &#39;*&#39; videos/ ~/Desktop/videos-dummy/ Here’s a breakdown of the command:
+-avPih: These flags stand for: -a: Archive mode, which preserves permissions, timestamps, symbolic links, etc. -v: Verbose, which provides detailed output. -P: Combines &ndash;progress and &ndash;partial, showing progress during transfer and allowing for partial transfers to be resumed. -i: Output a change-summary for all updates. -h: Output numbers in a human-readable format."/>
 
 
 <script type="application/ld+json">
@@ -101,8 +104,8 @@ Start at 59:04:"/>
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "Best practice for grading stack in Baselight",
-      "item": "https://thomjiji.github.io/blogs/2024/03/best-practice-for-grading-stack-in-baselight/"
+      "name": "Create dummy directories using Rsync",
+      "item": "https://thomjiji.github.io/blogs/2024/06/create-dummy-directories-using-rsync/"
     }
   ]
 }
@@ -111,20 +114,20 @@ Start at 59:04:"/>
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Best practice for grading stack in Baselight",
-  "name": "Best practice for grading stack in Baselight",
-  "description": "Colour Online: Developing Digital Images \u0026gt; Best Practice Stack\nStart at 59:04:",
+  "headline": "Create dummy directories using Rsync",
+  "name": "Create dummy directories using Rsync",
+  "description": "Use rsync to create dummy dirs:\nrsync -avPih --include \u0026#39;*/\u0026#39; --exclude \u0026#39;*\u0026#39; videos/ ~/Desktop/videos-dummy/ Here’s a breakdown of the command:\n-avPih: These flags stand for: -a: Archive mode, which preserves permissions, timestamps, symbolic links, etc. -v: Verbose, which provides detailed output. -P: Combines \u0026ndash;progress and \u0026ndash;partial, showing progress during transfer and allowing for partial transfers to be resumed. -i: Output a change-summary for all updates. -h: Output numbers in a human-readable format.",
   "keywords": [
-    "FilmLight", "Baselight"
+    
   ],
-  "articleBody": "Colour Online: Developing Digital Images \u003e Best Practice Stack\nStart at 59:04:\n",
-  "wordCount" : "12",
+  "articleBody": "Use rsync to create dummy dirs:\nrsync -avPih --include '*/' --exclude '*' videos/ ~/Desktop/videos-dummy/ Here’s a breakdown of the command:\n-avPih: These flags stand for: -a: Archive mode, which preserves permissions, timestamps, symbolic links, etc. -v: Verbose, which provides detailed output. -P: Combines –progress and –partial, showing progress during transfer and allowing for partial transfers to be resumed. -i: Output a change-summary for all updates. -h: Output numbers in a human-readable format. --include '*/': Includes all directories (and subdirectories) in the transfer. --exclude '*': Excludes all files. ",
+  "wordCount" : "87",
   "inLanguage": "en",
-  "datePublished": "2024-03-31T00:00:00Z",
-  "dateModified": "2024-03-31T00:00:00Z",
+  "datePublished": "2024-06-25T00:00:00Z",
+  "dateModified": "2024-06-25T00:00:00Z",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://thomjiji.github.io/blogs/2024/03/best-practice-for-grading-stack-in-baselight/"
+    "@id": "https://thomjiji.github.io/blogs/2024/06/create-dummy-directories-using-rsync/"
   },
   "publisher": {
     "@type": "Organization",
@@ -207,40 +210,40 @@ Start at 59:04:"/>
   <header class="post-header">
     <div class="breadcrumbs"><a href="https://thomjiji.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://thomjiji.github.io/posts/">Posts</a></div>
     <h1 class="post-title entry-hint-parent">
-      Best practice for grading stack in Baselight
+      Create dummy directories using Rsync
     </h1>
-    <div class="post-meta"><span title='2024-03-31 00:00:00 +0000 UTC'>2024-03-31</span>
+    <div class="post-meta"><span title='2024-06-25 00:00:00 +0000 UTC'>2024-06-25</span>
 
 </div>
   </header> 
-  <div class="post-content"><p><strong>Colour Online: Developing Digital Images &gt; Best Practice Stack</strong></p>
-<p>Start at <a href="https://vimeo.com/473186556#t=3544s" target="_blank" >59:04</a>:</p>
-
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://player.vimeo.com/video/473186556" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="vimeo video" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-</div>
-
-<p><img loading="lazy" src="img/baselight_grading_stack.png" alt="image"  />
-</p>
+  <div class="post-content"><p>Use <code>rsync</code> to create dummy dirs:</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>rsync -avPih --include &#39;*/&#39; --exclude &#39;*&#39; videos/ ~/Desktop/videos-dummy/
+</span></span></code></pre></div><p>Here’s a breakdown of the command:</p>
+<ul>
+<li><code>-avPih</code>: These flags stand for:
+<ul>
+<li><code>-a</code>: Archive mode, which preserves permissions, timestamps, symbolic links, etc.</li>
+<li><code>-v</code>: Verbose, which provides detailed output.</li>
+<li><code>-P</code>: Combines &ndash;progress and &ndash;partial, showing progress during transfer and allowing for partial transfers to be resumed.</li>
+<li><code>-i</code>: Output a change-summary for all updates.</li>
+<li><code>-h</code>: Output numbers in a human-readable format.</li>
+</ul>
+</li>
+<li><code>--include '*/'</code>: Includes all directories (and subdirectories) in the transfer.</li>
+<li><code>--exclude '*'</code>: Excludes all files.</li>
+</ul>
 
 
   </div>
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://thomjiji.github.io/tags/filmlight/">FilmLight</a></li>
-      <li><a href="https://thomjiji.github.io/tags/baselight/">Baselight</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://thomjiji.github.io/blogs/2024/06/create-dummy-directories-using-rsync/">
-    <span class="title">« Prev</span>
-    <br>
-    <span>Create dummy directories using Rsync</span>
-  </a>
-  <a class="next" href="https://thomjiji.github.io/blogs/2023/12/setup-rime-on-fedora-asahi/">
+  <a class="next" href="https://thomjiji.github.io/blogs/2024/03/best-practice-for-grading-stack-in-baselight/">
     <span class="title">Next »</span>
     <br>
-    <span>Setup Rime on Fedora Asahi Remix</span>
+    <span>Best practice for grading stack in Baselight</span>
   </a>
 </nav>
 

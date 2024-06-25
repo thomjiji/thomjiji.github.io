@@ -169,6 +169,18 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>SSH notes
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>SSH 是一个我之前就想尝试使用的工具，当时只有对它的一个很简单的印象，就是可以通过它安全的访问另外一台电脑——的 Terminal。当然对它的具体...</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-11-28 00:00:00 +0000 UTC'>2023-11-28</span></footer>
+  <a class="entry-link" aria-label="post link to SSH notes" href="https://thomjiji.github.io/blogs/2023/11/ssh-notes/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>File size
     </h2>
   </header>
@@ -296,21 +308,6 @@ DisplayCAL 生成的 ICC 配置文件中会包含一个叫作 VCGT（Video Card 
   </div>
   <footer class="entry-footer"><span title='2023-03-09 00:00:00 +0000 UTC'>2023-03-09</span></footer>
   <a class="entry-link" aria-label="post link to VCGT Tag" href="https://thomjiji.github.io/blogs/2023/03/vcgt-tag/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>为什么使用上屏卡
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>做高端校色软件 ColourSpace 的 LightIllusion 有篇文章 What’s wrong with ICCs? 指出了 ICC profile 的一些问题。
-总的来说，ICC profile 能 work 的前提是软件本身支持它，软件是否是 ICC aware。通常来说 ICC aware 的软件有一个 CMM 色彩管理模块（Color Management Module）能够正确识别我们生成的 ICC profile，然后能够对图像做调整以达到「准确」的结果，实现校色的目的。先不说 ICC 这种方式本质上是对图像的调整，而不是对显示器本身的校正（后者是更好的方式，所谓硬件校准就是如此）。即使软件具有 CMM，准确度和性能还得看各个软件自身的优化。这就变成一件非常麻烦和复杂的事情。那些不是 ICC aware 的软件，看到的就做一个完全未经校准的画面。
-那对于 Adobe 全家桶来说，像 Ps、Lr 这种平面设计软件，它们是有 CMM 模块，叫作 ACE（Adobe Color Engine）。就是能够识别图像自带的 ICC profile，将其转换到 Ps 的工作色彩空间。那对于 Pr 来说，它也有被他们称为 DCM（Display Color Management）的东西，作为 Pr 内在的色彩管理方式，也是利用系统的 ICC profile 来进行工作的。
-DCM uses the ICC profile for your monitor to apply a colorimetric conversion from the sequence working color space (or media color space in the case of the source monitor) to the monitor color space....</p>
-  </div>
-  <footer class="entry-footer"><span title='2023-03-09 00:00:00 +0000 UTC'>2023-03-09</span></footer>
-  <a class="entry-link" aria-label="post link to 为什么使用上屏卡" href="https://thomjiji.github.io/blogs/2023/03/why-do-we-need-video-card/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

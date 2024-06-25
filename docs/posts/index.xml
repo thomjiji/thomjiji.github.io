@@ -6,8 +6,17 @@
     <description>Recent content in Posts on thomjiji</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 31 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 25 Jun 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://thomjiji.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Create dummy directories using Rsync</title>
+      <link>https://thomjiji.github.io/blogs/2024/06/create-dummy-directories-using-rsync/</link>
+      <pubDate>Tue, 25 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://thomjiji.github.io/blogs/2024/06/create-dummy-directories-using-rsync/</guid>
+      <description>Use rsync to create dummy dirs:
+rsync -avPih --include &amp;#39;*/&amp;#39; --exclude &amp;#39;*&amp;#39; videos/ ~/Desktop/videos-dummy/ Here’s a breakdown of the command:
+-avPih: These flags stand for: -a: Archive mode, which preserves permissions, timestamps, symbolic links, etc. -v: Verbose, which provides detailed output. -P: Combines &amp;ndash;progress and &amp;ndash;partial, showing progress during transfer and allowing for partial transfers to be resumed. -i: Output a change-summary for all updates. -h: Output numbers in a human-readable format.</description>
+    </item>
     <item>
       <title>Best practice for grading stack in Baselight</title>
       <link>https://thomjiji.github.io/blogs/2024/03/best-practice-for-grading-stack-in-baselight/</link>
