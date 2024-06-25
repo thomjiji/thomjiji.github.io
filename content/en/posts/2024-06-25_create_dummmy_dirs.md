@@ -2,7 +2,7 @@
 title: "Create dummy directories using Rsync"
 date: 2024-06-25
 draft: false
-tag: ["rsync"]
+tags: ["rsync"]
 ---
 
 Use `rsync` to create dummy dirs:
