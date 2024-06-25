@@ -53,7 +53,7 @@ Use the post's slug:
 [Link to post](/posts/post-slug/)
 ```
 
-### Link to a specific heading or paragraph:
+### Link to a specific heading or paragraph
 
 ```
 ## My Header {#my-header}
