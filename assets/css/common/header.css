@@ -56,7 +56,6 @@ body:not(.dark) #sun {
     word-break: keep-all;
     overflow-x: auto;
     white-space: nowrap;
-    font-family: "Space Grotesk", system-ui, -apple-system;
 }
 
 #menu li + li {
