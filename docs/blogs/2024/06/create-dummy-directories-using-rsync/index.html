@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>Create dummy directories using Rsync | thomjiji</title>
-<meta name="keywords" content="">
+<meta name="keywords" content="rsync">
 <meta name="description" content="Use rsync to create dummy dirs:
 rsync -avPih --include &#39;*/&#39; --exclude &#39;*&#39; videos/ ~/Desktop/videos-dummy/ Here’s a breakdown of the command:
 -avPih: These flags stand for: -a: Archive mode, which preserves permissions, timestamps, symbolic links, etc. -v: Verbose, which provides detailed output. -P: Combines &ndash;progress and &ndash;partial, showing progress during transfer and allowing for partial transfers to be resumed. -i: Output a change-summary for all updates. -h: Output numbers in a human-readable format.">
@@ -118,7 +118,7 @@ rsync -avPih --include &#39;*/&#39; --exclude &#39;*&#39; videos/ ~/Desktop/vide
   "name": "Create dummy directories using Rsync",
   "description": "Use rsync to create dummy dirs:\nrsync -avPih --include \u0026#39;*/\u0026#39; --exclude \u0026#39;*\u0026#39; videos/ ~/Desktop/videos-dummy/ Here’s a breakdown of the command:\n-avPih: These flags stand for: -a: Archive mode, which preserves permissions, timestamps, symbolic links, etc. -v: Verbose, which provides detailed output. -P: Combines \u0026ndash;progress and \u0026ndash;partial, showing progress during transfer and allowing for partial transfers to be resumed. -i: Output a change-summary for all updates. -h: Output numbers in a human-readable format.",
   "keywords": [
-    
+    "rsync"
   ],
   "articleBody": "Use rsync to create dummy dirs:\nrsync -avPih --include '*/' --exclude '*' videos/ ~/Desktop/videos-dummy/ Here’s a breakdown of the command:\n-avPih: These flags stand for: -a: Archive mode, which preserves permissions, timestamps, symbolic links, etc. -v: Verbose, which provides detailed output. -P: Combines –progress and –partial, showing progress during transfer and allowing for partial transfers to be resumed. -i: Output a change-summary for all updates. -h: Output numbers in a human-readable format. --include '*/': Includes all directories (and subdirectories) in the transfer. --exclude '*': Excludes all files. ",
   "wordCount" : "87",
@@ -238,6 +238,7 @@ rsync -avPih --include &#39;*/&#39; --exclude &#39;*&#39; videos/ ~/Desktop/vide
 
   <footer class="post-footer">
     <ul class="post-tags">
+      <li><a href="https://thomjiji.github.io/tags/rsync/">rsync</a></li>
     </ul>
 <nav class="paginav">
   <a class="next" href="https://thomjiji.github.io/blogs/2024/03/best-practice-for-grading-stack-in-baselight/">
