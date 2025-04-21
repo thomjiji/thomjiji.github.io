@@ -113,7 +113,7 @@
 }
 
 /*
- * Ajust margin-bottom in nested lists
+ * Adjust margin-bottom in nested lists to avoid extra spacing between nested list items.
  * https://github.com/adityatelange/hugo-PaperMod/pull/1284
  */
 .post-content li ol,
@@ -171,7 +171,7 @@
 
 .post-content .highlight:not(table) {
     margin: 10px auto;
-    background: var(--hljs-bg) !important;
+    background: var(--code-block-bg) !important;
     border-radius: var(--radius);
     direction: ltr;
 }
@@ -206,7 +206,7 @@
 }
 
 .post-content code {
-    margin: auto 0px;
+    margin: auto 0;
     padding: 1px 5px;
     font-size: 0.85rem;
     line-height: 1.5;
@@ -219,7 +219,7 @@
     margin-bottom: var(--content-gap);
     padding: 10px;
     color: rgb(213, 213, 214);
-    background: var(--hljs-bg) !important;
+    background: var(--code-block-bg) !important;
     border-radius: var(--radius);
     overflow-x: auto;
     word-break: break-all;
