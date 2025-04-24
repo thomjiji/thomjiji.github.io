@@ -22,9 +22,6 @@
     width: 200px;
 }
 
-.archive-year-header {
-}
-
 .archive-month:not(:last-of-type) {
     border-bottom: 1px solid var(--border);
 }
