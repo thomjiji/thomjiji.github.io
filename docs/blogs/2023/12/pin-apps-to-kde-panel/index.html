@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Pin apps to KDE Panel, not KDE Task Manager | thomjiji</title>
 <meta name="keywords" content="KDE, Linux">
 <meta name="description" content="比如你想把 Konsole 和 Firefox 这些最最常用的 app pin 到底部的 bar/dock 上（实际上 KDE 叫它 Panel），最直观的，你下意识的右键 Task Manager 上已经打开的 app，这里有一个“Pin to Task Manager”的选项，勾选上它。但这好像不是你想要的，因为你发现即使 pin 上去了，只要你打开那个 app 的一个 instance，那个刚刚被你 pin 上去的 app 就又不见了。这似乎不是你期待中的“pin”。这时你想要打开那个 app 的第二个 instance，就没法去到老地方，你最初 pin 它的那个地方打开。得找到现在的正在运行的那个 instance 所在的 Task Manager 的地方，右键 &gt; &ldquo;Open a New Window&rdquo;。
@@ -24,16 +24,16 @@ Peak at Desktop
 
 你其实想把 Konsole 和 Firefox pin 到这里:">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/blogs/2023/12/pin-apps-to-kde-panel/">
+<link rel="canonical" href="https://thomjiji.github.io/blogs/2023/12/pin-apps-to-kde-panel/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.e42ad648cd8baa1905022f1ff58c4bcfb6aeabc0e775ecf9b04f835aa329b79d.css" integrity="sha256-5CrWSM2LqhkFAi8f9YxLz7auq8Dndez5sE&#43;DWqMpt50=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<link rel="icon" href="https://thomjiji.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://thomjiji.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://thomjiji.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://thomjiji.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://thomjiji.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/blogs/2023/12/pin-apps-to-kde-panel/">
+<link rel="alternate" hreflang="en" href="https://thomjiji.github.io/blogs/2023/12/pin-apps-to-kde-panel/">
 <noscript>
     <style>
         #theme-toggle,
@@ -73,7 +73,7 @@ Peak at Desktop
 </noscript><!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="icon" href="http://localhost:1313/powerpuff_girls_buttercup.jpg" />
+    <link rel="icon" href="https://thomjiji.github.io/powerpuff_girls_buttercup.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -86,7 +86,89 @@ Peak at Desktop
     
   </body>
 </html>
+<meta property="og:url" content="https://thomjiji.github.io/blogs/2023/12/pin-apps-to-kde-panel/">
+  <meta property="og:site_name" content="thomjiji">
+  <meta property="og:title" content="Pin apps to KDE Panel, not KDE Task Manager">
+  <meta property="og:description" content="比如你想把 Konsole 和 Firefox 这些最最常用的 app pin 到底部的 bar/dock 上（实际上 KDE 叫它 Panel），最直观的，你下意识的右键 Task Manager 上已经打开的 app，这里有一个“Pin to Task Manager”的选项，勾选上它。但这好像不是你想要的，因为你发现即使 pin 上去了，只要你打开那个 app 的一个 instance，那个刚刚被你 pin 上去的 app 就又不见了。这似乎不是你期待中的“pin”。这时你想要打开那个 app 的第二个 instance，就没法去到老地方，你最初 pin 它的那个地方打开。得找到现在的正在运行的那个 instance 所在的 Task Manager 的地方，右键 &gt; “Open a New Window”。
+其实，你刚刚 pin 上去的那个地方，是 Task Manager 的区域。Task Manager 外层还有一个区域，叫作 Panel。你应该，或者说你其实想把它 pin 到 Panel 上。这样不管你开几个 instance，那个 app 的图标还是在那，当你想开第 n&#43;1 的 instance 的时候，还是去那个 pin 的地方点一下就行了。
+总的来说，KDE 底部栏的层级是这样的：
+Panel: Application Launcher Pager Task Manager System tray Digital clock Peak at Desktop 你其实想把 Konsole 和 Firefox pin 到这里:">
+  <meta property="og:locale" content="en-US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-12-04T00:00:00+00:00">
+    <meta property="article:modified_time" content="2023-12-04T00:00:00+00:00">
+    <meta property="article:tag" content="KDE">
+    <meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Pin apps to KDE Panel, not KDE Task Manager">
+<meta name="twitter:description" content="比如你想把 Konsole 和 Firefox 这些最最常用的 app pin 到底部的 bar/dock 上（实际上 KDE 叫它 Panel），最直观的，你下意识的右键 Task Manager 上已经打开的 app，这里有一个“Pin to Task Manager”的选项，勾选上它。但这好像不是你想要的，因为你发现即使 pin 上去了，只要你打开那个 app 的一个 instance，那个刚刚被你 pin 上去的 app 就又不见了。这似乎不是你期待中的“pin”。这时你想要打开那个 app 的第二个 instance，就没法去到老地方，你最初 pin 它的那个地方打开。得找到现在的正在运行的那个 instance 所在的 Task Manager 的地方，右键 &gt; &ldquo;Open a New Window&rdquo;。
+其实，你刚刚 pin 上去的那个地方，是 Task Manager 的区域。Task Manager 外层还有一个区域，叫作 Panel。你应该，或者说你其实想把它 pin 到 Panel 上。这样不管你开几个 instance，那个 app 的图标还是在那，当你想开第 n&#43;1 的 instance 的时候，还是去那个 pin 的地方点一下就行了。
+总的来说，KDE 底部栏的层级是这样的：
 
+Panel:
+
+Application Launcher
+Pager
+Task Manager
+System tray
+Digital clock
+Peak at Desktop
+
+
+
+你其实想把 Konsole 和 Firefox pin 到这里:">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://thomjiji.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Pin apps to KDE Panel, not KDE Task Manager",
+      "item": "https://thomjiji.github.io/blogs/2023/12/pin-apps-to-kde-panel/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Pin apps to KDE Panel, not KDE Task Manager",
+  "name": "Pin apps to KDE Panel, not KDE Task Manager",
+  "description": "比如你想把 Konsole 和 Firefox 这些最最常用的 app pin 到底部的 bar/dock 上（实际上 KDE 叫它 Panel），最直观的，你下意识的右键 Task Manager 上已经打开的 app，这里有一个“Pin to Task Manager”的选项，勾选上它。但这好像不是你想要的，因为你发现即使 pin 上去了，只要你打开那个 app 的一个 instance，那个刚刚被你 pin 上去的 app 就又不见了。这似乎不是你期待中的“pin”。这时你想要打开那个 app 的第二个 instance，就没法去到老地方，你最初 pin 它的那个地方打开。得找到现在的正在运行的那个 instance 所在的 Task Manager 的地方，右键 \u0026gt; \u0026ldquo;Open a New Window\u0026rdquo;。\n其实，你刚刚 pin 上去的那个地方，是 Task Manager 的区域。Task Manager 外层还有一个区域，叫作 Panel。你应该，或者说你其实想把它 pin 到 Panel 上。这样不管你开几个 instance，那个 app 的图标还是在那，当你想开第 n+1 的 instance 的时候，还是去那个 pin 的地方点一下就行了。\n总的来说，KDE 底部栏的层级是这样的：\nPanel: Application Launcher Pager Task Manager System tray Digital clock Peak at Desktop 你其实想把 Konsole 和 Firefox pin 到这里:\n",
+  "keywords": [
+    "KDE", "Linux"
+  ],
+  "articleBody": "比如你想把 Konsole 和 Firefox 这些最最常用的 app pin 到底部的 bar/dock 上（实际上 KDE 叫它 Panel），最直观的，你下意识的右键 Task Manager 上已经打开的 app，这里有一个“Pin to Task Manager”的选项，勾选上它。但这好像不是你想要的，因为你发现即使 pin 上去了，只要你打开那个 app 的一个 instance，那个刚刚被你 pin 上去的 app 就又不见了。这似乎不是你期待中的“pin”。这时你想要打开那个 app 的第二个 instance，就没法去到老地方，你最初 pin 它的那个地方打开。得找到现在的正在运行的那个 instance 所在的 Task Manager 的地方，右键 \u003e “Open a New Window”。\n其实，你刚刚 pin 上去的那个地方，是 Task Manager 的区域。Task Manager 外层还有一个区域，叫作 Panel。你应该，或者说你其实想把它 pin 到 Panel 上。这样不管你开几个 instance，那个 app 的图标还是在那，当你想开第 n+1 的 instance 的时候，还是去那个 pin 的地方点一下就行了。\n总的来说，KDE 底部栏的层级是这样的：\nPanel: Application Launcher Pager Task Manager System tray Digital clock Peak at Desktop 你其实想把 Konsole 和 Firefox pin 到这里:\nPanel: Application Launcher Pager Konsole Firefox Task Manager System tray Digital clock Peak at Desktop 而不是：\nPanel: Application Launcher Pager Task Manager Konsole Firefox System tray Digital clock Peak at Desktop 这样做：\n按一下 Meta 键，启动 Application Launcher，搜索你想要 pin 的 app，右键； Add to Panel (Widget). Done. Reference:\nPanel - KDE UserBase What’s the difference between “Add to Panel (Widget)” and “Pin to Task Manager” in KDE Plasma 5? ",
+  "wordCount" : "154",
+  "inLanguage": "en",
+  "datePublished": "2023-12-04T00:00:00Z",
+  "dateModified": "2023-12-04T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://thomjiji.github.io/blogs/2023/12/pin-apps-to-kde-panel/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "thomjiji",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://thomjiji.github.io/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">
@@ -104,7 +186,7 @@ Peak at Desktop
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="thomjiji (Alt + H)">thomjiji</a>
+            <a href="https://thomjiji.github.io/" accesskey="h" title="thomjiji (Alt + H)">thomjiji</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -130,22 +212,22 @@ Peak at Desktop
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/about/" title="About">
+                <a href="https://thomjiji.github.io/about/" title="About">
                     <span>About</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/archives/" title="Archives">
+                <a href="https://thomjiji.github.io/archives/" title="Archives">
                     <span>Archives</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="https://thomjiji.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/tags/" title="Tags">
+                <a href="https://thomjiji.github.io/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
@@ -156,7 +238,7 @@ Peak at Desktop
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <div class="breadcrumbs"><a href="https://thomjiji.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://thomjiji.github.io/posts/">Posts</a></div>
     <h1 class="post-title entry-hint-parent">
       Pin apps to KDE Panel, not KDE Task Manager
     </h1>
@@ -230,16 +312,16 @@ Peak at Desktop
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/kde/">KDE</a></li>
-      <li><a href="http://localhost:1313/tags/linux/">Linux</a></li>
+      <li><a href="https://thomjiji.github.io/tags/kde/">KDE</a></li>
+      <li><a href="https://thomjiji.github.io/tags/linux/">Linux</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="http://localhost:1313/blogs/2023/12/use-native-file-picker-on-kde/">
+  <a class="prev" href="https://thomjiji.github.io/blogs/2023/12/use-native-file-picker-on-kde/">
     <span class="title">« Prev</span>
     <br>
     <span>Use native file picker on KDE Plasma</span>
   </a>
-  <a class="next" href="http://localhost:1313/blogs/2023/12/sshfs/">
+  <a class="next" href="https://thomjiji.github.io/blogs/2023/12/sshfs/">
     <span class="title">Next »</span>
     <br>
     <span>sshfs</span>
@@ -251,7 +333,7 @@ Peak at Desktop
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:1313/">thomjiji</a></span> · 
+        <span>&copy; 2025 <a href="https://thomjiji.github.io/">thomjiji</a></span> · 
 
     <span>
         Powered by

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>C&#43;&#43; on thomjiji</title>
-    <link>http://localhost:1313/tags/c&#43;&#43;/</link>
+    <link>https://thomjiji.github.io/tags/c&#43;&#43;/</link>
     <description>Recent content in C&#43;&#43; on thomjiji</description>
     <generator>Hugo -- 0.146.7</generator>
     <language>en-US</language>
     <lastBuildDate>Thu, 21 Sep 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://thomjiji.github.io/tags/c++/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>C&#43;&#43; Preprocessor</title>
-      <link>http://localhost:1313/blogs/2023/09/cpp-preprocessor/</link>
+      <link>https://thomjiji.github.io/blogs/2023/09/cpp-preprocessor/</link>
       <pubDate>Thu, 21 Sep 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blogs/2023/09/cpp-preprocessor/</guid>
+      <guid>https://thomjiji.github.io/blogs/2023/09/cpp-preprocessor/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Excerpted from &lt;a href=&#34;https://www.learncpp.com/cpp-tutorial/introduction-to-the-preprocessor/&#34; target=&#34;_blank&#34; &gt;learncpp.com&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;preprocessor&#34;&gt;preprocessor&lt;/h2&gt;
 &lt;ul&gt;

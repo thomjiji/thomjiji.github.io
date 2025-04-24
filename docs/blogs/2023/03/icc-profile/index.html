@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>ICC Profile | thomjiji</title>
 <meta name="keywords" content="">
 <meta name="description" content="对普通显示器校色的时候，很难不碰到 ICC profile 这个东西。我们都知道这个名词，显示器的 ICC 文件，或许模糊的对它有一些概念。但它究竟是什么？原理如何。
@@ -22,16 +22,16 @@ ICC profile - Wikipedia&#160;&#x21a9;&#xfe0e;
 
 ">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/blogs/2023/03/icc-profile/">
+<link rel="canonical" href="https://thomjiji.github.io/blogs/2023/03/icc-profile/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.e42ad648cd8baa1905022f1ff58c4bcfb6aeabc0e775ecf9b04f835aa329b79d.css" integrity="sha256-5CrWSM2LqhkFAi8f9YxLz7auq8Dndez5sE&#43;DWqMpt50=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<link rel="icon" href="https://thomjiji.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://thomjiji.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://thomjiji.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://thomjiji.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://thomjiji.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/blogs/2023/03/icc-profile/">
+<link rel="alternate" hreflang="en" href="https://thomjiji.github.io/blogs/2023/03/icc-profile/">
 <noscript>
     <style>
         #theme-toggle,
@@ -71,7 +71,7 @@ ICC profile - Wikipedia&#160;&#x21a9;&#xfe0e;
 </noscript><!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="icon" href="http://localhost:1313/powerpuff_girls_buttercup.jpg" />
+    <link rel="icon" href="https://thomjiji.github.io/powerpuff_girls_buttercup.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -84,7 +84,86 @@ ICC profile - Wikipedia&#160;&#x21a9;&#xfe0e;
     
   </body>
 </html>
+<meta property="og:url" content="https://thomjiji.github.io/blogs/2023/03/icc-profile/">
+  <meta property="og:site_name" content="thomjiji">
+  <meta property="og:title" content="ICC Profile">
+  <meta property="og:description" content="对普通显示器校色的时候，很难不碰到 ICC profile 这个东西。我们都知道这个名词，显示器的 ICC 文件，或许模糊的对它有一些概念。但它究竟是什么？原理如何。
+ICC profile 跟我们已经有很明确概念的 ACES，或者更广泛一些地讲：「现代的色彩管理流程」，是很相似的 idea。都有一个处于整个链路中间的非常大的色彩空间，大到足以容纳所有不同的输入、显示和输出设备的各种色域（sRGB、AdobeRGB、Rec.709 等等）1。这个色彩空间在 ICC 这个概念下叫作 PCS（Profile Connection Space）。ICC profile 通过定义设备源或目标色彩空间与 PCS 之间的映射来描述特定设备的色彩属性2。
+ICC 本身并不进行任何校准，它们只包含显示器关于色彩成像能力的数据。这些数据用于帮助可以识别 ICC profile 的软件（我们叫它 ICC aware 的软件）通过 CMM（色彩管理模块）对图像进行调整，以尝试纠正显示器的色偏来进行校准。ICC profile 完成的实际上是对图像的调整，而不是对显示器的校正。不同的软件使用不同的 CMM 的话，即使都采用同一个 ICC，最终出来的结果也可能不一样。
+ICC Profile - IBM ↩︎
+ICC profile - Wikipedia ↩︎">
+  <meta property="og:locale" content="en-US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-03-09T00:00:00+00:00">
+    <meta property="article:modified_time" content="2023-03-09T00:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ICC Profile">
+<meta name="twitter:description" content="对普通显示器校色的时候，很难不碰到 ICC profile 这个东西。我们都知道这个名词，显示器的 ICC 文件，或许模糊的对它有一些概念。但它究竟是什么？原理如何。
+ICC profile 跟我们已经有很明确概念的 ACES，或者更广泛一些地讲：「现代的色彩管理流程」，是很相似的 idea。都有一个处于整个链路中间的非常大的色彩空间，大到足以容纳所有不同的输入、显示和输出设备的各种色域（sRGB、AdobeRGB、Rec.709 等等）1。这个色彩空间在 ICC 这个概念下叫作 PCS（Profile Connection Space）。ICC profile 通过定义设备源或目标色彩空间与 PCS 之间的映射来描述特定设备的色彩属性2。
+ICC 本身并不进行任何校准，它们只包含显示器关于色彩成像能力的数据。这些数据用于帮助可以识别 ICC profile 的软件（我们叫它 ICC aware 的软件）通过 CMM（色彩管理模块）对图像进行调整，以尝试纠正显示器的色偏来进行校准。ICC profile 完成的实际上是对图像的调整，而不是对显示器的校正。不同的软件使用不同的 CMM 的话，即使都采用同一个 ICC，最终出来的结果也可能不一样。
 
+
+
+
+ICC Profile - IBM&#160;&#x21a9;&#xfe0e;
+
+
+ICC profile - Wikipedia&#160;&#x21a9;&#xfe0e;
+
+
+">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://thomjiji.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "ICC Profile",
+      "item": "https://thomjiji.github.io/blogs/2023/03/icc-profile/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "ICC Profile",
+  "name": "ICC Profile",
+  "description": "对普通显示器校色的时候，很难不碰到 ICC profile 这个东西。我们都知道这个名词，显示器的 ICC 文件，或许模糊的对它有一些概念。但它究竟是什么？原理如何。\nICC profile 跟我们已经有很明确概念的 ACES，或者更广泛一些地讲：「现代的色彩管理流程」，是很相似的 idea。都有一个处于整个链路中间的非常大的色彩空间，大到足以容纳所有不同的输入、显示和输出设备的各种色域（sRGB、AdobeRGB、Rec.709 等等）1。这个色彩空间在 ICC 这个概念下叫作 PCS（Profile Connection Space）。ICC profile 通过定义设备源或目标色彩空间与 PCS 之间的映射来描述特定设备的色彩属性2。\nICC 本身并不进行任何校准，它们只包含显示器关于色彩成像能力的数据。这些数据用于帮助可以识别 ICC profile 的软件（我们叫它 ICC aware 的软件）通过 CMM（色彩管理模块）对图像进行调整，以尝试纠正显示器的色偏来进行校准。ICC profile 完成的实际上是对图像的调整，而不是对显示器的校正。不同的软件使用不同的 CMM 的话，即使都采用同一个 ICC，最终出来的结果也可能不一样。\nICC Profile - IBM\u0026#160;\u0026#x21a9;\u0026#xfe0e;\nICC profile - Wikipedia\u0026#160;\u0026#x21a9;\u0026#xfe0e;\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "对普通显示器校色的时候，很难不碰到 ICC profile 这个东西。我们都知道这个名词，显示器的 ICC 文件，或许模糊的对它有一些概念。但它究竟是什么？原理如何。\nICC profile 跟我们已经有很明确概念的 ACES，或者更广泛一些地讲：「现代的色彩管理流程」，是很相似的 idea。都有一个处于整个链路中间的非常大的色彩空间，大到足以容纳所有不同的输入、显示和输出设备的各种色域（sRGB、AdobeRGB、Rec.709 等等）1。这个色彩空间在 ICC 这个概念下叫作 PCS（Profile Connection Space）。ICC profile 通过定义设备源或目标色彩空间与 PCS 之间的映射来描述特定设备的色彩属性2。\nICC 本身并不进行任何校准，它们只包含显示器关于色彩成像能力的数据。这些数据用于帮助可以识别 ICC profile 的软件（我们叫它 ICC aware 的软件）通过 CMM（色彩管理模块）对图像进行调整，以尝试纠正显示器的色偏来进行校准。ICC profile 完成的实际上是对图像的调整，而不是对显示器的校正。不同的软件使用不同的 CMM 的话，即使都采用同一个 ICC，最终出来的结果也可能不一样。\nICC Profile - IBM ↩︎\nICC profile - Wikipedia ↩︎\n",
+  "wordCount" : "43",
+  "inLanguage": "en",
+  "datePublished": "2023-03-09T00:00:00Z",
+  "dateModified": "2023-03-09T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://thomjiji.github.io/blogs/2023/03/icc-profile/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "thomjiji",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://thomjiji.github.io/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">
@@ -102,7 +181,7 @@ ICC profile - Wikipedia&#160;&#x21a9;&#xfe0e;
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="thomjiji (Alt + H)">thomjiji</a>
+            <a href="https://thomjiji.github.io/" accesskey="h" title="thomjiji (Alt + H)">thomjiji</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -128,22 +207,22 @@ ICC profile - Wikipedia&#160;&#x21a9;&#xfe0e;
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/about/" title="About">
+                <a href="https://thomjiji.github.io/about/" title="About">
                     <span>About</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/archives/" title="Archives">
+                <a href="https://thomjiji.github.io/archives/" title="Archives">
                     <span>Archives</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="https://thomjiji.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/tags/" title="Tags">
+                <a href="https://thomjiji.github.io/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
@@ -154,7 +233,7 @@ ICC profile - Wikipedia&#160;&#x21a9;&#xfe0e;
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <div class="breadcrumbs"><a href="https://thomjiji.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://thomjiji.github.io/posts/">Posts</a></div>
     <h1 class="post-title entry-hint-parent">
       ICC Profile
     </h1>
@@ -184,12 +263,12 @@ ICC profile - Wikipedia&#160;&#x21a9;&#xfe0e;
     <ul class="post-tags">
     </ul>
 <nav class="paginav">
-  <a class="prev" href="http://localhost:1313/blogs/2023/03/devonthink-unboxing/">
+  <a class="prev" href="https://thomjiji.github.io/blogs/2023/03/devonthink-unboxing/">
     <span class="title">« Prev</span>
     <br>
     <span>DEVONthink 上手</span>
   </a>
-  <a class="next" href="http://localhost:1313/blogs/2023/03/vcgt-tag/">
+  <a class="next" href="https://thomjiji.github.io/blogs/2023/03/vcgt-tag/">
     <span class="title">Next »</span>
     <br>
     <span>VCGT Tag</span>
@@ -201,7 +280,7 @@ ICC profile - Wikipedia&#160;&#x21a9;&#xfe0e;
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:1313/">thomjiji</a></span> · 
+        <span>&copy; 2025 <a href="https://thomjiji.github.io/">thomjiji</a></span> · 
 
     <span>
         Powered by

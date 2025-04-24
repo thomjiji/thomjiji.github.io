@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>ITerm2 on thomjiji</title>
-    <link>http://localhost:1313/tags/iterm2/</link>
+    <link>https://thomjiji.github.io/tags/iterm2/</link>
     <description>Recent content in ITerm2 on thomjiji</description>
     <generator>Hugo -- 0.146.7</generator>
     <language>en-US</language>
     <lastBuildDate>Sun, 17 Dec 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/iterm2/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://thomjiji.github.io/tags/iterm2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Use mouse wheel to scroll less in iTerm2</title>
-      <link>http://localhost:1313/blogs/2023/12/use-mouse-wheel-to-scroll-less-in-iterm2/</link>
+      <link>https://thomjiji.github.io/blogs/2023/12/use-mouse-wheel-to-scroll-less-in-iterm2/</link>
       <pubDate>Sun, 17 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blogs/2023/12/use-mouse-wheel-to-scroll-less-in-iterm2/</guid>
+      <guid>https://thomjiji.github.io/blogs/2023/12/use-mouse-wheel-to-scroll-less-in-iterm2/</guid>
       <description>&lt;p&gt;在 iTerm2 中使用 less command 有一个奇怪的点：你不能用鼠标来滚动页面。只能使用 Vim 的 keybinding &lt;code&gt;Ctrl+d&lt;/code&gt; 和 &lt;code&gt;Ctrl+u&lt;/code&gt; 来上下翻页。而且当你比如在查看一个 command 的 man page 时，因为 man page 默认是使用 less 来打开的，你查看完某个 man page 按 &lt;code&gt;q&lt;/code&gt; 退出，然后使用鼠标滚轮往上面滚一下，滚到上面一屏，你会发现你的 Terminal 变得很乱，有很多刚刚你查看的那个 man page 的残留。&lt;/p&gt;
 &lt;p&gt;我的需求总结来说就是：&lt;/p&gt;
 &lt;ol&gt;

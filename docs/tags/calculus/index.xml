@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Calculus on thomjiji</title>
-    <link>http://localhost:1313/tags/calculus/</link>
+    <link>https://thomjiji.github.io/tags/calculus/</link>
     <description>Recent content in Calculus on thomjiji</description>
     <generator>Hugo -- 0.146.7</generator>
     <language>en-US</language>
     <lastBuildDate>Wed, 30 Aug 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/calculus/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://thomjiji.github.io/tags/calculus/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Calculus Recap</title>
-      <link>http://localhost:1313/blogs/2023/08/calculus-recap/</link>
+      <link>https://thomjiji.github.io/blogs/2023/08/calculus-recap/</link>
       <pubDate>Wed, 30 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blogs/2023/08/calculus-recap/</guid>
+      <guid>https://thomjiji.github.io/blogs/2023/08/calculus-recap/</guid>
       <description>&lt;h2 id=&#34;intermediate-value-theorem-ivt&#34;&gt;Intermediate Value Theorem (IVT)&lt;/h2&gt;
 &lt;p&gt;If a function $f(x)$ is continuous on a closed interval $[a, b]$ and $k$ is any number
 between $f(a)$ and $f(b)$, then there is at least one number $c$ in the interval

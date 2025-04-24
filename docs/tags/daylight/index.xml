@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Daylight on thomjiji</title>
-    <link>http://localhost:1313/tags/daylight/</link>
+    <link>https://thomjiji.github.io/tags/daylight/</link>
     <description>Recent content in Daylight on thomjiji</description>
     <generator>Hugo -- 0.146.7</generator>
     <language>en-US</language>
     <lastBuildDate>Sat, 28 Jan 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/daylight/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://thomjiji.github.io/tags/daylight/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Daylight 添加 ARRI Look Library &amp; ALF-2 v5 DRT Family</title>
-      <link>http://localhost:1313/blogs/2023/01/daylight-add-arri-look-library/</link>
+      <link>https://thomjiji.github.io/blogs/2023/01/daylight-add-arri-look-library/</link>
       <pubDate>Sat, 28 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blogs/2023/01/daylight-add-arri-look-library/</guid>
+      <guid>https://thomjiji.github.io/blogs/2023/01/daylight-add-arri-look-library/</guid>
       <description>&lt;h2 id=&#34;操作步骤&#34;&gt;操作步骤&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;将 ARRI Look Library 的 zip 解压，把里面的多个 &lt;code&gt;cub&lt;/code&gt; 和 &lt;code&gt;fllook&lt;/code&gt; 文件平摊到这个路径：&lt;code&gt;/Library/Application Support/FilmLight/looks&lt;/code&gt;&lt;/li&gt;
