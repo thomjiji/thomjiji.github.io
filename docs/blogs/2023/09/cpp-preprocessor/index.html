@@ -1,24 +1,39 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 <title>C&#43;&#43; Preprocessor | thomjiji</title>
 <meta name="keywords" content="C&#43;&#43;">
 <meta name="description" content="Excerpted from learncpp.com
-preprocessor .cpp file =&gt; preprocessor: Make change to the text of the code file, but not actually to the original code file, rather temporarily in-memory or using temporary files. Uninteresting things: strip out comments, ensures each code file ends in a newline. One important role: process#include directives. =&gt; What comes out of the preprocessor is called translation unit. The translation unit is then compiled by the compiler. The entire process of preprocessing, compiling and linking is called translation.">
+preprocessor
+
+.cpp file =&gt; preprocessor:
+
+Make change to the text of the code file, but not actually to the original code file, rather temporarily in-memory
+or using temporary files.
+Uninteresting things: strip out comments, ensures each code file ends in a newline.
+One important role: process#include directives.
+
+
+=&gt; What comes out of the preprocessor is called translation unit.
+The translation unit is then compiled by the compiler.
+
+
+The entire process of preprocessing, compiling and linking is called translation.">
 <meta name="author" content="">
-<link rel="canonical" href="https://thomjiji.github.io/blogs/2023/09/cpp-preprocessor/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.35ee184ca6eac1b199b1af4308e0b8e74ea71d6249a02c5252bbd9c9b7f5bf67.css" integrity="sha256-Ne4YTKbqwbGZsa9DCOC4506nHWJJoCxSUrvZybf1v2c=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://thomjiji.github.io/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://thomjiji.github.io/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://thomjiji.github.io/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://thomjiji.github.io/apple-touch-icon.png">
-<link rel="mask-icon" href="https://thomjiji.github.io/safari-pinned-tab.svg">
+<link rel="canonical" href="http://localhost:1313/blogs/2023/09/cpp-preprocessor/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.e42ad648cd8baa1905022f1ff58c4bcfb6aeabc0e775ecf9b04f835aa329b79d.css" integrity="sha256-5CrWSM2LqhkFAi8f9YxLz7auq8Dndez5sE&#43;DWqMpt50=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/blogs/2023/09/cpp-preprocessor/">
 <noscript>
     <style>
         #theme-toggle,
@@ -58,7 +73,7 @@ preprocessor .cpp file =&gt; preprocessor: Make change to the text of the code f
 </noscript><!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="icon" href="https://thomjiji.github.io/powerpuff_girls_buttercup.jpg" />
+    <link rel="icon" href="http://localhost:1313/powerpuff_girls_buttercup.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -71,69 +86,7 @@ preprocessor .cpp file =&gt; preprocessor: Make change to the text of the code f
     
   </body>
 </html>
-<meta property="og:title" content="C&#43;&#43; Preprocessor" />
-<meta property="og:description" content="Excerpted from learncpp.com
-preprocessor .cpp file =&gt; preprocessor: Make change to the text of the code file, but not actually to the original code file, rather temporarily in-memory or using temporary files. Uninteresting things: strip out comments, ensures each code file ends in a newline. One important role: process#include directives. =&gt; What comes out of the preprocessor is called translation unit. The translation unit is then compiled by the compiler. The entire process of preprocessing, compiling and linking is called translation." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://thomjiji.github.io/blogs/2023/09/cpp-preprocessor/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-09-21T00:00:00+00:00" />
-<meta property="article:modified_time" content="2023-09-21T00:00:00+00:00" />
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="C&#43;&#43; Preprocessor"/>
-<meta name="twitter:description" content="Excerpted from learncpp.com
-preprocessor .cpp file =&gt; preprocessor: Make change to the text of the code file, but not actually to the original code file, rather temporarily in-memory or using temporary files. Uninteresting things: strip out comments, ensures each code file ends in a newline. One important role: process#include directives. =&gt; What comes out of the preprocessor is called translation unit. The translation unit is then compiled by the compiler. The entire process of preprocessing, compiling and linking is called translation."/>
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "https://thomjiji.github.io/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "C++ Preprocessor",
-      "item": "https://thomjiji.github.io/blogs/2023/09/cpp-preprocessor/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "C++ Preprocessor",
-  "name": "C\u002b\u002b Preprocessor",
-  "description": "Excerpted from learncpp.com\npreprocessor .cpp file =\u0026gt; preprocessor: Make change to the text of the code file, but not actually to the original code file, rather temporarily in-memory or using temporary files. Uninteresting things: strip out comments, ensures each code file ends in a newline. One important role: process#include directives. =\u0026gt; What comes out of the preprocessor is called translation unit. The translation unit is then compiled by the compiler. The entire process of preprocessing, compiling and linking is called translation.",
-  "keywords": [
-    "C++"
-  ],
-  "articleBody": "Excerpted from learncpp.com\npreprocessor .cpp file =\u003e preprocessor: Make change to the text of the code file, but not actually to the original code file, rather temporarily in-memory or using temporary files. Uninteresting things: strip out comments, ensures each code file ends in a newline. One important role: process#include directives. =\u003e What comes out of the preprocessor is called translation unit. The translation unit is then compiled by the compiler. The entire process of preprocessing, compiling and linking is called translation.\npreprocessor directives Preprocessor directives (often just called directives) are instructions that start with a # symbol and end with a newline (NOT a semicolon).\n#include When you #include a file, the preprocessor replaces the #include directive with the contents of the included file. The included contents are then preprocessed recursively.\nMacro defines In C++, a macro is a rule that defines how input text is converted into replacement output text.\nObject-like macros Function-like macros Object-like macros:\n#define identifier #define identifier substitution_text Object-like macros (with substitution text) When the preprocessor encounters this directive, any further occurrence of the identifier is replaced by substitution_text.\nObject-like macros (without substitution text) #define USE_YEN Any further occurrence of the identifier is removed and replaced by nothing.\nIt seems pretty useless, but the common use of it is below.\nConditional compilation The conditional compilation preprocessor directives allow you to specify under what conditions something will or won’t compile.\n#ifdef ifndef endif #include #define PRINT_JOE int main() { #ifdef PRINT_JOE std::cout \u003c\u003c \"Joe\\n\"; // will be compiled since PRINT_JOE is defined #endif #ifdef PRINT_BOB std::cout \u003c\u003c \"Bob\\n\"; // will be excluded since PRINT_BOB is not defined #endif return 0; } The scope of #define Directives are only valid from the point of definition to the end of the file in which they are defined.\n",
-  "wordCount" : "299",
-  "inLanguage": "en",
-  "datePublished": "2023-09-21T00:00:00Z",
-  "dateModified": "2023-09-21T00:00:00Z",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://thomjiji.github.io/blogs/2023/09/cpp-preprocessor/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "thomjiji",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://thomjiji.github.io/favicon.ico"
-    }
-  }
-}
-</script>
 </head>
 
 <body class="" id="top">
@@ -151,9 +104,9 @@ preprocessor .cpp file =&gt; preprocessor: Make change to the text of the code f
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://thomjiji.github.io/" accesskey="h" title="thomjiji (Alt + H)">thomjiji</a>
+            <a href="http://localhost:1313/" accesskey="h" title="thomjiji (Alt + H)">thomjiji</a>
             <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
@@ -177,22 +130,22 @@ preprocessor .cpp file =&gt; preprocessor: Make change to the text of the code f
         </div>
         <ul id="menu">
             <li>
-                <a href="https://thomjiji.github.io/about/" title="About">
+                <a href="http://localhost:1313/about/" title="About">
                     <span>About</span>
                 </a>
             </li>
             <li>
-                <a href="https://thomjiji.github.io/archives/" title="Archives">
+                <a href="http://localhost:1313/archives/" title="Archives">
                     <span>Archives</span>
                 </a>
             </li>
             <li>
-                <a href="https://thomjiji.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
             <li>
-                <a href="https://thomjiji.github.io/tags/" title="Tags">
+                <a href="http://localhost:1313/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
@@ -203,7 +156,7 @@ preprocessor .cpp file =&gt; preprocessor: Make change to the text of the code f
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://thomjiji.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://thomjiji.github.io/posts/">Posts</a></div>
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
     <h1 class="post-title entry-hint-parent">
       C&#43;&#43; Preprocessor
     </h1>
@@ -226,8 +179,7 @@ or using temporary files.</li>
 <li>The translation unit is then compiled by the compiler.</li>
 </ul>
 <blockquote>
-<p>The entire process of preprocessing, compiling and linking is called <strong>translation</strong>.</p>
-</blockquote>
+<p>The entire process of preprocessing, compiling and linking is called <strong>translation</strong>.</p></blockquote>
 <h2 id="preprocessor-directives">preprocessor directives<a hidden class="anchor" aria-hidden="true" href="#preprocessor-directives">#</a></h2>
 <p>Preprocessor directives (often just called directives) are instructions that start with a <code>#</code> symbol and end with a
 newline (NOT a semicolon).</p>
@@ -282,15 +234,15 @@ compile.</p>
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://thomjiji.github.io/tags/c&#43;&#43;/">C&#43;&#43;</a></li>
+      <li><a href="http://localhost:1313/tags/c&#43;&#43;/">C&#43;&#43;</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://thomjiji.github.io/blogs/2023/11/file-size/">
+  <a class="prev" href="http://localhost:1313/blogs/2023/11/file-size/">
     <span class="title">« Prev</span>
     <br>
     <span>File size</span>
   </a>
-  <a class="next" href="https://thomjiji.github.io/blogs/2023/09/parse-quicktime/">
+  <a class="next" href="http://localhost:1313/blogs/2023/09/parse-quicktime/">
     <span class="title">Next »</span>
     <br>
     <span>Parse QuickTime File Format</span>
@@ -302,7 +254,7 @@ compile.</p>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="https://thomjiji.github.io/">thomjiji</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">thomjiji</a></span> · 
 
     <span>
         Powered by

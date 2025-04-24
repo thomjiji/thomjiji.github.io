@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>LazyVim on thomjiji</title>
+    <link>http://localhost:1313/tags/lazyvim/</link>
+    <description>Recent content in LazyVim on thomjiji</description>
+    <generator>Hugo -- 0.146.7</generator>
+    <language>en-US</language>
+    <lastBuildDate>Wed, 08 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/lazyvim/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tips and tricks</title>
+      <link>http://localhost:1313/blogs/2025/01/tips-and-tricks/</link>
+      <pubDate>Wed, 08 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blogs/2025/01/tips-and-tricks/</guid>
+      <description>&lt;p&gt;Firefox 的 &lt;a href=&#34;https://kb.mozillazine.org/Profile_folder_-_Firefox&#34; target=&#34;_blank&#34; &gt;Profile&lt;/a&gt; 文件夹可以在这里获取：Firefox 左上角菜单栏 &amp;gt; Help &amp;gt; More Troubleshooting Information &amp;gt; Application Basics &amp;gt; Profile Folder.&lt;/p&gt;
+&lt;p&gt;在这个 Profile folder 里创建一个叫做 &lt;code&gt;user.js&lt;/code&gt; 的文件，就可以实现导出 Firefox 的全局用户设置（修改过的 Firefox 的默认设置）。&lt;/p&gt;
+&lt;p&gt;所有在 &lt;code&gt;about:config&lt;/code&gt; 里修改的设置都在一个叫做 &lt;code&gt;prefs.js&lt;/code&gt; 的文件里。=&amp;gt; &lt;a href=&#34;https://kb.mozillazine.org/Prefs.js_file&#34; target=&#34;_blank&#34; &gt;Prefs.js file&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;我的 Firefox 用户设置（&lt;code&gt;about:config&lt;/code&gt;）：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;mousewheel.with_control.action: 3&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Reference:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://support.mozilla.org/en-US/questions/1197798&#34; target=&#34;_blank&#34; &gt;https://support.mozilla.org/en-US/questions/1197798&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;Change author name in commit message:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;git config --global user.name &amp;lt;name&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git config --global user.email &amp;lt;email&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;安装 LazyVim 之后，LSP 的下载会遇到一些网络问题，比如每次都是 pyright 由于一些网络原因安装失败：&lt;code&gt;set -Ux https_proxy 127.0.0.1:7890&lt;/code&gt; 和 &lt;code&gt;set -Ux http_proxy 127.0.0.1:7890&lt;/code&gt; 都不好使，使用 sing-box 也不行。这时只需要取消系统代理就可以成功联网安装。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

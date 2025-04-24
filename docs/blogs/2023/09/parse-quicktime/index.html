@@ -1,23 +1,90 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 <title>Parse QuickTime File Format | thomjiji</title>
 <meta name="keywords" content="Atom, QuickTime, NCLC Tag, ProRes">
-<meta name="description" content="Apple Developer Documentation Storing and sharing media with QuickTime files Color parameter atom (&lsquo;colr&rsquo;) Uncompressed Y´CbCr Video in QuickTime Files — Documentation Archive Other resources Apple ProRes - MultiMedia Wiki QuickTime Tags - ExifTool MPEG-4 files - Atomic Parsley MP4RA - Official Registration Authority for the ISOBMFF family of standards Implementations/tools Implementations Language Notes metacolor.editor C# Simple Implementation, can only change NCLC tags. Provide GUI. qtff-parameter-editor C&#43;&#43; Good implementation, can only change NCLC tags.">
+<meta name="description" content="Apple Developer Documentation
+
+Storing and sharing media with QuickTime files
+
+Color parameter atom (&lsquo;colr&rsquo;)
+
+
+Uncompressed Y´CbCr Video in QuickTime Files — Documentation Archive
+
+Other resources
+
+Apple ProRes - MultiMedia Wiki
+QuickTime Tags - ExifTool
+MPEG-4 files - Atomic Parsley
+MP4RA - Official Registration Authority for the ISOBMFF family of standards
+
+Implementations/tools
+
+  
+      
+          Implementations
+          Language
+          Notes
+      
+  
+  
+      
+          metacolor.editor
+          C#
+          Simple Implementation, can only change NCLC tags. Provide GUI.
+      
+      
+          qtff-parameter-editor
+          C&#43;&#43;
+          Good implementation, can only change NCLC tags. CLI.
+      
+      
+          AMCDXVideoPatcherCLI
+          C&#43;&#43;
+          Close source. Can modify colr atom, add gama atom (but value of gamma can&rsquo;t not be changed — seems a bug)
+      
+      
+          qtfile_pp
+          C&#43;&#43;
+          AMCDXVideoPatcherCLI 作者的开源 parser，想必 AMCDXVideoPatcherCLI 的具体实现能够从这里看出一些端倪
+      
+      
+          dryv
+          Rust
+          No docs
+      
+      
+          bento4
+          C&#43;&#43;
+          最完善
+      
+  
+
+Inspection tools
+
+hexdump -vC
+fq
+MP4Box.js - a file inspection tool
+mp4analyser
+
+Notes
+这么些处理 atom (包括 NCLC tag) 的实现，都是用 C&#43;&#43; 写的。其实 Rust 也能做这些 low-level 的事情，对吗？只是这门语言比较新，暂时还没有人用它来做这个事而已。那么我能不能来做呢？用 Rust 写一个 parse MOV file format 的实现。其实已经有了：dryv——这两天就在更新。">
 <meta name="author" content="">
-<link rel="canonical" href="https://thomjiji.github.io/blogs/2023/09/parse-quicktime/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.35ee184ca6eac1b199b1af4308e0b8e74ea71d6249a02c5252bbd9c9b7f5bf67.css" integrity="sha256-Ne4YTKbqwbGZsa9DCOC4506nHWJJoCxSUrvZybf1v2c=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://thomjiji.github.io/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://thomjiji.github.io/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://thomjiji.github.io/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://thomjiji.github.io/apple-touch-icon.png">
-<link rel="mask-icon" href="https://thomjiji.github.io/safari-pinned-tab.svg">
+<link rel="canonical" href="http://localhost:1313/blogs/2023/09/parse-quicktime/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.e42ad648cd8baa1905022f1ff58c4bcfb6aeabc0e775ecf9b04f835aa329b79d.css" integrity="sha256-5CrWSM2LqhkFAi8f9YxLz7auq8Dndez5sE&#43;DWqMpt50=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/blogs/2023/09/parse-quicktime/">
 <noscript>
     <style>
         #theme-toggle,
@@ -57,7 +124,7 @@
 </noscript><!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="icon" href="https://thomjiji.github.io/powerpuff_girls_buttercup.jpg" />
+    <link rel="icon" href="http://localhost:1313/powerpuff_girls_buttercup.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -70,67 +137,7 @@
     
   </body>
 </html>
-<meta property="og:title" content="Parse QuickTime File Format" />
-<meta property="og:description" content="Apple Developer Documentation Storing and sharing media with QuickTime files Color parameter atom (&lsquo;colr&rsquo;) Uncompressed Y´CbCr Video in QuickTime Files — Documentation Archive Other resources Apple ProRes - MultiMedia Wiki QuickTime Tags - ExifTool MPEG-4 files - Atomic Parsley MP4RA - Official Registration Authority for the ISOBMFF family of standards Implementations/tools Implementations Language Notes metacolor.editor C# Simple Implementation, can only change NCLC tags. Provide GUI. qtff-parameter-editor C&#43;&#43; Good implementation, can only change NCLC tags." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://thomjiji.github.io/blogs/2023/09/parse-quicktime/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-09-18T00:00:00+00:00" />
-<meta property="article:modified_time" content="2023-09-18T00:00:00+00:00" />
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Parse QuickTime File Format"/>
-<meta name="twitter:description" content="Apple Developer Documentation Storing and sharing media with QuickTime files Color parameter atom (&lsquo;colr&rsquo;) Uncompressed Y´CbCr Video in QuickTime Files — Documentation Archive Other resources Apple ProRes - MultiMedia Wiki QuickTime Tags - ExifTool MPEG-4 files - Atomic Parsley MP4RA - Official Registration Authority for the ISOBMFF family of standards Implementations/tools Implementations Language Notes metacolor.editor C# Simple Implementation, can only change NCLC tags. Provide GUI. qtff-parameter-editor C&#43;&#43; Good implementation, can only change NCLC tags."/>
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "https://thomjiji.github.io/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Parse QuickTime File Format",
-      "item": "https://thomjiji.github.io/blogs/2023/09/parse-quicktime/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Parse QuickTime File Format",
-  "name": "Parse QuickTime File Format",
-  "description": "Apple Developer Documentation Storing and sharing media with QuickTime files Color parameter atom (\u0026lsquo;colr\u0026rsquo;) Uncompressed Y´CbCr Video in QuickTime Files — Documentation Archive Other resources Apple ProRes - MultiMedia Wiki QuickTime Tags - ExifTool MPEG-4 files - Atomic Parsley MP4RA - Official Registration Authority for the ISOBMFF family of standards Implementations/tools Implementations Language Notes metacolor.editor C# Simple Implementation, can only change NCLC tags. Provide GUI. qtff-parameter-editor C++ Good implementation, can only change NCLC tags.",
-  "keywords": [
-    "Atom", "QuickTime", "NCLC Tag", "ProRes"
-  ],
-  "articleBody": "Apple Developer Documentation Storing and sharing media with QuickTime files Color parameter atom (‘colr’) Uncompressed Y´CbCr Video in QuickTime Files — Documentation Archive Other resources Apple ProRes - MultiMedia Wiki QuickTime Tags - ExifTool MPEG-4 files - Atomic Parsley MP4RA - Official Registration Authority for the ISOBMFF family of standards Implementations/tools Implementations Language Notes metacolor.editor C# Simple Implementation, can only change NCLC tags. Provide GUI. qtff-parameter-editor C++ Good implementation, can only change NCLC tags. CLI. AMCDXVideoPatcherCLI C++ Close source. Can modify colr atom, add gama atom (but value of gamma can’t not be changed — seems a bug) qtfile_pp C++ AMCDXVideoPatcherCLI 作者的开源 parser，想必 AMCDXVideoPatcherCLI 的具体实现能够从这里看出一些端倪 dryv Rust No docs bento4 C++ 最完善 Inspection tools hexdump -vC fq MP4Box.js - a file inspection tool mp4analyser Notes 这么些处理 atom (包括 NCLC tag) 的实现，都是用 C++ 写的。其实 Rust 也能做这些 low-level 的事情，对吗？只是这门语言比较新，暂时还没有人用它来做这个事而已。那么我能不能来做呢？用 Rust 写一个 parse MOV file format 的实现。其实已经有了：dryv——这两天就在更新。\n这需要对 low-level 底层的东西有足够的了解是吗？底层的东西我又不太会。但这无疑是一个机会和切入点，就像 Asahi Lina 在她的哪一个 stream 说的，她最开始入门 low-level 编程也是为了要 hack 任天堂的一个什么掌机。我需要写一个 parse QuickTime file 的 Rust 的实现，实现出来一定挺酷。\n进一步的说，其他的一些元数据，比如时码、卷号，这些在 DIT 工作当中会碰到的需要对其做一些操作的元数据。现有的达芬奇、Pomfort 之流没有提供类似的功能，或者需要你进入到一整个流程当中，才能实现对某个文件修改元数据的需求。我可以做一个 goto 的锋利小工具。目前市面上有 QTchange，但它卖的挺贵，29.95 欧。上面提到的 AMCDXVideoPatcher 的 GUI 好像连卷名也能修改。就真的好想知道具体是怎么办到的，可惜它没有公开源码，不过相比 QTchange 这个免费还要啥自行车。\n我导出两个片段，一个 1-1-1，一个 1-2-1。除此之外其他一切都一样。最后使用 hexdump 查看两个文件的字节数 bytes 大小，发现相差 12 bytes，而 gama atom 恰好就是 12 bytes。差的就是这个 gama atom。\nDecode ProRes: RDD 36:2015 - SMPTE Registered Disclosure Doc - Apple ProRes Bitstream Syntax and Decoding Process。这个标准专门讲解了如何 decode ProRes 的 file stream。而且，不能只修改 mov 这个 container 的 colr atom，还要修改 ProRes header 里的 Primaries, Transfer Function and Matrix 信息：\nIn addition to the colour information carried within the Color Atom, information regarding the transfer function, colour matrix and primaries are also stored within the frame header information of the ProRes elementary stream, alongside other parameters, such as frame rate, spatial resolution and chroma format. This header is repeated throughout the bitstream. Full details of the header layout can be found in the SMPTE specification.\nA lot of work to do…\n这里有两个 colr_atom-ish 的地方，一个是 MOV file format 本身的 colr atom，一个是 ProRes 编码的每一帧的 header（ProRes header）：也是由 color primaries、transfer characteristic 和 matrix coefficients 组成。所以，如果想要实现修改 NCLC tag，不仅需要修改 colr atom（MOV file format 里的），还要修改每一帧的那三个东西。MOV file format 的 colr atom 三个 tag 各占 2 bytes（u16），ProRes frame 的三个 tag 每个只占 1 byte（u8）。\nIt looks like: 只有 Transfer characteristics 是 Unspecified 的状态，gama atom 才会起作用。如果 Transfer characteristics 是有值的，比如 BT.709，那么即使有 gama atom，比如使用 Mediainfo 查看 Gamma 为 2.4，也是不起作用的。ColorSync utility 仍然只会以 Transfer characteristics 为准，而忽略 gama atom。确实像之前听到别人所说，gama atom 像是 Apple 提供的一个后门，一个 hacking ColorSync 的迂回办法。\n今天（2023-09-30）实现了 overwriting colr atom，search 的算法还是用的之前的，因为之前的算法虽然的 debug build 下非常慢，但只要换到有优化的 release build 之后就非常快了（其实也不算非常快，只能说还算可以接受）。所以就先用着，继续实现后面的功能。\ngama atom 这个东西的 FourCC (four character code) 是 67 61 6d 61。具体的值紧随其后，比如 00 02 66 66 — Gamma 2.4，00 02 33 33 — Gamma 2.2。如果要修改 Gamma 值，直接 overwrite 这 4 个 byte 就行了。QuickTime File Format 一个 2001 的 PDF 文档也说明 gama atom 是个 32-bit 的 fixed-point number，也就是占 4 个 byte。如果需要去掉 gama atom，那么将那 4 个 byte 用 00 00 00 00 overwrite 掉即可。这样的话，当我们需要把 1-2-1 转换到 1-1-1 的时候，首先修改 atom，然后去掉 gama atom。去掉 gama atom 的方法算是找到了。但是问题是如何添加上 gama atom，这可能才是我们想要的。目前没找到合适的方法让 gama atom 无中生有，添加一个 gama atom 到整个 file stream。难道要 shift 所有其他 bytes？\n做 byte search 的话，会 match 到两个 gama atom 的 pattern。更奇怪的是，对于 1-1-1 的文件，它没有 gama atom，但也能 match 到 gama atom 的那个 pattern：\n$ grep \"gama\" 1-1-1_20mins_hex.txt 05861500 17 c5 96 57 02 3c 67 61 6d 61 ff 71 4d 86 fc e4 |...W.",
-  "wordCount" : "1687",
-  "inLanguage": "en",
-  "datePublished": "2023-09-18T00:00:00Z",
-  "dateModified": "2023-09-18T00:00:00Z",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://thomjiji.github.io/blogs/2023/09/parse-quicktime/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "thomjiji",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://thomjiji.github.io/favicon.ico"
-    }
-  }
-}
-</script>
 </head>
 
 <body class="" id="top">
@@ -148,9 +155,9 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://thomjiji.github.io/" accesskey="h" title="thomjiji (Alt + H)">thomjiji</a>
+            <a href="http://localhost:1313/" accesskey="h" title="thomjiji (Alt + H)">thomjiji</a>
             <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
@@ -174,22 +181,22 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://thomjiji.github.io/about/" title="About">
+                <a href="http://localhost:1313/about/" title="About">
                     <span>About</span>
                 </a>
             </li>
             <li>
-                <a href="https://thomjiji.github.io/archives/" title="Archives">
+                <a href="http://localhost:1313/archives/" title="Archives">
                     <span>Archives</span>
                 </a>
             </li>
             <li>
-                <a href="https://thomjiji.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
             <li>
-                <a href="https://thomjiji.github.io/tags/" title="Tags">
+                <a href="http://localhost:1313/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
@@ -200,7 +207,7 @@
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://thomjiji.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://thomjiji.github.io/posts/">Posts</a></div>
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
     <h1 class="post-title entry-hint-parent">
       Parse QuickTime File Format
     </h1>
@@ -226,45 +233,45 @@
 </ul>
 <h3 id="implementationstools">Implementations/tools<a hidden class="anchor" aria-hidden="true" href="#implementationstools">#</a></h3>
 <table>
-<thead>
-<tr>
-<th>Implementations</th>
-<th>Language</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://github.com/piersdeseilligny/metacolor.editor" target="_blank" >metacolor.editor</a></td>
-<td>C#</td>
-<td>Simple Implementation, can only change NCLC tags. Provide GUI.</td>
-</tr>
-<tr>
-<td><a href="https://github.com/bbc/qtff-parameter-editor/tree/master" target="_blank" >qtff-parameter-editor</a></td>
-<td>C++</td>
-<td>Good implementation, can only change NCLC tags. CLI.</td>
-</tr>
-<tr>
-<td><a href="https://mogurenko.com/" target="_blank" >AMCDXVideoPatcherCLI</a></td>
-<td>C++</td>
-<td>Close source. Can modify colr atom, add gama atom (but value of gamma can&rsquo;t not be changed — seems a bug)</td>
-</tr>
-<tr>
-<td><a href="https://github.com/da8eat/qtfile_pp" target="_blank" >qtfile_pp</a></td>
-<td>C++</td>
-<td>AMCDXVideoPatcherCLI 作者的开源 parser，想必 AMCDXVideoPatcherCLI 的具体实现能够从这里看出一些端倪</td>
-</tr>
-<tr>
-<td><a href="https://github.com/Stuff7/dryv" target="_blank" >dryv</a></td>
-<td>Rust</td>
-<td>No docs</td>
-</tr>
-<tr>
-<td><a href="https://github.com/axiomatic-systems/Bento4" target="_blank" >bento4</a></td>
-<td>C++</td>
-<td>最完善</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Implementations</th>
+          <th>Language</th>
+          <th>Notes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><a href="https://github.com/piersdeseilligny/metacolor.editor" target="_blank" >metacolor.editor</a></td>
+          <td>C#</td>
+          <td>Simple Implementation, can only change NCLC tags. Provide GUI.</td>
+      </tr>
+      <tr>
+          <td><a href="https://github.com/bbc/qtff-parameter-editor/tree/master" target="_blank" >qtff-parameter-editor</a></td>
+          <td>C++</td>
+          <td>Good implementation, can only change NCLC tags. CLI.</td>
+      </tr>
+      <tr>
+          <td><a href="https://mogurenko.com/" target="_blank" >AMCDXVideoPatcherCLI</a></td>
+          <td>C++</td>
+          <td>Close source. Can modify colr atom, add gama atom (but value of gamma can&rsquo;t not be changed — seems a bug)</td>
+      </tr>
+      <tr>
+          <td><a href="https://github.com/da8eat/qtfile_pp" target="_blank" >qtfile_pp</a></td>
+          <td>C++</td>
+          <td>AMCDXVideoPatcherCLI 作者的开源 parser，想必 AMCDXVideoPatcherCLI 的具体实现能够从这里看出一些端倪</td>
+      </tr>
+      <tr>
+          <td><a href="https://github.com/Stuff7/dryv" target="_blank" >dryv</a></td>
+          <td>Rust</td>
+          <td>No docs</td>
+      </tr>
+      <tr>
+          <td><a href="https://github.com/axiomatic-systems/Bento4" target="_blank" >bento4</a></td>
+          <td>C++</td>
+          <td>最完善</td>
+      </tr>
+  </tbody>
 </table>
 <h3 id="inspection-tools">Inspection tools<a hidden class="anchor" aria-hidden="true" href="#inspection-tools">#</a></h3>
 <ul>
@@ -282,8 +289,7 @@
 <hr>
 <p>Decode ProRes: <a href="https://ieeexplore.ieee.org/document/7438722" target="_blank" >RDD 36:2015 - SMPTE Registered Disclosure Doc - Apple ProRes Bitstream Syntax and Decoding Process</a>。这个标准专门讲解了如何 decode ProRes 的 file stream。而且，不能只修改 mov 这个 container 的 colr atom，还要修改 ProRes header 里的 Primaries, Transfer Function and Matrix 信息：</p>
 <blockquote>
-<p>In addition to the colour information carried within the Color Atom, information regarding the transfer function, colour matrix and primaries are <strong>also stored within the frame header information of the ProRes elementary stream</strong>, alongside other parameters, such as frame rate, spatial resolution and chroma format. This header is repeated throughout the bitstream. Full details of the header layout can be found in the <a href="http://ieeexplore.ieee.org/document/7438722/" target="_blank" >SMPTE specification</a>.</p>
-</blockquote>
+<p>In addition to the colour information carried within the Color Atom, information regarding the transfer function, colour matrix and primaries are <strong>also stored within the frame header information of the ProRes elementary stream</strong>, alongside other parameters, such as frame rate, spatial resolution and chroma format. This header is repeated throughout the bitstream. Full details of the header layout can be found in the <a href="http://ieeexplore.ieee.org/document/7438722/" target="_blank" >SMPTE specification</a>.</p></blockquote>
 <p>A lot of work to do&hellip;</p>
 <hr>
 <p>这里有两个 colr_atom-ish 的地方，一个是 MOV file format 本身的 colr atom，一个是 ProRes 编码的每一帧的 header（ProRes header）：也是由 color primaries、transfer characteristic 和 matrix coefficients 组成。所以，如果想要实现修改 NCLC tag，不仅需要修改 colr atom（MOV file format 里的），还要修改每一帧的那三个东西。MOV file format 的 colr atom 三个 tag 各占 2 bytes（u16），ProRes frame 的三个 tag 每个只占 1 byte（u8）。</p>
@@ -297,35 +303,35 @@
 </span></span><span style="display:flex;"><span><span style="color:#d19a66">05861500</span>  <span style="color:#d19a66">17</span> c5 <span style="color:#d19a66">96</span> <span style="color:#d19a66">57</span> <span style="color:#d19a66">02</span> 3c <span style="color:#d19a66">67</span> <span style="color:#d19a66">61</span>  6d <span style="color:#d19a66">61</span> ff <span style="color:#d19a66">71</span> 4d <span style="color:#d19a66">86</span> <span style="color:#ef8383">fc</span> e4  |...W.&lt;gama.qM...|
 </span></span></code></pre></div><p>但需要文件的时长够长。比如只有几秒的，就只有一个正常的 gama atom。会不会出现两个 gama atom 的 pattern，取决于这个 prores 文件的时长多长，我测试过 5 分钟没有，10 分钟开始有，20 分钟也有。</p>
 <table>
-<thead>
-<tr>
-<th>File name</th>
-<th>Numbers of gama</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>1-1-1_10mins.mov</code></td>
-<td>one gama pattern</td>
-<td>It&rsquo;s not supposed to have!</td>
-</tr>
-<tr>
-<td><code>1-1-1_20mins.mov</code></td>
-<td>one gama pattern</td>
-<td>It&rsquo;s not supposed to have!</td>
-</tr>
-<tr>
-<td><code>1-2-1_10mins.mov</code></td>
-<td>two gama pattern</td>
-<td>Expected one, found two instead.</td>
-</tr>
-<tr>
-<td><code>1-2-1_20mins.mov</code></td>
-<td>two gama pattern</td>
-<td>Expected one, found two instead.</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>File name</th>
+          <th>Numbers of gama</th>
+          <th>Notes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>1-1-1_10mins.mov</code></td>
+          <td>one gama pattern</td>
+          <td>It&rsquo;s not supposed to have!</td>
+      </tr>
+      <tr>
+          <td><code>1-1-1_20mins.mov</code></td>
+          <td>one gama pattern</td>
+          <td>It&rsquo;s not supposed to have!</td>
+      </tr>
+      <tr>
+          <td><code>1-2-1_10mins.mov</code></td>
+          <td>two gama pattern</td>
+          <td>Expected one, found two instead.</td>
+      </tr>
+      <tr>
+          <td><code>1-2-1_20mins.mov</code></td>
+          <td>two gama pattern</td>
+          <td>Expected one, found two instead.</td>
+      </tr>
+  </tbody>
 </table>
 <hr>
 <h3 id="icpf">icpf<a hidden class="anchor" aria-hidden="true" href="#icpf">#</a></h3>
@@ -370,8 +376,7 @@
 <hr>
 <p>AMCDXVideoPatcher 可以在原文件根本没有 gama atom 的情况下，添加一个 gama atom，然后设定相应的 Gamma 值（它的 GUI 好像有 bug，只能设定 1.8 的 Gamma 值，那个输入框无法输入其他值）。我对比了使用它添加 gama atom 之前和之后，文件的状态。发现：添加完 gama atom 之后，gama atom 之后的 atoms 的 offset 全部 shift 了 12 bytes。Maybe 确实像我前几天所说：</p>
 <blockquote>
-<p>难道要 shift 所有其他 bytes？</p>
-</blockquote>
+<p>难道要 shift 所有其他 bytes？</p></blockquote>
 <hr>
 <p><a href="https://developer.apple.com/documentation/quicktime-file-format/clean_aperture" target="_blank" >clean aperture (clap) - QuickTime File Format</a></p>
 <p>之前听说的一个问题，ARRI 的一些分辨率在 SCRACH 和 DaVinci Resolve 的分辨率显示不一样。SCRACH 比如说可能显示的是 2944x2160，DaVinci Resolve 显示的 as expected 为 2880x2160。症结在此：clean aperture (clap) — 一个 video sample description (&ldquo;stsd&rdquo;) 的 extension。colr 和 gama atom 都属于这个 &ldquo;stsd&rdquo;。</p>
@@ -379,8 +384,7 @@
 <p>colr atom, gama atom are located in&hellip;here!</p>
 <h3 id="sample-table-atom-stbl">Sample table atom (&ldquo;stbl&rdquo;):<a hidden class="anchor" aria-hidden="true" href="#sample-table-atom-stbl">#</a></h3>
 <blockquote>
-<p>The sample table atom contains all the time and data indexing of the media samples in a track. Using tables, it is possible to locate samples in time, determine their type, and determine their size, container, and offset into that container.</p>
-</blockquote>
+<p>The sample table atom contains all the time and data indexing of the media samples in a track. Using tables, it is possible to locate samples in time, determine their type, and determine their size, container, and offset into that container.</p></blockquote>
 <p>&ldquo;stbl&rdquo; 本身有两个属性：</p>
 <ul>
 <li>Size: 4 bytes</li>
@@ -490,44 +494,41 @@
 </span></span><span style="display:flex;"><span>  ...skipped <span style="color:#d19a66">263688</span> bytes
 </span></span><span style="display:flex;"><span>moov: <span style="color:#dcaeea">s</span><span style="color:#c7bf54">=</span>      <span style="color:#d19a66">1544</span> <span style="color:#c7bf54">(</span>0x00000608<span style="color:#c7bf54">)</span>, <span style="color:#dcaeea">o</span><span style="color:#c7bf54">=</span>    <span style="color:#d19a66">263724</span> <span style="color:#c7bf54">(</span>0x0004062c<span style="color:#c7bf54">)</span>
 </span></span></code></pre></div><blockquote>
-<p>The most important part of an MPEG-4 file is the mdat atom - <strong>its where the actual raw information for the file is stored</strong>. — <a href="https://atomicparsley.sourceforge.net/mpeg-4files.html" target="_blank" >atomic parsley</a></p>
-</blockquote>
+<p>The most important part of an MPEG-4 file is the mdat atom - <strong>its where the actual raw information for the file is stored</strong>. — <a href="https://atomicparsley.sourceforge.net/mpeg-4files.html" target="_blank" >atomic parsley</a></p></blockquote>
 <p>这是实际上文件的 raw data 的所在地。</p>
 <p>ProRes 每一帧 的 frame size 都可以在 &ldquo;stsz&rdquo; 找到。</p>
 <hr>
 <p>Movie atom:</p>
 <blockquote>
-<p>Only metadata is stored in a movie atom.</p>
-</blockquote>
+<p>Only metadata is stored in a movie atom.</p></blockquote>
 <p>一个 MOV file 的所谓 metadata，全都储存在 movie atom (&ldquo;moov&rdquo;) 里。</p>
 <blockquote>
-<p>Sample data for the movie, such as audio or video samples, are referenced in the movie atom, but are not contained in it. — <a href="https://developer.apple.com/documentation/quicktime-file-format/movie_atoms" target="_blank" >QuickTime File Format &gt; Movie Atoms - Apple Developer Documentation</a></p>
-</blockquote>
+<p>Sample data for the movie, such as audio or video samples, are referenced in the movie atom, but are not contained in it. — <a href="https://developer.apple.com/documentation/quicktime-file-format/movie_atoms" target="_blank" >QuickTime File Format &gt; Movie Atoms - Apple Developer Documentation</a></p></blockquote>
 <p>QuickTime File Format 把 media file 实际的数据储存在一个个 Sample 里，Sample 进而又组成一个个 Chunk，实现更高效的数据 access。Sample 的 data 不实际储存在 movie atom 里，像上面说的，movie atom 只储存 <strong>meta</strong>data。</p>
 <hr>
 <p>User data atoms — &ldquo;udta&rdquo;:</p>
 <p>可以把生成这个 mov file 的软件的名字包含进去，</p>
 <table>
-<thead>
-<tr>
-<th>List entry type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>&hellip;</td>
-<td>&hellip;</td>
-</tr>
-<tr>
-<td><code>'©swr'</code></td>
-<td>Name and version number of the software (or hardware) that generated this movie</td>
-</tr>
-<tr>
-<td>&hellip;</td>
-<td>&hellip;</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>List entry type</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>&hellip;</td>
+          <td>&hellip;</td>
+      </tr>
+      <tr>
+          <td><code>'©swr'</code></td>
+          <td>Name and version number of the software (or hardware) that generated this movie</td>
+      </tr>
+      <tr>
+          <td>&hellip;</td>
+          <td>&hellip;</td>
+      </tr>
+  </tbody>
 </table>
 <p>比如：</p>
 <div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>          |                                               |                |        <span style="color:#c7bf54">[</span>3<span style="color:#c7bf54">]{}</span>: box
@@ -546,8 +547,7 @@
 </span></span><span style="display:flex;"><span>0x11a37bb0|<span style="color:#d19a66">76</span> <span style="color:#d19a66">65</span> <span style="color:#d19a66">20</span> <span style="color:#d19a66">53</span> <span style="color:#d19a66">74</span> <span style="color:#d19a66">75</span> <span style="color:#d19a66">64</span> <span style="color:#d19a66">69</span> 6f                     |ve Studio       |
 </span></span></code></pre></div><hr>
 <blockquote>
-<p>Because the first field in any atom contains its size, including any contained atoms, it is easy to skip to the end of an unknown atom type and continue parsing the file. — <a href="https://developer.apple.com/documentation/quicktime-file-format/quicktime_movie_files#:~:text=Because%20the%20first%20field%20in%20any%20atom%20contains%20its%20size%2C%20including%20any%20contained%20atoms%2C%20it%20is%20easy%20to%20skip%20to%20the%20end%20of%20an%20unknown%20atom%20type%20and%20continue%20parsing%20the%20file" target="_blank" >QuickTime File Format &gt; QuickTime Movie File — Apple Developer Documentation</a></p>
-</blockquote>
+<p>Because the first field in any atom contains its size, including any contained atoms, it is easy to skip to the end of an unknown atom type and continue parsing the file. — <a href="https://developer.apple.com/documentation/quicktime-file-format/quicktime_movie_files#:~:text=Because%20the%20first%20field%20in%20any%20atom%20contains%20its%20size%2C%20including%20any%20contained%20atoms%2C%20it%20is%20easy%20to%20skip%20to%20the%20end%20of%20an%20unknown%20atom%20type%20and%20continue%20parsing%20the%20file" target="_blank" >QuickTime File Format &gt; QuickTime Movie File — Apple Developer Documentation</a></p></blockquote>
 <hr>
 <p><a href="https://github.com/alfg/mp4-rust" target="_blank" >alfg/mp4-rust: MP4 reader + writer library in Rust!</a></p>
 <p>这个项目值得贡献一下。目前的状态还是比较初级，有很多 atom/box 都没支持。</p>
@@ -591,18 +591,18 @@
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://thomjiji.github.io/tags/atom/">Atom</a></li>
-      <li><a href="https://thomjiji.github.io/tags/quicktime/">QuickTime</a></li>
-      <li><a href="https://thomjiji.github.io/tags/nclc-tag/">NCLC Tag</a></li>
-      <li><a href="https://thomjiji.github.io/tags/prores/">ProRes</a></li>
+      <li><a href="http://localhost:1313/tags/atom/">Atom</a></li>
+      <li><a href="http://localhost:1313/tags/quicktime/">QuickTime</a></li>
+      <li><a href="http://localhost:1313/tags/nclc-tag/">NCLC Tag</a></li>
+      <li><a href="http://localhost:1313/tags/prores/">ProRes</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://thomjiji.github.io/blogs/2023/09/cpp-preprocessor/">
+  <a class="prev" href="http://localhost:1313/blogs/2023/09/cpp-preprocessor/">
     <span class="title">« Prev</span>
     <br>
     <span>C&#43;&#43; Preprocessor</span>
   </a>
-  <a class="next" href="https://thomjiji.github.io/blogs/2023/09/machine-learning-glossary/">
+  <a class="next" href="http://localhost:1313/blogs/2023/09/machine-learning-glossary/">
     <span class="title">Next »</span>
     <br>
     <span>Machine Learning Glossary</span>
@@ -614,7 +614,7 @@
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="https://thomjiji.github.io/">thomjiji</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">thomjiji</a></span> · 
 
     <span>
         Powered by

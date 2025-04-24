@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 <title>SSH notes | thomjiji</title>
 <meta name="keywords" content="SSH">
-<meta name="description" content="SSH 是一个我之前就想尝试使用的工具，当时只有对它的一个很简单的印象，就是可以通过它安全的访问另外一台电脑——的 Terminal。当然对它的具体">
+<meta name="description" content="SSH 是一个我之前就想尝试使用的工具，当时只有对它的一个很简单的印象，就是可以通过它安全的访问另外一台电脑——的 Terminal。当然对它的具体原理和运行逻辑肯定是不了解的，包括它是怎么个安全法。只知道哦我可以通过它访问到比如说，当我自己打开 Terminal 时候首先展示在我面前的那一堆东西，其实就是在 $HOME directory 你输入比如 ls -al 命令出现的各个 directory。只是我可以看到另一台设备的这一堆东西。那当时这个需求也是没有那么强烈，所以就还是暂时搁置没有了解。">
 <meta name="author" content="">
-<link rel="canonical" href="https://thomjiji.github.io/blogs/2023/11/ssh-notes/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.35ee184ca6eac1b199b1af4308e0b8e74ea71d6249a02c5252bbd9c9b7f5bf67.css" integrity="sha256-Ne4YTKbqwbGZsa9DCOC4506nHWJJoCxSUrvZybf1v2c=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://thomjiji.github.io/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://thomjiji.github.io/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://thomjiji.github.io/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://thomjiji.github.io/apple-touch-icon.png">
-<link rel="mask-icon" href="https://thomjiji.github.io/safari-pinned-tab.svg">
+<link rel="canonical" href="http://localhost:1313/blogs/2023/11/ssh-notes/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.e42ad648cd8baa1905022f1ff58c4bcfb6aeabc0e775ecf9b04f835aa329b79d.css" integrity="sha256-5CrWSM2LqhkFAi8f9YxLz7auq8Dndez5sE&#43;DWqMpt50=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/blogs/2023/11/ssh-notes/">
 <noscript>
     <style>
         #theme-toggle,
@@ -57,7 +58,7 @@
 </noscript><!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="icon" href="https://thomjiji.github.io/powerpuff_girls_buttercup.jpg" />
+    <link rel="icon" href="http://localhost:1313/powerpuff_girls_buttercup.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -70,67 +71,7 @@
     
   </body>
 </html>
-<meta property="og:title" content="SSH notes" />
-<meta property="og:description" content="SSH 是一个我之前就想尝试使用的工具，当时只有对它的一个很简单的印象，就是可以通过它安全的访问另外一台电脑——的 Terminal。当然对它的具体" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://thomjiji.github.io/blogs/2023/11/ssh-notes/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-11-28T00:00:00+00:00" />
-<meta property="article:modified_time" content="2023-11-28T00:00:00+00:00" />
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="SSH notes"/>
-<meta name="twitter:description" content="SSH 是一个我之前就想尝试使用的工具，当时只有对它的一个很简单的印象，就是可以通过它安全的访问另外一台电脑——的 Terminal。当然对它的具体"/>
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "https://thomjiji.github.io/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "SSH notes",
-      "item": "https://thomjiji.github.io/blogs/2023/11/ssh-notes/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "SSH notes",
-  "name": "SSH notes",
-  "description": "SSH 是一个我之前就想尝试使用的工具，当时只有对它的一个很简单的印象，就是可以通过它安全的访问另外一台电脑——的 Terminal。当然对它的具体",
-  "keywords": [
-    "SSH"
-  ],
-  "articleBody": "SSH 是一个我之前就想尝试使用的工具，当时只有对它的一个很简单的印象，就是可以通过它安全的访问另外一台电脑——的 Terminal。当然对它的具体原理和运行逻辑肯定是不了解的，包括它是怎么个安全法。只知道哦我可以通过它访问到比如说，当我自己打开 Terminal 时候首先展示在我面前的那一堆东西，其实就是在 $HOME directory 你输入比如 ls -al 命令出现的各个 directory。只是我可以看到另一台设备的这一堆东西。那当时这个需求也是没有那么强烈，所以就还是暂时搁置没有了解。\n但 SSH 应该是程序开发必备的技能之一吧？就跟 Git 一样。又加上我最近（又）在尝试 Asahi Linux，准确说应该是 Fedora Asahi Remix，在我的 Mac mini 2020 款之上。然后在 Linux 上，也没办法继续使用 macOS 上那一套打包方案，比如 iCloud、Keychain 之类。尤其是 Keychain，虽然我其实主要还是使用 Bitwarden 来管理密码，但是 Keychain 也会用。那首先迁移到 Fedora Asahi Remix，就需要把之前在 macOS 上那一系列账号认证的东西，包括密码什么的迁移过来。这时又想起去年年底研究过一阵子的 GPG key 和一个非常简洁好用的命令行密码管理工具 pass——它就是使用 GPG key 来加密的。正好对 GPG 相关的知识又有点模糊了，正好一块补习一下。\n总而言之就是，我需要在我的 MBP 和 Fedora Asahi Remix 上拷贝来拷贝去一些文件、字体和配置文件。当然我也尝试过就使用简单的局域网互投的工具，像最早我使用的 LANDrop，还有 KDE Connect。LANDrop 呢，之前我用 Linux 的时候（拥有过一阵子 ThinkPad）确实没什么问题，用的挺好的，手机电脑之间传文件都挺方便，也就没有去想我要用 SSH，LANDrop 已经满足我需求了。但是好像 ARM64 的版本它没有支持太好，我记得刚装好 Fedora Asahi Remix 的时候，我下载它的 AppImage 打开直接闪退，根本用不了。后者 KDE Connect 呢，电脑从来都搜不到手机，手机也搜不到电脑。当然官方有提供一些 troubleshooting 的方法，而我也确实有一次做了一些操作成功让它们搜到对方了。但下次又不行了，所以我还是干脆放弃使用了。\n终于，这也不行那也不行，我不得不要看一下这个 SSH 了，我最初级的需求真的就是两台电脑可以在局域网内传个文件，再高一点就是我可以真正把 SSH 用起来，自由的 ssh in 到我身边的任何一台（属于我的）电脑，exit，然后 ssh in 到下一台，自由的访问各个电脑的 $HOME directory。你能到达另一台电脑的 $HOME directory 意味着你可以访问到几乎所有你想要的配置文件也好，一些日常的截图、视频啦之类的，都可以哎。像是打破不同电脑之间物理的界限，一种自由的感觉。\n生成一个 SSH key 最简单的生成一个 ssh key 的方法：ssh-keygen -C \"my ssh key\"\n-c: comment. Provides a comment for this key. 较常用的生成一个 ssh key 的方法（自定义 key 的类型/算法）：ssh-keygen -t ed25519 -C \"my ssh key\"\n-t: Specify the type of the key to create. The possible values are “dsa”, “ecdsa”, “ecdsa-sk”, “ed25519”, “ed25519-sk”, or “rsa”.. Terminology SSH Client: A program that allows establishing secure and authenticated SSH connections to SSH servers. SSH Server: The SSH protocol works on the client/server-model. The SSH client always initiates the setup of the secure connection, and the SSH server listens for incoming connection requests (usually on TCP port 22 on the host system) and responds to them. 1 SSH 协议有多种认证（authentication）方式，其中一种最安全，也是最常使用的，就是 public key authentication。与另一个叫作 authentication agent（ssh-agent）的东西搭配使用，可以在比如你需要 login 多台电脑的情况下，省去输入多个密码的功夫。\n你把本地 ssh key 的公钥发给远端服务器（remote machine/server/host）。然后在本地运行 ssh-agent，把你的私钥加载/添加（load）给 ssh-agent——具体则是使用 ssh-add 这个程序来做“加载/添加”这件事情。添加给 ssh-agent 的时候需要输入你私钥的 passphrase。\n这样之后，ssh-agent 就拿着你的私钥，默默的运行在后台。等到你想要登录（ssh in）到其他电脑的时候，它会出来向其他电脑证明你真的是你（通过你的私钥来证明。因为它把持着你的私钥，所以它能够帮你证明你是你）——不用担心，私钥只存储在内存中，很难被第三方窃取。\nauthorized_keys User: The “authorized_keys” file on the remote server is used for manage “who” can access to that server, right?\nChatGPT: Exactly, that’s correct. The authorized_keys file on the remote server is used to manage access by specifying which public keys are allowed to connect to a particular user’s account on that server. Each line in the authorized_keys file typically represents a public key that is authorized to access the associated user account. By adding or removing public keys in this file, administrators can control and manage who has permission to log in to the server using SSH.\nThe file ~/.ssh/authorized_keys lists the public keys that are permitted for logging in. When the user logs in, the ssh program tells the server which key pair it would like to use for authentication. The client proves that it has access to the private key and the server checks that the corresponding public key is authorized to accept the account. — man ssh | AUTHENTICATION\n如果我尝试 access 一台 remote server，但我没有把 remote 的 host key 加入我的 ~/.ssh/known_hosts，~/.ssh/ 文件夹都是空的。这个时候 authentication fall back 为 username/password access。你需要输入 remote server 的 login password 来 login。\nssh-add: Invokes with no arguments, your default SSH keys are loaded into the agent. 让 ssh-agent 来保管我的 private key。这个命令需要你输入 ssh private key 的 passphrase。 ssh-add -l: Lists fingerprints of all identities currently represented by the agent. ssh-add -L: Lists public key held in the ssh-agent. SSH_AUTH_SOCK environment variable: Identifies the path of a UNIX-domain socket used to communicate with the agent.\n储存在 SSH_AUTH_SOCK 这个 environment variable 的是一个 socket 文件的路径，这个 socket 文件用做 ssh client 和 ssh-agent 之间的通信。\n所有可以在 ~/.ssh/config 文件里设置的东西，都在 man ssh_config 里。\nSSH authentication methods:\nHost-based authentication: 其他认证方式认证的是 user，证明这个尝试 login 的 user (比如 Bob) 是值得信任的：这个 user 持有我远端服务器上的公钥所对应的那个私钥，因此他是可以信任的，放行。而 Host-based authentication 认证的是 user 所在的那台 machine，那台电脑本身是否值得信任。当远端服务器（的 ssh server）认证了那台电脑是可信的时候，如果那台电脑说：好，现在尝试连接到你那边的这个 user 我已经认证过了，那么远端服务器（的 ssh server）就不再认证这个 user 了，它相信这台 machine。 Public key authentication Keyboard-interactive authentication: The server sends an arbitrary “challenge” text and prompts for a response, possibly multiple times. Password authentication Password authentication 和 Public key authentication 在实际使用上乍一看好像差别不大，一个是输入 password，一个是输入 passphrase，都要输入一个什么东西。但实际上，Password authentication 的情况下，password 是直接传输给远端服务器的。而 Public key authentication 的情况下，你输入的 passphrase 只是用来解密你的私钥，来完成一个叫作 authenticator 的创建而已。你的 passphrase 和你的密钥，都保持在本地的状态。\n什么是 authenticator？\n当本地想要通过 ssh 登录到远端服务器的时候，远端服务器会给本地发一个挑战。本地的 ssh 客户端用远端服务器发给它的挑战2和自己的私钥，做成的那个东西就叫作 authenticator。然后这个东西发回给远端服务器，来证明我确实是我。\nTo allow access for only specific users:\nEdit this file: /etc/ssh/sshd_config. Append AllowUsers user1 user2 to it. ⬆️ This keyword can be followed by a list of user name patterns, separated by spaces.\nMore info can be found in sshd_config man page: man sshd_config.\nknown_hosts SSH 的 known-host 机制可以防止中间人攻击 man-in-the-middle attack。当你本地的 ssh 客户端想要和远端服务器连接，不仅本地的 ssh 客户端需要向远端服务器证明你是你，远端服务器同样也需要向本地的 ssh 客户端证明它是它。远端服务器上运行的 ssh server 也有一对密钥（公钥和私钥），叫作 host key 主机密钥。\n当你第一次连接远端服务器，远端服务器 host key 的公钥会被发送并存储在你本地的 ~/.ssh/known_hosts 文件当中。只要你在尝试连接到远端服务器时，在弹出的“确认添加公钥”的提示中回答了“yes”——请见下面的 code block。每次重新连接远端服务器，本地的 ssh 客户端都会使用存储在 known_hosts 文件当中对应的公钥来检查和确认远端服务器的身份。\nHost key not found from the list of known hosts. Are you sure you want to continue connecting (yes/no)? 这个过程在 man sshd 也有一些说明：\nEach host has a host-specific key, used to identify the host. Whenever a client connects, the daemon responds with its public host key. The client compares the host key against its own database to verify that it has not changed. — man sshd | AUTHENTICATION\n这里有一个相关的设置叫作“StrictHostKeyChecking”，具体请看 man ssh_config。\nknown_hosts 文件存储的 key 叫作 known host key。在 OpenSSH 中，已知的 host key 存储在 /etc/ssh/known_hosts 和每个用户的 ~/.ssh/known_hosts 中。\n远端服务器的 host key 是在什么时候生成的？它像是自动生成的，不用我们操心的那种。相反我们自己手上的所谓 user key，是需要用 ssh-keygen 去特地生成的。我实际测试了一下，host key 是在运行 ssh server（也就是 sshd）的时候自动生成的。比如，首先使用 sudo systemctl start sshd.service 启动 sshd。启动之前，/etc/ssh/ 文件夹下就只有这些东西：\n$ ls -al drwxr-xr-x. 1 root root 344 Dec 13 15:22 . drwxr-xr-x. 1 root root 4156 Dec 13 15:17 .. -rw-r--r--. 1 root root 573991 Dec 13 15:16 moduli -rw-r--r--. 1 root root 1921 Dec 13 15:16 ssh_config drwxr-xr-x. 1 root root 28 Dec 13 15:16 ssh_config.d -rw-------. 1 root root 3670 Dec 13 15:16 sshd_config drwx------. 1 root root 88 Dec 13 15:16 sshd_config.d 启动之后：\n$ ls -al drwxr-xr-x. 1 root root 344 Dec 13 15:22 . drwxr-xr-x. 1 root root 4156 Dec 13 15:17 .. -rw-r--r--. 1 root root 573991 Dec 13 15:16 moduli -rw-r--r--. 1 root root 1921 Dec 13 15:16 ssh_config drwxr-xr-x. 1 root root 28 Dec 13 15:16 ssh_config.d -rw-------. 1 root root 3670 Dec 13 15:16 sshd_config drwx------. 1 root root 88 Dec 13 15:16 sshd_config.d -rw-------. 1 root root 492 Dec 13 15:22 ssh_host_ecdsa_key -rw-r--r--. 1 root root 162 Dec 13 15:22 ssh_host_ecdsa_key.pub -rw-------. 1 root root 387 Dec 13 15:22 ssh_host_ed25519_key -rw-r--r--. 1 root root 82 Dec 13 15:22 ssh_host_ed25519_key.pub -rw-------. 1 root root 2578 Dec 13 15:22 ssh_host_rsa_key -rw-r--r--. 1 root root 554 Dec 13 15:22 ssh_host_rsa_key.pub 可以看到在启动了 sshd 之后，/etc/ssh/ 文件夹下面多出了三对密钥，分别是不同算法的。\n如果这时你把这三对密钥（host key）移动到别的地方去，然后试着重启 sshd：sudo systemctl restart sshd.service，再回来看 /etc/ssh/ 会发现，又出现了新的三对密钥（host key）。\nDelete known host ssh-keygen -R : Removes all keys belonging to the specified hostname (with optional port number) from a known_hosts file.\n参见 man ssh-keygen.\nOther notes about known_hosts local machine ~/.ssh/known_hosts 里的 key，可以在 remote machine 的 /etc/ssh/ directory 下面找到。/etc/ssh/ 下面有这些文件：\n$ ls -l | awk \"{print $NF}\" ... ssh_host_ecdsa_key ssh_host_ecdsa_key.pub ssh_host_ed25519_key ssh_host_ed25519_key.pub ssh_host_rsa_key ssh_host_rsa_key.pub 每个 .pub 文件里的内容都对应着 known_hosts 文件里的一行。\nssh automatically maintains and checks a database containing identification for all hosts it has ever been used with. Host keys are stored in ~/.ssh/known_hosts in the user’s home directory.\nAny new hosts are automatically added to the user’s file (~/.ssh/known_hosts file).\n— man ssh | AUTHENTICATION\nPermission ~/.ssh: This directory is the default location for all user-specific configuration and authentication information. There is not general requirement to keep the entire contents of this directory secret, but the recommended permissions are read/write/execute for the user, and not accessible by others.\nTo learn more about permissions for files in .ssh folders, please see man sshd \u003e FILES. This section contains the descriptions about the ~/.ssh, /etc/ssh directories and the files under them, what they are used for, etc.\nReference An Illustrated Guide to SSH Agent Forwarding OpenSSH - Arch Wiki https://infosec.mozilla.org/guidelines/openssh man sshd man sshd_config man ssh Excellent book: SSH, The Secure Shell: The Definitive Guide, 2nd Edition https://www.ssh.com/academy/ssh/server ↩︎\n这个挑战包含你的公钥的一些成分，所以你可以用私钥来完成这个挑战，因为公钥和私钥在数学上存在一些神奇的连接。 ↩︎\n",
-  "wordCount" : "3833",
-  "inLanguage": "en",
-  "datePublished": "2023-11-28T00:00:00Z",
-  "dateModified": "2023-11-28T00:00:00Z",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://thomjiji.github.io/blogs/2023/11/ssh-notes/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "thomjiji",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://thomjiji.github.io/favicon.ico"
-    }
-  }
-}
-</script>
 </head>
 
 <body class="" id="top">
@@ -148,9 +89,9 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://thomjiji.github.io/" accesskey="h" title="thomjiji (Alt + H)">thomjiji</a>
+            <a href="http://localhost:1313/" accesskey="h" title="thomjiji (Alt + H)">thomjiji</a>
             <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
@@ -174,22 +115,22 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://thomjiji.github.io/about/" title="About">
+                <a href="http://localhost:1313/about/" title="About">
                     <span>About</span>
                 </a>
             </li>
             <li>
-                <a href="https://thomjiji.github.io/archives/" title="Archives">
+                <a href="http://localhost:1313/archives/" title="Archives">
                     <span>Archives</span>
                 </a>
             </li>
             <li>
-                <a href="https://thomjiji.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
             <li>
-                <a href="https://thomjiji.github.io/tags/" title="Tags">
+                <a href="http://localhost:1313/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
@@ -200,7 +141,7 @@
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://thomjiji.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://thomjiji.github.io/posts/">Posts</a></div>
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
     <h1 class="post-title entry-hint-parent">
       SSH notes
     </h1>
@@ -234,8 +175,7 @@
 <p>User: The &ldquo;authorized_keys&rdquo; file on the remote server is used for manage &ldquo;who&rdquo; can access to that server, right?</p>
 <p>ChatGPT: Exactly, that&rsquo;s correct. The <code>authorized_keys</code> file on the remote server is used to manage access by specifying which public keys are allowed to connect to a particular user&rsquo;s account on that server. Each line in the <code>authorized_keys</code> file typically represents a public key that is authorized to access the associated user account. By adding or removing public keys in this file, administrators can control and manage who has permission to log in to the server using SSH.</p>
 <blockquote>
-<p>The file <code>~/.ssh/authorized_keys</code> lists the public keys that are permitted for logging in. When the user logs in, the ssh program tells the server which key pair it would like to use for authentication. The client proves that it has access to the private key and the server checks that the corresponding public key is authorized to accept the account. — <code>man ssh</code> | AUTHENTICATION</p>
-</blockquote>
+<p>The file <code>~/.ssh/authorized_keys</code> lists the public keys that are permitted for logging in. When the user logs in, the ssh program tells the server which key pair it would like to use for authentication. The client proves that it has access to the private key and the server checks that the corresponding public key is authorized to accept the account. — <code>man ssh</code> | AUTHENTICATION</p></blockquote>
 <hr>
 <p>如果我尝试 access 一台 remote server，但我没有把 remote 的 host key 加入我的 <code>~/.ssh/known_hosts</code>，<code>~/.ssh/</code> 文件夹都是空的。这个时候 authentication <strong>fall back</strong> 为 username/password access。你需要输入 remote server 的 login password 来 login。</p>
 <hr>
@@ -270,8 +210,7 @@
 <li>Append <code>AllowUsers user1 user2</code> to it.</li>
 </ul>
 <blockquote>
-<p>⬆️ This keyword can be followed by a list of user name patterns, separated by spaces.</p>
-</blockquote>
+<p>⬆️ This keyword can be followed by a list of user name patterns, separated by spaces.</p></blockquote>
 <p>More info can be found in sshd_config man page: <code>man sshd_config</code>.</p>
 <h3 id="known_hosts">known_hosts<a hidden class="anchor" aria-hidden="true" href="#known_hosts">#</a></h3>
 <p>SSH 的 known-host 机制可以防止<a href="https://en.wikipedia.org/wiki/Man-in-the-middle_attack" target="_blank" >中间人攻击 man-in-the-middle attack</a>。当你本地的 ssh 客户端想要和远端服务器连接，不仅本地的 ssh 客户端需要向远端服务器证明你是你，远端服务器同样也需要向本地的 ssh 客户端证明它是它。远端服务器上运行的 ssh server 也有一对密钥（公钥和私钥），叫作 host key 主机密钥。</p>
@@ -280,8 +219,7 @@
 </span></span><span style="display:flex;"><span>Are you sure you want to <span style="color:#c678dd">continue</span> connecting <span style="color:#c7bf54">(</span>yes/no<span style="color:#c7bf54">)</span>?
 </span></span></code></pre></div><p>这个过程在 <code>man sshd</code> 也有一些说明：</p>
 <blockquote>
-<p>Each host has a <strong>host-specific key</strong>, used to <strong>identify the host</strong>. Whenever a client connects, the daemon responds with its public host key. The client compares the host key against its own database to verify that it has not changed. — <code>man sshd</code> | AUTHENTICATION</p>
-</blockquote>
+<p>Each host has a <strong>host-specific key</strong>, used to <strong>identify the host</strong>. Whenever a client connects, the daemon responds with its public host key. The client compares the host key against its own database to verify that it has not changed. — <code>man sshd</code> | AUTHENTICATION</p></blockquote>
 <p>这里有一个相关的设置叫作“StrictHostKeyChecking”，具体请看 <code>man ssh_config</code>。</p>
 <p><code>known_hosts</code> 文件存储的 key 叫作 known <em>host</em> key。在 OpenSSH 中，已知的 host key 存储在 <code>/etc/ssh/known_hosts</code> 和每个用户的 <code>~/.ssh/known_hosts</code> 中。</p>
 <hr>
@@ -327,11 +265,9 @@
 </span></span></code></pre></div><p>每个 <code>.pub</code> 文件里的内容都对应着 known_hosts 文件里的一行。</p>
 <hr>
 <blockquote>
-<p>ssh automatically maintains and checks a database containing <strong>identification for all hosts it has ever been used with</strong>. Host keys are stored in <code>~/.ssh/known_hosts</code> in the user&rsquo;s home directory.</p>
-</blockquote>
+<p>ssh automatically maintains and checks a database containing <strong>identification for all hosts it has ever been used with</strong>. Host keys are stored in <code>~/.ssh/known_hosts</code> in the user&rsquo;s home directory.</p></blockquote>
 <blockquote>
-<p>Any new hosts are automatically added to the user&rsquo;s file (<code>~/.ssh/known_hosts</code> file).</p>
-</blockquote>
+<p>Any new hosts are automatically added to the user&rsquo;s file (<code>~/.ssh/known_hosts</code> file).</p></blockquote>
 <p>— <code>man ssh</code> | AUTHENTICATION</p>
 <h3 id="permission">Permission<a hidden class="anchor" aria-hidden="true" href="#permission">#</a></h3>
 <p><code>~/.ssh</code>: This directory is the default location for all user-specific configuration and authentication information. <strong>There is not general requirement to keep the entire contents of this directory secret, but the recommended permissions are read/write/execute for the user, and not accessible by others.</strong></p>
@@ -363,15 +299,15 @@
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://thomjiji.github.io/tags/ssh/">SSH</a></li>
+      <li><a href="http://localhost:1313/tags/ssh/">Ssh</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://thomjiji.github.io/blogs/2023/11/gpg-for-ssh-authentication/">
+  <a class="prev" href="http://localhost:1313/blogs/2023/11/gpg-for-ssh-authentication/">
     <span class="title">« Prev</span>
     <br>
     <span>GPG key for SSH authentication</span>
   </a>
-  <a class="next" href="https://thomjiji.github.io/blogs/2023/11/file-size/">
+  <a class="next" href="http://localhost:1313/blogs/2023/11/file-size/">
     <span class="title">Next »</span>
     <br>
     <span>File size</span>
@@ -383,7 +319,7 @@
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="https://thomjiji.github.io/">thomjiji</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">thomjiji</a></span> · 
 
     <span>
         Powered by

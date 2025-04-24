@@ -2,21 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>ICC Profile on thomjiji</title>
-    <link>https://thomjiji.github.io/tags/icc-profile/</link>
+    <link>http://localhost:1313/tags/icc-profile/</link>
     <description>Recent content in ICC Profile on thomjiji</description>
-    <generator>Hugo -- 0.119.0</generator>
+    <generator>Hugo -- 0.146.7</generator>
     <language>en-US</language>
     <lastBuildDate>Thu, 09 Mar 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://thomjiji.github.io/tags/icc-profile/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/icc-profile/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>为什么使用上屏卡</title>
-      <link>https://thomjiji.github.io/blogs/2023/03/why-do-we-need-video-card/</link>
+      <link>http://localhost:1313/blogs/2023/03/why-do-we-need-video-card/</link>
       <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/blogs/2023/03/why-do-we-need-video-card/</guid>
-      <description>做高端校色软件 ColourSpace 的 LightIllusion 有篇文章 What&amp;rsquo;s wrong with ICCs? 指出了 ICC profile 的一些问题。
-总的来说，ICC profile 能 work 的前提是软件本身支持它，软件是否是 ICC aware。通常来说 ICC aware 的软件有一个 CMM 色彩管理模块（Color Management Module）能够正确识别我们生成的 ICC profile，然后能够对图像做调整以达到「准确」的结果，实现校色的目的。先不说 ICC 这种方式本质上是对图像的调整，而不是对显示器本身的校正（后者是更好的方式，所谓硬件校准就是如此）。即使软件具有 CMM，准确度和性能还得看各个软件自身的优化。这就变成一件非常麻烦和复杂的事情。那些不是 ICC aware 的软件，看到的就做一个完全未经校准的画面。
-那对于 Adobe 全家桶来说，像 Ps、Lr 这种平面设计软件，它们是有 CMM 模块，叫作 ACE（Adobe Color Engine）。就是能够识别图像自带的 ICC profile，将其转换到 Ps 的工作色彩空间。那对于 Pr 来说，它也有被他们称为 DCM（Display Color Management）的东西，作为 Pr 内在的色彩管理方式，也是利用系统的 ICC profile 来进行工作的。
-DCM uses the ICC profile for your monitor to apply a colorimetric conversion from the sequence working color space (or media color space in the case of the source monitor) to the monitor color space.</description>
+      <guid>http://localhost:1313/blogs/2023/03/why-do-we-need-video-card/</guid>
+      <description>&lt;p&gt;做高端校色软件 ColourSpace 的 LightIllusion 有篇文章 &lt;a href=&#34;https://www.lightillusion.com/what_is_wrong_with_iccs.html&#34; target=&#34;_blank&#34; &gt;What&amp;rsquo;s wrong with ICCs?&lt;/a&gt; 指出了 ICC profile 的一些问题。&lt;/p&gt;
+&lt;p&gt;总的来说，ICC profile 能 work 的前提是软件本身支持它，软件是否是 ICC aware。通常来说 ICC aware 的软件有一个 CMM 色彩管理模块（Color Management Module）能够正确识别我们生成的 ICC profile，然后能够对图像做调整以达到「准确」的结果，实现校色的目的。先不说 ICC 这种方式本质上是对图像的调整，而不是对显示器本身的校正（后者是更好的方式，所谓硬件校准就是如此）。即使软件具有 CMM，准确度和性能还得看各个软件自身的优化。这就变成一件非常麻烦和复杂的事情。那些不是 ICC aware 的软件，看到的就做一个完全未经校准的画面。&lt;/p&gt;
+&lt;p&gt;那对于 Adobe 全家桶来说，像 Ps、Lr 这种平面设计软件，它们是有 CMM 模块，叫作 ACE（Adobe Color Engine）。就是能够识别图像自带的 ICC profile，将其转换到 Ps 的工作色彩空间。那对于 Pr 来说，它也有被他们称为 DCM（Display Color Management）的东西，作为 Pr 内在的色彩管理方式，也是利用系统的 ICC profile 来进行工作的。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;DCM uses the ICC profile for your monitor to apply a colorimetric conversion from the sequence working color space (or media color space in the case of the source monitor) to the monitor color space. The profile is specified by the operating system. We generally recommended using the default profile that the system choses for your display. If your monitor has been professionally calibrated, use that profile. The default profile may have the name of your monitor or something generic like “Color LCD”. Using the specified display profile will ensure predictable colors across the system and in other apps like web browsers and email. DCM requires GPU Acceleration. GPU acceleration can be configured in Project Settings &amp;gt; General &amp;gt; Video Rendering and Playback. &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

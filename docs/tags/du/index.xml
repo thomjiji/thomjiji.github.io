@@ -1,21 +1,43 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>du on thomjiji</title>
-    <link>https://thomjiji.github.io/tags/du/</link>
-    <description>Recent content in du on thomjiji</description>
-    <generator>Hugo -- 0.119.0</generator>
+    <title>Du on thomjiji</title>
+    <link>http://localhost:1313/tags/du/</link>
+    <description>Recent content in Du on thomjiji</description>
+    <generator>Hugo -- 0.146.7</generator>
     <language>en-US</language>
     <lastBuildDate>Wed, 01 Nov 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://thomjiji.github.io/tags/du/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/du/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>File size</title>
-      <link>https://thomjiji.github.io/blogs/2023/11/file-size/</link>
+      <link>http://localhost:1313/blogs/2023/11/file-size/</link>
       <pubDate>Wed, 01 Nov 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/blogs/2023/11/file-size/</guid>
-      <description>Notes du * 输出的其实不是我们通常理解上的文件大小，而是所谓 block size（block count 可能更准确）。而且，它显示的是 disk usage，也就是这个文件占了多大的硬盘容量，或者说文件系统实际分配了多少空间给到这个文件。而不是，这个文件，它本身有多大。这个区别比较关键，后面会有更多的说明。
-$ du * 5568	1-2-1_2frames_ap4h.mov 8040	1-2-1_2frames_ap4x.mov 3928	1-2-1_2frames_apch.mov 2152	1-2-1_2frames_apcn.mov 688	1-2-1_2frames_apco.mov 1592	1-2-1_2frames_apcs.mov 我们使用 exa 这个 ls 的替代，用 exa -lh -b -S 这个命令得到这样的输出：
-$ exa -lh -b -S Permissions Size Blocks User Date Modified Name .rw-r--r--@ 2.7Mi 5568 thom 27 Oct 17:32 1-2-1_2frames_ap4h.mov .rw-r--r--@ 3.9Mi 8040 thom 27 Oct 17:32 1-2-1_2frames_ap4x.mov .rw-r--r--@ 1.9Mi 3928 thom 27 Oct 17:32 1-2-1_2frames_apch.</description>
+      <guid>http://localhost:1313/blogs/2023/11/file-size/</guid>
+      <description>&lt;h2 id=&#34;notes&#34;&gt;Notes&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;du *&lt;/code&gt; 输出的其实不是我们通常理解上的文件大小，而是所谓 block size（block count 可能更准确）。而且，它显示的是 disk usage，也就是这个文件占了多大的硬盘容量，或者说文件系统实际分配了多少空间给到这个文件。而不是，这个文件，它本身有多大。这个区别比较关键，后面会有更多的说明。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ du *
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;5568	1-2-1_2frames_ap4h.mov
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;8040	1-2-1_2frames_ap4x.mov
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;3928	1-2-1_2frames_apch.mov
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;2152	1-2-1_2frames_apcn.mov
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;688		1-2-1_2frames_apco.mov
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;1592	1-2-1_2frames_apcs.mov
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;我们使用 &lt;a href=&#34;https://github.com/eza-community/eza&#34; target=&#34;_blank&#34; &gt;exa&lt;/a&gt; 这个 ls 的替代，用 &lt;code&gt;exa -lh -b -S&lt;/code&gt; 这个命令得到这样的输出：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ exa -lh -b -S
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Permissions  Size Blocks User Date Modified Name
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.rw-r--r--@ 2.7Mi   &lt;span style=&#34;color:#d19a66&#34;&gt;5568&lt;/span&gt; thom &lt;span style=&#34;color:#d19a66&#34;&gt;27&lt;/span&gt; Oct 17:32  1-2-1_2frames_ap4h.mov
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.rw-r--r--@ 3.9Mi   &lt;span style=&#34;color:#d19a66&#34;&gt;8040&lt;/span&gt; thom &lt;span style=&#34;color:#d19a66&#34;&gt;27&lt;/span&gt; Oct 17:32  1-2-1_2frames_ap4x.mov
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.rw-r--r--@ 1.9Mi   &lt;span style=&#34;color:#d19a66&#34;&gt;3928&lt;/span&gt; thom &lt;span style=&#34;color:#d19a66&#34;&gt;27&lt;/span&gt; Oct 17:32  1-2-1_2frames_apch.mov
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.rw-r--r--@ 1.0Mi   &lt;span style=&#34;color:#d19a66&#34;&gt;2152&lt;/span&gt; thom &lt;span style=&#34;color:#d19a66&#34;&gt;27&lt;/span&gt; Oct 17:32  1-2-1_2frames_apcn.mov
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.rw-r--r--@ 342Ki    &lt;span style=&#34;color:#d19a66&#34;&gt;688&lt;/span&gt; thom &lt;span style=&#34;color:#d19a66&#34;&gt;27&lt;/span&gt; Oct 17:32  1-2-1_2frames_apco.mov
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.rw-r--r--@ 793Ki   &lt;span style=&#34;color:#d19a66&#34;&gt;1592&lt;/span&gt; thom &lt;span style=&#34;color:#d19a66&#34;&gt;27&lt;/span&gt; Oct 17:32  1-2-1_2frames_apcs.mov
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-l&lt;/code&gt;: Display extended file metadata as a table.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-h&lt;/code&gt;: Add a header row to each column.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-b&lt;/code&gt;: List file sizes with binary prefixes. &lt;code&gt;--binary&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-S&lt;/code&gt;: List each file’s number of file system blocks.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;可以看到 Blocks 那一栏跟 &lt;code&gt;du *&lt;/code&gt; 的输出是一样的。&lt;code&gt;-S&lt;/code&gt; 的 flag 的作用也正是列出 file system blocks。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

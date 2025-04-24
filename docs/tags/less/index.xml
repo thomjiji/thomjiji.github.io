@@ -1,22 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>less on thomjiji</title>
-    <link>https://thomjiji.github.io/tags/less/</link>
-    <description>Recent content in less on thomjiji</description>
-    <generator>Hugo -- 0.119.0</generator>
+    <title>Less on thomjiji</title>
+    <link>http://localhost:1313/tags/less/</link>
+    <description>Recent content in Less on thomjiji</description>
+    <generator>Hugo -- 0.146.7</generator>
     <language>en-US</language>
     <lastBuildDate>Sun, 17 Dec 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://thomjiji.github.io/tags/less/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/less/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Use mouse wheel to scroll less in iTerm2</title>
-      <link>https://thomjiji.github.io/blogs/2023/12/use-mouse-wheel-to-scroll-less-in-iterm2/</link>
+      <link>http://localhost:1313/blogs/2023/12/use-mouse-wheel-to-scroll-less-in-iterm2/</link>
       <pubDate>Sun, 17 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/blogs/2023/12/use-mouse-wheel-to-scroll-less-in-iterm2/</guid>
-      <description>在 iTerm2 中使用 less command 有一个奇怪的点：你不能用鼠标来滚动页面。只能使用 Vim 的 keybinding Ctrl+d 和 Ctrl+u 来上下翻页。而且当你比如在查看一个 command 的 man page 时，因为 man page 默认是使用 less 来打开的，你查看完某个 man page 按 q 退出，然后使用鼠标滚轮往上面滚一下，滚到上面一屏，你会发现你的 Terminal 变得很乱，有很多刚刚你查看的那个 man page 的残留。
-我的需求总结来说就是：
-能够在 less 里使用鼠标滚轮来翻页，滚动。 退出 less 之后不要有残留。 其实，这里有一个概念叫作 alternate screen。你用 less 打开查看一个什么文件的时候进入的就是一个 alternate sceen，按 q 退出就是退出那个 alternate screen，回到 normal screen。Alternate screen 就是一个单独的 buffer，独立于当前 terminal 的。
-When activated, the current screen is saved and replaced with the alternate screen.</description>
+      <guid>http://localhost:1313/blogs/2023/12/use-mouse-wheel-to-scroll-less-in-iterm2/</guid>
+      <description>&lt;p&gt;在 iTerm2 中使用 less command 有一个奇怪的点：你不能用鼠标来滚动页面。只能使用 Vim 的 keybinding &lt;code&gt;Ctrl+d&lt;/code&gt; 和 &lt;code&gt;Ctrl+u&lt;/code&gt; 来上下翻页。而且当你比如在查看一个 command 的 man page 时，因为 man page 默认是使用 less 来打开的，你查看完某个 man page 按 &lt;code&gt;q&lt;/code&gt; 退出，然后使用鼠标滚轮往上面滚一下，滚到上面一屏，你会发现你的 Terminal 变得很乱，有很多刚刚你查看的那个 man page 的残留。&lt;/p&gt;
+&lt;p&gt;我的需求总结来说就是：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;能够在 less 里使用鼠标滚轮来翻页，滚动。&lt;/li&gt;
+&lt;li&gt;退出 less 之后不要有残留。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;其实，这里有一个概念叫作 &lt;a href=&#34;https://superuser.com/a/321233&#34; target=&#34;_blank&#34; &gt;alternate screen&lt;/a&gt;。你用 less 打开查看一个什么文件的时候进入的就是一个 alternate sceen，按 &lt;code&gt;q&lt;/code&gt; 退出就是退出那个 alternate screen，回到 normal screen。Alternate screen 就是一个单独的 buffer，独立于当前 terminal 的。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;When activated, the current screen is saved and replaced with the alternate screen.&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

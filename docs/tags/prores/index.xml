@@ -2,18 +2,84 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>ProRes on thomjiji</title>
-    <link>https://thomjiji.github.io/tags/prores/</link>
+    <link>http://localhost:1313/tags/prores/</link>
     <description>Recent content in ProRes on thomjiji</description>
-    <generator>Hugo -- 0.119.0</generator>
+    <generator>Hugo -- 0.146.7</generator>
     <language>en-US</language>
     <lastBuildDate>Mon, 18 Sep 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://thomjiji.github.io/tags/prores/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/prores/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Parse QuickTime File Format</title>
-      <link>https://thomjiji.github.io/blogs/2023/09/parse-quicktime/</link>
+      <link>http://localhost:1313/blogs/2023/09/parse-quicktime/</link>
       <pubDate>Mon, 18 Sep 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/blogs/2023/09/parse-quicktime/</guid>
-      <description>Apple Developer Documentation Storing and sharing media with QuickTime files Color parameter atom (&amp;lsquo;colr&amp;rsquo;) Uncompressed Y´CbCr Video in QuickTime Files — Documentation Archive Other resources Apple ProRes - MultiMedia Wiki QuickTime Tags - ExifTool MPEG-4 files - Atomic Parsley MP4RA - Official Registration Authority for the ISOBMFF family of standards Implementations/tools Implementations Language Notes metacolor.editor C# Simple Implementation, can only change NCLC tags. Provide GUI. qtff-parameter-editor C++ Good implementation, can only change NCLC tags.</description>
+      <guid>http://localhost:1313/blogs/2023/09/parse-quicktime/</guid>
+      <description>&lt;h3 id=&#34;apple-developer-documentation&#34;&gt;Apple Developer Documentation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://developer.apple.com/documentation/quicktime-file-format&#34; target=&#34;_blank&#34; &gt;Storing and sharing media with QuickTime files&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://developer.apple.com/documentation/quicktime-file-format/color_parameter_atom&#34; target=&#34;_blank&#34; &gt;Color parameter atom (&amp;lsquo;colr&amp;rsquo;)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://developer.apple.com/library/archive/technotes/tn2162/_index.html#//apple_ref/doc/uid/DTS40013070-CH1-TNTAG9&#34; target=&#34;_blank&#34; &gt;Uncompressed Y´CbCr Video in QuickTime Files&lt;/a&gt; — Documentation Archive&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;other-resources&#34;&gt;Other resources&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://wiki.multimedia.cx/index.php/Apple_ProRes&#34; target=&#34;_blank&#34; &gt;Apple ProRes - MultiMedia Wiki&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://exiftool.org/TagNames/QuickTime.html&#34; target=&#34;_blank&#34; &gt;QuickTime Tags - ExifTool&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://atomicparsley.sourceforge.net/mpeg-4files.html&#34; target=&#34;_blank&#34; &gt;MPEG-4 files - Atomic Parsley&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mp4ra.org/&#34; target=&#34;_blank&#34; &gt;MP4RA - Official Registration Authority for the ISOBMFF family of standards&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;implementationstools&#34;&gt;Implementations/tools&lt;/h3&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Implementations&lt;/th&gt;
+          &lt;th&gt;Language&lt;/th&gt;
+          &lt;th&gt;Notes&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;https://github.com/piersdeseilligny/metacolor.editor&#34; target=&#34;_blank&#34; &gt;metacolor.editor&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;C#&lt;/td&gt;
+          &lt;td&gt;Simple Implementation, can only change NCLC tags. Provide GUI.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;https://github.com/bbc/qtff-parameter-editor/tree/master&#34; target=&#34;_blank&#34; &gt;qtff-parameter-editor&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;C++&lt;/td&gt;
+          &lt;td&gt;Good implementation, can only change NCLC tags. CLI.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;https://mogurenko.com/&#34; target=&#34;_blank&#34; &gt;AMCDXVideoPatcherCLI&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;C++&lt;/td&gt;
+          &lt;td&gt;Close source. Can modify colr atom, add gama atom (but value of gamma can&amp;rsquo;t not be changed — seems a bug)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;https://github.com/da8eat/qtfile_pp&#34; target=&#34;_blank&#34; &gt;qtfile_pp&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;C++&lt;/td&gt;
+          &lt;td&gt;AMCDXVideoPatcherCLI 作者的开源 parser，想必 AMCDXVideoPatcherCLI 的具体实现能够从这里看出一些端倪&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;https://github.com/Stuff7/dryv&#34; target=&#34;_blank&#34; &gt;dryv&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Rust&lt;/td&gt;
+          &lt;td&gt;No docs&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;https://github.com/axiomatic-systems/Bento4&#34; target=&#34;_blank&#34; &gt;bento4&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;C++&lt;/td&gt;
+          &lt;td&gt;最完善&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;inspection-tools&#34;&gt;Inspection tools&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;hexdump -vC&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/wader/fq&#34; target=&#34;_blank&#34; &gt;fq&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gpac.github.io/mp4box.js/test/filereader.html&#34; target=&#34;_blank&#34; &gt;MP4Box.js&lt;/a&gt; - a file inspection tool&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/essential61/mp4analyser&#34; target=&#34;_blank&#34; &gt;mp4analyser&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;notes&#34;&gt;Notes&lt;/h3&gt;
+&lt;p&gt;这么些处理 atom (包括 NCLC tag) 的实现，都是用 C++ 写的。其实 Rust 也能做这些 low-level 的事情，对吗？只是这门语言比较新，暂时还没有人用它来做这个事而已。那么我能不能来做呢？用 Rust 写一个 parse MOV file format 的实现。其实已经有了：&lt;a href=&#34;https://github.com/Stuff7/dryv&#34; target=&#34;_blank&#34; &gt;dryv&lt;/a&gt;——这两天就在更新。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

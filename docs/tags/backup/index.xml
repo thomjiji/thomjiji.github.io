@@ -1,21 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>backup on thomjiji</title>
-    <link>https://thomjiji.github.io/tags/backup/</link>
-    <description>Recent content in backup on thomjiji</description>
-    <generator>Hugo -- 0.119.0</generator>
+    <title>Backup on thomjiji</title>
+    <link>http://localhost:1313/tags/backup/</link>
+    <description>Recent content in Backup on thomjiji</description>
+    <generator>Hugo -- 0.146.7</generator>
     <language>en-US</language>
     <lastBuildDate>Fri, 01 Dec 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://thomjiji.github.io/tags/backup/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/backup/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>btrfs and btrbk</title>
-      <link>https://thomjiji.github.io/blogs/2023/12/btrfs-and-btrbk/</link>
+      <link>http://localhost:1313/blogs/2023/12/btrfs-and-btrbk/</link>
       <pubDate>Fri, 01 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/blogs/2023/12/btrfs-and-btrbk/</guid>
-      <description>/etc/btrbk/btrbk.conf config file:
-volume / snapshot_dir btrbk_snapshots subvolume home incremental strict Key points:
-volume /: &amp;ldquo;Base path within a btrfs filesystem containing the subvolumes to be backuped (usually the mount-point of a btrfs filesystem mounted with subvolid=5 option).&amp;rdquo; In this case, we use the existing root directory — which is already a btrfs filesystem (by default on Fedora). btrbk refer this / (next to volume) as &amp;ldquo;&amp;lt;volume-directory&amp;gt;&amp;rdquo;. snapshot_dir btrbk_snapshots: btrbk_snapshots is relative to the volume set above, which in this case the / (root directory).</description>
+      <guid>http://localhost:1313/blogs/2023/12/btrfs-and-btrbk/</guid>
+      <description>&lt;p&gt;&lt;code&gt;/etc/btrbk/btrbk.conf&lt;/code&gt; config file:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;volume /
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  snapshot_dir btrbk_snapshots
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  subvolume home
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  incremental strict
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Key points:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;volume /&lt;/code&gt;: &amp;ldquo;Base path within a btrfs filesystem containing the subvolumes to be backuped (usually the mount-point of a btrfs filesystem mounted with &lt;code&gt;subvolid=5&lt;/code&gt; option).&amp;rdquo; In this case, we use the existing root directory — which is already a btrfs filesystem (by default on Fedora). btrbk refer this &lt;code&gt;/&lt;/code&gt; (next to &lt;code&gt;volume&lt;/code&gt;) as &amp;ldquo;&amp;lt;volume-directory&amp;gt;&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;snapshot_dir btrbk_snapshots&lt;/code&gt;: &lt;code&gt;btrbk_snapshots&lt;/code&gt; is relative to the &lt;code&gt;volume&lt;/code&gt; set above, which in this case the &lt;code&gt;/&lt;/code&gt; (root directory). So the full path of &lt;code&gt;btrbk_snapshots&lt;/code&gt; will be &lt;code&gt;/btrbk_snapshots&lt;/code&gt;, which located just under the root directory. It&amp;rsquo;s like the &amp;ldquo;destination&amp;rdquo; of snapshots.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;subvolume home&lt;/code&gt;: &lt;code&gt;home&lt;/code&gt; is also relative to &lt;code&gt;/&lt;/code&gt; which set above. It&amp;rsquo;s the &amp;ldquo;source&amp;rdquo; of snapshots. There are also a &lt;code&gt;target&lt;/code&gt; field can be set: &lt;code&gt;target /mnt/btrbk_backup&lt;/code&gt;, but it&amp;rsquo;s optional. The &lt;code&gt;target&lt;/code&gt; is where the &amp;ldquo;backup&amp;rdquo; subvolumes to be created (refer to the man page of &lt;code&gt;btrbk.conf&lt;/code&gt; via &lt;code&gt;man btrbk.conf&lt;/code&gt;), while the &lt;code&gt;snapshot_dir&lt;/code&gt; is where &amp;ldquo;snapshot&amp;rdquo; to be stored.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;incremental strict&lt;/code&gt;: which means &amp;ldquo;non-incremental (initial) backups are never created&amp;rdquo; (&lt;code&gt;man btrbk.conf&lt;/code&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;What is snapshot?&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

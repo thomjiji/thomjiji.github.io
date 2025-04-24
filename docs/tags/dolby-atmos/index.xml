@@ -2,18 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Dolby Atmos on thomjiji</title>
-    <link>https://thomjiji.github.io/tags/dolby-atmos/</link>
+    <link>http://localhost:1313/tags/dolby-atmos/</link>
     <description>Recent content in Dolby Atmos on thomjiji</description>
-    <generator>Hugo -- 0.119.0</generator>
+    <generator>Hugo -- 0.146.7</generator>
     <language>en-US</language>
     <lastBuildDate>Sun, 29 Jan 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://thomjiji.github.io/tags/dolby-atmos/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/dolby-atmos/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>mp4muxer &amp; mp4demuxer Basic Usage</title>
-      <link>https://thomjiji.github.io/blogs/2023/01/mp4muxer-mp4demuxer-basic-usage/</link>
+      <link>http://localhost:1313/blogs/2023/01/mp4muxer-mp4demuxer-basic-usage/</link>
       <pubDate>Sun, 29 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/blogs/2023/01/mp4muxer-mp4demuxer-basic-usage/</guid>
-      <description>Installation mp4muxer mp4demuxer Commands 将 MP4 的音视频分离（脱壳 Demux）： mp4demuxer --input-file input.mp4 --output-folder ~/Output 合并杜比视界 Profile 8.4 和杜比全景声双音轨： mp4muxer \ -i input.h265 \ --input-video-frame-rate 25 \ --hvc1flag 0 \ --dv-bl-compatible-id 4 \ -i Stereo.aac \ -i Atmos.ec3 \ -o DolbyVision_DolbyAtmos.mp4 合并 SDR 视频和杜比全景声双音轨: mp4muxer \ -i input.h264 \ --input-video-frame-rate 25 \ -i Stereo.aac \ -i Atmos.ec3 \ -o SDR_DolbyAtmos.mp4 </description>
+      <guid>http://localhost:1313/blogs/2023/01/mp4muxer-mp4demuxer-basic-usage/</guid>
+      <description>&lt;h2 id=&#34;installation&#34;&gt;&lt;strong&gt;Installation&lt;/strong&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/DolbyLaboratories/dlb_mp4base&#34; target=&#34;_blank&#34; &gt;mp4muxer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/DolbyLaboratories/dlb_mp4demux&#34; target=&#34;_blank&#34; &gt;mp4demuxer&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;commands&#34;&gt;Commands&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;将 MP4 的音视频分离（脱壳 Demux）：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mp4demuxer --input-file input.mp4 --output-folder ~/Output
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;合并杜比视界 Profile 8.4 和杜比全景声双音轨：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mp4muxer &lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;&lt;/span&gt;    -i input.h265 &lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;&lt;/span&gt;    --input-video-frame-rate &lt;span style=&#34;color:#d19a66&#34;&gt;25&lt;/span&gt; &lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;&lt;/span&gt;    --hvc1flag &lt;span style=&#34;color:#d19a66&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;&lt;/span&gt;    --dv-bl-compatible-id &lt;span style=&#34;color:#d19a66&#34;&gt;4&lt;/span&gt; &lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;&lt;/span&gt;    -i Stereo.aac &lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;&lt;/span&gt;    -i Atmos.ec3 &lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;&lt;/span&gt;    -o DolbyVision_DolbyAtmos.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;合并 SDR 视频和杜比全景声双音轨:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mp4muxer &lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;&lt;/span&gt;    -i input.h264 &lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;&lt;/span&gt;    --input-video-frame-rate &lt;span style=&#34;color:#d19a66&#34;&gt;25&lt;/span&gt; &lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;&lt;/span&gt;    -i Stereo.aac &lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;&lt;/span&gt;    -i Atmos.ec3 &lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;&lt;/span&gt;    -o SDR_DolbyAtmos.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
   </channel>
 </rss>

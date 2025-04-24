@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>sshfs on thomjiji</title>
-    <link>https://thomjiji.github.io/tags/sshfs/</link>
-    <description>Recent content in sshfs on thomjiji</description>
-    <generator>Hugo -- 0.119.0</generator>
+    <title>Sshfs on thomjiji</title>
+    <link>http://localhost:1313/tags/sshfs/</link>
+    <description>Recent content in Sshfs on thomjiji</description>
+    <generator>Hugo -- 0.146.7</generator>
     <language>en-US</language>
     <lastBuildDate>Sun, 03 Dec 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://thomjiji.github.io/tags/sshfs/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/sshfs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>sshfs</title>
-      <link>https://thomjiji.github.io/blogs/2023/12/sshfs/</link>
+      <link>http://localhost:1313/blogs/2023/12/sshfs/</link>
       <pubDate>Sun, 03 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/blogs/2023/12/sshfs/</guid>
-      <description>How to mount remote machine&amp;rsquo;s directory on current host? This question originally came up when I wanted to use Kate to edit a configuration file on macOS. I normally ssh into macOS, cd to that directory, and then type kate &amp;lt;file&amp;gt; to try opening the file for editing. But huh? There&amp;rsquo;s no kate command. Oh right, because I&amp;rsquo;m in the macOS environment, of course there&amp;rsquo;s no kate! But this is a problem - am I restricted to only using vi to edit remote files?</description>
+      <guid>http://localhost:1313/blogs/2023/12/sshfs/</guid>
+      <description>&lt;h3 id=&#34;how-to-mount-remote-machines-directory-on-current-host&#34;&gt;How to mount remote machine&amp;rsquo;s directory on current host?&lt;/h3&gt;
+&lt;p&gt;This question originally came up when I wanted to use Kate to edit a configuration file on macOS. I normally ssh into macOS, cd to that directory, and then type &lt;code&gt;kate &amp;lt;file&amp;gt;&lt;/code&gt; to try opening the file for editing. But huh? There&amp;rsquo;s no kate command. Oh right, because I&amp;rsquo;m in the macOS environment, of course there&amp;rsquo;s no kate! But this is a problem - am I restricted to only using vi to edit remote files? I see &lt;a href=&#34;https://www.youtube.com/@AsahiLina&#34; target=&#34;_blank&#34; &gt;Asahi Lina&lt;/a&gt; smoothly using Kate to open projects and files across multiple Mac machines around her to edit back and forth during development. There must be some way to make this work.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

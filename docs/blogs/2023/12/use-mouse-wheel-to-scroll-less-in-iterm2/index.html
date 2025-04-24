@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 <title>Use mouse wheel to scroll less in iTerm2 | thomjiji</title>
 <meta name="keywords" content="iTerm2, less">
 <meta name="description" content="在 iTerm2 中使用 less command 有一个奇怪的点：你不能用鼠标来滚动页面。只能使用 Vim 的 keybinding Ctrl&#43;d 和 Ctrl&#43;u 来上下翻页。而且当你比如在查看一个 command 的 man page 时，因为 man page 默认是使用 less 来打开的，你查看完某个 man page 按 q 退出，然后使用鼠标滚轮往上面滚一下，滚到上面一屏，你会发现你的 Terminal 变得很乱，有很多刚刚你查看的那个 man page 的残留。
 我的需求总结来说就是：
-能够在 less 里使用鼠标滚轮来翻页，滚动。 退出 less 之后不要有残留。 其实，这里有一个概念叫作 alternate screen。你用 less 打开查看一个什么文件的时候进入的就是一个 alternate sceen，按 q 退出就是退出那个 alternate screen，回到 normal screen。Alternate screen 就是一个单独的 buffer，独立于当前 terminal 的。
-When activated, the current screen is saved and replaced with the alternate screen.">
+
+能够在 less 里使用鼠标滚轮来翻页，滚动。
+退出 less 之后不要有残留。
+
+其实，这里有一个概念叫作 alternate screen。你用 less 打开查看一个什么文件的时候进入的就是一个 alternate sceen，按 q 退出就是退出那个 alternate screen，回到 normal screen。Alternate screen 就是一个单独的 buffer，独立于当前 terminal 的。
+
+When activated, the current screen is saved and replaced with the alternate screen.1">
 <meta name="author" content="">
-<link rel="canonical" href="https://thomjiji.github.io/blogs/2023/12/use-mouse-wheel-to-scroll-less-in-iterm2/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.35ee184ca6eac1b199b1af4308e0b8e74ea71d6249a02c5252bbd9c9b7f5bf67.css" integrity="sha256-Ne4YTKbqwbGZsa9DCOC4506nHWJJoCxSUrvZybf1v2c=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://thomjiji.github.io/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://thomjiji.github.io/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://thomjiji.github.io/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://thomjiji.github.io/apple-touch-icon.png">
-<link rel="mask-icon" href="https://thomjiji.github.io/safari-pinned-tab.svg">
+<link rel="canonical" href="http://localhost:1313/blogs/2023/12/use-mouse-wheel-to-scroll-less-in-iterm2/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.e42ad648cd8baa1905022f1ff58c4bcfb6aeabc0e775ecf9b04f835aa329b79d.css" integrity="sha256-5CrWSM2LqhkFAi8f9YxLz7auq8Dndez5sE&#43;DWqMpt50=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/blogs/2023/12/use-mouse-wheel-to-scroll-less-in-iterm2/">
 <noscript>
     <style>
         #theme-toggle,
@@ -60,7 +66,7 @@ When activated, the current screen is saved and replaced with the alternate scre
 </noscript><!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="icon" href="https://thomjiji.github.io/powerpuff_girls_buttercup.jpg" />
+    <link rel="icon" href="http://localhost:1313/powerpuff_girls_buttercup.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -73,73 +79,7 @@ When activated, the current screen is saved and replaced with the alternate scre
     
   </body>
 </html>
-<meta property="og:title" content="Use mouse wheel to scroll less in iTerm2" />
-<meta property="og:description" content="在 iTerm2 中使用 less command 有一个奇怪的点：你不能用鼠标来滚动页面。只能使用 Vim 的 keybinding Ctrl&#43;d 和 Ctrl&#43;u 来上下翻页。而且当你比如在查看一个 command 的 man page 时，因为 man page 默认是使用 less 来打开的，你查看完某个 man page 按 q 退出，然后使用鼠标滚轮往上面滚一下，滚到上面一屏，你会发现你的 Terminal 变得很乱，有很多刚刚你查看的那个 man page 的残留。
-我的需求总结来说就是：
-能够在 less 里使用鼠标滚轮来翻页，滚动。 退出 less 之后不要有残留。 其实，这里有一个概念叫作 alternate screen。你用 less 打开查看一个什么文件的时候进入的就是一个 alternate sceen，按 q 退出就是退出那个 alternate screen，回到 normal screen。Alternate screen 就是一个单独的 buffer，独立于当前 terminal 的。
-When activated, the current screen is saved and replaced with the alternate screen." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://thomjiji.github.io/blogs/2023/12/use-mouse-wheel-to-scroll-less-in-iterm2/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-12-17T00:00:00+00:00" />
-<meta property="article:modified_time" content="2023-12-17T00:00:00+00:00" />
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Use mouse wheel to scroll less in iTerm2"/>
-<meta name="twitter:description" content="在 iTerm2 中使用 less command 有一个奇怪的点：你不能用鼠标来滚动页面。只能使用 Vim 的 keybinding Ctrl&#43;d 和 Ctrl&#43;u 来上下翻页。而且当你比如在查看一个 command 的 man page 时，因为 man page 默认是使用 less 来打开的，你查看完某个 man page 按 q 退出，然后使用鼠标滚轮往上面滚一下，滚到上面一屏，你会发现你的 Terminal 变得很乱，有很多刚刚你查看的那个 man page 的残留。
-我的需求总结来说就是：
-能够在 less 里使用鼠标滚轮来翻页，滚动。 退出 less 之后不要有残留。 其实，这里有一个概念叫作 alternate screen。你用 less 打开查看一个什么文件的时候进入的就是一个 alternate sceen，按 q 退出就是退出那个 alternate screen，回到 normal screen。Alternate screen 就是一个单独的 buffer，独立于当前 terminal 的。
-When activated, the current screen is saved and replaced with the alternate screen."/>
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "https://thomjiji.github.io/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Use mouse wheel to scroll less in iTerm2",
-      "item": "https://thomjiji.github.io/blogs/2023/12/use-mouse-wheel-to-scroll-less-in-iterm2/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Use mouse wheel to scroll less in iTerm2",
-  "name": "Use mouse wheel to scroll less in iTerm2",
-  "description": "在 iTerm2 中使用 less command 有一个奇怪的点：你不能用鼠标来滚动页面。只能使用 Vim 的 keybinding Ctrl+d 和 Ctrl+u 来上下翻页。而且当你比如在查看一个 command 的 man page 时，因为 man page 默认是使用 less 来打开的，你查看完某个 man page 按 q 退出，然后使用鼠标滚轮往上面滚一下，滚到上面一屏，你会发现你的 Terminal 变得很乱，有很多刚刚你查看的那个 man page 的残留。\n我的需求总结来说就是：\n能够在 less 里使用鼠标滚轮来翻页，滚动。 退出 less 之后不要有残留。 其实，这里有一个概念叫作 alternate screen。你用 less 打开查看一个什么文件的时候进入的就是一个 alternate sceen，按 q 退出就是退出那个 alternate screen，回到 normal screen。Alternate screen 就是一个单独的 buffer，独立于当前 terminal 的。\nWhen activated, the current screen is saved and replaced with the alternate screen.",
-  "keywords": [
-    "iTerm2", "less"
-  ],
-  "articleBody": "在 iTerm2 中使用 less command 有一个奇怪的点：你不能用鼠标来滚动页面。只能使用 Vim 的 keybinding Ctrl+d 和 Ctrl+u 来上下翻页。而且当你比如在查看一个 command 的 man page 时，因为 man page 默认是使用 less 来打开的，你查看完某个 man page 按 q 退出，然后使用鼠标滚轮往上面滚一下，滚到上面一屏，你会发现你的 Terminal 变得很乱，有很多刚刚你查看的那个 man page 的残留。\n我的需求总结来说就是：\n能够在 less 里使用鼠标滚轮来翻页，滚动。 退出 less 之后不要有残留。 其实，这里有一个概念叫作 alternate screen。你用 less 打开查看一个什么文件的时候进入的就是一个 alternate sceen，按 q 退出就是退出那个 alternate screen，回到 normal screen。Alternate screen 就是一个单独的 buffer，独立于当前 terminal 的。\nWhen activated, the current screen is saved and replaced with the alternate screen.1\niTerm2 里也有这方面的设置，设置一下就行了。\n首先这里有一个设置在 Session \u003e Terminal State \u003e Alternate Screen。这个设置我暂时没搞懂具体效果是什么，而真正起作用的也不是这个设置，只是它有点相关。\n然后最重要的是这个设置，需要打开：Preferences \u003e Advanced \u003e Mouse \u003e Scroll wheel sends arrow keys when in alternate screen mode，把它改成 Yes。\n这时你会发现可以正常在 less 里用鼠标滚轮滚动了。\n但是退出 less 仍然会看到有残留，这时去：Profiles \u003e 选中你当前的 profile \u003e Terminal \u003e Scrollback Buffer \u003e Save lines to scrollback in alternate screen mode，把它取消勾选。\n完成。\nReference:\niTerm2 – scroll less output with mouse - StackOverflow xterm man page | Other Features ↩︎\n",
-  "wordCount" : "138",
-  "inLanguage": "en",
-  "datePublished": "2023-12-17T00:00:00Z",
-  "dateModified": "2023-12-17T00:00:00Z",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://thomjiji.github.io/blogs/2023/12/use-mouse-wheel-to-scroll-less-in-iterm2/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "thomjiji",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://thomjiji.github.io/favicon.ico"
-    }
-  }
-}
-</script>
 </head>
 
 <body class="" id="top">
@@ -157,9 +97,9 @@ When activated, the current screen is saved and replaced with the alternate scre
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://thomjiji.github.io/" accesskey="h" title="thomjiji (Alt + H)">thomjiji</a>
+            <a href="http://localhost:1313/" accesskey="h" title="thomjiji (Alt + H)">thomjiji</a>
             <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
@@ -183,22 +123,22 @@ When activated, the current screen is saved and replaced with the alternate scre
         </div>
         <ul id="menu">
             <li>
-                <a href="https://thomjiji.github.io/about/" title="About">
+                <a href="http://localhost:1313/about/" title="About">
                     <span>About</span>
                 </a>
             </li>
             <li>
-                <a href="https://thomjiji.github.io/archives/" title="Archives">
+                <a href="http://localhost:1313/archives/" title="Archives">
                     <span>Archives</span>
                 </a>
             </li>
             <li>
-                <a href="https://thomjiji.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
             <li>
-                <a href="https://thomjiji.github.io/tags/" title="Tags">
+                <a href="http://localhost:1313/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
@@ -209,7 +149,7 @@ When activated, the current screen is saved and replaced with the alternate scre
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://thomjiji.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://thomjiji.github.io/posts/">Posts</a></div>
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
     <h1 class="post-title entry-hint-parent">
       Use mouse wheel to scroll less in iTerm2
     </h1>
@@ -225,8 +165,7 @@ When activated, the current screen is saved and replaced with the alternate scre
 </ol>
 <p>其实，这里有一个概念叫作 <a href="https://superuser.com/a/321233" target="_blank" >alternate screen</a>。你用 less 打开查看一个什么文件的时候进入的就是一个 alternate sceen，按 <code>q</code> 退出就是退出那个 alternate screen，回到 normal screen。Alternate screen 就是一个单独的 buffer，独立于当前 terminal 的。</p>
 <blockquote>
-<p>When activated, the current screen is saved and replaced with the alternate screen.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
-</blockquote>
+<p>When activated, the current screen is saved and replaced with the alternate screen.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p></blockquote>
 <p>iTerm2 里也有这方面的设置，设置一下就行了。</p>
 <p>首先这里有一个设置在 Session &gt; Terminal State &gt; Alternate Screen。这个设置我暂时没搞懂具体效果是什么，而真正起作用的也不是这个设置，只是它有点相关。</p>
 <p>然后最重要的是这个设置，需要打开：<strong>Preferences &gt; Advanced &gt; Mouse &gt; Scroll wheel sends arrow keys when in alternate screen mode</strong>，把它改成 Yes。</p>
@@ -251,16 +190,16 @@ When activated, the current screen is saved and replaced with the alternate scre
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://thomjiji.github.io/tags/iterm2/">iTerm2</a></li>
-      <li><a href="https://thomjiji.github.io/tags/less/">less</a></li>
+      <li><a href="http://localhost:1313/tags/iterm2/">ITerm2</a></li>
+      <li><a href="http://localhost:1313/tags/less/">Less</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://thomjiji.github.io/blogs/2023/12/setup-rime-on-fedora-asahi/">
+  <a class="prev" href="http://localhost:1313/blogs/2023/12/setup-rime-on-fedora-asahi/">
     <span class="title">« Prev</span>
     <br>
     <span>Setup Rime on Fedora Asahi Remix</span>
   </a>
-  <a class="next" href="https://thomjiji.github.io/blogs/2023/12/use-native-file-picker-on-kde/">
+  <a class="next" href="http://localhost:1313/blogs/2023/12/use-native-file-picker-on-kde/">
     <span class="title">Next »</span>
     <br>
     <span>Use native file picker on KDE Plasma</span>
@@ -272,7 +211,7 @@ When activated, the current screen is saved and replaced with the alternate scre
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="https://thomjiji.github.io/">thomjiji</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">thomjiji</a></span> · 
 
     <span>
         Powered by

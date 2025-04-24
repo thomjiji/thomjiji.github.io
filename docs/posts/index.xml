@@ -2,233 +2,557 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on thomjiji</title>
-    <link>https://thomjiji.github.io/posts/</link>
+    <link>http://localhost:1313/posts/</link>
     <description>Recent content in Posts on thomjiji</description>
-    <generator>Hugo -- 0.119.0</generator>
+    <generator>Hugo -- 0.146.7</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 25 Jun 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://thomjiji.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tips and tricks</title>
+      <link>http://localhost:1313/blogs/2025/01/tips-and-tricks/</link>
+      <pubDate>Wed, 08 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blogs/2025/01/tips-and-tricks/</guid>
+      <description>&lt;p&gt;Firefox 的 &lt;a href=&#34;https://kb.mozillazine.org/Profile_folder_-_Firefox&#34; target=&#34;_blank&#34; &gt;Profile&lt;/a&gt; 文件夹可以在这里获取：Firefox 左上角菜单栏 &amp;gt; Help &amp;gt; More Troubleshooting Information &amp;gt; Application Basics &amp;gt; Profile Folder.&lt;/p&gt;
+&lt;p&gt;在这个 Profile folder 里创建一个叫做 &lt;code&gt;user.js&lt;/code&gt; 的文件，就可以实现导出 Firefox 的全局用户设置（修改过的 Firefox 的默认设置）。&lt;/p&gt;
+&lt;p&gt;所有在 &lt;code&gt;about:config&lt;/code&gt; 里修改的设置都在一个叫做 &lt;code&gt;prefs.js&lt;/code&gt; 的文件里。=&amp;gt; &lt;a href=&#34;https://kb.mozillazine.org/Prefs.js_file&#34; target=&#34;_blank&#34; &gt;Prefs.js file&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;我的 Firefox 用户设置（&lt;code&gt;about:config&lt;/code&gt;）：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;mousewheel.with_control.action: 3&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Reference:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://support.mozilla.org/en-US/questions/1197798&#34; target=&#34;_blank&#34; &gt;https://support.mozilla.org/en-US/questions/1197798&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;Change author name in commit message:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;git config --global user.name &amp;lt;name&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git config --global user.email &amp;lt;email&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;安装 LazyVim 之后，LSP 的下载会遇到一些网络问题，比如每次都是 pyright 由于一些网络原因安装失败：&lt;code&gt;set -Ux https_proxy 127.0.0.1:7890&lt;/code&gt; 和 &lt;code&gt;set -Ux http_proxy 127.0.0.1:7890&lt;/code&gt; 都不好使，使用 sing-box 也不行。这时只需要取消系统代理就可以成功联网安装。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Create dummy directories using Rsync</title>
-      <link>https://thomjiji.github.io/blogs/2024/06/create-dummy-directories-using-rsync/</link>
+      <link>http://localhost:1313/blogs/2024/06/create-dummy-directories-using-rsync/</link>
       <pubDate>Tue, 25 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/blogs/2024/06/create-dummy-directories-using-rsync/</guid>
-      <description>Use rsync to create dummy dirs:
-rsync -avPih --include &amp;#39;*/&amp;#39; --exclude &amp;#39;*&amp;#39; videos/ ~/Desktop/videos-dummy/ Here’s a breakdown of the command:
--avPih: These flags stand for: -a: Archive mode, which preserves permissions, timestamps, symbolic links, etc. -v: Verbose, which provides detailed output. -P: Combines &amp;ndash;progress and &amp;ndash;partial, showing progress during transfer and allowing for partial transfers to be resumed. -i: Output a change-summary for all updates. -h: Output numbers in a human-readable format.</description>
+      <guid>http://localhost:1313/blogs/2024/06/create-dummy-directories-using-rsync/</guid>
+      <description>&lt;p&gt;Use &lt;code&gt;rsync&lt;/code&gt; to create dummy dirs:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rsync -avPih --include &amp;#39;*/&amp;#39; --exclude &amp;#39;*&amp;#39; videos/ ~/Desktop/videos-dummy/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Here’s a breakdown of the command:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-avPih&lt;/code&gt;: These flags stand for:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-a&lt;/code&gt;: Archive mode, which preserves permissions, timestamps, symbolic links, etc.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-v&lt;/code&gt;: Verbose, which provides detailed output.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-P&lt;/code&gt;: Combines &amp;ndash;progress and &amp;ndash;partial, showing progress during transfer and allowing for partial transfers to be resumed.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-i&lt;/code&gt;: Output a change-summary for all updates.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-h&lt;/code&gt;: Output numbers in a human-readable format.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--include &#39;*/&#39;&lt;/code&gt;: Includes all directories (and subdirectories) in the transfer.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--exclude &#39;*&#39;&lt;/code&gt;: Excludes all files.&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     <item>
       <title>Best practice for grading stack in Baselight</title>
-      <link>https://thomjiji.github.io/blogs/2024/03/best-practice-for-grading-stack-in-baselight/</link>
+      <link>http://localhost:1313/blogs/2024/03/best-practice-for-grading-stack-in-baselight/</link>
       <pubDate>Sun, 31 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/blogs/2024/03/best-practice-for-grading-stack-in-baselight/</guid>
-      <description>Colour Online: Developing Digital Images &amp;gt; Best Practice Stack
-Start at 59:04:</description>
+      <guid>http://localhost:1313/blogs/2024/03/best-practice-for-grading-stack-in-baselight/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Colour Online: Developing Digital Images &amp;gt; Best Practice Stack&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Start at &lt;a href=&#34;https://vimeo.com/473186556#t=3544s&#34; target=&#34;_blank&#34; &gt;59:04&lt;/a&gt;:&lt;/p&gt;
+
+      &lt;div
+          style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+        &lt;iframe
+          src=&#34;https://player.vimeo.com/video/473186556?dnt=0&#34;
+            style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allow=&#34;fullscreen&#34; loading=&#34;eager&#34; title=&#34;Vimeo video&#34;&gt;
+        &lt;/iframe&gt;
+      &lt;/div&gt;
+
+&lt;p&gt;&lt;img alt=&#34;image&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/blogs/2024/03/best-practice-for-grading-stack-in-baselight/img/baselight_grading_stack.png&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Setup Rime on Fedora Asahi Remix</title>
-      <link>https://thomjiji.github.io/blogs/2023/12/setup-rime-on-fedora-asahi/</link>
+      <link>http://localhost:1313/blogs/2023/12/setup-rime-on-fedora-asahi/</link>
       <pubDate>Sat, 30 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/blogs/2023/12/setup-rime-on-fedora-asahi/</guid>
-      <description>Install fcitx5 and fcitx5-rime via sudo dnf install fcitx5-rime fcitx5.
-Go to System Setting &amp;gt; Input Devices &amp;gt; Virtual Keyboard, select “Fcitx 5”.
-Edit environment file via: sudo vi /etc/environment.
-Add the following content, reference:
-INPUT_METHOD=fcitx XMODIFIERS=@im=fcitx Open Input Method Selector &amp;gt; Use fcitx5 &amp;gt; Log out.
-Clone 雾凇拼音 repo into ~/.local/share/fcitx5/, rename it to rime:
-$ mv rime-ice rime Restart fcitx5 in the lower right corner of your Desktop.</description>
+      <guid>http://localhost:1313/blogs/2023/12/setup-rime-on-fedora-asahi/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Install fcitx5 and fcitx5-rime via &lt;code&gt;sudo dnf install fcitx5-rime fcitx5&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Go to System Setting &amp;gt; Input Devices &amp;gt; Virtual Keyboard, select “Fcitx 5”.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Edit environment file via: &lt;code&gt;sudo vi /etc/environment&lt;/code&gt;.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Add the following content, &lt;a href=&#34;https://fcitx-im.org/wiki/Using_Fcitx_5_on_Wayland#KDE_Plasma&#34; target=&#34;_blank&#34; &gt;reference&lt;/a&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;INPUT_METHOD=fcitx
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;XMODIFIERS=@im=fcitx
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Open Input Method Selector &amp;gt; Use fcitx5 &amp;gt; Log out.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Clone &lt;a href=&#34;https://github.com/iDvel/rime-ice&#34; target=&#34;_blank&#34; &gt;雾凇拼音&lt;/a&gt; repo into &lt;code&gt;~/.local/share/fcitx5/&lt;/code&gt;, rename it to &lt;code&gt;rime&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ mv rime-ice rime
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Restart fcitx5 in the lower right corner of your Desktop.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Use mouse wheel to scroll less in iTerm2</title>
-      <link>https://thomjiji.github.io/blogs/2023/12/use-mouse-wheel-to-scroll-less-in-iterm2/</link>
+      <link>http://localhost:1313/blogs/2023/12/use-mouse-wheel-to-scroll-less-in-iterm2/</link>
       <pubDate>Sun, 17 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/blogs/2023/12/use-mouse-wheel-to-scroll-less-in-iterm2/</guid>
-      <description>在 iTerm2 中使用 less command 有一个奇怪的点：你不能用鼠标来滚动页面。只能使用 Vim 的 keybinding Ctrl+d 和 Ctrl+u 来上下翻页。而且当你比如在查看一个 command 的 man page 时，因为 man page 默认是使用 less 来打开的，你查看完某个 man page 按 q 退出，然后使用鼠标滚轮往上面滚一下，滚到上面一屏，你会发现你的 Terminal 变得很乱，有很多刚刚你查看的那个 man page 的残留。
-我的需求总结来说就是：
-能够在 less 里使用鼠标滚轮来翻页，滚动。 退出 less 之后不要有残留。 其实，这里有一个概念叫作 alternate screen。你用 less 打开查看一个什么文件的时候进入的就是一个 alternate sceen，按 q 退出就是退出那个 alternate screen，回到 normal screen。Alternate screen 就是一个单独的 buffer，独立于当前 terminal 的。
-When activated, the current screen is saved and replaced with the alternate screen.</description>
+      <guid>http://localhost:1313/blogs/2023/12/use-mouse-wheel-to-scroll-less-in-iterm2/</guid>
+      <description>&lt;p&gt;在 iTerm2 中使用 less command 有一个奇怪的点：你不能用鼠标来滚动页面。只能使用 Vim 的 keybinding &lt;code&gt;Ctrl+d&lt;/code&gt; 和 &lt;code&gt;Ctrl+u&lt;/code&gt; 来上下翻页。而且当你比如在查看一个 command 的 man page 时，因为 man page 默认是使用 less 来打开的，你查看完某个 man page 按 &lt;code&gt;q&lt;/code&gt; 退出，然后使用鼠标滚轮往上面滚一下，滚到上面一屏，你会发现你的 Terminal 变得很乱，有很多刚刚你查看的那个 man page 的残留。&lt;/p&gt;
+&lt;p&gt;我的需求总结来说就是：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;能够在 less 里使用鼠标滚轮来翻页，滚动。&lt;/li&gt;
+&lt;li&gt;退出 less 之后不要有残留。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;其实，这里有一个概念叫作 &lt;a href=&#34;https://superuser.com/a/321233&#34; target=&#34;_blank&#34; &gt;alternate screen&lt;/a&gt;。你用 less 打开查看一个什么文件的时候进入的就是一个 alternate sceen，按 &lt;code&gt;q&lt;/code&gt; 退出就是退出那个 alternate screen，回到 normal screen。Alternate screen 就是一个单独的 buffer，独立于当前 terminal 的。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;When activated, the current screen is saved and replaced with the alternate screen.&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Use native file picker on KDE Plasma</title>
-      <link>https://thomjiji.github.io/blogs/2023/12/use-native-file-picker-on-kde/</link>
+      <link>http://localhost:1313/blogs/2023/12/use-native-file-picker-on-kde/</link>
       <pubDate>Sat, 09 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/blogs/2023/12/use-native-file-picker-on-kde/</guid>
-      <description>For Firefox Starting with version 64, Firefox can optionally use XDG Desktop Portals to handle various desktop features, such as opening a file picker, or handling MIME types. — Arch Wiki | Firefox | XDG Desktop Portal integration
-Type about:config in Firefox address bar. Search widget.use-xdg-desktop-portal.file-picker, set it to 1. 0 – Never 1 – Always 2 – Auto (typically depends on whether Firefox is run from within Flatpak or whether the GDK_DEBUG=portals environment is set) Done.</description>
+      <guid>http://localhost:1313/blogs/2023/12/use-native-file-picker-on-kde/</guid>
+      <description>&lt;h3 id=&#34;for-firefox&#34;&gt;For Firefox&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Starting with version 64, Firefox can optionally use XDG Desktop Portals to handle various desktop features, such as &lt;strong&gt;opening a file picker&lt;/strong&gt;, or handling MIME types. — Arch Wiki | Firefox | &lt;a href=&#34;https://wiki.archlinux.org/title/Firefox#XDG_Desktop_Portal_integration&#34; target=&#34;_blank&#34; &gt;XDG Desktop Portal integration&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;Type &lt;code&gt;about:config&lt;/code&gt; in Firefox address bar.&lt;/li&gt;
+&lt;li&gt;Search &lt;code&gt;widget.use-xdg-desktop-portal.file-picker&lt;/code&gt;, set it to 1.
+&lt;ul&gt;
+&lt;li&gt;0 – Never&lt;/li&gt;
+&lt;li&gt;1 – Always&lt;/li&gt;
+&lt;li&gt;2 – Auto (typically depends on whether Firefox is run from within Flatpak or whether the &lt;code&gt;GDK_DEBUG=portals&lt;/code&gt; environment is set)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Done.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;for-vs-code&#34;&gt;For VS Code&lt;/h3&gt;
+&lt;p&gt;These two environment variables: &lt;code&gt;GTK_USE_PORTAL=1&lt;/code&gt;, &lt;code&gt;GDK_DEBUG=portals&lt;/code&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Pin apps to KDE Panel, not KDE Task Manager</title>
-      <link>https://thomjiji.github.io/blogs/2023/12/pin-apps-to-kde-panel/</link>
+      <link>http://localhost:1313/blogs/2023/12/pin-apps-to-kde-panel/</link>
       <pubDate>Mon, 04 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/blogs/2023/12/pin-apps-to-kde-panel/</guid>
-      <description>比如你想把 Konsole 和 Firefox 这些最最常用的 app pin 到底部的 bar/dock 上（实际上 KDE 叫它 Panel），最直观的，你下意识的右键 Task Manager 上已经打开的 app，这里有一个“Pin to Task Manager”的选项，勾选上它。但这好像不是你想要的，因为你发现即使 pin 上去了，只要你打开那个 app 的一个 instance，那个刚刚被你 pin 上去的 app 就又不见了。这似乎不是你期待中的“pin”。这时你想要打开那个 app 的第二个 instance，就没法去到老地方，你最初 pin 它的那个地方打开。得找到现在的正在运行的那个 instance 所在的 Task Manager 的地方，右键 &amp;gt; &amp;ldquo;Open a New Window&amp;rdquo;。
-其实，你刚刚 pin 上去的那个地方，是 Task Manager 的区域。Task Manager 外层还有一个区域，叫作 Panel。你应该，或者说你其实想把它 pin 到 Panel 上。这样不管你开几个 instance，那个 app 的图标还是在那，当你想开第 n+1 的 instance 的时候，还是去那个 pin 的地方点一下就行了。
-总的来说，KDE 底部栏的层级是这样的：
-Panel: Application Launcher Pager Task Manager System tray Digital clock Peak at Desktop 你其实想把 Konsole 和 Firefox pin 到这里:</description>
+      <guid>http://localhost:1313/blogs/2023/12/pin-apps-to-kde-panel/</guid>
+      <description>&lt;p&gt;比如你想把 Konsole 和 Firefox 这些最最常用的 app pin 到底部的 bar/dock 上（实际上 KDE 叫它 Panel），最直观的，你下意识的右键 Task Manager 上已经打开的 app，这里有一个“Pin to Task Manager”的选项，勾选上它。但这好像不是你想要的，因为你发现即使 pin 上去了，只要你打开那个 app 的一个 instance，那个刚刚被你 pin 上去的 app 就又不见了。这似乎不是你期待中的“pin”。这时你想要打开那个 app 的第二个 instance，就没法去到老地方，你最初 pin 它的那个地方打开。得找到现在的正在运行的那个 instance 所在的 Task Manager 的地方，右键 &amp;gt; &amp;ldquo;Open a New Window&amp;rdquo;。&lt;/p&gt;
+&lt;p&gt;其实，你刚刚 pin 上去的那个地方，是 Task Manager 的区域。Task Manager 外层还有一个区域，叫作 Panel。你应该，或者说你其实想把它 pin 到 &lt;strong&gt;Panel&lt;/strong&gt; 上。这样不管你开几个 instance，那个 app 的图标还是在那，当你想开第 n+1 的 instance 的时候，还是去那个 pin 的地方点一下就行了。&lt;/p&gt;
+&lt;p&gt;总的来说，KDE 底部栏的层级是这样的：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Panel:
+&lt;ul&gt;
+&lt;li&gt;Application Launcher&lt;/li&gt;
+&lt;li&gt;Pager&lt;/li&gt;
+&lt;li&gt;Task Manager&lt;/li&gt;
+&lt;li&gt;System tray&lt;/li&gt;
+&lt;li&gt;Digital clock&lt;/li&gt;
+&lt;li&gt;Peak at Desktop&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;你其实想把 Konsole 和 Firefox pin 到这里:&lt;/p&gt;</description>
     </item>
     <item>
       <title>sshfs</title>
-      <link>https://thomjiji.github.io/blogs/2023/12/sshfs/</link>
+      <link>http://localhost:1313/blogs/2023/12/sshfs/</link>
       <pubDate>Sun, 03 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/blogs/2023/12/sshfs/</guid>
-      <description>How to mount remote machine&amp;rsquo;s directory on current host? This question originally came up when I wanted to use Kate to edit a configuration file on macOS. I normally ssh into macOS, cd to that directory, and then type kate &amp;lt;file&amp;gt; to try opening the file for editing. But huh? There&amp;rsquo;s no kate command. Oh right, because I&amp;rsquo;m in the macOS environment, of course there&amp;rsquo;s no kate! But this is a problem - am I restricted to only using vi to edit remote files?</description>
+      <guid>http://localhost:1313/blogs/2023/12/sshfs/</guid>
+      <description>&lt;h3 id=&#34;how-to-mount-remote-machines-directory-on-current-host&#34;&gt;How to mount remote machine&amp;rsquo;s directory on current host?&lt;/h3&gt;
+&lt;p&gt;This question originally came up when I wanted to use Kate to edit a configuration file on macOS. I normally ssh into macOS, cd to that directory, and then type &lt;code&gt;kate &amp;lt;file&amp;gt;&lt;/code&gt; to try opening the file for editing. But huh? There&amp;rsquo;s no kate command. Oh right, because I&amp;rsquo;m in the macOS environment, of course there&amp;rsquo;s no kate! But this is a problem - am I restricted to only using vi to edit remote files? I see &lt;a href=&#34;https://www.youtube.com/@AsahiLina&#34; target=&#34;_blank&#34; &gt;Asahi Lina&lt;/a&gt; smoothly using Kate to open projects and files across multiple Mac machines around her to edit back and forth during development. There must be some way to make this work.&lt;/p&gt;</description>
     </item>
     <item>
       <title>gpg-agent doesn&#39;t work anyway!</title>
-      <link>https://thomjiji.github.io/blogs/2023/12/gpg-agent-does-not-work-anyway/</link>
+      <link>http://localhost:1313/blogs/2023/12/gpg-agent-does-not-work-anyway/</link>
       <pubDate>Sat, 02 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/blogs/2023/12/gpg-agent-does-not-work-anyway/</guid>
+      <guid>http://localhost:1313/blogs/2023/12/gpg-agent-does-not-work-anyway/</guid>
       <description>Solved by this command: gpg-connect-agent updatestartuptty /bye &amp;gt;/dev/null</description>
     </item>
     <item>
       <title>btrfs and btrbk</title>
-      <link>https://thomjiji.github.io/blogs/2023/12/btrfs-and-btrbk/</link>
+      <link>http://localhost:1313/blogs/2023/12/btrfs-and-btrbk/</link>
       <pubDate>Fri, 01 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/blogs/2023/12/btrfs-and-btrbk/</guid>
-      <description>/etc/btrbk/btrbk.conf config file:
-volume / snapshot_dir btrbk_snapshots subvolume home incremental strict Key points:
-volume /: &amp;ldquo;Base path within a btrfs filesystem containing the subvolumes to be backuped (usually the mount-point of a btrfs filesystem mounted with subvolid=5 option).&amp;rdquo; In this case, we use the existing root directory — which is already a btrfs filesystem (by default on Fedora). btrbk refer this / (next to volume) as &amp;ldquo;&amp;lt;volume-directory&amp;gt;&amp;rdquo;. snapshot_dir btrbk_snapshots: btrbk_snapshots is relative to the volume set above, which in this case the / (root directory).</description>
+      <guid>http://localhost:1313/blogs/2023/12/btrfs-and-btrbk/</guid>
+      <description>&lt;p&gt;&lt;code&gt;/etc/btrbk/btrbk.conf&lt;/code&gt; config file:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;volume /
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  snapshot_dir btrbk_snapshots
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  subvolume home
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  incremental strict
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Key points:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;volume /&lt;/code&gt;: &amp;ldquo;Base path within a btrfs filesystem containing the subvolumes to be backuped (usually the mount-point of a btrfs filesystem mounted with &lt;code&gt;subvolid=5&lt;/code&gt; option).&amp;rdquo; In this case, we use the existing root directory — which is already a btrfs filesystem (by default on Fedora). btrbk refer this &lt;code&gt;/&lt;/code&gt; (next to &lt;code&gt;volume&lt;/code&gt;) as &amp;ldquo;&amp;lt;volume-directory&amp;gt;&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;snapshot_dir btrbk_snapshots&lt;/code&gt;: &lt;code&gt;btrbk_snapshots&lt;/code&gt; is relative to the &lt;code&gt;volume&lt;/code&gt; set above, which in this case the &lt;code&gt;/&lt;/code&gt; (root directory). So the full path of &lt;code&gt;btrbk_snapshots&lt;/code&gt; will be &lt;code&gt;/btrbk_snapshots&lt;/code&gt;, which located just under the root directory. It&amp;rsquo;s like the &amp;ldquo;destination&amp;rdquo; of snapshots.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;subvolume home&lt;/code&gt;: &lt;code&gt;home&lt;/code&gt; is also relative to &lt;code&gt;/&lt;/code&gt; which set above. It&amp;rsquo;s the &amp;ldquo;source&amp;rdquo; of snapshots. There are also a &lt;code&gt;target&lt;/code&gt; field can be set: &lt;code&gt;target /mnt/btrbk_backup&lt;/code&gt;, but it&amp;rsquo;s optional. The &lt;code&gt;target&lt;/code&gt; is where the &amp;ldquo;backup&amp;rdquo; subvolumes to be created (refer to the man page of &lt;code&gt;btrbk.conf&lt;/code&gt; via &lt;code&gt;man btrbk.conf&lt;/code&gt;), while the &lt;code&gt;snapshot_dir&lt;/code&gt; is where &amp;ldquo;snapshot&amp;rdquo; to be stored.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;incremental strict&lt;/code&gt;: which means &amp;ldquo;non-incremental (initial) backups are never created&amp;rdquo; (&lt;code&gt;man btrbk.conf&lt;/code&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;What is snapshot?&lt;/p&gt;</description>
     </item>
     <item>
       <title>GPG key for SSH authentication</title>
-      <link>https://thomjiji.github.io/blogs/2023/11/gpg-for-ssh-authentication/</link>
+      <link>http://localhost:1313/blogs/2023/11/gpg-for-ssh-authentication/</link>
       <pubDate>Tue, 28 Nov 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/blogs/2023/11/gpg-for-ssh-authentication/</guid>
+      <guid>http://localhost:1313/blogs/2023/11/gpg-for-ssh-authentication/</guid>
       <description>Using GPG key for ssh authentication reduces the effort involved in managing SSH keys, which is the main reason I want to learn this technique. GPG key for all (not just one GPG key possibly).</description>
     </item>
     <item>
       <title>SSH notes</title>
-      <link>https://thomjiji.github.io/blogs/2023/11/ssh-notes/</link>
+      <link>http://localhost:1313/blogs/2023/11/ssh-notes/</link>
       <pubDate>Tue, 28 Nov 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/blogs/2023/11/ssh-notes/</guid>
-      <description>SSH 是一个我之前就想尝试使用的工具，当时只有对它的一个很简单的印象，就是可以通过它安全的访问另外一台电脑——的 Terminal。当然对它的具体</description>
+      <guid>http://localhost:1313/blogs/2023/11/ssh-notes/</guid>
+      <description>&lt;p&gt;SSH 是一个我之前就想尝试使用的工具，当时只有对它的一个很简单的印象，就是可以通过它安全的访问另外一台电脑——的 Terminal。当然对它的具体原理和运行逻辑肯定是不了解的，包括它是怎么个安全法。只知道哦我可以通过它访问到比如说，当我自己打开 Terminal 时候首先展示在我面前的那一堆东西，其实就是在 &lt;code&gt;$HOME&lt;/code&gt; directory 你输入比如 &lt;code&gt;ls -al&lt;/code&gt; 命令出现的各个 directory。只是我可以看到另一台设备的这一堆东西。那当时这个需求也是没有那么强烈，所以就还是暂时搁置没有了解。&lt;/p&gt;</description>
     </item>
     <item>
       <title>File size</title>
-      <link>https://thomjiji.github.io/blogs/2023/11/file-size/</link>
+      <link>http://localhost:1313/blogs/2023/11/file-size/</link>
       <pubDate>Wed, 01 Nov 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/blogs/2023/11/file-size/</guid>
-      <description>Notes du * 输出的其实不是我们通常理解上的文件大小，而是所谓 block size（block count 可能更准确）。而且，它显示的是 disk usage，也就是这个文件占了多大的硬盘容量，或者说文件系统实际分配了多少空间给到这个文件。而不是，这个文件，它本身有多大。这个区别比较关键，后面会有更多的说明。
-$ du * 5568	1-2-1_2frames_ap4h.mov 8040	1-2-1_2frames_ap4x.mov 3928	1-2-1_2frames_apch.mov 2152	1-2-1_2frames_apcn.mov 688	1-2-1_2frames_apco.mov 1592	1-2-1_2frames_apcs.mov 我们使用 exa 这个 ls 的替代，用 exa -lh -b -S 这个命令得到这样的输出：
-$ exa -lh -b -S Permissions Size Blocks User Date Modified Name .rw-r--r--@ 2.7Mi 5568 thom 27 Oct 17:32 1-2-1_2frames_ap4h.mov .rw-r--r--@ 3.9Mi 8040 thom 27 Oct 17:32 1-2-1_2frames_ap4x.mov .rw-r--r--@ 1.9Mi 3928 thom 27 Oct 17:32 1-2-1_2frames_apch.</description>
+      <guid>http://localhost:1313/blogs/2023/11/file-size/</guid>
+      <description>&lt;h2 id=&#34;notes&#34;&gt;Notes&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;du *&lt;/code&gt; 输出的其实不是我们通常理解上的文件大小，而是所谓 block size（block count 可能更准确）。而且，它显示的是 disk usage，也就是这个文件占了多大的硬盘容量，或者说文件系统实际分配了多少空间给到这个文件。而不是，这个文件，它本身有多大。这个区别比较关键，后面会有更多的说明。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ du *
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;5568	1-2-1_2frames_ap4h.mov
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;8040	1-2-1_2frames_ap4x.mov
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;3928	1-2-1_2frames_apch.mov
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;2152	1-2-1_2frames_apcn.mov
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;688		1-2-1_2frames_apco.mov
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;1592	1-2-1_2frames_apcs.mov
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;我们使用 &lt;a href=&#34;https://github.com/eza-community/eza&#34; target=&#34;_blank&#34; &gt;exa&lt;/a&gt; 这个 ls 的替代，用 &lt;code&gt;exa -lh -b -S&lt;/code&gt; 这个命令得到这样的输出：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ exa -lh -b -S
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Permissions  Size Blocks User Date Modified Name
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.rw-r--r--@ 2.7Mi   &lt;span style=&#34;color:#d19a66&#34;&gt;5568&lt;/span&gt; thom &lt;span style=&#34;color:#d19a66&#34;&gt;27&lt;/span&gt; Oct 17:32  1-2-1_2frames_ap4h.mov
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.rw-r--r--@ 3.9Mi   &lt;span style=&#34;color:#d19a66&#34;&gt;8040&lt;/span&gt; thom &lt;span style=&#34;color:#d19a66&#34;&gt;27&lt;/span&gt; Oct 17:32  1-2-1_2frames_ap4x.mov
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.rw-r--r--@ 1.9Mi   &lt;span style=&#34;color:#d19a66&#34;&gt;3928&lt;/span&gt; thom &lt;span style=&#34;color:#d19a66&#34;&gt;27&lt;/span&gt; Oct 17:32  1-2-1_2frames_apch.mov
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.rw-r--r--@ 1.0Mi   &lt;span style=&#34;color:#d19a66&#34;&gt;2152&lt;/span&gt; thom &lt;span style=&#34;color:#d19a66&#34;&gt;27&lt;/span&gt; Oct 17:32  1-2-1_2frames_apcn.mov
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.rw-r--r--@ 342Ki    &lt;span style=&#34;color:#d19a66&#34;&gt;688&lt;/span&gt; thom &lt;span style=&#34;color:#d19a66&#34;&gt;27&lt;/span&gt; Oct 17:32  1-2-1_2frames_apco.mov
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.rw-r--r--@ 793Ki   &lt;span style=&#34;color:#d19a66&#34;&gt;1592&lt;/span&gt; thom &lt;span style=&#34;color:#d19a66&#34;&gt;27&lt;/span&gt; Oct 17:32  1-2-1_2frames_apcs.mov
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-l&lt;/code&gt;: Display extended file metadata as a table.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-h&lt;/code&gt;: Add a header row to each column.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-b&lt;/code&gt;: List file sizes with binary prefixes. &lt;code&gt;--binary&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-S&lt;/code&gt;: List each file’s number of file system blocks.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;可以看到 Blocks 那一栏跟 &lt;code&gt;du *&lt;/code&gt; 的输出是一样的。&lt;code&gt;-S&lt;/code&gt; 的 flag 的作用也正是列出 file system blocks。&lt;/p&gt;</description>
     </item>
     <item>
       <title>C&#43;&#43; Preprocessor</title>
-      <link>https://thomjiji.github.io/blogs/2023/09/cpp-preprocessor/</link>
+      <link>http://localhost:1313/blogs/2023/09/cpp-preprocessor/</link>
       <pubDate>Thu, 21 Sep 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/blogs/2023/09/cpp-preprocessor/</guid>
-      <description>Excerpted from learncpp.com
-preprocessor .cpp file =&amp;gt; preprocessor: Make change to the text of the code file, but not actually to the original code file, rather temporarily in-memory or using temporary files. Uninteresting things: strip out comments, ensures each code file ends in a newline. One important role: process#include directives. =&amp;gt; What comes out of the preprocessor is called translation unit. The translation unit is then compiled by the compiler. The entire process of preprocessing, compiling and linking is called translation.</description>
+      <guid>http://localhost:1313/blogs/2023/09/cpp-preprocessor/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Excerpted from &lt;a href=&#34;https://www.learncpp.com/cpp-tutorial/introduction-to-the-preprocessor/&#34; target=&#34;_blank&#34; &gt;learncpp.com&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;preprocessor&#34;&gt;preprocessor&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;.cpp file =&amp;gt; preprocessor:
+&lt;ul&gt;
+&lt;li&gt;Make change to the text of the code file, but not actually to the original code file, rather temporarily in-memory
+or using temporary files.&lt;/li&gt;
+&lt;li&gt;Uninteresting things: strip out comments, ensures each code file ends in a newline.&lt;/li&gt;
+&lt;li&gt;One important role: &lt;strong&gt;process&lt;code&gt;#include&lt;/code&gt; directives&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;=&amp;gt; What comes out of the preprocessor is called &lt;strong&gt;translation unit&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;The translation unit is then compiled by the compiler.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The entire process of preprocessing, compiling and linking is called &lt;strong&gt;translation&lt;/strong&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Parse QuickTime File Format</title>
-      <link>https://thomjiji.github.io/blogs/2023/09/parse-quicktime/</link>
+      <link>http://localhost:1313/blogs/2023/09/parse-quicktime/</link>
       <pubDate>Mon, 18 Sep 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/blogs/2023/09/parse-quicktime/</guid>
-      <description>Apple Developer Documentation Storing and sharing media with QuickTime files Color parameter atom (&amp;lsquo;colr&amp;rsquo;) Uncompressed Y´CbCr Video in QuickTime Files — Documentation Archive Other resources Apple ProRes - MultiMedia Wiki QuickTime Tags - ExifTool MPEG-4 files - Atomic Parsley MP4RA - Official Registration Authority for the ISOBMFF family of standards Implementations/tools Implementations Language Notes metacolor.editor C# Simple Implementation, can only change NCLC tags. Provide GUI. qtff-parameter-editor C++ Good implementation, can only change NCLC tags.</description>
+      <guid>http://localhost:1313/blogs/2023/09/parse-quicktime/</guid>
+      <description>&lt;h3 id=&#34;apple-developer-documentation&#34;&gt;Apple Developer Documentation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://developer.apple.com/documentation/quicktime-file-format&#34; target=&#34;_blank&#34; &gt;Storing and sharing media with QuickTime files&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://developer.apple.com/documentation/quicktime-file-format/color_parameter_atom&#34; target=&#34;_blank&#34; &gt;Color parameter atom (&amp;lsquo;colr&amp;rsquo;)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://developer.apple.com/library/archive/technotes/tn2162/_index.html#//apple_ref/doc/uid/DTS40013070-CH1-TNTAG9&#34; target=&#34;_blank&#34; &gt;Uncompressed Y´CbCr Video in QuickTime Files&lt;/a&gt; — Documentation Archive&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;other-resources&#34;&gt;Other resources&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://wiki.multimedia.cx/index.php/Apple_ProRes&#34; target=&#34;_blank&#34; &gt;Apple ProRes - MultiMedia Wiki&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://exiftool.org/TagNames/QuickTime.html&#34; target=&#34;_blank&#34; &gt;QuickTime Tags - ExifTool&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://atomicparsley.sourceforge.net/mpeg-4files.html&#34; target=&#34;_blank&#34; &gt;MPEG-4 files - Atomic Parsley&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mp4ra.org/&#34; target=&#34;_blank&#34; &gt;MP4RA - Official Registration Authority for the ISOBMFF family of standards&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;implementationstools&#34;&gt;Implementations/tools&lt;/h3&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Implementations&lt;/th&gt;
+          &lt;th&gt;Language&lt;/th&gt;
+          &lt;th&gt;Notes&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;https://github.com/piersdeseilligny/metacolor.editor&#34; target=&#34;_blank&#34; &gt;metacolor.editor&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;C#&lt;/td&gt;
+          &lt;td&gt;Simple Implementation, can only change NCLC tags. Provide GUI.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;https://github.com/bbc/qtff-parameter-editor/tree/master&#34; target=&#34;_blank&#34; &gt;qtff-parameter-editor&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;C++&lt;/td&gt;
+          &lt;td&gt;Good implementation, can only change NCLC tags. CLI.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;https://mogurenko.com/&#34; target=&#34;_blank&#34; &gt;AMCDXVideoPatcherCLI&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;C++&lt;/td&gt;
+          &lt;td&gt;Close source. Can modify colr atom, add gama atom (but value of gamma can&amp;rsquo;t not be changed — seems a bug)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;https://github.com/da8eat/qtfile_pp&#34; target=&#34;_blank&#34; &gt;qtfile_pp&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;C++&lt;/td&gt;
+          &lt;td&gt;AMCDXVideoPatcherCLI 作者的开源 parser，想必 AMCDXVideoPatcherCLI 的具体实现能够从这里看出一些端倪&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;https://github.com/Stuff7/dryv&#34; target=&#34;_blank&#34; &gt;dryv&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Rust&lt;/td&gt;
+          &lt;td&gt;No docs&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;https://github.com/axiomatic-systems/Bento4&#34; target=&#34;_blank&#34; &gt;bento4&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;C++&lt;/td&gt;
+          &lt;td&gt;最完善&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;inspection-tools&#34;&gt;Inspection tools&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;hexdump -vC&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/wader/fq&#34; target=&#34;_blank&#34; &gt;fq&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gpac.github.io/mp4box.js/test/filereader.html&#34; target=&#34;_blank&#34; &gt;MP4Box.js&lt;/a&gt; - a file inspection tool&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/essential61/mp4analyser&#34; target=&#34;_blank&#34; &gt;mp4analyser&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;notes&#34;&gt;Notes&lt;/h3&gt;
+&lt;p&gt;这么些处理 atom (包括 NCLC tag) 的实现，都是用 C++ 写的。其实 Rust 也能做这些 low-level 的事情，对吗？只是这门语言比较新，暂时还没有人用它来做这个事而已。那么我能不能来做呢？用 Rust 写一个 parse MOV file format 的实现。其实已经有了：&lt;a href=&#34;https://github.com/Stuff7/dryv&#34; target=&#34;_blank&#34; &gt;dryv&lt;/a&gt;——这两天就在更新。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Machine Learning Glossary</title>
-      <link>https://thomjiji.github.io/blogs/2023/09/machine-learning-glossary/</link>
+      <link>http://localhost:1313/blogs/2023/09/machine-learning-glossary/</link>
       <pubDate>Thu, 07 Sep 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/blogs/2023/09/machine-learning-glossary/</guid>
-      <description>Reference Machine Learning Glossary - Google for Developers
-activation function A function that enables neural networks to learn non-linear (complex) relationships between features and the label. Popupar activation functions include:
-ReLU Sigmoid Tanh backpropagation The algorithm that implements gradient descent in neural networks.
-Training a neural network involves many iterations of the following two-pass cycle:
-During the forward pass, the system processes a batch of examples to yild prediction(s). The system compares each prediction to each label value.</description>
+      <guid>http://localhost:1313/blogs/2023/09/machine-learning-glossary/</guid>
+      <description>&lt;h2 id=&#34;reference&#34;&gt;Reference&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/machine-learning/glossary&#34; target=&#34;_blank&#34; &gt;Machine Learning Glossary - Google for
+Developers&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;activation-function&#34;&gt;activation function&lt;/h2&gt;
+&lt;p&gt;A function that enables neural networks to learn non-linear (complex) relationships
+between features and the label. Popupar activation functions include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ReLU&lt;/li&gt;
+&lt;li&gt;Sigmoid&lt;/li&gt;
+&lt;li&gt;Tanh&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;backpropagation&#34;&gt;backpropagation&lt;/h2&gt;
+&lt;p&gt;The algorithm that implements gradient descent in neural networks.&lt;/p&gt;
+&lt;p&gt;Training a neural network involves many iterations of the following two-pass cycle:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;During the &lt;strong&gt;forward pass&lt;/strong&gt;, the system processes a batch of examples to yild
+prediction(s). The system compares each prediction to each label value. The
+difference between the prediction and the lable value is the loss for that example.
+The system aggregates the losses for all the examples to compute the total loss for
+the current batch.&lt;/li&gt;
+&lt;li&gt;During the &lt;strong&gt;backward pass&lt;/strong&gt; (backpropagation), the system reduces loss by adjusting
+the weights of all the neurons in all the hidden layer(s).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Neural networks often contain many neurons across many hidden layers. Each of those
+neurons contribute to the overall loss in difference ways. Backpropagation determines
+whether to increase or decrease the weights applied to particular neurons.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Calculus Recap</title>
-      <link>https://thomjiji.github.io/blogs/2023/08/calculus-recap/</link>
+      <link>http://localhost:1313/blogs/2023/08/calculus-recap/</link>
       <pubDate>Wed, 30 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/blogs/2023/08/calculus-recap/</guid>
-      <description>Intermediate Value Theorem (IVT) If a function $f(x)$ is continuous on a closed interval $[a, b]$ and $k$ is any number between $f(a)$ and $f(b)$, then there is at least one number $c$ in the interval $[a, b]$ such that $f( c) = k$.
-The intermediate value theorem has two conditions:
-Function $f$ is continuous over the interval $[a, b]$. The value $d$ lies between $f(a)$ and $f(b)$ We must establish these two conditions to conclude that there is a value $c$ in the interval $[a, b]$ for which $g(x) = d$ (another way to phrase this conclusion is that the equation $g(x) = d$ has a solution where $a &amp;lt;= x &amp;lt;= b$).</description>
+      <guid>http://localhost:1313/blogs/2023/08/calculus-recap/</guid>
+      <description>&lt;h2 id=&#34;intermediate-value-theorem-ivt&#34;&gt;Intermediate Value Theorem (IVT)&lt;/h2&gt;
+&lt;p&gt;If a function $f(x)$ is continuous on a closed interval $[a, b]$ and $k$ is any number
+between $f(a)$ and $f(b)$, then there is at least one number $c$ in the interval
+$[a, b]$ such that $f( c) = k$.&lt;/p&gt;
+&lt;p&gt;The intermediate value theorem has two conditions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Function $f$ is continuous over the interval $[a, b]$.&lt;/li&gt;
+&lt;li&gt;The value $d$ lies between $f(a)$ and $f(b)$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We &lt;em&gt;must&lt;/em&gt; establish these two conditions to conclude that there is a value $c$ in
+the interval $[a, b]$ for which $g(x) = d$ (another way to phrase this conclusion is
+that the equation $g(x) = d$ has a solution where $a &amp;lt;= x &amp;lt;= b$).&lt;/p&gt;</description>
     </item>
     <item>
       <title>Give Up Vim</title>
-      <link>https://thomjiji.github.io/blogs/2023/07/give-up-vim/</link>
+      <link>http://localhost:1313/blogs/2023/07/give-up-vim/</link>
       <pubDate>Sun, 09 Jul 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/blogs/2023/07/give-up-vim/</guid>
-      <description>为什么从 Vim 切换回普通 Cursor Obsidian 用的就不是 Vim 模式。因为我需要在 Obsidian 输入中文，中文输入之下，Vim 完全是不可用的状态。我也不想去折腾怎么让 Vim 的模态切换在中文输入下也可用（应该是有这样的解决方案的）。
-其他地方，各种输入框：浏览器、Raycast、ChatGPT，包括网页的全局搜索框（Cmd+F），都不是工作在 Vim 的模式下（确实曾经也尝试过把浏览器也用 Vim keybind 来操作&amp;hellip;）。而在这些场景下使用普通的 Cursor 移动方式对我来说也已经非常熟练和习惯了。也觉得 Cmd ← 和 Cmd → 回到行首行尾和 Opt ←, Opt → （上一个词/下一个词）蛮好用的。
-我对在 Insert mode 和 Normal mode 之间切换感到疲倦。使用 Normal cursor 的话，就一个模式我想什么时候移动就什么时候移动。用 Vim 我还需要从 Insert mode 切换出来。而且我使用的退出 Insert mode 的 keybind 是 jk，而不是 Esc。之前觉得 Esc 在键盘的位置，还是会让手的 movement 太大。jk 直接就在 hjkl 下，手臂不需要移动，非常方便。但现在觉得 jk 都麻烦，尤其在模态之间切换频繁的话，一会儿就得 jk 来一下，非常繁琐——繁琐是因为模态的切换，而不是换个 keybind 就能解决的。所以我选择不要这些模态。
-在 PyCharm 的 Completion 之间选择 Candidates，有时需要上下移动选择那个我想要的。之前想把它们 bind 到 hjkl 上，但怎么都找不到办法，只有使用上下键。在 Vim 原教旨主义者看来很不 ok 是吧，但我当时忍了下来。现在想既然如此，为啥不直接全换到 Normal keybind。我知道是可以直接用 Emacs 的 keybind Ctrl n 和 Ctrl p 来上下选择，但。</description>
+      <guid>http://localhost:1313/blogs/2023/07/give-up-vim/</guid>
+      <description>&lt;h3 id=&#34;为什么从-vim-切换回普通-cursor&#34;&gt;为什么从 Vim 切换回普通 Cursor&lt;/h3&gt;
+&lt;p&gt;Obsidian 用的就不是 Vim 模式。因为我需要在 Obsidian 输入中文，中文输入之下，Vim 完全是不可用的状态。我也不想去折腾怎么让 Vim
+的模态切换在中文输入下也可用（应该是有这样的解决方案的）。&lt;/p&gt;
+&lt;p&gt;其他地方，各种输入框：浏览器、Raycast、ChatGPT，包括网页的全局搜索框（Cmd+F），都不是工作在 Vim 的模式下（确实曾经也尝试过把浏览器也用
+Vim keybind 来操作&amp;hellip;）。而在这些场景下使用普通的 Cursor 移动方式对我来说也已经非常熟练和习惯了。也觉得 &lt;code&gt;Cmd ←&lt;/code&gt; 和 &lt;code&gt;Cmd →&lt;/code&gt;
+回到行首行尾和 &lt;code&gt;Opt ←&lt;/code&gt;, &lt;code&gt;Opt →&lt;/code&gt; （上一个词/下一个词）蛮好用的。&lt;/p&gt;
+&lt;p&gt;我对在 Insert mode 和 Normal mode 之间切换感到疲倦。使用 Normal cursor 的话，就一个模式我想什么时候移动就什么时候移动。用
+Vim 我还需要从 Insert mode 切换出来。而且我使用的退出 Insert mode 的 keybind 是 &lt;code&gt;jk&lt;/code&gt;，而不是 &lt;code&gt;Esc&lt;/code&gt;。之前觉得 &lt;code&gt;Esc&lt;/code&gt;
+在键盘的位置，还是会让手的 movement 太大。&lt;code&gt;jk&lt;/code&gt; 直接就在 &lt;code&gt;hjkl&lt;/code&gt; 下，手臂不需要移动，非常方便。但现在觉得 &lt;code&gt;jk&lt;/code&gt;
+都麻烦，尤其在模态之间切换频繁的话，一会儿就得 &lt;code&gt;jk&lt;/code&gt; 来一下，非常繁琐——繁琐是因为模态的切换，而不是换个 keybind
+就能解决的。所以我选择不要这些模态。&lt;/p&gt;
+&lt;p&gt;在 PyCharm 的 Completion 之间选择 Candidates，有时需要上下移动选择那个我想要的。之前想把它们 bind 到 &lt;code&gt;hjkl&lt;/code&gt;
+上，但怎么都找不到办法，只有使用上下键。在 Vim 原教旨主义者看来很不 ok 是吧，但我当时忍了下来。现在想既然如此，为啥不直接全换到 Normal
+keybind。我知道是可以直接用 Emacs 的 keybind &lt;code&gt;Ctrl n&lt;/code&gt; 和 &lt;code&gt;Ctrl p&lt;/code&gt; 来上下选择，但。&lt;/p&gt;</description>
     </item>
     <item>
       <title>DEVONthink 上手</title>
-      <link>https://thomjiji.github.io/blogs/2023/03/devonthink-unboxing/</link>
+      <link>http://localhost:1313/blogs/2023/03/devonthink-unboxing/</link>
       <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/blogs/2023/03/devonthink-unboxing/</guid>
-      <description>我主要用 DEVONthink 来管理我的 PDF 文档。那事情最初呢，是因为我想找一个 PDF 阅读器。首先考虑的自然是 PDF Expert，然后是 Adobe Acrobat Reader。PDF Expert 我以前在 Mac 上试用过，功能很简单，就是一个纯粹的 PDF 阅读器，可以标注划线啥的，能满足我基本需要。但它是订阅制，每年 79.9 刀，也不便宜。况且我也不太喜欢订阅制。想着数码荔枝有没有代理 PDF Expert 在国内的销售？这样兴许能便宜好多。但没有。Adobe Acrobat Reader 呢，下载玩了一下，印象不怎么好。再加上我对 Adobe 的软件都不怎么喜欢，印象都不怎么好（Creative Cloud 那一大坨东西啊……看着就头疼），这个 Acrobat 也赶紧卸载了。
-那么回过来一想，PDF 阅读器，macOS 自带的不能用吗？我也试了下，作为正经的主力的 PDF 阅读器，我还是别为难自己了。人那个系统自带的 Preview 啊，苹果一贯的所谓简洁设计，我要用的功能找半天也找不到（还是没有？不知道）。我还是放自己一马吧。
-DEVONthink，这个软件呢，以前就有所耳闻。估计还是 2016、2017 年那会儿，刚入坑这数码生活的时候就有听说，终极的知识管理工具。后来在环环的开箱 ARRI Mini LF 的直播录像中，有看到他也在用 DEVONthink，在开 Mini LF 的一些文档什么的。那时觉得哎他有一个地方可以放所有的 PDF 文档，想查哪个文档直接来这找就行。我当时还没有，文档都是不知道放在哪里，Google Drive 也好，MEGA Sync 也好，或者 iCloud 也有。而且，重点是 DEVONthink 它自带有 PDF 阅读器啊。这个就正合我意了，于是这才冒出念头我要实际下载来试一下。
-Ok，下载安装了。这一大堆都是什么……噢看到有 Manual，还是一本…书？有提供 PDF 版本，EPUB 版本。这软件这么复杂的吗？当然我对这个复杂度也有预期，毕竟「终极知识管理工具」。那么先用起来吧。
-噢它是 Database 的概念。建一个 Database，所有的东西都存到这个 Database 里，存完后 Database 之外的副本就可以删掉了。然后 DEVONthink 软件在这个 Database 里做所有的扫描和索引，从而让你可以在里面全局搜索，不止搜文档名，搜索文档的内容都行。</description>
+      <guid>http://localhost:1313/blogs/2023/03/devonthink-unboxing/</guid>
+      <description>&lt;p&gt;我主要用 DEVONthink 来管理我的 PDF 文档。那事情最初呢，是因为我想找一个 PDF 阅读器。首先考虑的自然是 PDF Expert，然后是 Adobe Acrobat Reader。PDF Expert 我以前在 Mac 上试用过，功能很简单，就是一个纯粹的 PDF 阅读器，可以标注划线啥的，能满足我基本需要。但它是订阅制，每年 79.9 刀，也不便宜。况且我也不太喜欢订阅制。想着数码荔枝有没有代理 PDF Expert 在国内的销售？这样兴许能便宜好多。但没有。Adobe Acrobat Reader 呢，下载玩了一下，印象不怎么好。再加上我对 Adobe 的软件都不怎么喜欢，印象都不怎么好（Creative Cloud 那一大坨东西啊……看着就头疼），这个 Acrobat 也赶紧卸载了。&lt;/p&gt;
+&lt;p&gt;那么回过来一想，PDF 阅读器，macOS 自带的不能用吗？我也试了下，作为正经的主力的 PDF 阅读器，我还是别为难自己了。人那个系统自带的 Preview 啊，苹果一贯的所谓简洁设计，我要用的功能找半天也找不到（还是没有？不知道）。我还是放自己一马吧。&lt;/p&gt;
+&lt;p&gt;DEVONthink，这个软件呢，以前就有所耳闻。估计还是 2016、2017 年那会儿，刚入坑这数码生活的时候就有听说，终极的知识管理工具。后来在&lt;a href=&#34;https://space.bilibili.com/845032&#34; target=&#34;_blank&#34; &gt;环环&lt;/a&gt;的开箱 ARRI Mini LF 的&lt;a href=&#34;https://www.bilibili.com/video/BV19Z4y1x7Ez/&#34; target=&#34;_blank&#34; &gt;直播录像&lt;/a&gt;中，有看到他也在用 DEVONthink，在开 Mini LF 的一些文档什么的。那时觉得哎他有一个地方可以放所有的 PDF 文档，想查哪个文档直接来这找就行。我当时还没有，文档都是不知道放在哪里，Google Drive 也好，MEGA Sync 也好，或者 iCloud 也有。而且，重点是 DEVONthink 它自带有 PDF 阅读器啊。这个就正合我意了，于是这才冒出念头我要实际下载来试一下。&lt;/p&gt;
+&lt;p&gt;Ok，下载安装了。这一大堆都是什么……噢看到有 Manual，还是一本…书？有提供 PDF 版本，EPUB 版本。这软件这么复杂的吗？当然我对这个复杂度也有预期，毕竟「终极知识管理工具」。那么先用起来吧。&lt;/p&gt;
+&lt;p&gt;噢它是 Database 的概念。建一个 Database，所有的东西都存到这个 Database 里，存完后 Database 之外的副本就可以删掉了。然后 DEVONthink 软件在这个 Database 里做所有的扫描和索引，从而让你可以在里面全局搜索，不止搜文档名，搜索文档的内容都行。&lt;/p&gt;</description>
     </item>
     <item>
       <title>ICC Profile</title>
-      <link>https://thomjiji.github.io/blogs/2023/03/icc-profile/</link>
+      <link>http://localhost:1313/blogs/2023/03/icc-profile/</link>
       <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/blogs/2023/03/icc-profile/</guid>
-      <description>对普通显示器校色的时候，很难不碰到 ICC profile 这个东西。我们都知道这个名词，显示器的 ICC 文件，或许模糊的对它有一些概念。但它究竟是什么？原理如何。
-ICC profile 跟我们已经有很明确概念的 ACES，或者更广泛一些地讲：「现代的色彩管理流程」，是很相似的 idea。都有一个处于整个链路中间的非常大的色彩空间，大到足以容纳所有不同的输入、显示和输出设备的各种色域（sRGB、AdobeRGB、Rec.709 等等）1。这个色彩空间在 ICC 这个概念下叫作 PCS（Profile Connection Space）。ICC profile 通过定义设备源或目标色彩空间与 PCS 之间的映射来描述特定设备的色彩属性2。
-ICC 本身并不进行任何校准，它们只包含显示器关于色彩成像能力的数据。这些数据用于帮助可以识别 ICC profile 的软件（我们叫它 ICC aware 的软件）通过 CMM（色彩管理模块）对图像进行调整，以尝试纠正显示器的色偏来进行校准。ICC profile 完成的实际上是对图像的调整，而不是对显示器的校正。不同的软件使用不同的 CMM 的话，即使都采用同一个 ICC，最终出来的结果也可能不一样。
-ICC Profile - IBM&amp;#160;&amp;#x21a9;&amp;#xfe0e;
-ICC profile - Wikipedia&amp;#160;&amp;#x21a9;&amp;#xfe0e;</description>
+      <guid>http://localhost:1313/blogs/2023/03/icc-profile/</guid>
+      <description>&lt;p&gt;对普通显示器校色的时候，很难不碰到 &lt;a href=&#34;https://www.google.com/search?q=ICC%20profile&#34; target=&#34;_blank&#34; &gt;ICC profile&lt;/a&gt; 这个东西。我们都知道这个名词，显示器的 ICC 文件，或许模糊的对它有一些概念。但它究竟是什么？原理如何。&lt;/p&gt;
+&lt;p&gt;ICC profile 跟我们已经有很明确概念的 ACES，或者更广泛一些地讲：「现代的色彩管理流程」，是很相似的 idea。都有一个处于整个链路中间的非常大的色彩空间，大到足以容纳所有不同的输入、显示和输出设备的各种色域（sRGB、AdobeRGB、Rec.709 等等）&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。这个色彩空间在 ICC 这个概念下叫作 PCS（Profile Connection Space）。ICC profile 通过定义设备源或目标色彩空间与 PCS 之间的&lt;strong&gt;映射&lt;/strong&gt;来描述特定设备的色彩属性&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
+&lt;p&gt;ICC 本身并不进行任何校准，它们只包含显示器关于色彩成像能力的数据。这些数据用于帮助可以识别 ICC profile 的软件（我们叫它 ICC aware 的软件）通过 CMM（色彩管理模块）对图像进行调整，以尝试纠正显示器的色偏来进行校准。ICC profile 完成的实际上是对&lt;strong&gt;图像的调整&lt;/strong&gt;，而不是对显示器的校正。不同的软件使用不同的 CMM 的话，即使都采用同一个 ICC，最终出来的结果也可能不一样。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.ibm.com/docs/en/i/7.4?topic=management-icc-profiles&#34; target=&#34;_blank&#34; &gt;ICC Profile&lt;/a&gt; - IBM&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/ICC_profile&#34; target=&#34;_blank&#34; &gt;ICC profile&lt;/a&gt; - Wikipedia&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
     </item>
     <item>
       <title>VCGT Tag</title>
-      <link>https://thomjiji.github.io/blogs/2023/03/vcgt-tag/</link>
+      <link>http://localhost:1313/blogs/2023/03/vcgt-tag/</link>
       <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/blogs/2023/03/vcgt-tag/</guid>
-      <description>之前我们知道，DisplayCAL 这种校色软件的工作原理：它会生成一个配置文件，在系统里加载，实际作用到显卡的输出信号上。更细节一点则是：
-DisplayCAL 生成的 ICC 配置文件中会包含一个叫作 VCGT（Video Card Gamma Table）的 tag，它实际是一个 1D LUT，包含对显示器的灰阶或白点的校正。然后操作系统需要把这个 VCGT Tag 加载到显卡输出信号上的有一个 Look Up Table 上，从而实现对显卡输出信号的校正。同时显卡的这个 Look Up Table 也是有精度限制的。
-具体在使用 DisplayCAL 的时候，右键桌面右下角 DisplayCAL 的图标，就会看到有一个 Reset video card gamma table 的东西。在系统加载了 DisplayCAL 生成的 profile 的情况下，这时点一下 Reset video card gamma table 会发现整个桌面的反差，或者说 Gamma、灰阶变了，它把对于显卡的校正给重置掉了，回到了最初的状态。
-再者就是我们还可以在 DisplayCAL 的 Tone curve 的设置中看到：如果不把 Tone curve 设为 “As measured” 的话，比如手动设为 Gamma 2.2。那 DisplayCAL 会做这么一件事情：在校准过程中，会通过一个 1D LUT 来校准（中和、补偿）显示器本身与这条纯粹的、Gamma 为 2.2 的指数曲线不相符的地方。如果设为 “As measured” 的话，则显示器的 grey scale 是怎么样就是怎么样，不做任何的校准和调整。</description>
+      <guid>http://localhost:1313/blogs/2023/03/vcgt-tag/</guid>
+      <description>&lt;p&gt;之前我们知道，DisplayCAL 这种校色软件的工作原理：它会生成一个配置文件，在系统里加载，实际作用到显卡的输出信号上。更细节一点则是：&lt;/p&gt;
+&lt;p&gt;DisplayCAL 生成的 ICC 配置文件中会包含一个叫作 VCGT（Video Card Gamma Table）的 tag，它实际是一个 1D LUT，包含对显示器的灰阶或白点的校正。然后操作系统需要把这个 VCGT Tag 加载到显卡输出信号上的有一个 Look Up Table 上，从而实现对显卡输出信号的校正。同时显卡的这个 Look Up Table 也是有精度限制的。&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;vcgt_in_icc&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/blogs/2023/03/vcgt-tag/image/img1_vcgt_in_icc.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;具体在使用 DisplayCAL 的时候，右键桌面右下角 DisplayCAL 的图标，就会看到有一个 Reset video card gamma table 的东西。在系统加载了 DisplayCAL 生成的 profile 的情况下，这时点一下 Reset video card gamma table 会发现整个桌面的反差，或者说 Gamma、灰阶变了，它把对于显卡的校正给重置掉了，回到了最初的状态。&lt;/p&gt;
+&lt;p&gt;再者就是我们还可以在 DisplayCAL 的 Tone curve 的设置中看到：如果不把 Tone curve 设为 “As measured” 的话，比如手动设为 Gamma 2.2。那 DisplayCAL 会做这么一件事情：在校准过程中，会通过一个 1D LUT 来校准（中和、补偿）显示器本身与这条纯粹的、Gamma 为 2.2 的指数曲线不相符的地方。如果设为 “As measured” 的话，则显示器的 grey scale 是怎么样就是怎么样，不做任何的校准和调整。&lt;/p&gt;</description>
     </item>
     <item>
       <title>为什么使用上屏卡</title>
-      <link>https://thomjiji.github.io/blogs/2023/03/why-do-we-need-video-card/</link>
+      <link>http://localhost:1313/blogs/2023/03/why-do-we-need-video-card/</link>
       <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/blogs/2023/03/why-do-we-need-video-card/</guid>
-      <description>做高端校色软件 ColourSpace 的 LightIllusion 有篇文章 What&amp;rsquo;s wrong with ICCs? 指出了 ICC profile 的一些问题。
-总的来说，ICC profile 能 work 的前提是软件本身支持它，软件是否是 ICC aware。通常来说 ICC aware 的软件有一个 CMM 色彩管理模块（Color Management Module）能够正确识别我们生成的 ICC profile，然后能够对图像做调整以达到「准确」的结果，实现校色的目的。先不说 ICC 这种方式本质上是对图像的调整，而不是对显示器本身的校正（后者是更好的方式，所谓硬件校准就是如此）。即使软件具有 CMM，准确度和性能还得看各个软件自身的优化。这就变成一件非常麻烦和复杂的事情。那些不是 ICC aware 的软件，看到的就做一个完全未经校准的画面。
-那对于 Adobe 全家桶来说，像 Ps、Lr 这种平面设计软件，它们是有 CMM 模块，叫作 ACE（Adobe Color Engine）。就是能够识别图像自带的 ICC profile，将其转换到 Ps 的工作色彩空间。那对于 Pr 来说，它也有被他们称为 DCM（Display Color Management）的东西，作为 Pr 内在的色彩管理方式，也是利用系统的 ICC profile 来进行工作的。
-DCM uses the ICC profile for your monitor to apply a colorimetric conversion from the sequence working color space (or media color space in the case of the source monitor) to the monitor color space.</description>
+      <guid>http://localhost:1313/blogs/2023/03/why-do-we-need-video-card/</guid>
+      <description>&lt;p&gt;做高端校色软件 ColourSpace 的 LightIllusion 有篇文章 &lt;a href=&#34;https://www.lightillusion.com/what_is_wrong_with_iccs.html&#34; target=&#34;_blank&#34; &gt;What&amp;rsquo;s wrong with ICCs?&lt;/a&gt; 指出了 ICC profile 的一些问题。&lt;/p&gt;
+&lt;p&gt;总的来说，ICC profile 能 work 的前提是软件本身支持它，软件是否是 ICC aware。通常来说 ICC aware 的软件有一个 CMM 色彩管理模块（Color Management Module）能够正确识别我们生成的 ICC profile，然后能够对图像做调整以达到「准确」的结果，实现校色的目的。先不说 ICC 这种方式本质上是对图像的调整，而不是对显示器本身的校正（后者是更好的方式，所谓硬件校准就是如此）。即使软件具有 CMM，准确度和性能还得看各个软件自身的优化。这就变成一件非常麻烦和复杂的事情。那些不是 ICC aware 的软件，看到的就做一个完全未经校准的画面。&lt;/p&gt;
+&lt;p&gt;那对于 Adobe 全家桶来说，像 Ps、Lr 这种平面设计软件，它们是有 CMM 模块，叫作 ACE（Adobe Color Engine）。就是能够识别图像自带的 ICC profile，将其转换到 Ps 的工作色彩空间。那对于 Pr 来说，它也有被他们称为 DCM（Display Color Management）的东西，作为 Pr 内在的色彩管理方式，也是利用系统的 ICC profile 来进行工作的。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;DCM uses the ICC profile for your monitor to apply a colorimetric conversion from the sequence working color space (or media color space in the case of the source monitor) to the monitor color space. The profile is specified by the operating system. We generally recommended using the default profile that the system choses for your display. If your monitor has been professionally calibrated, use that profile. The default profile may have the name of your monitor or something generic like “Color LCD”. Using the specified display profile will ensure predictable colors across the system and in other apps like web browsers and email. DCM requires GPU Acceleration. GPU acceleration can be configured in Project Settings &amp;gt; General &amp;gt; Video Rendering and Playback. &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>显示器校色笔记</title>
-      <link>https://thomjiji.github.io/blogs/2023/02/monitor-calibration-notes/</link>
+      <link>http://localhost:1313/blogs/2023/02/monitor-calibration-notes/</link>
       <pubDate>Wed, 15 Feb 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/blogs/2023/02/monitor-calibration-notes/</guid>
-      <description>DisplayCAL 官网 User Guide 在对显示器校色之前，必须预热至少 30 分钟。这一点在我最近的校准过程中可以明确体会到，比如：在调整显示器自身的 RGB 输出时，当你把红绿蓝三个通道终于调到一条线上之后，这时亮度不达标了。调节显示器的亮度以达到目标值，比如 100 nits 之后，RGB 那三个值又不在一条线上了。一方面跟显示器的素质有关，不能保证在亮度增减的同时保持 RGB 三个值的输出一致。另一方面也跟显示器预热有关，没到 30 分钟状态还不稳定。
-显示器校准的基本概念：Calibration 和 Profiling/Characterization。在使用 DisplayCAL 进行校准的时候，第一步就是通过显示器自身的调节按钮，比如显示器的 RGB 三通道值的输出，来与事先定义好的目标值匹配。调节显示器的亮度按钮使其达到比如 100 尼特；在色温选项里使用用户自定义的方式来调节 RGB 输出，使其达到比如 6500K 的色温（CCT）。这一步我们粗略的称之为校准 Calibration，需要人手动去调的。而第二步是软件自动实现的过程，叫做 Profiling，就是它会在屏幕上生成一系列色块，测量这些色块的值，与标准值进行匹配，然后生成一个 Profile (e.g. ICC profile) 给我们最终加载到系统上。Profiling 实际上并不改变颜色，它描述的是该显示器对各种颜色的响应，通常存储在一个 ICC 配置文件中。
-Characterization (or profiling) is recording the way a device reproduces or responds to color. Typically the result is stored in a device ICC profile. Such a profile does not in itself modify color in any way.</description>
+      <guid>http://localhost:1313/blogs/2023/02/monitor-calibration-notes/</guid>
+      <description>&lt;h2 id=&#34;displaycal-官网-user-guide&#34;&gt;DisplayCAL 官网 User Guide&lt;/h2&gt;
+&lt;p&gt;在对显示器校色之前，必须预热至少 30 分钟。这一点在我最近的校准过程中可以明确体会到，比如：在调整显示器自身的 RGB 输出时，当你把红绿蓝三个通道终于调到一条线上之后，这时亮度不达标了。调节显示器的亮度以达到目标值，比如 100 nits 之后，RGB 那三个值又不在一条线上了。一方面跟显示器的素质有关，不能保证在亮度增减的同时保持 RGB 三个值的输出一致。另一方面也跟显示器预热有关，没到 30 分钟状态还不稳定。&lt;/p&gt;
+&lt;p&gt;显示器校准的基本概念：Calibration 和 Profiling/Characterization。在使用 DisplayCAL 进行校准的时候，第一步就是通过显示器自身的调节按钮，比如显示器的 RGB 三通道值的输出，来与事先定义好的目标值匹配。调节显示器的亮度按钮使其达到比如 100 尼特；在色温选项里使用用户自定义的方式来调节 RGB 输出，使其达到比如 6500K 的色温（CCT）。这一步我们粗略的称之为校准 Calibration，需要人手动去调的。而第二步是软件自动实现的过程，叫做 Profiling，就是它会在屏幕上生成一系列色块，测量这些色块的值，与标准值进行匹配，然后生成一个 Profile (e.g. ICC profile) 给我们最终加载到系统上。&lt;strong&gt;Profiling 实际上并不改变颜色&lt;/strong&gt;，它描述的是该显示器对各种颜色的响应，通常存储在一个 ICC 配置文件中。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Characterization (or profiling) is recording the way a device reproduces or responds to color. Typically the result is stored in a device ICC profile. Such a profile does not in itself modify color in any way. What it does is allow a system such as a CMM (Color Management Module) or color aware application to modify color when combined with another device profile. Only by knowing the characteristics of two devices or colorspaces, can a way of transferring color from one device representation to another be achieved.&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>mp4muxer &amp; mp4demuxer Basic Usage</title>
-      <link>https://thomjiji.github.io/blogs/2023/01/mp4muxer-mp4demuxer-basic-usage/</link>
+      <link>http://localhost:1313/blogs/2023/01/mp4muxer-mp4demuxer-basic-usage/</link>
       <pubDate>Sun, 29 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/blogs/2023/01/mp4muxer-mp4demuxer-basic-usage/</guid>
-      <description>Installation mp4muxer mp4demuxer Commands 将 MP4 的音视频分离（脱壳 Demux）： mp4demuxer --input-file input.mp4 --output-folder ~/Output 合并杜比视界 Profile 8.4 和杜比全景声双音轨： mp4muxer \ -i input.h265 \ --input-video-frame-rate 25 \ --hvc1flag 0 \ --dv-bl-compatible-id 4 \ -i Stereo.aac \ -i Atmos.ec3 \ -o DolbyVision_DolbyAtmos.mp4 合并 SDR 视频和杜比全景声双音轨: mp4muxer \ -i input.h264 \ --input-video-frame-rate 25 \ -i Stereo.aac \ -i Atmos.ec3 \ -o SDR_DolbyAtmos.mp4 </description>
+      <guid>http://localhost:1313/blogs/2023/01/mp4muxer-mp4demuxer-basic-usage/</guid>
+      <description>&lt;h2 id=&#34;installation&#34;&gt;&lt;strong&gt;Installation&lt;/strong&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/DolbyLaboratories/dlb_mp4base&#34; target=&#34;_blank&#34; &gt;mp4muxer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/DolbyLaboratories/dlb_mp4demux&#34; target=&#34;_blank&#34; &gt;mp4demuxer&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;commands&#34;&gt;Commands&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;将 MP4 的音视频分离（脱壳 Demux）：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mp4demuxer --input-file input.mp4 --output-folder ~/Output
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;合并杜比视界 Profile 8.4 和杜比全景声双音轨：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mp4muxer &lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;&lt;/span&gt;    -i input.h265 &lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;&lt;/span&gt;    --input-video-frame-rate &lt;span style=&#34;color:#d19a66&#34;&gt;25&lt;/span&gt; &lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;&lt;/span&gt;    --hvc1flag &lt;span style=&#34;color:#d19a66&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;&lt;/span&gt;    --dv-bl-compatible-id &lt;span style=&#34;color:#d19a66&#34;&gt;4&lt;/span&gt; &lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;&lt;/span&gt;    -i Stereo.aac &lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;&lt;/span&gt;    -i Atmos.ec3 &lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;&lt;/span&gt;    -o DolbyVision_DolbyAtmos.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;合并 SDR 视频和杜比全景声双音轨:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mp4muxer &lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;&lt;/span&gt;    -i input.h264 &lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;&lt;/span&gt;    --input-video-frame-rate &lt;span style=&#34;color:#d19a66&#34;&gt;25&lt;/span&gt; &lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;&lt;/span&gt;    -i Stereo.aac &lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;&lt;/span&gt;    -i Atmos.ec3 &lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#d26464;font-weight:bold&#34;&gt;&lt;/span&gt;    -o SDR_DolbyAtmos.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     <item>
       <title>Daylight 添加 ARRI Look Library &amp; ALF-2 v5 DRT Family</title>
-      <link>https://thomjiji.github.io/blogs/2023/01/daylight-add-arri-look-library/</link>
+      <link>http://localhost:1313/blogs/2023/01/daylight-add-arri-look-library/</link>
       <pubDate>Sat, 28 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/blogs/2023/01/daylight-add-arri-look-library/</guid>
-      <description>操作步骤 将 ARRI Look Library 的 zip 解压，把里面的多个 cub 和 fllook 文件平摊到这个路径：/Library/Application Support/FilmLight/looks 将 ALF-2 v5 DRT Family 的 zip 解压，把里面的 cub 和 fltransform 平摊在这个路径：/Library/Application Support/FilmLight/etc/colourspaces 打开 Daylight，完成。 Reference ARRI Colour Workflow in Baselight ACES and Baselight ARRI Look Library and ALF-2 v5 DRT Family Download </description>
+      <guid>http://localhost:1313/blogs/2023/01/daylight-add-arri-look-library/</guid>
+      <description>&lt;h2 id=&#34;操作步骤&#34;&gt;操作步骤&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;将 ARRI Look Library 的 zip 解压，把里面的多个 &lt;code&gt;cub&lt;/code&gt; 和 &lt;code&gt;fllook&lt;/code&gt; 文件平摊到这个路径：&lt;code&gt;/Library/Application Support/FilmLight/looks&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;将 ALF-2 v5 DRT Family 的 zip 解压，把里面的 &lt;code&gt;cub&lt;/code&gt; 和 &lt;code&gt;fltransform&lt;/code&gt; 平摊在这个路径：&lt;code&gt;/Library/Application Support/FilmLight/etc/colourspaces&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;打开 Daylight，完成。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;reference&#34;&gt;Reference&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=EGmSWRJkCt0&amp;amp;t=343s&#34; target=&#34;_blank&#34; &gt;ARRI Colour Workflow in Baselight&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=QTwWS8hluJk&amp;amp;t=730s&#34; target=&#34;_blank&#34; &gt;ACES and Baselight&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.filmlight.ltd.uk/support/customer-login/colourspaces/colourspaces.php&#34; target=&#34;_blank&#34; &gt;ARRI Look Library and ALF-2 v5 DRT Family Download&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
     </item>
     <item>
       <title>High Quality H.264 Render in Baselight</title>
-      <link>https://thomjiji.github.io/blogs/2022/12/hight-quality-h264-render-in-baselight/</link>
+      <link>http://localhost:1313/blogs/2022/12/hight-quality-h264-render-in-baselight/</link>
       <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/blogs/2022/12/hight-quality-h264-render-in-baselight/</guid>
-      <description> Params Start at 39:56, Daniele introduced the method for rendering high quality H.264 in Baselight. Here is the key parameters:
-Rate Control: CRF based VBR Quantizer: Nominal Quantizer parameter: 18 Quantizer parameter: 18 </description>
+      <guid>http://localhost:1313/blogs/2022/12/hight-quality-h264-render-in-baselight/</guid>
+      <description>&lt;div
+          style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+        &lt;iframe
+          src=&#34;https://player.vimeo.com/video/426967364?dnt=0&#34;
+            style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allow=&#34;fullscreen&#34; loading=&#34;eager&#34; title=&#34;Vimeo video&#34;&gt;
+        &lt;/iframe&gt;
+      &lt;/div&gt;
+
+&lt;h2 id=&#34;params&#34;&gt;Params&lt;/h2&gt;
+&lt;p&gt;Start at &lt;a href=&#34;https://vimeo.com/426967364#t=2396s&#34; target=&#34;_blank&#34; &gt;39:56&lt;/a&gt;, Daniele introduced the method for
+rendering high quality H.264 in Baselight. Here is the key parameters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Rate Control: CRF based VBR&lt;/li&gt;
+&lt;li&gt;Quantizer:
+&lt;ul&gt;
+&lt;li&gt;Nominal Quantizer parameter: 18&lt;/li&gt;
+&lt;li&gt;Quantizer parameter: 18&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
   </channel>
 </rss>

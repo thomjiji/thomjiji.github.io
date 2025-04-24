@@ -1,33 +1,34 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>SSH on thomjiji</title>
-    <link>https://thomjiji.github.io/tags/ssh/</link>
-    <description>Recent content in SSH on thomjiji</description>
-    <generator>Hugo -- 0.119.0</generator>
+    <title>Ssh on thomjiji</title>
+    <link>http://localhost:1313/tags/ssh/</link>
+    <description>Recent content in Ssh on thomjiji</description>
+    <generator>Hugo -- 0.146.7</generator>
     <language>en-US</language>
     <lastBuildDate>Sun, 03 Dec 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://thomjiji.github.io/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>sshfs</title>
-      <link>https://thomjiji.github.io/blogs/2023/12/sshfs/</link>
+      <link>http://localhost:1313/blogs/2023/12/sshfs/</link>
       <pubDate>Sun, 03 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/blogs/2023/12/sshfs/</guid>
-      <description>How to mount remote machine&amp;rsquo;s directory on current host? This question originally came up when I wanted to use Kate to edit a configuration file on macOS. I normally ssh into macOS, cd to that directory, and then type kate &amp;lt;file&amp;gt; to try opening the file for editing. But huh? There&amp;rsquo;s no kate command. Oh right, because I&amp;rsquo;m in the macOS environment, of course there&amp;rsquo;s no kate! But this is a problem - am I restricted to only using vi to edit remote files?</description>
+      <guid>http://localhost:1313/blogs/2023/12/sshfs/</guid>
+      <description>&lt;h3 id=&#34;how-to-mount-remote-machines-directory-on-current-host&#34;&gt;How to mount remote machine&amp;rsquo;s directory on current host?&lt;/h3&gt;
+&lt;p&gt;This question originally came up when I wanted to use Kate to edit a configuration file on macOS. I normally ssh into macOS, cd to that directory, and then type &lt;code&gt;kate &amp;lt;file&amp;gt;&lt;/code&gt; to try opening the file for editing. But huh? There&amp;rsquo;s no kate command. Oh right, because I&amp;rsquo;m in the macOS environment, of course there&amp;rsquo;s no kate! But this is a problem - am I restricted to only using vi to edit remote files? I see &lt;a href=&#34;https://www.youtube.com/@AsahiLina&#34; target=&#34;_blank&#34; &gt;Asahi Lina&lt;/a&gt; smoothly using Kate to open projects and files across multiple Mac machines around her to edit back and forth during development. There must be some way to make this work.&lt;/p&gt;</description>
     </item>
     <item>
       <title>gpg-agent doesn&#39;t work anyway!</title>
-      <link>https://thomjiji.github.io/blogs/2023/12/gpg-agent-does-not-work-anyway/</link>
+      <link>http://localhost:1313/blogs/2023/12/gpg-agent-does-not-work-anyway/</link>
       <pubDate>Sat, 02 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/blogs/2023/12/gpg-agent-does-not-work-anyway/</guid>
+      <guid>http://localhost:1313/blogs/2023/12/gpg-agent-does-not-work-anyway/</guid>
       <description>Solved by this command: gpg-connect-agent updatestartuptty /bye &amp;gt;/dev/null</description>
     </item>
     <item>
       <title>SSH notes</title>
-      <link>https://thomjiji.github.io/blogs/2023/11/ssh-notes/</link>
+      <link>http://localhost:1313/blogs/2023/11/ssh-notes/</link>
       <pubDate>Tue, 28 Nov 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/blogs/2023/11/ssh-notes/</guid>
-      <description>SSH 是一个我之前就想尝试使用的工具，当时只有对它的一个很简单的印象，就是可以通过它安全的访问另外一台电脑——的 Terminal。当然对它的具体</description>
+      <guid>http://localhost:1313/blogs/2023/11/ssh-notes/</guid>
+      <description>&lt;p&gt;SSH 是一个我之前就想尝试使用的工具，当时只有对它的一个很简单的印象，就是可以通过它安全的访问另外一台电脑——的 Terminal。当然对它的具体原理和运行逻辑肯定是不了解的，包括它是怎么个安全法。只知道哦我可以通过它访问到比如说，当我自己打开 Terminal 时候首先展示在我面前的那一堆东西，其实就是在 &lt;code&gt;$HOME&lt;/code&gt; directory 你输入比如 &lt;code&gt;ls -al&lt;/code&gt; 命令出现的各个 directory。只是我可以看到另一台设备的这一堆东西。那当时这个需求也是没有那么强烈，所以就还是暂时搁置没有了解。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

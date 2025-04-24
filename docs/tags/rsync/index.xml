@@ -1,21 +1,34 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>rsync on thomjiji</title>
-    <link>https://thomjiji.github.io/tags/rsync/</link>
-    <description>Recent content in rsync on thomjiji</description>
-    <generator>Hugo -- 0.119.0</generator>
+    <title>Rsync on thomjiji</title>
+    <link>http://localhost:1313/tags/rsync/</link>
+    <description>Recent content in Rsync on thomjiji</description>
+    <generator>Hugo -- 0.146.7</generator>
     <language>en-US</language>
     <lastBuildDate>Tue, 25 Jun 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://thomjiji.github.io/tags/rsync/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/rsync/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Create dummy directories using Rsync</title>
-      <link>https://thomjiji.github.io/blogs/2024/06/create-dummy-directories-using-rsync/</link>
+      <link>http://localhost:1313/blogs/2024/06/create-dummy-directories-using-rsync/</link>
       <pubDate>Tue, 25 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/blogs/2024/06/create-dummy-directories-using-rsync/</guid>
-      <description>Use rsync to create dummy dirs:
-rsync -avPih --include &amp;#39;*/&amp;#39; --exclude &amp;#39;*&amp;#39; videos/ ~/Desktop/videos-dummy/ Here’s a breakdown of the command:
--avPih: These flags stand for: -a: Archive mode, which preserves permissions, timestamps, symbolic links, etc. -v: Verbose, which provides detailed output. -P: Combines &amp;ndash;progress and &amp;ndash;partial, showing progress during transfer and allowing for partial transfers to be resumed. -i: Output a change-summary for all updates. -h: Output numbers in a human-readable format.</description>
+      <guid>http://localhost:1313/blogs/2024/06/create-dummy-directories-using-rsync/</guid>
+      <description>&lt;p&gt;Use &lt;code&gt;rsync&lt;/code&gt; to create dummy dirs:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rsync -avPih --include &amp;#39;*/&amp;#39; --exclude &amp;#39;*&amp;#39; videos/ ~/Desktop/videos-dummy/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Here’s a breakdown of the command:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-avPih&lt;/code&gt;: These flags stand for:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-a&lt;/code&gt;: Archive mode, which preserves permissions, timestamps, symbolic links, etc.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-v&lt;/code&gt;: Verbose, which provides detailed output.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-P&lt;/code&gt;: Combines &amp;ndash;progress and &amp;ndash;partial, showing progress during transfer and allowing for partial transfers to be resumed.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-i&lt;/code&gt;: Output a change-summary for all updates.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-h&lt;/code&gt;: Output numbers in a human-readable format.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--include &#39;*/&#39;&lt;/code&gt;: Includes all directories (and subdirectories) in the transfer.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--exclude &#39;*&#39;&lt;/code&gt;: Excludes all files.&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
   </channel>
 </rss>
