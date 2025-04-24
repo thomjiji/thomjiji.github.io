@@ -1,7 +1,7 @@
 ---
 title: "About me"
 layout: "about/"
-# url: "/about"
+url: "/about"
 summary: "about me"
 ---
 
