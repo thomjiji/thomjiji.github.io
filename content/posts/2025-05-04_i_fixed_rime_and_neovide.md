@@ -1,5 +1,5 @@
 ---
-title: "I Fixed Rime and Neovide"
+title: "I fixed Rime and Neovide"
 date: 2025-05-04
 draft: false
 tags: ["Rime", "Neovide", "Neovim"]

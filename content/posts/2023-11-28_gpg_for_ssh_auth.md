@@ -2,7 +2,7 @@
 title: "GPG key for SSH authentication"
 date: 2023-11-28
 draft: false
-tags: ["GPG", "Cryptography"]
+tags: ["GPG", "SSH", "Cryptography"]
 slug: gpg-for-ssh-authentication
 description: ""
 summary: "Using GPG key for ssh authentication reduces the effort involved in managing SSH keys, which is the main reason I want to learn this technique. GPG key for all (not just one GPG key possibly)."
