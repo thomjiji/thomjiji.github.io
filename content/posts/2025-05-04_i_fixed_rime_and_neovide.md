@@ -1,7 +1,7 @@
 ---
 title: "I Fixed Rime and Neovide"
 date: 2025-05-04
-draft: true
+draft: false
 tags: ["Rime", "Neovide", "Neovim"]
 ---
 
