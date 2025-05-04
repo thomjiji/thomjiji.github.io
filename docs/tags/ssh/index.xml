@@ -24,6 +24,13 @@
       <description>Solved by this command: gpg-connect-agent updatestartuptty /bye &amp;gt;/dev/null</description>
     </item>
     <item>
+      <title>GPG key for SSH authentication</title>
+      <link>https://thomjiji.github.io/blogs/2023/11/gpg-for-ssh-authentication/</link>
+      <pubDate>Tue, 28 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://thomjiji.github.io/blogs/2023/11/gpg-for-ssh-authentication/</guid>
+      <description>Using GPG key for ssh authentication reduces the effort involved in managing SSH keys, which is the main reason I want to learn this technique. GPG key for all (not just one GPG key possibly).</description>
+    </item>
+    <item>
       <title>SSH notes</title>
       <link>https://thomjiji.github.io/blogs/2023/11/ssh-notes/</link>
       <pubDate>Tue, 28 Nov 2023 00:00:00 +0000</pubDate>

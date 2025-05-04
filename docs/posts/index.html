@@ -10,7 +10,7 @@
 <meta name="description" content="Posts - thomjiji">
 <meta name="author" content="">
 <link rel="canonical" href="https://thomjiji.github.io/posts/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.e42ad648cd8baa1905022f1ff58c4bcfb6aeabc0e775ecf9b04f835aa329b79d.css" integrity="sha256-5CrWSM2LqhkFAi8f9YxLz7auq8Dndez5sE&#43;DWqMpt50=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.15788c22e85882bf88f58ffeb612943001939d008f8d281dedff71542490e142.css" integrity="sha256-FXiMIuhYgr&#43;I9Y/&#43;thKUMAGTnQCPjSgd7f9xVCSQ4UI=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://thomjiji.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://thomjiji.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://thomjiji.github.io/favicon-32x32.png">
@@ -170,6 +170,41 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>I Fixed Rime and Neovide
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>TL;DR 问题：Rime 的自动切换到英文输入法的设置对 macOS 上的 Neovide 不生效！
+原因：我一般是从 Terminal 启动 Neovide，这样其实调用的是 Homebrew 叫作 formula 的那个程序：/opt/homebrew/bin/neovide。而我们在 Rime 的配置文件 squirrel.yaml 设置的开启默认英文 ascii_mode: true 是给 Neovide 的 GUI app 的！那它自然就不生效了。
+解决方案：给 Neovide 设置一个 alias，让它指向 Neovide GUI app 的可执行文件 /Applications/Neovide.app/Contents/MacOS/neovide。像我在 Fish shell 的 ~/.config/fish/config.fish 就是这样设置:
+alias neovide &#34;/Applications/Neovide.app/Contents/MacOS/neovide&#34; 这样你在 Terminal 输入 neovide 就不会调用那个 formula /opt/homebrew/bin/neovide，而是 Neovide GUI app 的可执行文件。Rime 的默认英文的设置也就正常生效了。
+前情提要、问题浮现 Neovide 是一个我前阵子发现的宝藏 app，它让 neovim 拥有 vscode 一般的顺滑操控和鼠标动画。我第一次知道这个 app 的那天晚上，下班一回到家，等不及迅速安装配置好了，然后就被惊到。这个动画的顺畅程度跟 vscode 真的有过之而无不及。那天晚上真是惊叹不已，要知道 neovim 在 Terminal 里的体验你是绝对不会奢求它有多好的 animation 的。即便 LazyVim 的 snacks 插件有通过一个 Animate 的模块做了一点点让 neovim 稍微顺滑一点的努力，但远不及 Neovide 这个顺滑。Neovide 属于你用了就回不去了的那种。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-05-04 00:00:00 +0000 UTC'>2025-05-04</span></footer>
+  <a class="entry-link" aria-label="post link to I Fixed Rime and Neovide" href="https://thomjiji.github.io/blogs/2025/05/i-fixed-rime-and-neovide/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>Tailscale and Local LLM<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Tailscale、Open WebUI 和 Ollama / llama.cpp 整体结构 目标：让我的 MacBook Pro（MBP）使用本地大模型，但避免性能负担
+我的 M1 Max 32G MacBook Pro 本身性能有限，而且我不希望在使用它的时候，风扇不停地转，大腿慢慢感到它在升温红温起来，运行大模型时显得吃力。因此，我把实际的模型运行和推理的任务交给远程的两台机器：gsj-13 和 gsj-9（根据负载情况选择使用哪一台）。
+我通过 Tailscale 将这些设备连接到了一个统一的 Tailnet 中，这样它们就处于同一个虚拟私有网络（VPN）下。通过 Tailscale 的 ACL (Access Control Lists) 规则，只有我可以访问它们，它们无法访问我。
+目前，Open WebUI 是运行在 gsj-13 的 Docker 容器中。它支持连接到本地或远程的模型服务。如果我选择在 gsj-13 本地运行 Ollama，那么 Open WebUI 的后端地址就是 http://host.docker.internal:11434；如果我选择将模型推理任务交给性能更强、内存更大的 gsj-9，那么后端地址就设置为 gsj-9 的局域网 IP 地址：http://&lt;局域网 IP&gt;:11434。
+我用 MBP 打开浏览器，输入 gsj-13 在 Tailnet 的 IP 地址，接口是 Open WebUI 默认的 3000，即可进入 Open WebUI 界面。
+另外，我也在尝试使用 llama.cpp，因为它提供了对模型运行参数更细粒度的控制，我能更详细了解模型推理的时候究竟发生了什么。llama.cpp 中的 llama-server 命令支持 OpenAI 兼容的 API，因此在 Open WebUI 中，我可以通过添加一个 OpenAI 连接，将地址设置为 llama-server 的监听地址和端口。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-05-02 00:00:00 +0000 UTC'>2025-05-02</span></footer>
+  <a class="entry-link" aria-label="post link to Tailscale and Local LLM" href="https://thomjiji.github.io/blogs/2025/05/tailscale-and-local-llm/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>Tips and tricks
     </h2>
   </header>
@@ -291,33 +326,6 @@ Panel: Application Launcher Pager Task Manager System tray Digital clock Peak at
   </div>
   <footer class="entry-footer"><span title='2023-12-03 00:00:00 +0000 UTC'>2023-12-03</span></footer>
   <a class="entry-link" aria-label="post link to sshfs" href="https://thomjiji.github.io/blogs/2023/12/sshfs/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>gpg-agent doesn&#39;t work anyway!
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Solved by this command: gpg-connect-agent updatestartuptty /bye &gt;/dev/null</p>
-  </div>
-  <footer class="entry-footer"><span title='2023-12-02 00:00:00 +0000 UTC'>2023-12-02</span></footer>
-  <a class="entry-link" aria-label="post link to gpg-agent doesn&#39;t work anyway!" href="https://thomjiji.github.io/blogs/2023/12/gpg-agent-does-not-work-anyway/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>btrfs and btrbk
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>/etc/btrbk/btrbk.conf config file:
-volume / snapshot_dir btrbk_snapshots subvolume home incremental strict Key points:
-volume /: “Base path within a btrfs filesystem containing the subvolumes to be backuped (usually the mount-point of a btrfs filesystem mounted with subvolid=5 option).” In this case, we use the existing root directory — which is already a btrfs filesystem (by default on Fedora). btrbk refer this / (next to volume) as “&lt;volume-directory&gt;”. snapshot_dir btrbk_snapshots: btrbk_snapshots is relative to the volume set above, which in this case the / (root directory). So the full path of btrbk_snapshots will be /btrbk_snapshots, which located just under the root directory. It’s like the “destination” of snapshots. subvolume home: home is also relative to / which set above. It’s the “source” of snapshots. There are also a target field can be set: target /mnt/btrbk_backup, but it’s optional. The target is where the “backup” subvolumes to be created (refer to the man page of btrbk.conf via man btrbk.conf), while the snapshot_dir is where “snapshot” to be stored. incremental strict: which means “non-incremental (initial) backups are never created” (man btrbk.conf). What is snapshot?
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2023-12-01 00:00:00 +0000 UTC'>2023-12-01</span></footer>
-  <a class="entry-link" aria-label="post link to btrfs and btrbk" href="https://thomjiji.github.io/blogs/2023/12/btrfs-and-btrbk/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

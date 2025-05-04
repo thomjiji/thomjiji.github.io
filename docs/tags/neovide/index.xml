@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Neovide on thomjiji</title>
+    <link>https://thomjiji.github.io/tags/neovide/</link>
+    <description>Recent content in Neovide on thomjiji</description>
+    <generator>Hugo -- 0.146.7</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 04 May 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://thomjiji.github.io/tags/neovide/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>I Fixed Rime and Neovide</title>
+      <link>https://thomjiji.github.io/blogs/2025/05/i-fixed-rime-and-neovide/</link>
+      <pubDate>Sun, 04 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://thomjiji.github.io/blogs/2025/05/i-fixed-rime-and-neovide/</guid>
+      <description>&lt;h1 id=&#34;tldr&#34;&gt;TL;DR&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;问题&lt;/strong&gt;：Rime 的自动切换到英文输入法的设置对 macOS 上的 Neovide 不生效！&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;原因&lt;/strong&gt;：我一般是从 Terminal 启动 Neovide，这样其实调用的是 Homebrew 叫作 formula 的那个程序：&lt;code&gt;/opt/homebrew/bin/neovide&lt;/code&gt;。而我们在 Rime 的配置文件 &lt;code&gt;squirrel.yaml&lt;/code&gt; 设置的开启默认英文 &lt;code&gt;ascii_mode: true&lt;/code&gt; 是给 Neovide 的 GUI app 的！那它自然就不生效了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解决方案&lt;/strong&gt;：给 Neovide 设置一个 alias，让它指向 Neovide GUI app 的可执行文件 &lt;code&gt;/Applications/Neovide.app/Contents/MacOS/neovide&lt;/code&gt;。像我在 Fish shell 的 &lt;code&gt;~/.config/fish/config.fish&lt;/code&gt; 就是这样设置:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ef8383&#34;&gt;alias&lt;/span&gt; neovide &lt;span style=&#34;color:#63c381&#34;&gt;&amp;#34;/Applications/Neovide.app/Contents/MacOS/neovide&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这样你在 Terminal 输入 &lt;code&gt;neovide&lt;/code&gt; 就不会调用那个 formula &lt;code&gt;/opt/homebrew/bin/neovide&lt;/code&gt;，而是 Neovide GUI app 的可执行文件。Rime 的默认英文的设置也就正常生效了。&lt;/p&gt;
+&lt;h1 id=&#34;前情提要问题浮现&#34;&gt;前情提要、问题浮现&lt;/h1&gt;
+&lt;p&gt;Neovide 是一个我前阵子发现的宝藏 app，它让 neovim 拥有 vscode 一般的顺滑操控和鼠标动画。我第一次知道这个 app 的那天晚上，下班一回到家，等不及迅速安装配置好了，然后就被惊到。这个动画的顺畅程度跟 vscode 真的有过之而无不及。那天晚上真是惊叹不已，要知道 neovim 在 Terminal 里的体验你是绝对不会奢求它有多好的 animation 的。即便 LazyVim 的 snacks 插件有通过一个 Animate 的模块做了一点点让 neovim 稍微顺滑一点的努力，但远不及 Neovide 这个顺滑。Neovide 属于你用了就回不去了的那种。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
