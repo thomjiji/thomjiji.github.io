@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>I Fixed Rime and Neovide | thomjiji</title>
+<title>I fixed Rime and Neovide | thomjiji</title>
 <meta name="keywords" content="Rime, Neovide, Neovim">
 <meta name="description" content="TL;DR
 问题：Rime 的自动切换到英文输入法的设置对 macOS 上的 Neovide 不生效！
@@ -80,7 +80,7 @@ Neovide 是一个我前阵子发现的宝藏 app，它让 neovim 拥有 vscode �
 </html>
 <meta property="og:url" content="https://thomjiji.github.io/blogs/2025/05/i-fixed-rime-and-neovide/">
   <meta property="og:site_name" content="thomjiji">
-  <meta property="og:title" content="I Fixed Rime and Neovide">
+  <meta property="og:title" content="I fixed Rime and Neovide">
   <meta property="og:description" content="TL;DR 问题：Rime 的自动切换到英文输入法的设置对 macOS 上的 Neovide 不生效！
 原因：我一般是从 Terminal 启动 Neovide，这样其实调用的是 Homebrew 叫作 formula 的那个程序：/opt/homebrew/bin/neovide。而我们在 Rime 的配置文件 squirrel.yaml 设置的开启默认英文 ascii_mode: true 是给 Neovide 的 GUI app 的！那它自然就不生效了。
 解决方案：给 Neovide 设置一个 alias，让它指向 Neovide GUI app 的可执行文件 /Applications/Neovide.app/Contents/MacOS/neovide。像我在 Fish shell 的 ~/.config/fish/config.fish 就是这样设置:
@@ -95,7 +95,7 @@ alias neovide &#34;/Applications/Neovide.app/Contents/MacOS/neovide&#34; 这样�
     <meta property="article:tag" content="Neovide">
     <meta property="article:tag" content="Neovim">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="I Fixed Rime and Neovide">
+<meta name="twitter:title" content="I fixed Rime and Neovide">
 <meta name="twitter:description" content="TL;DR
 问题：Rime 的自动切换到英文输入法的设置对 macOS 上的 Neovide 不生效！
 原因：我一般是从 Terminal 启动 Neovide，这样其实调用的是 Homebrew 叫作 formula 的那个程序：/opt/homebrew/bin/neovide。而我们在 Rime 的配置文件 squirrel.yaml 设置的开启默认英文 ascii_mode: true 是给 Neovide 的 GUI app 的！那它自然就不生效了。
@@ -120,7 +120,7 @@ Neovide 是一个我前阵子发现的宝藏 app，它让 neovim 拥有 vscode �
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "I Fixed Rime and Neovide",
+      "name": "I fixed Rime and Neovide",
       "item": "https://thomjiji.github.io/blogs/2025/05/i-fixed-rime-and-neovide/"
     }
   ]
@@ -130,8 +130,8 @@ Neovide 是一个我前阵子发现的宝藏 app，它让 neovim 拥有 vscode �
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "I Fixed Rime and Neovide",
-  "name": "I Fixed Rime and Neovide",
+  "headline": "I fixed Rime and Neovide",
+  "name": "I fixed Rime and Neovide",
   "description": "TL;DR 问题：Rime 的自动切换到英文输入法的设置对 macOS 上的 Neovide 不生效！\n原因：我一般是从 Terminal 启动 Neovide，这样其实调用的是 Homebrew 叫作 formula 的那个程序：/opt/homebrew/bin/neovide。而我们在 Rime 的配置文件 squirrel.yaml 设置的开启默认英文 ascii_mode: true 是给 Neovide 的 GUI app 的！那它自然就不生效了。\n解决方案：给 Neovide 设置一个 alias，让它指向 Neovide GUI app 的可执行文件 /Applications/Neovide.app/Contents/MacOS/neovide。像我在 Fish shell 的 ~/.config/fish/config.fish 就是这样设置:\nalias neovide \u0026#34;/Applications/Neovide.app/Contents/MacOS/neovide\u0026#34; 这样你在 Terminal 输入 neovide 就不会调用那个 formula /opt/homebrew/bin/neovide，而是 Neovide GUI app 的可执行文件。Rime 的默认英文的设置也就正常生效了。\n前情提要、问题浮现 Neovide 是一个我前阵子发现的宝藏 app，它让 neovim 拥有 vscode 一般的顺滑操控和鼠标动画。我第一次知道这个 app 的那天晚上，下班一回到家，等不及迅速安装配置好了，然后就被惊到。这个动画的顺畅程度跟 vscode 真的有过之而无不及。那天晚上真是惊叹不已，要知道 neovim 在 Terminal 里的体验你是绝对不会奢求它有多好的 animation 的。即便 LazyVim 的 snacks 插件有通过一个 Animate 的模块做了一点点让 neovim 稍微顺滑一点的努力，但远不及 Neovide 这个顺滑。Neovide 属于你用了就回不去了的那种。\n",
   "keywords": [
     "Rime", "Neovide", "Neovim"
@@ -226,7 +226,7 @@ Neovide 是一个我前阵子发现的宝藏 app，它让 neovim 拥有 vscode �
   <header class="post-header">
     <div class="breadcrumbs"><a href="https://thomjiji.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://thomjiji.github.io/posts/">Posts</a></div>
     <h1 class="post-title entry-hint-parent">
-      I Fixed Rime and Neovide
+      I fixed Rime and Neovide
     </h1>
     <div class="post-meta"><span title='2025-05-04 00:00:00 +0000 UTC'>2025-05-04</span>
 
