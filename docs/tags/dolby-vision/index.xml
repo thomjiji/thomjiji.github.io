@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Dolby Vision on thomjiji</title>
-    <link>https://thomjiji.github.io/tags/dolby-vision/</link>
+    <link>http://localhost:1313/tags/dolby-vision/</link>
     <description>Recent content in Dolby Vision on thomjiji</description>
-    <generator>Hugo -- 0.146.7</generator>
+    <generator>Hugo -- 0.148.2</generator>
     <language>en-US</language>
     <lastBuildDate>Sun, 29 Jan 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://thomjiji.github.io/tags/dolby-vision/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/dolby-vision/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>mp4muxer &amp; mp4demuxer Basic Usage</title>
-      <link>https://thomjiji.github.io/blogs/2023/01/mp4muxer-mp4demuxer-basic-usage/</link>
+      <link>http://localhost:1313/blogs/2023/01/mp4muxer-mp4demuxer-basic-usage/</link>
       <pubDate>Sun, 29 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/blogs/2023/01/mp4muxer-mp4demuxer-basic-usage/</guid>
+      <guid>http://localhost:1313/blogs/2023/01/mp4muxer-mp4demuxer-basic-usage/</guid>
       <description>&lt;h2 id=&#34;installation&#34;&gt;&lt;strong&gt;Installation&lt;/strong&gt;&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/DolbyLaboratories/dlb_mp4base&#34; target=&#34;_blank&#34; &gt;mp4muxer&lt;/a&gt;&lt;/li&gt;

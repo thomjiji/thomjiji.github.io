@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Rime on thomjiji</title>
-    <link>https://thomjiji.github.io/tags/rime/</link>
+    <link>http://localhost:1313/tags/rime/</link>
     <description>Recent content in Rime on thomjiji</description>
-    <generator>Hugo -- 0.146.7</generator>
+    <generator>Hugo -- 0.148.2</generator>
     <language>en-US</language>
     <lastBuildDate>Sun, 04 May 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://thomjiji.github.io/tags/rime/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/rime/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>I fixed Rime and Neovide</title>
-      <link>https://thomjiji.github.io/blogs/2025/05/i-fixed-rime-and-neovide/</link>
+      <link>http://localhost:1313/blogs/2025/05/i-fixed-rime-and-neovide/</link>
       <pubDate>Sun, 04 May 2025 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/blogs/2025/05/i-fixed-rime-and-neovide/</guid>
+      <guid>http://localhost:1313/blogs/2025/05/i-fixed-rime-and-neovide/</guid>
       <description>&lt;h1 id=&#34;tldr&#34;&gt;TL;DR&lt;/h1&gt;
 &lt;p&gt;&lt;strong&gt;问题&lt;/strong&gt;：Rime 的自动切换到英文输入法的设置对 macOS 上的 Neovide 不生效！&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;原因&lt;/strong&gt;：我一般是从 Terminal 启动 Neovide，这样其实调用的是 Homebrew 叫作 formula 的那个程序：&lt;code&gt;/opt/homebrew/bin/neovide&lt;/code&gt;。而我们在 Rime 的配置文件 &lt;code&gt;squirrel.yaml&lt;/code&gt; 设置的开启默认英文 &lt;code&gt;ascii_mode: true&lt;/code&gt; 是给 Neovide 的 GUI app 的！那它自然就不生效了。&lt;/p&gt;
@@ -24,9 +24,9 @@
     </item>
     <item>
       <title>Setup Rime on Fedora Asahi Remix</title>
-      <link>https://thomjiji.github.io/blogs/2023/12/setup-rime-on-fedora-asahi/</link>
+      <link>http://localhost:1313/blogs/2023/12/setup-rime-on-fedora-asahi/</link>
       <pubDate>Sat, 30 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/blogs/2023/12/setup-rime-on-fedora-asahi/</guid>
+      <guid>http://localhost:1313/blogs/2023/12/setup-rime-on-fedora-asahi/</guid>
       <description>&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Install fcitx5 and fcitx5-rime via &lt;code&gt;sudo dnf install fcitx5-rime fcitx5&lt;/code&gt;.&lt;/p&gt;

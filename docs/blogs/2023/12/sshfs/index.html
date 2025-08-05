@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 <title>sshfs | thomjiji</title>
 <meta name="keywords" content="ssh, sshfs">
 <meta name="description" content="How to mount remote machine&rsquo;s directory on current host?
 This question originally came up when I wanted to use Kate to edit a configuration file on macOS. I normally ssh into macOS, cd to that directory, and then type kate &lt;file&gt; to try opening the file for editing. But huh? There&rsquo;s no kate command. Oh right, because I&rsquo;m in the macOS environment, of course there&rsquo;s no kate! But this is a problem - am I restricted to only using vi to edit remote files? I see Asahi Lina smoothly using Kate to open projects and files across multiple Mac machines around her to edit back and forth during development. There must be some way to make this work.">
 <meta name="author" content="">
-<link rel="canonical" href="https://thomjiji.github.io/blogs/2023/12/sshfs/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.15788c22e85882bf88f58ffeb612943001939d008f8d281dedff71542490e142.css" integrity="sha256-FXiMIuhYgr&#43;I9Y/&#43;thKUMAGTnQCPjSgd7f9xVCSQ4UI=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://thomjiji.github.io/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://thomjiji.github.io/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://thomjiji.github.io/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://thomjiji.github.io/apple-touch-icon.png">
-<link rel="mask-icon" href="https://thomjiji.github.io/safari-pinned-tab.svg">
+<link rel="canonical" href="http://localhost:1313/blogs/2023/12/sshfs/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.c11bb315f149767f0aae227a81a7b1e828267190064f8aa3e1405f02f27317c4.css" integrity="sha256-wRuzFfFJdn8KriJ6gaex6CgmcZAGT4qj4UBfAvJzF8Q=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://thomjiji.github.io/blogs/2023/12/sshfs/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/blogs/2023/12/sshfs/">
 <noscript>
     <style>
         #theme-toggle,
@@ -59,7 +59,7 @@ This question originally came up when I wanted to use Kate to edit a configurati
 </noscript><!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="icon" href="https://thomjiji.github.io/powerpuff_girls_buttercup.jpg" />
+    <link rel="icon" href="http://localhost:1313/powerpuff_girls_buttercup.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -72,72 +72,7 @@ This question originally came up when I wanted to use Kate to edit a configurati
     
   </body>
 </html>
-<meta property="og:url" content="https://thomjiji.github.io/blogs/2023/12/sshfs/">
-  <meta property="og:site_name" content="thomjiji">
-  <meta property="og:title" content="sshfs">
-  <meta property="og:description" content="How to mount remote machine’s directory on current host? This question originally came up when I wanted to use Kate to edit a configuration file on macOS. I normally ssh into macOS, cd to that directory, and then type kate &lt;file&gt; to try opening the file for editing. But huh? There’s no kate command. Oh right, because I’m in the macOS environment, of course there’s no kate! But this is a problem - am I restricted to only using vi to edit remote files? I see Asahi Lina smoothly using Kate to open projects and files across multiple Mac machines around her to edit back and forth during development. There must be some way to make this work.">
-  <meta property="og:locale" content="en-US">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2023-12-03T00:00:00+00:00">
-    <meta property="article:modified_time" content="2023-12-03T00:00:00+00:00">
-    <meta property="article:tag" content="Ssh">
-    <meta property="article:tag" content="Sshfs">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="sshfs">
-<meta name="twitter:description" content="How to mount remote machine&rsquo;s directory on current host?
-This question originally came up when I wanted to use Kate to edit a configuration file on macOS. I normally ssh into macOS, cd to that directory, and then type kate &lt;file&gt; to try opening the file for editing. But huh? There&rsquo;s no kate command. Oh right, because I&rsquo;m in the macOS environment, of course there&rsquo;s no kate! But this is a problem - am I restricted to only using vi to edit remote files? I see Asahi Lina smoothly using Kate to open projects and files across multiple Mac machines around her to edit back and forth during development. There must be some way to make this work.">
 
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "https://thomjiji.github.io/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "sshfs",
-      "item": "https://thomjiji.github.io/blogs/2023/12/sshfs/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "sshfs",
-  "name": "sshfs",
-  "description": "How to mount remote machine\u0026rsquo;s directory on current host? This question originally came up when I wanted to use Kate to edit a configuration file on macOS. I normally ssh into macOS, cd to that directory, and then type kate \u0026lt;file\u0026gt; to try opening the file for editing. But huh? There\u0026rsquo;s no kate command. Oh right, because I\u0026rsquo;m in the macOS environment, of course there\u0026rsquo;s no kate! But this is a problem - am I restricted to only using vi to edit remote files? I see Asahi Lina smoothly using Kate to open projects and files across multiple Mac machines around her to edit back and forth during development. There must be some way to make this work.\n",
-  "keywords": [
-    "ssh", "sshfs"
-  ],
-  "articleBody": "How to mount remote machine’s directory on current host? This question originally came up when I wanted to use Kate to edit a configuration file on macOS. I normally ssh into macOS, cd to that directory, and then type kate to try opening the file for editing. But huh? There’s no kate command. Oh right, because I’m in the macOS environment, of course there’s no kate! But this is a problem - am I restricted to only using vi to edit remote files? I see Asahi Lina smoothly using Kate to open projects and files across multiple Mac machines around her to edit back and forth during development. There must be some way to make this work.\nTurns out there’s a command called sshfs that can mount a remote directory onto the current localhost. Then you can normally cd to that mount point in the local environment , and use local editors like Kate, VS Code, or vi/vim to edit files and so on. All the operations are still happening on the remote, even if it looks like I’m editing a local file in a local directory.\nUsing sshfs mount remote directory at $USER directories (under $HOME). sshfs @:/Users/thom/ ~/Desktop/remote-filesystem/ After running this, the remote filesystem will be accessible locally at ~/Desktop/remote-filesystem/. It can be unmounted using either fusermount -u remote-filesystem or sudo umount remote-filesystem.\nAfter mounting with sshfs, the user and group for directory ~/Desktop/remote-filesystem will change to 501 and games. Here is the explaination of this from Claude.ai:\nThe user and group IDs you are seeing (501 and games) correspond to the user and primary group ownership of the mounted Mac directory on the Linux side.\nOn macOS, each user is assigned a UID (user ID) and GID (group ID). The first user created gets UID/GID 501 by default. And the primary group for users is normally the staff group, which has the GID of 20.\nHowever, when you mount the Mac directory onto your Linux system using SSHFS, it does not map the macOS user and group names to Linux users and groups. Instead, it just exposes the raw numeric IDs from macOS.\nSo the user ID 501 and group ID games (which is probably 20) simply represent the macOS owner and group of the mounted directory. The names are shown as the numeric values since your Linux system does not have equivalently named users or groups defined.\nThis is expected behavior with SSHFS. The ownership stays the same numerically, but the names do not map over. Everything should still work properly, but you just see the raw IDs instead of translated names in the Linux listing.\nJust be aware that the user and group will differ from what you may expect based on your local filesystem.\nsshfs @:/Users/thom/ ~/Desktop/remote-filesystem/ -d Adding the -d flag will enable debug mode and print debugging information, consequently blocking the current terminal session as long as the process is running. The debugging info looks like this:\n$ sshfs mbp:/Users/thom/Desktop/ ~/Desktop/remote-filesystem/ -d SSHFS version 3.7.3 executing \u003c-x\u003e \u003c-a\u003e \u003c-oClearAllForwardings=yes\u003e \u003c-2\u003e \u003c-s\u003e Server version: 3 Extension: posix-rename@openssh.com \u003c1\u003e Extension: statvfs@openssh.com \u003c2\u003e Extension: fstatvfs@openssh.com \u003c2\u003e Extension: hardlink@openssh.com \u003c1\u003e Extension: fsync@openssh.com \u003c1\u003e Extension: lsetstat@openssh.com \u003c1\u003e Extension: limits@openssh.com \u003c1\u003e Extension: expand-path@openssh.com \u003c1\u003e Extension: copy-data \u003c1\u003e Extension: home-directory \u003c1\u003e Extension: users-groups-by-id@openssh.com \u003c1\u003e [00001] EXTENDED [00002] EXTENDED [00001] EXTENDED_REPLY 97bytes (5ms) [00002] EXTENDED_REPLY 97bytes (5ms) [00003] LSTAT [00003] ATTRS 41bytes (87ms) [00004] LSTAT [00004] STATUS 33bytes (8ms) [00005] LSTAT [00005] STATUS 33bytes (4ms) [00006] LSTAT [00006] STATUS 33bytes (5ms) [00007] OPENDIR [00007] HANDLE 17bytes (33ms) ... You can still use fusermount -u remote-filesystem and sudo umount remote-filesystem to unmount it, once you unmount it, the debug info printing will stop:\n... [00015] LSTAT [00015] STATUS 33bytes (5ms) sent: 15 messages, 485 bytes received: 15 messages, 1613 bytes rtt min/max/avg: 4ms/106ms/16ms num connect: 1 Additionally, you can pass -v to it: sshfs mbp:/Users/thom/ ~/Desktop/remote-filesystem/ -d -v. According to man sftp, the effect of -v is:\n-v Raise logging level. This option is also passed to ssh.\nLet’s dig more deep, take a closer look at the ssh man page man ssh:\n-v Verbose mode. Causes ssh to print debugging messages about its progress. This is helpful in debugging connection, authentication, and configuration problems. Multiple -v options increase the verbosity. The maximum is 3.\nBut anyway, it is doubtful whether this flag is effective in this case.\nUsing sshfs mount remote directory at /mnt (root directory) It can also be used (without requiring sudo) to mount a remote directory at /mnt:\nsshfs @:/Users/thom/ /mnt/remote-filesystem/ But even if I did not give it the allow_other flag: -o allow_other, at the mount point (in this case the /mnt/remote-filesystem/ directory) I can still cd into it as a normal user: cd /mnt/remote-filesystem.\nStill, the user and group for /mnt/remote-filesystem is 501 and games.\nThe reason you can use fusermount -u remote-filesystem and sudo umount remote-filesystem to unmount remote filesystem…What’s the relationship between sshfs and FUSE filesystem?\nman sshfs:\nTo mount a filesystem: sshfs [user@]host:[dir] mountpoint [options] To unmount it: fusermount3 -u mountpoint # Linux umount mountpoint # OS X, FreeBSD man mount.fuse:\nFUSE filesystems are unmounted using the fusermount(1) command (fusermount -u mountpoint).\nSome reference man page deserve to be further investigate:\nman sshfs man sftp man mount.fuse man fusermount ",
-  "wordCount" : "881",
-  "inLanguage": "en",
-  "datePublished": "2023-12-03T00:00:00Z",
-  "dateModified": "2023-12-03T00:00:00Z",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://thomjiji.github.io/blogs/2023/12/sshfs/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "thomjiji",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://thomjiji.github.io/favicon.ico"
-    }
-  }
-}
-</script>
 </head>
 
 <body class="" id="top">
@@ -155,7 +90,7 @@ This question originally came up when I wanted to use Kate to edit a configurati
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://thomjiji.github.io/" accesskey="h" title="thomjiji (Alt + H)">thomjiji</a>
+            <a href="http://localhost:1313/" accesskey="h" title="thomjiji (Alt + H)">thomjiji</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -181,22 +116,22 @@ This question originally came up when I wanted to use Kate to edit a configurati
         </div>
         <ul id="menu">
             <li>
-                <a href="https://thomjiji.github.io/about/" title="About">
+                <a href="http://localhost:1313/about/" title="About">
                     <span>About</span>
                 </a>
             </li>
             <li>
-                <a href="https://thomjiji.github.io/archives/" title="Archives">
+                <a href="http://localhost:1313/archives/" title="Archives">
                     <span>Archives</span>
                 </a>
             </li>
             <li>
-                <a href="https://thomjiji.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
             <li>
-                <a href="https://thomjiji.github.io/tags/" title="Tags">
+                <a href="http://localhost:1313/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
@@ -207,7 +142,7 @@ This question originally came up when I wanted to use Kate to edit a configurati
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://thomjiji.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://thomjiji.github.io/posts/">Posts</a></div>
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
     <h1 class="post-title entry-hint-parent">
       sshfs
     </h1>
@@ -329,16 +264,16 @@ This question originally came up when I wanted to use Kate to edit a configurati
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://thomjiji.github.io/tags/ssh/">Ssh</a></li>
-      <li><a href="https://thomjiji.github.io/tags/sshfs/">Sshfs</a></li>
+      <li><a href="http://localhost:1313/tags/ssh/">Ssh</a></li>
+      <li><a href="http://localhost:1313/tags/sshfs/">Sshfs</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://thomjiji.github.io/blogs/2023/12/pin-apps-to-kde-panel/">
+  <a class="prev" href="http://localhost:1313/blogs/2023/12/pin-apps-to-kde-panel/">
     <span class="title">« Prev</span>
     <br>
     <span>Pin apps to KDE Panel, not KDE Task Manager</span>
   </a>
-  <a class="next" href="https://thomjiji.github.io/blogs/2023/12/gpg-agent-does-not-work-anyway/">
+  <a class="next" href="http://localhost:1313/blogs/2023/12/gpg-agent-does-not-work-anyway/">
     <span class="title">Next »</span>
     <br>
     <span>gpg-agent doesn&#39;t work anyway!</span>
@@ -350,7 +285,7 @@ This question originally came up when I wanted to use Kate to edit a configurati
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="https://thomjiji.github.io/">thomjiji</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">thomjiji</a></span> · 
 
     <span>
         Powered by

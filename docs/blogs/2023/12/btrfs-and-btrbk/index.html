@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 <title>btrfs and btrbk | thomjiji</title>
 <meta name="keywords" content="btrfs, btrbk, snapshot, backup, Linux">
 <meta name="description" content="/etc/btrbk/btrbk.conf config file:
@@ -22,16 +22,16 @@ incremental strict: which means &ldquo;non-incremental (initial) backups are nev
 
 What is snapshot?">
 <meta name="author" content="">
-<link rel="canonical" href="https://thomjiji.github.io/blogs/2023/12/btrfs-and-btrbk/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.15788c22e85882bf88f58ffeb612943001939d008f8d281dedff71542490e142.css" integrity="sha256-FXiMIuhYgr&#43;I9Y/&#43;thKUMAGTnQCPjSgd7f9xVCSQ4UI=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://thomjiji.github.io/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://thomjiji.github.io/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://thomjiji.github.io/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://thomjiji.github.io/apple-touch-icon.png">
-<link rel="mask-icon" href="https://thomjiji.github.io/safari-pinned-tab.svg">
+<link rel="canonical" href="http://localhost:1313/blogs/2023/12/btrfs-and-btrbk/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.c11bb315f149767f0aae227a81a7b1e828267190064f8aa3e1405f02f27317c4.css" integrity="sha256-wRuzFfFJdn8KriJ6gaex6CgmcZAGT4qj4UBfAvJzF8Q=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://thomjiji.github.io/blogs/2023/12/btrfs-and-btrbk/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/blogs/2023/12/btrfs-and-btrbk/">
 <noscript>
     <style>
         #theme-toggle,
@@ -71,7 +71,7 @@ What is snapshot?">
 </noscript><!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="icon" href="https://thomjiji.github.io/powerpuff_girls_buttercup.jpg" />
+    <link rel="icon" href="http://localhost:1313/powerpuff_girls_buttercup.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -84,89 +84,7 @@ What is snapshot?">
     
   </body>
 </html>
-<meta property="og:url" content="https://thomjiji.github.io/blogs/2023/12/btrfs-and-btrbk/">
-  <meta property="og:site_name" content="thomjiji">
-  <meta property="og:title" content="btrfs and btrbk">
-  <meta property="og:description" content="/etc/btrbk/btrbk.conf config file:
-volume / snapshot_dir btrbk_snapshots subvolume home incremental strict Key points:
-volume /: “Base path within a btrfs filesystem containing the subvolumes to be backuped (usually the mount-point of a btrfs filesystem mounted with subvolid=5 option).” In this case, we use the existing root directory — which is already a btrfs filesystem (by default on Fedora). btrbk refer this / (next to volume) as “&lt;volume-directory&gt;”. snapshot_dir btrbk_snapshots: btrbk_snapshots is relative to the volume set above, which in this case the / (root directory). So the full path of btrbk_snapshots will be /btrbk_snapshots, which located just under the root directory. It’s like the “destination” of snapshots. subvolume home: home is also relative to / which set above. It’s the “source” of snapshots. There are also a target field can be set: target /mnt/btrbk_backup, but it’s optional. The target is where the “backup” subvolumes to be created (refer to the man page of btrbk.conf via man btrbk.conf), while the snapshot_dir is where “snapshot” to be stored. incremental strict: which means “non-incremental (initial) backups are never created” (man btrbk.conf). What is snapshot?">
-  <meta property="og:locale" content="en-US">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2023-12-01T00:00:00+00:00">
-    <meta property="article:modified_time" content="2023-12-01T00:00:00+00:00">
-    <meta property="article:tag" content="Btrfs">
-    <meta property="article:tag" content="Btrbk">
-    <meta property="article:tag" content="Snapshot">
-    <meta property="article:tag" content="Backup">
-    <meta property="article:tag" content="Linux">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="btrfs and btrbk">
-<meta name="twitter:description" content="/etc/btrbk/btrbk.conf config file:
-volume /
-  snapshot_dir btrbk_snapshots
-  subvolume home
-  incremental strict
-Key points:
 
-volume /: &ldquo;Base path within a btrfs filesystem containing the subvolumes to be backuped (usually the mount-point of a btrfs filesystem mounted with subvolid=5 option).&rdquo; In this case, we use the existing root directory — which is already a btrfs filesystem (by default on Fedora). btrbk refer this / (next to volume) as &ldquo;&lt;volume-directory&gt;&rdquo;.
-snapshot_dir btrbk_snapshots: btrbk_snapshots is relative to the volume set above, which in this case the / (root directory). So the full path of btrbk_snapshots will be /btrbk_snapshots, which located just under the root directory. It&rsquo;s like the &ldquo;destination&rdquo; of snapshots.
-subvolume home: home is also relative to / which set above. It&rsquo;s the &ldquo;source&rdquo; of snapshots. There are also a target field can be set: target /mnt/btrbk_backup, but it&rsquo;s optional. The target is where the &ldquo;backup&rdquo; subvolumes to be created (refer to the man page of btrbk.conf via man btrbk.conf), while the snapshot_dir is where &ldquo;snapshot&rdquo; to be stored.
-incremental strict: which means &ldquo;non-incremental (initial) backups are never created&rdquo; (man btrbk.conf).
-
-
-What is snapshot?">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "https://thomjiji.github.io/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "btrfs and btrbk",
-      "item": "https://thomjiji.github.io/blogs/2023/12/btrfs-and-btrbk/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "btrfs and btrbk",
-  "name": "btrfs and btrbk",
-  "description": "/etc/btrbk/btrbk.conf config file:\nvolume / snapshot_dir btrbk_snapshots subvolume home incremental strict Key points:\nvolume /: \u0026ldquo;Base path within a btrfs filesystem containing the subvolumes to be backuped (usually the mount-point of a btrfs filesystem mounted with subvolid=5 option).\u0026rdquo; In this case, we use the existing root directory — which is already a btrfs filesystem (by default on Fedora). btrbk refer this / (next to volume) as \u0026ldquo;\u0026lt;volume-directory\u0026gt;\u0026rdquo;. snapshot_dir btrbk_snapshots: btrbk_snapshots is relative to the volume set above, which in this case the / (root directory). So the full path of btrbk_snapshots will be /btrbk_snapshots, which located just under the root directory. It\u0026rsquo;s like the \u0026ldquo;destination\u0026rdquo; of snapshots. subvolume home: home is also relative to / which set above. It\u0026rsquo;s the \u0026ldquo;source\u0026rdquo; of snapshots. There are also a target field can be set: target /mnt/btrbk_backup, but it\u0026rsquo;s optional. The target is where the \u0026ldquo;backup\u0026rdquo; subvolumes to be created (refer to the man page of btrbk.conf via man btrbk.conf), while the snapshot_dir is where \u0026ldquo;snapshot\u0026rdquo; to be stored. incremental strict: which means \u0026ldquo;non-incremental (initial) backups are never created\u0026rdquo; (man btrbk.conf). What is snapshot?\n",
-  "keywords": [
-    "btrfs", "btrbk", "snapshot", "backup", "Linux"
-  ],
-  "articleBody": "/etc/btrbk/btrbk.conf config file:\nvolume / snapshot_dir btrbk_snapshots subvolume home incremental strict Key points:\nvolume /: “Base path within a btrfs filesystem containing the subvolumes to be backuped (usually the mount-point of a btrfs filesystem mounted with subvolid=5 option).” In this case, we use the existing root directory — which is already a btrfs filesystem (by default on Fedora). btrbk refer this / (next to volume) as “”. snapshot_dir btrbk_snapshots: btrbk_snapshots is relative to the volume set above, which in this case the / (root directory). So the full path of btrbk_snapshots will be /btrbk_snapshots, which located just under the root directory. It’s like the “destination” of snapshots. subvolume home: home is also relative to / which set above. It’s the “source” of snapshots. There are also a target field can be set: target /mnt/btrbk_backup, but it’s optional. The target is where the “backup” subvolumes to be created (refer to the man page of btrbk.conf via man btrbk.conf), while the snapshot_dir is where “snapshot” to be stored. incremental strict: which means “non-incremental (initial) backups are never created” (man btrbk.conf). What is snapshot?\nEvery Btrfs snapshot is a subvolume. However, not every subvolume is a snapshot. The difference is in what the subvolume contains. A snapshot is a subvolume with added content: it holds references to current and/or past versions of files (inodes). — Working with Btrfs – Snapshots | Snapshots in Btrfs\n似乎，btrbk 说的 snapshot 指的是与原系统 filesystem 存储在一起的 snapshot，而 backup 指的是在另一个独立的 filesystem 下的 snapshot。与原 filesystem 存在一起的 snapshot 不能称作是一个 backup，因为如果原 filesystem 炸了，那么 snapshot 一起完蛋。而 backup 这时候可以发挥作用了，因为它是存在另一个 filesystem 下的，一般来说是存在另一个盘上，这样才是 backup。以下是 btrbk man page 对 btrfs snapshot 和 btrbk snapshot 区别的简短说明：\nNote that in btrfs terminology, a snapshot is a “subvolume with a given initial content of the original subvolume” (showing a parent-uuid, see btrfs-subvolume(8)), and they can be read-write (default) or read-only. In btrbk terminology, snapshot means “read-only btrfs snapshot”, and backup means “read-only subvolume created with send/receive” (showing a received-uuid). — man btrbk\n可以得知，btrbk 创建的 snapshot 默认是 readonly 的，btrfs 默认是 read 和 write。而 btrbk 的 backup 的概念为：使用 btrfs send 和 btrfs receive 命令创建的 readonly 的 snapshot （sumvolume），而 send/receive 命令一般来说用于在不同 btrfs 文件系统之间移动 snapshots，可以说就是在不同盘之间移动数据。因此，我们上面的理解与 btrbk 的说明相符。\nbtrbk.conf 的 target 就是 backup 存放的地方，而 snapshot_dir 顾名思义是 snapshot 存放的地方。\nReferences:\nFedora Magazine Working with Btrfs – General Concepts Working with Btrfs – Subvolumes Working with Btrfs – Snapshots Working with Btrfs – Compression Incremental backups with Btrfs snapshots Recover your files from Btrfs snapshots ",
-  "wordCount" : "397",
-  "inLanguage": "en",
-  "datePublished": "2023-12-01T00:00:00Z",
-  "dateModified": "2023-12-01T00:00:00Z",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://thomjiji.github.io/blogs/2023/12/btrfs-and-btrbk/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "thomjiji",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://thomjiji.github.io/favicon.ico"
-    }
-  }
-}
-</script>
 </head>
 
 <body class="" id="top">
@@ -184,7 +102,7 @@ What is snapshot?">
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://thomjiji.github.io/" accesskey="h" title="thomjiji (Alt + H)">thomjiji</a>
+            <a href="http://localhost:1313/" accesskey="h" title="thomjiji (Alt + H)">thomjiji</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -210,22 +128,22 @@ What is snapshot?">
         </div>
         <ul id="menu">
             <li>
-                <a href="https://thomjiji.github.io/about/" title="About">
+                <a href="http://localhost:1313/about/" title="About">
                     <span>About</span>
                 </a>
             </li>
             <li>
-                <a href="https://thomjiji.github.io/archives/" title="Archives">
+                <a href="http://localhost:1313/archives/" title="Archives">
                     <span>Archives</span>
                 </a>
             </li>
             <li>
-                <a href="https://thomjiji.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
             <li>
-                <a href="https://thomjiji.github.io/tags/" title="Tags">
+                <a href="http://localhost:1313/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
@@ -236,7 +154,7 @@ What is snapshot?">
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://thomjiji.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://thomjiji.github.io/posts/">Posts</a></div>
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
     <h1 class="post-title entry-hint-parent">
       btrfs and btrbk
     </h1>
@@ -286,19 +204,19 @@ What is snapshot?">
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://thomjiji.github.io/tags/btrfs/">Btrfs</a></li>
-      <li><a href="https://thomjiji.github.io/tags/btrbk/">Btrbk</a></li>
-      <li><a href="https://thomjiji.github.io/tags/snapshot/">Snapshot</a></li>
-      <li><a href="https://thomjiji.github.io/tags/backup/">Backup</a></li>
-      <li><a href="https://thomjiji.github.io/tags/linux/">Linux</a></li>
+      <li><a href="http://localhost:1313/tags/btrfs/">Btrfs</a></li>
+      <li><a href="http://localhost:1313/tags/btrbk/">Btrbk</a></li>
+      <li><a href="http://localhost:1313/tags/snapshot/">Snapshot</a></li>
+      <li><a href="http://localhost:1313/tags/backup/">Backup</a></li>
+      <li><a href="http://localhost:1313/tags/linux/">Linux</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://thomjiji.github.io/blogs/2023/12/gpg-agent-does-not-work-anyway/">
+  <a class="prev" href="http://localhost:1313/blogs/2023/12/gpg-agent-does-not-work-anyway/">
     <span class="title">« Prev</span>
     <br>
     <span>gpg-agent doesn&#39;t work anyway!</span>
   </a>
-  <a class="next" href="https://thomjiji.github.io/blogs/2023/11/gpg-for-ssh-authentication/">
+  <a class="next" href="http://localhost:1313/blogs/2023/11/gpg-for-ssh-authentication/">
     <span class="title">Next »</span>
     <br>
     <span>GPG key for SSH authentication</span>
@@ -310,7 +228,7 @@ What is snapshot?">
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="https://thomjiji.github.io/">thomjiji</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">thomjiji</a></span> · 
 
     <span>
         Powered by

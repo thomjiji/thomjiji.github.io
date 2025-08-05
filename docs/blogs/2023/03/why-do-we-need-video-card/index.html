@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 <title>为什么使用上屏卡 | thomjiji</title>
 <meta name="keywords" content="Calibration, DisplayCAL, ICC Profile, Video Card">
 <meta name="description" content="做高端校色软件 ColourSpace 的 LightIllusion 有篇文章 What&rsquo;s wrong with ICCs? 指出了 ICC profile 的一些问题。
@@ -13,16 +13,16 @@
 
 DCM uses the ICC profile for your monitor to apply a colorimetric conversion from the sequence working color space (or media color space in the case of the source monitor) to the monitor color space. The profile is specified by the operating system. We generally recommended using the default profile that the system choses for your display. If your monitor has been professionally calibrated, use that profile. The default profile may have the name of your monitor or something generic like “Color LCD”. Using the specified display profile will ensure predictable colors across the system and in other apps like web browsers and email. DCM requires GPU Acceleration. GPU acceleration can be configured in Project Settings &gt; General &gt; Video Rendering and Playback. 1">
 <meta name="author" content="">
-<link rel="canonical" href="https://thomjiji.github.io/blogs/2023/03/why-do-we-need-video-card/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.15788c22e85882bf88f58ffeb612943001939d008f8d281dedff71542490e142.css" integrity="sha256-FXiMIuhYgr&#43;I9Y/&#43;thKUMAGTnQCPjSgd7f9xVCSQ4UI=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://thomjiji.github.io/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://thomjiji.github.io/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://thomjiji.github.io/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://thomjiji.github.io/apple-touch-icon.png">
-<link rel="mask-icon" href="https://thomjiji.github.io/safari-pinned-tab.svg">
+<link rel="canonical" href="http://localhost:1313/blogs/2023/03/why-do-we-need-video-card/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.c11bb315f149767f0aae227a81a7b1e828267190064f8aa3e1405f02f27317c4.css" integrity="sha256-wRuzFfFJdn8KriJ6gaex6CgmcZAGT4qj4UBfAvJzF8Q=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://thomjiji.github.io/blogs/2023/03/why-do-we-need-video-card/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/blogs/2023/03/why-do-we-need-video-card/">
 <noscript>
     <style>
         #theme-toggle,
@@ -62,7 +62,7 @@ DCM uses the ICC profile for your monitor to apply a colorimetric conversion fro
 </noscript><!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="icon" href="https://thomjiji.github.io/powerpuff_girls_buttercup.jpg" />
+    <link rel="icon" href="http://localhost:1313/powerpuff_girls_buttercup.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -75,80 +75,7 @@ DCM uses the ICC profile for your monitor to apply a colorimetric conversion fro
     
   </body>
 </html>
-<meta property="og:url" content="https://thomjiji.github.io/blogs/2023/03/why-do-we-need-video-card/">
-  <meta property="og:site_name" content="thomjiji">
-  <meta property="og:title" content="为什么使用上屏卡">
-  <meta property="og:description" content="做高端校色软件 ColourSpace 的 LightIllusion 有篇文章 What’s wrong with ICCs? 指出了 ICC profile 的一些问题。
-总的来说，ICC profile 能 work 的前提是软件本身支持它，软件是否是 ICC aware。通常来说 ICC aware 的软件有一个 CMM 色彩管理模块（Color Management Module）能够正确识别我们生成的 ICC profile，然后能够对图像做调整以达到「准确」的结果，实现校色的目的。先不说 ICC 这种方式本质上是对图像的调整，而不是对显示器本身的校正（后者是更好的方式，所谓硬件校准就是如此）。即使软件具有 CMM，准确度和性能还得看各个软件自身的优化。这就变成一件非常麻烦和复杂的事情。那些不是 ICC aware 的软件，看到的就做一个完全未经校准的画面。
-那对于 Adobe 全家桶来说，像 Ps、Lr 这种平面设计软件，它们是有 CMM 模块，叫作 ACE（Adobe Color Engine）。就是能够识别图像自带的 ICC profile，将其转换到 Ps 的工作色彩空间。那对于 Pr 来说，它也有被他们称为 DCM（Display Color Management）的东西，作为 Pr 内在的色彩管理方式，也是利用系统的 ICC profile 来进行工作的。
-DCM uses the ICC profile for your monitor to apply a colorimetric conversion from the sequence working color space (or media color space in the case of the source monitor) to the monitor color space. The profile is specified by the operating system. We generally recommended using the default profile that the system choses for your display. If your monitor has been professionally calibrated, use that profile. The default profile may have the name of your monitor or something generic like “Color LCD”. Using the specified display profile will ensure predictable colors across the system and in other apps like web browsers and email. DCM requires GPU Acceleration. GPU acceleration can be configured in Project Settings &gt; General &gt; Video Rendering and Playback. 1">
-  <meta property="og:locale" content="en-US">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2023-03-09T00:00:00+00:00">
-    <meta property="article:modified_time" content="2023-03-09T00:00:00+00:00">
-    <meta property="article:tag" content="Calibration">
-    <meta property="article:tag" content="DisplayCAL">
-    <meta property="article:tag" content="ICC Profile">
-    <meta property="article:tag" content="Video Card">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="为什么使用上屏卡">
-<meta name="twitter:description" content="做高端校色软件 ColourSpace 的 LightIllusion 有篇文章 What&rsquo;s wrong with ICCs? 指出了 ICC profile 的一些问题。
-总的来说，ICC profile 能 work 的前提是软件本身支持它，软件是否是 ICC aware。通常来说 ICC aware 的软件有一个 CMM 色彩管理模块（Color Management Module）能够正确识别我们生成的 ICC profile，然后能够对图像做调整以达到「准确」的结果，实现校色的目的。先不说 ICC 这种方式本质上是对图像的调整，而不是对显示器本身的校正（后者是更好的方式，所谓硬件校准就是如此）。即使软件具有 CMM，准确度和性能还得看各个软件自身的优化。这就变成一件非常麻烦和复杂的事情。那些不是 ICC aware 的软件，看到的就做一个完全未经校准的画面。
-那对于 Adobe 全家桶来说，像 Ps、Lr 这种平面设计软件，它们是有 CMM 模块，叫作 ACE（Adobe Color Engine）。就是能够识别图像自带的 ICC profile，将其转换到 Ps 的工作色彩空间。那对于 Pr 来说，它也有被他们称为 DCM（Display Color Management）的东西，作为 Pr 内在的色彩管理方式，也是利用系统的 ICC profile 来进行工作的。
 
-DCM uses the ICC profile for your monitor to apply a colorimetric conversion from the sequence working color space (or media color space in the case of the source monitor) to the monitor color space. The profile is specified by the operating system. We generally recommended using the default profile that the system choses for your display. If your monitor has been professionally calibrated, use that profile. The default profile may have the name of your monitor or something generic like “Color LCD”. Using the specified display profile will ensure predictable colors across the system and in other apps like web browsers and email. DCM requires GPU Acceleration. GPU acceleration can be configured in Project Settings &gt; General &gt; Video Rendering and Playback. 1">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "https://thomjiji.github.io/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "为什么使用上屏卡",
-      "item": "https://thomjiji.github.io/blogs/2023/03/why-do-we-need-video-card/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "为什么使用上屏卡",
-  "name": "为什么使用上屏卡",
-  "description": "做高端校色软件 ColourSpace 的 LightIllusion 有篇文章 What\u0026rsquo;s wrong with ICCs? 指出了 ICC profile 的一些问题。\n总的来说，ICC profile 能 work 的前提是软件本身支持它，软件是否是 ICC aware。通常来说 ICC aware 的软件有一个 CMM 色彩管理模块（Color Management Module）能够正确识别我们生成的 ICC profile，然后能够对图像做调整以达到「准确」的结果，实现校色的目的。先不说 ICC 这种方式本质上是对图像的调整，而不是对显示器本身的校正（后者是更好的方式，所谓硬件校准就是如此）。即使软件具有 CMM，准确度和性能还得看各个软件自身的优化。这就变成一件非常麻烦和复杂的事情。那些不是 ICC aware 的软件，看到的就做一个完全未经校准的画面。\n那对于 Adobe 全家桶来说，像 Ps、Lr 这种平面设计软件，它们是有 CMM 模块，叫作 ACE（Adobe Color Engine）。就是能够识别图像自带的 ICC profile，将其转换到 Ps 的工作色彩空间。那对于 Pr 来说，它也有被他们称为 DCM（Display Color Management）的东西，作为 Pr 内在的色彩管理方式，也是利用系统的 ICC profile 来进行工作的。\nDCM uses the ICC profile for your monitor to apply a colorimetric conversion from the sequence working color space (or media color space in the case of the source monitor) to the monitor color space. The profile is specified by the operating system. We generally recommended using the default profile that the system choses for your display. If your monitor has been professionally calibrated, use that profile. The default profile may have the name of your monitor or something generic like “Color LCD”. Using the specified display profile will ensure predictable colors across the system and in other apps like web browsers and email. DCM requires GPU Acceleration. GPU acceleration can be configured in Project Settings \u0026gt; General \u0026gt; Video Rendering and Playback. 1\n",
-  "keywords": [
-    "Calibration", "DisplayCAL", "ICC Profile", "Video Card"
-  ],
-  "articleBody": "做高端校色软件 ColourSpace 的 LightIllusion 有篇文章 What’s wrong with ICCs? 指出了 ICC profile 的一些问题。\n总的来说，ICC profile 能 work 的前提是软件本身支持它，软件是否是 ICC aware。通常来说 ICC aware 的软件有一个 CMM 色彩管理模块（Color Management Module）能够正确识别我们生成的 ICC profile，然后能够对图像做调整以达到「准确」的结果，实现校色的目的。先不说 ICC 这种方式本质上是对图像的调整，而不是对显示器本身的校正（后者是更好的方式，所谓硬件校准就是如此）。即使软件具有 CMM，准确度和性能还得看各个软件自身的优化。这就变成一件非常麻烦和复杂的事情。那些不是 ICC aware 的软件，看到的就做一个完全未经校准的画面。\n那对于 Adobe 全家桶来说，像 Ps、Lr 这种平面设计软件，它们是有 CMM 模块，叫作 ACE（Adobe Color Engine）。就是能够识别图像自带的 ICC profile，将其转换到 Ps 的工作色彩空间。那对于 Pr 来说，它也有被他们称为 DCM（Display Color Management）的东西，作为 Pr 内在的色彩管理方式，也是利用系统的 ICC profile 来进行工作的。\nDCM uses the ICC profile for your monitor to apply a colorimetric conversion from the sequence working color space (or media color space in the case of the source monitor) to the monitor color space. The profile is specified by the operating system. We generally recommended using the default profile that the system choses for your display. If your monitor has been professionally calibrated, use that profile. The default profile may have the name of your monitor or something generic like “Color LCD”. Using the specified display profile will ensure predictable colors across the system and in other apps like web browsers and email. DCM requires GPU Acceleration. GPU acceleration can be configured in Project Settings \u003e General \u003e Video Rendering and Playback. 1\nICC 主要还是平面设计领域的色彩管理方案，对于视频来说有很多局限性。虽然 ICC profile 是一种常见的色彩管理方式，但它并不是完美的，因为它只是对图像进行调整，而不是对显示器本身进行校正。使用上屏卡的一个最主要的原因就是绕过 ICC profile 乃至操作系统的整个色彩管理，更直接的获得一个干净的视频信号，而不去经过操作系统的色彩管理。而且对于监视器来说，一般需要是 SDI 接口，上屏卡也能满足这一点要求。\nNew HDR Workflow in Premiere Pro - 2020 User Guide (PDF) ↩︎\n",
-  "wordCount" : "204",
-  "inLanguage": "en",
-  "datePublished": "2023-03-09T00:00:00Z",
-  "dateModified": "2023-03-09T00:00:00Z",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://thomjiji.github.io/blogs/2023/03/why-do-we-need-video-card/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "thomjiji",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://thomjiji.github.io/favicon.ico"
-    }
-  }
-}
-</script>
 </head>
 
 <body class="" id="top">
@@ -166,7 +93,7 @@ DCM uses the ICC profile for your monitor to apply a colorimetric conversion fro
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://thomjiji.github.io/" accesskey="h" title="thomjiji (Alt + H)">thomjiji</a>
+            <a href="http://localhost:1313/" accesskey="h" title="thomjiji (Alt + H)">thomjiji</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -192,22 +119,22 @@ DCM uses the ICC profile for your monitor to apply a colorimetric conversion fro
         </div>
         <ul id="menu">
             <li>
-                <a href="https://thomjiji.github.io/about/" title="About">
+                <a href="http://localhost:1313/about/" title="About">
                     <span>About</span>
                 </a>
             </li>
             <li>
-                <a href="https://thomjiji.github.io/archives/" title="Archives">
+                <a href="http://localhost:1313/archives/" title="Archives">
                     <span>Archives</span>
                 </a>
             </li>
             <li>
-                <a href="https://thomjiji.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
             <li>
-                <a href="https://thomjiji.github.io/tags/" title="Tags">
+                <a href="http://localhost:1313/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
@@ -218,7 +145,7 @@ DCM uses the ICC profile for your monitor to apply a colorimetric conversion fro
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://thomjiji.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://thomjiji.github.io/posts/">Posts</a></div>
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
     <h1 class="post-title entry-hint-parent">
       为什么使用上屏卡
     </h1>
@@ -246,18 +173,18 @@ DCM uses the ICC profile for your monitor to apply a colorimetric conversion fro
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://thomjiji.github.io/tags/calibration/">Calibration</a></li>
-      <li><a href="https://thomjiji.github.io/tags/displaycal/">DisplayCAL</a></li>
-      <li><a href="https://thomjiji.github.io/tags/icc-profile/">ICC Profile</a></li>
-      <li><a href="https://thomjiji.github.io/tags/video-card/">Video Card</a></li>
+      <li><a href="http://localhost:1313/tags/calibration/">Calibration</a></li>
+      <li><a href="http://localhost:1313/tags/displaycal/">DisplayCAL</a></li>
+      <li><a href="http://localhost:1313/tags/icc-profile/">ICC Profile</a></li>
+      <li><a href="http://localhost:1313/tags/video-card/">Video Card</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://thomjiji.github.io/blogs/2023/03/vcgt-tag/">
+  <a class="prev" href="http://localhost:1313/blogs/2023/03/vcgt-tag/">
     <span class="title">« Prev</span>
     <br>
     <span>VCGT Tag</span>
   </a>
-  <a class="next" href="https://thomjiji.github.io/blogs/2023/02/monitor-calibration-notes/">
+  <a class="next" href="http://localhost:1313/blogs/2023/02/monitor-calibration-notes/">
     <span class="title">Next »</span>
     <br>
     <span>显示器校色笔记</span>
@@ -269,7 +196,7 @@ DCM uses the ICC profile for your monitor to apply a colorimetric conversion fro
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="https://thomjiji.github.io/">thomjiji</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">thomjiji</a></span> · 
 
     <span>
         Powered by
