@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Asahi Linux on thomjiji</title>
-    <link>http://localhost:1313/tags/asahi-linux/</link>
+    <link>https://thomjiji.github.io/tags/asahi-linux/</link>
     <description>Recent content in Asahi Linux on thomjiji</description>
     <generator>Hugo -- 0.148.2</generator>
     <language>en-US</language>
     <lastBuildDate>Sat, 30 Dec 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/asahi-linux/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://thomjiji.github.io/tags/asahi-linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Setup Rime on Fedora Asahi Remix</title>
-      <link>http://localhost:1313/blogs/2023/12/setup-rime-on-fedora-asahi/</link>
+      <link>https://thomjiji.github.io/blogs/2023/12/setup-rime-on-fedora-asahi/</link>
       <pubDate>Sat, 30 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blogs/2023/12/setup-rime-on-fedora-asahi/</guid>
+      <guid>https://thomjiji.github.io/blogs/2023/12/setup-rime-on-fedora-asahi/</guid>
       <description>&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Install fcitx5 and fcitx5-rime via &lt;code&gt;sudo dnf install fcitx5-rime fcitx5&lt;/code&gt;.&lt;/p&gt;

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>I fixed Rime and Neovide | thomjiji</title>
 <meta name="keywords" content="Rime, Neovide, Neovim">
 <meta name="description" content="TL;DR
@@ -16,16 +16,16 @@ alias neovide &#34;/Applications/Neovide.app/Contents/MacOS/neovide&#34;
 前情提要、问题浮现
 Neovide 是一个我前阵子发现的宝藏 app，它让 neovim 拥有 vscode 一般的顺滑操控和鼠标动画。我第一次知道这个 app 的那天晚上，下班一回到家，等不及迅速安装配置好了，然后就被惊到。这个动画的顺畅程度跟 vscode 真的有过之而无不及。那天晚上真是惊叹不已，要知道 neovim 在 Terminal 里的体验你是绝对不会奢求它有多好的 animation 的。即便 LazyVim 的 snacks 插件有通过一个 Animate 的模块做了一点点让 neovim 稍微顺滑一点的努力，但远不及 Neovide 这个顺滑。Neovide 属于你用了就回不去了的那种。">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/blogs/2025/05/i-fixed-rime-and-neovide/">
+<link rel="canonical" href="https://thomjiji.github.io/blogs/2025/05/i-fixed-rime-and-neovide/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.c11bb315f149767f0aae227a81a7b1e828267190064f8aa3e1405f02f27317c4.css" integrity="sha256-wRuzFfFJdn8KriJ6gaex6CgmcZAGT4qj4UBfAvJzF8Q=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<link rel="icon" href="https://thomjiji.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://thomjiji.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://thomjiji.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://thomjiji.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://thomjiji.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/blogs/2025/05/i-fixed-rime-and-neovide/">
+<link rel="alternate" hreflang="en" href="https://thomjiji.github.io/blogs/2025/05/i-fixed-rime-and-neovide/">
 <noscript>
     <style>
         #theme-toggle,
@@ -65,7 +65,7 @@ Neovide 是一个我前阵子发现的宝藏 app，它让 neovim 拥有 vscode �
 </noscript><!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="icon" href="http://localhost:1313/powerpuff_girls_buttercup.jpg" />
+    <link rel="icon" href="https://thomjiji.github.io/powerpuff_girls_buttercup.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -78,7 +78,83 @@ Neovide 是一个我前阵子发现的宝藏 app，它让 neovim 拥有 vscode �
     
   </body>
 </html>
+<meta property="og:url" content="https://thomjiji.github.io/blogs/2025/05/i-fixed-rime-and-neovide/">
+  <meta property="og:site_name" content="thomjiji">
+  <meta property="og:title" content="I fixed Rime and Neovide">
+  <meta property="og:description" content="TL;DR 问题：Rime 的自动切换到英文输入法的设置对 macOS 上的 Neovide 不生效！
+原因：我一般是从 Terminal 启动 Neovide，这样其实调用的是 Homebrew 叫作 formula 的那个程序：/opt/homebrew/bin/neovide。而我们在 Rime 的配置文件 squirrel.yaml 设置的开启默认英文 ascii_mode: true 是给 Neovide 的 GUI app 的！那它自然就不生效了。
+解决方案：给 Neovide 设置一个 alias，让它指向 Neovide GUI app 的可执行文件 /Applications/Neovide.app/Contents/MacOS/neovide。像我在 Fish shell 的 ~/.config/fish/config.fish 就是这样设置:
+alias neovide &#34;/Applications/Neovide.app/Contents/MacOS/neovide&#34; 这样你在 Terminal 输入 neovide 就不会调用那个 formula /opt/homebrew/bin/neovide，而是 Neovide GUI app 的可执行文件。Rime 的默认英文的设置也就正常生效了。
+前情提要、问题浮现 Neovide 是一个我前阵子发现的宝藏 app，它让 neovim 拥有 vscode 一般的顺滑操控和鼠标动画。我第一次知道这个 app 的那天晚上，下班一回到家，等不及迅速安装配置好了，然后就被惊到。这个动画的顺畅程度跟 vscode 真的有过之而无不及。那天晚上真是惊叹不已，要知道 neovim 在 Terminal 里的体验你是绝对不会奢求它有多好的 animation 的。即便 LazyVim 的 snacks 插件有通过一个 Animate 的模块做了一点点让 neovim 稍微顺滑一点的努力，但远不及 Neovide 这个顺滑。Neovide 属于你用了就回不去了的那种。">
+  <meta property="og:locale" content="en-US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-05-04T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-05-04T00:00:00+00:00">
+    <meta property="article:tag" content="Rime">
+    <meta property="article:tag" content="Neovide">
+    <meta property="article:tag" content="Neovim">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="I fixed Rime and Neovide">
+<meta name="twitter:description" content="TL;DR
+问题：Rime 的自动切换到英文输入法的设置对 macOS 上的 Neovide 不生效！
+原因：我一般是从 Terminal 启动 Neovide，这样其实调用的是 Homebrew 叫作 formula 的那个程序：/opt/homebrew/bin/neovide。而我们在 Rime 的配置文件 squirrel.yaml 设置的开启默认英文 ascii_mode: true 是给 Neovide 的 GUI app 的！那它自然就不生效了。
+解决方案：给 Neovide 设置一个 alias，让它指向 Neovide GUI app 的可执行文件 /Applications/Neovide.app/Contents/MacOS/neovide。像我在 Fish shell 的 ~/.config/fish/config.fish 就是这样设置:
+alias neovide &#34;/Applications/Neovide.app/Contents/MacOS/neovide&#34;
+这样你在 Terminal 输入 neovide 就不会调用那个 formula /opt/homebrew/bin/neovide，而是 Neovide GUI app 的可执行文件。Rime 的默认英文的设置也就正常生效了。
+前情提要、问题浮现
+Neovide 是一个我前阵子发现的宝藏 app，它让 neovim 拥有 vscode 一般的顺滑操控和鼠标动画。我第一次知道这个 app 的那天晚上，下班一回到家，等不及迅速安装配置好了，然后就被惊到。这个动画的顺畅程度跟 vscode 真的有过之而无不及。那天晚上真是惊叹不已，要知道 neovim 在 Terminal 里的体验你是绝对不会奢求它有多好的 animation 的。即便 LazyVim 的 snacks 插件有通过一个 Animate 的模块做了一点点让 neovim 稍微顺滑一点的努力，但远不及 Neovide 这个顺滑。Neovide 属于你用了就回不去了的那种。">
 
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://thomjiji.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "I fixed Rime and Neovide",
+      "item": "https://thomjiji.github.io/blogs/2025/05/i-fixed-rime-and-neovide/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "I fixed Rime and Neovide",
+  "name": "I fixed Rime and Neovide",
+  "description": "TL;DR 问题：Rime 的自动切换到英文输入法的设置对 macOS 上的 Neovide 不生效！\n原因：我一般是从 Terminal 启动 Neovide，这样其实调用的是 Homebrew 叫作 formula 的那个程序：/opt/homebrew/bin/neovide。而我们在 Rime 的配置文件 squirrel.yaml 设置的开启默认英文 ascii_mode: true 是给 Neovide 的 GUI app 的！那它自然就不生效了。\n解决方案：给 Neovide 设置一个 alias，让它指向 Neovide GUI app 的可执行文件 /Applications/Neovide.app/Contents/MacOS/neovide。像我在 Fish shell 的 ~/.config/fish/config.fish 就是这样设置:\nalias neovide \u0026#34;/Applications/Neovide.app/Contents/MacOS/neovide\u0026#34; 这样你在 Terminal 输入 neovide 就不会调用那个 formula /opt/homebrew/bin/neovide，而是 Neovide GUI app 的可执行文件。Rime 的默认英文的设置也就正常生效了。\n前情提要、问题浮现 Neovide 是一个我前阵子发现的宝藏 app，它让 neovim 拥有 vscode 一般的顺滑操控和鼠标动画。我第一次知道这个 app 的那天晚上，下班一回到家，等不及迅速安装配置好了，然后就被惊到。这个动画的顺畅程度跟 vscode 真的有过之而无不及。那天晚上真是惊叹不已，要知道 neovim 在 Terminal 里的体验你是绝对不会奢求它有多好的 animation 的。即便 LazyVim 的 snacks 插件有通过一个 Animate 的模块做了一点点让 neovim 稍微顺滑一点的努力，但远不及 Neovide 这个顺滑。Neovide 属于你用了就回不去了的那种。\n",
+  "keywords": [
+    "Rime", "Neovide", "Neovim"
+  ],
+  "articleBody": "TL;DR 问题：Rime 的自动切换到英文输入法的设置对 macOS 上的 Neovide 不生效！\n原因：我一般是从 Terminal 启动 Neovide，这样其实调用的是 Homebrew 叫作 formula 的那个程序：/opt/homebrew/bin/neovide。而我们在 Rime 的配置文件 squirrel.yaml 设置的开启默认英文 ascii_mode: true 是给 Neovide 的 GUI app 的！那它自然就不生效了。\n解决方案：给 Neovide 设置一个 alias，让它指向 Neovide GUI app 的可执行文件 /Applications/Neovide.app/Contents/MacOS/neovide。像我在 Fish shell 的 ~/.config/fish/config.fish 就是这样设置:\nalias neovide \"/Applications/Neovide.app/Contents/MacOS/neovide\" 这样你在 Terminal 输入 neovide 就不会调用那个 formula /opt/homebrew/bin/neovide，而是 Neovide GUI app 的可执行文件。Rime 的默认英文的设置也就正常生效了。\n前情提要、问题浮现 Neovide 是一个我前阵子发现的宝藏 app，它让 neovim 拥有 vscode 一般的顺滑操控和鼠标动画。我第一次知道这个 app 的那天晚上，下班一回到家，等不及迅速安装配置好了，然后就被惊到。这个动画的顺畅程度跟 vscode 真的有过之而无不及。那天晚上真是惊叹不已，要知道 neovim 在 Terminal 里的体验你是绝对不会奢求它有多好的 animation 的。即便 LazyVim 的 snacks 插件有通过一个 Animate 的模块做了一点点让 neovim 稍微顺滑一点的努力，但远不及 Neovide 这个顺滑。Neovide 属于你用了就回不去了的那种。\n以前我记得还用 PyCharm 的时候，有一个帖子就在苦苦哀求 PyCharm 添加像 vscode 一样的顺滑的鼠标 animation，然而直到今天好像都没有实现。neovim 这样一个 text based 的 TUI app 通过 neovide 居然能做到像 vscode 这样图形界面 based 的 app 一样的顺滑程度。\n但是！一个我们中文输入法用户很难避开的问题也来到了 Neovide 这里。我是使用 Rime 这个输入法引擎的，平时切换中英输入法就是按一下 Shift 键。Rime 有一个功能就是：你可以设置哪些 app 启动的时候是默认自动切换到英文输入法。像比如你打开 Terminal 肯定是输入一些英文的命令，那么你就设置让 Terminal 打开的时候 Rime 自动给我切换到英文输入法，这样我就不用手动去按一下 Shift 键。\n在 squirrel.yaml 文件里有一个 app_options：\napp_options: com.googlecode.iterm2: ascii_mode: true # 开启默认英文 vim_mode: true # vim 模式下退出 insert mode 自然切换回英文 com.neovide.neovide: ascii_mode: true vim_mode: true 但是这个设置在 Neovide 怎么着都不生效！打开 Neovide 的时候还是不会自动切换到英文，一开始 hjkl 就会触发中文输入法。这个需要你手动切换一下到英文输入法的操作，其实是很打断的。你火急火燎之下需要用 neovide 打开一个文件快速编辑一下，neovide 一眨眼就打开了。你想快速 navigate 到那个文件，但 hjkl 没有让你快速到达那个你想要编辑的文件，而是把输入法弄出来了。你真想一拳把输入法揍开。\n初见端倪 本来都是把这个问题当作无解搁置了，不能自动切换英文就不能吧，就这样吧。maybe 是 Neovide 的什么 bug，这个软件差这么一丁点对我来说就是完美了，如果不行那也没办法。\n但那天晚上我在解决一个 neovim 的 autoformat 配置问题的时候，发现是由于自己把配置没放对地方导致 conform.lua 并没有生效，进而才导致 autoformat 坏掉了。就是这么个可笑的原因，浪费了我晚上好几个小时。\n解决了这个可笑的配置问题之后，Neovide 和 Rime 这个搭配的问题又浮上来，你避免不掉的，一打开 Neovide 这个问题就在你脸蛋上、你的手指头间，你没办法忽略它。一开启 Neovide，一 hjkl 就会触发中文输入法，这真的很恼人。Neovide 什么都好，对我来说就这点很致命，是我没法安心的用下去的主要原因。然后我又开始尝试解决它了。\n先是搜索，发现其实大家也有这个问题，像这个 Rime 的 Issue，但它好像在 Windows。这个 Rime 的 Discussion 也提到类似问题。\n又去检视了一下我的 squirrel.yaml 配置：\n# ascii_mode、inline、no_inline、vim_mode 等等设定 # 可参考 /Library/Input Methods/Squirrel.app/Contents/SharedSupport/squirrel.yaml app_options: com.neovide.neovide: ascii_mode: true # 开启默认英文 vim_mode: true # vim 模式下退出 insert mode 自然切换回英文 com.apple.Spotlight: ascii_mode: true com.microsoft.VSCode: ascii_mode: true vim_mode: true ... 没啥问题啊，ascii_mode 设为 true，之前也尝试把它设为 false 试了下，以防我把这个 ascii_mode 是用来干啥的记错了。那这个 com.neovide.neovide、com.googlecode.iterm2 这些奇怪的 com... 究竟是个什么呢？其实我不是很清楚，只知道你可以去 /Application/.app/Contents/Info.plist 这个文件里找到 CFBundleIdentifier 这个 xml tag，这个 tag 里面的内容就可以写在 squirrel.yaml 的 app_options 作为 app 的名字，让 Rime 正确找到 app 然后做正确的事——自动切换到英文。\n那对于 Neovide 来说，/Application/Neovide.app/Contents/Info.plist 里的 CFBundleIdentifier 确实也是叫这个：com.neovide.neovide。难不成 Neovide 打包 Mac app 的时候没搞对？Neovide 的什么 bug？我把 com.neovide.neovide 改成 com.Neovide.neovide…还是没用。\n这时不知道为啥我直接打开 Spotlight 启动了 Neovide 的 GUI app，我发现居然没有触发中文输入法？！这也就是说 Rime 做了正确的事，自动切换到了英文！同时也能看到启动完成的一刹那，Rime 的输入框框显示切换到了英文。我瞬间知道为什么了。赶紧去 Terminal：\n$ which neovide /opt/homebrew/bin/neovide shit!\n",
+  "wordCount" : "291",
+  "inLanguage": "en",
+  "datePublished": "2025-05-04T00:00:00Z",
+  "dateModified": "2025-05-04T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://thomjiji.github.io/blogs/2025/05/i-fixed-rime-and-neovide/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "thomjiji",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://thomjiji.github.io/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">
@@ -96,7 +172,7 @@ Neovide 是一个我前阵子发现的宝藏 app，它让 neovim 拥有 vscode �
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="thomjiji (Alt + H)">thomjiji</a>
+            <a href="https://thomjiji.github.io/" accesskey="h" title="thomjiji (Alt + H)">thomjiji</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -122,22 +198,22 @@ Neovide 是一个我前阵子发现的宝藏 app，它让 neovim 拥有 vscode �
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/about/" title="About">
+                <a href="https://thomjiji.github.io/about/" title="About">
                     <span>About</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/archives/" title="Archives">
+                <a href="https://thomjiji.github.io/archives/" title="Archives">
                     <span>Archives</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="https://thomjiji.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/tags/" title="Tags">
+                <a href="https://thomjiji.github.io/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
@@ -148,7 +224,7 @@ Neovide 是一个我前阵子发现的宝藏 app，它让 neovim 拥有 vscode �
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <div class="breadcrumbs"><a href="https://thomjiji.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://thomjiji.github.io/posts/">Posts</a></div>
     <h1 class="post-title entry-hint-parent">
       I fixed Rime and Neovide
     </h1>
@@ -205,12 +281,12 @@ Neovide 是一个我前阵子发现的宝藏 app，它让 neovim 拥有 vscode �
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/rime/">Rime</a></li>
-      <li><a href="http://localhost:1313/tags/neovide/">Neovide</a></li>
-      <li><a href="http://localhost:1313/tags/neovim/">Neovim</a></li>
+      <li><a href="https://thomjiji.github.io/tags/rime/">Rime</a></li>
+      <li><a href="https://thomjiji.github.io/tags/neovide/">Neovide</a></li>
+      <li><a href="https://thomjiji.github.io/tags/neovim/">Neovim</a></li>
     </ul>
 <nav class="paginav">
-  <a class="next" href="http://localhost:1313/blogs/2025/01/tips-and-tricks/">
+  <a class="next" href="https://thomjiji.github.io/blogs/2025/01/tips-and-tricks/">
     <span class="title">Next »</span>
     <br>
     <span>Tips and tricks</span>
@@ -222,7 +298,7 @@ Neovide 是一个我前阵子发现的宝藏 app，它让 neovim 拥有 vscode �
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:1313/">thomjiji</a></span> · 
+        <span>&copy; 2025 <a href="https://thomjiji.github.io/">thomjiji</a></span> · 
 
     <span>
         Powered by

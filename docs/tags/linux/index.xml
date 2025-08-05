@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Linux on thomjiji</title>
-    <link>http://localhost:1313/tags/linux/</link>
+    <link>https://thomjiji.github.io/tags/linux/</link>
     <description>Recent content in Linux on thomjiji</description>
     <generator>Hugo -- 0.148.2</generator>
     <language>en-US</language>
     <lastBuildDate>Mon, 04 Dec 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://thomjiji.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Pin apps to KDE Panel, not KDE Task Manager</title>
-      <link>http://localhost:1313/blogs/2023/12/pin-apps-to-kde-panel/</link>
+      <link>https://thomjiji.github.io/blogs/2023/12/pin-apps-to-kde-panel/</link>
       <pubDate>Mon, 04 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blogs/2023/12/pin-apps-to-kde-panel/</guid>
+      <guid>https://thomjiji.github.io/blogs/2023/12/pin-apps-to-kde-panel/</guid>
       <description>&lt;p&gt;比如你想把 Konsole 和 Firefox 这些最最常用的 app pin 到底部的 bar/dock 上（实际上 KDE 叫它 Panel），最直观的，你下意识的右键 Task Manager 上已经打开的 app，这里有一个“Pin to Task Manager”的选项，勾选上它。但这好像不是你想要的，因为你发现即使 pin 上去了，只要你打开那个 app 的一个 instance，那个刚刚被你 pin 上去的 app 就又不见了。这似乎不是你期待中的“pin”。这时你想要打开那个 app 的第二个 instance，就没法去到老地方，你最初 pin 它的那个地方打开。得找到现在的正在运行的那个 instance 所在的 Task Manager 的地方，右键 &amp;gt; &amp;ldquo;Open a New Window&amp;rdquo;。&lt;/p&gt;
 &lt;p&gt;其实，你刚刚 pin 上去的那个地方，是 Task Manager 的区域。Task Manager 外层还有一个区域，叫作 Panel。你应该，或者说你其实想把它 pin 到 &lt;strong&gt;Panel&lt;/strong&gt; 上。这样不管你开几个 instance，那个 app 的图标还是在那，当你想开第 n+1 的 instance 的时候，还是去那个 pin 的地方点一下就行了。&lt;/p&gt;
 &lt;p&gt;总的来说，KDE 底部栏的层级是这样的：&lt;/p&gt;
@@ -32,9 +32,9 @@
     </item>
     <item>
       <title>btrfs and btrbk</title>
-      <link>http://localhost:1313/blogs/2023/12/btrfs-and-btrbk/</link>
+      <link>https://thomjiji.github.io/blogs/2023/12/btrfs-and-btrbk/</link>
       <pubDate>Fri, 01 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blogs/2023/12/btrfs-and-btrbk/</guid>
+      <guid>https://thomjiji.github.io/blogs/2023/12/btrfs-and-btrbk/</guid>
       <description>&lt;p&gt;&lt;code&gt;/etc/btrbk/btrbk.conf&lt;/code&gt; config file:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;volume /
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  snapshot_dir btrbk_snapshots

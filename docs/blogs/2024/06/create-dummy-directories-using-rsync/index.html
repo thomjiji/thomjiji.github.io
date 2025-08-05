@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Create dummy directories using Rsync | thomjiji</title>
 <meta name="keywords" content="rsync">
 <meta name="description" content="Use rsync to create dummy dirs:
@@ -24,16 +24,16 @@ Here’s a breakdown of the command:
 --exclude &#39;*&#39;: Excludes all files.
 ">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/blogs/2024/06/create-dummy-directories-using-rsync/">
+<link rel="canonical" href="https://thomjiji.github.io/blogs/2024/06/create-dummy-directories-using-rsync/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.c11bb315f149767f0aae227a81a7b1e828267190064f8aa3e1405f02f27317c4.css" integrity="sha256-wRuzFfFJdn8KriJ6gaex6CgmcZAGT4qj4UBfAvJzF8Q=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<link rel="icon" href="https://thomjiji.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://thomjiji.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://thomjiji.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://thomjiji.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://thomjiji.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/blogs/2024/06/create-dummy-directories-using-rsync/">
+<link rel="alternate" hreflang="en" href="https://thomjiji.github.io/blogs/2024/06/create-dummy-directories-using-rsync/">
 <noscript>
     <style>
         #theme-toggle,
@@ -73,7 +73,7 @@ Here’s a breakdown of the command:
 </noscript><!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="icon" href="http://localhost:1313/powerpuff_girls_buttercup.jpg" />
+    <link rel="icon" href="https://thomjiji.github.io/powerpuff_girls_buttercup.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -86,7 +86,87 @@ Here’s a breakdown of the command:
     
   </body>
 </html>
+<meta property="og:url" content="https://thomjiji.github.io/blogs/2024/06/create-dummy-directories-using-rsync/">
+  <meta property="og:site_name" content="thomjiji">
+  <meta property="og:title" content="Create dummy directories using Rsync">
+  <meta property="og:description" content="Use rsync to create dummy dirs:
+rsync -avPih --include &#39;*/&#39; --exclude &#39;*&#39; videos/ ~/Desktop/videos-dummy/ Here’s a breakdown of the command:
+-avPih: These flags stand for: -a: Archive mode, which preserves permissions, timestamps, symbolic links, etc. -v: Verbose, which provides detailed output. -P: Combines –progress and –partial, showing progress during transfer and allowing for partial transfers to be resumed. -i: Output a change-summary for all updates. -h: Output numbers in a human-readable format. --include &#39;*/&#39;: Includes all directories (and subdirectories) in the transfer. --exclude &#39;*&#39;: Excludes all files. ">
+  <meta property="og:locale" content="en-US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-06-25T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-06-25T00:00:00+00:00">
+    <meta property="article:tag" content="Rsync">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Create dummy directories using Rsync">
+<meta name="twitter:description" content="Use rsync to create dummy dirs:
+rsync -avPih --include &#39;*/&#39; --exclude &#39;*&#39; videos/ ~/Desktop/videos-dummy/
+Here’s a breakdown of the command:
 
+-avPih: These flags stand for:
+
+-a: Archive mode, which preserves permissions, timestamps, symbolic links, etc.
+-v: Verbose, which provides detailed output.
+-P: Combines &ndash;progress and &ndash;partial, showing progress during transfer and allowing for partial transfers to be resumed.
+-i: Output a change-summary for all updates.
+-h: Output numbers in a human-readable format.
+
+
+--include &#39;*/&#39;: Includes all directories (and subdirectories) in the transfer.
+--exclude &#39;*&#39;: Excludes all files.
+">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://thomjiji.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Create dummy directories using Rsync",
+      "item": "https://thomjiji.github.io/blogs/2024/06/create-dummy-directories-using-rsync/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Create dummy directories using Rsync",
+  "name": "Create dummy directories using Rsync",
+  "description": "Use rsync to create dummy dirs:\nrsync -avPih --include \u0026#39;*/\u0026#39; --exclude \u0026#39;*\u0026#39; videos/ ~/Desktop/videos-dummy/ Here’s a breakdown of the command:\n-avPih: These flags stand for: -a: Archive mode, which preserves permissions, timestamps, symbolic links, etc. -v: Verbose, which provides detailed output. -P: Combines \u0026ndash;progress and \u0026ndash;partial, showing progress during transfer and allowing for partial transfers to be resumed. -i: Output a change-summary for all updates. -h: Output numbers in a human-readable format. --include '*/': Includes all directories (and subdirectories) in the transfer. --exclude '*': Excludes all files. ",
+  "keywords": [
+    "rsync"
+  ],
+  "articleBody": "Use rsync to create dummy dirs:\nrsync -avPih --include '*/' --exclude '*' videos/ ~/Desktop/videos-dummy/ Here’s a breakdown of the command:\n-avPih: These flags stand for: -a: Archive mode, which preserves permissions, timestamps, symbolic links, etc. -v: Verbose, which provides detailed output. -P: Combines –progress and –partial, showing progress during transfer and allowing for partial transfers to be resumed. -i: Output a change-summary for all updates. -h: Output numbers in a human-readable format. --include '*/': Includes all directories (and subdirectories) in the transfer. --exclude '*': Excludes all files. ",
+  "wordCount" : "87",
+  "inLanguage": "en",
+  "datePublished": "2024-06-25T00:00:00Z",
+  "dateModified": "2024-06-25T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://thomjiji.github.io/blogs/2024/06/create-dummy-directories-using-rsync/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "thomjiji",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://thomjiji.github.io/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">
@@ -104,7 +184,7 @@ Here’s a breakdown of the command:
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="thomjiji (Alt + H)">thomjiji</a>
+            <a href="https://thomjiji.github.io/" accesskey="h" title="thomjiji (Alt + H)">thomjiji</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -130,22 +210,22 @@ Here’s a breakdown of the command:
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/about/" title="About">
+                <a href="https://thomjiji.github.io/about/" title="About">
                     <span>About</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/archives/" title="Archives">
+                <a href="https://thomjiji.github.io/archives/" title="Archives">
                     <span>Archives</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="https://thomjiji.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/tags/" title="Tags">
+                <a href="https://thomjiji.github.io/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
@@ -156,7 +236,7 @@ Here’s a breakdown of the command:
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <div class="breadcrumbs"><a href="https://thomjiji.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://thomjiji.github.io/posts/">Posts</a></div>
     <h1 class="post-title entry-hint-parent">
       Create dummy directories using Rsync
     </h1>
@@ -186,15 +266,15 @@ Here’s a breakdown of the command:
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/rsync/">Rsync</a></li>
+      <li><a href="https://thomjiji.github.io/tags/rsync/">Rsync</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="http://localhost:1313/blogs/2025/01/tips-and-tricks/">
+  <a class="prev" href="https://thomjiji.github.io/blogs/2025/01/tips-and-tricks/">
     <span class="title">« Prev</span>
     <br>
     <span>Tips and tricks</span>
   </a>
-  <a class="next" href="http://localhost:1313/blogs/2024/03/best-practice-for-grading-stack-in-baselight/">
+  <a class="next" href="https://thomjiji.github.io/blogs/2024/03/best-practice-for-grading-stack-in-baselight/">
     <span class="title">Next »</span>
     <br>
     <span>Best practice for grading stack in Baselight</span>
@@ -206,7 +286,7 @@ Here’s a breakdown of the command:
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:1313/">thomjiji</a></span> · 
+        <span>&copy; 2025 <a href="https://thomjiji.github.io/">thomjiji</a></span> · 
 
     <span>
         Powered by

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>mp4muxer &amp; mp4demuxer Basic Usage | thomjiji</title>
 <meta name="keywords" content="Dolby Vision, Dolby Atmos">
 <meta name="description" content="Installation
@@ -39,16 +39,16 @@ mp4muxer \
     -o SDR_DolbyAtmos.mp4
 ">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/blogs/2023/01/mp4muxer-mp4demuxer-basic-usage/">
+<link rel="canonical" href="https://thomjiji.github.io/blogs/2023/01/mp4muxer-mp4demuxer-basic-usage/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.c11bb315f149767f0aae227a81a7b1e828267190064f8aa3e1405f02f27317c4.css" integrity="sha256-wRuzFfFJdn8KriJ6gaex6CgmcZAGT4qj4UBfAvJzF8Q=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<link rel="icon" href="https://thomjiji.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://thomjiji.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://thomjiji.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://thomjiji.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://thomjiji.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/blogs/2023/01/mp4muxer-mp4demuxer-basic-usage/">
+<link rel="alternate" hreflang="en" href="https://thomjiji.github.io/blogs/2023/01/mp4muxer-mp4demuxer-basic-usage/">
 <noscript>
     <style>
         #theme-toggle,
@@ -88,7 +88,7 @@ mp4muxer \
 </noscript><!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="icon" href="http://localhost:1313/powerpuff_girls_buttercup.jpg" />
+    <link rel="icon" href="https://thomjiji.github.io/powerpuff_girls_buttercup.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -101,7 +101,101 @@ mp4muxer \
     
   </body>
 </html>
+<meta property="og:url" content="https://thomjiji.github.io/blogs/2023/01/mp4muxer-mp4demuxer-basic-usage/">
+  <meta property="og:site_name" content="thomjiji">
+  <meta property="og:title" content="mp4muxer & mp4demuxer Basic Usage">
+  <meta property="og:description" content="Installation mp4muxer mp4demuxer Commands 将 MP4 的音视频分离（脱壳 Demux）： mp4demuxer --input-file input.mp4 --output-folder ~/Output 合并杜比视界 Profile 8.4 和杜比全景声双音轨： mp4muxer \ -i input.h265 \ --input-video-frame-rate 25 \ --hvc1flag 0 \ --dv-bl-compatible-id 4 \ -i Stereo.aac \ -i Atmos.ec3 \ -o DolbyVision_DolbyAtmos.mp4 合并 SDR 视频和杜比全景声双音轨: mp4muxer \ -i input.h264 \ --input-video-frame-rate 25 \ -i Stereo.aac \ -i Atmos.ec3 \ -o SDR_DolbyAtmos.mp4 ">
+  <meta property="og:locale" content="en-US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-01-29T00:00:00+00:00">
+    <meta property="article:modified_time" content="2023-01-29T00:00:00+00:00">
+    <meta property="article:tag" content="Dolby Vision">
+    <meta property="article:tag" content="Dolby Atmos">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mp4muxer &amp; mp4demuxer Basic Usage">
+<meta name="twitter:description" content="Installation
 
+mp4muxer
+mp4demuxer
+
+Commands
+
+将 MP4 的音视频分离（脱壳 Demux）：
+
+mp4demuxer --input-file input.mp4 --output-folder ~/Output
+
+合并杜比视界 Profile 8.4 和杜比全景声双音轨：
+
+mp4muxer \
+    -i input.h265 \
+    --input-video-frame-rate 25 \
+    --hvc1flag 0 \
+    --dv-bl-compatible-id 4 \
+    -i Stereo.aac \
+    -i Atmos.ec3 \
+    -o DolbyVision_DolbyAtmos.mp4
+
+合并 SDR 视频和杜比全景声双音轨:
+
+mp4muxer \
+    -i input.h264 \
+    --input-video-frame-rate 25 \
+    -i Stereo.aac \
+    -i Atmos.ec3 \
+    -o SDR_DolbyAtmos.mp4
+">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://thomjiji.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "mp4muxer \u0026 mp4demuxer Basic Usage",
+      "item": "https://thomjiji.github.io/blogs/2023/01/mp4muxer-mp4demuxer-basic-usage/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "mp4muxer \u0026 mp4demuxer Basic Usage",
+  "name": "mp4muxer \u0026 mp4demuxer Basic Usage",
+  "description": "Installation mp4muxer mp4demuxer Commands 将 MP4 的音视频分离（脱壳 Demux）： mp4demuxer --input-file input.mp4 --output-folder ~/Output 合并杜比视界 Profile 8.4 和杜比全景声双音轨： mp4muxer \\ -i input.h265 \\ --input-video-frame-rate 25 \\ --hvc1flag 0 \\ --dv-bl-compatible-id 4 \\ -i Stereo.aac \\ -i Atmos.ec3 \\ -o DolbyVision_DolbyAtmos.mp4 合并 SDR 视频和杜比全景声双音轨: mp4muxer \\ -i input.h264 \\ --input-video-frame-rate 25 \\ -i Stereo.aac \\ -i Atmos.ec3 \\ -o SDR_DolbyAtmos.mp4 ",
+  "keywords": [
+    "Dolby Vision", "Dolby Atmos"
+  ],
+  "articleBody": "Installation mp4muxer mp4demuxer Commands 将 MP4 的音视频分离（脱壳 Demux）： mp4demuxer --input-file input.mp4 --output-folder ~/Output 合并杜比视界 Profile 8.4 和杜比全景声双音轨： mp4muxer \\ -i input.h265 \\ --input-video-frame-rate 25 \\ --hvc1flag 0 \\ --dv-bl-compatible-id 4 \\ -i Stereo.aac \\ -i Atmos.ec3 \\ -o DolbyVision_DolbyAtmos.mp4 合并 SDR 视频和杜比全景声双音轨: mp4muxer \\ -i input.h264 \\ --input-video-frame-rate 25 \\ -i Stereo.aac \\ -i Atmos.ec3 \\ -o SDR_DolbyAtmos.mp4 ",
+  "wordCount" : "58",
+  "inLanguage": "en",
+  "datePublished": "2023-01-29T00:00:00Z",
+  "dateModified": "2023-01-29T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://thomjiji.github.io/blogs/2023/01/mp4muxer-mp4demuxer-basic-usage/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "thomjiji",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://thomjiji.github.io/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">
@@ -119,7 +213,7 @@ mp4muxer \
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="thomjiji (Alt + H)">thomjiji</a>
+            <a href="https://thomjiji.github.io/" accesskey="h" title="thomjiji (Alt + H)">thomjiji</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -145,22 +239,22 @@ mp4muxer \
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/about/" title="About">
+                <a href="https://thomjiji.github.io/about/" title="About">
                     <span>About</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/archives/" title="Archives">
+                <a href="https://thomjiji.github.io/archives/" title="Archives">
                     <span>Archives</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="https://thomjiji.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/tags/" title="Tags">
+                <a href="https://thomjiji.github.io/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
@@ -171,7 +265,7 @@ mp4muxer \
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <div class="breadcrumbs"><a href="https://thomjiji.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://thomjiji.github.io/posts/">Posts</a></div>
     <h1 class="post-title entry-hint-parent">
       mp4muxer &amp; mp4demuxer Basic Usage
     </h1>
@@ -215,16 +309,16 @@ mp4muxer \
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/dolby-vision/">Dolby Vision</a></li>
-      <li><a href="http://localhost:1313/tags/dolby-atmos/">Dolby Atmos</a></li>
+      <li><a href="https://thomjiji.github.io/tags/dolby-vision/">Dolby Vision</a></li>
+      <li><a href="https://thomjiji.github.io/tags/dolby-atmos/">Dolby Atmos</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="http://localhost:1313/blogs/2023/02/monitor-calibration-notes/">
+  <a class="prev" href="https://thomjiji.github.io/blogs/2023/02/monitor-calibration-notes/">
     <span class="title">« Prev</span>
     <br>
     <span>显示器校色笔记</span>
   </a>
-  <a class="next" href="http://localhost:1313/blogs/2023/01/daylight-add-arri-look-library/">
+  <a class="next" href="https://thomjiji.github.io/blogs/2023/01/daylight-add-arri-look-library/">
     <span class="title">Next »</span>
     <br>
     <span>Daylight 添加 ARRI Look Library &amp; ALF-2 v5 DRT Family</span>
@@ -236,7 +330,7 @@ mp4muxer \
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:1313/">thomjiji</a></span> · 
+        <span>&copy; 2025 <a href="https://thomjiji.github.io/">thomjiji</a></span> · 
 
     <span>
         Powered by
