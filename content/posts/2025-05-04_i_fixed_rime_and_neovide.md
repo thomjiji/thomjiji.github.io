@@ -39,15 +39,15 @@ app_options:
     vim_mode: true
 ```
 
-但是这个设置在 Neovide 怎么着都不生效！打开 Neovide 的时候还是不会自动切换到英文，一开始 hjkl 就会触发中文输入法。这个需要你手动切换一下到英文输入法的操作，其实是很打断的。你火急火燎之下需要用 neovide 打开一个文件快速编辑一下，neovide 一眨眼就打开了。你想快速 navigate 到那个文件，但 hjkl 没有让你快速到达那个你想要编辑的文件，而是把输入法弄出来了。你真想一拳把输入法凑开。
+但是这个设置在 Neovide 怎么着都不生效！打开 Neovide 的时候还是不会自动切换到英文，一开始 hjkl 就会触发中文输入法。这个需要你手动切换一下到英文输入法的操作，其实是很打断的。你火急火燎之下需要用 neovide 打开一个文件快速编辑一下，neovide 一眨眼就打开了。你想快速 navigate 到那个文件，但 hjkl 没有让你快速到达那个你想要编辑的文件，而是把输入法弄出来了。你真想一拳把输入法揍开。
 
 # 初见端倪
 
-本来都是把这个问题当作无解搁置了，不能自动切换英文就不能吧，就这样吧。maybe 是 Neovide 的什么 bug，这个软件没法做到那么完美也没办法。
+本来都是把这个问题当作无解搁置了，不能自动切换英文就不能吧，就这样吧。maybe 是 Neovide 的什么 bug，这个软件差这么一丁点对我来说就是完美了，如果不行那也没办法。
 
-但那天晚上我在解决一个 neovim 的 autoformat 配置问题的时候，发现是由于自己把配置没放对地方导致 conform.lua 并没有生效，进而才导致 autoformat 坏掉了。发现是这么个可笑的原因，然后浪费了晚上好几个小时。
+但那天晚上我在解决一个 neovim 的 autoformat 配置问题的时候，发现是由于自己把配置没放对地方导致 conform.lua 并没有生效，进而才导致 autoformat 坏掉了。就是这么个可笑的原因，浪费了我晚上好几个小时。
 
-解决了这个可笑的配置问题之后，Neovide 和 Rime 这个搭配的问题又浮上来了。你其实没法忽略它，一开启 Neovide，一 hjkl 就会触发中文输入法真的很恼人。Neovide 什么都好，对我来说就这点很致命，是我没法安心的用下去的主要原因。然后又开始尝试解决。
+解决了这个可笑的配置问题之后，Neovide 和 Rime 这个搭配的问题又浮上来，你避免不掉的，一打开 Neovide 这个问题就在你脸蛋上、你的手指头间，你没办法忽略它。一开启 Neovide，一 hjkl 就会触发中文输入法，这真的很恼人。Neovide 什么都好，对我来说就这点很致命，是我没法安心的用下去的主要原因。然后我又开始尝试解决它了。
 
 先是搜索，发现其实大家也有这个问题，像这个 Rime 的 [Issue](https://github.com/rime/home/issues/1537)，但它好像在 Windows。这个 Rime 的 [Discussion](https://github.com/rime/home/discussions/1283) 也提到类似问题。
 
@@ -65,34 +65,14 @@ app_options:
   com.microsoft.VSCode:
     ascii_mode: true
     vim_mode: true
-  com.googlecode.iterm2:
-    ascii_mode: true
-    vim_mode: true
-  com.jetbrains.pycharm:
-    ascii_mode: true
-  com.blackmagic-design.DaVinciResolve:
-    ascii_mode: true
-  com.apple.finder:
-    ascii_mode: true
-  org.mozilla.firefox:
-    ascii_mode: false
-  dev.warp.Warp-Stable:
-    ascii_mode: true
-  net.freemacsoft.AppCleaner:
-    ascii_mode: true
-  org.gnu.Emacs:
-    ascii_mode: true
-  com.jetbrains.CLion:
-    ascii_mode: true
-  com.apple.Terminal:
-    ascii_mode: true
+...
 ```
 
-没啥问题啊，ascii_mode 设为 true。之前也尝试把它设为 false 试了下，以防我把这个 ascii_mode 是用来干啥的记错了。那这个 `com.neovide.neovide`、`com.googlecode.iterm2` 这些奇怪的 `com...` 究竟是个什么呢？其实我不是很清楚，只知道你可以去 `/Application/<app_name>.app/Contents/Info.plist` 这个文件里找到 `CFBundleIdentifier` 这个 xml tag，这个 tag 里面的内容就可以写在 `squirrel.yaml` 的 `app_options` 作为 app 的名字，让 Rime 正确找到 app 然后做正确的事——自动切换到英文。
+没啥问题啊，`ascii_mode` 设为 `true`，之前也尝试把它设为 false 试了下，以防我把这个 ascii_mode 是用来干啥的记错了。那这个 `com.neovide.neovide`、`com.googlecode.iterm2` 这些奇怪的 `com...` 究竟是个什么呢？其实我不是很清楚，只知道你可以去 `/Application/<app_name>.app/Contents/Info.plist` 这个文件里找到 `CFBundleIdentifier` 这个 xml tag，这个 tag 里面的内容就可以写在 `squirrel.yaml` 的 `app_options` 作为 app 的名字，让 Rime 正确找到 app 然后做正确的事——自动切换到英文。
 
 那对于 Neovide 来说，`/Application/Neovide.app/Contents/Info.plist` 里的 `CFBundleIdentifier` 确实也是叫这个：`com.neovide.neovide`。难不成 Neovide 打包 Mac app 的时候没搞对？Neovide 的什么 bug？我把 `com.neovide.neovide` 改成 `com.Neovide.neovide`...还是没用。
 
-这时不知道为啥我直接打开 Spotlight 启动了 Neovide 的 GUI app，我发现居然没有触发中文输入法？！这也就是说 Rime 做了正确的事，自动切换到了英文。同时也能看到启动完成的一刹那，Rime 的输入框框显示切换到了英文。我瞬间知道为什么了。赶紧去 Terminal：
+这时不知道为啥我直接打开 Spotlight 启动了 Neovide 的 GUI app，我发现居然没有触发中文输入法？！这也就是说 Rime 做了正确的事，自动切换到了英文！同时也能看到启动完成的一刹那，Rime 的输入框框显示切换到了英文。我瞬间知道为什么了。赶紧去 Terminal：
 
 ```fish
 $ which neovide
