@@ -8,19 +8,6 @@
 
 .page-header h1 {
     font-size: 40px;
-    font-family: system-ui, -apple-system;
-}
-
-.post-title {
-    font-size: 35px;
-}
-
-.post-content h1 {
-    font-size: 35px;
-}
-
-.post-content h2 {
-    font-size: 25px;
 }
 
 .pagination {
@@ -40,9 +27,10 @@
     margin-inline-start: auto;
 }
 
+
 .social-icons a {
     display: inline-flex;
-    padding: 5px;
+    padding: 10px;
 }
 
 .social-icons a svg {
@@ -51,16 +39,12 @@
 }
 
 code {
-    font-size: 0.9rem;
     direction: ltr;
 }
 
 div.highlight,
 pre {
     position: relative;
-    border-radius: 2px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-    font-size: 1rem;
 }
 
 .copy-code {

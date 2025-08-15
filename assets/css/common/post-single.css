@@ -19,6 +19,7 @@
     font-size: 14px;
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 .post-meta .i18n_list li {
@@ -43,23 +44,14 @@
     margin: 24px 0 16px;
 }
 
-.post-content h1,
-.post-content h2,
-.post-content h3,
-.post-content h4,
-.post-content h5,
-.post-content h6 {
-    font-family: sans-serif, system-ui, -apple-system;
-}
-
 .post-content h1 {
     margin: 40px auto 32px;
-    font-size: 40px;
+    font-size: 32px;
 }
 
 .post-content h2 {
     margin: 32px auto 24px;
-    font-size: 32px;
+    font-size: 30px;
 }
 
 .post-content h3 {
@@ -87,12 +79,22 @@
 
 .post-content a code {
     margin: auto 0;
-    border-radius: var(--radius);
+    border-radius: 0;
     box-shadow: 0 -1px 0 var(--primary) inset;
 }
 
 .post-content del {
     text-decoration: line-through;
+}
+
+/*
+ * Adjust margin-bottom in nested lists to avoid extra spacing between nested list items.
+ * https://github.com/adityatelange/hugo-PaperMod/pull/1284
+ */
+.post-content li ol,
+.post-content li ul,
+.post-content li p {
+    margin-bottom: 0;
 }
 
 .post-content dl,
@@ -112,12 +114,6 @@
     margin-top: 5px;
 }
 
-/*
- * Adjust margin-bottom in nested lists to avoid extra spacing between nested list items.
- * https://github.com/adityatelange/hugo-PaperMod/pull/1284
- */
-.post-content li ol,
-.post-content li ul,
 .post-content li p {
     margin-bottom: 0;
 }
@@ -139,25 +135,24 @@
     padding-inline-start: 10px;
 }
 
-.post-content dd ~ dd,
-.post-content dt ~ dt {
+.post-content dd~dd,
+.post-content dt~dt {
     margin-top: 10px;
 }
 
 .post-content table {
-    margin-bottom: 32px;
+    margin-bottom: var(--content-gap);
 }
 
 .post-content table th,
 .post-content table:not(.highlighttable, .highlight table, .gist .highlight) td {
     min-width: 80px;
-    padding: 12px 8px;
+    padding: 8px 5px;
     line-height: 1.5;
     border-bottom: 1px solid var(--border);
 }
 
 .post-content table th {
-    font-size: 14px;
     text-align: start;
 }
 
@@ -176,7 +171,7 @@
     direction: ltr;
 }
 
-.post-content li > .highlight {
+.post-content li>.highlight {
     margin-inline-end: 0;
 }
 
@@ -206,21 +201,21 @@
 }
 
 .post-content code {
-    margin: auto 0;
-    padding: 1px 5px;
-    font-size: 0.85rem;
+    margin: auto 0px;
+    padding: 3px 4px;
+    font-size: 0.85em;
     line-height: 1.5;
     background: var(--code-bg);
     border-radius: 2px;
 }
 
 .post-content pre code {
-    display: block;
-    margin-bottom: var(--content-gap);
+    display: grid;
+    margin: auto 0;
     padding: 10px;
     color: rgb(213, 213, 214);
     background: var(--code-block-bg) !important;
-    border-radius: var(--radius);
+    border-radius: 0;
     overflow-x: auto;
     word-break: break-all;
 }
@@ -255,14 +250,14 @@
     text-align: center;
 }
 
-.post-content figure > figcaption {
+.post-content figure>figcaption {
     color: var(--primary);
     font-size: 16px;
     font-weight: bold;
     margin: 8px 0 16px;
 }
 
-.post-content figure > figcaption > p {
+.post-content figure>figcaption>p {
     color: var(--secondary);
     font-size: 14px;
     font-weight: normal;
@@ -282,7 +277,8 @@
 
 .toc details summary {
     cursor: zoom-in;
-    margin-inline-start: 20px;
+    margin-inline-start: 10px;
+    user-select: none;
 }
 
 .toc details[open] summary {
@@ -295,8 +291,9 @@
 }
 
 .toc .inner {
-    margin: 0 20px;
-    padding: 10px 20px;
+    margin: 5px 20px 0;
+    padding: 0 10px;
+    opacity: 0.9;
 }
 
 .toc li ul {
@@ -323,8 +320,6 @@
 
 .post-tags li {
     display: inline-block;
-    margin-inline-end: 3px;
-    margin-bottom: 5px;
 }
 
 .post-tags a,
@@ -337,8 +332,7 @@
 
 .post-tags a {
     display: block;
-    padding-inline-start: 14px;
-    padding-inline-end: 14px;
+    padding: 0 14px;
     color: var(--secondary);
     font-size: 14px;
     line-height: 34px;
@@ -381,10 +375,8 @@ h6:hover .anchor {
 }
 
 .paginav {
-    margin: 10px 0;
     display: flex;
-    line-height: 25px;
-    border-radius: var(--radius);
+    line-height: 30px;
 }
 
 .paginav a {
