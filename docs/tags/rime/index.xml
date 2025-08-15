@@ -39,9 +39,9 @@
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Add the following content, &lt;a href=&#34;https://fcitx-im.org/wiki/Using_Fcitx_5_on_Wayland#KDE_Plasma&#34; target=&#34;_blank&#34; &gt;reference&lt;/a&gt;:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;INPUT_METHOD=fcitx
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;XMODIFIERS=@im=fcitx
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;INPUT_METHOD=fcitx
+XMODIFIERS=@im=fcitx
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -49,8 +49,8 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Clone &lt;a href=&#34;https://github.com/iDvel/rime-ice&#34; target=&#34;_blank&#34; &gt;雾凇拼音&lt;/a&gt; repo into &lt;code&gt;~/.local/share/fcitx5/&lt;/code&gt;, rename it to &lt;code&gt;rime&lt;/code&gt;:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ mv rime-ice rime
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ mv rime-ice rime
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Restart fcitx5 in the lower right corner of your Desktop.&lt;/p&gt;</description>
     </item>

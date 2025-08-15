@@ -14,11 +14,11 @@
       <pubDate>Fri, 01 Dec 2023 00:00:00 +0000</pubDate>
       <guid>https://thomjiji.github.io/blogs/2023/12/btrfs-and-btrbk/</guid>
       <description>&lt;p&gt;&lt;code&gt;/etc/btrbk/btrbk.conf&lt;/code&gt; config file:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;volume /
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  snapshot_dir btrbk_snapshots
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  subvolume home
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  incremental strict
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Key points:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;volume /
+  snapshot_dir btrbk_snapshots
+  subvolume home
+  incremental strict
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Key points:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;volume /&lt;/code&gt;: &amp;ldquo;Base path within a btrfs filesystem containing the subvolumes to be backuped (usually the mount-point of a btrfs filesystem mounted with &lt;code&gt;subvolid=5&lt;/code&gt; option).&amp;rdquo; In this case, we use the existing root directory — which is already a btrfs filesystem (by default on Fedora). btrbk refer this &lt;code&gt;/&lt;/code&gt; (next to &lt;code&gt;volume&lt;/code&gt;) as &amp;ldquo;&amp;lt;volume-directory&amp;gt;&amp;rdquo;.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;snapshot_dir btrbk_snapshots&lt;/code&gt;: &lt;code&gt;btrbk_snapshots&lt;/code&gt; is relative to the &lt;code&gt;volume&lt;/code&gt; set above, which in this case the &lt;code&gt;/&lt;/code&gt; (root directory). So the full path of &lt;code&gt;btrbk_snapshots&lt;/code&gt; will be &lt;code&gt;/btrbk_snapshots&lt;/code&gt;, which located just under the root directory. It&amp;rsquo;s like the &amp;ldquo;destination&amp;rdquo; of snapshots.&lt;/li&gt;

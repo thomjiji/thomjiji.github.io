@@ -53,8 +53,8 @@
       <pubDate>Tue, 25 Jun 2024 00:00:00 +0000</pubDate>
       <guid>https://thomjiji.github.io/blogs/2024/06/create-dummy-directories-using-rsync/</guid>
       <description>&lt;p&gt;Use &lt;code&gt;rsync&lt;/code&gt; to create dummy dirs:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rsync -avPih --include &amp;#39;*/&amp;#39; --exclude &amp;#39;*&amp;#39; videos/ ~/Desktop/videos-dummy/
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Here’s a breakdown of the command:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;rsync -avPih --include &amp;#39;*/&amp;#39; --exclude &amp;#39;*&amp;#39; videos/ ~/Desktop/videos-dummy/
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Here’s a breakdown of the command:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;-avPih&lt;/code&gt;: These flags stand for:
 &lt;ul&gt;
@@ -104,9 +104,9 @@
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Add the following content, &lt;a href=&#34;https://fcitx-im.org/wiki/Using_Fcitx_5_on_Wayland#KDE_Plasma&#34; target=&#34;_blank&#34; &gt;reference&lt;/a&gt;:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;INPUT_METHOD=fcitx
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;XMODIFIERS=@im=fcitx
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;INPUT_METHOD=fcitx
+XMODIFIERS=@im=fcitx
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -114,8 +114,8 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Clone &lt;a href=&#34;https://github.com/iDvel/rime-ice&#34; target=&#34;_blank&#34; &gt;雾凇拼音&lt;/a&gt; repo into &lt;code&gt;~/.local/share/fcitx5/&lt;/code&gt;, rename it to &lt;code&gt;rime&lt;/code&gt;:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ mv rime-ice rime
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ mv rime-ice rime
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Restart fcitx5 in the lower right corner of your Desktop.&lt;/p&gt;</description>
     </item>
@@ -199,11 +199,11 @@
       <pubDate>Fri, 01 Dec 2023 00:00:00 +0000</pubDate>
       <guid>https://thomjiji.github.io/blogs/2023/12/btrfs-and-btrbk/</guid>
       <description>&lt;p&gt;&lt;code&gt;/etc/btrbk/btrbk.conf&lt;/code&gt; config file:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;volume /
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  snapshot_dir btrbk_snapshots
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  subvolume home
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  incremental strict
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Key points:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;volume /
+  snapshot_dir btrbk_snapshots
+  subvolume home
+  incremental strict
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Key points:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;volume /&lt;/code&gt;: &amp;ldquo;Base path within a btrfs filesystem containing the subvolumes to be backuped (usually the mount-point of a btrfs filesystem mounted with &lt;code&gt;subvolid=5&lt;/code&gt; option).&amp;rdquo; In this case, we use the existing root directory — which is already a btrfs filesystem (by default on Fedora). btrbk refer this &lt;code&gt;/&lt;/code&gt; (next to &lt;code&gt;volume&lt;/code&gt;) as &amp;ldquo;&amp;lt;volume-directory&amp;gt;&amp;rdquo;.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;snapshot_dir btrbk_snapshots&lt;/code&gt;: &lt;code&gt;btrbk_snapshots&lt;/code&gt; is relative to the &lt;code&gt;volume&lt;/code&gt; set above, which in this case the &lt;code&gt;/&lt;/code&gt; (root directory). So the full path of &lt;code&gt;btrbk_snapshots&lt;/code&gt; will be &lt;code&gt;/btrbk_snapshots&lt;/code&gt;, which located just under the root directory. It&amp;rsquo;s like the &amp;ldquo;destination&amp;rdquo; of snapshots.&lt;/li&gt;

@@ -10,7 +10,7 @@
 <meta name="description" content="Using GPG key for ssh authentication reduces the effort involved in managing SSH keys, which is the main reason I want to learn this technique. GPG key for all (not just one GPG key possibly).">
 <meta name="author" content="">
 <link rel="canonical" href="https://thomjiji.github.io/blogs/2023/11/gpg-for-ssh-authentication/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.c11bb315f149767f0aae227a81a7b1e828267190064f8aa3e1405f02f27317c4.css" integrity="sha256-wRuzFfFJdn8KriJ6gaex6CgmcZAGT4qj4UBfAvJzF8Q=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.0b587ece01d50129807288a3cf4d41fbb4d4d1a2d5d0abd882a8b7ba1b829d44.css" integrity="sha256-C1h&#43;zgHVASmAcoijz01B&#43;7TU0aLV0KvYgqi3uhuCnUQ=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://thomjiji.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://thomjiji.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://thomjiji.github.io/favicon-32x32.png">
@@ -272,16 +272,16 @@
 <li>Edit <code>~/.gnupg/gpg-agent.conf</code> file, <code>echo &quot;enable-ssh-support&quot; &gt;&gt; ~/.gnupg/gpg-agent.conf</code>.</li>
 <li>Create a subkey for authentication only, after creations, your keyring should look like this:</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>$ gpg -K --keyid-format long --with-keygrip
-</span></span><span style="display:flex;"><span>sec   rsa2048 2019-03-21 [SC] [expires: 2021-03-20]
-</span></span><span style="display:flex;"><span>      96F33EA7F4E0F7051D75FC208715AF32191DB135
-</span></span><span style="display:flex;"><span>      Keygrip = P68H43D8SEHZ45P9PJYX9VEQP3EPAK30SCGY6I17
-</span></span><span style="display:flex;"><span>uid           [ultimate] Brian Rebort
-</span></span><span style="display:flex;"><span>ssb   rsa2048 2019-03-21 [E] [expires: 2021-03-20]
-</span></span><span style="display:flex;"><span>      Keygrip = VUJ6OZ29NSGI1EIH373GKR90N0EMNOH1XWMHXO9C
-</span></span><span style="display:flex;"><span>ssb   rsa2048 2019-03-21 [A]
-</span></span><span style="display:flex;"><span>      Keygrip = 5U368R3PTB3E88LWW6PWMU6TG61C4GIYIAF68S3P
-</span></span></code></pre></div><ol start="3">
+<pre tabindex="0"><code>$ gpg -K --keyid-format long --with-keygrip
+sec   rsa2048 2019-03-21 [SC] [expires: 2021-03-20]
+      96F33EA7F4E0F7051D75FC208715AF32191DB135
+      Keygrip = P68H43D8SEHZ45P9PJYX9VEQP3EPAK30SCGY6I17
+uid           [ultimate] Brian Rebort
+ssb   rsa2048 2019-03-21 [E] [expires: 2021-03-20]
+      Keygrip = VUJ6OZ29NSGI1EIH373GKR90N0EMNOH1XWMHXO9C
+ssb   rsa2048 2019-03-21 [A]
+      Keygrip = 5U368R3PTB3E88LWW6PWMU6TG61C4GIYIAF68S3P
+</code></pre><ol start="3">
 <li>Take a note of the newly created subkey&rsquo;s keygrip, then: <code>cat 5U368R3PTB3E88LWW6PWMU6TG61C4GIYIAF68S3P &gt;&gt; ~/.gnupg/sshcontrol</code>.</li>
 <li>Lastly, change the environment variable <code>SSH_AUTH_SOCK</code> to the socket GPG agent setup for SSH communication: <code>set -x SSH_AUTH_SOCK $(gpgconf --list-dirs agent-ssh-socket)</code>.</li>
 </ol>
