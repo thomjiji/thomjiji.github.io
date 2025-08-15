@@ -100,24 +100,10 @@
       <description></description>
     </item>
     <item>
-      <title>Less</title>
-      <link>https://thomjiji.github.io/tags/less/</link>
-      <pubDate>Sun, 17 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/tags/less/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>KDE</title>
       <link>https://thomjiji.github.io/tags/kde/</link>
       <pubDate>Sat, 09 Dec 2023 00:00:00 +0000</pubDate>
       <guid>https://thomjiji.github.io/tags/kde/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>VS Code</title>
-      <link>https://thomjiji.github.io/tags/vs-code/</link>
-      <pubDate>Sat, 09 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/tags/vs-code/</guid>
       <description></description>
     </item>
     <item>
@@ -149,13 +135,6 @@
       <description></description>
     </item>
     <item>
-      <title>Backup</title>
-      <link>https://thomjiji.github.io/tags/backup/</link>
-      <pubDate>Fri, 01 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/tags/backup/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Btrbk</title>
       <link>https://thomjiji.github.io/tags/btrbk/</link>
       <pubDate>Fri, 01 Dec 2023 00:00:00 +0000</pubDate>
@@ -184,38 +163,10 @@
       <description></description>
     </item>
     <item>
-      <title>Du</title>
-      <link>https://thomjiji.github.io/tags/du/</link>
-      <pubDate>Wed, 01 Nov 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/tags/du/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>C&#43;&#43;</title>
       <link>https://thomjiji.github.io/tags/c&#43;&#43;/</link>
       <pubDate>Thu, 21 Sep 2023 00:00:00 +0000</pubDate>
       <guid>https://thomjiji.github.io/tags/c&#43;&#43;/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Atom</title>
-      <link>https://thomjiji.github.io/tags/atom/</link>
-      <pubDate>Mon, 18 Sep 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/tags/atom/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>NCLC Tag</title>
-      <link>https://thomjiji.github.io/tags/nclc-tag/</link>
-      <pubDate>Mon, 18 Sep 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/tags/nclc-tag/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>ProRes</title>
-      <link>https://thomjiji.github.io/tags/prores/</link>
-      <pubDate>Mon, 18 Sep 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/tags/prores/</guid>
       <description></description>
     </item>
     <item>
@@ -240,31 +191,10 @@
       <description></description>
     </item>
     <item>
-      <title>Math</title>
-      <link>https://thomjiji.github.io/tags/math/</link>
-      <pubDate>Wed, 30 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/tags/math/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Vim</title>
       <link>https://thomjiji.github.io/tags/vim/</link>
       <pubDate>Sun, 09 Jul 2023 00:00:00 +0000</pubDate>
       <guid>https://thomjiji.github.io/tags/vim/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Calibration</title>
-      <link>https://thomjiji.github.io/tags/calibration/</link>
-      <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/tags/calibration/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Color Management</title>
-      <link>https://thomjiji.github.io/tags/color-management/</link>
-      <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/tags/color-management/</guid>
       <description></description>
     </item>
     <item>
@@ -282,10 +212,17 @@
       <description></description>
     </item>
     <item>
-      <title>Video Card</title>
-      <link>https://thomjiji.github.io/tags/video-card/</link>
-      <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/tags/video-card/</guid>
+      <title>Calibration</title>
+      <link>https://thomjiji.github.io/tags/calibration/</link>
+      <pubDate>Wed, 15 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://thomjiji.github.io/tags/calibration/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Color Management</title>
+      <link>https://thomjiji.github.io/tags/color-management/</link>
+      <pubDate>Wed, 15 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://thomjiji.github.io/tags/color-management/</guid>
       <description></description>
     </item>
     <item>

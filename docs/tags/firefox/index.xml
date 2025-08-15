@@ -33,27 +33,5 @@
 &lt;hr&gt;
 &lt;p&gt;安装 LazyVim 之后，LSP 的下载会遇到一些网络问题，比如每次都是 pyright 由于一些网络原因安装失败：&lt;code&gt;set -Ux https_proxy 127.0.0.1:7890&lt;/code&gt; 和 &lt;code&gt;set -Ux http_proxy 127.0.0.1:7890&lt;/code&gt; 都不好使，使用 sing-box 也不行。这时只需要取消系统代理就可以成功联网安装。&lt;/p&gt;</description>
     </item>
-    <item>
-      <title>Use native file picker on KDE Plasma</title>
-      <link>https://thomjiji.github.io/blogs/2023/12/use-native-file-picker-on-kde/</link>
-      <pubDate>Sat, 09 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>https://thomjiji.github.io/blogs/2023/12/use-native-file-picker-on-kde/</guid>
-      <description>&lt;h3 id=&#34;for-firefox&#34;&gt;For Firefox&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Starting with version 64, Firefox can optionally use XDG Desktop Portals to handle various desktop features, such as &lt;strong&gt;opening a file picker&lt;/strong&gt;, or handling MIME types. — Arch Wiki | Firefox | &lt;a href=&#34;https://wiki.archlinux.org/title/Firefox#XDG_Desktop_Portal_integration&#34; target=&#34;_blank&#34; &gt;XDG Desktop Portal integration&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;Type &lt;code&gt;about:config&lt;/code&gt; in Firefox address bar.&lt;/li&gt;
-&lt;li&gt;Search &lt;code&gt;widget.use-xdg-desktop-portal.file-picker&lt;/code&gt;, set it to 1.
-&lt;ul&gt;
-&lt;li&gt;0 – Never&lt;/li&gt;
-&lt;li&gt;1 – Always&lt;/li&gt;
-&lt;li&gt;2 – Auto (typically depends on whether Firefox is run from within Flatpak or whether the &lt;code&gt;GDK_DEBUG=portals&lt;/code&gt; environment is set)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Done.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;for-vs-code&#34;&gt;For VS Code&lt;/h3&gt;
-&lt;p&gt;These two environment variables: &lt;code&gt;GTK_USE_PORTAL=1&lt;/code&gt;, &lt;code&gt;GDK_DEBUG=portals&lt;/code&gt;.&lt;/p&gt;</description>
-    </item>
   </channel>
 </rss>
