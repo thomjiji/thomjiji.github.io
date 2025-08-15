@@ -29,6 +29,9 @@ languages:
         - name: About
           url: about/
           weight: 5
+        - name: Blog
+          url: posts/
+          weight: 10
         - name: Archives
           url: archives/
           weight: 20
@@ -62,9 +65,9 @@ params:
     - name: Bilibili
       url: "https://space.bilibili.com/14932681"
     - name: Mastodon
-      url: "https://alive.bar"
-    - name: Twitter
-      url: "https://twitter.com"
+      url: "https://mastodon.social/@6ds1k"
+    - name: X
+      url: "https://x.com"
 
   defaultTheme: auto
   showShareButtons: false
