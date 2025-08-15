@@ -114,3 +114,7 @@ markup:
 
 permalinks:
   posts: /blogs/:year/:month/:slug/
+
+caches:
+  images:
+    dir: :resourceDir/images
