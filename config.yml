@@ -14,7 +14,7 @@ languages:
     contentDir: content/
     weight: 1
     taxonomies:
-      # categories: categories
+      categories: categories
       tag: tags
       # series: series
     params:
@@ -38,9 +38,12 @@ languages:
         - name: Search
           url: search/
           weight: 30
+        - name: Categories
+          url: categories/
+          weight: 40
         - name: Tags
           url: tags/
-          weight: 40
+          weight: 50
 
 params:
   profileMode:
@@ -91,6 +94,9 @@ assets:
   disableHLJS: false
 
 markup:
+  # goldmark:
+  #   renderer:
+  #     unsafe: true # allow raw HTML in markdown
   highlight:
      # anchorLineNos: false
      # codeFences: true
