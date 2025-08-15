@@ -2,7 +2,8 @@
 title: "为什么使用上屏卡"
 date: 2023-03-09
 draft: false
-tags: ["Calibration", "DisplayCAL", "ICC Profile", "Video Card"]
+categories: ["Calibration"]
+tags: ["DisplayCAL", "ICC Profile"]
 slug: why-do-we-need-video-card
 ---
 

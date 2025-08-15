@@ -3,7 +3,8 @@ title: "Calculus Recap"
 date: 2023-08-30
 draft: false
 math: true
-tags: ["Calculus", "math"]
+categories: ["math"]
+tags: ["Calculus"]
 slug: calculus-recap
 ---
 

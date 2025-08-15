@@ -2,7 +2,8 @@
 title: "VCGT Tag"
 date: 2023-03-09
 draft: false
-tags: ["Calibration", "Color Management"]
+categories: ["Calibration"]
+tags: []
 slug: vcgt-tag
 ---
 

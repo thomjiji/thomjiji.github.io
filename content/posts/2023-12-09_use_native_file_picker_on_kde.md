@@ -2,7 +2,7 @@
 title: "Use native file picker on KDE Plasma"
 date: 2023-12-09
 draft: false
-tags: ["KDE", "Firefox", "VS Code"]
+tags: ["KDE"]
 slug: use-native-file-picker-on-kde
 ---
 

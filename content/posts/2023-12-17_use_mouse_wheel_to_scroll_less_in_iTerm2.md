@@ -2,7 +2,8 @@
 title: "Use mouse wheel to scroll less in iTerm2"
 date: 2023-12-17
 draft: false
-tags: ["iTerm2", "less"]
+categories: ["cli"]
+tags: ["iTerm2"]
 slug: use-mouse-wheel-to-scroll-less-in-iterm2
 ---
 

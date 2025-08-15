@@ -2,6 +2,7 @@
 title: "Create dummy directories using Rsync"
 date: 2024-06-25
 draft: false
+categories: ["cli"]
 tags: ["rsync"]
 ---
 

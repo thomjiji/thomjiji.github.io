@@ -2,7 +2,8 @@
 title: "btrfs and btrbk"
 date: 2023-12-01
 draft: false
-tags: ["btrfs", "btrbk", "snapshot", "backup", "Linux"]
+categories: ["backup"]
+tags: ["btrfs", "btrbk", "snapshot", "Linux"]
 slug: btrfs-and-btrbk
 ---
 
