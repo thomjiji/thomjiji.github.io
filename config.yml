@@ -7,21 +7,6 @@ publishDir: "docs"
 DefaultContentLanguage: "en"
 defaultContentLanguageInSubdir: false
 
-# menu:
-#   main:
-#     - name: About
-#       url: about/
-#       weight: 5
-#     - name: Archives
-#       url: archives/
-#       weight: 20
-#     - name: Search
-#       url: search/
-#       weight: 30
-#     - name: Tags
-#       url: tags/
-#       weight: 40
-
 languages:
   en:
     languageCode: en-US
@@ -53,38 +38,8 @@ languages:
         - name: Tags
           url: tags/
           weight: 40
-  # 中文:
-  #   languageName: "Chinese"
-  #   languageCode: zh-CN
-  #   contentDir: content/cn
-  #   weight: 2
-  #   taxonomies:
-  #     tag: tags
-  #     series: series
-  #   params:
-  #     disable: true
-  #     titile: "thomjiji"
-  #     languageAltTitle: Chinese
-  #     homeInfoParams:
-  #       Title: "👋 Hi!"
-  #       Content: ""
-  #   menu:
-  #     main:
-  #       - name: 关于
-  #         url: about/
-  #         weight: 5
-  #       - name: 存档
-  #         url: archives/
-  #         weight: 20
-  #       - name: 搜索
-  #         url: search/
-  #         weight: 30
-  #       - name: 标签
-  #         url: tags/
-  #         weight: 40
 
 params:
-  # PaperMod Profile mode
   profileMode:
     enabled: false
     title: "thomjiji" # optional default will be site title
@@ -101,7 +56,7 @@ params:
       - name: GitHub
         url: "https://github.com/"
 
-  socialIcons: # optional
+  socialIcons:
     - name: GitHub
       url: "https://github.com/thomjiji"
     - name: Bilibili
@@ -130,23 +85,23 @@ outputs:
     - JSON
 
 assets:
-  disableHLJS: true
+  disableHLJS: false
 
 markup:
   highlight:
-    anchorLineNos: false
-    codeFences: true
-    guessSyntax: true
-    hl_Lines: ""
-    hl_inline: false
-    lineAnchors: ""
-    lineNoStart: 1
-    lineNos: false
-    lineNumbersInTable: true
-    noClasses: true
-    noHl: false
-    style: doom-one
-    tabWidth: 4
+     # anchorLineNos: false
+     # codeFences: true
+     # guessSyntax: true
+     # hl_Lines: ""
+     # hl_inline: false
+     # lineAnchors: ""
+     # lineNoStart: 1
+     # lineNos: false
+     # lineNumbersInTable: true
+     noClasses: true
+     # noHl: false
+     style: doom-one
+     # tabWidth: 4
 
 permalinks:
   posts: /blogs/:year/:month/:slug/
