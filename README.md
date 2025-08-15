@@ -7,7 +7,7 @@
    git commit -m ""
    ```
 
-1. Next, build the entire site with the new changes. The static site will be built into
+2. Next, build the entire site with the new changes. The static site will be built into
    the `docs/` directory (for the GitHub page). Hugo default is `public/`.
 
    ```shell
@@ -16,7 +16,7 @@
 
    `-D` flag means build with drafts.
 
-2. Finally, commit once more to upload the built static site to GitHub.
+3. Finally, commit once more to upload the built static site to GitHub.
 
    ```shell
    git commit -m "build"
