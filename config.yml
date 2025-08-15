@@ -88,26 +88,26 @@ outputs:
     - JSON
 
 assets:
-  disableHLJS: false
+  disableHLJS: true
 
 markup:
   # goldmark:
   #   renderer:
   #     unsafe: true # allow raw HTML in markdown
   highlight:
-     # anchorLineNos: false
-     # codeFences: true
-     # guessSyntax: true
-     # hl_Lines: ""
-     # hl_inline: false
-     # lineAnchors: ""
-     # lineNoStart: 1
-     # lineNos: false
-     # lineNumbersInTable: true
-     noClasses: true
-     # noHl: false
+     anchorLineNos: false
+     codeFences: true
+     guessSyntax: true
+     hl_Lines: ""
+     hl_inline: false
+     lineAnchors: ""
+     lineNoStart: 1
+     lineNos: false
+     lineNumbersInTable: true
+     noClasses: false
+     noHl: false
      style: doom-one
-     # tabWidth: 4
+     tabWidth: 4
 
 permalinks:
   posts: /blogs/:year/:month/:slug/
