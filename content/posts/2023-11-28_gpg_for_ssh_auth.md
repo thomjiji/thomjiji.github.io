@@ -54,7 +54,7 @@ How to setup GPG for SSH authentication:
 1. Edit `~/.gnupg/gpg-agent.conf` file, `echo "enable-ssh-support" >> ~/.gnupg/gpg-agent.conf`.
 2. Create a subkey for authentication only, after creations, your keyring should look like this:
 
-```
+```fish
 $ gpg -K --keyid-format long --with-keygrip
 sec   rsa2048 2019-03-21 [SC] [expires: 2021-03-20]
       96F33EA7F4E0F7051D75FC208715AF32191DB135

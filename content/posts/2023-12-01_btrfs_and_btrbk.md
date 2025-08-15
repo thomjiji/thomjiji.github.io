@@ -9,7 +9,7 @@ slug: btrfs-and-btrbk
 
 `/etc/btrbk/btrbk.conf` config file:
 
-```
+```sh
 volume /
   snapshot_dir btrbk_snapshots
   subvolume home

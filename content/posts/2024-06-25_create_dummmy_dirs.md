@@ -8,7 +8,7 @@ tags: ["rsync"]
 
 Use `rsync` to create dummy dirs:
 
-```
+```fish
 rsync -avPih --include '*/' --exclude '*' videos/ ~/Desktop/videos-dummy/
 ```
 

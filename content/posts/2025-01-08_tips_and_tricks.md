@@ -34,7 +34,7 @@ Change author name in commit message:
 
 快速配置 karabiner。把一个 karabiner 的一个配置文件拷过来就行：
 
-```
+```fish
 scp -r <user>@<ip_addr>:'/Users/<user>/.config/karabiner/karabiner.json' /Users/<user>/.config/karabiner/karabiner.json
 ```
 
@@ -51,7 +51,7 @@ scp -r <user>@<ip_addr>:'/Users/<user>/.config/karabiner/karabiner.json' /Users/
 
 达芬奇用来储存项目备份（Resolve Project Backups）的路径下有很多个文件夹，这些文件夹都是用一个叫作“项目 ID”的字符串来命名的。在每个项目 ID 文件夹之下并没有这个项目 ID 对应的究竟是哪个项目的信息。而在 Gallery `/Users/<user>/Movies/.gallery` 路径下的项目 ID 文件夹里，有一个 Info.txt 的文件，里面会告诉我们这个文件夹属于哪个项目：
 
-```
+```sh
 Database Name: Local Database
 User Name: guest
 Project Name: <project name>
