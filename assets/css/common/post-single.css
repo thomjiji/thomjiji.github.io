@@ -97,6 +97,11 @@
     margin-bottom: 0;
 }
 
+.post-content p li {
+    white-space: normal;
+    line-break: loose;
+}
+
 .post-content dl,
 .post-content ol,
 .post-content p,
