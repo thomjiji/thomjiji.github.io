@@ -97,10 +97,10 @@
     margin-bottom: 0;
 }
 
-.post-content p li {
+/* .post-content p li {
     white-space: normal;
     line-break: loose;
-}
+} */
 
 .post-content dl,
 .post-content ol,
@@ -212,6 +212,7 @@
     line-height: 1.5;
     background: var(--code-bg);
     border-radius: 2px;
+    word-break: break-all;
 }
 
 .post-content pre code {
