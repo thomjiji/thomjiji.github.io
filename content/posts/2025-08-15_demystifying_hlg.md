@@ -2,6 +2,7 @@
 title: "Demystifying HLG"
 date: 2025-08-07
 tags: ["colormanagement", "colorscience", "hlg", "work"]
+math: true
 draft: true
 ShowToc: true
 ---
@@ -98,6 +99,6 @@ In television systems the displayed light is not linearly related to the light c
 ## Notes {#notes}
 
 -   摄影机捕捉的是 OETF，是 Log，它的曲线是朝上突出。显示器发出的光是 EOTF，它的曲线是朝下凹陷。
--   Inverse OETF 有时候也会看别人写成 OETF^-1，相当于 OETF 的反函数。Inverse OETF 不一定就是 EOTF。
+-   Inverse OETF 有时候也会看别人写成 $OETF^{-1}$，相当于 OETF 的反函数。Inverse OETF 不一定就是 EOTF。
 -   我们的成片文件，比如 Pr 输出的 Rec.709 Gamma 2.4 规格的这个文件本身，Pr 的编码结果、这个文件的本源实在，你可以把它想象成是一个向上突出的曲线，这条曲线是 Inverse EOTF。它的作用是给到显示器之后，显示器自身的 EOTF（Gamma 2.2、2.4）就把它 cancel out 了。于是我们最后得到 linear light。
--   显示器做的事情是 1 over Gamma 2.2 或者 2.4：1/2.2=0.45, 1/2.4=0.42
+-   显示器做的事情是 1 over Gamma 2.2 或者 2.4：$\frac{1}{2.2}=0.45$, $\frac{1}{2.4}=0.42$
