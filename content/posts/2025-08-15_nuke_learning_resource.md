@@ -61,9 +61,13 @@ ShowToc: false
 
 #### 经典的 Tonemap 函数：[open display transform wiki &gt; tonescale &gt; hyperbola](https://github.com/jedypod/open-display-transform/wiki/tech_tonescale#hyperbola) {#经典的-tonemap-函数-open-display-transform-wiki-tonescale-hyperbola}
 
-<!--list-separator-->
-
--  这个函数在 thatcher freeman 的[这个](https://youtu.be/Z1qC1LuwMLw?si=uf-jidGg4cOO8qSU&t=175) DCTL 教学视频得到验证，他用的也是这个函数
+-   这个函数在 thatcher freeman 的[这个](https://youtu.be/Z1qC1LuwMLw?si=uf-jidGg4cOO8qSU&t=175) DCTL 教学视频得到验证，他用的也是这个函数
 
 
 #### 关于 Nuke Grade node 里的 Gamma 实际上不是纯 Gamma 函数，而是在像素值超过 1 之后使用的是一个线性函数：[The Math of Color Grading in Nuke](https://youtu.be/umpA40uheIs?si=jUnCxGtiudqSwDIR&t=400) {#关于-nuke-grade-node-里的-gamma-实际上不是纯-gamma-函数-而是在像素值超过-1-之后使用的是一个线性函数-the-math-of-color-grading-in-nuke}
+
+
+#### Self-crafted Log curve - XLog {#self-crafted-log-curve-xlog}
+
+-   Desmos 对这个 Log 曲线的图像可视化：<https://www.desmos.com/calculator/9pgjgo1gq4>
+-   Google Colab 里对这个 Log 曲线的数学推导由来的记录，有很多讲解性的描述：<https://colab.research.google.com/drive/1NwjaD0NzNMzQeNQqZECj33PdcYGkeBM4>
