@@ -35,12 +35,9 @@ languages:
         - name: Search
           url: search/
           weight: 30
-        - name: Categories
-          url: categories/
-          weight: 40
         - name: Tags
           url: tags/
-          weight: 50
+          weight: 40
 
 params:
   profileMode:
