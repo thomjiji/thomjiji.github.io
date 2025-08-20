@@ -23,14 +23,9 @@ ShowToc: false
 #### [Per-Channel Display Transform with Wider Rendering Gamut](https://community.acescentral.com/t/per-channel-display-transform-with-wider-rendering-gamut/3768) {#per-channel-display-transform-with-wider-rendering-gamut}
 
 
-#### 经典的 Tonemap 函数：[open display transform wiki &gt; tonescale &gt; hyperbola](https://github.com/jedypod/open-display-transform/wiki/tech_tonescale#hyperbola) {#经典的-tonemap-函数-open-display-transform-wiki-tonescale-hyperbola}
+#### 经典的 Tone Mapping 函数 (Reinhard function)：[open display transform wiki &gt; tonescale &gt; hyperbola](https://github.com/jedypod/open-display-transform/wiki/tech_tonescale#hyperbola) {#经典的-tone-mapping-函数--reinhard-function--open-display-transform-wiki-tonescale-hyperbola}
 
--   这个函数在 Thatcher Freeman 的[这个](https://youtu.be/Z1qC1LuwMLw?si=uf-jidGg4cOO8qSU&t=175) DCTL 教学视频得到验证，他在视频中用的也是这个函数，可见这个函数确实很普遍、很 basic。
-
-
-#### 关于 Nuke Grade node 里的 Gamma 实际上不是纯 Gamma 函数，而是在像素值超过 1 之后使用的是一个线性函数 {#关于-nuke-grade-node-里的-gamma-实际上不是纯-gamma-函数-而是在像素值超过-1-之后使用的是一个线性函数}
-
--   [The Math of Color Grading in Nuke](https://youtu.be/umpA40uheIs?si=jUnCxGtiudqSwDIR&t=400)
+-   这个函数在 Thatcher Freeman 的[这个](https://youtu.be/Z1qC1LuwMLw?si=uf-jidGg4cOO8qSU&t=175) DCTL 教学视频得到验证，他在视频中用的也是这个函数，可见这个函数确实很普遍，很 basic。
 
 
 #### Self-crafted Log curve - XLog {#self-crafted-log-curve-xlog}
@@ -43,6 +38,11 @@ ShowToc: false
 
 -   <https://discuss.pixls.us/t/blender-agx-in-darktable-proof-of-concept/48697/526>
 -   <https://colab.research.google.com/drive/1CjDunkNCuhWIoWox_reDist6fTEJIim2>
+
+
+#### 关于 Nuke Grade node 里的 Gamma 实际上不是纯 Gamma 函数，而是在像素值超过 1 之后使用的是一个线性函数 {#关于-nuke-grade-node-里的-gamma-实际上不是纯-gamma-函数-而是在像素值超过-1-之后使用的是一个线性函数}
+
+-   [The Math of Color Grading in Nuke](https://youtu.be/umpA40uheIs?si=jUnCxGtiudqSwDIR&t=400)
 
 
 ### Chris Brejon {#chris-brejon}
@@ -64,11 +64,11 @@ ShowToc: false
 
 今天我在哪又看到了 NakaRush 这个词，不出意外应该就是在 pixls.us 论坛的[这个回复](https://discuss.pixls.us/t/blender-agx-in-darktable-proof-of-concept/48697/662)。我就记得今天看到这个词的时候我立马又想起这个词在我 Nuke 脚本里的哪个地方有！我存下来的。那么 NakaRush 究竟是个什么，似乎有了更多眉目。
 
-再然后，今天晚上时候我在按照 OpenDRT 项目 GitHub 上的 Wiki page，继续实现我的 Naive Tone Mapping 的时候，突然看到这，它也提到了 NakaRush，而且是更为详细的称呼：Naka-Rushton equation。这下水落石出，豁然开朗了：
+再然后，今天晚上时候我在按照 OpenDRT 项目 GitHub 上的 Wiki page，继续实现我的 Naive Tone Mapping 的时候，突然看到[这一段](https://github.com/jedypod/open-display-transform/wiki/tech_tonescale#primate-cone-cells)，它也提到了 NakaRush，而且是更为详细的描述：Naka-Rushton equation。这下水落石出，豁然开朗了：
 
 > I did a lot of poking around comparing different approaches in the realm of sigmoid functions. Amongst my many dead ends and failed experiments, I did come across a super interesting bit of research describing the behavior of cone cells adapting to changes in stimulus with the **Michaelis-Menten equation** and its derivations like the Hill-Langmuir equation and the **Naka-Rushton equation**. These functions are usually used to model biological phenomena like enzyme kinetics, but the shape of the function fits very well the problem at hand. There are many scientific studies linking these. Of course this equation does not claim to model any of the higher order brightness processing that happens in the human visual system after the cone cells.
 
-其中的 **Michaelis-Menten equation** 我记得 ACES 2.0 或者之前的 ACES 1.x 版本在用，这个相比 Naka-Rushen 甚至更耳熟一点。
+NakaRush 是一个函数、公式、等式。达芬奇 CST Tone Mapping 如果选 DaVinci，似乎就是这个函数在起作用。这段话中也提到 \*Michaelis-Menten equation\*，这个我记得 ACES 2.0 或者之前的 ACES 1.x 版本在用，这个相比 Naka-Rushen 甚至更耳熟一点。
 
 1.  <https://community.acescentral.com/t/resolve-color-management-drt-in-ocio/5289/4>
     1.  达芬奇 CST Tone Mapping 下的 adaptation 是什么：<https://community.acescentral.com/t/resolve-color-management-drt-in-ocio/5289/8>
