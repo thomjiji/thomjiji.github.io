@@ -4,6 +4,7 @@ date: 2025-08-20
 tags: ["colormanagement", "colorscience", "nuke", "tonemapping", "tonescale"]
 draft: false
 ShowToc: true
+math: true
 ---
 
 关于广泛的“色彩科学”这一话题，以下是我零星的来源和笔记。这里权当做一个记录，同时帮助我厘清思路：
@@ -80,7 +81,7 @@ ShowToc: true
 > Scale
 > Let's see what other variables we can add. If we a scale for the input x and a scale for the output y this could be useful. This would allow us to control exposure of both input and output values.
 >
-> y = s_y \* (x / (x + s_x))
+> $y = s_y \* \frac{x}{x + s_x}$
 >
 > Now **we can adjust the constants s_x to adjust the scene-linear input exposure, and s_y to adjust the display-linear output**.
 
@@ -105,7 +106,7 @@ ShowToc: true
 -   然后其他好多地方也经常听到别人引用。
 
 
-## Juan Pablo Zambrano DaVinci DRT implementation {#juan-pablo-zambrano-davinci-drt-implementation}
+## Juan Pablo Zambrano DaVinci DRT Implementation {#juan-pablo-zambrano-davinci-drt-implementation}
 
 之前在 acescentral 论坛里就看到 Juan Pablo Zambrano 贴出了 DaVinci DRT 他的 (re)implementation，[给出了 Nuke 节点](https://community.acescentral.com/t/resolve-color-management-drt-in-ocio/5289/4?u=thomjiji)。虽然已经非常接近真相了，我可以打开他给出的 Nuke 节点看到内部究竟由哪些操作构成，但打开一看，喔有几个节点和操作，其中一个叫作 NakaRush 的节点貌似是整个的核心，影调映射看来就是由它完成的。但是，NakaRush？啥？但也没深究下去，就把那个 Nuke 节点存下来了。
 
