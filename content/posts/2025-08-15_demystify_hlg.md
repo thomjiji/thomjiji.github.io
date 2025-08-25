@@ -1,5 +1,5 @@
 ---
-title: "Demystifying HLG"
+title: "Demystify HLG"
 date: 2025-08-07
 tags: ["colormanagement", "colorscience", "hlg"]
 draft: true
@@ -87,6 +87,18 @@ In television systems the displayed light is not linearly related to the light c
 实际上，HLG 的 OETF 所定义的“膝点”特性（见 ITU-R BT.2100 推荐标准的表 5，以及下方图 18 所示）提供了一个扩展的高光范围，与某些 SDR 所使用的膝点相当。需要注意的是，图中的膝点曲线仅为示意用途。虽然文献中有时将膝点描述为线性的（如该图所示），但在实际应用中，它们通常是“平滑”的，以避免图中那种存在不连续梯度的表现方式，因为后者可能导致令人不悦的颜色偏移。
 
 
+## ITU-R BT.2408-8 (11-2024) {#itu-r-bt-dot-2408-8--11-2024}
+
+
+### Graphics White {#graphics-white}
+
+> Graphics White is defined within the scope of this Report as the equivalent in the graphics domain of a 100% reflectance white card: the signal level of a flat, white element without any specular highlights within a graphic element. It therefore has the same signal level as HDR Reference White, and graphics should be inserted based on this level.
+>
+> The nominal signal level corresponding to HDR Reference White, diffuse white and Graphics White is shown in Table 1.
+
+在本报告的范围内，“图形白（Graphics White）”被定义为图形领域中等效于一张 100% 反射率白卡的概念：即在图形元素中，一个平坦、无高光的白色部分的信号电平。因此，它与 HDR 参考白（HDR Reference White）具有相同的信号电平，图形应基于这一电平插入。
+
+
 ## HLG 标准提出的时间 {#hlg-标准提出的时间}
 
 1.  ARIB STD-B67 日本电波产业会（ARIB）最初提出
@@ -98,7 +110,9 @@ In television systems the displayed light is not linearly related to the light c
 
 ## Notes {#notes}
 
--   摄影机捕捉的是叫作 OETF，是 Log，它的曲线是向上突出。显示器发出的光是 EOTF，它的曲线是向下凹陷。
+-   摄影机记录图像用的是一个叫作 OETF 的东西，你可以理解它的曲线是向上突出。显示器发出的光是 EOTF，它的曲线是向下凹陷。
 -   Inverse OETF 有时候也会看别人写成 $OETF^{-1}$，相当于 OETF 的反函数。Inverse OETF 不一定就是 EOTF。
--   我们的成片文件，比如 Pr 输出的 Rec.709 Gamma 2.4 规格的这个文件本身，Pr 的编码结果、这个文件的本源实在，你可以把它想象成是一个向上突出的曲线，这条曲线是 Inverse EOTF。它的作用是给到显示器之后，显示器自身的 EOTF（Gamma 2.2、2.4）就把它 cancel out 了。于是我们最后得到 linear light。
 -   显示器做的事情是 1 over Gamma 2.2 或者 2.4：$\frac{1}{2.2}=0.45$, $\frac{1}{2.4}=0.42$
+
+我们的成片文件，比如 Pr 输出的 Rec.709 Gamma 2.4 规格的这个文件本身，这个文件的本源实在，作为 Pr 输出渲染的结果，你可以把它想象成是一个向上突出的曲线，这条曲线是 **Inverse EOTF**。它的作用是给到显示器之后，显示器自身的 **EOTF**（Gamma 2.2、Gamma 2.4）就把它 cancel out 了，于是我们最后重新得到线性光。但这时这个线性光是从显示器发出来的，而不是摄影机当时捕捉到的那个原始场景的线性光信息。这二者往往差距很大。我们说显示器这边发出的线性光，显示出来的图像，是对原始场景的“再现”（Reproduction）。
+

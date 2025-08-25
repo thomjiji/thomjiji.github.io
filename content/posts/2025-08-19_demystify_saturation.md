@@ -1,12 +1,12 @@
 ---
-title: "Demystifying Saturation"
+title: "Demystify Saturation"
 date: 2025-08-19
 tags: ["colorscience", "nuke"]
 draft: false
 ShowToc: false
 ---
 
-## Understanding HSVL Within The Nuke Context {#understanding-hsvl-within-the-nuke-context}
+## Understanding HSVL Within the Nuke Context {#understanding-hsvl-within-the-nuke-context}
 
 > Saturation is independent of Hue or Luminance and is an indicator of the intensity of a colour. Highly saturated colours appear "stronger" and by increasing Saturation we are "revealing" more of the Hue present in the color, for example, being "more red", "more blue", etc. This is because, while zero Saturation (i.e. grey) indicates that all the three channels have the same value (R=G=B) and low Saturation implies that the three channels are closely aligned, high Saturation signifies a strong disparity in the values of the three channels. Increasing Saturation pulls the values in the channels further apart, thus increasing the dominant Hue, while reducing Saturation pulls the values from the channels closer together.
 
