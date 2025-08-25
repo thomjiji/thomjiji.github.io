@@ -26,7 +26,7 @@ ShowToc: true
 
 ## 步骤 {#步骤}
 
-1.  将两张图裁切到色卡填充满整个画面，色彩空间转换到一个统一的广色域（最好大到能够承载摄影机原始色域，例如 DWG 或 ACES AP0）。我们这里选择 DWG，传递函数选择 Linear 线性。输出 EXR，DWG Linear。
+1.  将两张图裁切到色卡填充满整个画面，色彩空间转换到一个统一的广色域（最好大到能够承载摄影机原始色域，例如 DWG 或 ACES AP0）。我们这里选择 ACES，传递函数选择 Linear 线性。输出 EXR，ACES Linear。
 2.  开启一个 Python 虚拟环境 .venv，安装这两个 python 包：colour 和 colour_checker_detection:
     ```bash
     python -m venv .venv
@@ -72,4 +72,21 @@ ShowToc: true
      ypos 1283
     }
     ```
-6.  把刚输出的那串 matrix 复制到 上面 matrix 那里，把 [] 用 {} 替换。
+6.  把刚输出的那串 matrix 复制到上面的 matrix 那里，把 `[]` 用 `{}` 替换：
+    ```bash
+    set cut_paste_input [stack 0]
+    version 16.0 v4
+    push $cut_paste_input
+    ColorMatrix {
+     matrix {
+       { 1.87196901  0.06371339 -0.08137244}
+       {-0.02488484  1.9985176  -0.00450315}
+       { 0.03458153 -0.06038139  1.77408664}
+     }
+     name ColorMatrix1
+     note_font Helvetica
+     selected true
+     xpos -483
+     ypos 1283
+    }
+    ```

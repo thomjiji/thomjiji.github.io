@@ -49,7 +49,7 @@ In television systems the displayed light is not linearly related to the light c
 > networks to provide a single HEVC Main 10 bitstream that can target both SDR and
 > HDR receivers, where those SDR receivers support the BT.2020 colour container
 
-所以我们说 HLG 向下兼容其实不是向下兼容 Rec.709 的显示设备，而是向下兼容 Rec.2020 的 SDR 设备，神奇吧？还有 Rec.2020 的 SDR 设备。貌似 Rec.2020 这个标准就是为 SDR 制定的，相当于在 SDR 的基础上只拓展了色域范围，从 Rec.709 到 Rec.2020。上面第二句话进一步验证了这一点，明确指出这些 SDR 接收端是支持 BT.2020 色欲的接收端。
+所以我们说 HLG 向下兼容其实不是向下兼容 Rec.709 的显示设备，而是向下兼容 Rec.2020 的 SDR 设备，神奇吧？还有 Rec.2020 的 SDR 设备。貌似 Rec.2020 这个标准就是为 SDR 制定的，相当于在 SDR 的基础上只拓展了色域范围，从 Rec.709 到 Rec.2020。上面第二句话进一步验证了这一点，明确指出这些 SDR 接收端是支持 BT.2020 色域的接收端。
 
 
 #### 6.1 The hybrid log-gamma opto-electronic transfer function (OETF) {#6-dot-1-the-hybrid-log-gamma-opto-electronic-transfer-function--oetf}
@@ -112,7 +112,7 @@ In television systems the displayed light is not linearly related to the light c
 
 -   摄影机记录图像用的是一个叫作 OETF 的东西，你可以理解它的曲线是向上突出。显示器发出的光是 EOTF，它的曲线是向下凹陷。
 -   Inverse OETF 有时候也会看别人写成 $OETF^{-1}$，相当于 OETF 的反函数。Inverse OETF 不一定就是 EOTF。
--   显示器做的事情是 1 over Gamma 2.2 或者 2.4：$\frac{1}{2.2}=0.45$, $\frac{1}{2.4}=0.42$
+-   显示器做的事情是 $f(x)=x^\frac{1}{γ}$，1 over Gamma 2.2、2.4：$\frac{1}{2.2}=0.45$, $\frac{1}{2.4}=0.42$。我们说的 Gamma 是前面那个幂函数的指数，或者那个指数的倒数：Gamma 2.2 的 sRGB 显示器：$f(x)=x^\frac{1}{2.2}$。
 
 我们的成片文件，比如 Pr 输出的 Rec.709 Gamma 2.4 规格的这个文件本身，这个文件的本源实在，作为 Pr 输出渲染的结果，你可以把它想象成是一个向上突出的曲线，这条曲线是 **Inverse EOTF**。它的作用是给到显示器之后，显示器自身的 **EOTF**（Gamma 2.2、Gamma 2.4）就把它 cancel out 了，于是我们最后重新得到线性光。但这时这个线性光是从显示器发出来的，而不是摄影机当时捕捉到的那个原始场景的线性光信息。这二者往往差距很大。我们说显示器这边发出的线性光，显示出来的图像，是对原始场景的“再现”（Reproduction）。
 
