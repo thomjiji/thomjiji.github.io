@@ -10,7 +10,7 @@ Quick context for any future session picking this up.
 
 A ground-up rebuild of thomjiji's personal website, replacing a PaperMod-based Hugo site (`/home/thom/code/thomjiji.github.io`). The driving motivation: PaperMod ships too many features that exist for their own sake — reading time, share buttons, Fuse.js search, cover images, breadcrumbs, theme toggles. None of those change whether someone reads the writing.
 
-The reference for what this should feel like: **blog.benoitj.ca** — Hugo + new.css, classless, a post list that is literally a `<ul>` with titles and dates. Ruthlessly minimal. The second reference is **andreyor.st** — same philosophy but with hand-written CSS and more polish (see `REDESIGN-INSIGHTS.md` for detailed notes on both).
+The reference for what this should feel like: [blog.benoitj.ca](https://blog.benoitj.ca/) — Hugo + new.css, classless, a post list that is literally a `<ul>` with titles and dates. Ruthlessly minimal. The second reference is **andreyor.st** — same philosophy but with hand-written CSS and more polish (see `REDESIGN-INSIGHTS.md` for detailed notes on both).
 
 ## Philosophy
 
