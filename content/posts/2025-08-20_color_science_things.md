@@ -2,6 +2,7 @@
 title: "Color Science Things"
 date: 2025-08-20
 tags: ["Color Management", "Color Science", "Nuke", "Tone Mapping", "Tonescale"]
+math: true
 draft: false
 ---
 
@@ -79,7 +80,7 @@ draft: false
 > Scale
 > Let's see what other variables we can add. If we a scale for the input x and a scale for the output y this could be useful. This would allow us to control exposure of both input and output values.
 >
-> \\(y = s\_y \\\* \frac{x}{x + s\_x}\\)
+> $$(y = s_y * \frac{x}{x + s_x})$$
 >
 > Now **we can adjust the constants s_x to adjust the scene-linear input exposure, and s_y to adjust the display-linear output**.
 
