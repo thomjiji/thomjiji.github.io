@@ -31,7 +31,11 @@
   --nc-ac-tx: #1A1A1A;
 }
 
-code, kbd, pre, samp { font-family: "Hack", monospace; }
+code, kbd, pre, samp {
+  font-family: "Hack", monospace;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
 
 .date { font-family: "Hack", monospace; }
 
