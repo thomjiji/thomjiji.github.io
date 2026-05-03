@@ -1,0 +1,20 @@
+baseURL = "https://thomjiji.github.io/"
+languageCode = "en-US"
+title = "thomjiji"
+
+[params]
+  author = "thom"
+
+[markup.highlight]
+  noClasses = false
+  codeFences = true
+  guessSyntax = true
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[outputs]
+  home = ["HTML", "RSS"]
+
+[permalinks]
+  posts = "/posts/:slug/"

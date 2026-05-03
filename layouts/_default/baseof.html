@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} — {{ .Site.Title }}{{ end }}</title>
+  <link rel="stylesheet" href="/css/new.min.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  <link rel="alternate" type="application/rss+xml" href="/index.xml" title="{{ .Site.Title }}">
+</head>
+<body>
+  <header>
+    <h1><a href="/">{{ .Site.Title }}</a><button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme"></button></h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/tags">Tags</a>
+      <a href="/about">About</a>
+      <a href="/index.xml">RSS</a>
+    </nav>
+  </header>
+  <main>{{ block "main" . }}{{ end }}</main>
+  <script>
+    (function() {
+      var saved = localStorage.getItem('theme');
+      if (saved) document.documentElement.setAttribute('data-theme', saved);
+      function updateLabel() {
+        var t = document.documentElement.getAttribute('data-theme');
+        var dark = t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        document.getElementById('theme-toggle').textContent = dark ? '[ light ]' : '[ dark ]';
+      }
+      window.toggleTheme = function() {
+        var t = document.documentElement.getAttribute('data-theme');
+        var dark = t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        var next = dark ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateLabel();
+      };
+      document.addEventListener('DOMContentLoaded', updateLabel);
+    })();
+  </script>
+</body>
+</html>

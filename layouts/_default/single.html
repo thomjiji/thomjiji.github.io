@@ -1,0 +1,5 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+{{ if ne .Date.Year 1 }}<p><i>{{ .Date.Format "2006-01-02" }}</i>{{ with .Params.tags }} · {{ range . }}<a href="/tags/{{ . | urlize }}">{{ . }}</a> {{ end }}{{ end }}</p>{{ end }}
+<div class="post-body">{{ .Content }}</div>
+{{ end }}
