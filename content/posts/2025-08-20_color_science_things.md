@@ -3,7 +3,6 @@ title: "Color Science Things"
 date: 2025-08-20
 tags: ["Color Management", "Color Science", "Nuke", "Tone Mapping", "Tonescale"]
 draft: false
-ShowToc: true
 ---
 
 关于广泛的“色彩科学”这一话题，以下是我零星的来源和笔记。这里权当做一个记录，同时帮助我厘清思路：

@@ -3,7 +3,6 @@ title: "Nuke Learning Resources"
 date: 2025-07-12
 tags: ["Color Science", "Nuke"]
 draft: false
-ShowToc: false
 ---
 
 ## Download Nuke Software {#download-nuke-software}

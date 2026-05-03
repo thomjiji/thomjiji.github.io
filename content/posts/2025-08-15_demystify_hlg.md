@@ -3,7 +3,6 @@ title: "Demystify HLG"
 date: 2025-08-07
 tags: ["Color Management", "Color Science", "HLG"]
 draft: true
-ShowToc: true
 math: true
 ---
 

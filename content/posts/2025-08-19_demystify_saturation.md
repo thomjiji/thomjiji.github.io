@@ -3,7 +3,6 @@ title: "Demystify Saturation"
 date: 2025-08-19
 tags: ["Color Science", "Nuke"]
 draft: false
-ShowToc: false
 ---
 
 ## Understanding HSVL Within the Nuke Context {#understanding-hsvl-within-the-nuke-context}

@@ -2,8 +2,7 @@
 title: "3x3 Matrix for Camera Matching"
 date: 2025-08-24
 tags: ["Color Science"]
-draft: true
-ShowToc: true
+draft: false
 ---
 
 ## 前言 {#前言}
