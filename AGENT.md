@@ -59,14 +59,27 @@ Implemented in `static/css/custom.css` — overrides new.css custom properties, 
 - `--nc-lk-1: #51afef`, `--nc-lk-2: #46D9FF`
 - `--nc-ac-1: #2257A0` (selection)
 
-## Changes made (2026-05-03 session)
+## Checkpoint — 2026-05-03
+
+### Completed this session
 
 - **KaTeX math rendering:** opt-in per post via `math: true` front matter. Hugo passthrough extension preserves `$...$` / `$$...$$` delimiters. KaTeX loaded from CDN only on math pages.
 - **Tag casing fixes:** standardized SSH across all posts (was mixed `ssh`/`SSH`). Added `content/tags/<name>/_index.md` overrides for lowercase tool-name tags (`sshfs`, `btrfs`, `btrbk`, `snapshot`, `rsync`) so Hugo doesn't title-case them. Fixed `colormanagement`/`colorscience` slugs on newer posts.
-- **Removed `ShowToc` front matter** from all posts — was a PaperMod remnant, nothing in the layouts reads it.
+- **Removed `ShowToc` front matter** from all posts — PaperMod remnant, nothing in the layouts reads it.
 - **Tags page redesign:** new `layouts/taxonomy/terms.html` — sorted by post count descending, count shown after tag name, no date.
-- **Light theme chroma fix:** when OS is dark but site is manually toggled to light, `@media (prefers-color-scheme: dark)` in `syntax.css` was setting `.chroma` base text color to light blue. Fixed by adding `color: #1f2328` to `:root[data-theme="light"] .chroma`.
-- **`image/` → `img/` rename:** committed pre-existing renames for three posts, including flattening the daylight post from a page bundle to a flat `.md`.
+- **Theme/chroma fixes:**
+  - Light chroma color leak: when OS is dark but site manually toggled light, `@media (prefers-color-scheme: dark)` was setting `.chroma` base text to light blue — fixed with `color:#1f2328` on `:root[data-theme="light"] .chroma`.
+  - Unified inline code and fenced block backgrounds per theme: light → both `#fff`; dark → both `#21242b`. Used `code:not(pre > code)` to target inline only.
+  - Slim scrollbar on `pre` blocks using `--nc-bg-3` (theme-adaptive, 4px height).
+- **`image/` → `img/` rename:** committed pre-existing renames for three posts; flattened daylight post from page bundle to flat `.md`.
+- **Commit type `post:`** added for new posts and edits to existing post content.
+
+### Decisions made
+
+- **Theme toggle stays:** the `[ dark ] / [ light ]` manual override button exists and is intentional. AGENT.md philosophy updated to reflect this. Auto-follow via `prefers-color-scheme` is the default; toggle saves to `localStorage`.
+- **Tag display names:** Hugo title-cases taxonomy terms by default. Override with `content/tags/<name>/_index.md` — this is the canonical Hugo approach.
+- **Image directory convention:** `img/` (not `image/` or `images/`). User renamed existing posts to match; use this for all future posts.
+- **KaTeX exception to no-external-requests rule:** CDN load is acceptable because math is rare and opt-in; the payload only loads on pages with `math: true`.
 
 ## TODO — Home page sections
 
