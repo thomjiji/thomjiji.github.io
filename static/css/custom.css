@@ -31,6 +31,8 @@
   --nc-ac-tx: #1A1A1A;
 }
 
+h1 a { text-decoration: none; }
+
 code, kbd, pre, samp {
   font-family: "Hack", monospace;
   -webkit-text-size-adjust: none;
