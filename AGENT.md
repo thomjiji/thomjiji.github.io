@@ -22,7 +22,6 @@ The reference for what this should feel like: **blog.benoitj.ca** — Hugo + new
 
 ## Current state
 
-Hugo site living in `/home/thom/code/agent-workspace/website-new`.
 Remote: `git@github.com:thomjiji/thomjiji.github.io.git`, branch `main`.
 Deployed via GitHub Actions to GitHub Pages at `thomjiji.github.io`.
 Old site preserved on `start-from-scratch` branch (untouched).
