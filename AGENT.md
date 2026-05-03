@@ -15,8 +15,8 @@ The reference for what this should feel like: **blog.benoitj.ca** — Hugo + new
 ## Philosophy
 
 - Every element earns its place. If it doesn't serve the reader, it doesn't exist.
-- No external requests. Fonts, CSS, everything served from one origin.
-- Dark mode via `prefers-color-scheme` only. No toggle button.
+- No external requests. Fonts, CSS, everything served from one origin. Exception: KaTeX loaded from CDN on math pages only.
+- Dark mode via `prefers-color-scheme` by default. A minimal toggle button (`[ dark ]` / `[ light ]`) exists as a manual override, saved to `localStorage`.
 - Semantic HTML. new.css styles elements directly — no class soup in templates.
 - The writing is the product. The site is just the container.
 
@@ -34,7 +34,8 @@ Old site preserved on `start-from-scratch` branch (untouched).
 **Layouts (all hand-written, minimal):**
 - `layouts/_default/baseof.html` — base shell: head, header (site title + nav), body block
 - `layouts/index.html` — homepage: `<ul>` of all posts, title + date
-- `layouts/_default/list.html` — section/taxonomy pages (Tags, etc.)
+- `layouts/_default/list.html` — per-tag pages (`/tags/ssh/` etc.), section pages
+- `layouts/taxonomy/terms.html` — `/tags/` listing: tags sorted by post count, with count badge
 - `layouts/_default/single.html` — individual post: title, date, tag links, content
 
 **Nav:** Home / Tags / About / RSS
@@ -58,9 +59,25 @@ Implemented in `static/css/custom.css` — overrides new.css custom properties, 
 - `--nc-lk-1: #51afef`, `--nc-lk-2: #46D9FF`
 - `--nc-ac-1: #2257A0` (selection)
 
-## Layout tweaks (pending)
+## Changes made (2026-05-03 session)
 
-Nothing specific decided yet — user wants to continue tweaking in future sessions.
+- **KaTeX math rendering:** opt-in per post via `math: true` front matter. Hugo passthrough extension preserves `$...$` / `$$...$$` delimiters. KaTeX loaded from CDN only on math pages.
+- **Tag casing fixes:** standardized SSH across all posts (was mixed `ssh`/`SSH`). Added `content/tags/<name>/_index.md` overrides for lowercase tool-name tags (`sshfs`, `btrfs`, `btrbk`, `snapshot`, `rsync`) so Hugo doesn't title-case them. Fixed `colormanagement`/`colorscience` slugs on newer posts.
+- **Removed `ShowToc` front matter** from all posts — was a PaperMod remnant, nothing in the layouts reads it.
+- **Tags page redesign:** new `layouts/taxonomy/terms.html` — sorted by post count descending, count shown after tag name, no date.
+- **Light theme chroma fix:** when OS is dark but site is manually toggled to light, `@media (prefers-color-scheme: dark)` in `syntax.css` was setting `.chroma` base text color to light blue. Fixed by adding `color: #1f2328` to `:root[data-theme="light"] .chroma`.
+- **`image/` → `img/` rename:** committed pre-existing renames for three posts, including flattening the daylight post from a page bundle to a flat `.md`.
+
+## TODO — Home page sections
+
+Currently `layouts/index.html` is a plain post list. A few options discussed if this ever needs expanding:
+
+1. **Freeform intro via `content/_index.md`** — write a short bio or intro in Markdown, render it in `index.html` with `{{ .Content }}` above the post list. Zero extra files, easiest to maintain.
+2. **Multiple hard-coded blocks in `index.html`** — just add more template blocks (e.g. "Recent" + "Pinned") directly in the layout. Simple, no new content files needed.
+3. **Data files (`data/`)** — structured content (projects, links) in YAML/TOML, looped over in the template. Good for things with a fixed shape that change over time.
+4. **New content sections (`content/projects/` etc.)** — separate Hugo sections, each with their own list page, pulled into the home page with `where site.RegularPages "Section" "projects"`.
+
+For a personal blog, option 1 or 2 is almost certainly enough.
 
 ## Things not to add back
 

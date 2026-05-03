@@ -87,6 +87,23 @@ code, kbd, pre, samp {
   display: list-item;
 }
 
+.tag-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+.tag-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin-top: 0.4rem;
+}
+
+.tag-count {
+  color: #888;
+  font-size: 0.85em;
+}
+
 .table-wrapper {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
