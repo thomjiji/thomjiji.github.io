@@ -1,7 +1,7 @@
 ---
 title: "Color Science Things"
 date: 2025-08-20
-tags: ["colormanagement", "colorscience", "nuke", "tonemapping", "tonescale"]
+tags: ["Color Management", "Color Science", "Nuke", "Tone Mapping", "Tonescale"]
 draft: false
 ShowToc: true
 ---

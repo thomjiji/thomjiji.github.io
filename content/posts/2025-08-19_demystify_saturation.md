@@ -1,7 +1,7 @@
 ---
 title: "Demystify Saturation"
 date: 2025-08-19
-tags: ["colorscience", "nuke"]
+tags: ["Color Science", "Nuke"]
 draft: false
 ShowToc: false
 ---
