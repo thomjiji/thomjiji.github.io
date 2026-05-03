@@ -39,6 +39,17 @@ code, kbd, pre, samp {
   text-size-adjust: none;
 }
 
+pre {
+  scrollbar-width: thin;
+  scrollbar-color: var(--nc-bg-3) transparent;
+}
+pre::-webkit-scrollbar { height: 4px; }
+pre::-webkit-scrollbar-track { background: transparent; }
+pre::-webkit-scrollbar-thumb {
+  background: var(--nc-bg-3);
+  border-radius: 2px;
+}
+
 .date { font-family: "Hack", monospace; }
 
 /* theme override variables — driven by data-theme attribute (dev toggle) */
