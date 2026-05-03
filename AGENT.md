@@ -4,7 +4,7 @@ Quick context for any future session picking this up.
 
 ## Rules
 
-- **Commit messages:** conventional commits format — `feat:`, `fix:`, `style:`, `chore:`, `docs:`, etc.
+- **Commit messages:** conventional commits format — `feat:`, `fix:`, `style:`, `chore:`, `docs:`, etc. Use `post:` for new posts and edits to existing post content.
 
 ## What this is
 
