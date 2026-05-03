@@ -133,6 +133,9 @@ pre::-webkit-scrollbar-thumb {
   flex-shrink: 0;
 }
 
+/* inline code bg: #fff in light, overridden to #21242b in dark below */
+code:not(pre > code) { background: #fff; }
+
 @media (prefers-color-scheme: dark) {
   :root {
     --nc-tx-1: #bbc2cf;
@@ -149,8 +152,7 @@ pre::-webkit-scrollbar-thumb {
   code:not(pre > code) { background: #21242b; }
 }
 
-/* inline code bg: match fenced code block bg per theme */
-code:not(pre > code) { background: #fff; }
+/* manual toggle overrides (higher specificity, win over media query) */
 :root[data-theme="light"] code:not(pre > code) { background: #fff; }
 :root[data-theme="dark"] code:not(pre > code) { background: #21242b; }
 
