@@ -135,13 +135,19 @@ code, kbd, pre, samp {
     --nc-ac-tx: #bbc2cf;
   }
   .date { color: #5B6268; }
+  code:not(pre > code) { background: #21242b; }
 }
+
+/* inline code bg: match fenced code block bg per theme */
+code:not(pre > code) { background: #fff; }
+:root[data-theme="light"] code:not(pre > code) { background: #fff; }
+:root[data-theme="dark"] code:not(pre > code) { background: #21242b; }
 
 /* syntax: doom-one for data-theme="dark" toggle */
 /* Generated using: hugo gen chromastyles --style=doom-one */
 
 /* Background */ .bg { color:#b0c4de;background-color:#282c34; }
-/* PreWrapper */ :root[data-theme="dark"] .chroma { color:#b0c4de;background-color:#282c34; }
+/* PreWrapper */ :root[data-theme="dark"] .chroma { color:#b0c4de;background-color:#21242b; }
 /* LineLink */ :root[data-theme="dark"] .chroma .lnlinks { outline:none;text-decoration:none;color:inherit }
 /* LineTableTD */ :root[data-theme="dark"] .chroma .lntd { vertical-align:top;padding:0;margin:0;border:0; }
 /* LineTable */ :root[data-theme="dark"] .chroma .lntable { border-spacing:0;padding:0;margin:0;border:0; }

@@ -76,8 +76,8 @@
 @media (prefers-color-scheme: dark) {
 /* Generated using: hugo gen chromastyles --style=doom-one */
 
-/* Background */ .bg { color:#b0c4de;background-color:#282c34; }
-/* PreWrapper */ .chroma { color:#b0c4de;background-color:#282c34; }
+/* Background */ .bg { color:#b0c4de;background-color:#21242b; }
+/* PreWrapper */ .chroma { color:#b0c4de;background-color:#21242b; }
 /* LineLink */ .chroma .lnlinks { outline:none;text-decoration:none;color:inherit }
 /* LineTableTD */ .chroma .lntd { vertical-align:top;padding:0;margin:0;border:0; }
 /* LineTable */ .chroma .lntable { border-spacing:0;padding:0;margin:0;border:0; }
