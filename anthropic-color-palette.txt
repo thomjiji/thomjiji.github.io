@@ -1,9 +1,0 @@
-"#7BA4BA" # teej light blue
-"#CC785C" # Book Cloth (Anthropic Dark)
-"#D4A27F" # Kraft (Anthropic Medium)
-"#91918D" # Cloud Medium (Anthropic Medium)
-"#6D8A61" # Fundamentals (Green from Chapter 1)
-"#B0607A" # Planning and design (Rose/Pink from Chapter 2)
-"#8B86B7" # Testing and iteration (Purple from Chapter 3)
-"#7699C5" # Distribution and sharing (Blue from Chapter 4)
-"#9DB3B0" # Patterns and troubleshooting (Sage from Chapter 5)
