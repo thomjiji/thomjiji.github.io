@@ -3,10 +3,9 @@ title: "mp4muxer & mp4demuxer Basic Usage"
 date: 2023-01-29
 draft: false
 tags: ["Dolby Vision", "Dolby Atmos"]
-slug: mp4muxer-mp4demuxer-basic-usage
 ---
 
-## **Installation**
+## Installation
 
 - [mp4muxer](https://github.com/DolbyLaboratories/dlb_mp4base)
 - [mp4demuxer](https://github.com/DolbyLaboratories/dlb_mp4demux)
