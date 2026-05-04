@@ -134,7 +134,7 @@ pre::-webkit-scrollbar-thumb {
 }
 
 /* inline code bg: #fff in light, overridden to #21242b in dark below */
-code:not(pre > code) { background: #fff; vertical-align: middle; line-height: 1; }
+code:not(pre > code) { background: #fff; vertical-align: middle; }
 
 @media (prefers-color-scheme: dark) {
   :root {
