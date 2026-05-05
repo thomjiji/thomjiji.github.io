@@ -7,7 +7,7 @@ slug: icc-profile
 
 ICC Profile 这个文件本身其实是一个 binary 二进制文件。我们打开 macOS 里的 ColorSync Utility 软件，随便打开一个 Profile，比如 sRGB IEC61966-2.1。这时弹出来一个窗口：
 
-![01_icc_profile_parsing](./image/01_icc_profile_parsing.jpg)
+![01_icc_profile_parsing](./img/01_icc_profile_parsing.jpg)
 
 这个窗口其实就是对 sRGB IEC61966-2.1 这个 ICC Profile 的 parser，它 parse 出来文件头、各种标签等等。
 

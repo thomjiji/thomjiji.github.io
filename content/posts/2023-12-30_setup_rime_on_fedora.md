@@ -1,9 +1,8 @@
 ---
-title: "Setup Rime on Fedora Asahi Remix"
+title: "Setup Rime on Fedora"
 date: 2023-12-30
 draft: false
-slug: setup-rime-on-fedora-asahi
-tags: ["Asahi Linux", "Rime", "Fedora"]
+tags: ["Linux", "Rime", "Fedora"]
 ---
 
 1. Install fcitx5 and fcitx5-rime via `sudo dnf install fcitx5-rime fcitx5`.
