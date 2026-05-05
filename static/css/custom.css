@@ -313,3 +313,13 @@ code:not(pre > code) { background: #fff; vertical-align: middle; }
 /* GenericOutput */ :root[data-theme="light"] .chroma .go { color:#1f2328 }
 /* GenericUnderline */ :root[data-theme="light"] .chroma .gl { text-decoration:underline }
 /* TextWhitespace */ :root[data-theme="light"] .chroma .w { color:#fff }
+
+footer {
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--nc-bg-3);
+  font-size: 0.85em;
+  color: var(--nc-tx-2);
+  opacity: 0.7;
+}

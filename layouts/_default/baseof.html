@@ -26,6 +26,9 @@
     </nav>
   </header>
   <main>{{ block "main" . }}{{ end }}</main>
+  <footer>
+    <p>&copy; {{ .Site.Params.since | default "2022" }}–{{ now.Format "2006" }} thomjiji</p>
+  </footer>
   <script>
     (function() {
       var saved = localStorage.getItem('theme');
