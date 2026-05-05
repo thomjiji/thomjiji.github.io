@@ -14,7 +14,7 @@ slug: cpp-preprocessor
     - Make change to the text of the code file, but not actually to the original code file, rather temporarily in-memory
       or using temporary files.
     - Uninteresting things: strip out comments, ensures each code file ends in a newline.
-    - One important role: **process`#include` directives**.
+    - One important role: **process `#include` directives**.
 - => What comes out of the preprocessor is called **translation unit**.
 - The translation unit is then compiled by the compiler.
 
