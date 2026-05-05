@@ -1,7 +1,7 @@
 ---
 title: "3x3 Matrix for Camera Matching"
 date: 2025-08-24
-tags: ["Color Science"]
+tags: ["colorscience"]
 draft: false
 ---
 
@@ -17,7 +17,6 @@ draft: false
 ## 测试图像 {#测试图像}
 
 手边没有不同摄影机拍摄色卡的测试图，所幸 CML 有分享一组：[Early ACES](https://www.cinematography.net/edited-pages/ACES.html)。
-
 第一张是 ARRI Alexa，第二、三张是 Sony F55 和 Sony F65，都是 RAW。这作为我们的这个匹配测试的测试图正正好。
 
 
