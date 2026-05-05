@@ -1,7 +1,7 @@
 ---
 title: "DIT work useful commands"
 date: 2025-07-03
-tags: ["CLI", "DIT"]
+tags: ["DIT"]
 draft: false
 ---
 
@@ -19,7 +19,7 @@ draft: false
 
 ## du
 
-### macOS 自带的 du 命令行为比较奇怪，我们使用 GNU 版本的 gdu
+macOS 自带的 du 命令行为比较奇怪，我们使用 GNU 版本的 gdu
 
 ```bash
 brew install coreutils
